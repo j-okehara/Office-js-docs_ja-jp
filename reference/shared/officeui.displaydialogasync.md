@@ -23,7 +23,7 @@ Office ホストでダイアログ ボックスを表示します。
 実行時にこの API を検出するには、次のコードを使用します。
 
 ```js
- if (Office.context.requirements.isSetSupported('DialogAPI', '1.1')) 
+ if (Office.context.requirements.isSetSupported('DialogAPI', 1.1)) 
     {  
          // Use Office UI methods; 
     } 

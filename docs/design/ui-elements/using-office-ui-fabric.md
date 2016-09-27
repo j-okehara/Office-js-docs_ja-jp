@@ -26,17 +26,17 @@ Fabric には、さまざまな UI 要素 (ボタンやチェック ボックス
     </button>
 
 ##4.サンプル動作を備えたコンポーネントの使用
-Fabric には、動作 (クリック時の動作など) をサポートするコンポーネントもあります。手始めに、Fabric に含まれている jQuery UI プラグイン形式の**サンプル コード**を使用してみてください。その他のフレームワークを使用して、必要なコードを記述することもできます。サンプルを使用する場合は、サンプル コードが CDN の一部として配布されていない点に注意してください。サンプル コードは、[Fabric GitHub プロジェクト](https://github.com/OfficeDev/Office-UI-Fabric/releases)の最新リリースからダウンロードし、そのコードを参照して、自分のコードで初期化する必要があります。 
+Fabric には、動作 (クリック時の動作など) をサポートするコンポーネントもあります。 手始めに、Fabric 2.6.1 に含まれている jQuery UI プラグイン形式の**サンプル コード**を使用してみてください。 その他のフレームワークを使用して、必要なコードを記述することもできます。 サンプルを使用する場合は、サンプル コードが CDN の一部として配布されていない点に注意してください。サンプル コードは、[Fabric GitHub プロジェクト](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1)の 2.6.1 リリースからダウンロードし、そのコードを参照して、自分のコードで初期化する必要があります。 
 
 たとえば、SearchBox コンポーネントを使用するには、次の手順を実行します。
 
-1. [GitHub](https://github.com/OfficeDev/Office-UI-Fabric/tree/master/src/components/SearchBox) から、SearchBox コンポーネントをダウンロードします。
+1. [GitHub](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1/src/components/SearchBox) から、SearchBox コンポーネントをダウンロードします。
 2. 次の参照をコードに追加します: `<script src="SearchBox/Jquery.SearchBox.js"></script>`
 3. ページのロード時に、次の行が実行されるようにして、コンポーネントを初期化します: `$(".ms-SearchBox").SearchBox();`。作成するアドインの `Office.Initialize` ブロックに、これを含めるようにしてください。     
 
-**注:**いくつかの Fabric コンポーネントのみを使用する場合は、コンポーネントごとに個別の CSS ファイルをホストすることで、ダウンロードするリソースのサイズを小さくできます。CSS ファイルは、[Fabric GitHub リポジトリ](https://github.com/OfficeDev/Office-UI-Fabric)のコンポーネント フォルダーから入手できます。 
+**注:**いくつかの Fabric コンポーネントのみを使用する場合は、コンポーネントごとに個別の CSS ファイルをホストすることで、ダウンロードするリソースのサイズを小さくできます。 CSS ファイルは、[Fabric 2.6.1 GitHub リポジトリ](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1)のコンポーネント フォルダーから入手できます。 
 
 
-##次の手順
+##次のステップ
 Fabric の使用方法がすべてわかるようなサンプルをご用意しています。「[Office アドイン Fabric UI サンプル](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)」を参照してください。対話型の [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) Web サイトを参照することもできます。
 

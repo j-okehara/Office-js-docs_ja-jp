@@ -14,9 +14,6 @@ Office.context
 
 ## メンバー
 
-
-**プロパティ**
-
 |||
 |:-----|:-----|
 |名前|説明|
@@ -26,6 +23,7 @@ Office.context
 |[document](../../reference/shared/office.context.document.md)|コンテンツ アドインまたは作業ウィンドウ アドインによって操作するドキュメントを表すオブジェクトを取得します。|
 |[mailbox](../../reference/shared/office.context.mailbox.md)|特に Outlook アドイン向けに API のメンバーへのアクセスを提供する  **mailbox** オブジェクトを取得します。|
 |[officeTheme](../../reference/shared/office.context.officetheme.md)|Office テーマの色のプロパティにアクセスできるようにします。|
+|[UI](../../reference/shared/officeui)|ダイアログ ボックスなどの UI コンポーネントの作成や操作に使用できるオブジェクトとメソッドを提供します。|
 |[roamingSettings](../../reference/shared/office.context.roamingsettings.md)|アドインの保存されているカスタム設定を表すオブジェクトを取得します。|
 |[touchEnabled](../../reference/shared/office.context.touchenabled.md)|タッチ対応 Office ホスト アプリケーションで アドイン が実行されているかどうかを取得します。|
 

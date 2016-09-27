@@ -3,7 +3,10 @@
 
 
 
-この記事は、Visual Studio 2015 を使用して、Access Web アプリ を対象とした Office アドイン を開発する方法を示します。
+この記事では、Visual Studio 2015 を使用して Access Web アプリ対象の Office アドインを開発する方法について説明します。
+
+>
+  **注:**VBA を使用した Access 向けソリューション開発の詳細は、MSDN の「[Access](https://msdn.microsoft.com/en-us/library/fp179695.aspx)」を参照してください。
 
 ## 前提条件
 

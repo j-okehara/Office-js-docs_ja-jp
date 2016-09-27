@@ -24,7 +24,7 @@
 	
 	<Item text="HighResolutionIconUrl" url="manifest/highresolutioniconurl" SEODescription="高 DPI の画面での挿入 UX と Office ストアの Office アドインを表すために使用されるイメージの URL を指定します。" />
     <Item text="ホスト" url="manifest/host" SEODescription="Office アドインがサポートしている Office のホスト アプリケーションの種類を指定します。" />
-    
+    <Item text="Hosts" url="manifest/hosts" SEODescription="Office アドインをアクティブにする Office クライアント アプリケーションを指定します。" />
 	<Item text="IconUrl" url="manifest/iconurl" SEODescription="挿入 UX と Office ストアの Office アドインを表すために使用されるイメージの URL を指定します。" />
     <Item text="Id" url="manifest/id" SEODescription="Office アドインの一意の ID を GUID の形で指定します。" />
     <Item text="メソッド" url="manifest/method" Scope="excel, word, powerpoint, access, project" SEODescription="Office アドインをアクティブにするために必要な JavaScript API for Office の個別のメソッドを指定します。" />
@@ -395,23 +395,23 @@
   </Item>
   
   <Item text="OneNote" url="onenote/onenote-add-ins-javascript-reference" Scope="onenote">
-    <Item text="アプリケーション" url="onenote/application" SEODescription="OneNote アドインのプレビューの参照。" />
-    <Item text="エラー" url="onenote/error" SEODescription="OneNote アドインのプレビューの参照。" />
-	<Item text="ノートブック" url="onenote/notebook" SEODescription="OneNote アドインのプレビューの参照。" />
-    <Item text="Notebookcollection" url="onenote/notebookcollection" SEODescription="OneNote アドインのプレビューの参照。" />
-    <Item text="Page" url="onenote/page" SEODescription="OneNote アドインのプレビューの参照。" />
-    <Item text="Pagecollection" url="onenote/pagecollection" SEODescription="OneNote アドインのプレビューの参照。" />
-    <Item text="Pagecontent" url="onenote/pagecontent" SEODescription="OneNote アドインのプレビューの参照。" />
-    <Item text="Pagecontentcollection" url="onenote/pagecontentcollection" SEODescription="OneNote アドインのプレビューの参照。" />
-    <Item text="段落" url="onenote/paragraph" SEODescription="OneNote アドインのプレビューの参照。" />
-    <Item text="Paragraphcollection" url="onenote/paragraphcollection" SEODescription="OneNote アドインのプレビューの参照。" />
-    <Item text="Richtext" url="onenote/richtext" SEODescription="OneNote アドインのプレビューの参照。" />
-    <Item text="セクション" url="onenote/section" SEODescription="OneNote アドインのプレビューの参照。" />
-    <Item text="Sectioncollection" url="onenote/sectioncollection" SEODescription="OneNote アドインのプレビューの参照。" />
-    <Item text="Sectiongroup" url="onenote/sectiongroup" SEODescription="OneNote アドインのプレビューの参照。" />
-    <Item text="Sectiongroupcollection" url="onenote/sectiongroupcollection" SEODescription="OneNote アドインのプレビューの参照。" />
-    <Item text="アウトライン" url="onenote/outline" SEODescription="OneNote アドインのプレビューの参照。" />
-    <Item text="Image" url="onenote/image" SEODescription="OneNote アドインのプレビューの参照。" />
+    <Item text="アプリケーション" url="onenote/application" SEODescription="OneNote アドインの参照。" />
+    <Item text="エラー" url="onenote/error" SEODescription="OneNote アドインの参照。" />
+	<Item text="Notebook" url="onenote/notebook" SEODescription="OneNote アドインの参照。" />
+    <Item text="Notebookcollection" url="onenote/notebookcollection" SEODescription="OneNote アドインの参照。" />
+    <Item text="Page" url="onenote/page" SEODescription="OneNote アドインの参照。" />
+    <Item text="Pagecollection" url="onenote/pagecollection" SEODescription="OneNote アドインの参照。" />
+    <Item text="Pagecontent" url="onenote/pagecontent" SEODescription="OneNote アドインの参照。" />
+    <Item text="Pagecontentcollection" url="onenote/pagecontentcollection" SEODescription="OneNote アドインの参照。" />
+    <Item text="Paragraph" url="onenote/paragraph" SEODescription="OneNote アドインの参照。" />
+    <Item text="Paragraphcollection" url="onenote/paragraphcollection" SEODescription="OneNote アドインの参照。" />
+    <Item text="Richtext" url="onenote/richtext" SEODescription="OneNote アドインの参照。" />
+    <Item text="Section" url="onenote/section" SEODescription="OneNote アドインの参照。" />
+    <Item text="Sectioncollection" url="onenote/sectioncollection" SEODescription="OneNote アドインの参照。" />
+    <Item text="Sectiongroup" url="onenote/sectiongroup" SEODescription="OneNote アドインの参照。" />
+    <Item text="Sectiongroupcollection" url="onenote/sectiongroupcollection" SEODescription="OneNote アドインの参照。" />
+    <Item text="Outline" url="onenote/outline" SEODescription="OneNote アドインの参照。" />
+    <Item text="Image" url="onenote/image" SEODescription="OneNote アドインの参照。" />
   </Item>  
   <Item text="共有 API" url="shared/shared-api">
     <Item text="JavaScript API for Office" url="javascript-api-for-office" SEODescription="JavaScript API for Office には、Office アドイン コードで使用できるオブジェクト、メソッド、プロパティ、イベント、および列挙体があります。" />
@@ -444,7 +444,8 @@
       <Item text="AsyncResult.status" url="shared/asyncresult.status" SEODescription="非同期操作の状態を取得します。" />
       <Item text="AsyncResult.value" url="shared/asyncresult.value" SEODescription="この非同期操作のペイロードまたはコンテンツを取得します (ある場合)。" />
     </Item>
-    <Item text="コンテキスト " url="shared/office.context" FriendlyUrl="reference/common/officeoffice.context">
+    <Item text="Context " url="shared/context">
+      <Item text="office.context" url="shared/office.context" SEODescription="アドインの実行時環境を表す Context オブジェクトを取得します。 " />
       <Item text="office.context.commerceAllowed " url="shared/office.context.commerceallowed" FriendlyUrl="reference/common/contextoffice.context.commerceallowed" SEODescription="外部の支払システムにリンクできるプラットフォーム上で アドイン が実行されているかどうかを取得します。" />
       <Item text="office.context.contentLanguage" url="shared/office.context.contentlanguage" SEODescription="ドキュメントまたはアイテムを編集するためにユーザーによって指定されるロケール (言語) を取得します。" />
       <Item text="office.context.displaylanguage" url="shared/office.context.displaylanguage" SEODescription="Office ホスト アプリケーションの UI 用にユーザーが指定したロケール (言語) を取得します。" />

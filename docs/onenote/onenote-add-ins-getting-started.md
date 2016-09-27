@@ -1,19 +1,13 @@
-﻿# 最初の OneNote 用アドインをビルドする
+# 最初の OneNote 用アドインをビルドする
 
 この記事では、いくつかのテキストを OneNote ページに追加する簡単な作業ウィンドウ アドインのビルドについて説明します。
-
-- [開発環境のセットアップ](#開発環境のセットアップ)
-- [アドイン プロジェクトの作成](#アドイン-プロジェクトの作成)
-- [アドイン マニフェストの構成](#アドイン-マニフェストの構成)
-- [アドインの開発](#アドインの開発)
-- [アドインのテスト](#アドインのテスト)
 
 次の画像は、作成するアドインを示しています。
 
    ![このチュートリアルでビルドした OneNote アドイン](../../images/onenote-first-add-in.png)
 
 <a name="setup"></a>
-### 手順 1:開発環境のセットアップ
+## 手順 1:開発環境のセットアップ
 1- [インストール手順](https://dev.office.com/docs/add-ins/get-started/create-an-office-add-in-using-any-editor)に従って、Yeoman Office ジェネレーターとその前提条件をインストールします。
 
    Yeoman Office ジェネレーターを使うと、Visual Studio がない場合や普通の HTML、CSS、JavaScript 以外のテクノロジを使う場合に、アドイン プロジェクトの作成が簡単になります。また、テスト用にローカルの Gulp Web サーバーにすばやくアクセスできます。 
@@ -21,7 +15,7 @@
    >オプションで [Visual Studio を使用](https://dev.office.com/docs/add-ins/get-started/create-and-debug-office-add-ins-in-visual-studio)して、プロジェクト ファイルを作成できますが、組み込み Gulp サーバーのサポートは利用できません。
 
 <a name="create-project"></a>
-### 手順 2:アドイン プロジェクトの作成 
+## 手順 2:アドイン プロジェクトの作成 
 1- *onenote add-in* という名前のローカル フォルダーを作成します。
 
 2- **cmd** プロンプトを開いて、**[onenote アドイン]** フォルダーに移動します。以下に示す `yo office` コマンドを実行します。
@@ -42,7 +36,7 @@ C:\your-local-path\onenote add-in\> yo office
 | 使うテクノロジ | HTML、CSS、JavaScript |
 
 <a name="manifest"></a>
-### 手順 3:アドイン マニフェストの構成 
+## 手順 3:アドイン マニフェストの構成 
 1- プロジェクト ファイルにある **manifest-onenote-add-in.xml** を開きます。**ホスト** セクションに次の行を追加します。これは、アドインが OneNote ホスト アプリケーションをサポートすることを指定します。
 
 ```
@@ -56,7 +50,7 @@ C:\your-local-path\onenote add-in\> yo office
 ```
 
 <a name="develop"></a>
-### 手順 4:アドインの開発
+## 手順 4:アドインの開発
 任意のテキスト エディターや IDE を使ってアドインを開発できます。まだ Visual Studio Code をお試しいただいていない場合は、Linux、Mac OSX、Windows で[無料でダウンロード](https://code.visualstudio.com/)できます。
 
 1- **[アプリ] または [ホーム]** フォルダーにある *home.html* を開きます。 
@@ -165,7 +159,7 @@ function addOutlineToPage() {
 ```
 
 <a name="test"></a>
-### 手順 5:OneNote Online でのアドインのテスト
+## 手順 5:OneNote Online でのアドインのテスト
 1- Gulp Web サーバーを実行します。  
 
    a. **onenote add-in** フォルダーで **cmd** プロンプトを開きます。 
@@ -188,13 +182,21 @@ https://localhost:8443/app/home/home.html
 
 3- OneNote Online でノートブックを開きます。
 
-4- **[挿入] > [アドインのアップロード]** を選択します。
+4- **[挿入] > [Office アドイン]** を選択します。 これで、[Office アドイン] ダイアログが開きます。
+  - コンシューマー アカウントでログインしている場合は、**[マイ アドイン]** タブを選択し、**[マイ アドインのアップロード]** を選択します。
+  - 職場または学校アカウントでログインしている場合は、**[自分の所属組織]** タブを選択し、**[マイ アドインのアップロード]** を選択します。 
+  
+  次の図は、コンシューマー ノートブックの **[マイ アドイン]** タブを示しています。
+
+  ![[マイ アドイン] タブを示す [Office アドイン] ダイアログ](../../images/onenote-office-add-ins-dialog.png)
+  
+  >**注**:OneNote ページ内でクリックすると、**[Office アドイン]** ボタンが有効になります。
 
 5- [アドインのアップロード] ダイアログで、プロジェクト ファイル内の **manifest-onenote-add-in.xml** を参照し、**[アップロード]** を選択します。 テスト中、マニフェスト ファイルはローカルに保存できます。
 
 6- アドインは、OneNote ページの横にある iFrame で開きます。 テキスト領域にテキストを入力し、**[アウトラインの追加]** をクリックします。 入力したテキストは、ページに追加されます。 
 
-### トラブルシューティングとヒント
+## トラブルシューティングとヒント
 - ブラウザーの開発者ツールを使ってアドインをデバッグできます。Gulp Web サーバーを使っており、Internet Explorer や Chrome でデバッグしている場合は、ローカルで変更を保存して、アドインの iFrame を更新するだけです。
 
 - OneNote オブジェクトを調べる場合、現在使用可能なプロパティに実際の値が表示されます。読み込む必要のあるプロパティには、*undefined* と表示されます。`_proto_` ノードを展開し、オブジェクトで定義されているものの、まだ読み込まれていないプロパティを確認します。
@@ -207,5 +209,5 @@ https://localhost:8443/app/home/home.html
 
 - [OneNote の JavaScript API のプログラミングの概要](onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API リファレンス](../../reference/onenote/onenote-add-ins-javascript-reference.md)
-- [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
+- [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office アドイン プラットフォームの概要](https://dev.office.com/docs/add-ins/overview/office-add-ins)

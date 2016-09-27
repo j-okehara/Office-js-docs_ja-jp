@@ -1,43 +1,71 @@
 
 # Host 要素
-Office アドインがサポートしている Office のホスト アプリケーションの種類を指定します。
+アドインでアクティブ化する Office アプリケーションの種類を個別に指定します。
 
- **アドインの種類:**コンテンツ、作業ウィンドウ、メール
-
-
-## 構文:
+> **重要**:**Host** 要素の構文は、要素が[基本のマニフェスト](#basic-manifest)で定義されているか、[VersionOverrides](#versionoverrides-node) ノードで定義されているかによって異なります。 ただし、機能は変わりません。  
 
 
-```XML
-<Host Name= ["Document" | "Database" | "Mailbox" | "Presentation" | "Project" | "Workbook"] />
+## 基本のマニフェスト
+
+基本のマニフェストで定義されている場合 ([OfficeApp](./officeapp.md) の下)、ホストの種類は `Name` 属性によって決定されます。   
+
+### 属性
+| 属性     | 種類   | 必須 | 説明                                      |
+|:--------------|:-------|:---------|:-------------------------------------------------|
+| [名前](#name) | string | 必須 | Office ホスト アプリケーションの種類の名前。 |
+
+
+### 名前
+このアドインが対象にするホストの種類を指定します。 この値は、次のいずれかである必要があります。
+
+- `Document` (Word)
+- `Database` (Access)
+- `Mailbox` (Outlook)
+- `Notebook` (OneNote)
+- `Presentation` (PowerPoint)
+- `Project` (Project)
+- `Workbook` (Excel)
+
+### 例
+```xml
+<Hosts>
+    <Host Name="Mailbox">
+    </Host>
+</Hosts>
 ```
 
+---
 
-## 属性
+## VersionOverrides ノード
+[VersionOverrides](./versionoverrides) で定義されている場合、ホストの種類は `xsi:type` 属性によって決定されます。 
+
+### 属性
+
+|  属性  |  必須  |  説明  |
+|:-----|:-----|:-----|
+|  [xsi:type](#xsitype)  |  はい  | これらの設定を適用する Office ホストについて説明します。|
+
+### 子要素
+
+|  要素 |  必須  |  説明  |
+|:-----|:-----|:-----|
+|  [FormFactor](./formfactor.md)    |  はい   |  影響を受けるフォーム ファクターを定義します。 |
 
 
+### xsi:type
+含まれている設定を適用する Office ホスト (Word、Excel、PowerPoint、Outlook、OneNote) を制御します。 この値は、次のいずれかである必要があります。
 
-|**属性**|**種類**|**必須**|**説明**|
-|:-----|:-----|:-----|:-----|
-|名前|string|必須|Office ホスト アプリケーションの種類の名前。|
+- `Document` (Word)
+- `MailHost` (Outlook)    
+- `Notebook` (OneNote)
+- `Presentation` (PowerPoint)
+- `Workbook` (Excel)
 
-## 注釈
-
-以下の値を **Host** 要素の **Name** 属性に指定できます。それぞれの値はアドインがサポートする 1 つ以上の Office ホスト アプリケーションのセットに対応します。
-
-
-
-|**名前**|**Office ホスト アプリケーション**|
-|:-----|:-----|
-| `"Document"`|Word、Word Online、Word (iPad)。|
-| `"Database"`|Access Web アプリ|
-| `"Mailbox"`|Outlook、Outlook Web App、デバイス用 OWA|
-| `"Notebook"`|OneNote Online|
-| `"Presentation"`|PowerPoint、PowerPoint Online、PowerPoint (iPad)|
-| `"Project"`|Project|
-| `"Workbook"`|Excel、Excel Online、Excel (iPad)|
-
-## 注釈
-
-ホストのサポートを指定する方法の詳細については、「[Office ホストと API 要件を指定する](../../docs/overview/specify-office-hosts-and-api-requirements.md)」をご覧ください。
-
+## ホストの例 
+```xml
+<Hosts>
+    <Host xsi:type="MailHost">
+        <!-- Host Settings -->
+    </Host>
+</Hosts>
+```

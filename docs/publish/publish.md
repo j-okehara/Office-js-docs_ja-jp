@@ -28,7 +28,9 @@
 | メール アプリ | X           | X               | X            |
 | コマンド  | X           | X               | X            |
 
-アドインの範囲を広げるには、アドインがプラットフォームを横断して動作するようにします。 Office アドインは、Windows、Mac、Web、iOS、Android でサポートされています。 各プラットフォームでサポートされている機能の概要については、「詳細については、「[Office アドインを使用できるホストおよびプラットフォーム]」を参照してください。   
+アドインの範囲を広げるには、アドインがプラットフォームを横断して動作するようにします。 Office アドインは、Windows、Mac、Web、iOS、Android でサポートされています。 各プラットフォームでサポートされている機能の概要については、「[Office アドインを使用できるホストおよびプラットフォーム]」を参照してください。   
+
+Office ストアのアドインについては、「[アドインのライセンス](https://msdn.microsoft.com/EN-US/library/office/jj163257.aspx)」を参照してください。
 
 エンド ユーザーがアドインを取得、挿入、実行する方法については、「[Office アドインの使用を開始する](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE)」を参照してください。
 

@@ -50,5 +50,5 @@
 
 - [OneNote の JavaScript API のプログラミングの概要](../../docs/onenote/onenote-add-ins-programming-overview.md)
 - [最初の OneNote 用アドインをビルドする](../../docs/onenote/onenote-add-ins-getting-started.md)
-- [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
+- [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office アドイン プラットフォームの概要](https://dev.office.com/docs/add-ins/overview/office-add-ins)

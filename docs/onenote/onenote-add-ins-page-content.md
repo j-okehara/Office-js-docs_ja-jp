@@ -45,5 +45,5 @@ OneNote ページのコンテンツと構造は、HTML で表されます。 次
 
 - [OneNote の JavaScript API のプログラミングの概要](onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API リファレンス](../../reference/onenote/onenote-add-ins-javascript-reference.md)
-- [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
+- [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office アドイン プラットフォームの概要](https://dev.office.com/docs/add-ins/overview/office-add-ins)

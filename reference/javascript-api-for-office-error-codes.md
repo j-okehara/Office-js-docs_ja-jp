@@ -1,8 +1,8 @@
-﻿
-# JavaScript API for Office のエラー コード
-この記事では、JavaScript API for Office (Office.js) の使用時に発生する可能性のあるエラー メッセージについてまとめています。
 
- _**適用対象:** SharePoint 用 Access アプリ | Office 用アプリ | Excel | Office アドイン | Outlook | PowerPoint | Project | Word_
+# JavaScript API for Office のエラー コード
+この記事では、JavaScript API for Office (Office.js) の使用時に発生する可能性のあるエラー メッセージについて説明します。
+
+ _**適用対象:**Office アドイン | SharePoint アドイン | Excel | Outlook | PowerPoint | Project | Word_
 
 
 ## エラー コード

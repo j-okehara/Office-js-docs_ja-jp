@@ -1,12 +1,10 @@
-﻿
+
 # JavaScript API for Office の変更点
 JavaScript API for Office は、Office アドインの機能を拡張するため、オブジェクト、メソッド、プロパティ、イベント、列挙体の新規追加や更新によって定期的に更新が加えられています。新規および更新された API のメンバーを確認するには、次のリンクを参照してください。
 
- _**適用対象:** SharePoint 用 Access アプリ | Office 用アプリ | Excel | Office アドイン | Outlook | PowerPoint | Project | Word_
+新しい API メンバーを使用してアドインを開発するには、[プロジェクトで JavaScript API for Office ファイルを更新する](../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md)必要があります。
 
-新しい API メンバーを使用してアドインを開発するには、 [プロジェクトで JavaScript API for Office ファイルを更新する](../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md)必要があります。
-
-前回の更新から変更されていない API メンバーを含むすべての API メンバーを表示するには、「 [JavaScript API for Office](../reference/javascript-api-for-office.md)」を参照してください。
+前回の更新から変更されていない API メンバーを含むすべての API メンバーを表示するには、「[JavaScript API for Office](../reference/javascript-api-for-office.md)」を参照してください。
 
 
 ## 新規および更新された API
@@ -14,7 +12,7 @@ JavaScript API for Office は、Office アドインの機能を拡張するた�
  **新規オブジェクトと更新されたオブジェクト**
 
 
-|**Object**|**説明**|**追加または更新されたバージョン **|
+|**Object**|**説明**|**追加または更新されたバージョン**|
 |:-----|:-----|:-----|
 |[Item](../reference/outlook/Office.context.mailbox.item.md)|次に対する更新および追加です。<br><ul><li><p>ユーザーの選択の取得と、メッセージまたは予定の件名と本文を上書きするための、<a href="../reference/outlook/Office.context.mailbox.item.md#getSelectedDataAsync" target="_blank">getSelectedDataAsync</a> および <a href="../reference/outlook/Office.context.mailbox.item.md#setSelectedDataAsync" target="_blank">setSelectedDataAsync</a> メソッド。</p></li><li><p>予定の返信フォームへの添付ファイルの追加をサポートする <a href="../reference/outlook/Office.context.mailbox.item.md#displayReplyAllForm" target="_blank">displayReplyAllForm</a> および <a href="../reference/outlook/Office.context.mailbox.item.md#displayReplyForm" target="_blank">displayReplyForm</a> メソッド。</p></li></ul>|Mailbox 1.2|
 |[アイテム](../reference/outlook/Office.context.mailbox.item.md)|新規作成モードの Outlook アドインを作成するためのメソッドとフィールドを含めるよう更新されました。 |1.1|

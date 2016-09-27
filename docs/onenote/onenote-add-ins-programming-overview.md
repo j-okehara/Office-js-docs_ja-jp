@@ -113,5 +113,5 @@ OneNote アドインは、次の共通 API のみをサポートします。
 
 - [最初の OneNote 用アドインをビルドする](onenote-add-ins-getting-started.md)
 - [OneNote JavaScript API リファレンス](../../reference/onenote/onenote-add-ins-javascript-reference.md)
-- [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
+- [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office アドイン プラットフォームの概要](https://dev.office.com/docs/add-ins/overview/office-add-ins)
