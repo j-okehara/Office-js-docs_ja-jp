@@ -1,4 +1,4 @@
-# 最初の Word アドインをビルドする
+# <a name="build-your-first-word-add-in"></a>最初の Word アドインをビルドする
 
 _適用対象:Word 2016、Word for iPad、Word for Mac_
 
@@ -8,7 +8,7 @@ Word アドインは Word 内で実行され、Word 2016 で使用可能なWord 
 
 >**Word アドイン = manifest.xml + Web アプリ**
 
-### 設定する
+### <a name="set-it-up"></a>設定する
 このセクションでは、簡単な Web アプリとアプリ マニフェストを作成します。この Web アプリは、Word 文書に定型句を追加するためのアプリです。
 
 1 - ローカル ドライブに BoilerplateAddin という名前のフォルダーを作成します (たとえば、C:\\BoilerplateAddin)。以下の手順で作成するファイルはすべてこのフォルダーに保存します。
@@ -167,15 +167,15 @@ Word アドインは Word 内で実行され、Word 2016 で使用可能なWord 
 
 5 - GUID を生成して、<code>OfficeApp/Id</code> 要素の値を GUID に置き換えます。
 
-6 - すべてのファイルを保存します。 これで、最初の Word アドインが作成できました。
+6 - すべてのファイルを保存します。これで、最初の Word アドインが作成できました。
 
 7- home.js、home.html、および BoilerplateManifest.xml を[ネットワーク上の共有フォルダーにコピーするか](https://technet.microsoft.com/en-us/library/cc770880.aspx) (Windows)、ローカル サーバーにホストします (Mac)。
 
 8 - BoilerplateManifest.xml の[SourceLocation](../../reference/manifest/sourcelocation.md) を編集して、home.html の場所を指すようにします。
 
-この時点で、初めてのアドインが配置されたことになります。 次に、Word がアドインを検索する場所を認識できるようにする必要があります。
+この時点で、初めてのアドインが配置されたことになります。次に、Word がアドインを検索する場所を認識できるようにする必要があります。
 
-#### Word 2016 for Windows で試してみる
+#### <a name="try-this-out-in-word-2016-for-windows"></a>Word 2016 for Windows で試してみる
 
 1. Word を起動し、ドキュメントを開きます。
 2. [**ファイル**] タブを選択し、[**オプション**] を選択します。
@@ -195,25 +195,25 @@ Word アドインは Word 内で実行され、Word 2016 で使用可能なWord 
 6. 定型句を Word 文書に入力するボタンを選択します。
 
 
-### Word 2016 for Mac で試してみる
+### <a name="try-it-out-in-word-2016-for-mac"></a>Word 2016 for Mac で試してみる
 
 次は、作成したアドインを実行します。次の手順を実行して、動作を確認します。
 
 1. Users/Library/Containers/com.microsoft.word/Data/Documents/ に「wef」というフォルダーを作成します。
 2. マニフェスト BoilerplateManifest.xml を wef フォルダー (Users/Library/Containers/com.microsoft.word/Data/Documents/wef) に保存します。
-3. Mac で Word 2016 を開き、[挿入] タブ > [マイ アドイン] ドロップ ダウンをクリックします。 ドロップ ダウンにアドインがリスト表示されるはずです。 選択すると、アドインが読み込まれます。
+3. Mac で Word 2016 を開き、[挿入] タブ > [マイ アドイン] ドロップ ダウンをクリックします。ドロップ ダウンにアドインがリスト表示されるはずです。選択すると、アドインが読み込まれます。
 
 __図 1.Word に読み込まれた定型句のコンテンツ アドイン__
 ![定型句のアドインが読み込まれた Word アプリケーションのイメージ。](../../images/boilerplateAddin.png "定型句を入力するための単純な Word アドイン。")
 
-## フィードバックをお寄せください
+## <a name="give-us-your-feedback"></a>フィードバックをお寄せください
 
 お客様からのフィードバックを重視しています。
 
 * ドキュメントを確認していだだき、ドキュメントに関する質問や問題があれば、[問題を送信](https://github.com/OfficeDev/office-js-docs/issues)してお知らせください。
 * プログラミングの経験と、今後のバージョンまたはコード サンプルなどで希望されるものについてお知らせください。ご提案やアイデアの入力には、[UserVoice サイト](http://officespdev.uservoice.com/)をご使用ください。
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 * [Office アドインを使う](https://dev.office.com/getting-started/addins?product=word)
 * [Word add-ins on GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&query=Word)

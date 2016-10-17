@@ -1,9 +1,9 @@
 
-# Labs.GetActionsCommandData
+# <a name="labs.getactionscommanddata"></a>Labs.GetActionsCommandData
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Allows you to retrieve data associated with a [LabsJS.Labs.Core.GetActions](../../reference/office-mix/labsjs.labs.core.getactions.md) command.
+[LabsJS.Labs.Core.GetActions](../../reference/office-mix/labsjs.labs.core.getactions.md) コマンドに関連付けられているデータを取得できるようにします。
 
 ```
 interface GetActionsCommandData
@@ -12,10 +12,10 @@ interface GetActionsCommandData
 
 ## 
 
- **パラメーター**
+ **Parameters**
 
 
 |||
 |:-----|:-----|
-| `type: string`|The type of get action.|
+| `type: string`|get アクションのタイプ。|
 | `options: Labs.Core.IGetActionOptions`|Options ([Labs.Core.IGetActionOptions](../../reference/office-mix/labs.core.igetactionoptions.md)) for the get command.|

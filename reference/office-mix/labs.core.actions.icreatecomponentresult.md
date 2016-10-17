@@ -1,16 +1,16 @@
 
-# Labs.Core.Actions.ICreateComponentResult
+# <a name="labs.core.actions.icreatecomponentresult"></a>Labs.Core.Actions.ICreateComponentResult
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-The [Labs.Core.IActionResult](../../reference/office-mix/labs.core.iactionresult.md) result of creating a new component.
+[Labs.Core.IActionResult](../../reference/office-mix/labs.core.iactionresult.md) によって新しいコンポーネントが作成されます。
 
 ```
 interface ICreateComponentResult extends Core.IActionResult
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

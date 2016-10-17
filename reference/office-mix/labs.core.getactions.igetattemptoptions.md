@@ -1,5 +1,5 @@
-﻿
-# Labs.Core.GetActions.IGetAttemptOptions
+
+# <a name="labs.core.getactions.igetattemptoptions"></a>Labs.Core.GetActions.IGetAttemptOptions
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,7 +10,7 @@ interface IGetAttemptOptions extends Core.IGetActionOptions
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

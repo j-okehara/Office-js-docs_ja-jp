@@ -1,5 +1,5 @@
 
-# CustomXmlNode.namespaceUri プロパティ
+# <a name="customxmlnode.namespaceuri-property"></a>CustomXmlNode.namespaceUri プロパティ
 [CustomXMLPart](../../reference/shared/customxmlpart.customxmlpart.md) の GUID を文字列で取得します。
 
 |||
@@ -13,12 +13,12 @@ var myNsUri = customXmlNodeObj.namespaceUri;
 ```
 
 
-## 戻り値
+## <a name="return-value"></a>戻り値
 
 **string** で取得するカスタム XML パーツの GUID。
 
 
-## 例
+## <a name="example"></a>例
 
 
 
@@ -44,7 +44,7 @@ function write(message){
 
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このプロパティは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのプロパティをサポートしないことを示します。
@@ -54,24 +54,24 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 
 ||**Windows デスクトップ版 Office**|**Office Online (ブラウザー)**|**Office for iPad**|
 |:-----|:-----|:-----|:-----|
-|**Word**|Y||Y|
+|**Word**|Y|Y|Y|
 
 |||
 |:-----|:-----|
 |**要件セットに指定できるもの**|CustomXmlParts|
 |**最小限のアクセス許可レベル**|[ReadWriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**アプリの種類**|作業ウィンドウ|
+|**アドインの種類**|作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 ****
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|Office for iPad における Word のサポートが追加されました。|
 |1.0|導入|

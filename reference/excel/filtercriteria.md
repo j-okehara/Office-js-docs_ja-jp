@@ -1,10 +1,10 @@
-﻿# FilterCriteria オブジェクト (JavaScript API for Excel)
+# <a name="filtercriteria-object-(javascript-api-for-excel)"></a>FilterCriteria オブジェクト (JavaScript API for Excel)
 
-_適用対象: Excel 2016、Excel Online、Excel for iOS、Office 2016_
+_適用対象:Excel 2016、Excel Online、Excel for iOS、Office 2016_
 
 列に適用するフィルター条件を表します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
@@ -15,33 +15,33 @@ _適用対象: Excel 2016、Excel Online、Excel for iOS、Office 2016_
 |filterOn|string|値を表示するかどうかを判別するために、フィルターで使用するプロパティ。使用可能な値は次のいずれかです。    BottomItems、BottomPercent、CellColor、Dynamic、FontColor、Values、TopItems、TopPercent、Icon、Custom |
 |values|object[]|「値」フィルター処理の一部として使用する値のセット。|
 
-## リレーションシップ
+## <a name="relationships"></a>リレーションシップ
 | リレーションシップ | 型   |説明|
 |:---------------|:--------|:----------|
-|アイコン|[Icon](icon.md)|セルをフィルター処理するために使用するアイコン。「アイコン」フィルター処理で使用します。|
+|icon|[Icon](icon.md)|セルをフィルター処理するために使用するアイコン。「アイコン」フィルター処理で使用します。|
 |operator|[FilterOperator](filteroperator.md)|「カスタム」フィルター処理を使用するときに、条件 1 と条件 2 を結合するために使用する演算子。|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void

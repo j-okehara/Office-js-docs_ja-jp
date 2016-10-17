@@ -1,16 +1,16 @@
 
-# Labs.Core.IConfigurationInstance
+# <a name="labs.core.iconfigurationinstance"></a>Labs.Core.IConfigurationInstance
 
- _**適用対象:** Office 用のアプリ | Office アドイン | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-ラボ構成のインスタンスの基本クラスです。 インスタンスは、指定のユーザーの構成をインスタンス化したものであり、ラボの特定の実行における構成の変換ビューが含まれています。 このビューでは、非表示の情報 (ヒントや回答など) が除外される場合があります。また、このビューには、さまざまなインスタンスを識別する ID が含まれます。
+ラボ構成のインスタンスの基底クラス。インスタンスは、指定のユーザーの構成をインスタンス化したものであり、ラボの特定の実行における構成の変換ビューが含まれています。このビューでは、非表示の情報 (ヒントや回答など) が除外される場合があります。また、このビューには、さまざまなインスタンスを識別する ID が含まれます。
 
 ```
 interface IConfigurationInstance extends Core.IUserData
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

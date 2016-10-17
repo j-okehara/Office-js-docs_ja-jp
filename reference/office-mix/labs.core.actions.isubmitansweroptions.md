@@ -1,16 +1,16 @@
 
-# Labs.Core.Actions.ISubmitAnswerOptions
+# <a name="labs.core.actions.isubmitansweroptions"></a>Labs.Core.Actions.ISubmitAnswerOptions
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Options available for the submit answer action.
+応答送信のアクションで使用できるオプション。
 
 ```
 interface ISubmitAnswerOptions extends Core.IActionOptions
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

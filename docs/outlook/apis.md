@@ -1,11 +1,11 @@
 
-# Outlook アドインの API
+# <a name="outlook-add-in-apis"></a>Outlook アドインの API
 
 Outlook アドインで API を使用するには、Office.js ライブラリの場所、要件セット、スキーマ、アクセス許可を指定する必要があります。
 
-## Office.js ライブラリ
+## <a name="office.js-library"></a>Office.js ライブラリ
 
-Outlook アドイン API を操作するには、Office.js の JavaScript API を使用する必要があります。 ライブラリの CDN は _https://appsforoffice.microsoft.com/lib/1/hosted/Office.js_ です。 Office ストアに送信されるアドインは、この CDN で Office.js を参照する必要があります。ローカル参照は使用できません。 
+Outlook アドイン API を操作するには、Office.js の JavaScript API を使用する必要があります。ライブラリの CDN は _https://appsforoffice.microsoft.com/lib/1/hosted/Office.js_ です。Office ストアに送信されるアドインは、この CDN で Office.js を参照する必要があります。ローカル参照は使用できません。 
 
 CDN は、アドインの UI を実装する Web ページ (.html、.aspx、または .php ファイル) の **head** タグ内の **script** タグの **src** 属性で宣言します。
 
@@ -16,9 +16,9 @@ CDN は、アドインの UI を実装する Web ページ (.html、.aspx、ま�
 
 新しい API が追加されても、Office.js への URL は同じままになります。URL 内のバージョンは、既存の API の動作を分割する場合にのみ変更されます。
 
-> **重要:**Office ホスト アプリケーションのアドインを開発する場合は、ページの `<head>` セクションの内側から JavaScript API for Office を参照します。 これにより、あらゆる body 要素の前に API が完全に初期化されます。 Office ホストでは、アクティブ化の 5 秒以内にアドインを初期化する必要があります。 このしきい値を超えるとアドインが応答なしと宣言され、ユーザーにエラー メッセージが表示されます。  
+> **重要:**Office ホスト アプリケーションのアドインを開発する場合は、ページの `<head>` セクションの内側から JavaScript API for Office を参照します。これにより、あらゆる body 要素の前に API が完全に初期化されます。Office ホストでは、アクティブ化の 5 秒以内にアドインを初期化する必要があります。このしきい値を超えるとアドインが応答なしと宣言され、ユーザーにエラー メッセージが表示されます。  
 
-## 要件セット
+## <a name="requirement-sets"></a>要件セット
 
 すべての Outlook API は、メールボックス要件セットに属しています。メールボックス要件セットには複数のバージョンがあり、リリースされる API の新しいセットはそれぞれのセットの上位バージョンに属します。すべての Outlook クライアントが、リリースされる最新の API のセットをサポートするわけではありませんが、ある要件セットのサポートを宣言している Outlook クライアントは、その要件セットのすべての API をサポートします。 
 
@@ -42,12 +42,12 @@ if (item.somePropertyOrFunction) {
 **Methods** 要素は Outlook アドインには適用されないため、特定のメソッドについてのサポートは宣言できません。
 
 
-## アクセス許可
+## <a name="permissions"></a>アクセス許可
 
 アドインには、そのアドインが必要とする API を使用するための適切なアクセス許可が必要になります。アクセス許可には、4 つのレベルがあります。詳細については、「[Outlook アドインのアクセス許可モデルを理解する](../outlook/understanding-outlook-add-in-permissions.md)」を参照してください。
 
 
-|**権限レベル**|**説明**|
+|**アクセス許可レベル**|**説明**|
 |:-----|:-----|
 |Restricted|エンティティは使用できますが、正規表現は使用できません。|
 |アイテムの読み取り|_Restricted_ で許可されているものに加えて、以下のものが許可されます。<ul><li>正規表現</li><li>Outlook アドイン API の読み取りアクセス</li><li>アイテムのプロパティとコールバック トークンの取得</li></ul>|
@@ -56,7 +56,7 @@ if (item.somePropertyOrFunction) {
 通常は、アドインで必要になる最小限のアクセス許可を指定する必要があります。アクセス許可は、マニフェストの **Permissions** 要素で宣言されます。詳細については、「[Outlook アドインのマニフェスト](../outlook/manifests/manifests.md)」を参照してください。セキュリティ上の問題については、「[Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](../outlook/../../docs/develop/privacy-and-security.md)」を参照してください。
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 - [Outlook アドインのマニフェスト](../outlook/manifests/manifests.md)
 

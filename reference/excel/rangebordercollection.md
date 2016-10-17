@@ -1,21 +1,21 @@
-﻿# RangeBorderCollection オブジェクト (JavaScript API for Excel)
+# <a name="rangebordercollection-object-(javascript-api-for-excel)"></a>RangeBorderCollection オブジェクト (JavaScript API for Excel)
 
 範囲の境界線を構成する複数の境界線オブジェクトを表します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
 |count|int|コレクションに含まれる境界線オブジェクトの数。読み取り専用です。|
-|Items|[RangeBorder[]](rangeborder.md)|rangeBorder オブジェクトのコレクション。読み取り専用です。|
+|items|[RangeBorder[]](rangeborder.md)|rangeBorder オブジェクトのコレクション。読み取り専用です。|
 
-_プロパティのアクセスの[例](#例)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 なし
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
@@ -23,26 +23,26 @@ _プロパティのアクセスの[例](#例)を参照してください。_
 |[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|オブジェクトのインデックスを使用して、境界線オブジェクトを取得します。|
 |[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### getItem(index: string)
+### <a name="getitem(index:-string)"></a>getItem(index: string)
 オブジェクトの名前を使用して、境界線オブジェクトを取得します。 
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeBorderCollectionObject.getItem(index);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |index|string|取得する境界線オブジェクトのインデックス値。使用可能な値は次のとおりです。EdgeTop、EdgeBottom、EdgeLeft、EdgeRight、InsideVertical、InsideHorizontal、DiagonalDown、DiagonalUp|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 [RangeBorder](rangeborder.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 Excel.run(function (ctx) { 
     var sheetName = "Sheet1";
@@ -64,7 +64,7 @@ Excel.run(function (ctx) {
 ```
 
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 
 Excel.run(function (ctx) { 
@@ -86,23 +86,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getItemAt(index: number)
+### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
 オブジェクトのインデックスを使用して、境界線オブジェクトを取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeBorderCollectionObject.getItemAt(index);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |index|number|取得するオブジェクトのインデックス値。0 を起点とする番号になります。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 [RangeBorder](rangeborder.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 
 Excel.run(function (ctx) { 
@@ -124,22 +124,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
-### プロパティのアクセスの例
+### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 ```js
 Excel.run(function (ctx) { 

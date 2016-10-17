@@ -1,5 +1,5 @@
 
-# Outlook の予定またはメッセージを作成するときに受信者を取得、設定、または追加する
+# <a name="get,-set,-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Outlook の予定またはメッセージを作成するときに受信者を取得、設定、または追加する
 
 
 JavaScript API for Office の提供する非同期メソッド ([Recipients.getAsync](../../reference/outlook/Recipients.md)、[Recipients.setAsync](../../reference/outlook/Recipients.md)、または [Recipients.addAysnc](../../reference/outlook/Recipients.md)) はそれぞれ予定またはメッセージの新規作成フォームで受信者を取得、設定、または追加するためのメソッドです。これらの非同期メソッドは新規作成アドインでのみ使用できます。これらのメソッドを使用する場合は、新規作成フォームでアドインをアクティブにできるようにアドイン マニフェストが Outlook 用に適切にセット アップされていることを確認してください。手順については、「[新規作成フォーム用の Outlook アドインを作成する](../outlook/compose-scenario.md)」を参照してください。
@@ -27,7 +27,7 @@ item.cc.getAsync
 JavaScript API for Office のほとんどの非同期メソッドと同じように、**getAsync**、**setAsync**、および **addAsync** はオプションの入力パラメーターを受け取ります。これらのオプション入力パラメーターを指定する方法の詳細については、「[Office アドインにおける非同期プログラミング](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline)」の「[オプションのパラメーターを非同期メソッドに渡す](../../docs/develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
 
 
-## 受信者を取得するには
+## <a name="to-get-recipients"></a>受信者を取得するには
 
 
 このセクションでは、新規作成する予定やメッセージの受信者を取得し、その受信者の電子メール アドレスを表示するコード例を示します。下記のように、このコード例は、予定やメッセージ用の新規作成フォームでアドインをアクティブ化するルールがアドイン マニフェスト内にあることを前提にしています。 
@@ -139,7 +139,7 @@ function write(message){
 ```
 
 
-## 受信者を設定するには
+## <a name="to-set-recipients"></a>受信者を設定するには
 
 
 このセクションでは、ユーザーが新規作成する予定やメッセージの受信者を設定するコード例を示しています。受信者を設定すると、既存の受信者が上書きされます。この例では、前述の新規作成フォームで受信者を取得する例と同様に、アドインが予定とメッセージの新規作成フォームでアクティブ化されることを想定しています。この例では、まず予定かメッセージのうち該当する方の受信者を表す適切なプロパティに対して非同期メソッド  **Recipients.setAsync** を適用するために、新規作成するアイテムが予定かメッセージかを確認します。
@@ -266,7 +266,7 @@ function write(message){
 ```
 
 
-## 受信者を追加するには
+## <a name="to-add-recipients"></a>受信者を追加するには
 
 
 予定やメッセージの既存の受信者を上書きしない場合は、 **Recipients.setAsync** を使用する代わりに、 **Recipients.addAsync** 非同期メソッドを使用して受信者を付加できます。 **addAsync** の働きは **setAsync** と似ていて、 _recipients_ 入力引数が必要です。オプションで、コールバック メソッドを指定し、asyncContext パラメーターを使用してコールバックの引数を提供できます。その後コールバック メソッドの **asyncResult** 出力パラメーターを使用して、非同期 _addAsync_ 呼び出しの状態、結果、エラーをチェックできます。次の例は、新規作成されるアイテムが予定かどうかチェックし、その予定に 2 人の必須の出席者を付加します。
@@ -300,7 +300,7 @@ function addAttendees() {
 ```
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

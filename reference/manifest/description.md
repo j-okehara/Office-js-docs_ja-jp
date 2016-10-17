@@ -1,11 +1,11 @@
 
-# Description 要素
+# <a name="description-element"></a>Description 要素
 Office アドインの説明を 250 文字以下の文字列で指定します。
 
  **アドインの種類:**コンテンツ、作業ウィンドウ、メール
 
 
-## 構文:
+## <a name="syntax:"></a>構文:
 
 
 ```XML
@@ -13,12 +13,12 @@ Office アドインの説明を 250 文字以下の文字列で指定します�
 ```
 
 
-## 次に含まれる:
+## <a name="contained-in:"></a>次に含まれる:
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 
 
-## 含めることができるもの:
+## <a name="can-contain:"></a>含めることができるもの:
 
-[[優先]](../../reference/manifest/override.md)
+[Override](../../reference/manifest/override.md)
 

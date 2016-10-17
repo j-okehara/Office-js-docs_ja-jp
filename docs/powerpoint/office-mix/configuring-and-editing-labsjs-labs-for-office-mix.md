@@ -1,11 +1,11 @@
 
-# Office Mix 用 LabsJS ラボの構成と編集
+# <a name="configuring-and-editing-labsjs-labs-for-office-mix"></a>Office Mix 用 LabsJS ラボの構成と編集
 
 
 
 Office Mix は、ラボの構成の取得と設定のための office.js メソッドを提供しています。構成は、作成中のラボの種類と、ラボが返すデータ型を Office Mix に示します。この情報は、分析の収集と視覚化に使用されます。
 
-## ラボ エディターを取得する
+## <a name="getting-the-lab-editor"></a>ラボ エディターを取得する
 
 [Labs.LabEditor](../../../reference/office-mix/labs.labeditor.md) オブジェクトであるラボ エディターを使用すると、ラボを編集できるほか、ラボの構成の取得と設定ができます。ラボの編集が完了したら、 **Done** メソッドを呼び出す必要があります。ただし、編集中のラボを取り込んだり実行したりするとき以外は、 **Done** メソッドを呼び出す必要はありません。一度に開くことができるラボのインスタンスは 1 つのみであることに注意してください。
 
@@ -67,17 +67,17 @@ labEditor.getConfiguration((err, configuration) => {
 ```
 
 
-## エディターを閉じる
+## <a name="closing-the-editor"></a>エディターを閉じる
 
 エディターを閉じるには、ラボの編集が完了した時点で、エディターで  **Done** メソッドを呼び出します。ラボの取り込みと編集の両方は行えないことに注意してください。しかし、 **Done** を呼び出した後で、ラボの編集または実行のいずれかを行うことができます。
 
 
-## ラボを操作する
+## <a name="interacting-with-a-lab"></a>ラボを操作する
 
 ラボの構成を設定すると、ラボの操作を開始できる状態になります。ラボを PowerPoint 内で実行する場合、操作がシミュレートされます。ラボを Office Mix レッスン プレーヤー内で実行する場合、データは Office Mix データベースに格納されて分析に使用されます。
 
 
-### ラボのインスタンスを取得する
+### <a name="getting-the-lab-instance"></a>ラボのインスタンスを取得する
 
 ラボの操作は、 [Labs.LabInstance](../../../reference/office-mix/labs.labinstance.md) オブジェクトを使用して行います。このオブジェクトは、現在のユーザー用に構成されたラボのインスタンスです。ラボの実行 (または「取り込み」) を行うには、 [Labs.takeLab](../../../reference/office-mix/labs.takelab.md) 関数を呼び出します。
 
@@ -93,7 +93,7 @@ Labs.takeLab((err, labInstance) => {
 インスタンスのオブジェクトには、コンポーネントのインスタンス ([Labs.ComponentInstanceBase](../../../reference/office-mix/labs.componentinstancebase.md)、 [Labs.ComponentInstance](../../../reference/office-mix/labs.componentinstance.md)) の配列が含まれています。これらは、構成で指定したコンポーネントにマップされます。実際、インスタンスとは、単なる変換されたバージョンの構成であり、サーバー側の ID をインスタンス オブジェクトにアタッチし、該当する場合に特定のフィールド (ヒントと答えなど) をユーザーに表示しないようにするために使用されます。
 
 
-### 状態を管理する
+### <a name="managing-state"></a>状態を管理する
 
 状態は、特定のラボを実行するユーザーに関連付けられた一時的な記憶域です。記憶域を使用すると、連続したラボの呼び出し間で情報を保持できます。たとえば、プログラミングのラボでは、ユーザーによる進行中の現在の作業を格納できます。
 
@@ -120,7 +120,7 @@ labInstance.getState((err, state) => {
 ```
 
 
-## コンポーネントのインスタンスと結果
+## <a name="component-instances-and-results"></a>コンポーネントのインスタンスと結果
 
 続いて、4 種類のコンポーネントのインスタンスを実装する方法について概要を説明します。また、コンポーネントのメソッドの簡単な例を示します。 
 
@@ -178,7 +178,7 @@ hints[0].getValue((err, hint) => {
 ```
 
 
-### ActivityComponentInstance
+### <a name="activitycomponentinstance"></a>ActivityComponentInstance
 
 
 **ActivityComponentInstace** オブジェクトを使用して、ユーザーによるアクティビティ コンポーネントの操作を追跡します。このクラスは、ユーザーがアクティビティの操作を終了したことを示す **complete** メソッドを提供します。このメソッドは、ユーザーによる割り当てられたタスクの完了、読み取りの終了、またはアクティビティに関連付けられたその他すべてのエンド ポイントを示すことができます。次のコードは、**complete** メソッドの使用方法を示しています。
@@ -191,7 +191,7 @@ attempt.complete((err, unused) => {
 ```
 
 
-### ChoiceComponentInstance
+### <a name="choicecomponentinstance"></a>ChoiceComponentInstance
 
 
 **ChoiceComponentInstance** オブジェクトを使用して、ユーザーによる選択コンポーネントの操作を追跡します。選択コンポーネントとは、選択肢の一覧がユーザーに表示され、ユーザーがそこから選択をする形式の問題です。正答はある場合とない場合があります。このクラスには、主な 2 つのメソッド (**getSubmissions** と **submit**) があります。**getSubmissions** メソッドを使用すると、以前格納された送信内容を取得することができます。**submit** メソッドを使用すると、新しい送信内容を格納することができます。次のコード例は、これらのメソッドの使用方法を示しています。
@@ -214,7 +214,7 @@ this._attempt.submit(
 ```
 
 
-### InputComponentInstance
+### <a name="inputcomponentinstance"></a>InputComponentInstance
 
 
 **InputComponentInstance** オブジェクトを使用して、ユーザーによる入力コンポーネントの操作を追跡します。このクラスには、主な 2 つのメソッド (**getSubmission** と **submit**) があります。**getSubmissions** メソッドを使用すると、以前格納された送信内容を取得することができます。**submit** メソッドを使用すると、新しい送信内容を格納することができます。次のコード スニペットは、**getSubmissions** メソッドの使用方法を示しています。
@@ -239,7 +239,7 @@ this._attempt.submit(
 ```
 
 
-### DynamicComponentInstance
+### <a name="dynamiccomponentinstance"></a>DynamicComponentInstance
 
 
 **DynamicComponentInstance** オブジェクトを使用して、ユーザーによる動的コンポーネントの操作を追跡します。このクラスの主なメソッドは、**getComponents**、**createComponent**、および **close** です。
@@ -297,11 +297,11 @@ dynamicComponentInstance.close((err, unused) => {
 ```
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 
 - [Office Mix アドイン](../../powerpoint/office-mix/office-mix-add-ins.md)
     
-- [チュートリアル: Office Mix 用の最初のラボの作成](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md#walkthrough-creating-your-first-lab-for-office-mix)
+- [チュートリアル:Office Mix 用の最初のラボを作成する](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md#walkthrough-creating-your-first-lab-for-office-mix)
     

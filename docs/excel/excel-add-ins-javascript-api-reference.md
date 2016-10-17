@@ -1,4 +1,4 @@
-# Excel の JavaScript API リファレンス
+# <a name="excel-javascript-api-reference"></a>Excel の JavaScript API リファレンス
 
 Excel の JavaScript API を使用して、Excel 2016 用アドインをビルドします。API で使用できる Excel オブジェクトの概要を次に示します。オブジェクトのページの各リンクには、オブジェクトで使用できるプロパティ、リレーションシップ、メソッドの説明が含まれています。リンクを調べて詳細を確認してください。
 
@@ -25,7 +25,7 @@ Excel の JavaScript API を使用して、Excel 2016 用アドインをビル�
 * [要求のコンテキスト](../../reference/excel/requestcontext.md): RequestContext オブジェクトは、Excel アプリケーションへの要求を容易にします。
 
 
-##### その他のリソース
+##### <a name="additional-resources"></a>その他のリソース
 
 *  [Excel アドインのプログラミングの概要](excel-add-ins-javascript-programming-overview.md)
 *  [最初の Excel アドインをビルドする](build-your-first-excel-add-in.md)

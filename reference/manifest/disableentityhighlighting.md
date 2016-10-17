@@ -1,11 +1,11 @@
 
-# DisableEntityHighlighting 要素
+# <a name="disableentityhighlighting-element"></a>DisableEntityHighlighting 要素
 メール アドインでエンティティの強調表示をオフにするかどうかを指定します。
 
  **アドインの種類:**メール
 
 
-## 構文:
+## <a name="syntax:"></a>構文:
 
 
 ```XML
@@ -13,7 +13,7 @@
 ```
 
 
-## 次に含まれる:
+## <a name="contained-in:"></a>次に含まれる:
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 

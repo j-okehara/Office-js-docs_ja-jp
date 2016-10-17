@@ -1,6 +1,6 @@
 
-# BindingDataChangedEventArgs.binding プロパティ
-**DataChanged** イベントが発生したバインドを表す[Binding](../../reference/shared/binding.bindingdatachangedevent.md) オブジェクトを取得します。
+# <a name="bindingdatachangedeventargs.binding-property"></a>BindingDataChangedEventArgs.binding プロパティ
+**DataChanged** イベントが発生したバインドを表す [Binding](../../reference/shared/binding.bindingdatachangedevent.md) オブジェクトを取得します。
 
 |||
 |:-----|:-----|
@@ -12,12 +12,12 @@ var myBinding = eventArgsObj.binding;
 ```
 
 
-## 戻り値
+## <a name="return-value"></a>戻り値
 
 [Binding](../../reference/shared/binding.md) オブジェクト。
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このプロパティは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのプロパティをサポートしないことを示します。
@@ -36,15 +36,15 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 
 |||
 |:-----|:-----|
-|**最小限のアクセス許可レベル**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**アプリの種類**|コンテンツ、作業ウィンドウ|
+|**最小限のアクセス許可レベル**|[制限あり](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**アドインの種類**|コンテンツ、作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|Office for iPad における Excel と Word のサポートが追加されました。|
 |1.1|Access 用のアドインのサポートが追加されました。|

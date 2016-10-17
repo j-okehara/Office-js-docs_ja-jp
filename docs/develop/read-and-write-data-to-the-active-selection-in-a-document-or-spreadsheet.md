@@ -1,13 +1,12 @@
-
-# ドキュメントまたはスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み
+﻿
+# <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>ドキュメントまたはスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み
 
 [Document](../../reference/shared/document.md) オブジェクトが公開しているメソッドを使用すると、ユーザーのドキュメントまたはスプレッドシート内の現在の選択範囲への読み取りと書き込みを行うことができます。これは、**Document** オブジェクトの **getSelectedDataAsync** メソッドと **setSelectedDataAsync** メソッドで行います。このトピックでは、ユーザーの選択範囲の読み取り方法、書き込み方法、およびその変更を検出するイベント ハンドラーの作成方法についても説明します。
 
-
   **getSelectedDataAsync** メソッドは、現在のユーザーの選択範囲のみに実行されます。実行中のアドインのセッション間で読み取りおよび書き取りに同じ選択範囲を利用できるように、ドキュメントの選択範囲を保持する必要がある場合、[Bindings.addFromSelectionAsync](http://msdn.microsoft.com/en-us/library/edc99214-e63e-43f2-9392-97ead42fc155.aspx) メソッドを使用 (または、[Bindings](http://msdn.microsoft.com/en-us/library/09979e31-3bfb-45be-adda-0f7cc2db1fe1.aspx) オブジェクトの他の "addFrom" メソッドの 1 つでバインドを作成) して、バインドを追加する必要があります。ドキュメントの領域にバインドを作成して、バインドの読み取りおよび書き込みを行う詳細については、「[ドキュメントまたはスプレッドシート内の領域へのバインド](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)」を参照してください。
 
 
-### 選択されたデータを読み取る
+### <a name="read-selected-data"></a>選択されたデータを読み取る
 
 
 次の例は、ドキュメント内の選択範囲のデータを [getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) メソッドで取得する方法を示しています。
@@ -39,7 +38,7 @@ function write(message){
 [if](../../reference/shared/asyncresult.error.md) ステートメントでは、呼び出しが成功したかどうかの判定に **AsyncResult.status** プロパティを使用します。[Office.AsyncResultStatus](../../reference/shared/asyncresultstatus-enumeration.md) は **AsyncResult.status** プロパティが取ることのできる値を表す列挙型です。**Office.AsyncResultStatus.Failed** は文字列 "failed" として評価されます (こちらもリテラル文字列で指定することもできます)。
 
 
-### 選択範囲にデータを書き込む
+### <a name="write-data-to-the-selection"></a>選択範囲にデータを書き込む
 
 
 次の例は、"Hello World!" を表示するために選択範囲を設定する方法を示しています。
@@ -65,7 +64,7 @@ _data_ パラメーターに異なるオブジェクト型を渡すと、結果�
  **注意:** Excel 2013 SP1 および Excel Online の関連するビルドのリリースから、[現在の選択範囲にテーブルを書き込む際に書式設定](../../docs/excel/format-tables-in-add-ins-for-excel.md)ができるようになりました。
 
 
-### 選択範囲の変更を検出する
+### <a name="detect-changes-in-the-selection"></a>選択範囲の変更を検出する
 
 
 次の例は、[Document.addHandlerAsync](../../reference/shared/document.addhandlerasync.md) メソッドを使用して、[SelectionChanged](../../reference/shared/document.selectionchanged.event.md) イベントのイベント ハンドラーをドキュメント上に追加することで、選択範囲の変更を検出する方法を示しています。
@@ -94,7 +93,7 @@ function write(message){
  >**メモ**   **addHandlerAsync** メソッドを再び呼び出して、 _handler_ パラメーターに追加のイベント ハンドラー関数を指定すると、特定のイベントに複数のイベント ハンドラーを追加できます。この場合、各イベント ハンドラー関数の名前は一意である必要があります。
 
 
-### 選択範囲の変更の検出を中止する
+### <a name="stop-detecting-changes-in-the-selection"></a>選択範囲の変更の検出を中止する
 
 
 次の例は、[document.removeHandlerAsync](../../reference/shared/document.selectionchanged.event.md) メソッドを呼び出して、[Document.SelectionChanged](../../reference/shared/document.removehandlerasync.md) イベントのリッスンを中止する方法を示しています。
@@ -107,5 +106,5 @@ Office.context.document.removeHandlerAsync("documentSelectionChanged", {handler:
 2 番目の  _handler_ パラメーターとして渡される `myHandler` 関数名は、 **SelectionChanged** イベントから削除されるイベント ハンドラーを指定します。
 
 
- >**重要:****removeHandlerAsync** メソッドを呼び出すときにオプションの _handler_ パラメーターを省略すると、指定された _eventType_ のすべてのイベント ハンドラーが削除されます。
+ >**重要:** **removeHandlerAsync** メソッドを呼び出すときにオプションの _handler_ パラメーターを省略すると、指定された _eventType_ のすべてのイベント ハンドラーが削除されます。
 

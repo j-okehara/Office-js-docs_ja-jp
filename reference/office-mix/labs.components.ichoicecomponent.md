@@ -1,5 +1,5 @@
-﻿
-# Labs.Components.IChoiceComponent
+
+# <a name="labs.components.ichoicecomponent"></a>Labs.Components.IChoiceComponent
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,7 +10,7 @@ interface IChoiceComponent extends Labs.Core.IComponent
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |名前|説明|
@@ -20,5 +20,5 @@ interface IChoiceComponent extends Labs.Core.IComponent
 | `maxAttempts: number`|Maximum number of attempts allowed for the problem.|
 | `maxScore: number`|The maximum score for the problem.|
 | `hasAnswer: boolean`|問題に答えがある場合は、**True** です。|
-| `answer: any`|問題の答えです。 複数の答えがサポートされている場合は配列、答えが 1 つしかサポートされていない場合は単一の ID です。|
+| `answer: any`|問題の答えです。複数の答えがサポートされている場合は配列、答えが 1 つしかサポートされていない場合は単一の ID です。|
 | `secure: boolean`|テストがセキュリティで保護されているかどうかに限らず、セキュリティで保護されたフィールドはユーザーに公表されません。|

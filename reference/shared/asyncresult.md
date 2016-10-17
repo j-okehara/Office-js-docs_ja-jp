@@ -1,5 +1,5 @@
 
-# AsyncResult オブジェクト
+# <a name="asyncresult-object"></a>AsyncResult オブジェクト
 要求が失敗した場合の状態やエラー情報など、非同期要求の結果をカプセル化するオブジェクト。
 
 |||
@@ -12,7 +12,7 @@ AsyncResult
 ```
 
 
-## メンバー
+## <a name="members"></a>メンバー
 
 
 **プロパティ**
@@ -20,12 +20,12 @@ AsyncResult
 
 |**名前**|**説明**|
 |:-----|:-----|
-|**[asyncContext](../../reference/shared/asyncresult.asynccontext.md)**|呼び出されたメソッドの省略可能な  _asyncContext_ パラメーターに渡されたユーザー定義アイテムを、渡されたときと同じ状態で取得します。|
-|**[エラー](../../reference/shared/asyncresult.error.md)**|エラーの説明を提供する  **Error** オブジェクトを取得します (エラーが発生した場合)。|
+|**[asyncContext](../../reference/shared/asyncresult.asynccontext.md)**|呼び出されたメソッドの省略可能な _asyncContext_ パラメーターに渡されたユーザー定義アイテムを、渡されたときと同じ状態で取得します。|
+|**[error](../../reference/shared/asyncresult.error.md)**|エラーの説明を提供する **Error** オブジェクトを取得します (エラーが発生した場合)。|
 |**[status](../../reference/shared/asyncresult.status.md)**|非同期操作の状態を取得します。|
 |**[value](../../reference/shared/asyncresult.value.md)**|この非同期操作のペイロードまたはコンテンツを取得します (ある場合)。|
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 "Async" メソッドの _callback_ パラメーターに渡す関数が実行されると、[AsyncResult](../../reference/shared/asyncresult.md) オブジェクトを受け取ります。このオブジェクトには、コールバック関数の唯一のパラメーターからアクセスできます。
 
@@ -93,13 +93,18 @@ _callback_ 引数として渡される匿名関数 ( `function (result){...}`) �
 |**CustomXmlPrefixMappings** (Word のみ)|[addNamespaceAsync](../../reference/shared/customxmlprefixmappings.addnamespaceasync.md)|
 ||[getNamespaceAsync](../../reference/shared/customxmlprefixmappings.getnamespaceasync.md)|
 ||[getPrefixAsync](../../reference/shared/customxmlprefixmappings.getprefixasync.md)|
-|**Mailbox** (Outlook のみ)|[getUserIdentityTokenAsync](http://msdn.microsoft.com/library/c658518b-6867-41a0-99cf-810303e4c539%28Office.15%29.aspx)|
-||[makeEwsRequestAsync](http://msdn.microsoft.com/library/2ec380e0-4a67-4146-92a6-6a39f65dc6f2%28Office.15%29.aspx)|
-|**CustomProperties** (Outlook のみ)|[saveAsync](http://msdn.microsoft.com/library/690d5aa9-62b5-4e5c-9548-62dfdbb5fa56%28Office.15%29.aspx)|
-|**Item** (Outlook のみ)|[loadCustomPropertiesAsync](http://msdn.microsoft.com/library/dfbec151-8ea7-4915-b723-09ea1396a261%28Office.15%29.aspx)|
-|**RoamingSettings** (Outlook のみ)|[saveAsync](http://msdn.microsoft.com/library/a616f71c-a447-423f-a0d2-e9d6f1ac32f8%28Office.15%29.aspx)|
+|**Mailbox** (Outlook のみ)|
+  [getUserIdentityTokenAsync](http://msdn.microsoft.com/library/c658518b-6867-41a0-99cf-810303e4c539%28Office.15%29.aspx)|
+||
+  [makeEwsRequestAsync](http://msdn.microsoft.com/library/2ec380e0-4a67-4146-92a6-6a39f65dc6f2%28Office.15%29.aspx)|
+|**CustomProperties** (Outlook のみ)|
+  [saveAsync](http://msdn.microsoft.com/library/690d5aa9-62b5-4e5c-9548-62dfdbb5fa56%28Office.15%29.aspx)|
+|**Item** (Outlook のみ)|
+  [loadCustomPropertiesAsync](http://msdn.microsoft.com/library/dfbec151-8ea7-4915-b723-09ea1396a261%28Office.15%29.aspx)|
+|**RoamingSettings** (Outlook のみ)|
+  [saveAsync](http://msdn.microsoft.com/library/a616f71c-a447-423f-a0d2-e9d6f1ac32f8%28Office.15%29.aspx)|
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このメソッドは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。
@@ -123,14 +128,14 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 ****
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|Office for iPad で Excel、PowerPoint、および Word のサポートが追加されました。|
 |1.1|Access 用のアドインのサポートが追加されました。|

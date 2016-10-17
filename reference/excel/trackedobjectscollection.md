@@ -1,15 +1,15 @@
-﻿# TrackedObjectsCollection オブジェクト (JavaScript API for Office 2016)
+# <a name="trackedobjectscollection-object-(javascript-api-for-office-2016)"></a>TrackedObjectsCollection オブジェクト (JavaScript API for Office 2016)
 
 アドインが sync() バッチ間で範囲オブジェクトの参照を管理できるようにします。通常、Excel.run() では、明示的に追跡しなくても自動的にバッチ間で参照を維持できます。しかし、アドインのシナリオで範囲オブジェクトを手動で追跡および調整して基になる Excel 範囲の現在の状態を反映する必要がある場合には、このコレクションを使用してそのようなオブジェクトに追跡のマークを付けることができます。範囲オブジェクトに追跡のマークが付けられている場合は、エラーの場合でも、Excel でメモリを解放するために使用時に明示的に削除する必要があります。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 なし
 
-## 関係
+## <a name="relationships"></a>関係
 
 なし
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 trackedObjectsCollection オブジェクトは次の定義されたメソッドを持ちます:
 
@@ -17,29 +17,29 @@ trackedObjectsCollection オブジェクトは次の定義されたメソッド�
 |:-----------------|:--------|:----------|
 |[add(rangeObject:Range)](#addrangeobject-range)| Null             |範囲の新しい参照を作成します。|
 |[remove(rangeObject:Range)](#removerangeobject-range)| Null             |範囲の参照を削除します。  |
-|[removeAll()](#removeall)| Null|デバイス上のアドインによって作成されたすべての参照を削除します。|
+|[removeAll()](#removeallrangeobject-range)| Null|デバイス上のアドインによって作成されたすべての参照を削除します。|
 
 
-## API 仕様 
+## <a name="api-specification"></a>API 仕様 
 
-### add(rangeObject: range)
+### <a name="add(rangeobject:-range)"></a>add(rangeObject: range)
 trackedObjectsCollection に range オブジェクトを追加します。バッチ要求間での基になる範囲の変更が追跡され、フォロー アップの更新が範囲オブジェクトの現在の状態に適用されます。 
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 trackedObjectsCollection.add(rangeObject);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 
 パラメーター       | 型   | 説明
 --------------- | ------ | ------------
-`rangeObject`  | [範囲](range.md)| trackedObjectCollection に追加する必要のある Range オブジェクト。
+`rangeObject`  | [Range](range.md)| trackedObjectCollection に追加する必要のある Range オブジェクト。
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 Null
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 var sheetName = "Sheet1";
@@ -57,25 +57,25 @@ Excel.run(function (ctx) {
 ```
 
 
-### remove(rangeObject: range)
+### <a name="remove(rangeobject:-range)"></a>remove(rangeObject: range)
 
 参照オブジェクトをコレクションから削除します。これはメモリおよび追跡対象のオブジェクトの状態を維持するために必要なリソースを開放します。範囲オブジェクトに追跡のマークが付けられている場合は、エラーの場合でも明示的に削除することが必要です。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 trackedObjectsCollection.remove(rangeObject);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 
 パラメーター       | 型   | 説明
 --------------- | ------ | ------------
-`rangeObject`  | [範囲](range.md)| trackedObjectCollection から削除する必要のある Range オブジェクト。
+`rangeObject`  | [Range](range.md)| trackedObjectCollection から削除する必要のある Range オブジェクト。
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 Null
 
-#### 例
+#### <a name="examples"></a>例
 
 
 ```js
@@ -94,23 +94,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### removeAll(rangeObject: range)
+### <a name="removeall(rangeobject:-range)"></a>removeAll(rangeObject: range)
 
 デバイス上のアドインによって作成されたすべての参照を削除します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 trackedObjectsCollection.removeAll();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 
 なし
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 Null
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 Excel.run(function (ctx) { 

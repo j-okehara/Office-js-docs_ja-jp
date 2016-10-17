@@ -1,14 +1,14 @@
 
-# Labs.Core Classes
-Class in the  **LabsJS.Labs.Core** module
+# <a name="labs.core-classes"></a>Labs.Core Classes
+**LabsJS.Labs.Core** モジュール内のクラス
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-The  **LabsJS.Labs.Core** module contains the following classes.
+**LabsJS.Labs.Core** モジュールには次のクラスが含まれています。
 
 ## 
 
 
 |||
 |:-----|:-----|
-|[Labs.Core.Permissions](../../reference/office-mix/labs.core.permissions.md)|Static class representing the permissions enabled for a given user of the lab.|
+|[Labs.Core.Permissions](../../reference/office-mix/labs.core.permissions.md)|特定のラボのユーザーに対して有効な権限を表す静的クラス。|

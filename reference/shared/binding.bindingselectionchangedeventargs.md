@@ -1,5 +1,5 @@
 
-# BindingSelectionChangedEventArgs オブジェクト
+# <a name="bindingselectionchangedeventargs-object"></a>BindingSelectionChangedEventArgs オブジェクト
 [SelectionChanged](../../reference/shared/binding.bindingselectionchangedevent.md) イベントが発生したバインドに関する情報を提供します。
 
 |||
@@ -12,7 +12,7 @@ Office.EventType.BindingSelectionChanged
 ```
 
 
-## メンバー
+## <a name="members"></a>メンバー
 
 
 **プロパティ**
@@ -20,14 +20,14 @@ Office.EventType.BindingSelectionChanged
 
 |**名前**|**説明**|
 |:-----|:-----|
-|[binding](../../reference/shared/binding.bindingselectionchangedevent.binding.md)|[SelectionChanged](../../reference/shared/binding.md) イベントが発生したバインドを表す**Binding** オブジェクトを取得します。|
+|[binding](../../reference/shared/binding.bindingselectionchangedevent.binding.md)|[SelectionChanged](../../reference/shared/binding.md) イベントが発生したバインドを表す **Binding** オブジェクトを取得します。|
 |[columnCount](../../reference/shared/binding.bindingselectionchangedevent.columncount.md)|選択されている列の数を取得します。|
 |[rowCount](../../reference/shared/binding.bindingselectionchangedevent.rowcount.md)|選択されている行の数を取得します。|
 |[startRow](../../reference/shared/binding.bindingselectionchangedevent.startrow.md)|選択範囲の先頭行のインデックス (0 から始まる) を取得します。|
 |[startColumn](../../reference/shared/binding.bindingselectionchangedevent.startcolumn.md)|選択範囲の先頭列のインデックス (0 から始まる) を取得します。|
 |[type](../../reference/shared/binding.bindingselectionchangedevent.type.md)|発生したイベントの種類を識別する [EventType](../../reference/shared/eventtype-enumeration.md) 列挙値を取得します。|
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このメソッドは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。
@@ -42,22 +42,22 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |:-----|:-----|:-----|:-----|
 |**Access**||Y||
 |**Excel**|Y|Y|Y|
-|**Word**|Y||Y|
+|**Word**|Y|Y|Y|
 
 |||
 |:-----|:-----|
-|**アプリの種類**|コンテンツ、作業ウィンドウ|
+|**アドインの種類**|コンテンツ、作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 ****
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|Office for iPad における Excel と Word のサポートが追加されました。|
 |1.1|

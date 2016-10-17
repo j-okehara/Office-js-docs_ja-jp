@@ -1,16 +1,16 @@
 
-# Labs.Core.IConfigurationInfo
+# <a name="labs.core.iconfigurationinfo"></a>Labs.Core.IConfigurationInfo
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Information about the lab configuration.
+ラボ構成に関する情報。
 
 ```
 interface IConfigurationInfo
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

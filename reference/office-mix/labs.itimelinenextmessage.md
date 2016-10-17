@@ -1,9 +1,9 @@
 
-# Labs.ITimelineNextMessage
+# <a name="labs.itimelinenextmessage"></a>Labs.ITimelineNextMessage
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Base interface for next message on the timeline.
+タイムライン上の次のメッセージの基本インターフェイス。
 
 ```
 interface ITimelineNextMessage extends Labs.Core.IMessage
@@ -12,9 +12,9 @@ interface ITimelineNextMessage extends Labs.Core.IMessage
 
 ## 
 
- **パラメーター**
+ **Parameters**
 
 
 |||
 |:-----|:-----|
-| `status: Labs.Core.ICompletionStatus`|Provides the final status of the lab.|
+| `status: Labs.Core.ICompletionStatus`|ラボの最終的な状態を示します。|

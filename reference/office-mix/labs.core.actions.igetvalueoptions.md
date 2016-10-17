@@ -1,16 +1,16 @@
 
-# Labs.Core.Actions.IGetValueOptions
+# <a name="labs.core.actions.igetvalueoptions"></a>Labs.Core.Actions.IGetValueOptions
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Options available to the get value operation.
+get value 操作で使用できるオプション。
 
 ```
 interface IGetValueOptions extends Core.IActionOptions
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

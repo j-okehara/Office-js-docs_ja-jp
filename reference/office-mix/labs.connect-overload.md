@@ -1,5 +1,5 @@
-﻿
-# Labs.connect (overload)
+
+# <a name="labs.connect-(overload)"></a>Labs.connect (overload)
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,15 +10,15 @@ function connect(labHost: Core.ILabHost, callback: Core.ILabCallback<Core.IConne
 ```
 
 
-## パラメーター
+## <a name="parameters"></a>パラメーター
 
 
 |||
 |:-----|:-----|
 | _labHost_|省略可能。接続先の [Labs.Core.ILabHost](../../reference/office-mix/labs.core.ilabhost.md)インスタンスです。ホストを指定しない場合は、[Labs.DefaultHostBuilder](../../reference/office-mix/labs.defaulthostbuilder.md) を使用して構築されます。|
-| _callback_|Callback that fires once the connection has been established.|
+| _callback_|接続が確立すると起動するコールバック。|
 
-## Return value
+## <a name="return-value"></a>Return value
 
 Returns a connection to the host.
 

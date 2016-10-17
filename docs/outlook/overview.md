@@ -1,5 +1,5 @@
 
-# Outlook アドインのアーキテクチャと機能の概要
+# <a name="overview-of-outlook-add-ins-architecture-and-features"></a>Outlook アドインのアーキテクチャと機能の概要
 
 Outlook アドインは、XML マニフェストとコード (JavaScript と HTML) で構成されます。マニフェストは、アドインの名前と説明に加えて、アドインを Outlook に統合する方法を指定します。開発者は、マニフェストを使用して、コマンド サーフェスへのボタンを配置したり、正規表現に一致するもののリンクをオフにしたりすることなどができます。また、マニフェストは、アドインの JavaScript と HTML のコードをホストする URL を定義します。
 
@@ -13,12 +13,12 @@ Outlook アドインは、XML マニフェストとコード (JavaScript と HTM
 **ユーザーが Outlook を起動したときの一般的なコンポーネントの動作**
 
 ![Outlook メール アプリ開始時のイベントのフロー](../../images/olowawecon15_LoadingDOMAgaveRuntime.png)
-### バージョン管理
+### <a name="versioning"></a>バージョン管理
 
 Outlook クライアントとアドイン プラットフォームを発展させ、アドインを統合する新しい方法を追加していくときに、すべてのクライアント (Mac、Windows、Web、モバイル) に同時に機能を実装することができないことがあります。そういった状況に対処するため、Microsoft ではマニフェストと API の両方のバージョン管理を行っているため、プラットフォームは常時下位互換性をサポートします。つまり、開発者は、古いクライアントではダウン レベルの方法での動作をし、新しいクライアントでは新機能を利用することができるアドインを作成することができます。バージョン管理のしくみの詳細については、「 [Outlook アドインのマニフェスト](manifests/manifests.md)」をお読みください。
 
 
-## Outlook アドインの機能
+## <a name="outlook-add-in-features"></a>Outlook アドインの機能
 
 Outlook アドインは、さまざまなシナリオをサポートするために使用できる多数の豊富な機能を提供します。
 
@@ -31,16 +31,16 @@ Outlook アドインは、さまざまなシナリオをサポートするため
 |アドイン コマンド|Outlook アドイン コマンドは、リボンから特定のアドイン操作を開始する方法を提供します。これらのコマンドは、すべてのメールやイベントに適用されるモジュール拡張機能とアドインでのみ使用できます。詳細については、「[Outlook のアドイン コマンド](../outlook/add-in-commands-for-outlook.md)」を参照してください。 |
 |ローミングの設定|Outlook アドインでは、ユーザーのメールボックスに固有のデータを、ユーザーが後の Outlook セッションでアクセスできるように保存しておくことができます。詳細は、「 [Outlook アドインのアドイン メタデータの取得と設定](../outlook/metadata-for-an-outlook-add-in.md)」を参照してください。 |
 |カスタム プロパティ|Outlook アドインでは、ユーザーのメールボックス内のアイテムに固有なデータを、ユーザーが後の Outlook セッションでアクセスできるように保存しておくことができます。詳細は、「 [Outlook アドインのアドイン メタデータの取得と設定](../outlook/metadata-for-an-outlook-add-in.md)」を参照してください。|
-|添付ファイルまたは選択されたアイテム全体を取得する|コンテキスト Outlook アドインは、サーバー側から添付ファイルおよび選択されたアイテム全体にアクセスできます。 次のトピックを参照してください。<ul><li>添付ファイル - 「[サーバーから Outlook アイテムの添付ファイルを取得する](get-attachments-of-an-outlook-item.md)および「[Outlook で新規作成フォームのアイテムに添付ファイルを追加および削除する](add-and-remove-attachments-to-an-item-in-a-compose-form.md)」を参照してください。</li><li>選択されたアイテム全体 - これは、コールバック トークンを使用した添付ファイルの取得に似ています。 次のトピックを参照してください。<ul><li>[Office.context.mailbox](../../reference/outlook/Office.context.mailbox.md) の **mailbox.getCallbackTokenAsync** メソッド - Exchange サーバーのアドインのサーバー側コードを識別するコールバック トークンを指定します。</li><li>[Office.context.mailbox](../../reference/outlook/Office.context.mailbox.item.md) の **item.itemId** プロパティ - ユーザーが読み取り、サーバー側コードが取得するアイテムを指定します。</li><li>
+|添付ファイルまたは選択されたアイテム全体を取得する|コンテキスト Outlook アドインは、サーバー側から添付ファイルおよび選択されたアイテム全体にアクセスできます。次のトピックを参照してください。<ul><li>添付ファイル - 「[サーバーから Outlook アイテムの添付ファイルを取得する](get-attachments-of-an-outlook-item.md)および「[Outlook で新規作成フォームのアイテムに添付ファイルを追加および削除する](add-and-remove-attachments-to-an-item-in-a-compose-form.md)」を参照してください。</li><li>選択されたアイテム全体 - これは、コールバック トークンを使用した添付ファイルの取得に似ています。次のトピックを参照してください。<ul><li>[Office.context.mailbox](../../reference/outlook/Office.context.mailbox.md) の **mailbox.getCallbackTokenAsync** メソッド - Exchange サーバーのアドインのサーバー側コードを識別するコールバック トークンを指定します。</li><li>[Office.context.mailbox](../../reference/outlook/Office.context.mailbox.item.md) の **item.itemId** プロパティ - ユーザーが読み取り、サーバー側コードが取得するアイテムを指定します。</li><li>
   [Office.context.mailbox](../../reference/outlook/Office.context.mailbox.md) の **mailbox.ewsUrl** プロパティ - EWS エンドポイント URL を指定します。サーバー側コードはこれをコールバック トークンやアイテム ID と一緒に使用して、[GetItem](http://msdn.microsoft.com/en-us/library/e3590b8b-c2a7-4dad-a014-6360197b68e4(Office.15).aspx) EWS 操作にアクセスし、アイテム全体を取得することができます。</li></ul></li></ul>|
 |ユーザー プロファイル|メール アドインでは、ユーザーのプロファイル内の表示名、メール アドレス、タイム ゾーンにアクセスできます。詳しくは、「 [UserProfile](../../reference/outlook/Office.context.mailbox.userProfile.md) オブジェクト」をご覧ください。|
 
-## Outlook アドインの作成を開始する
+## <a name="get-started-building-outlook-add-ins"></a>Outlook アドインの作成を開始する
 
 Outlook アドインの作成を開始するには、「[Office 365 の Outlook アドインを使用する](https://dev.outlook.com/MailAppsGettingStarted/GetStarted)」または「[Outlook アドインと Outlook のナビゲーション バーの統合](../outlook/extension-module-outlook-add-ins.md)」を参照してください。
 
 
-## その他の技術情報
+## <a name="additional-resources"></a>その他の技術情報
 
 一般的に、Office アドインの開発に適用される概念については、以下の資料を参照してください。
 
@@ -48,9 +48,11 @@ Outlook アドインの作成を開始するには、「[Office 365 の Outlook 
 
 - [Office アドイン開発のベスト プラクティス](../../docs/design/add-in-development-best-practices.md)
 
-- [Office アドインおよび SharePoint アドインのライセンス](http://msdn.microsoft.com/library/3e0e8ff6-66d6-44ff-b0c2-59108ebd9181%28Office.15%29.aspx)
+- 
+  [Office アドインおよび SharePoint アドインのライセンス](http://msdn.microsoft.com/library/3e0e8ff6-66d6-44ff-b0c2-59108ebd9181%28Office.15%29.aspx)
 
-- [Office ストアに Office アドインと SharePoint アドインおよび Office 365 Web アプリを提出する](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
+- 
+  [Office ストアに Office アドインと SharePoint アドインおよび Office 365 Web アプリを提出する](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
 
 - [JavaScript API for Office](../../reference/javascript-api-for-office.md)
 

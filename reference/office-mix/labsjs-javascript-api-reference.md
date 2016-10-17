@@ -1,12 +1,12 @@
-﻿
-# LabsJS JavaScript API リファレンス
+
+# <a name="labsjs-javascript-api-reference"></a>LabsJS JavaScript API リファレンス
 LabsJS JavaScript オブジェクト モデルの概要について説明します。
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-LabsJS リファレンスは、 [TypeScript](http://www.typescriptlang.org/) ファイル **labs-1.0.42.d.ts** を文書化したものです。このファイルでは、LabsJS オブジェクト モデルがモジュールに分類されています。
+LabsJS リファレンスは、[TypeScript](http://www.typescriptlang.org/) ファイル **labs-1.0.42.d.ts** を文書化したものです。このファイルでは、LabsJS オブジェクト モデルがモジュールに分類されています。
 
-## LabsJS オブジェクト モデル
+## <a name="labsjs-object-model"></a>LabsJS オブジェクト モデル
 
 LabsJS オブジェクト モデルは次の 5 つのモジュールにまとめられています。
 
@@ -37,7 +37,7 @@ LabsJS オブジェクト モデルは次の 5 つのモジュールにまとめ
 
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

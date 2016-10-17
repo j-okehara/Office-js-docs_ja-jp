@@ -1,25 +1,25 @@
-﻿# Control 要素
+# <a name="control-element"></a>Control 要素
 
-アクションを実行したり、作業ウィンドウを起動する JavaScript 関数を定義します。 **Control** 要素は、[ボタン] または [メニュー] オプションのどちらかになります。 少なくとも 1 つの **Control** に 1 つの [Group](group.md) 要素を含む必要があります。
+アクションを実行したり、作業ウィンドウを起動する JavaScript 関数を定義します。**Control** 要素は、[ボタン] または [メニュー] オプションのどちらかになります。少なくとも 1 つの **Control** に 1 つの [Group](group.md) 要素を含む必要があります。
 
-## 属性
+## <a name="attributes"></a>属性
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|**xsi:type**|はい|定義されているコントロールの型。 [ボタン] または [メニュー] のいずれかを指定できます。|
-|**id**|いいえ|コントロール要素の ID です。 最大で 125 文字です。|
+|**xsi:type**|はい|定義されているコントロールの型。[ボタン] または [メニュー] のいずれかを指定できます。|
+|**id**|いいえ|コントロール要素の ID です。最大で 125 文字です。|
 
-## ボタン コントロール
+## <a name="button-control"></a>ボタン コントロール
 
 ボタンは、ユーザーが選択したときに 1 つのアクションを実行します。関数を実行するか、作業ウィンドウを表示します。各ボタン コントロールには、マニフェストで一意の `id` を持っている必要があります。 
 
-### 子要素
+### <a name="child-elements"></a>子要素
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **Label**     | はい |  ボタンのテキストです。 **resid** 属性には、**Resources** 属性の **ShortStrings** 要素にある [String](./resources.md#shortstrings) 要素の [id](./resources.md) 属性の値を設定する必要があります。        |
-|  **ヒント**  |いいえ|ボタンのヒントです。 **resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。 **String** 要素は、**LongStrings** 要素 ([Resources](resource.md) 要素の子要素) の子要素です。|     
+|  **Label**     | はい |  ボタンのテキストです。**resid** 属性には、**Resources** 属性の **ShortStrings** 要素にある [String](./resources.md#shortstrings) 要素の [id](./resources.md) 属性の値を設定する必要があります。        |
+|  **ToolTip**  |いいえ|ボタンのヒントです。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 ([Resources](resource.md) 要素の子要素) の子要素です。|     
 |  [Supertip](./supertip.md)  | はい |  このボタンのヒントです。    |
-|  [Icon](./icon.md)      | はい |  ボタンの画像。         |
+|  [Icon](./icon.md)      | はい |  ボタンの画像です。         |
 |  [Action](./action.md)    | はい |  実行するアクションを指定します。  |
 
 
@@ -65,7 +65,7 @@
                 </Control>
 ```
 
-### ExecuteFunction ボタンの例
+### <a name="executefunction-button-example"></a>ExecuteFunction ボタンの例
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
@@ -85,7 +85,7 @@
 </Control>
 ```
 
-### ShowTaskpane ボタンの例
+### <a name="showtaskpane-button-example"></a>ShowTaskpane ボタンの例
 
 ```xml
 <Control xsi:type="Button" id="msgReadOpenPaneButton">
@@ -104,7 +104,7 @@
   </Action>
 </Control>
 ```
-## メニュー (ドロップダウン ボタン) コントロール
+## <a name="menu-(dropdown-button)-controls"></a>メニュー (ドロップダウン ボタン) コントロール
 
 メニューは、静的なオプションの一覧を定義します。各メニュー項目は、関数を実行したり、作業ウィンドウを表示したりします。サブメニューはサポートされません。 
 
@@ -116,7 +116,7 @@
 
 When used with **PrimaryCommandSurface**, the root menu item displays as a button on the ribbon. When the button is selected, the submenu displays as a drop-down list. When used with  **ContextMenu**, a menu item with a submenu is inserted on the context menu. In both cases, individual submenu items can either execute a JavaScript function or show a task pane. Only one level of submenus is supported at this time.
 
-次の例では、2 つのサブメニュー項目を持つメニュー項目を定義する方法を示します。 最初のサブメニュー項目は作業ウィンドウを示し、2 番目のサブメニュー項目は JavaScript 関数を実行します。
+次の例では、2 つのサブメニュー項目を持つメニュー項目を定義する方法を示します。最初のサブメニュー項目は作業ウィンドウを示し、2 番目のサブメニュー項目は JavaScript 関数を実行します。
 
 ```xml
 <Control xsi:type="Menu" id="TestMenu2">
@@ -168,18 +168,18 @@ When used with **PrimaryCommandSurface**, the root menu item displays as a butto
 
 ```
 
-### 子要素
+### <a name="child-elements"></a>子要素
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **Label**     | はい |  ボタンのテキストです。 **resid** 属性は、[Resources](./resources.md) 要素の [ShortStrings](./resources.md#shortstrings) 要素にある **String** 要素の **id** 属性の値に設定する必要があります。      |
-|  **ヒント**  |いいえ|ボタンのヒントです。 **resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。 **String** 要素は、**LongStrings** 要素 ([Resources](resource.md) 要素の子要素) の子要素です。|     
+|  **Label**     | はい |  ボタンのテキストです。**resid** 属性は、[Resources](./resources.md) 要素の [ShortStrings](./resources.md#shortstrings) 要素にある **String** 要素の **id** 属性の値に設定する必要があります。      |
+|  **ToolTip**  |いいえ|ボタンのヒントです。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 ([Resources](resource.md) 要素の子要素) の子要素です。|     
 |  [Supertip](./supertip.md)  | はい |  このボタンのヒント。    |
 |  [Icon](./icon.md)      | はい |  ボタンの画像です。         |
-|  [Items](#items)     | はい |  メニュー内で表示するボタンのコレクションです。 各サブメニュー項目の **Item** 要素を含みます。 各 **Item** 要素は、[ボタン コントロール](#ボタン-コントロール)の子要素を含みます。|
+|  [Items](#items)     | はい |  メニュー内で表示するボタンのコレクションです。各サブメニュー項目の **Item** 要素を含みます。各 **Item** 要素は、[ボタン コントロール](#button-control)の子要素を含みます。|
 
 
-### メニュー コントロールの例
+### <a name="menu-control-examples"></a>メニュー コントロールの例
 
 ```xml
 <Control xsi:type="Menu" id="TestMenu2">

@@ -1,5 +1,5 @@
-﻿
-# Labs.Components.IActivityComponent
+
+# <a name="labs.components.iactivitycomponent"></a>Labs.Components.IActivityComponent
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,7 +10,7 @@ interface IActivityComponent extends Labs.Core.IComponent
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |名前|説明|

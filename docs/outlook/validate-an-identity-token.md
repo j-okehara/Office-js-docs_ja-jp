@@ -1,5 +1,5 @@
 
-# Exchange の ID トークンを検証する
+# <a name="validate-an-exchange-identity-token"></a>Exchange の ID トークンを検証する
 
 Outlook アドインから ID トークンが送信されることがありますが、要求を信頼する前に、適切な Exchange サーバーから受け取ったトークンであることを検証する必要があります。この記事では、C# で作成した検証オブジェクトで Exchange の ID トークンを検証する方法の例について説明します。なお、検証には他のプログラミング言語も使用できます。トークンの検証に必要な手順については、「[JSON Web Token (JWT) Internet Draft](http://self-issued.info/docs/draft-goland-json-web-token-00.mdl)」に記載されています。 
 
@@ -9,7 +9,7 @@ ID トークンの検証およびユーザーの一意識別子の取得は 4 �
 
 
 
-## ID トークンを検証するためのセットアップ
+## <a name="set-up-to-validate-your-identity-token"></a>ID トークンを検証するためのセットアップ
 
 
 この記事のコード例では、Windows Identity Foundation (WIF) と、WIF を JSON トークン用のハンドラーで拡張する DLL を使用します。必要なアセンブリは次の場所からダウンロードできます。
@@ -22,7 +22,7 @@ ID トークンの検証およびユーザーの一意識別子の取得は 4 �
 - [Windows.IdentityModel.Extensions.dll (64 ビット アプリケーション用)](http://download.microsoft.com/download/0/1/D/01D06854-CA0C-46F1-ADBA-EBF86010DCC6/MicrosoftIdentityExtensions-64.msi)
     
 
-## JSON Web トークンの抽出
+## <a name="extract-the-json-web-token"></a>JSON Web トークンの抽出
 
 
 **Decode** ファクトリ メソッドでは、Exchange サーバーからの JWT を、トークンを構成する 3 つの文字列に分割してから、2 番目の例で示す **Base64Decode** メソッドを使用して、JWT のヘッダーとペイロードを JSON 文字列にデコードします。その文字列を **JsonToken** のコンストラクターに渡し、この中で JWT の内容を検証して、**JsonToken** オブジェクトの新しいインスタンスを返します。
@@ -92,7 +92,7 @@ ID トークンの検証およびユーザーの一意識別子の取得は 4 �
 ```
 
 
-## JWT の解析
+## <a name="parse-the-jwt"></a>JWT の解析
 
 
 **JsonToken** オブジェクトのコンストラクターでは、JWT の構造と内容をチェックして、JWT が有効かどうかを判断します。これは認証メタデータ ドキュメントを要求する前に行うのが適切です。JWT に適切なクレームが含まれていない場合や、JWT が有効期間内でない場合に、Exchange サーバーへの呼び出しやそれに伴う遅延を回避できます。
@@ -148,7 +148,7 @@ ID トークンの検証およびユーザーの一意識別子の取得は 4 �
 ```
 
 
-### ValidateHeader メソッド
+### <a name="validateheader-method"></a>ValidateHeader メソッド
 
 **ValidateHeader** メソッドでは、必要なクレームがトークン ヘッダーに含まれているかどうかと、クレームが正しい値かどうかをチェックします。ヘッダーは次のように設定されている必要があります。それ以外の場合は、メソッドはアプリケーション例外をスローして終了します。
 
@@ -185,7 +185,7 @@ ID トークンの検証およびユーザーの一意識別子の取得は 4 �
 ```
 
 
-### ValidateLifetime メソッド
+### <a name="validatelifetime-method"></a>ValidateLifetime メソッド
 
 JWT には 2 つの日時が指定されています。1 つは "nbf" ("not before" の略) で、トークンが有効になる日時を表します。もう 1 つは "exp" で、トークンの有効期限が切れる日時を表します。これら 2 つの日時の間に該当するトークンのみを有効とみなします。このメソッドでは、トークンに指定された時刻の前後に 5 分間の余裕を持たせて確認を行うことによって、サーバーとクライアントの間の小さな時刻設定の違いが許容されます。
 
@@ -229,7 +229,7 @@ JWT には 2 つの日時が指定されています。1 つは "nbf" ("not befo
 **validFrom** ("nbf") と **validTo** ("exp") の日時は、1970 年 1 月 1 日からの経過秒数を表す UNIX 時間で送られます。Exchange サーバーと検証コードを実行するサーバーとの時差に伴う問題を回避するために、日付と時刻の計算には UTC を使用します。
 
 
-### ValidateAudience メソッド
+### <a name="validateaudience-method"></a>ValidateAudience メソッド
 
 ID トークンは、そのトークンを要求したアドインに対してのみ有効です。**ValidateAudience** メソッドでは、トークンの対象を表すクレームをチェックして、Outlook アドインが予期する URL と一致することを確認します。
 
@@ -256,7 +256,7 @@ ID トークンは、そのトークンを要求したアドインに対して�
 ```
 
 
-### ValidateVersion メソッド
+### <a name="validateversion-method"></a>ValidateVersion メソッド
 
 **ValidateVersion** メソッドは、ID トークンのバージョンをチェックし、予期するバージョンに一致することを確認します。トークンのバージョンが異なると、中のクレームも異なります。バージョンをチェックすることによって、予期するクレームが ID トークンに含まれていることを確認できます。
 
@@ -280,7 +280,7 @@ ID トークンは、そのトークンを要求したアドインに対して�
 ```
 
 
-### ValidateMetadataLocation メソッド
+### <a name="validatemetadatalocation-method"></a>ValidateMetadataLocation メソッド
 
 Exchange サーバー上に格納されている認証メタデータ オブジェクトには、ID トークン内の署名を検証するために必要な情報が含まれています。**ValidateMetadataLocation** メソッドは、ID トークンに認証メタデータの URL のクレームが含まれていることを確認します。署名を実際に検証する処理は次の手順で行います。
 
@@ -297,7 +297,7 @@ Exchange サーバー上に格納されている認証メタデータ オブジ�
 ```
 
 
-## ID トークンの署名の検証
+## <a name="validate-the-identity-token-signature"></a>ID トークンの署名の検証
 
 
 署名を検証するために必要なクレームが JWT に含まれていることを確認できたら、Windows Identity Foundation (WIF) と WIF 拡張を使用してトークンの署名を検証できます。署名の検証に必要な情報は次のとおりです。
@@ -362,7 +362,7 @@ Exchange サーバー上に格納されている認証メタデータ オブジ�
 **IdentityToken** オブジェクトのコンストラクターのコードでは、Exchange サーバーからのクレームでインスタンスのプロパティを設定する処理が大きな部分を占めています。このコンストラクターでは、**GetSecurityTokenHandler** メソッドを呼び出して、Exchange の ID トークンを検証するトークン ハンドラーを取得しています。**GetSecurityTokenHandler** メソッドは、**GetMetadataDocument** と **GetSigningCertificate** という 2 つのユーティリティ メソッドを呼び出して、Exchange サーバーから署名証明書を取得する処理を行います。以下のセクションではこれらのメソッドについて説明します。
 
 
-### GetSecurityTokenHandler メソッド
+### <a name="getsecuritytokenhandler-method"></a>GetSecurityTokenHandler メソッド
 
 **GetSecurityTokenHandler** メソッドでは、ID トークンを検証する WIF トークン ハンドラーを返します。メソッドのコードの大部分は、検証を実行するためのトークン ハンドラーの初期化ですが、**GetSigningCertificate** メソッドを呼び出して、トークンの署名に使用された X.509 証明書を Exchange サーバーから取得しています。
 
@@ -398,7 +398,7 @@ Exchange サーバー上に格納されている認証メタデータ オブジ�
 ```
 
 
-### GetSigningCertificate メソッド
+### <a name="getsigningcertificate-method"></a>GetSigningCertificate メソッド
 
 **GetSigningCertificate** メソッドでは、**GetMetadataDocument** メソッドを呼び出して Exchange サーバーから認証メタデータを取得し、認証メタデータ ドキュメントの最初の X.509 証明書を返します。ドキュメントが存在しない場合はアプリケーション例外をスローします。
 
@@ -424,7 +424,7 @@ Exchange サーバー上に格納されている認証メタデータ オブジ�
 ```
 
 
-### GetMetadataDocument メソッド
+### <a name="getmetadatadocument-method"></a>GetMetadataDocument メソッド
 
 認証メタデータ ドキュメントには、Exchange の ID トークンの署名を検証するために必要な情報が含まれています。ドキュメントは JSON 文字列として送られます。**GetMetatDataDocument** メソッドは、Exchange の ID トークンで指定された場所にドキュメントを要求し、JSON 文字列をカプセル化したオブジェクトを返します。URL に認証メタデータ ドキュメントが含まれていない場合はアプリケーション例外をスローします。
 
@@ -462,7 +462,7 @@ Exchange サーバー上に格納されている認証メタデータ オブジ�
  **セキュリティ メモ**  証明書検証のコールバック メソッドを使用する場合は、組織のセキュリティ要件を満たしていることを確認してください。
 
 
-## Exchange アカウントの一意 ID の計算
+## <a name="compute-the-unique-id-for-an-exchange-account"></a>Exchange アカウントの一意 ID の計算
 
 
 Exchange アカウントの一意識別子は、認証メタデータ ドキュメントの URL とアカウントの Exchange ID を使用してハッシュを求めることによって作成できます。この一意識別子は、Outlook アドイン Web サービスのシングル サインオン (SSO) システムの作成に使用できます。SSO での一意識別子の使用の詳細については、「[Exchange の ID トークンを使用してユーザーを認証する](../outlook/authenticate-a-user-with-an-identity-token.md)」を参照してください。
@@ -504,22 +504,22 @@ Exchange アカウントの一意識別子は、認証メタデータ ドキュ�
 ```
 
 
-## ユーティリティ オブジェクト
+## <a name="utility-objects"></a>ユーティリティ オブジェクト
 
 
 この記事のコード例では、使用する定数のフレンドリ名を定めるユーティリティ オブジェクトをいくつか使用しています。これらのユーティリティ オブジェクトを次の表に示します。
 
 
-**表 1: ユーティリティ オブジェクト**
+**表 1.ユーティリティ オブジェクト**
 
 
-|**Object**|**説明**|
+|**オブジェクト**|**説明**|
 |:-----|:-----|
 |**AuthClaimsType**|トークンの検証コードが使用するクレームの識別子を 1 か所にまとめます。|
 |**Config**|ID トークンを検証する定数を提供します。 |
 |**JsonAuthMetadataDocument**|Exchange サーバーから送られた JSON 認証メタデータ ドキュメントをカプセル化します。|
 
-### AuthClaimTypes オブジェクト
+### <a name="authclaimtypes-object"></a>AuthClaimTypes オブジェクト
 
 **AuthClaimTypes** オブジェクトは、トークンの検証コードが使用するクレームの識別子を 1 か所にまとめます。JWT の標準のクレームと Exchange の ID トークン用のクレームの両方を含みます。
 
@@ -554,7 +554,7 @@ Exchange アカウントの一意識別子は、認証メタデータ ドキュ�
 ```
 
 
-### Config オブジェクト
+### <a name="config-object"></a>Config オブジェクト
 
 **Config** オブジェクトは、ID トークンの検証に使用する定数と、ルート証明書までつながる X.509 証明書がサーバーにない場合に使用できる証明書検証のコールバック メソッドを含みます。
 
@@ -595,7 +595,7 @@ Exchange アカウントの一意識別子は、認証メタデータ ドキュ�
 ```
 
 
-### JsonAuthMetadataDocument オブジェクト
+### <a name="jsonauthmetadatadocument-object"></a>JsonAuthMetadataDocument オブジェクト
 
 **JsonAuthMetadataDocument** オブジェクトは、プロパティを通じて認証メタデータ ドキュメントの内容を公開します。
 
@@ -641,7 +641,7 @@ namespace IdentityTest
 ```
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

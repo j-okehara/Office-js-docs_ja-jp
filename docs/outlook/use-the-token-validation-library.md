@@ -1,13 +1,13 @@
 
-# Exchange Web サービス マネージ API トークン検証ライブラリを使用する
+# <a name="use-the-exchange-web-services-managed-api-token-validation-library"></a>Exchange Web サービス マネージ API トークン検証ライブラリを使用する
 
 Exchange Server 2013 または Exchange Online を実行するサーバーにアドインが要求する ID トークンを使用して、Outlook アドインのクライアントを識別できます。JSON Web トークンとしてフォーマットされたトークンは、Exchange サーバーの電子メール アカウントに一意の識別子を提供します。Exchange Web Services (EWS) マネージ API には ID トークンの使用を簡素化するヘルパー クラスがあります。
 
-## 検証ライブラリを使用する前提条件
+## <a name="prerequisites-for-using-the-validation-library"></a>検証ライブラリを使用する前提条件
 
 Exchange の ID トークンを検証するには、[EWS マネージ API ライブラリ](https://www.nuget.org/packages/Microsoft.Exchange.WebServices)をインストールする必要があります。
 
-## Exchange の ID トークンを検証する
+## <a name="validate-the-exchange-identity-token"></a>Exchange の ID トークンを検証する
 
 EWS マネージ API 検証ライブラリには、Exchange の ID トークンを管理する **AppIdentityToken** クラスがあります。次のメソッドは **AppIdentityToken** インスタンスを作成し、**Validate** メソッドを呼び出して、トークンが有効であることを検証する方法を示します。メソッドは、以下のパラメーターをとります。
 
@@ -34,7 +34,7 @@ private AppIdentityToken CreateAndValidateIdentityToken(string rawToken, string 
 }
 ```
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 - [Exchange の ID トークンを使用して Outlook アドインを認証する](../outlook/authentication.md)  
 - [Exchange の ID トークンの内部](../outlook/inside-the-identity-token.md)

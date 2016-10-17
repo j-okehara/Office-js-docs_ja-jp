@@ -1,23 +1,23 @@
-﻿
-# Labs.Core.ILabCallback
+
+# <a name="labs.core.ilabcallback"></a>Labs.Core.ILabCallback
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-The interface for handling Labs.js callback methods.
+Labs.js コールバック メソッドを処理するインターフェイス。
 
 ```
 interface ILabCallback<T>
 ```
 
 
-## Callback signature
+## <a name="callback-signature"></a>コールバック シグネチャ
 
  `(err: any, data: T): void`
 
- **Callback parameters**
+ **コールバック パラメーター**
 
 
 |||
 |:-----|:-----|
 | _err_|エラーが発生していない場合は、**null** です。エラーが発生した場合は、**null** 以外です。|
-| _data_|The data returned with the callback.|
+| _data_|コールバックで返されるデータ。|

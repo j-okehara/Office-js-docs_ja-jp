@@ -1,16 +1,16 @@
 
-# Labs.Core.Actions.IGetValueResult
+# <a name="labs.core.actions.igetvalueresult"></a>Labs.Core.Actions.IGetValueResult
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-The result of a get value action.
+get value アクションの結果。
 
 ```
 interface IGetValueResult extends Core.IActionResult
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

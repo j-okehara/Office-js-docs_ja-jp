@@ -1,25 +1,25 @@
-﻿# CustomTab 要素
+# <a name="customtab-element"></a>CustomTab 要素
 リボン上で、アドイン コマンドに使用するタブとグループを指定します。これは既定のタブ (**[ホーム]**、**[メッセージ]**、または **[会議]** のいずれか) か、アドインで定義されたカスタム タブになります。
 
 カスタム タブで、アドインは最大 10 個のグループを作成できます。各グループのコントロールは、コントロールが表示されるタブに関係なく、6 個に制限されています。アドインは、カスタム タブ 1 つに制限されています。
 
 **id** 属性はマニフェスト内で一意でなければなりません。
 
-## 子要素
-|  要素 |  必須  |  Description  |
+## <a name="child-elements"></a>子要素
+|  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
 |  [Group](./group.md)      | はい |  コマンドのグループを定義します。  |
 |  [Label](#label)      | はい |  CustomTab または Group のラベル。  |
 |  [Control](#control)    | はい |  1 つ以上のコントロール オブジェクトのコレクション。  |
 
-## Group
-必須です。 [Group 要素](./group.md)を参照してください。
+## <a name="group"></a>Group
+必須です。[Group 要素](./group.md)を参照してください。
 
-## Label (タブ)
+## <a name="label-(tab)"></a>Label (タブ)
 必須。カスタム タブのラベルです。 **resid** 属性には、 **Resources** 要素の **ShortStrings** 要素にある [String](./resources.md#shortstrings) 要素の [id](./resources.md) 属性の値を設定する必要があります。
 
 
-##  CustomTab の例
+##  <a name="customtab-example"></a>CustomTab の例
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <CustomTab id="TabCustom1">

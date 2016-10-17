@@ -1,16 +1,16 @@
 
-# Labs.ProblemState
+# <a name="labs.problemstate"></a>Labs.ProblemState
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-State values for a given lab.
+指定されたラボの状態の値。
 
 ```
 enum ProblemState
 ```
 
 
-## Enumeration values
+## <a name="enumeration-values"></a>Enumeration values
 
 
 |||

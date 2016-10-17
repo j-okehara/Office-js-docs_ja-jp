@@ -1,5 +1,5 @@
-﻿
-# Labs.Components.ChoiceComponentSubmission
+
+# <a name="labs.components.choicecomponentsubmission"></a>Labs.Components.ChoiceComponentSubmission
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,7 +10,7 @@ class ChoiceComponentSubmission
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |プロパティ|説明|
@@ -19,12 +19,12 @@ class ChoiceComponentSubmission
 | `public var result: Components.ChoiceComponentResult`|The result ([Labs.Components.ChoiceComponentResult](../../reference/office-mix/labs.components.choicecomponentresult.md)) of the submission.|
 | `public var time: number`|The time at which the submission was received.|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 
 
 
-### コンストラクター
+### <a name="constructor"></a>コンストラクター
 
  `class ChoiceComponentSubmission`
 
@@ -35,6 +35,6 @@ class ChoiceComponentSubmission
 
 |パラメーター|説明|
 |:-----|:-----|
-| _answer_|The answer ([Labs.Components.ChoiceComponentAnswer](../../reference/office-mix/labs.components.choicecomponentanswer.md)) associated with the submission.|
-| _result_|The result ([Labs.Components.ChoiceComponentResult](../../reference/office-mix/labs.components.choicecomponentresult.md)) of the submission.|
-| _時間_|The time at which the submission was received.|
+| _answer_|送信に関連付けられている応答 ([Labs.Components.ChoiceComponentAnswer](../../reference/office-mix/labs.components.choicecomponentanswer.md))。|
+| _result_|送信の結果 ([Labs.Components.ChoiceComponentResult](../../reference/office-mix/labs.components.choicecomponentresult.md))。|
+| _time_|送信が受信された時刻。|

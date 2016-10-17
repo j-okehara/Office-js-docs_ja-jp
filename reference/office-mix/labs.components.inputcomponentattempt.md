@@ -1,5 +1,5 @@
-﻿
-# Labs.Components.InputComponentAttempt
+
+# <a name="labs.components.inputcomponentattempt"></a>Labs.Components.InputComponentAttempt
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,58 +10,58 @@ class InputComponentAttempt extends Components.ComponentAttempt
 ```
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 
 
 
-### コンストラクター
+### <a name="constructor"></a>コンストラクター
 
  `function constructor(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance[]})`
 
-Creates a new instance of the  **InputComponentAttempt** class.
+**InputComponentAttempt** クラスの新しいインスタンスを作成します。
 
  **パラメーター**
 
 
 |パラメーター|説明|
 |:-----|:-----|
-| _labs_|The labs ([Labs.LabsInternal](http://msdn.microsoft.com/library/599fb2c4-bb16-4422-84ad-10ed85a14018.aspx)) associated with the attempt.|
-| _componentID_|ID of the component associated with the attempt.|
-| _attemptId_|ID of the specific attempt.|
-| _values_|An array containing the value instances ([Labs.Core.IValueInstance](../../reference/office-mix/labs.core.ivalueinstance.md)).|
+| _labs_|試行に関連付けられているラボ ([Labs.LabsInternal](http://msdn.microsoft.com/library/599fb2c4-bb16-4422-84ad-10ed85a14018.aspx))。|
+| _componentID_|試行に関連付けられているコンポーネントの ID。|
+| _attemptId_|特定の試行の ID。|
+| _values_|値のインスタンスを含む配列 ([Labs.Core.IValueInstance](../../reference/office-mix/labs.core.ivalueinstance.md))。|
 
-### processAction
+### <a name="processaction"></a>processAction
 
  `public function processAction(action: Labs.Core.IAction): void`
 
-Iterates over the retrieved actions for the specified attempt and populates the state of the lab.
+指定の試行で取得したアクションを繰り返し、ラボの状態を生成します。
 
  **パラメーター**
 
 
 |パラメーター|説明|
 |:-----|:-----|
-| _action_|Action associated with the lab state.|
+| _action_|ラボの状態に関連付けられているアクション。|
 
-### getSubmissions
+### <a name="getsubmissions"></a>getSubmissions
 
  `public function getSubmissions(): Components.InputComponentSubmission[]`
 
 Retrieves all of the submissions that have previously been submitted for the specified attempt.
 
 
-### submit
+### <a name="submit"></a>submit
 
  `public function submit(answer: Components.InputComponentAnswer, result: Components.InputComponentResult, callback: Labs.Core.ILabCallback<Components.InputComponentSubmission>): void`
 
-Submits a new answer that was graded by the lab and will not use the host to compute a grade.
+ラボで評価され、評価の計算にホストを使用しない新しい応答を送信します。
 
  **パラメーター**
 
 
 |パラメーター|説明|
 |:-----|:-----|
-| _answer_|The answer associated with the attempt.|
-| _result_|The result associated with the submission.|
-| _callback_|Callback function that fires once the submission has been received.|
+| _answer_|試行に関連付けられている応答。|
+| _result_|送信に関連付けられている結果。|
+| _callback_|送信が受信されると起動するコールバック関数。|

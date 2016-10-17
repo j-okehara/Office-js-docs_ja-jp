@@ -1,5 +1,5 @@
-﻿
-# Labs.registerDeserializer
+
+# <a name="labs.registerdeserializer"></a>Labs.registerDeserializer
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,14 +10,14 @@ function registerDeserializer(type: string, deserialize: (json: Core.ILabObject)
 ```
 
 
-## パラメーター
+## <a name="parameters"></a>パラメーター
 
 
 |**名前**|**説明**|
 |:-----|:-----|
 |json|The [Labs.Core.ILabObject](../../reference/office-mix/labs.core.ilabobject.md) to deserialize.|
 
-## Return value
+## <a name="return-value"></a>Return value
 
 Returns an [Labs.Core.ILabObject](../../reference/office-mix/labs.core.ilabobject.md) instance.
 

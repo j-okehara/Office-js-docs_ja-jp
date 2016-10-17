@@ -1,11 +1,11 @@
 
-# FormSettings 要素
+# <a name="formsettings-element"></a>FormSettings 要素
 メール アドインのソースの場所と制御の設定を指定します。
 
  **アドインの種類:**メール
 
 
-## 構文:
+## <a name="syntax:"></a>構文:
 
 
 ```XML
@@ -15,12 +15,12 @@
 ```
 
 
-## 次に含まれる:
+## <a name="contained-in:"></a>次に含まれる:
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 
 
-## 含めることができるもの:
+## <a name="can-contain:"></a>含めることができるもの:
 
 [Form](../../reference/manifest/form.md)
 

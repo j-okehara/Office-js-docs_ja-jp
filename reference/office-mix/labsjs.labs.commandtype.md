@@ -1,12 +1,12 @@
 
-# LabsJS.Labs.CommandType
-Provides a high-level view of the LabsJS Labs.CommandType JavaScript APIs.
+# <a name="labsjs.labs.commandtype"></a>LabsJS.Labs.CommandType
+LabsJS Labs.CommandType JavaScript API の概要について説明します。
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Members of the  **Labs.CommandType** module comprise only string variables declared to represent the supported command types.
+**Labs.CommandType** モジュールのメンバーは、サポートされているコマンド タイプを表すよう宣言された文字列変数のみで構成されます。
 
-## CommandType Variables
+## <a name="commandtype-variables"></a>CommandType Variables
 
 
 |変数|説明|

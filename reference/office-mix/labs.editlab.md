@@ -1,5 +1,5 @@
-﻿
-# Labs.editLab
+
+# <a name="labs.editlab"></a>Labs.editLab
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,7 +10,7 @@ function editLab(callback: Core.ILabCallback<LabEditor>): void
 ```
 
 
-## パラメーター
+## <a name="parameters"></a>パラメーター
 
 
 |**名前**|**説明**|

@@ -1,6 +1,6 @@
-﻿
 
-# Outlook アイテム内の文字列を既知のエンティティとして照合する
+
+# <a name="match-strings-in-an-outlook-item-as-well-known-entities"></a>Outlook アイテム内の文字列を既知のエンティティとして照合する
 
 
 メッセージおよび会議出席依頼のアイテムを送信する前に、Exchange Server によりアイテムの内容が解析され、件名と本文から、電子メール アドレス、電話番号、URL など、Exchange にとっての既知のエンティティに似た文字列が特定され、スタンプが付けられます。メッセージと会議出席依頼は、Exchange Server によって、既知のエンティティにスタンプが付けられた状態で、Outlook の受信トレイに配信されます。 
@@ -12,37 +12,37 @@ JavaScript API for Office を使用すれば、特定の既知のエンティテ
 このトピックでは既知のエンティティ、既知のエンティティに基づくアクティブ化ルールの例、およびアクティブ化ルール内でエンティティが使用されているかどうかに関係なく、一致するエンティティを抽出する方法を紹介します。
 
 
-## 既知のエンティティに対するサポート
+## <a name="support-for-well-known-entities"></a>既知のエンティティに対するサポート
 
 
 Exchange Server は、ユーザーがメッセージや会議出席依頼アイテムを送信した後、それが受信者に配信される前に、アイテム内の既知のエンティティにスタンプを付けます。そのため、Exchange 内のトランスポートを通過したアイテムだけにスタンプが付けられ、Outlook はユーザーがそのようなアイテムを表示中にそれらのスタンプに基づいてアドインをアクティブにすることができます。しかし、ユーザーがアイテムを作成している間や、送信済みアイテム フォルダー内のアイテムを表示しているときは、そのアイテムがまだトランスポートを通過していないため、Outlook は既知のエンティティに基づいてアドインをアクティブにすることができません。 
 
 同様に、作成中または送信済みアイテム フォルダー内のアイテムはトランスポートを通過しておらず、スタンプが付けられていないため、既知のエンティティを抽出できません。アクティブ化をサポートしているアイテムの種類の詳細については、「[Outlook アドインのアクティブ化ルール](../outlook/manifests/activation-rules.md#activation-rules-for-outlook-add-ins)」を参照してください。
 
-次の表は、Exchange Server と Outlook でサポートされ、認識されるエンティティ (つまり、「既知のエンティティ」) と、各エンティティのインスタンスのオブジェクト タイプを一覧にしたものです。これらのエンティティの 1 つとしての文字列の自然言語認識は、大量のデータに対してトレーニングを行った学習モデルに基づきます。したがって、認識は決定論的ではありません。認識に関する条件の詳細については、「 [既知のエンティティを使用するためのヒント](#既知のエンティティを使用するためのヒント)」を参照してください。
+次の表は、Exchange Server と Outlook でサポートされ、認識されるエンティティ (つまり、「既知のエンティティ」) と、各エンティティのインスタンスのオブジェクト タイプを一覧にしたものです。これらのエンティティの 1 つとしての文字列の自然言語認識は、大量のデータに対してトレーニングを行った学習モデルに基づきます。したがって、認識は決定論的ではありません。認識に関する条件の詳細については、「 [既知のエンティティを使用するためのヒント](#tips-for-using-well-known-entities)」を参照してください。
 
- **表 1. サポートされるエンティティとその型**
+ **表 1.サポートされるエンティティとその型**
 
 
 
 |**エンティティの型**|**認識に関する条件**|**オブジェクトの種類**|
 |:-----|:-----|:-----|
-|**Address**|米国の住所。次はその例です。1234 Main Street, Redmond, WA 07722.一般に、住所を認識するには、米国の住所の構造に従う必要があり、ほとんどには街路番号、街路名、都市、州、郵便番号といった要素が存在します。住所は 1 行または複数行で指定できます。|JavaScript  **String** オブジェクト|
-|**Contact**|自然言語で認識された人の情報の参照。連絡先の認識はコンテキストに依存します。たとえば、メッセージの最後にある署名や、電話番号、住所、電子メール アドレス、URL などの情報の近くにある人の名前などです。|[Contact](../../reference/outlook/simple-types.md) オブジェクト|
+|**住所**|米国の住所。次はその例です。1234 Main Street, Redmond, WA 07722.一般に、住所を認識するには、米国の住所の構造に従う必要があり、ほとんどには街路番号、街路名、都市、州、郵便番号といった要素が存在します。住所は 1 行または複数行で指定できます。|JavaScript  **String** オブジェクト|
+|**連絡先**|自然言語で認識された人の情報の参照。連絡先の認識はコンテキストに依存します。たとえば、メッセージの最後にある署名や、電話番号、住所、電子メール アドレス、URL などの情報の近くにある人の名前などです。|[Contact](../../reference/outlook/simple-types.md) オブジェクト|
 |**EmailAddress**|SMTP 電子メール アドレス。|JavaScript  **String** オブジェクト|
 |**MeetingSuggestion**|イベントまたは会議の参照。たとえば、Exchange 2013では次のテキストは会議の提案として認識されます。 _明日、昼食会議を開きましょう。_|[MeetingSuggestion](../../reference/outlook/simple-types.md) オブジェクト|
-|**PhoneNumber**|米国の電話番号。次はその例です。 _(235) 555-0110_|[PhoneNumber](../../reference/outlook/simple-types.md) オブジェクト|
-|**TaskSuggestion**|電子メールの対応可能な文言。次はその例です。 _スプレッドシートを更新してください。_|[TaskSuggestion](../../reference/outlook/simple-types.md) オブジェクト|
+|**PhoneNumber**|米国の電話番号。次はその例です。_(235) 555-0110_|[PhoneNumber](../../reference/outlook/simple-types.md) オブジェクト|
+|**TaskSuggestion**|電子メールの対応可能な文言。たとえば、_スプレッドシートを更新してください。_|[TaskSuggestion](../../reference/outlook/simple-types.md) オブジェクト|
 |**Url**|ネットワークの場所と Web リソースの識別子を明示的に指定した Web アドレス。Exchange Server は Web アドレス内のアクセス プロトコルを必要としないうえ、 **Url** エンティティのインスタンスとしてリンク テキスト内に埋め込まれた URL を認識しません。Exchange Server の例を以下に示します。 _www.youtube.com/user/officevideos_ _http://www.youtube.com/user/officevideos_|JavaScript  **String** オブジェクト|
-図 1 は、アドインで Exchange Server と Outlook が既知のエンティティをサポートする仕組みと、既知のエンティティを使用してアドインでできる操作について説明しています。エンティティの利用方法について詳しくは、「 [アドインでのエンティティの取得](#アドインでのエンティティの取得)」と「 [エンティティの存在に基づくアドインのアクティブ化](#エンティティの存在に基づくアドインのアクティブ化)」をご覧ください。
+図 1 は、アドインで Exchange Server と Outlook が既知のエンティティをサポートする仕組みと、既知のエンティティを使用してアドインでできる操作について説明しています。エンティティの利用方法について詳しくは、「 [アドインでのエンティティの取得](#retrieving-entities-in-your-add-in)」と「 [エンティティの存在に基づくアドインのアクティブ化](#activating-an-add-in-based-on-the-existence-of-an-entity)」をご覧ください。
 
 
-**図 1. Exchange Server、Outlook、アドインが既知のエンティティをサポートする仕組み**
+**図 1.Exchange Server、Outlook、アドインが既知のエンティティをサポートする仕組み**
 
 ![メール アプリにおける一般的なエンティティのサポートと使用](../../images/mod_off15_mailapp_wellknownentities_curvedlines.png)
 
 
-## エンティティを抽出するためのアクセス許可
+## <a name="permissions-to-extract-entities"></a>エンティティを抽出するためのアクセス許可
 
 
 JavaScript コードでエンティティを抽出したり、特定の既知のエンティティの存在に基づいてアドインをアクティブ化したりする場合は、アドイン マニフェストで適切なアクセス許可を要求しておきます。
@@ -57,7 +57,7 @@ JavaScript コードでエンティティを抽出したり、特定の既知の
 ```
 
 
-## アドインでのエンティティの取得
+## <a name="retrieving-entities-in-your-add-in"></a>アドインでのエンティティの取得
 
 
 ユーザーが表示しているアイテムの件名または本文に Exchange と Outlook で既知のエンティティとして認識される文字列が含まれていれば、アドインでそれらのインスタンスを利用できます。アドインが既知のエンティティに基づいてアクティブにされていない場合でもそれらを利用できます。適切なアクセス許可があれば、 **getEntities** メソッドまたは **getEntitiesByType** メソッドを使用して、現在のメッセージまたは予定の中に存在する既知のエンティティを取得できます。 **getEntities** メソッドは、アイテム内のすべての既知のエンティティを含んだ、 [Entities](../../reference/outlook/simple-types.md) オブジェクトの配列を返します。特定の種類のエンティティを取得する場合は、特定の種類のエンティティのみの配列を返す **getEntitiesByType** メソッドを使用します。 [EntityType](../../reference/outlook/Office.MailboxEnums.md) 列挙型は抽出可能なすべての既知のエンティティの種類を表します。
@@ -80,10 +80,10 @@ if (null != entities &amp;&amp; null != entities.addresses &amp;&amp; undefined 
 ```
 
 
-## エンティティの存在に基づくアドインのアクティブ化
+## <a name="activating-an-add-in-based-on-the-existence-of-an-entity"></a>エンティティの存在に基づくアドインのアクティブ化
 
 
-既知のエンティティを利用するもう 1 つの方法は、現在表示されているアイテムの件名または本文に 1 つまたは複数の種類のエンティティが存在するかどうかに基づいて Outlook にアドインをアクティブ化させる方法です。これを実現するには、アドイン マニフェスト内で  **ItemHasKnownEntity** ルールを指定します。 [KnownEntityType](http://msdn.microsoft.com/en-us/library/432d413b-9fcc-eb50-cfea-0ed10a43bd52%28Office.15%29.aspx) 単純型は、 **ItemHasKnownEntity** ルールでサポートされる既知のエンティティのさまざまな種類を表します。アドインがアクティブ化されたら、前のセクション「 [アドインでのエンティティの取得](#アドインでのエンティティの取得)」で説明したように、目的のエンティティのインスタンスを取得することもできます。 
+既知のエンティティを利用するもう 1 つの方法は、現在表示されているアイテムの件名または本文に 1 つまたは複数の種類のエンティティが存在するかどうかに基づいて Outlook にアドインをアクティブ化させる方法です。これを実現するには、アドイン マニフェスト内で  **ItemHasKnownEntity** ルールを指定します。 [KnownEntityType](http://msdn.microsoft.com/en-us/library/432d413b-9fcc-eb50-cfea-0ed10a43bd52%28Office.15%29.aspx) 単純型は、 **ItemHasKnownEntity** ルールでサポートされる既知のエンティティのさまざまな種類を表します。アドインがアクティブ化されたら、前のセクション「 [アドインでのエンティティの取得](#retrieving-entities-in-your-add-in)」で説明したように、目的のエンティティのインスタンスを取得することもできます。 
 
 オプションとして、 **ItemHasKnownEntity** ルールで正規表現を適用すると、エンティティのインスタンスをさらにフィルター処理によって絞り込んで、エンティティのインスタンスのサブセットに基づいてアドインを Outlook でアクティブ化できます。たとえば、"98" で始まるワシントン州の郵便番号を含むメッセージの中の街路住所エンティティを検出するフィルターを指定できます。エンティティ インスタンスにフィルターを適用するには、 **ItemHasKnownEntity** 型の **Rule** 要素で [RegExFilter](http://msdn.microsoft.com/en-us/library/56dfc32e-2b8c-1724-05be-5595baf38aa3%28Office.15%29.aspx) 属性と [FilterName](http://msdn.microsoft.com/en-us/library/87e10fd2-eab4-c8aa-bec3-dff92d004d39%28Office.15%29.aspx) 属性を使用します。
 
@@ -131,7 +131,7 @@ var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
 ```
 
 
-## 既知のエンティティを使用するためのヒント
+## <a name="tips-for-using-well-known-entities"></a>既知のエンティティを使用するためのヒント
 
 
 アドインで既知のエンティティを使用する場合に知っておくべきいくつかの事実と制限があります。ユーザーが既知のエンティティと一致するものを含むアイテムを表示しているときにアドインがアクティブになっていれば、 **ItemHasKnownEntity** ルールを使用しているかどうかに関係なく、以下が適用されます。
@@ -159,7 +159,7 @@ var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
 3. **ItemHasKnownEntity** ルールを使用して、 [送信済みアイテム] フォルダーのアイテムに対してアドインをアクティブ化することはできません。
     
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 
@@ -171,5 +171,5 @@ var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
     
 - [正規表現アクティブ化ルールを使用して Outlook アドインを表示する](../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)
     
-- [ユーザーのメールボックスにアクセスする Outlook アドインのためのアクセス許可を指定する](../outlook/understanding-outlook-add-in-permissions.md)
+- [Outlook アドインのアクセス許可を理解する](../outlook/understanding-outlook-add-in-permissions.md)
     

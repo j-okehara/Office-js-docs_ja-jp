@@ -1,36 +1,36 @@
-﻿# RequestContext オブジェクト (JavaScript API for Excel)
+# <a name="requestcontext-object-(javascript-api-for-excel)"></a>RequestContext オブジェクト (JavaScript API for Excel)
 
 RequestContext オブジェクトは、Excel アプリケーションへの要求を容易にします。Office アドインと Excel アプリケーションは 2 つの異なるプロセスで実行されているため、アドインから Excel とその関連オブジェクト (ワークシートや表など) にアクセスするには要求のコンテキストが必要です。 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 なし
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド         | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
 |[load(object: object, option: object)](#loadobject-object-option-object)  |void     |JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオプションを設定します。|
 
-## API 仕様
+## <a name="api-specification"></a>API 仕様
 
-### load(object: object, option: object)
+### <a name="load(object:-object,-option:-object)"></a>load(object: object, option: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオプションを設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 requestContextObject.load(object, loadOption);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター       | 型    |説明|
 |:----------------|:--------|:----------|
 |object|object|省略可能。読み込むオブジェクトの名前を指定します。|
-|オプション|[loadOption](loadoption.md)|省略可能。select、expand、skip、top などの読み込みオプションを指定します。詳細については、loadOption オブジェクトを参照してください。|
+|option|[loadOption](loadoption.md)|省略可能。select、expand、skip、top などの読み込みオプションを指定します。詳細については、loadOption オブジェクトを参照してください。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-##### 例
+##### <a name="examples"></a>例
 
 次の例では、1 つの範囲からプロパティ値を読み込んで、それらを別の範囲にコピーしています。
 

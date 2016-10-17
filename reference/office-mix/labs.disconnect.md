@@ -1,5 +1,5 @@
-﻿
-# Labs.disconnect
+
+# <a name="labs.disconnect"></a>Labs.disconnect
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,7 +10,7 @@ function disconnect(): void
 ```
 
 
-## Return value
+## <a name="return-value"></a>Return value
 
 なし。
 

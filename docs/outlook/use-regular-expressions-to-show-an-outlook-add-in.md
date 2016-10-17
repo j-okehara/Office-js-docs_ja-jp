@@ -1,5 +1,5 @@
 
-# 正規表現アクティブ化ルールを使用して Outlook アドインを表示する
+# <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>正規表現アクティブ化ルールを使用して Outlook アドインを表示する
 
 読み取りシナリオで Outlook アドインがアクティブ化されるように、正規表現ルールを指定することができます。ユーザーが閲覧ウィンドウまたはインスペクターでメッセージまたは予定を表示したときに、Outlook は正規表現ルールを評価してアドインをアクティブにするかどうかを判断します。ユーザーがアイテムを作成していると、Outlook はこれらのルールを評価しません。Information Rights Management (IRM) でアイテムが保護されていたり、迷惑メール フォルダーにある場合など、Outlook がアドインをアクティブにしないシナリオは他にもあります。詳細については、「[Outlook アドインのアクティブ化ルール](../outlook/manifests/activation-rules.md)」を参照してください。
 
@@ -15,7 +15,7 @@
 |<|より小さい|&amp;lt;|
 |>|より大きい|&amp;gt;|
 
-## ItemHasRegularExpressionMatch ルール
+## <a name="itemhasregularexpressionmatch-rule"></a>ItemHasRegularExpressionMatch ルール
 
 
 **ItemHasRegularExpressionMatch** ルールは、サポートされるプロパティの特定の値に基づいてアドインのアクティブ化を制御する場合に役立ちます。**ItemHasRegularExpressionMatch** ルールには次の属性があります。
@@ -29,7 +29,7 @@
 |**PropertyName**|正規表現の評価対象となるプロパティの名前を指定します。指定できる値は、 **BodyAsHTML**、 **BodyAsPlaintext**、 **SenderSMTPAddress**、および  **Subject** です。 **BodyAsHTML** を指定すると、Outlook はアイテムの本文が HTML である場合にのみ正規表現を適用し、それ以外の場合はその正規表現に一致するものを返しません。予定は常にリッチ テキスト形式で保存されるため、 **BodyAsHTML** を指定した正規表現が予定アイテムの本文の文字列と一致することはありません。 **BodyAsPlaintext** を指定すると、Outlook はアイテムの本文に対して正規表現を常に適用します。|
 |**IgnoreCase**|**RegExName** で指定された正規表現のマッチングで大文字と小文字の違いを無視するかどうかを指定します。|
 
-### ルールで正規表現を使用する場合のベスト プラクティス
+### <a name="best-practices-for-using-regular-expressions-in-rules"></a>ルールで正規表現を使用する場合のベスト プラクティス
 
 正規表現を使用する場合は、次の点に特に注意してください。
 
@@ -38,7 +38,7 @@
     
 - ブラウザーで返されるプレーン テキストの本文は、ブラウザーによって微妙に異なる場合があります。 [PropertyName](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx) 属性に **BodyAsPlaintext** を指定した **ItemHasRegularExpressionMatch** ルールを使用する場合は、アドインがサポートするすべてのブラウザーで正規表現をテストしてください。
     
-    さまざまなブラウザーがさまざまな方法で選択したアイテムの本文を取得するため、使用している正規表現が、本文の一部として返される可能性がある微妙な違いをサポートしていることを確認する必要があります。 たとえば、アイテムの本文を取得するために、Internet Explorer 9 などのブラウザーでは DOM の **innerText** プロパティを使用し、Firefox など、その他のブラウザーでは **.textContent()** メソッドを使用します。 また、さまざまなブラウザーが、異なる改行を返す場合があります。改行は、Internet Explorer では "\r\n"、Firefox および Chrome では "\n" です。 詳細については、「[W3C DOM Compatibility - HTML](http://www.quirksmode.org/dom/w3c_html.mdl#t07)」 (W3C DOM の互換性 - HTML) を参照してください。
+    さまざまなブラウザーがさまざまな方法で選択したアイテムの本文を取得するため、使用している正規表現が、本文の一部として返される可能性がある微妙な違いをサポートしていることを確認する必要があります。たとえば、アイテムの本文を取得するために、Internet Explorer 9 などのブラウザーでは DOM の **innerText** プロパティを使用し、Firefox など、その他のブラウザーでは **.textContent()** メソッドを使用します。また、さまざまなブラウザーが、異なる改行を返す場合があります。改行は、Internet Explorer では "\r\n"、Firefox および Chrome では "\n" です。詳細については、「[W3C DOM Compatibility - HTML](http://www.quirksmode.org/dom/w3c_html.mdl#t07)」(W3C DOM の互換性 - HTML) を参照してください。
     
 - アイテムの HTML 本文は、Outlook リッチ クライアントと Outlook Web App または デバイス用 OWA で若干異なります。正規表現を定義するときには注意が必要です。例として、 **PropertyName** 属性値として **BodyAsHTML** を指定した **ItemHasRegularExpressionMatch** ルールで使用される次の正規表現について考えてみましょう。
     
@@ -65,7 +65,7 @@
 - ホスト アプリケーション、デバイスの種類、または正規表現を適用するプロパティに応じて、ホストごとに、アクティブ化ルールとして正規表現を設計するときに認識しておく必要がある、ベスト プラクティスと制限事項が他にもあります。詳細については、「 [Outlook アドインのアクティブ化と JavaScript API の制限](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)」を参照してください。
     
 
-### 例
+### <a name="examples"></a>例
 
 次の  **ItemHasRegularExpressionMatch** ルールでは、大文字小文字に関係なく、送信者の SMTP メール アドレスが "@contoso" と一致した場合にアドインをアクティブにします。
 
@@ -106,7 +106,7 @@
 ```
 
 
-## ItemHasKnownEntity ルール
+## <a name="itemhasknownentity-rule"></a>ItemHasKnownEntity ルール
 
 
 
@@ -127,7 +127,7 @@
 |**FilterName**|**RegExFilter** で指定されている正規表現の名前を指定し、それ以降にコードでその正規表現を参照できるようにします。|
 |**IgnoreCase**|**RegExFilter** で指定された正規表現のマッチングで大文字と小文字の違いを無視するかどうかを指定します。|
 
-### 例
+### <a name="examples"></a>例
 
 次の  **ItemHasKnownEntity** ルールでは、現在のアイテムの件名または本文に URL が含まれており、その URL に大文字小文字を問わず "youtube" という文字列が含まれている場合にアドインをアクティブにします。
 
@@ -141,7 +141,7 @@
 ```
 
 
-## コードでの正規表現の結果の使用
+## <a name="using-regular-expression-results-in-code"></a>コードでの正規表現の結果の使用
 
 
 現在のアイテムで次のメソッドを使用して、正規表現に一致するものを取得できます。
@@ -159,7 +159,7 @@
  >**メモ**  Outlook リッチ クライアントは、一致を配列で返すときに特定の順序で返すわけではありません。また、同じメールボックスの同じアイテムに対して、クライアントごとに同じアドインを実行しても、Outlook リッチ クライアントはこの配列で一致するものを Outlook Web App または デバイス用 OWA と同じ順序で返すわけではありません。Outlook リッチ クライアントと Outlook Web App または デバイス用 OWA での正規表現の処理における他の違いについては、「 [Outlook アドインのアクティブ化と JavaScript API の制限](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)」を参照してください。
 
 
-### 例
+### <a name="examples"></a>例
 
 `videoURL` という名前の正規表現を使用する **ItemHasRegularExpressionMatch** ルールを含むルール コレクションの例を次に示します。
 
@@ -227,7 +227,7 @@ var suggestions = Office.context.mailbox.item.getFilteredEntitiesByName(CampSugg
 ```
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 
@@ -239,5 +239,6 @@ var suggestions = Office.context.mailbox.item.getFilteredEntitiesByName(CampSugg
     
 - [Outlook アイテム内の文字列を既知のエンティティとして照合する](../outlook/match-strings-in-an-item-as-well-known-entities.md)
     
-- [.NET Framework での正規表現に関するベスト プラクティス](http://msdn.microsoft.com/en-us/library/618e5afb-3a97-440d-831a-70e4c526a51c%28Office.15%29.aspx)
+- 
+  [.NET Framework での正規表現に関するベスト プラクティス](http://msdn.microsoft.com/en-us/library/618e5afb-3a97-440d-831a-70e4c526a51c%28Office.15%29.aspx)
     

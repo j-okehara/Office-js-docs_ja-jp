@@ -1,11 +1,11 @@
 
-# Dictionary 要素
+# <a name="dictionary-element"></a>Dictionary 要素
 追加の辞書サポートを実装する作業ウィンドウ アドインの設定を定義します。
 
  **アドインの種類:**作業ウィンドウ
 
 
-## 構文:
+## <a name="syntax:"></a>構文:
 
 
 ```XML
@@ -15,16 +15,16 @@
 ```
 
 
-## 次に含まれる:
+## <a name="contained-in:"></a>次に含まれる:
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 
 
-## 含めることができるもの:
+## <a name="can-contain:"></a>含めることができるもの:
 
 
 
-|**要素**|
+|**Element**|
 |:-----|
 |[TargetDialects](../../reference/manifest/targetdialects.md)|
 |[QueryUri](../../reference/manifest/queryuri.md)|
@@ -32,7 +32,7 @@
 |[DictionaryName](../../reference/manifest/dictionaryname.md)|
 |[DictionaryHomePage](../../reference/manifest/dictionaryhomepage.md)|
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

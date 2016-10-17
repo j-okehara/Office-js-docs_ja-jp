@@ -1,16 +1,16 @@
 
-# Labs.Core.IConfiguration
+# <a name="labs.core.iconfiguration"></a>Labs.Core.IConfiguration
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Lab configuration data structure.
+ラボ構成のデータ構造。
 
 ```
 interface IConfiguration extends Core.IUserData
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

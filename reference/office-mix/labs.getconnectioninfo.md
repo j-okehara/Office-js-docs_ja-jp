@@ -1,5 +1,5 @@
-﻿
-# Labs.getConnectionInfo
+
+# <a name="labs.getconnectioninfo"></a>Labs.getConnectionInfo
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,12 +10,12 @@ function getConnectionInfo(): Core.IConnectionResponse
 ```
 
 
-## パラメーター
+## <a name="parameters"></a>パラメーター
 
 なし
 
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 構成情報は、[Labs.Core.IConnectionResponse](../../reference/office-mix/labs.core.iconnectionresponse.md) インターフェイス上の初期化情報を使用して提供されます。
 

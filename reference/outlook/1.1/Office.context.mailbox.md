@@ -1,20 +1,20 @@
 
 
-# mailbox
+# <a name="mailbox"></a>mailbox
 
 ## [Office](Office.md)[.context](Office.context.md). mailbox
 
 Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オブジェクト モデルへのアクセスを提供します。
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| 制限あり|
 |適用可能な Outlook のモード| 作成または読み取り|
 
-### 名前空間
+### <a name="namespaces"></a>名前空間
 
 [diagnostics](Office.context.mailbox.diagnostics.md):Outlook アドインに診断情報を提供します。
 
@@ -22,75 +22,76 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 
 [userProfile](Office.context.mailbox.userProfile.md):Outlook アドインのユーザーに関する情報を提供します。
 
-### メンバー
+### <a name="members"></a>メンバー
 
-#### ewsUrl :String
+#### <a name="ewsurl-:string"></a>ewsUrl :String
 
-この電子メール アカウントの Exchange Web サービス (EWS) エンドポイントの URL を取得します。 閲覧モードのみ。
+この電子メール アカウントの Exchange Web サービス (EWS) エンドポイントの URL を取得します。閲覧モードのみ。
 
-`ewsUrl` 値は、リモート サービスで、ユーザーのメールボックスに EWS 呼び出しを行うために使うことができます。 たとえば、[選択したアイテムから添付ファイルを取得する](https://msdn.microsoft.com/EN-US/library/office/dn148008.aspx)ためにリモート サービスを作成できます。
+
+  `ewsUrl` 値は、リモート サービスで、ユーザーのメールボックスに EWS 呼び出しを行うために使うことができます。たとえば、[選択したアイテムから添付ファイルを取得する](https://msdn.microsoft.com/EN-US/library/office/dn148008.aspx)ためにリモート サービスを作成できます。
 
-##### 型:
+##### <a name="type:"></a>型:
 
 *   String
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 読み取り|
 
-### メソッド
+### <a name="methods"></a>メソッド
 
-####  convertToLocalClientTime(timeValue) → {[LocalClientTime](simple-types.md#localclienttime)}
+####  <a name="converttolocalclienttime(timevalue)-→-{[localclienttime](simple-types.md#localclienttime)}"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](simple-types.md#localclienttime)}
 
 クライアントのローカル時間で時間情報が含まれている辞書を取得します。
 
 Outlook 用メール アプリや Outlook Web App で使う日付と時刻では、異なるタイム ゾーンを使うことができます。Outlook では、クライアント コンピューターのタイム ゾーンを使います。Outlook Web App では、Exchange 管理センター (EAC) で設定されたタイム ゾーンを使います。ユーザー インターフェイスに表示される値が、常にユーザーが期待するタイム ゾーンと一致するように日付と時刻の値を処理する必要があります。
 
-Outlook でメール アプリが実行されている場合、`convertToLocalClientTime` メソッドは、クライアント コンピューターのタイム ゾーンに設定された値のディクショナリ オブジェクトを返します。 Office Web Apps でメール アプリが実行されている場合、`convertToLocalClientTime` メソッドは、EAC に指定されたタイム ゾーンに設定された値のディクショナリ オブジェクトを返します。
+Outlook でメール アプリが実行されている場合、`convertToLocalClientTime` メソッドは、クライアント コンピューターのタイム ゾーンに設定された値のディクショナリ オブジェクトを返します。Outlook Web Apps でメール アプリが実行されている場合、`convertToLocalClientTime` メソッドは、EAC に指定されたタイム ゾーンに設定された値のディクショナリ オブジェクトを返します。
 
-##### パラメーター:
+##### <a name="parameters:"></a>パラメーター:
 
 |名前| 型| 説明|
 |---|---|---|
 |`timeValue`| Date|日付オブジェクト|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 作成または読み取り|
 
-##### 戻り値:
+##### <a name="returns:"></a>戻り値:
 
 型:[LocalClientTime](simple-types.md#localclienttime)
 
-####  convertToUtcClientTime(input) → {Date}
+####  <a name="converttoutcclienttime(input)-→-{date}"></a>convertToUtcClientTime(input) → {Date}
 
 時間情報が含まれているディクショナリから日付オブジェクトを取得します。
 
 `convertToUtcClientTime` メソッドは、ローカルの日付と時刻を含むディクショナリを、ローカルの日付と時刻の正しい値を持つ日付オブジェクトに変換します。
 
-##### パラメーター:
+##### <a name="parameters:"></a>パラメーター:
 
 |名前| 型| 説明|
 |---|---|---|
 |`input`| [LocalClientTime](simple-types.md#localclienttime)|変換するローカル時刻の値。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 作成または読み取り|
 
-##### 戻り値:
+##### <a name="returns:"></a>戻り値:
 
 時間が UTC で表現された日付オブジェクト。
 
@@ -102,7 +103,7 @@ Outlook でメール アプリが実行されている場合、`convertToLocalCl
 
 </dl>
 
-####  displayAppointmentForm(itemId)
+####  <a name="displayappointmentform(itemid)"></a>displayAppointmentForm(itemId)
 
 既存の予定を表示します。
 
@@ -114,27 +115,27 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 
 指定のアイテム識別子が既存の予定を表していない場合は、クライアント コンピューターまたはデバイスで空のウィンドウが開き、エラー メッセージは返されません。
 
-##### パラメーター:
+##### <a name="parameters:"></a>パラメーター:
 
 |名前| 型| 説明|
 |---|---|---|
 |`itemId`| String|既存の予定の Exchange Web サービス (EWS) 識別子。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 作成または読み取り|
 
-##### 例
+##### <a name="example"></a>例
 
 ```
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
-####  displayMessageForm(itemId)
+####  <a name="displaymessageform(itemid)"></a>displayMessageForm(itemId)
 
 既存のメッセージを表示します。
 
@@ -144,55 +145,55 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 
 指定のアイテム識別子が既存のメッセージを表していない場合は、クライアント コンピューターにはメッセージは表示されず、エラー メッセージも返されません。
 
-予定を表す `itemId` を含む `displayMessageForm` を使用しないでください。 既存の予定を表示するには、`displayAppointmentForm` メソッドを使用します。新しい予定を作成するフォームを表示するには、`displayNewAppointmentForm` メソッドを使用します。
+予定を表す `itemId` を含む `displayMessageForm` を使用しないでください。既存の予定を表示するには、`displayAppointmentForm` メソッドを使用します。新しい予定を作成するフォームを表示するには、`displayNewAppointmentForm` メソッドを使用します。
 
-##### パラメーター:
+##### <a name="parameters:"></a>パラメーター:
 
 |名前| 型| 説明|
 |---|---|---|
 |`itemId`| String|既存のメッセージの Exchange Web サービス (EWS) 識別子。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 作成または読み取り|
 
-##### 例
+##### <a name="example"></a>例
 
 ```
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
-#### displayNewAppointmentForm(parameters)
+#### <a name="displaynewappointmentform(parameters)"></a>displayNewAppointmentForm(parameters)
 
 新しい予定を作成するためのフォームを表示します。
 
-`displayNewAppointmentForm` メソッドを使用すると、ユーザーが新しい予定または会議を作成できるフォームが開きます。 パラメーターを指定すると、予定のフォーム フィールドにパラメーターの内容が自動的に設定されます。
+`displayNewAppointmentForm` メソッドを使用すると、ユーザーが新しい予定または会議を作成できるフォームが開きます。パラメーターを指定すると、予定のフォーム フィールドにパラメーターの内容が自動的に設定されます。
 
 このメソッドは、Outlook Web App と OWA for Devices において、出席者フィールドが含まれるフォームを必ず表示します。入力引数として出席者を指定しないと、このメソッドにより **[保存]** ボタンのあるフォームが表示されます。出席者を指定した場合には、フォームにその出席者と **[送信]** ボタンが表示されます。
 
-Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`optionalAttendees`、または `resources` パラメーターに出席者またはリソースを指定し、このメソッドを実行すると、[**送信**] ボタンがある会議フォームが表示されます。 受信者を指定せずにこのメソッドを実行すると、[**保存して閉じる**] ボタンがある予定フォームが表示されます。
+Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`optionalAttendees`、または `resources` パラメーターに出席者またはリソースを指定し、このメソッドを実行すると、**[送信]** ボタンがある会議フォームが表示されます。受信者を指定せずにこのメソッドを実行すると、**[保存して閉じる]** ボタンがある予定フォームが表示されます。
 
 パラメーターのいずれかが指定のサイズ制限を超える場合、または不明なパラメーター名が指定されている場合は、例外がスローされます。
 
-##### パラメーター:
+##### <a name="parameters:"></a>パラメーター:
 
 |名前| 型| 説明|
 |---|---|---|
-|`parameters`| Object|新しい予定を記述するパラメーターのディクショナリ。<br/><br/>**プロパティ**<br/><table class="nested-table"><thead><tr><th>名前</th><th>型</th><th>説明</th></tr></thead><tbody><tr><td><code>requiredAttendees</code></td><td>Array.&lt;String&gt; &#124; Array.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>予定に必要な各出席者について、メール アドレスを含む文字列の配列、または <code>EmailAddressDetails</code> オブジェクトを含む配列。 配列の上限は 100 エントリです。</td></tr><tr><td><code>optionalAttendees</code></td><td>Array.&lt;String&gt; &#124; Array.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>予定の任意出席者の各電子メール アドレスが含まれている文字列から成る配列または EmailAddressDetails オブジェクトの配列。この配列は最大 100 個のエントリに制限されます。</td></tr><tr><td><code>start</code></td><td>Date</td><td>予定の開始日時を指定する Date オブジェクト。</td></tr><tr><td><code>end</code></td><td>Date</td><td>予定の終了日時を指定する Date オブジェクト。</td></tr><tr><td><code>location</code></td><td>String</td><td>予定の場所を含む文字列。 文字列は最大 255 文字に制限されます。</td></tr><tr><td><code>resources</code></td><td>Array.&lt;String&gt;</td><td>予定に必要なリソースを含む文字列の配列。 配列の上限は 100 エントリです。</td></tr><tr><td><code>subject</code></td><td>String</td><td>予定の件名を含む文字列です。 文字列は最大 255 文字に制限されます。</td></tr><tr><td><code>body</code></td><td>String</td><td>予定メッセージの本文。 本文の内容は、最大サイズが 32 KB に制限されます。</td></tr></tbody></table>|
+|`parameters`| Object|新しい予定を記述するパラメーターのディクショナリ。<br/><br/>**プロパティ**<br/><table class="nested-table"><thead><tr><th>名前</th><th>型</th><th>説明</th></tr></thead><tbody><tr><td><code>requiredAttendees</code></td><td>Array.&lt;String&gt; &#124; Array.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>予定に必要な各出席者について、メール アドレスを含む文字列の配列、または <code>EmailAddressDetails</code> オブジェクトを含む配列。配列の上限は 100 エントリです。</td></tr><tr><td><code>optionalAttendees</code></td><td>Array.&lt;String&gt; &#124; Array.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>予定の任意出席者の各電子メール アドレスが含まれている文字列から成る配列または EmailAddressDetails オブジェクトの配列。この配列は最大 100 個のエントリに制限されます。</td></tr><tr><td><code>start</code></td><td>Date</td><td>予定の開始日時を指定する Date オブジェクト。</td></tr><tr><td><code>end</code></td><td>Date</td><td>予定の終了日時を指定する Date オブジェクト。</td></tr><tr><td><code>location</code></td><td>String</td><td>予定の場所を含む文字列。文字列は最大 255 文字に制限されます。</td></tr><tr><td><code>resources</code></td><td>Array.&lt;String&gt;</td><td>予定に必要なリソースを含む文字列の配列。配列の上限は 100 エントリです。</td></tr><tr><td><code>subject</code></td><td>String</td><td>予定の件名を含む文字列です。文字列は最大 255 文字に制限されます。</td></tr><tr><td><code>body</code></td><td>String</td><td>予定メッセージの本文。本文の内容は、最大サイズが 32 KB に制限されます。</td></tr></tbody></table>|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 読み取り|
 
-##### 例
+##### <a name="example"></a>例
 
 ```
 var start = new Date();
@@ -212,17 +213,17 @@ Office.context.mailbox.displayNewAppointmentForm(
   });
 ```
 
-#### getCallbackTokenAsync(callback, [userContext])
+#### <a name="getcallbacktokenasync(callback,-[usercontext])"></a>getCallbackTokenAsync(callback, [userContext])
 
 Exchange Server から添付ファイルやアイテムを取得するために使うトークンを含む文字列を取得します。
 
-`getCallbackTokenAsync` メソッドは、ユーザーのメールボックスをホストする Exchange Server から不透明なトークンを取得する非同期の呼び出しを行います。 コールバック トークンの有効期間は 5 分です。
+`getCallbackTokenAsync` メソッドは、ユーザーのメールボックスをホストする Exchange Server から不透明なトークンを取得する非同期の呼び出しを行います。コールバック トークンの有効期間は 5 分です。
 
-トークンと予定の識別子またはアイテムの識別子をサードパーティ システムに渡すことができます。 サードパーティ システムは、トークンをベアラー承認トークンとして使用し、Exchange Web サービス (EWS) [GetAttachment](https://msdn.microsoft.com/en-us/library/office/aa494316.aspx) または [GetItem](https://msdn.microsoft.com/en-us/library/office/aa565934.aspx) 操作を呼び出して、添付ファイルまたはアイテムを返します。 たとえば、[選択したアイテムから添付ファイルを取得する](https://msdn.microsoft.com/EN-US/library/office/dn148008.aspx)ためにリモート サービスを作成できます。
+トークンと予定の識別子またはアイテムの識別子をサードパーティ システムに渡すことができます。サードパーティ システムは、トークンをベアラー承認トークンとして使用し、Exchange Web サービス (EWS) [GetAttachment](https://msdn.microsoft.com/en-us/library/office/aa494316.aspx) または [GetItem](https://msdn.microsoft.com/en-us/library/office/aa565934.aspx) 操作を呼び出して、添付ファイルまたはアイテムを返します。たとえば、[選択したアイテムから添付ファイルを取得する](https://msdn.microsoft.com/EN-US/library/office/dn148008.aspx)ためにリモート サービスを作成できます。
 
 アプリが `getCallbackTokenAsync` メソッドを呼び出すには、アプリのマニフェスト内に **ReadItem** アクセス許可が指定されている必要があります。
 
-##### パラメーター:
+##### <a name="parameters:"></a>パラメーター:
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
@@ -230,15 +231,15 @@ Exchange Server から添付ファイルやアイテムを取得するために�
 
 トークンは、`asyncResult.value` プロパティの文字列として提供されます。||`userContext`|Object|&lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 読み取り|
 
-##### 例
+##### <a name="example"></a>例
 
 ```js
 function getCallbackToken() {
@@ -250,14 +251,14 @@ function cb(asyncResult) {
 }
 ```
 
-####  getUserIdentityTokenAsync(callback, [userContext])
+####  <a name="getuseridentitytokenasync(callback,-[usercontext])"></a>getUserIdentityTokenAsync(callback, [userContext])
 
 ユーザーと Office アドインを識別するトークンを取得します。
 
 
   `getUserIdentityTokenAsync` メソッドは、[アドインとユーザーをサード パーティのシステムで識別して認証](https://msdn.microsoft.com/EN-US/library/office/fp179828.aspx)することのできるトークンを返します。
 
-##### パラメーター:
+##### <a name="parameters:"></a>パラメーター:
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
@@ -265,15 +266,15 @@ function cb(asyncResult) {
 
 トークンは、`asyncResult.value` プロパティの文字列として提供されます。||`userContext`|Object|&lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 作成または読み取り|
 
-##### 例
+##### <a name="example"></a>例
 
 ```js
 function getIdentityToken() {
@@ -285,7 +286,7 @@ function cb(asyncResult) {
 }
 ```
 
-####  makeEwsRequestAsync(data, callback, [userContext])
+####  <a name="makeewsrequestasync(data,-callback,-[usercontext])"></a>makeEwsRequestAsync(data, callback, [userContext])
 
 ユーザーのメールボックスをホストしている Exchange サーバー上の Exchange Web サービス (EWS) のサービスに対して非同期の要求を行ないます。
 
@@ -299,11 +300,11 @@ XML 要求では UTF-8 エンコードを指定する必要があります。
 <?xml version="1.0" encoding="utf-8"?>
 ```
 
-`makeEwsRequestAsync` メソッドを使用するには、アドインに **ReadWriteMailbox** アクセス許可が必要です。 **ReadWriteMailbox** アクセス許可と、`makeEwsRequestAsync` メソッドで呼び出せる EWS 操作の使い方については、「[ユーザーのメールボックスへのメール アドイン アクセスのアクセス許可を指定する](../../../docs/outlook/understanding-outlook-add-in-permissions.md)」を参照してください。
+`makeEwsRequestAsync` メソッドを使用するには、アドインに **ReadWriteMailbox** アクセス許可が必要です。**ReadWriteMailbox** アクセス許可と、`makeEwsRequestAsync` メソッドで呼び出せる EWS 操作の使い方については、「[ユーザーのメールボックスへのメール アドイン アクセスのアクセス許可を指定する](../../../docs/outlook/understanding-outlook-add-in-permissions.md)」を参照してください。
 
 **注**:サーバー管理者は、クライアント アクセス サーバーの EWS ディレクトリで `OAuthAuthentication` を true に設定して、`makeEwsRequestAsync` メソッドで EWS 要求を行うことができるようにする必要があります。
 
-#### バージョンの相違点
+#### <a name="version-differences"></a>バージョンの相違点
 
 バージョン 15.0.4535.1004 より前のバージョンの Outlook で実行しているメール アプリで `makeEwsRequestAsync` メソッドを使う場合は、エンコード値を `ISO-8859-1` に設定する必要があります。
 
@@ -313,16 +314,16 @@ XML 要求では UTF-8 エンコードを指定する必要があります。
 
 Outlook on the web でメール アプリを実行している場合は、エンコード値を設定する必要はありません。mailbox.diagnostics.hostName プロパティを使って、メール アプリを Outlook で実行しているのか、Outlook on the web で実行しているのかを確認できます。mailbox.diagnostics.hostVersion プロパティを使って、どのバージョンの Outlook を使って実行しているかを確認できます。
 
-##### パラメーター:
+##### <a name="parameters:"></a>パラメーター:
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
 |`data`| String||EWS 要求です。|
 |`callback`| function||メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](simple-types.md#asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。
 
-EWS 呼び出しの XML 結果は、`asyncResult.value` プロパティ内の文字列として提供されています。 結果のサイズが 1 MB を超える場合は、エラー メッセージが返されます。| |`userContext`|Object|&lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
+EWS 呼び出しの XML 結果は、`asyncResult.value` プロパティ内の文字列として提供されています。結果のサイズが 1 MB を超える場合は、エラー メッセージが返されます。| |`userContext`| Object| &lt;省略可能&gt;|非同期メソッドに渡される状態データです。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
@@ -330,7 +331,7 @@ EWS 呼び出しの XML 結果は、`asyncResult.value` プロパティ内の文
 |[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteMailbox|
 |適用可能な Outlook のモード| 作成または読み取り|
 
-##### 例
+##### <a name="example"></a>例
 
 次の例は、`GetItem` 操作を使ってアイテムの件名を取得するため、`makeEwsRequestAsync` を呼び出します。
 

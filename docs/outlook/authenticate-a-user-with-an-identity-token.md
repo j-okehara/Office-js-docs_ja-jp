@@ -1,12 +1,12 @@
 
-# Exchange の ID トークンを使用してユーザーを認証する
+# <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>Exchange の ID トークンを使用してユーザーを認証する
 
 情報サービスにシングル サインオン (SSO) 認証スキームを実装できます。SSO 認証スキームを実装すれば、Outlook アドインを使用するユーザーが、Exchange サーバー資格情報を使用して情報サービスに接続できます。この記事では、シンプルな  **Dictionary** オブジェクト ベースのユーザー データ ストアを使用して資格情報を照合する方法について説明します。
 
  >**メモ**  これは SSO に関するごく簡単な例で、運用コードで使用することはできません。ID と認証を処理するときは、コードが組織のセキュリティ要件を満たしていることを確認する必要があります。
 
 
-## SSO 認証を使用するための前提条件
+## <a name="prerequisites-for-using-sso-authentication"></a>SSO 認証を使用するための前提条件
 
 
 SSO に ID トークンを使用するには、サービス アプリケーションが有効な ID トークンを持つ必要があります。次の記事では、ID トークンについて、および ID トークンの要求および検証方法について説明します。
@@ -19,7 +19,7 @@ SSO に ID トークンを使用するには、サービス アプリケーシ�
 - [Exchange のトークン検証ライブラリを使用する](../outlook/use-the-token-validation-library.md) (マネージ コードを使用する場合)、または [Exchange の ID トークンを検証する](../outlook/validate-an-identity-token.md) (トークン検証用の独自のコードを記述する場合)
     
 
-## ユーザーの認証
+## <a name="authenticate-a-user"></a>ユーザーの認証
 
 
 以下のコード例は、ID トークンによって表される一意の ID とサービスを使用するための一連の資格情報を照合する簡易的な認証オブジェクトを示します。 **TokenAuthentication** クラスは **GetResponseFromService** メソッドを提供します。このメソッドは、既に認証済みのトークンに対する応答を返します。また、このメソッドは、資格情報を指定するようにユーザーに指示し、指定された資格情報を認証して ID トークンに関連付けます。ここに示すコードは完全なものではなく、次のオブジェクトとメソッドが提供されることを前提としています。
@@ -155,7 +155,7 @@ SSO に ID トークンを使用するには、サービス アプリケーシ�
 ```
 
 
-## 管理検証ライブラリによるユーザーの認証
+## <a name="authenticating-a-user-with-the-managed-validation-library"></a>管理検証ライブラリによるユーザーの認証
 
 
 管理ライブラリを使用して ID トークンを検証する場合は、一意のキーを計算する必要はありません。 **AppIdentityToken** クラスの **UniqueUserIdentification** プロパティは、ユーザーの一意のキーとして直接使用できます。次のコード例では、前のコード例の **GetResponseFromService** メソッドを変更して **AppIdentityToken** クラスを使用できるようにしています。
@@ -233,7 +233,7 @@ SSO に ID トークンを使用するには、サービス アプリケーシ�
 ```
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

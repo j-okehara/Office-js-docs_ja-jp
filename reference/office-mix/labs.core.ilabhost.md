@@ -1,30 +1,30 @@
-﻿
-# Labs.Core.ILabHost
+
+# <a name="labs.core.ilabhost"></a>Labs.Core.ILabHost
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Provides an abstraction layer for connecting Labs.js to the host.
+Labs.js をホストに接続するための抽象レイヤーを提供します。
 
 ```
 interface ILabHost
 ```
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 
-### getSupportedVersions
+### <a name="getsupportedversions"></a>getSupportedVersions
 
  `getSupportedVersions(): Core.ILabHostVersionInfo[]`
 
-Retrieves the versions supported by the lab host.
+ラボ ホストでサポートされているバージョンを取得します。
 
  **パラメーター**
 
 なし。
 
 
-### connect
+### <a name="connect"></a>connect
 
  `connect(versions: Core.ILabHostVersionInfo[], callback: Core.ILabCallback<Core.IConnectionResponse>)`
 
@@ -35,174 +35,174 @@ Retrieves the versions supported by the lab host.
 
 |||
 |:-----|:-----|
-| _versions_|List of host versions that the client can make use of.|
-| _callback_|Callback function that fires when the connection is complete.|
+| _versions_|クライアントが使用できるホストのバージョンをリストします。|
+| _callback_|接続が完了すると起動するコールバック関数。|
 
-### disconnect
+### <a name="disconnect"></a>disconnect
 
  `disconnect(callback: Core.ILabCallback<void>)`
 
-Terminates communication with the host.
+ホストとの通信を終了します。
 
  **パラメーター**
 
 
 |||
 |:-----|:-----|
-| _completionStatus_|Status of the lab at the time of the disconnection.|
-| _callback_|Callback function that fires when the disconnect is complete.|
+| _completionStatus_|切断時のラボの状態。|
+| _callback_|切断が完了すると起動するコールバック関数。|
 
-### on
+### <a name="on"></a>on
 
  `on(handler: (string: any, any: any): void)`
 
-ホストからのメッセージを処理するために、イベント ハンドラーを追加します。 解決された約束は、ホストに返されます。
+ホストからのメッセージを処理するために、イベント ハンドラーを追加します。解決された約束は、ホストに返されます。
 
  **パラメーター**
 
 
 |||
 |:-----|:-----|
-| _handler_|The event handler.|
+| _handler_|イベント ハンドラー。|
 
-### sendMessage
+### <a name="sendmessage"></a>sendMessage
 
  `sendMessage(type: string, options: Core.IMessage, callback: Core.ILabCallback<Core.IMessageResponse>)`
 
-Sends a message to the host.
+ホストにメッセージを送信します。
 
  **パラメーター**
 
 
 |||
 |:-----|:-----|
-| _type_|The type of message being sent.|
-| _オプション_|Message options.|
-| _callback_|Callback function that fires once the message is received.|
+| _type_|送信されるメッセージの種類。|
+| _options_|メッセージ オプション。|
+| _callback_|メッセージが受信されると起動するコールバック関数。|
 
-### create
+### <a name="create"></a>create
 
  `create(options: Core.ILabCreationOptions, callback: Core.ILabCallback<void>)`
 
-ラボを作成します。 ホスト情報を格納し、構成とその他の要素を格納するための場所を確保します。
+ラボを作成します。ホスト情報を格納し、構成とその他の要素を格納するための場所を確保します。
 
  **パラメーター**
 
 
 |||
 |:-----|:-----|
-| _オプション_|Options passed as part of the create operation.|
-| _callback_|Callback function that fires once the lab has been created.|
+| _options_|作成処理の一環として渡されるオプション。|
+| _callback_|ラボが作成されると起動するコールバック関数。|
 
-### getConfiguration
+### <a name="getconfiguration"></a>getConfiguration
 
  `getConfiguration(callback: Core.ILabCallback<Core.IConfiguration>)`
 
-Retrieves the current lab configuration from the host.
+現在のラボ構成をホストから取得します。
 
  **パラメーター**
 
 
 |||
 |:-----|:-----|
-| _callback_|Callback function to retrieve the configuration information.|
+| _callback_|構成情報を取得するコールバック関数。|
 
-### setConfiguration
+### <a name="setconfiguration"></a>setConfiguration
 
  `setConfiguration(configuration: Core.IConfiguration, callback: Core.ILabCallback<void>)`
 
-Sets a new lab configuration on the host.
+ホスト上に新しいラボ構成を設定します。
 
  **パラメーター**
 
 
 |||
 |:-----|:-----|
-| _構成_|The lab configuration that is set.|
-| _callback_|Callback function that fires once the configuration is set.|
+| _configuration_|設定されるラボ構成。|
+| _callback_|構成が設定されると起動するコールバック関数。|
 
-### getConfigurationInstance
+### <a name="getconfigurationinstance"></a>getConfigurationInstance
 
  `getConfigurationInstance(callback: Core.ILabCallback<Core.IConfigurationInstance>)`
 
-Retrieves the instance configuration for the lab.
+ラボのインスタンス構成を取得します。
 
  **パラメーター**
 
 
 |||
 |:-----|:-----|
-| _callback_|Callback function that fires once the configuration instance has been retrieved.|
+| _callback_|構成インスタンスが取得されると起動するコールバック関数。|
 
-### getState
+### <a name="getstate"></a>getState
 
  `getState(callback: Core.ILabCallback<any>)`
 
-Retrieves the current state of the lab for a given user.
+特定のユーザー用のラボの現在の状態を取得します。
 
  **パラメーター**
 
 
 |||
 |:-----|:-----|
-| _completionStatus_|Callback function that returns the current lab state.|
+| _completionStatus_|現在のラボの状態を返すコールバック関数。|
 
-### setState
+### <a name="setstate"></a>setState
 
  `setState(state: any, callback: Core.ILabCallback<void>)`
 
-Sets the state of the lab for a given user.
+特定のユーザー用のラボの状態を設定します。
 
  **パラメーター**
 
 
 |||
 |:-----|:-----|
-| _state_|The lab state.|
-| _callback_|Callback function that fires when state has been set.|
+| _state_|ラボの状態。|
+| _callback_|状態が設定されると起動するコールバック関数。|
 
-### takeAction
+### <a name="takeaction"></a>takeAction
 
  `takeAction(type: string, options: Core.IActionOptions, callback: Core.ILabCallback<Core.IAction>)`
 
-Takes an attempt at an action.
+アクション時の試行を取得します。
 
  **パラメーター**
 
 
 |||
 |:-----|:-----|
-| _type_|Type of action.|
-| _オプション_|Options provided with the action.|
-| _callback_|Callback function that returns the final executed action.|
+| _type_|アクションのタイプ。|
+| _options_|アクションで提供されるオプション。|
+| _callback_|最後に実行したアクションを返すコールバック関数。|
 
-### takeAction
+### <a name="takeaction"></a>takeAction
 
  `takeAction(type: string, options: Core.IActionOptions, result: Core.IActionResult, callback: Core.ILabCallback<Core.IAction>)`
 
-Takes an action that has already been completed.
+完了したアクションを取得します。
 
  **パラメーター**
 
 
 |||
 |:-----|:-----|
-| _type_|Type of action.|
-| _オプション_|Options provided with the action.|
+| _type_|アクションのタイプ。|
+| _options_|アクションで提供されるオプション。|
 | _result_|アクションの結果。|
-| _callback_|Callback function that returns the final executed action.|
+| _callback_|最後に実行したアクションを返すコールバック関数。|
 
-### getActions
+### <a name="getactions"></a>getActions
 
  `getActions(type: string, options: Core.IGetActionOptions, callback: Core.ILabCallback<Core.IAction[]>)`
 
-Takes an attempt at an action.
+アクション時の試行を取得します。
 
  **パラメーター**
 
 
 |||
 |:-----|:-----|
-| _type_|Type of get action.|
-| _オプション_|Options provided with the get action.|
-| _callback_|Callback function that returns the list of completed actions.|
+| _type_|get アクションのタイプ。|
+| _options_|get アクションで提供されるオプション。|
+| _callback_|完了したアクションのリストを返すコールバック関数。|

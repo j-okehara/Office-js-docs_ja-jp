@@ -1,54 +1,54 @@
-﻿# Notebook オブジェクト (JavaScript API for OneNote)
+# <a name="notebook-object-(javascript-api-for-onenote)"></a>Notebook オブジェクト (JavaScript API for OneNote)
 
 _適用対象:OneNote Online_   
 
 
-OneNote ノートブックを表します。 ノートブックには、セクション グループとセクションが含まれます。
+OneNote ノートブックを表します。ノートブックには、セクション グループとセクションが含まれます。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明|フィードバック|
 |:---------------|:--------|:----------|:-------|
-|clientUrl|string|ノートブックのクライアント URL。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-clientUrl)|
-|id|string|ノートブックの ID を取得します。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-id)|
-|name|string|ノートブックの名前を取得します。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-name)|
+|clientUrl|string|ノートブックのクライアント URL。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-clientUrl)|
+|id|string|ノートブックの ID を取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-id)|
+|name|string|ノートブックの名前を取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-name)|
 
-_プロパティのアクセスの[例](#例)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 | リレーションシップ | 型   |説明| フィードバック|
 |:---------------|:--------|:----------|:-------|
-|sectionGroups|[SectionGroupCollection](sectiongroupcollection.md)|ノートブック内のセクション グループ。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sectionGroups)|
-|sections|[SectionCollection](sectioncollection.md)|ノートブックのセクション。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sections)|
+|sectionGroups|[SectionGroupCollection](sectiongroupcollection.md)|ノートブック内のセクション グループ。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sectionGroups)|
+|sections|[SectionCollection](sectioncollection.md)|ノートブックのセクション。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sections)|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明| フィードバック|
 |:---------------|:--------|:----------|:-------|
-|[addSection(name:String)](#addsectionname-string)|[セクション](section.md)|ノートブックの末尾に新しいセクションを追加します。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSection)|
-|[addSectionGroup(name:String)](#addsectiongroupname-string)|[セクション グループ](sectiongroup.md)|ノートブックの末尾に新しいセクション グループを追加します。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSectionGroup)|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-load)|
+|[addSection(name:String)](#addsectionname-string)|[Section](section.md)|ノートブックの末尾に新しいセクションを追加します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSection)|
+|[addSectionGroup(name:String)](#addsectiongroupname-string)|[SectionGroup](sectiongroup.md)|ノートブックの末尾に新しいセクション グループを追加します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSectionGroup)|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-load)|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### addSection(name:String)
+### <a name="addsection(name:-string)"></a>addSection(name:String)
 ノートブックの末尾に新しいセクションを追加します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 notebookObject.addSection(name);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |name|String|新しいセクションの名前を指定します。|
 
-#### 戻り値
-[セクション](section.md)
+#### <a name="returns"></a>戻り値
+[Section](section.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js          
 OneNote.run(function (context) {
 
@@ -76,23 +76,23 @@ OneNote.run(function (context) {
 ```
 
 
-### addSectionGroup(name:String)
+### <a name="addsectiongroup(name:-string)"></a>addSectionGroup(name:String)
 ノートブックの末尾に新しいセクション グループを追加します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 notebookObject.addSectionGroup(name);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |name|String|新しいセクションの名前を指定します。|
 
-#### 戻り値
-[セクション グループ](sectiongroup.md)
+#### <a name="returns"></a>戻り値
+[SectionGroup](sectiongroup.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js          
 OneNote.run(function (context) {
 
@@ -119,22 +119,22 @@ OneNote.run(function (context) {
 }); 
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
-### プロパティのアクセスの例
+### <a name="property-access-examples"></a>プロパティのアクセスの例
 **id**
 ```js
 OneNote.run(function (context) {

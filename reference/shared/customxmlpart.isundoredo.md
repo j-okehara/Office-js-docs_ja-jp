@@ -1,5 +1,5 @@
 
-# NodeDeletedEventArgs.isUndoRedo プロパティ
+# <a name="nodedeletedeventargs.isundoredo-property"></a>NodeDeletedEventArgs.isUndoRedo プロパティ
 ノードが、ユーザーによる元に戻す/やり直し操作の一部として削除されたかどうかを取得します。
 
 |||
@@ -13,12 +13,12 @@ var isInUndoRedo = eventArgsObj.isUndoRedo;
 ```
 
 
-## 戻り値
+## <a name="return-value"></a>戻り値
 
 ノードが、ユーザーによる元に戻す/やり直し操作の一部として削除された場合は、 **true** を返します。
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このプロパティは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのプロパティをサポートしないことを示します。
@@ -34,18 +34,18 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |:-----|:-----|
 |**要件セットに指定できるもの**|CustomXmlParts|
 |**最小限のアクセス許可レベル**|[ReadWriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**アプリの種類**|作業ウィンドウ|
+|**アドインの種類**|作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 ****
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|Office for iPad における Word のサポートが追加されました。|
 |1.0|導入|

@@ -1,5 +1,5 @@
-﻿
-# Labs.Components.ActivityComponentAttempt
+
+# <a name="labs.components.activitycomponentattempt"></a>Labs.Components.ActivityComponentAttempt
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,49 +10,49 @@ class Permissions
 ```
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 
 
 
-### コンストラクター
+### <a name="constructor"></a>コンストラクター
 
  `function constructor(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance[]})`
 
-Creates a new instance of the  **ActivityComponentAttempt** class.
+**ActivityComponentAttempt** クラスの新しいインスタンスを作成します。
 
  **パラメーター**
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| _labs_|Lab instances ([Labs.LabsInternal](http://msdn.microsoft.com/library/599fb2c4-bb16-4422-84ad-10ed85a14018.aspx)) associated with the component.|
-| _componentId_|ID of the component associated with the attempt.|
-| _attemptId_|ID of the attempt.|
-| _values_|Values, if any, associated with the component.|
+| _labs_|コンポーネントに関連付けられているラボのインスタンス ([Labs.LabsInternal](http://msdn.microsoft.com/library/599fb2c4-bb16-4422-84ad-10ed85a14018.aspx))。|
+| _componentId_|試行に関連付けられているコンポーネントの ID。|
+| _attemptId_|試行の ID。|
+| _values_|コンポーネントに関連付けられている値 (ある場合)。|
 
-### complete
+### <a name="complete"></a>complete
 
  `public function complete(callback: Labs.Core.ILabCallback<void>): void`
 
-Indicator that the activity has been completed.
+アクティビティが完了したことを示すインジケーター。
 
  **パラメーター**
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| _callback_|Callback function that is invoked once the activity has completed.|
+| _callback_|アクティビティが完了すると起動するコールバック関数。|
 
-### processAction
+### <a name="processaction"></a>processAction
 
  `public function processAction(action: Labs.Core.IAction): void`
 
-Function that runs over the actions that are retrieved for a given attempt, then populates the state of the lab.
+特定の試行について取得したアクションに実行し、ラボの状況を生成する関数。
 
  **パラメーター**
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| _action_|The action instance ([Labs.Core.IAction](../../reference/office-mix/labs.core.iaction.md)).|
+| _action_|アクション インスタンス ([Labs.Core.IAction](../../reference/office-mix/labs.core.iaction.md))。|

@@ -1,5 +1,5 @@
 
-# Access Web アプリ用のアドインを作成する
+# <a name="create-add-ins-for-access-web-apps"></a>Access Web アプリ用のアドインを作成する
 
 
 
@@ -8,7 +8,7 @@
 >
   **注:**VBA を使用した Access 向けソリューション開発の詳細は、MSDN の「[Access](https://msdn.microsoft.com/en-us/library/fp179695.aspx)」を参照してください。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 Access Web アプリ を対象とした Office アドイン の作成に必要なものは次のとおりです。
 
@@ -21,7 +21,7 @@ Access Web アプリ を対象とした Office アドイン の作成に必要�
  >**メモ**  Office アドイン は SharePoint Online でホストされる Access Web アプリ、または Office 365 に対応しています。Access 2013 デスクトップ アプリケーションは、Office アドイン をサポートしていません。Access Web アプリ を対象とする Office アドイン は、Office.js バージョン 1.1 以降でサポートされています。
 
 
-## Visual Studio でプロジェクトを作成する
+## <a name="create-a-project-in-visual-studio"></a>Visual Studio でプロジェクトを作成する
 
 
 1.  Visual Studio を開き、メニューで **[ファイル]**、**[新規]**、**[プロジェクト]** の順に選択します。**[新規プロジェクト]** ダイアログ ボックスが開きます。
@@ -38,7 +38,7 @@ Access Web アプリ を対象とした Office アドイン の作成に必要�
 
 7. 完了したら、[ **終了**] を選択します。Visual Studio は、作業の基となるスターター プロジェクトを作成します。
 
-8. **ソリューション エクスプローラー**で、プロジェクトの Web プロジェクト (**project_name>Web**) を選びます。 プロパティ ウィンドウで、**SSL URL** のエントリを探します。 `https://localhost:44314/` のように表示されます。 この URL を選び、クリップボードにコピーします。 後で必要になります。
+8. **ソリューション エクスプローラー**で、プロジェクトの Web プロジェクト (**project_name>Web**) を選びます。プロパティ ウィンドウで、**SSL URL** のエントリを探します。`https://localhost:44314/` のように表示されます。この URL を選び、クリップボードにコピーします。後で必要になります。
 
 9. **[ソリューション エクスプローラー]** でプロジェクト名を右クリックします。コンテキスト メニューで **[発行]** を選択します。**[アドインの発行]** ウィザードが開きます。
 
@@ -56,7 +56,7 @@ Access Web アプリ を対象とした Office アドイン の作成に必要�
  >**メモ**  アドインを Access web アプリ で展開せずにデバッグすることはできません。
 
 
-## マニフェストおよび Home.Html ファイルを確認する
+## <a name="review-the-manifest-and-the-home.html-file"></a>マニフェストおよび Home.Html ファイルを確認する
 
 
 1. Visual Studio プロジェクトで  **Home.html** ファイルを開き、office.js スクリプト ライブラリを参照する行を探します。
@@ -82,7 +82,7 @@ Office アドインと SharePoint アドイン は Web ベースです。アド�
  >**メモ**  Office アドイン をホストする Access web アプリ を作成する必要があります。
 
 
-## アドインを SharePoint のオンライン カタログに発行する
+## <a name="publish-your-add-in-to-a-sharepoint-online-catalog"></a>アドインを SharePoint のオンライン カタログに発行する
 
 
 1.  SharePoint Online または Office 365 にサインインし、ページ上部の Office 365 ツール バーにある  **[管理]** を選択して、 **SharePoint 管理センター** に移動します。
@@ -103,7 +103,7 @@ Office アドインと SharePoint アドイン は Web ベースです。アド�
  >**メモ**  この手順では、SharePoint にテスト サイトが作成されていることを想定しています。作成されていない場合は、SharePoint ウィンドウ上部の  **[サイト]** タブから作成します。利用可能な場合は、既存の Access Web アプリ を使用できます。
 
 
-## アドインをホストする Access web アプリ を作成する
+## <a name="create-an-access-web-app-to-host-your-add-in"></a>アドインをホストする Access web アプリ を作成する
 
 
 1. テスト サイトに移動します。左側のリンク バーで、 **[サイト コンテンツ]** を選択すると、テスト サイトにある [ **サイト コンテンツ**] ページに移動します。
@@ -114,13 +114,13 @@ Office アドインと SharePoint アドイン は Web ベースです。アド�
 
 4. **Access アプリ**のタイルが表示されます。
 
-     >**注**  これは Office アドインではなく、新しい Access Web アプリであることに注意してください。 この Access Web アプリが、Office アドインをホストします。
+     >**注**  これは Office アドインではなく、新しい Access Web アプリであることに注意してください。この Access Web アプリが、Office アドインをホストします。
 5. このタイルを選ぶと、 **[Access アプリ の追加]** ダイアログ ボックスが表示されます。Accessアプリ に一意の名前を付けて入力し、 **[作成]** を押します。SharePoint がアプリ を作成するまでしばらくかかることがあります。終了すると、Accessアプリ が、 **サイト コンテンツ** ページに表示され、横に **[新規]** ラベルが付きます。
 
 6. Accessアプリ は、SharePoint で開いて表示する前に、デスクトップ版の Microsoft Access 2013 で開いてデータを追加することが必要になります。
 
 
-## アドインを Access Web アプリ に追加する
+## <a name="add-your-add-in-to-an-access-web-apps"></a>アドインを Access Web アプリ に追加する
 
 
 1. Access Web アプリ を開きます。
@@ -129,22 +129,22 @@ Office アドインと SharePoint アドイン は Web ベースです。アド�
 
 3. [ **自分の所属組織**] ビューを選択し、利用可能な Office アドイン が SharePoint によってダイアログ ボックスに表示されるまで少し待ちます。
 
-    ダイアログ ボックスのアドインの 1 つに、前の手順で登録した Office アドインが表示されます。 そのアドインを選んで、Access Web アプリに追加します。 アプリが検出されて Access Web アプリのページに表示されるためには、アプリが Visual Studio で実行されている必要があることに注意してください。
+    ダイアログ ボックスのアドインの 1 つに、前の手順で登録した Office アドインが表示されます。そのアドインを選んで、Access Web アプリに追加します。アプリが検出されて Access Web アプリのページに表示されるためには、アプリが Visual Studio で実行されている必要があることに注意してください。
 
 
-## Office 用アドインをデバッグする
+## <a name="debug-your-add-in-for-office"></a>Office 用アドインをデバッグする
 
 アドインをデバッグするには、Internet Explorer で F12 を押すか、ブラウザーのタブ バーにある歯車アイコンを選択します (SharePoint ページの歯車アイコンとは異なります)。Internet Explorer 11 が提供する F12 デバッグ ツールが起動します。他のブラウザーをお使いの場合は、ブラウザーのマニュアルを確認してデバッグ モードに入る方法を確認してください。
 
 この時点で、ブレークポイントの設定、JavaScript コードのステップの実行、DOM の探索、コードの変更を行って、Access Web アプリ を対象とする Office アドイン に変更箇所が表示されていることを確認できます。詳細については、「 [F12 開発者用ツール](http://msdn.microsoft.com/library/ie/bg182326%28v=vs.85%29)」を参照してください。
 
 
-## 次の手順
+## <a name="next-steps"></a>次の手順
 
 サンプル「 [Office 365: アクセス Web アプリでのデータのバインドと操作](https://code.msdn.microsoft.com/officeapps/Office-365-Bind-and-4876274e)」をダウンロードして、Access web アプリ でデータを処理する Office アドイン を実装する方法についてご覧ください。
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

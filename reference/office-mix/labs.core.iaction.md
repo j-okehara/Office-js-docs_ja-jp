@@ -1,16 +1,16 @@
 
-# Labs.Core.IAction
+# <a name="labs.core.iaction"></a>Labs.Core.IAction
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Represents a lab action, which is an interaction that a user has with a specified lab.
+指定されたラボでのユーザー相互作用であるラボのアクションを表します。
 
 ```
 interface IAction
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

@@ -1,46 +1,46 @@
-﻿# NamedItemCollection オブジェクト (JavaScript API for Excel)
+# <a name="nameditemcollection-object-(javascript-api-for-excel)"></a>NamedItemCollection オブジェクト (JavaScript API for Excel)
 
 ブックの一部であるすべての nameditem オブジェクトのコレクション。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
-|Items|[NamedItem[]](nameditem.md)|namedItem オブジェクトのコレクション。読み取り専用です。|
+|items|[NamedItem[]](nameditem.md)|namedItem オブジェクトのコレクション。読み取り専用です。|
 
-_プロパティのアクセスの[例](#例)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 なし
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
 |[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|名前を使用して、nameditem オブジェクトを取得します。|
 |[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### getItem(name: string)
+### <a name="getitem(name:-string)"></a>getItem(name: string)
 名前を使用して、nameditem オブジェクトを取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 namedItemCollectionObject.getItem(name);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |name|string|nameditem 名。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 [NamedItem](nameditem.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 Excel.run(function (ctx) { 
@@ -57,7 +57,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 Excel.run(function (ctx) { 
@@ -73,22 +73,22 @@ Excel.run(function (ctx) {
         }
 });
 ```
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
-### プロパティのアクセスの例
+### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 ```js
 Excel.run(function (ctx) { 

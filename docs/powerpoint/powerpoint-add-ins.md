@@ -1,12 +1,12 @@
 
-# PowerPoint 用のコンテンツ アドインと作業ウィンドウ アドインを作成する
+# <a name="create-content-and-task-pane-add-ins-for-powerpoint"></a>PowerPoint 用のコンテンツ アドインと作業ウィンドウ アドインを作成する
 
 この記事のコード例は、PowerPoint コンテンツ アドインの開発におけるいくつかの基本的なタスクを示しています。情報を表示する場合、これらの例は Visual StudioOffice アドイン プロジェクト テンプレートに含まれる  `app.showNotification` 関数に依存しています。アドインの開発に Visual Studio を使用しない場合は、 `showNotification` 関数を独自のコードに置き換える必要があります。これらの例のいくつかは、これらの関数の範囲外で宣言されている `globals` オブジェクト ( `var globals = {activeViewHandler:0, firstSlideId:0};`) にも依存しています。
 
 これらのコード例では、プロジェクトが [Office.js v1.1 以降のライブラリを参照](../../docs/develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md)している必要があります。
 
 
-## プレゼンテーションのアクティブ ビューの検出と ActiveViewChanged イベントの処理を行う
+## <a name="detect-the-presentation's-active-view-and-handle-the-activeviewchanged-event"></a>プレゼンテーションのアクティブ ビューの検出と ActiveViewChanged イベントの処理を行う
 
 `getFileView` 関数は [Document.getActiveViewAsync](../../reference/shared/document.getactiveviewasync.md) メソッドを呼び出して、プレゼンテーションの現在のビューが "編集" ビュー (**[標準]** や **[アウトライン表示]** などの、スライドを編集できるビュー) なのか "読み取り" ビュー (**[スライド ショー]** や **[閲覧表示]**) なのかを返します。
 
@@ -49,7 +49,7 @@ function registerActiveViewChanged() {
 ```
 
 
-## プレゼンテーションの URL を取得する
+## <a name="get-the-url-of-the-presentation"></a>プレゼンテーションの URL を取得する
 
 `getFileUrl` 関数は [Document.getFileProperties](../../reference/shared/document.getfilepropertiesasync.md) メソッドを呼び出して、プレゼンテーション ファイルの URL を取得します。
 
@@ -70,7 +70,7 @@ function getFileUrl() {
 ```
 
 
-## プレゼンテーションの特定のスライドに移動する
+## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>プレゼンテーションの特定のスライドに移動する
 
 `getSelectedRange` 関数は [Document.getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) メソッドを呼び出して、`asyncResult.value` から返される JSON オブジェクトを取得します。そのオブジェクトには、選択範囲のスライド (または現在のスライドのみ) の ID、タイトル、インデックスが入った "slides" という名前の配列が含まれています。この関数はまた、選択範囲の最初のスライドの ID をグローバル変数に保存します。
 
@@ -111,7 +111,7 @@ function goToFirstSlide() {
 ```
 
 
-## プレゼンテーション内のスライド間を移動する
+## <a name="navigate-between-slides-in-the-presentation"></a>プレゼンテーション内のスライド間を移動する
 
 `goToSlideByIndex` 関数は **Document.goToByIdAsync** メソッドを呼び出して、プレゼンテーションの次のスライドに移動します。
 
@@ -137,13 +137,13 @@ function goToSlideByIndex() {
 
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 - [コンテンツ アドインおよび作業ウィンドウ アドインで、ドキュメントごとにアドインの状態と設定を保存する方法](../../docs/develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 
-- [ドキュメントまたはスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
+- [ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りと書き込み](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
-- [PowerPoint または Word 用アドインからドキュメント全体を取得する](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)
+- [PowerPoint または Word 用のアドインからドキュメント全体を取得する](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)
     
 - [PowerPoint アドインでドキュメントのテーマを使用する](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md)
     

@@ -1,10 +1,10 @@
-﻿# WorksheetProtectionOptions オブジェクト (JavaScript API for Excel)
+# <a name="worksheetprotectionoptions-object-(javascript-api-for-excel)"></a>WorksheetProtectionOptions オブジェクト (JavaScript API for Excel)
 
-_適用対象: Excel 2016、Excel Online、Excel for iOS、Office 2016_
+_適用対象:Excel 2016、Excel Online、Excel for iOS、Office 2016_
 
 シート保護のオプションを表します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
@@ -20,38 +20,38 @@ _適用対象: Excel 2016、Excel Online、Excel for iOS、Office 2016_
 |allowPivotTables|bool|ピボット テーブル機能の使用を可能にするワークシート保護オプションを表します。|
 |allowSort|bool|並び替え機能の使用を可能にするワークシート保護オプションを表します。|
 
-_プロパティのアクセスの[例](#例)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 なし
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 この例は、作業中のワークシートの保護オプションを読み込みます。
 ```js
 Excel.run(function (ctx) {

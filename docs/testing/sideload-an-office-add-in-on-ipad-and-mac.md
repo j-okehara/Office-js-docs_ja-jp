@@ -1,9 +1,9 @@
 
-# テストのために iPad と Mac で Office アドインをサイドロードする
+# <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>テストのために iPad と Mac で Office アドインをサイドロードする
 
-Office for iOS でアドインを実行するしくみを確認するには、iTunes を利用し、アドインのマニフェストを iPad にサイドロードするか、Office for Mac で直接、アドインのマニフェストをサイドロードします。 このアクションでは、実行中、ブレークポイントを設定したり、アドインのコードをデバッグしたりできませんが、その動作を確認したり、UI が使えることと適切にレンダリングされることを確認できます。 
+Office for iOS でアドインを実行するしくみを確認するには、iTunes を利用し、アドインのマニフェストを iPad にサイドロードするか、Office for Mac で直接、アドインのマニフェストをサイドロードします。このアクションでは、実行中、ブレークポイントを設定したり、アドインのコードをデバッグしたりできませんが、その動作を確認したり、UI が使えることと適切にレンダリングされることを確認できます。 
 
-## Office for iOS の前提条件
+## <a name="prerequisites-for-office-for-ios"></a>Office for iOS の前提条件
 
 
 
@@ -14,7 +14,7 @@ Office for iOS でアドインを実行するしくみを確認するには、iT
 - テスト対象アドインのマニフェスト .xml ファイル。
     
 
-## Office for Mac の前提条件
+## <a name="prerequisites-for-office-for-mac"></a>Office for Mac の前提条件
 
 
 
@@ -29,9 +29,9 @@ Office for iOS でアドインを実行するしくみを確認するには、iT
 - テスト対象アドインのマニフェスト .xml ファイル。
     
 
-## iPad 用 Excel または Word のアドインをサイドロードする
+## <a name="sideload-an-add-in-on-excel-or-word-for-ipad"></a>iPad 用 Excel または Word のアドインをサイドロードする
 
-1. 同期ケーブルを使用し、iPad をコンピューターに接続します。 iPad を初めてコンピューターに接続する場合、**[このコンピューターを信頼しますか?]** と問われます。 **[信頼する]** を選択して続行します。
+1. 同期ケーブルを使用し、iPad をコンピューターに接続します。iPad を初めてコンピューターに接続する場合、**[このコンピューターを信頼しますか?]** と問われます。**[信頼する]** を選択して続行します。
 
 2. iTunes で、メニュー バーの下にある **[iPad]** のアイコンをクリックします。
     
@@ -56,33 +56,35 @@ Office for iOS でアドインを実行するしくみを確認するには、iT
     ![Excel アプリでアドインを挿入](../../images/ed6033b0-ecec-4853-8ee7-9ef0884cb237.PNG)
 
 
-## Office for Mac でアドインをサイドロードする
+## <a name="sideload-an-add-in-on-office-for-mac"></a>Office for Mac でアドインをサイドロードする
 
 > **注:**Outlook 2016 for Mac アドインをサイドロードするには、「[テストのために Outlook アドインをサイドロードする](sideload-outlook-add-ins-for-testing.md)」をご参照ください。
 
-1. **Terminal** を開き、次のフォルダーの 1 つに移動します。そこにアドインのマニフェスト ファイルを保存します。 `wef` フォルダーがコンピューターにない場合、作成します。
+1. **Terminal** を開き、次のフォルダーの 1 つに移動します。そこにアドインのマニフェスト ファイルを保存します。`wef` フォルダーがコンピューターにない場合、作成します。
     
     - Word の場合: `/Users/<username>/Library/Containers/com.microsoft.Word/Data/documents/wef`    
     - Excel の場合: `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/documents/wef`
     - PowerPoint の場合: `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/documents/wef`
     
-2. **Finder** で `open .` コマンドを使用してフォルダーを開きます (ピリオドまたはドットを含みます)。 アドインのマニフェスト ファイルをこのフォルダーにコピーします。
+2. **Finder** で `open .` コマンドを使用してフォルダーを開きます (ピリオドまたはドットを含みます)。アドインのマニフェスト ファイルをこのフォルダーにコピーします。
     
     ![Office for Mac の Wef フォルダー](../../images/bca689f8-bff4-421d-bc36-92c8ae0ddfba.png)
 
-3. Word を開いてから、ドキュメントを開きます。Word が既に実行中の場合は再起動します。
+3. Word を起動し、ドキュメントを開きます。既に起動している場合は、Word を再起動します。
     
-4. Word で、 **[挿入]**  >  **[アドイン]**  >  **[個人用アドイン]** を選択し、アドインを選択します。
+4. Word で、**[挿入]** > **[アドイン]** > **[個人用アドイン]** (ドロップダウン メニュー) を選択し、アドインを選択します。
     
     ![Office for Mac のマイ アドイン](../../images/4593430c-b33e-4895-b2be-63fe3c4d08bc.png)
 
-> **重要:**サイドロードしたアドインは [個人用アドイン] ダイアログに表示されません。 ドロップダウン メニュー内にのみ表示されます ([個人用アドイン] の右にある小さい下向き矢印)。 サイドロードしたアドインは、このリストに "Developer Add-ins" という見出しで表示されます。 
+  > **重要:**サイドロードしたアドインは [マイアドイン] ダイアログに表示されません。ドロップダウン メニュー内にのみ表示されます ([マイアドイン] の右にある小さい下向き矢印)。サイドロードしたアドインは、このリストに "Developer Add-ins" という見出しで表示されます。 
     
 5. アドインが Word に表示されることを確認します。
     
     ![Office for Mac で示される Office アドイン](../../images/a5cb2efc-1180-45b4-85a6-13df817b9d2c.png)
+    
+> **注:**アドインはパフォーマンス上の利用から、Office for Mac でキャッシュされることが多いです。アドインの開発中に再読み込みする必要がある場合は、Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/ フォルダーをクリアできます。 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 - [iPad と Mac で Office アドインをデバッグする](../testing/debug-office-add-ins-on-ipad-and-mac.md)

@@ -1,6 +1,6 @@
 
-# Bindings オブジェクト
-アドイン がドキュメント内に持つバインドを表します。
+# <a name="bindings-object"></a>Bindings オブジェクト
+アドインがドキュメント内に持つバインドを表します。
 
 |||
 |:-----|:-----|
@@ -17,7 +17,7 @@ Office.context.document.bindings
 |||
 |:-----|:-----|
 |名前|説明|
-|[document](../../reference/shared/bindings.document.md)|このバインドのセットに関連付けられたドキュメントを表す  **Document** オブジェクトを取得します。|
+|[document](../../reference/shared/bindings.document.md)|このバインドのセットに関連付けられたドキュメントを表す **Document** オブジェクトを取得します。|
 
 **メソッド**
 
@@ -31,7 +31,7 @@ Office.context.document.bindings
 |[getByIdAsync](../../reference/shared/bindings.getbyidasync.md)|指定したバインドを ID によって取得します。|
 |[releaseByIdAsync](../../reference/shared/bindings.releasebyidasync.md)|指定したバインドを削除します。|
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このメソッドは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。
@@ -44,19 +44,19 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 ||Windows デスクトップ版 Office|Office Online (ブラウザー)|Office for iPad|
 |**Access**||Y||
 |**Excel**|Y|Y|Y|
-|**Word**|Y||Y|
+|**Word**|Y|Y|Y|
 
 |||
 |:-----|:-----|
-|**アプリの種類**|コンテンツ、作業ウィンドウ|
+|**アドインの種類**|コンテンツ、作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|Office for iPad における Excel と Word のサポートが追加されました。|
 |1.1|[addFromNamedItemAsync](../../reference/shared/bindings.addfromnameditemasync.md)、[addFromPromptAsync](../../reference/shared/bindings.addfrompromptasync.md)、および [addFromSelectionAsync](../../reference/shared/bindings.addfromselectionasync.md) で、Excel 用アプリのテーブル バインドとしてマトリックス データへのバインドのサポートが追加されました。|

@@ -1,5 +1,5 @@
-﻿
-# Labs.Connect
+
+# <a name="labs.connect"></a>Labs.Connect
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 

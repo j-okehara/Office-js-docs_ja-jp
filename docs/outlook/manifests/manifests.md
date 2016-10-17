@@ -1,5 +1,5 @@
 
-# Outlook アドインのマニフェスト
+# <a name="outlook-add-in-manifests"></a>Outlook アドインのマニフェスト
 
 Outlook アドインは 2 つのコンポーネント (XML のアドイン マニフェストと Web ページ) で構成され、Office アドイン用 JavaScript ライブラリ (office.js) でサポートされています。マニフェストには、アドインが Outlook クライアントと統合する方法が記述されます。現在、マニフェスト スキーマには、**VersionOverrides** を含む 3 つのバージョンがあります。アドインの作成には、マニフェスト スキーマ バージョン 1.1 と **VersionOverrides** 1.0 の使用をお勧めします。以下に例を示します。
 
@@ -605,7 +605,7 @@ Outlook アドインは 2 つのコンポーネント (XML のアドイン マ�
 ```
 
 
-## スキーマのバージョン
+## <a name="schema-versions"></a>スキーマのバージョン
 
 すべての Outlook クライアントが同時に最新機能をサポートするようになるとは限りません。Outlook ユーザーが古いバージョンの Outlook を保有している場合もあるためです。スキーマの複数のバージョンがあることで、開発者は、最新機能が使用可能な場合は最新機能を使用し、なおかつ古いバージョンでも機能する、下位互換性のあるアドインを作成できます。
 
@@ -625,7 +625,7 @@ Outlook アドインは 2 つのコンポーネント (XML のアドイン マ�
 この記事では、1.1 マニフェストの要件を取り上げます。アドイン マニフェストで  **VersionOverrides** 要素を使用するとしても、 **VersionOverrides** をサポートしていない古いクライアントでもアドインが機能できるように 1.1 マニフェスト要素を組み込むことは重要です。
 
 
-## ルート要素
+## <a name="root-element"></a>ルート要素
 
 Outlook アドイン マニフェストのルート要素は  **OfficeApp** です。この要素はまた、既定の名前空間、スキーマのバージョン、およびアドインの種類を宣言します。開始タグと終了タグの間にマニフェストのその他すべての要素を配置します。ルート要素の例を以下に示します。
 
@@ -644,22 +644,22 @@ Outlook アドイン マニフェストのルート要素は  **OfficeApp** で�
 ```
 
 
-## バージョン
+## <a name="version"></a>バージョン
 
 特定のアドインのバージョンです。開発者がマニフェスト内で何かを更新する場合、バージョンも同様に上げる必要があります。このように、新しいマニフェストをインストールすると、既存のマニフェストが上書きされ、ユーザーは新機能を取得します。このアドインがストアに送信済みのものであれば、新しいマニフェストが再度送信され検証される必要があります。その後、このアドインのユーザーは、新しく更新されたマニフェストが承認されてから数時間後に、このマニフェストを自動的に取得します。 
 
 
-アドインに必要なアクセス許可が変更された場合、ユーザーは、アップグレードを行いアドインに再同意するように求められます。 管理者が組織全体にこのアドインをインストール済みである場合、管理者がまず再同意する必要があります。 それまでの間、ユーザーには引き続き古い機能が表示されます。
+アドインに必要なアクセス許可が変更された場合、ユーザーは、アップグレードを行いアドインに再同意するように求められます。管理者が組織全体にこのアドインをインストール済みである場合、管理者がまず再同意する必要があります。それまでの間、ユーザーには引き続き古い機能が表示されます。
 
 
-## VersionOverrides
+## <a name="versionoverrides"></a>VersionOverrides
 
-**VersionOverrides** 要素は、アドイン コマンドの情報の場所です。 この要素の詳細については、「[Outlook アドイン マニフェストでアドイン コマンドを定義する](../../outlook/manifests/define-add-in-commands.md)」を参照してください。
+**VersionOverrides** 要素は、アドイン コマンドの情報の場所です。この要素の詳細については、「[Outlook アドイン マニフェストでアドイン コマンドを定義する](../../outlook/manifests/define-add-in-commands.md)」を参照してください。
 
 
-## Localization
+## <a name="localization"></a>ローカリゼーション
 
-名前、説明、および読み込む URL など、アドインのいくつかの側面は、各種のロケール用にローカライズする必要があります。 これらの要素は、既定値を指定してから、**VersionOverrides** 要素内の **Resources** 要素でロケールのオーバーライドを指定することによって簡単にローカライズできます。 画像、URL、および文字列をオーバーライドする方法を次に示します。
+名前、説明、および読み込む URL など、アドインのいくつかの側面は、各種のロケール用にローカライズする必要があります。これらの要素は、既定値を指定してから、**VersionOverrides** 要素内の **Resources** 要素でロケールのオーバーライドを指定することによって簡単にローカライズできます。画像、URL、および文字列をオーバーライドする方法を次に示します。
 
 
 ```XML
@@ -687,7 +687,7 @@ Outlook アドイン マニフェストのルート要素は  **OfficeApp** で�
 スキーマ リファレンスには、ローカライズできる要素に関する詳しい情報が含まれています。
 
 
-## Hosts
+## <a name="hosts"></a>Hosts
 
 Outlook アドインでは、次のように  **Hosts** 要素を指定します。
 
@@ -705,7 +705,7 @@ Outlook アドインでは、次のように  **Hosts** 要素を指定します
 これは、 **VersionOverrides** 要素内の **Hosts** 要素とは別個のものになります。この点については、「 [Outlook アドイン マニフェストでアドイン コマンドを定義する](../../outlook/manifests/define-add-in-commands.md)」で説明されています。
 
 
-## 要件
+## <a name="requirements"></a>要件
 
 **Requirements** 要素は、アドインで使用できる API のセットを指定します。Outlook アドインの場合、要件セットは Mailbox、値は 1.1 以上になっている必要があります。最新の要件セットのバージョンについては、API リファレンスを参照してください。要件セットの詳細については、「[Outlook アドインの API](../../outlook/apis.md)」を参照してください。
 
@@ -729,7 +729,7 @@ Outlook アドインでは、次のように  **Hosts** 要素を指定します
 ```
 
 
-## Form settings
+## <a name="form-settings"></a>Form settings
 
 **FormSettings** 要素は古い Outlook クライアント (スキーマ 1.1 のみをサポートし、**VersionOverrides** はサポートしない) によって使用されます。この要素を使用して、開発者はこのようなクライアントでアドインがどのように表示されるかを定義します。**ItemRead** と **ItemEdit** の 2 つの部分があります。**ItemRead** を使用すると、ユーザーがメッセージと予定を読み込むときに、アドインがどのように表示されるかを指定できます。**ItemEdit** を使用すると、ユーザーが返信や新しいメッセージ、または予定を作成したり (ユーザーが開催者の場合)、予定を編集したりするときに、アドインがどのように表示されるかについて記述できます。
 
@@ -737,7 +737,7 @@ Outlook アドインでは、次のように  **Hosts** 要素を指定します
 
 詳細については、「[Schema reference for Office Add-ins manifests (v1.1)](../../overview/add-in-manifests.md)」を参照してください。
 
-## アプリ ドメイン
+## <a name="app-domains"></a>アプリ ドメイン
 
 **SourceLocation** 要素に指定するアドインの開始ページのドメインは、そのアドインの既定のドメインです。**AppDomains** 要素と **AppDomain** 要素を使用しない場合は、アドインが別のドメインに移動しようとすると、ブラウザーがそのアドイン ウィンドウの外に新しいウィンドウを開きます。アドインがアドイン ウィンドウ内の別のドメインに移動できるようにするには、アドインのマニフェストに **AppDomains** 要素を追加し、その **AppDomain** サブ要素に各追加ドメインを含めます。
 
@@ -759,14 +759,14 @@ Outlook アドインでは、次のように  **Hosts** 要素を指定します
 アプリ ドメインは、ポップアップ ウィンドウと、リッチ クライアントで実行するアドインとの間での Cookie の共有を有効にするためにも必要です。
 
 
-## アクセス許可
+## <a name="permissions"></a>アクセス許可
 
 **Permissions** 要素には、アドインに必要なアクセス許可が含まれます。通常は、使用する予定の実際のメソッドに応じて、そのアドインに必要な最低限のアクセス許可を指定します。たとえば、新規作成フォームでアクティブ化され、[item.requiredAttendees](../../../reference/outlook/Office.context.mailbox.item.md) などのアイテム プロパティを読み取るだけで書き込みはせず、かつ [mailbox.makeEwsRequestAsync](../../../reference/outlook/Office.context.mailbox.md) を呼び出して Exchange Web サービスの操作にアクセスすることのないメール アドインでは、**ReadItem** アクセス許可を指定する必要があります。利用できるアクセス許可について詳しくは、「[Outlook アドインのアクセス許可を理解する](../../outlook/understanding-outlook-add-in-permissions.md)」を参照してください。
 
 
 **メール アドインの 4 層アクセス許可モデル**
 
-![メール アプリ スキーマ v1.1 の 4 階層アクセス許可モデル](../../../images/olowa15wecon_Permissions_4Tier.png)
+![メール アプリ スキーマ v1.1 の 4 層アクセス許可モデル](../../../images/olowa15wecon_Permissions_4Tier.png)
 ```XML
 <OfficeApp>
 ...
@@ -777,7 +777,7 @@ Outlook アドインでは、次のように  **Hosts** 要素を指定します
 ```
 
 
-## アクティブ化ルール
+## <a name="activation-rules"></a>アクティブ化ルール
 
 アクティブ化ルールは、 **Rule** 要素で指定します。 **Rule** 要素は、1.1 マニフェストの **OfficeApp** 要素の子として、さらには **VersionOverrides** の **ExtensionPoint** 要素の子として含めることができます。 [VersionOverrides](../../outlook/manifests/define-add-in-commands.md) におけるこの要素の使用法について詳しくは、「 **Outlook アドイン マニフェストでアドイン コマンドを定義する**」をご覧ください。
 
@@ -795,13 +795,13 @@ Outlook アドインでは、次のように  **Hosts** 要素を指定します
 アクティブ化ルールの詳細とサンプルについて詳しくは、「[Outlook アドインのアクティブ化ルール](../../outlook/manifests/activation-rules.md)」を参照してください。
 
 
-## 次の手順: アドイン コマンド
+## <a name="next-steps:-add-in-commands"></a>次の手順: アドイン コマンド
 
 
 基本のマニフェストを定義したら、 [アドインのアドイン コマンドを定義](../../outlook/manifests/define-add-in-commands.md)します。アドイン コマンドは、リボン内にボタンを表示して、ユーザーがアドインを簡単かつ直感的な方法でアクティブ化できるようにします。詳細は、「 [Outlook のアドイン コマンド](../../outlook/add-in-commands-for-outlook.md)」をご覧ください。
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 
@@ -811,7 +811,8 @@ Outlook アドインでは、次のように  **Hosts** 要素を指定します
     
 - [Office アドインのローカライズ](../../develop/localization.md)
     
-- [デスクトップ、タブレット、モバイル デバイスで実行する Outlook 用メール アドインを作成する (スキーマ v1.1)](http://msdn.microsoft.com/library/8d425fb3-8a7c-429d-87b3-8046e964b153%28Office.15%29.aspx)
+- 
+  [デスクトップ、タブレット、モバイル デバイスで実行される Outlook 用のメール アドインを作成する (スキーマ v1.1)](http://msdn.microsoft.com/library/8d425fb3-8a7c-429d-87b3-8046e964b153%28Office.15%29.aspx)
     
 - [Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](../../outlook/privacy-and-security.md)
     
@@ -819,13 +820,14 @@ Outlook アドインでは、次のように  **Hosts** 要素を指定します
     
 - [Office アドインの XML マニフェスト](../../overview/add-in-manifests.md)
     
-- [Office アドインのマニフェスト向けのスキーマ リファレンス (v1.1)](../../overview/add-in-manifests.md)
+- [Office アドイン マニフェストのスキーマ リファレンス (v1.1)](../../overview/add-in-manifests.md)
     
-- [Item Types and Message Classes](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
+- 
+  [アイテムの種類とメッセージ クラス](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
     
 - [Office アドインの設計ガイドライン](../../design/add-in-design.md)
     
-- [ユーザーのメールボックスにアクセスする Outlook アドインのためのアクセス許可を指定する](../../outlook/understanding-outlook-add-in-permissions.md)
+- [Outlook アドインのアクセス許可を理解する](../../outlook/understanding-outlook-add-in-permissions.md)
     
 - [正規表現アクティブ化ルールを使用して Outlook アドインを表示する](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)
     

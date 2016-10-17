@@ -1,8 +1,8 @@
-﻿# TableColumn オブジェクト (JavaScript API for Excel)
+# <a name="tablecolumn-object-(javascript-api-for-excel)"></a>TableColumn オブジェクト (JavaScript API for Excel)
 
 テーブル内にある 1 つの列を表します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
@@ -11,42 +11,42 @@
 |name|string|テーブル列の名前を取得します。読み取り専用です。|
 |values|object[][]|指定した範囲の Raw 値を表します。返されるデータの型は、文字列、数値、またはブール値のいずれかになります。エラーが含まれているセルは、エラー文字列を返します。|
 
-_プロパティのアクセスの[例](#例)をご覧ください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 | リレーションシップ | 型   |説明|
 |:---------------|:--------|:----------|
-|フィルター|[フィルター](filter.md)|列に適用されるフィルターを取得します。読み取り専用です。|
+|filter|[Filter](filter.md)|列に適用されるフィルターを取得します。読み取り専用です。|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
 |[delete()](#delete)|void|テーブルから列を削除します。|
-|[getDataBodyRange()](#getdatabodyrange)|[範囲](range.md)|列のデータ本体に関連付けられた範囲オブジェクトを取得します。|
-|[getHeaderRowRange()](#getheaderrowrange)|[範囲](range.md)|列のヘッダー行に関連付けられた範囲オブジェクトを取得します。|
-|[getRange()](#getrange)|[範囲](range.md)|列全体に関連付けられた範囲オブジェクトを取得します。|
-|[getTotalRowRange()](#gettotalrowrange)|[範囲](range.md)|列の集計行に関連付けられた範囲オブジェクトを取得します。|
+|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|列のデータ本体に関連付けられた範囲オブジェクトを取得します。|
+|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|列のヘッダー行に関連付けられた範囲オブジェクトを取得します。|
+|[getRange()](#getrange)|[Range](range.md)|列全体に関連付けられた範囲オブジェクトを取得します。|
+|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|列の集計行に関連付けられた範囲オブジェクトを取得します。|
 |[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### delete()
+### <a name="delete()"></a>delete()
 テーブルから列を削除します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 tableColumnObject.delete();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 Excel.run(function (ctx) { 
@@ -63,21 +63,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getDataBodyRange()
+### <a name="getdatabodyrange()"></a>getDataBodyRange()
 列のデータ本体に関連付けられた範囲オブジェクトを取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 tableColumnObject.getDataBodyRange();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 Excel.run(function (ctx) { 
@@ -96,21 +96,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getHeaderRowRange()
+### <a name="getheaderrowrange()"></a>getHeaderRowRange()
 列のヘッダー行に関連付けられた範囲オブジェクトを取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 tableColumnObject.getHeaderRowRange();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 Excel.run(function (ctx) { 
@@ -129,21 +129,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getRange()
+### <a name="getrange()"></a>getRange()
 列全体に関連付けられた範囲オブジェクトを取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 tableColumnObject.getRange();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 Excel.run(function (ctx) { 
@@ -163,21 +163,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getTotalRowRange()
+### <a name="gettotalrowrange()"></a>getTotalRowRange()
 列の集計行に関連付けられた範囲オブジェクトを取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 tableColumnObject.getTotalRowRange();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 Excel.run(function (ctx) { 
@@ -197,22 +197,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
-### プロパティのアクセスの例
+### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 ```js
 Excel.run(function (ctx) { 

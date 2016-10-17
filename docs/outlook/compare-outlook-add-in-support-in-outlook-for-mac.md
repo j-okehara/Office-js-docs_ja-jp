@@ -1,11 +1,11 @@
 
-# Outlook for Mac と他の Outlook ホストの Outlook アドイン サポートの比較
+# <a name="compare-outlook-add-in-support-in-outlook-for-mac-with-other-outlook-hosts"></a>Outlook for Mac と他の Outlook ホストの Outlook アドイン サポートの比較
 
 Outlook for Mac でも、Outlook for Windows、デバイス用 OWA、および Outlook Web App などの他のホストで行うのと同様に Outlook アドインを作成して実行することができ、ホストごとに JavaScript をカスタマイズする必要はありません。通常、アドインから JavaScript API for Office に対する同じ呼び出しは、以下の表に示す領域を除き同様の動作をします。
 
  >**メモ**  Outlook for Mac は、Outlook の閲覧モードでのみ JavaScript API for Office をサポートします。
 
-|**領域**|**Outlook for Windows、デバイス用 OWA、Outlook Web App**|**Outlook for Mac**|
+|**項目**|**Outlook for Windows、デバイス用 OWA、Outlook Web App**|**Outlook for Mac**|
 |:-----|:-----|:-----|
 |サポート対象バージョンの office.js および Office アドインのマニフェスト スキーマ|Office.js および スキーマ v1.1 のすべての API。|<ul><li>閲覧モードで適用可能な API のみ。office.js v1.1 の新しい API や拡張された API を使用するアドインはアクティブ化できますが、新規作成モード用の API は Outlook for Mac では正しく実行されません。 </li><li>スキーマ v1.1。</li></ul>|
 |定期的な予定系列のインスタンス|<ul><li>定期的な系列のマスター予定または予定インスタンスのアイテム ID および他のプロパティを取得できます。 </li><li>[mailbox.displayAppointmentForm](../../reference/outlook/Office.context.mailbox.md#displayappointmentformitemid) を使用して、定期的な系列のインスタンスまたはマスターを表示できます。</li></ul>|<ul><li>マスター予定のアイテム ID と他のプロパティを取得できますが、定期的な系列のインスタンスのアイテム ID とプロパティは取得できません。</li><li>定期的な系列のマスター予定を表示できます。アイテム ID がない場合、定期的な系列のインスタンスは表示できません。</li></ul>|
@@ -16,7 +16,7 @@ Outlook for Mac でも、Outlook for Windows、デバイス用 OWA、および O
 |**dateTimeCreated** プロパティおよび **dateTimeModified** プロパティでのタイム ゾーンを表す文字列|例: Thu Mar 13 2014 14:09:11 GMT+0800 (中国標準時)|例: Thu Mar 13 2014 14:09:11 GMT+0800 (CST)|
 |**dateTimeCreated** および **dateTimeModified** の時間の精度|次に示すコードをアドインで使用している場合、最大の精度はミリ秒単位になります。<br/><pre lang="javascript">JSON.stringify(Office.context.mailbox.item, null, 4);</pre>|精度は最大で秒単位となります。|
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

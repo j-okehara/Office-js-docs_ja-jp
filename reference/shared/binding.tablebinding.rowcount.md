@@ -1,5 +1,5 @@
 
-# TableBinding.rowCount プロパティ
+# <a name="tablebinding.rowcount-property"></a>TableBinding.rowCount プロパティ
 テーブルの行数を整数値で取得します。
 
 |||
@@ -13,12 +13,12 @@ var rowCount = bindingObj.rowCount;
 ```
 
 
-## 戻り値
+## <a name="return-value"></a>戻り値
 
 指定された [TableBinding](../../reference/shared/binding.tablebinding.md) オブジェクト内の行数。
 
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 Excel 2013 および Excel Online で 1 行を選択して空のテーブルを挿入すると (**[挿入]** タブの **[テーブル]** を使用)、両方の Office ホスト アプリケーションで 1 行のヘッダーと空の 1 行を作成します。ただし、アプリのスクリプトで、この新規挿入されたテーブルのバインドを作成し (たとえば、[addFromSelectionAsync](../../reference/shared/bindings.addfromselectionasync.md) メソッドを使用)、**rowCount** プロパティの値を確認した場合、返される値はスプレッドシートを Excel 2013 で開いているか Excel Online で開いているかによって異なります。
 
@@ -32,7 +32,7 @@ Excel 2013 および Excel Online で 1 行を選択して空のテーブルを�
 Access 用コンテンツ アプリでは、パフォーマンス上の理由から  **rowCount** プロパティは常に -1 を返します。
 
 
-## 例
+## <a name="example"></a>例
 
 
 
@@ -52,7 +52,7 @@ function write(message){
 
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このプロパティは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのプロパティをサポートしないことを示します。
@@ -67,24 +67,24 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |:-----|:-----|:-----|:-----|
 |**Access**||Y||
 |**Excel**|Y|Y|Y|
-|**Word**|Y||Y|
+|**Word**|Y|Y|Y|
 
 |||
 |:-----|:-----|
 |**要件セットに指定できるもの**|TableBindings|
 |**最小限のアクセス許可レベル**|[ReadDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**アプリの種類**|コンテンツ、作業ウィンドウ|
+|**アドインの種類**|コンテンツ、作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 ****
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|Office for iPad における Excel と Word のサポートが追加されました。|
 |1.1|Access 用のアドインのサポートが追加されました。|

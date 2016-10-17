@@ -1,54 +1,54 @@
 
-# Labs.LabEditor
+# <a name="labs.labeditor"></a>Labs.LabEditor
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-The  **LabEditor** object allows you to edit a given lab as well as get and set configuration data associated with the lab.
+**LabEditor** オブジェクトを使うと、指定されたラボの編集に加えて、ラボに関連付けられている構成データを取得し、設定できます。
 
 ```
 class LabEditor
 ```
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 
-### getConfiguration
+### <a name="getconfiguration"></a>getConfiguration
 
  `public function getConfiguration(callback: Labs.Core.ILabCallback<Labs.Core.IConfiguration>): void`
 
-Retrieves the current lab configuration.
+現在のラボの構成を取得します。
 
- **パラメーター**
+ **Parameters**
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| _callback_|Callback function that is fired once the configuration has been retrieved.|
+| _callback_|構成が取得されると起動するコールバック関数。|
 
-### setConfiguration
+### <a name="setconfiguration"></a>setConfiguration
 
  `public function getConfiguration(callback: Labs.Core.ILabCallback<Labs.Core.IConfiguration>): void`
 
-Sets a new lab configuration.
+新しいラボ構成を設定します。
 
- **パラメーター**
+ **Parameters**
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| _configuration_|The configuration to set.|
-| _callback_|Callback function that is fired once the configuration has been set.|
+| _configuration_|設定する構成。|
+| _callback_|構成が設定されると起動するコールバック関数。|
 
-### done
+### <a name="done"></a>done
 
  `public function done(callback: Labs.Core.ILabCallback<void>): void`
 
-Indicates that the user has finished editing the lab.
+ユーザーがラボの編集を完了したことを示します。
 
- **パラメーター**
+ **Parameters**
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| _callback_|Callback function that is fired once the lab editor has finished.|
+| _callback_|ラボのエディターが完了すると起動するコールバック関数。|

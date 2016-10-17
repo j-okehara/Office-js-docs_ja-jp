@@ -1,5 +1,5 @@
 
-# Outlook で予定またはメッセージを作成するときに本文にデータを挿入する
+# <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>Outlook で予定またはメッセージを作成するときに本文にデータを挿入する
 
 非同期メソッド ([Body.getAsync](../../reference/outlook/Body.md)、[Body.getTypeAsync](../../reference/outlook/Body.md)、[Body.prependAsync](../../reference/outlook/Body.md)、[Body.setAsync](../../reference/outlook/Body.md) および [Body.setSelectedDataAsync](../../reference/outlook/Body.md)) を使用して、本文の種類を取得し、ユーザーが作成している予定またはメッセージのアイテムの本文にデータを挿入することができます。これらの非同期メソッドは新規作成アドインでのみ使用できます。これらのメソッドを使用する場合は、Outlook が新規作成フォーム内でアドインをアクティブ化できるようにアドイン マニフェストが適切にセットアップされていることを確認してください。この手順については、「[新規作成フォーム用の Outlook アドインを作成する](../outlook/compose-scenario.md)」を参照してください。
 
@@ -16,12 +16,12 @@ Outlook では、ユーザーはテキスト形式、HTML 形式、またはリ�
 
 1.  タブレットやスマートフォンでは、オペレーティング システムまたはホストが当初 HTML で作成されたアイテムを HTML 形式で編集することをサポートしていない場合、**getTypeAsync** は **Office.MailboxEnums.BodyType.Text** を返します。
 
-2.  挿入しようとしているデータが HTML のときに、そのアイテムについて **getTypeAsync** がテキスト タイプを返す場合は、そのデータをテキストとして再編成して、_coercionType_ として **Office.MailboxEnums.BodyType.Text** で挿入します。 単に HTML データをテキスト強制型変換タイプで挿入すると、ホストは HTML タグをテキストとして表示します。 _coercionType_ として **Office.MailboxEnums.BodyType.Html** で HTML データを挿入しようとすると、エラーが発生します。
+2.  挿入しようとしているデータが HTML のときに、そのアイテムについて **getTypeAsync** がテキスト タイプを返す場合は、そのデータをテキストとして再編成して、_coercionType_ として **Office.MailboxEnums.BodyType.Text** で挿入します。単に HTML データをテキスト強制型変換タイプで挿入すると、ホストは HTML タグをテキストとして表示します。_coercionType_ として **Office.MailboxEnums.BodyType.Html** で HTML データを挿入しようとすると、エラーが発生します。
 
 API for Office のほとんどの非同期メソッドと同様に、 _getTypeAsync_、 **prependAsync** および **setSelectedDataAsync** には、 **coercionType** の他に、オプションの入力パラメーターがあります。これらのオプションの入力パラメーターの指定について詳しくは、「 [Office アドインにおける非同期プログラミング](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline)」の「 [オプションのパラメーターを非同期メソッドに渡す](../../docs/develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
 
 
-## 現在のカーソル位置にデータを挿入する方法
+## <a name="to-insert-data-at-the-current-cursor-position"></a>現在のカーソル位置にデータを挿入する方法
 
 
 ここでは、作成中のアイテムの本文タイプを  **getTypeAsync** を使用して検査してから、 **setSelectedDataAsync** を使用して現在のカーソル位置にデータを挿入するサンプル コードを示します。
@@ -123,7 +123,7 @@ function write(message){
 ```
 
 
-## アイテムの本文の先頭にデータを挿入する方法
+## <a name="to-insert-data-at-the-beginning-of-the-item-body"></a>アイテムの本文の先頭にデータを挿入する方法
 
 
 別の方法として、 **prependAsync** を使用して現在のカーソル位置にかかわらず、データをアイテム本文の先頭に挿入することもできます。挿入の位置が異なることを除けば、 **prependAsync** と **setSelectedDataAsync** の動作は同じです。
@@ -215,7 +215,7 @@ function write(message){
 ```
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

@@ -1,5 +1,5 @@
 
-# CustomXmlPart.dataNodeDeleted イベント
+# <a name="customxmlpart.datanodedeleted-event"></a>CustomXmlPart.dataNodeDeleted イベント
 ノードが削除されるときに発生します。
 
 |||
@@ -13,12 +13,12 @@ Office.EventType.DataNodeDeleted
 ```
 
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 **dataNodeDeleted** イベントのイベント ハンドラーを追加するには、[CustomXmlPart](../../reference/shared/customxmlpart.addhandlerasync.md) オブジェクトの **addHandlerAsync** メソッドを使用します。
 
 
-## 例
+## <a name="example"></a>例
 
 
 
@@ -41,7 +41,7 @@ function write(message){
 
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このイベントは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションがこのイベントをサポートしないことを示します。
@@ -52,24 +52,24 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |:-----|:-----|:-----|:-----|
 |**Access**||||
 |**Excel**||||
-|**Word**|Y||Y|
+|**Word**|Y|Y|Y|
 
 |||
 |:-----|:-----|
 |**要件セットに指定できるもの**|CustomXmlParts|
 |**最小限のアクセス許可レベル**|[ReadWriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**アプリの種類**|作業ウィンドウ|
+|**アドインの種類**|作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 ****
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|Office for iPad における Word のサポートが追加されました。|
 |1.0|導入|

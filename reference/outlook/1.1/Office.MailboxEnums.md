@@ -1,52 +1,52 @@
  
 
-# MailboxEnums
+# <a name="mailboxenums"></a>MailboxEnums
 
 ## [Office](Office.md).MailboxEnums
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
 |適用可能な Outlook のモード| 作成|
 
-### メンバー
+### <a name="members"></a>メンバー
 
-#### AttachmentType :String
+#### <a name="attachmenttype-:string"></a>AttachmentType :String
 
 添付ファイルの種類を指定します。新規作成モードのみ。
 
 AttachmentType
 
-##### 型:
+##### <a name="type:"></a>型:
 
 *   String
 
-##### プロパティ:
+##### <a name="properties:"></a>プロパティ:
 
 |名前| 型| 説明|
 |---|---|---|
 |`File`| String|この添付ファイルはファイルです。|
 |`Item`| String|この添付ファイルは Exchange のアイテムです。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
 |適用可能な Outlook のモード| 作成|
-#### EntityType :String
+#### <a name="entitytype-:string"></a>EntityType :String
 
 エンティティの種類を指定します。新規作成モードのみ。
 
 EntityType
 
-##### 型:
+##### <a name="type:"></a>型:
 
 *   String
 
-##### プロパティ:
+##### <a name="properties:"></a>プロパティ:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -58,46 +58,46 @@ EntityType
 |`TaskSuggestion`| String|エンティティがタスクのヒントであることを指定します。|
 |`URL`| String|エンティティがインターネット URL であることを指定します。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
 |適用可能な Outlook のモード| 作成|
-#### ItemType :String
+#### <a name="itemtype-:string"></a>ItemType :String
 
 アイテムの種類を指定します。新規作成モードのみ。
 
 ItemType
 
-##### 型:
+##### <a name="type:"></a>型:
 
 *   String
 
-##### プロパティ:
+##### <a name="properties:"></a>プロパティ:
 
 |名前| 型| 説明|
 |---|---|---|
 |`Message`| String|電子メール、会議出席依頼、会議の返信、または会議の取り消し。|
 |`Appoinment`| String|予定アイテム。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
 |適用可能な Outlook のモード| 作成|
-#### RecipientType :String
+#### <a name="recipienttype-:string"></a>RecipientType :String
 
 予定の受信者の種類を指定します。作成モードのみ。
 
 RecipientType
 
-##### 型:
+##### <a name="type:"></a>型:
 
 *   String
 
-##### プロパティ:
+##### <a name="properties:"></a>プロパティ:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -106,23 +106,23 @@ RecipientType
 |`User`| String|受信者は、Exchange サーバー上の SMTP 電子メール アドレスです。|
 |`ExternalUser`| String|受信者は、Exchange サーバー上にはない SMTP 電子メール アドレスです。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.1|
 |適用可能な Outlook のモード| 作成|
-#### ResponseType :String
+#### <a name="responsetype-:string"></a>ResponseType :String
 
 会議出席依頼への応答の種類を指定します。新規作成モードのみ。
 
 ResponseType
 
-##### 型:
+##### <a name="type:"></a>型:
 
 *   String
 
-##### プロパティ:
+##### <a name="properties:"></a>プロパティ:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -132,7 +132,7 @@ ResponseType
 |`Accepted`| String|出席者が会議出席依頼を承諾しました。|
 |`Declined`| String|出席者が会議出席依頼を拒否しました。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|

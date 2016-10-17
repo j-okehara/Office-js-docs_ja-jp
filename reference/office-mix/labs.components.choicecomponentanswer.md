@@ -1,5 +1,5 @@
-﻿
-# Labs.Components.ChoiceComponentAnswer
+
+# <a name="labs.components.choicecomponentanswer"></a>Labs.Components.ChoiceComponentAnswer
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,19 +10,19 @@ class ChoiceComponentAnswer
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| `public var answer: any`|The answer value.|
+| `public var answer: any`|応答の値。|
 
-## メソッド
-
-
+## <a name="methods"></a>メソッド
 
 
-### コンストラクター
+
+
+### <a name="constructor"></a>コンストラクター
 
  `function constructor(answer: any)`
 

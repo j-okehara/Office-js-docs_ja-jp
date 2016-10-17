@@ -1,12 +1,12 @@
 
-# テストのために Outlook アドインをサイドロードする
+# <a name="sideload-outlook-add-ins-for-testing"></a>テストのために Outlook アドインをサイドロードする
 
 まずアドイン カタログに置かなくても、サイドロードを使用すると、テスト用に Outlook アドインをインストールすることができます。
 
  >**注** 他の Office スイート アプリケーションのアドインもサイドロードできます。詳細については、「[テストのために Office アドインをサイドロードする](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)」を参照してください。
 
 
-## Outlook アドインをサイドロードするには
+## <a name="to-sideload-outlook-add-ins"></a>Outlook アドインをサイドロードするには
 
 
 1. [Outlook Web App](https://outlook.office365.com) に移動します。

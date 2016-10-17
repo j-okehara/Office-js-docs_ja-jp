@@ -1,6 +1,6 @@
 
-# CoercionType 列挙型
-呼び出されたメソッドによって取得または設定するデータを強制的に変換する方法を指定します。
+# <a name="coerciontype-enumeration"></a>CoercionType 列挙型
+呼び出されたメソッドによって返される、または設定されるデータを強制的に変換する方法を指定します。
 
 |||
 |:-----|:-----|
@@ -11,19 +11,19 @@
 Office.CoercionType
 ```
 
-## メンバー
+## <a name="members"></a>メンバー
 
 
 **値**
 
 
-|**列挙体**|**値**|**説明**|
+|**列挙**|**値**|**説明**|
 |:-----|:-----|:-----|
 |Office.CoercionType.Html|"html"|データを HTML として取得または設定します。<br/><br/> **注** Word 用のアドインと Outlook 用の Outlook アドイン (新規作成モード) のデータにのみ適用されます。|
-|Office.CoercionType.Matrix|"matrix"|データをヘッダーなしの表形式データとして取得または設定します。 データは、1 次元の一連の文字を含む配列の配列として取得または設定されます。 たとえば、3 行 2 列の構成に含まれる **string** 値は [` [["R1C1", "R1C2"], ["R2C1", "R2C2"], ["R3C1", "R3C2"]]`] と表します。<br/><br/> **注** Excel および Word のデータにのみ適用されます。|
+|Office.CoercionType.Matrix|"matrix"|データをヘッダーなしの表形式データとして取得または設定します。データは、1 次元の一連の文字を含む配列の配列として取得または設定されます。たとえば、3 行 2 列の構成に含まれる **string** 値は [` [["R1C1", "R1C2"], ["R2C1", "R2C2"], ["R3C1", "R3C2"]]`] と表します。<br/><br/> **注** Excel および Word のデータにのみ適用されます。|
 |Office.CoercionType.Ooxml|"ooxml"|データを Office Open XML として取得または設定します。<br/><br/> **注** Word のデータにのみ適用されます。|
 |Office.CoercionType.SlideRange|"slideRange"|選ばれているスライドの ID、タイトル、インデックスの配列が含まれる JSON オブジェクトを返します。たとえば、2 つのスライドが選ばれている場合は、[`{"slides":[{"id":257,"title":"Slide 2","index":2},{"id":256,"title":"Slide 1","index":1}]}`] です。<br/><br/> **注** 現在のスライドまたは選択範囲のスライドを取得する [Document.getSelectedData](../../reference/shared/document.getselecteddataasync.md) メソッドを呼び出す場合、PowerPoint のデータにのみ適用されます。|
-|Office.CoercionType.Table|"table"|データをヘッダー付き (省略可能) の表形式データとして取得または設定します。 データをヘッダー付き (省略可能) の表形式データとして取得または設定します。<br/><br/> **注** Access、Excel、および Word のデータにのみ適用されます。|
+|Office.CoercionType.Table|"table"|データをヘッダー付き (省略可能) の表形式データとして取得または設定します。データをヘッダー付き (省略可能) の表形式データとして取得または設定します。<br/><br/> **注** Access、Excel、および Word のデータにのみ適用されます。|
 |Office.CoercionType.Text|"text"|データをテキスト (**string**) として取得または設定します。データは、1 次元の一連の文字として取得または設定されます。|
 |Office.CoercionType.Image|"image"|データは返されるか、イメージ ストリームとして設定されます。<br/><br/> **注** Excel、Word、PowerPoint のデータにのみ適用されます。|
 PowerPoint では、**Office.CoercionType.Text**、**Office.CoercionType.Image**、**Office.CoercionType.SlideRange** のみがサポートされます。
@@ -31,7 +31,7 @@ PowerPoint では、**Office.CoercionType.Text**、**Office.CoercionType.Image**
 Project では、 **Office.CoercionType.Text** のみがサポートされます。
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、この列挙は、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションがこの列挙をサポートしないことを示します。
@@ -57,10 +57,10 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|Word Online のサポートが追加されました。|
 |1.1|Office for iPad で Excel、PowerPoint、および Word のサポートが追加されました。|

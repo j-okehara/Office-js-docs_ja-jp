@@ -1,5 +1,5 @@
 
-# カスタム ウィンドウの Outlook アドイン
+# <a name="custom-pane-outlook-add-ins"></a>カスタム ウィンドウの Outlook アドイン
 
 カスタム ウィンドウは、現在選択されているアイテムで特定の条件が満たされたときにアクティブになるアドインの拡張点です。これは、アドインが実装するアドイン コマンドと共に、アドイン マニフェストの **VersionOverrides** 要素で定義されます。詳細については、「[Outlook アドイン マニフェストでアドイン コマンドを定義する](../outlook/manifests/define-add-in-commands.md)」を参照してください。カスタム ウィンドウは、メッセージ閲覧ビューまたは予定出席者ビューにのみ表示できます。アドイン バーにはエントリが表示されます。ユーザーがエントリをクリックすると、カスタム ウィンドウはアイテム本文の上側に水平方向に表示されます。外観と動作は、アドイン コマンドを実装していない閲覧モードのアドインと同じです。
 
@@ -33,7 +33,7 @@
   **Rule** は、アドインがアクティブ化されるときを指定するルールまたはルールのコレクションを指定します。[Outlook アドインのマニフェスト](../outlook/manifests/manifests.md)の定義と同じですが、[ItemIs](http://msdn.microsoft.com/en-us/library/f7dac4a3-1574-9671-1eda-47f092390669%28Office.15%29.aspx) ルールに次の変更点があります。**ItemType** は "Message" または "AppointmentAttendee" のいずれかで、**FormType** 属性がありません。詳細については、「[Outlook アドインのアクティブ化ルール](../outlook/manifests/activation-rules.md)」を参照してください。
     
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

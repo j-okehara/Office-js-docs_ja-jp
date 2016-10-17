@@ -1,5 +1,5 @@
 
-# Office 2013 でのコンテンツ アドインと作業ウィンドウ アドインの Office JavaScript API のサポート
+# <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Office 2013 でのコンテンツ アドインと作業ウィンドウ アドインの Office JavaScript API のサポート
 
 
 [Office JavaScript API](../../reference/javascript-api-for-office.md) を使用して、Office 2013 ホスト アプリケーションの作業ウィンドウやコンテンツ用のアドインを作成できます。コンテンツと作業ウィンドウのアドインをサポートするオブジェクトとメソッドは、次のように分類されます。
@@ -27,7 +27,7 @@
 Office ホスト アプリケーション全体に渡る Office JavaScript API サポートの概要については、「[JavaScript API for Office について](../../docs/develop/understanding-the-javascript-api-for-office.md)」を参照してください。
 
 
-## アクティブな選択範囲の読み取りと書き込み
+## <a name="reading-and-writing-to-an-active-selection"></a>アクティブな選択範囲の読み取りと書き込み
 
 文書、スプレッドシート、またはプレゼンテーション内のユーザーの現在の選択範囲に対して読み書きをすることができます。アドイン用のホスト アプリケーションに応じて、[Document](../../reference/shared/document.getselecteddataasync.md) オブジェクトの [getSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) メソッドと [setSelectedDataAsync](../../reference/shared/document.md) メソッド内のパラメーターとして読み書きするデータ構造のタイプを指定できます。たとえば、Word には任意のデータ タイプ (テキスト、HTML、表形式データ、または Office Open XML)、Excel にはテキストと表形式データ、および PowerPoint と Project にはテキストを指定できます。ユーザーの選択範囲に対する変更を検出するためのイベント ハンドラーを作成することもできます。以下の例では、**getSelectedDataAsync** メソッドを使用して、選択範囲からデータをテキストとして取得します。
 
@@ -53,7 +53,7 @@ function write(message){
 詳細と例については、「[文書またはスプレッドシート内のアクティブな選択範囲へのデータの読み取りと書き込み](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)」を参照してください。
 
 
-## 文書またはスプレッドシート内の領域へのバインド
+## <a name="binding-to-a-region-in-a-document-or-spreadsheet"></a>文書またはスプレッドシート内の領域へのバインド
 
 **getSelectedDataAsync** メソッドと **setSelectedDataAsync** メソッドを使用して、文書、スプレッドシート、またはプレゼンテーション内のユーザーの*現在*の選択範囲を読み取りまたは書き込みできます。ただし、ユーザーに選択を要求せずにアドインの複数の実行セッションに渡って文書内の同じ領域にアクセスする場合は、最初にその領域をバインドする必要があります。そのバインドした領域に対するデータおよび選択範囲変更イベントにサブスクライブすることもできます。
 
@@ -83,7 +83,7 @@ function write(message){
 詳細と例については、「[文書またはスプレッドシート内の領域へのバインド](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)」を参照してください。
 
 
-## 文書全体の取得
+## <a name="getting-entire-documents"></a>文書全体の取得
 
 作業ウィンドウ アドインが PowerPoint または Word で実行される場合は、[Document.getFileAsync](../../reference/shared/document.getfileasync.md) メソッド、[File.getSliceAsync](../../reference/shared/file.getsliceasync.md) メソッド、および [File.closeAsync](../../reference/shared/file.closeasync.md) メソッドを使用して、プレゼンテーションまたは文書全体を取得できます。
 
@@ -92,7 +92,7 @@ function write(message){
 詳細については、「[PowerPoint または Word 用アドインからドキュメント全体を取得する方法](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)」を参照してください。 
 
 
-## Word 文書のカスタム XML パーツの読み取りと書き込み
+## <a name="reading-and-writing-custom-xml-parts-of-a-word-document"></a>Word 文書のカスタム XML パーツの読み取りと書き込み
 
 Open Office XML ファイル形式とコンテンツ コントロールを使用すれば、Word 文書にカスタム XML パーツを追加して、その文書内のコンテンツ コントロールに XML パーツ内の要素をバインドすることができます。文書を開くと、Word がバインドされたコンテンツ コントロールを読み取り、カスタム XML パーツからのデータを自動的に設定します。ユーザーは、コンテンツ コントロールにデータを書き込むこともできます。ユーザーが文書を保存すると、コントロール内のデータがバインドされた XML パーツに保存されます。Word 用の作業ウィンドウ アドインは、[Document.customXmlParts](../../reference/shared/document.customxmlparts.md) プロパティ、[CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md) オブジェクト、[CustomXmlPart](../../reference/shared/customxmlpart.customxmlpart.md) オブジェクト、および [CustomXmlNode](../../reference/shared/customxmlnode.customxmlnode.md) オブジェクトを使用して、文書に対して動的にデータを読み書きすることができます。
 
@@ -105,10 +105,10 @@ Open Office XML ファイル形式とコンテンツ コントロールを使用
 作業ウィンドウ アドインでのカスタム XML パーツの操作方法の詳細については、「[Office Open XML を使用してより良い Word 用アドインを作成する](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md)」を参照してください。
 
 
-## アドイン設定を保存する
+## <a name="persisting-add-in-settings"></a>アドイン設定を保存する
 
 
-多くの場合、ユーザー設定やアドインの状態など、アドインのカスタム データを保存し、次回、アドインを開いたとき、そのデータにアクセスする必要があります。 一般的な Web プログラミング手法を利用し、ブラウザーの Cookie や HTML 5 Web ストレージなど、そのデータを保存できます。 あるいは、アドインを Excel、PowerPoint、Word で実行する場合、[Settings](../../reference/shared/settings.md) オブジェクトのメソッドを使用できます。 **Settings** オブジェクトで作成したデータは、アドインを挿入して保存したスプレッドシート、プレゼンテーション、文書に保存されます。 このデータは、それを作成したアドインでのみ利用できます。
+多くの場合、ユーザー設定やアドインの状態など、アドインのカスタム データを保存し、次回、アドインを開いたとき、そのデータにアクセスする必要があります。一般的な Web プログラミング手法を利用し、ブラウザーの Cookie や HTML 5 Web ストレージなど、そのデータを保存できます。あるいは、アドインを Excel、PowerPoint、Word で実行する場合、[Settings](../../reference/shared/settings.md) オブジェクトのメソッドを使用できます。**Settings** オブジェクトで作成したデータは、アドインを挿入して保存したスプレッドシート、プレゼンテーション、文書に保存されます。このデータは、それを作成したアドインでのみ利用できます。
 
 文書が保存されているサーバーとのやり取りを避けるために、**Settings** オブジェクトを使用して作成されたデータはランタイムでメモリ上で管理されます。過去に保存した設定データがアドインの初期化時にメモリに読み込まれ、そのデータに対する変更は [Settings.saveAsync](../../reference/shared/settings.saveasync.md) メソッドを呼び出したときにのみ文書に保存されます。内部的に、データはシリアル化された JSON オブジェクト内に名前と値のペアとして保存されます。データのメモリ内コピーに対してアイテムの読み取り、書き込み、および削除を実行するには、[Settings](../../reference/shared/settings.get.md) オブジェクトの [get](../../reference/shared/settings.set.md) メソッド、[set](../../reference/shared/settings.removehandlerasync.md) メソッド、および **remove** メソッドを使用します。次のコード行は、`themeColor` という名前の設定を作成して、その値を 'green' に設定する方法を示しています。
 
@@ -124,14 +124,14 @@ Office.context.document.settings.set('themeColor', 'green');
 **Settings** オブジェクトのメソッドを使用したカスタム データの操作方法の詳細については、「[アドインの状態と設定を保存する](../../docs/develop/persisting-add-in-state-and-settings.md)」を参照してください。
 
 
-## プロジェクト文書のプロパティの読み取り
+## <a name="reading-properties-of-a-project-document"></a>プロジェクト文書のプロパティの読み取り
 
 作業ウィンドウ アドインが Project で動作する場合は、そのアドインでアクティブ プロジェクト内のプロジェクト フィールド、リソース、およびタスク フィールドの一部からデータを読み取ることができます。これを実現するには、追加の Project 固有の機能を提供するように [Document](../../reference/shared/projectdocument.projectdocument.md) オブジェクトを拡張する **ProjectDocument** オブジェクトのメソッドとイベントを使用します。
 
 Project のデータの読み取り操作の例については、「[テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)」を参照してください。
 
 
-## アクセス許可モデルとガバナンス
+## <a name="permissions-model-and-governance"></a>アクセス許可モデルとガバナンス
 
 アドインは、そのマニフェスト内の **Permissions** 要素を使用して、必要な機能のレベルにアクセスするためのアクセス許可を Office JavaScript API に要求します。たとえば、アドインで文書に対する読み取りと書き込みアクセス権が必要な場合は、そのマニフェストで `ReadWriteDocument` をその **Permissions** 要素内のテキスト値として指定する必要があります。アクセス許可はユーザーのプライバシーとセキュリティを保護するために存在しているので、ベスト プラクティスとしては、その機能に必要な最低限のアクセス許可を要求することをお勧めします。次の例は、作業ウィンドウのマニフェストで **ReadDocument** アクセス許可を要求する方法を示しています。
 
@@ -151,12 +151,13 @@ Project のデータの読み取り操作の例については、「[テキス�
 詳細については、「[コンテンツ アドインおよび作業ウィンドウ アドインでの API 使用のアクセス許可を要求する](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)」を参照してください。
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他の技術情報
 
 
 - [Office の JavaScript API](../../reference/javascript-api-for-office.md)
     
-- [Office アドインのマニフェスト向けのスキーマ リファレンス](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
+- 
+  [Office アドインのマニフェスト向けのスキーマ リファレンス](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
     
 - [Office アドインでのユーザー エラーのトラブルシューティング](../../docs/testing/testing-and-troubleshooting.md)
     

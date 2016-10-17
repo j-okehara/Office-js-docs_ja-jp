@@ -1,16 +1,16 @@
 
-# Labs.getTimeline
+# <a name="labs.gettimeline"></a>Labs.getTimeline
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Retrieves a [Labs.Timeline](../../reference/office-mix/labs.timeline.md) object instance that you can use to control the host’s player control.
+ホスト プレーヤー コントロールを制御するのに使用できる [Labs.Timeline](../../reference/office-mix/labs.timeline.md) オブジェクト インスタンスを取得します。
 
 ```
 function getTimeline(): Timeline
 ```
 
 
-## Return value
+## <a name="return-value"></a>Return value
 
 Returns a [Labs.Timeline](../../reference/office-mix/labs.timeline.md) object.
 

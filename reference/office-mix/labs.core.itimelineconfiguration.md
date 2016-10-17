@@ -1,16 +1,16 @@
-﻿
-# Labs.Core.ITimelineConfiguration
+
+# <a name="labs.core.itimelineconfiguration"></a>Labs.Core.ITimelineConfiguration
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-[Labs.Timeline](../../reference/office-mix/labs.timeline.md)一連のタイムライン構成オプションを指定するのを許可します。
+[Labs.Timeline](../../reference/office-mix/labs.timeline.md) の構成オプション。一連のタイムライン構成オプションを指定するのを許可します。
 
 ```
 interface ITimelineConfiguration
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

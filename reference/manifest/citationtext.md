@@ -1,11 +1,11 @@
 
-# CitationText 要素
+# <a name="citationtext-element"></a>CitationText 要素
 この辞書の引用定型句を指定します。
 
  **アドインの種類:**コンテンツ、作業ウィンドウ、メール
 
 
-## 構文:
+## <a name="syntax:"></a>構文:
 
 
 ```XML
@@ -13,12 +13,12 @@
 ```
 
 
-## 次に含まれる:
+## <a name="contained-in:"></a>次に含まれる:
 
 [Dictionary](../../reference/manifest/dictionary.md)
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

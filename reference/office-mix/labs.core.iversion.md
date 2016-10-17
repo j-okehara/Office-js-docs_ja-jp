@@ -1,16 +1,16 @@
 
-# Labs.Core.IVersion
+# <a name="labs.core.iversion"></a>Labs.Core.IVersion
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Provides the lab version information.
+ラボのバージョン情報を提供します。
 
 ```
 interface IVersion
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

@@ -1,4 +1,4 @@
-# 最初の Excel アドインをビルドする
+# <a name="build-your-first-excel-add-in"></a>最初の Excel アドインをビルドする
 
 この記事では、Excel JavaScript API を使用して Excel 2016 または Excel Online のアドインをビルドする方法について説明します。次に示す手順では、Excel 2016 でデータをワークシートに読み込んで基本的なグラフを作成する、簡単な作業ウィンドウ アドインを作成します。
 
@@ -8,7 +8,7 @@
 最初に、HTML と JQuery を使用して Web アプリを作成します。次に、Web アプリを配置する場所と Excel 内でのアプリの表示方法を指定する XML マニフェスト ファイルを作成します。
 
 
-### コード化する
+### <a name="code-it"></a>コード化する
 
 1- QuarterlySalesReport という名前のローカル ドライブにフォルダーを作成します (例: C:\\QuarterlySalesReport)。以下の手順で作成されるファイルはすべてこのフォルダーに保存します。
 
@@ -261,7 +261,7 @@
 
 8-  すべてのファイルを保存します。これで、最初の Excel アドインが作成できました。
 
-### お試しください。
+### <a name="try-it-out"></a>お試しください。
 
 アドインを展開してテストする最も簡単な方法は、ファイルをネットワーク共有にコピーすることです。
 
@@ -294,7 +294,7 @@
 ![四半期売上レポート アドイン](../../images/QuarterlySalesReport_report.PNG)
 
 
-### その他のリソース
+### <a name="additional-resources"></a>その他のリソース
 
 *  [Excel アドインのプログラミングの概要](excel-add-ins-javascript-programming-overview.md)
 *  [Excel のスニペット エクスプローラー](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel)

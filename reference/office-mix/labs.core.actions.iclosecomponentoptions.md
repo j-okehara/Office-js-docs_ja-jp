@@ -1,16 +1,16 @@
 
-# Labs.Core.Actions.ICloseComponentOptions
+# <a name="labs.core.actions.iclosecomponentoptions"></a>Labs.Core.Actions.ICloseComponentOptions
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Closes a component and indicates there will be no more actions against it.
+コンポーネントを閉じ、それに対するアクションがこれ以上ないことを示します。
 
 ```
 interface ICloseComponentOptions extends Core.IActionOptions
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

@@ -1,16 +1,16 @@
 
-# Labs.Core.IUserInfo
+# <a name="labs.core.iuserinfo"></a>Labs.Core.IUserInfo
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Provides user information relevant to the lab.
+ラボに関するユーザー情報を提供します。
 
 ```
 interface IUserInfo
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

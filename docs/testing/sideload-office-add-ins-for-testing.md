@@ -1,5 +1,5 @@
 
-# テストのために Office Online で Office アドインをサイドロードする
+# <a name="sideload-office-add-ins-in-office-online-for-testing"></a>テストのために Office Online で Office アドインをサイドロードする
 
 まずアドイン カタログに置かなくても、サイドロードを使用すると、テスト用に Office アドインをインストールすることができます。サイドロードは、Office 365 または Office Online 上のいずれかで実行できます。2 つのプラットフォームで手順が少し異なります。 
 
@@ -9,7 +9,7 @@
  >**メモ**  この記事で説明したようにサイドロードは、Word、Excel、および PowerPoint でサポートされています。Outlook アドインをサイドロードするには、「[テストのために Outlook アドインをサイドロードする](sideload-outlook-add-ins-for-testing.md)」をご参照ください。
 
 
-## Office アドイン を Office 365 にサイドロードする
+## <a name="sideload-an-office-add-in-on-office-365"></a>Office アドイン を Office 365 にサイドロードする
 
 
 1. Office 365 アカウントでログオンします。
@@ -29,7 +29,7 @@
 6. アドイン がインストールされていることを確認します。たとえば、アドイン コマンドである場合は、リボンまたはコンテキスト メニューのいずれかに表示されます。作業ウィンドウ アドインである場合は、ウィンドウが表示されます。
     
 
-## Office アドイン を Office Online にサイドロードする
+## <a name="sideload-an-office-add-in-on-office-online"></a>Office アドイン を Office Online にサイドロードする
 
 
 

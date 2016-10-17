@@ -1,6 +1,6 @@
  
 
-# API 要件セットについて
+# <a name="understanding-api-requirement-sets"></a>API 要件セットについて
 
 Outlook アドインは、[マニフェスト](https://msdn.microsoft.com/EN-US/library/office/dn592036.aspx)で[要件](https://msdn.microsoft.com/en-us/library/office/fp123693.aspx)要素を使用して、必要な API のバージョンを宣言します。Outlook アドインには、`Name` 属性が `Mailbox` に設定され、`MinVersion` 属性がアドインのシナリオをサポートする最小 API 要件セットに設定された[設定](https://msdn.microsoft.com/EN-US/library/office/dn592049.aspx)要素が常に含まれます。
 
@@ -18,7 +18,7 @@ Outlook アドインは、[マニフェスト](https://msdn.microsoft.com/EN-US/
 
 マニフェストに要件セットの最小バージョンを設定することで、アドインが表示される Outlook クライアントをコントロールできます。クライアントが最小要件セットをサポートしない場合、アドインはロードされません。たとえば、要件セットのバージョン 1.3 が指定されている場合、1.3 以上をサポートしていない Outlook クライアントには表示されません。
 
-## 後続の要件セットからの API の使用
+## <a name="using-apis-from-later-requirement-sets"></a>後続の要件セットからの API の使用
 
 要件セットを設定しても、アドインを使用できる API は制限されません。たとえば、アドインでは要件セット 1.1 が指定されていて、1.3 をサポートしている Outlook クライアントで実行されている場合、アドインは要件セット 1.3 の API を使用できます。\.
 
@@ -32,11 +32,11 @@ if (item.somePropertyOrFunction !== undefined) {
 
 このようなチェックは、マニフェストで指定された要件セットバージョンに存在する API には必要ありません。
 
-## 最小要件セットの選択
+## <a name="choosing-a-minimum-requirement-set"></a>最小要件セットの選択
 
 開発者は、アドインを使用するために必要な、シナリオで必須の API のセットが含まれている初期の要件セットを使用する必要があります。
 
-## クライアント
+## <a name="clients"></a>クライアント
 
 以下のクライアントは、Outlook のアドインをサポートしています。
 

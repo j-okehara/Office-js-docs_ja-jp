@@ -1,5 +1,5 @@
 
-# サーバーから Outlook アイテムの添付ファイルを取得する
+# <a name="get-attachments-of-an-outlook-item-from-the-server"></a>サーバーから Outlook アイテムの添付ファイルを取得する
 
 Outlook アドインは、サーバーで実行されているリモート サービスに選択したアイテムの添付ファイルを直接渡すことができません。その代わりに、添付ファイル API を使用して、添付ファイルに関する情報をリモート サービスに送信できます。そうすれば、サービスは Exchange サーバーに直接アクセスして添付ファイルを取得できるようになります。
 
@@ -14,7 +14,7 @@ Outlook アドインは、サーバーで実行されているリモート サ�
 - [Office.context.mailbox.getCallbackTokenAsync](../../reference/outlook/Office.context.mailbox.md) 関数: メールボックスをホストする Exchange サーバーを非同期で呼び出し、添付ファイルの要求の認証のために Exchange サーバーに送り返すコールバック トークンを取得します。
     
 
-## 添付ファイル API を使用する
+## <a name="using-the-attachments-api"></a>添付ファイル API を使用する
 
 
 添付ファイル API を使用して Exchange メールボックスから添付ファイルを取得するには、次の手順を実行します。 
@@ -34,7 +34,7 @@ Outlook アドインは、サーバーで実行されているリモート サ�
  >**メモ**  以下の例に示すコードは、添付ファイルの情報を強調するために短縮されています。サンプルには、アドインをリモート サーバーで認証し、要求の状態を管理するためのコードも含まれています。
 
 
-### アドインのアクティブ化
+### <a name="activate-the-add-in"></a>アドインのアクティブ化
 
 
 次の例に示すように、アドインのマニフェスト ファイルにある [ItemHasAttachment](http://msdn.microsoft.com/en-us/library/031db7be-8a25-5185-a9c3-93987e10c6c2%28Office.15%29.aspx) 規則を使用すると、選択されたアイテムに添付ファイルがある場合にアドインを表示することができます。
@@ -45,7 +45,7 @@ Outlook アドインは、サーバーで実行されているリモート サ�
 ```
 
 
-### コールバック トークンを取得する
+### <a name="get-a-callback-token"></a>コールバック トークンを取得する
 
 
 [Office.context.mailbox](../../reference/outlook/Office.context.mailbox.md) オブジェクトには、リモート サーバーが Exchange サーバーを認証するために使用できるトークンを取得する **getCallbackTokenAsync** 関数が用意されています。次のコードは、コールバック トークンを取得する非同期要求を開始するアドインの関数と、応答を取得するコールバック関数を示しています。コールバック トークンは、次のセクションで定義するサービス要求オブジェクトに格納されます。
@@ -70,7 +70,7 @@ function attachmentTokenCallback(asyncResult, userContext) {
 ```
 
 
-### 添付ファイルの情報をリモート サービスに送信する
+### <a name="send-attachment-information-to-the-remote-service"></a>添付ファイルの情報をリモート サービスに送信する
 
 
 アドインが呼び出すリモート サービスによって、サービスへの添付ファイル情報の送信方法に関する詳細が定義されます。この例では、リモート サービスは Visual Studio 2013 を使用して作成された Web API アプリケーションです。リモート サービスは、添付ファイルの情報が JSON オブジェクトに格納されていることを前提とします。次のコードは、添付ファイルの情報を格納するオブジェクトを初期化します。
@@ -127,7 +127,7 @@ serviceRequest.attachments = new Array();
 ```
 
 
-### Exchange サーバーから添付ファイルを取得する
+### <a name="get-the-attachments-from-the-exchange-server"></a>Exchange サーバーから添付ファイルを取得する
 
 
 リモート サービスは、 [GetAttachments](http://msdn.microsoft.com/en-us/library/office/dn600509%28v=exchg.80%29.aspx) EWS Managed API メソッドまたは [GetAttachment](http://msdn.microsoft.com/library/24d10a15-b942-415e-9024-a6375708f326%28Office.15%29.aspx) EWS 操作のいずれかを使用してサーバーから添付ファイルを取得できます。サービス アプリケーションは、JSON 文字列をサーバーで使用できる .NET Framework オブジェクトに逆シリアル化するために 2 つのオブジェクトを必要とします。次のコードに、逆シリアル化オブジェクトの定義を示します。
@@ -160,7 +160,7 @@ namespace AttachmentsSample
 ```
 
 
-#### EWS Managed API を使用して添付ファイルを取得する
+#### <a name="use-the-ews-managed-api-to-get-the-attachments"></a>EWS Managed API を使用して添付ファイルを取得する
 
 リモート サービスで [EWS Managed API](http://go.microsoft.com/fwlink/?LinkID=255472) を使用する場合は、 [GetAttachments](http://msdn.microsoft.com/en-us/library/office/dn600509%28v=exchg.80%29.aspx) メソッドを使用できます。このメソッドは、添付ファイルを取得するための EWS SOAP 要求を作成、送信、および受信します。EWS Managed API を使用すると、必要なコード行が少なく、EWS の呼び出しを行うための直感的なインターフェイスが提供されるため、この API の使用をお勧めします。次のコードは、1 回の要求ですべての添付ファイルを取得し、処理された添付ファイルの数と名前を返します。
 
@@ -230,7 +230,7 @@ namespace AttachmentsSample
 ```
 
 
-#### EWS を使用して添付ファイルを取得する
+#### <a name="use-ews-to-get-the-attachments"></a>EWS を使用して添付ファイルを取得する
 
 リモート サービスで EWS を使用する場合は、Exchange サーバーから添付ファイルを取得するための [GetAttachment](http://msdn.microsoft.com/library/24d10a15-b942-415e-9024-a6375708f326%28Office.15%29.aspx) SOAP 要求を作成する必要があります。次のコードは、SOAP 要求を示す文字列を返します。リモート サービスは、 **String.Format** メソッドを使用して添付ファイルの添付ファイル ID を文字列に挿入します。
 
@@ -435,15 +435,17 @@ xmlns:t=""http://schemas.microsoft.com/exchange/services/2006/types"">
 ```
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 
 - [閲覧フォーム用の Outlook アドインを作成する](../outlook/read-scenario.md)
     
-- [Exchange の EWS Managed API、EWS、および Web サービスについて学ぶ](http://msdn.microsoft.com/library/0bc6f81d-cc10-42b0-ba5d-6f22ff55d51c%28Office.15%29.aspx)
+- 
+  [Exchange の EWS Managed API、EWS、および Web サービスについて学ぶ](http://msdn.microsoft.com/library/0bc6f81d-cc10-42b0-ba5d-6f22ff55d51c%28Office.15%29.aspx)
     
-- [EWS マネージ API クライアント アプリケーションの概要](http://msdn.microsoft.com/library/c2267733-6f4f-49e5-9614-1e4a24c3af1a%28Office.15%29.aspx)
+- 
+  [EWS マネージ API クライアント アプリケーションの概要](http://msdn.microsoft.com/library/c2267733-6f4f-49e5-9614-1e4a24c3af1a%28Office.15%29.aspx)
     
 - [Outlook-Power-Hour_Code-Samples](https://github.com/OfficeDev/Outlook-Power-Hour-Code-Samples):  `MyAttachments` および `AttachmentsDemo`
     

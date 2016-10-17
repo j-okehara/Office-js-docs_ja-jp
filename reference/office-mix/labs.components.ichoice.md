@@ -1,5 +1,5 @@
-﻿
-# Labs.Components.IChoice
+
+# <a name="labs.components.ichoice"></a>Labs.Components.IChoice
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,7 +10,7 @@ interface IChoice
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |名前|説明|

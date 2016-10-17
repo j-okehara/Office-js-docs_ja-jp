@@ -1,5 +1,5 @@
 
-# Outlook で予定を作成するときに時刻を取得または設定する
+# <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Outlook で予定を作成するときに時刻を取得または設定する
 
 JavaScript API for Office には、ユーザーが作成している予定の開始時刻または終了時刻を取得および設定する非同期メソッド ([Time.getAsync](../../reference/outlook/Time.md) と [Time.setAsync](../../reference/outlook/Time.md)) が用意されています。これらの非同期メソッドは、新規作成アドインでのみ使用できます。これらのメソッドを使用する場合は、新規作成フォームでアドインをアクティブ化するようにアドイン マニフェストが Outlook 用に適切にセット アップされていることを確認します。手順については、「[新規作成フォーム用の Outlook アドインを作成する](../outlook/compose-scenario.md)」を参照してください。
 
@@ -42,7 +42,7 @@ item.end.getAsync
 JavaScript API for Office のほとんどの非同期メソッドと同じように、**getAsync** と **setAsync** はオプションの入力パラメーターを受け取ります。オプションの入力パラメーターを指定する方法の詳細については、「[Office アドインにおける非同期プログラミング](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline)」の「[オプションのパラメーターを非同期メソッドに渡す](../../docs/develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
 
 
-## 開始時刻または終了時刻を取得するには
+## <a name="to-get-the-start-or-end-time"></a>開始時刻または終了時刻を取得するには
 
 
 このセクションでは、ユーザーが作成している予定の開始時刻を取得して、その時刻を表示するサンプル コードについて説明します。同じコードを使用して、 **start** プロパティを **end** プロパティに置き換えると終了時刻を取得できます。このサンプル コードは、以下に示すアドイン マニフェストのルールによって予定の新規作成フォームでアドインがアクティブになることを想定しています。
@@ -94,7 +94,7 @@ function write(message){
 ```
 
 
-## 開始時刻または終了時刻を設定するには
+## <a name="to-set-the-start-or-end-time"></a>開始時刻または終了時刻を設定するには
 
 
 ここでは、ユーザーが作成している予定またはメッセージの開始時刻を設定するサンプル コードについて説明します。 同じコードを使用して、 **start** プロパティを **end** プロパティに置き換えると終了時刻を設定できます。 予定の新規作成フォームに既存の開始時刻がある場合、後で開始時刻を設定すると、以前の予定の期間が保たれるように終了時刻を調整します。予定の新規作成フォームに既存の終了時刻がある場合、後で終了時刻を設定すると、期間と終了時刻の両方が調整されます。予定が終日イベントとして設定されている場合、開始時刻を設定すると、終了時刻を 24 時間後に調整し、新規作成フォームの終日イベントの UI をオフにします。
@@ -145,7 +145,7 @@ function write(message){
 ```
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

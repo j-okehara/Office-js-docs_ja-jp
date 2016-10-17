@@ -1,5 +1,5 @@
 
-# Outlook アドインのアドイン メタデータの取得と設定
+# <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Outlook アドインのアドイン メタデータの取得と設定
 
 次のいずれかの方法を使用して、Outlook アドインでカスタム データを管理できます。
 
@@ -9,7 +9,7 @@
     
 これらの方法の両方とも Outlook アドインでのみアクセス可能なカスタム データに対するアクセスを提供しますが、各方法は他方の方法と異なる方法でデータを保存します。つまり、ローミング設定によって保存されたデータはカスタム プロパティではアクセスできず、その逆もまた同様です。データは対象のメールボックスのサーバー に保存され、アドインでサポートされるすべてのフォーム ファクターのその後の Outlook セッションでアクセスできます。 
 
-## メールボックスごとのカスタム データ: ローミング設定
+## <a name="custom-data-per-mailbox:-roaming-settings"></a>メールボックスごとのカスタム データ: ローミング設定
 
 
 [RoamingSettings](../../reference/outlook/RoamingSettings.md) オブジェクトを使用して、ユーザーの Exchange メールボックスに固有のデータを指定できます。このタイプのデータには、たとえばユーザーの個人データや基本設定があります。メール アドインは、その実行を許可されているデバイス (デスクトップ、タブレット、またはスマートフォン) でローミングするときにローミング設定にアクセスできます。
@@ -17,7 +17,7 @@
  このデータへの変更は、現在の Outlook セッションの設定値のメモリ内コピーに格納されます。更新後にすべてのローミング設定値を明示的に保存して、ユーザーが次にアドインを同じデバイスで開いても、サポートされている他のデバイスで開いても、その設定値を使用できるようにしてください。
 
 
-### ローミング設定の形式
+### <a name="roaming-settings-format"></a>ローミング設定の形式
 
 
 **RoamingSettings** オブジェクトのデータは、シリアル化された JavaScript Object Notation (JSON) 文字列として保存されています。次に示すのはこの構造の例です。`add-in_setting_name_0`、`add-in_setting_name_1`、および `add-in_setting_name_2` という 3 つのローミング設定が定義されていると想定しています。
@@ -32,7 +32,7 @@
 ```
 
 
-### ローミング設定の読み込み
+### <a name="loading-roaming-settings"></a>ローミング設定の読み込み
 
 
 通常、メール アドインでは、[Office.initialize](../../reference/shared/office.initialize.md) イベント ハンドラーでローミング設定を読み込みます。次の JavaScript コードは、既存のローミング設定を読み込み、2 つの設定 "customerName" と "customerBalance" の値を取得する例を示しています。
@@ -56,7 +56,7 @@ Office.initialize = function () {
 ```
 
 
-### ローミング設定の作成または割り当て
+### <a name="creating-or-assigning-a-roaming-setting"></a>ローミング設定の作成または割り当て
 
 
 前の例の続きで、次の JavaScript 関数  `setAddInSetting` は、 [RoamingSettings.set](../../reference/outlook/RoamingSettings.md) メソッドを使用して `cookie` という名前の設定に今日の日付を設定し、 [RoamingSettings.saveAsync](../../reference/outlook/RoamingSettings.md) メソッドを使用してすべてのローミング設定をサーバーに保存することによってデータを保存します。この **set** メソッドは、指定した設定が存在しない場合は新規に作成し、指定した値を割り当てます。 **saveAsync** メソッドは非同期でローミング設定を保存します。このコード サンプルでは、 **saveAsync** にコールバック メソッド `saveMyAddInSettingsCallback` を渡しています。非同期の呼び出しが完了すると、 `saveMyAddInSettingsCallback` が呼び出され、単一のパラメーター _asyncResult_ が渡されます。このパラメーターは [AsyncResult](../../reference/outlook/simple-types.md) オブジェクトであり、非同期呼び出しについての結果と詳細情報が格納されています。オプションの _userContext_ パラメーターを使用すると、非同期呼び出しからコールバック関数に任意の状態の情報を渡すことができます。
@@ -81,7 +81,7 @@ function saveMyAddInSettingsCallback(asyncResult) {
 ```
 
 
-### ローミング設定の削除
+### <a name="removing-a-roaming-setting"></a>ローミング設定の削除
 
 
 さらに、前の例の続きで、次の JavaScript 関数  `removeAddInSetting` では、 [RoamingSettings.remove](../../reference/outlook/RoamingSettings.md) メソッドを使用して `cookie` 設定を削除し、すべてのローミング設定を Exchange Server に戻して保存する方法を示します。
@@ -100,7 +100,7 @@ function removeAddInSetting()
 ```
 
 
-## メールボックス内のアイテムごとのカスタム データ: カスタム プロパティ
+## <a name="custom-data-per-item-in-a-mailbox:-custom-properties"></a>メールボックス内のアイテムごとのカスタム データ: カスタム プロパティ
 
 
 [CustomProperties](../../reference/outlook/CustomProperties.md) オブジェクトを使用して、ユーザーのメールボックス内のアイテムに固有のデータを指定することもできます。たとえば、メール アドインで特定のメッセージを分類し、カスタム プロパティ `messageCategory` を使用してそのカテゴリのメモを付けることができます。または、メール アドインでメッセージ内の会議の提案から予定を作成した場合に、カスタム プロパティを使用してそれぞれの予定を追跡できます。これにより、ユーザーが再度そのメッセージを開いた場合に、メール アドインによってもう一度予定を作成するように提案されることはありません。
@@ -114,7 +114,7 @@ function removeAddInSetting()
 
 
 
-### カスタム プロパティの使用
+### <a name="using-custom-properties"></a>カスタム プロパティの使用
 
 
 カスタム プロパティを使用するには、 [loadCustomPropertiesAsync](../../reference/outlook/Office.context.mailbox.item.md) メソッドを呼び出してプロパティ バッグを読み込む必要があります。現在のアイテムに対してカスタム プロパティが既に設定されている場合は、この時点で、Exchange Server から読み込まれます。プロパティ バッグを作成した後、 [set](../../reference/outlook/CustomProperties.md) メソッドと [get](../../reference/outlook/CustomProperties.md) メソッドを使用して、カスタム プロパティを追加および取得できます。プロパティ バッグに対して行った変更を保存するには、 [saveAsync](../../reference/outlook/CustomProperties.md) メソッドを使用して、Exchange Server に変更を保存する必要があります。
@@ -123,7 +123,7 @@ function removeAddInSetting()
  >**メモ**  Outlook for Mac はカスタム プロパティをキャッシュに入れないため、ユーザーのネットワークがダウンした場合、Outlook for Mac のメール アドインはカスタム プロパティにアクセスできなくなります。
 
 
-### カスタム プロパティの例
+### <a name="custom-properties-example"></a>カスタム プロパティの例
 
 
 以下の例では、カスタム プロパティを使用する単純な Outlook アドインのメソッドのセットを示しています。この例を出発点として、カスタム プロパティを使用するアドインを作成できます。 
@@ -192,18 +192,22 @@ function saveCallback() {
 ```
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
     
-- [MAPI Property Overview](http://msdn.microsoft.com/library/02e5b23f-1bdb-4fbf-a27d-e3301a359573%28Office.15%29.aspx)
+- 
+  [MAPI のプロパティの概要](http://msdn.microsoft.com/library/02e5b23f-1bdb-4fbf-a27d-e3301a359573%28Office.15%29.aspx)
     
-- [Outlook のプロパティの概要](http://msdn.microsoft.com/library/242c9e89-a0c5-ff89-0d2a-410bd42a3461%28Office.15%29.aspx)
+- 
+  [Outlook のプロパティの概要](http://msdn.microsoft.com/library/242c9e89-a0c5-ff89-0d2a-410bd42a3461%28Office.15%29.aspx)
     
 - [Outlook アドインから Web サービスを呼び出す](../outlook/web-services.md)
     
-- [Exchange における EWS のプロパティと拡張プロパティ](http://msdn.microsoft.com/library/68623048-060e-4602-b3fa-62617a94cf72%28Office.15%29.aspx)
+- 
+  [Exchange における EWS のプロパティと拡張プロパティ](http://msdn.microsoft.com/library/68623048-060e-4602-b3fa-62617a94cf72%28Office.15%29.aspx)
     
-- [Exchange の EWS でのプロパティ セットと応答の図形](http://msdn.microsoft.com/library/04a29804-6067-48e7-9f5c-534e253a230e%28Office.15%29.aspx)
+- 
+  [Exchange の EWS でのプロパティ セットと応答の図形](http://msdn.microsoft.com/library/04a29804-6067-48e7-9f5c-534e253a230e%28Office.15%29.aspx)
     
 
 

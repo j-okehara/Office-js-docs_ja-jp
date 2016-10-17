@@ -1,11 +1,11 @@
 
-# SourceLocation 要素
-Office アドインのソース ファイルの場所を、1 から 2018 文字までの長さの URL として指定します。 ソースの場所はファイル パスではなく、HTTPS アドレスにする必要があります。
+# <a name="sourcelocation-element"></a>SourceLocation 要素
+Office アドインのソース ファイルの場所を、1 から 2018 文字までの長さの URL として指定します。ソースの場所はファイル パスではなく、HTTPS アドレスにする必要があります。
 
  **アドインの種類:**コンテンツ、作業ウィンドウ、メール
 
 
-## 構文:
+## <a name="syntax:"></a>構文:
 
 
 ```XML
@@ -13,22 +13,22 @@ Office アドインのソース ファイルの場所を、1 から 2018 文字�
 ```
 
 
-## 次に含まれる:
+## <a name="contained-in:"></a>次に含まれる:
 
 [DefaultSettings](../../reference/manifest/defaultsettings.md) (コンテンツ アドインおよび作業ウィンドウ アドイン)
 
 [FormSettings](../../reference/manifest/formsettings.md) (メール アドイン)
 
 
-## 含めることができるもの:
+## <a name="can-contain:"></a>含めることができるもの:
 
-[[優先]](../../reference/manifest/override.md)
-
-
-## 属性
+[Override](../../reference/manifest/override.md)
 
 
+## <a name="attributes"></a>属性
 
-|**属性**|**種類**|**必須**|**説明**|
+
+
+|**属性**|**型**|**必須**|**説明**|
 |:-----|:-----|:-----|:-----|
 |DefaultValue|URL|必須|[DefaultLocale](../../reference/manifest/defaultlocale.md) 要素に指定されるロケール用に、この設定の既定値を指定します。|

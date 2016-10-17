@@ -1,16 +1,16 @@
-﻿
-# Labs.Components.ComponentAttempt
+
+# <a name="labs.components.componentattempt"></a>Labs.Components.ComponentAttempt
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-コンポーネントでの試行の基本クラス。
+コンポーネントでの試行の基底クラス。
 
 ```
 class ComponentAttempt
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |**名前**|**説明**|
@@ -22,81 +22,81 @@ class ComponentAttempt
 | `public var _state: Labs.ProblemState`|Current state of the attempt as provided by the enum [Labs.ProblemState](../../reference/office-mix/labs.problemstate.md).|
 | `public var _values: { [type:string]: Labs.ValueHolder<any>[]}`|Values associated with the attempt, if any, as contained in the [Labs.ValueHolder](../../reference/office-mix/labs.valueholder.md)object.|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 
 
 
-### コンストラクター
+### <a name="constructor"></a>コンストラクター
 
  `(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance[]})`
 
-Creates a new instance of the ComponentAttempt class and provides input parameter values.
+ComponentAttempt クラスの新しいインスタンスを作成し、入力パラメーター値を指定します。
 
  **パラメーター**
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| _labs_|The [Labs.LabsInternal](http://msdn.microsoft.com/library/599fb2c4-bb16-4422-84ad-10ed85a14018.aspx) instance to use with the attempt.|
-| _attemptId_|The ID associated with the attempt.|
-| _values_|Array of values ([Labs.Core.IValueInstance](../../reference/office-mix/labs.core.ivalueinstance.md)) associated with the attempt.|
+| _labs_|試行に使用する [Labs.LabsInternal](http://msdn.microsoft.com/library/599fb2c4-bb16-4422-84ad-10ed85a14018.aspx) インスタンス。|
+| _attemptId_|試行に関連付けられている ID。|
+| _values_|試行に関連付けられている値の配列 ([Labs.Core.IValueInstance](../../reference/office-mix/labs.core.ivalueinstance.md))。|
 
-### isResumed
+### <a name="isresumed"></a>isResumed
 
  `public function isResumed(): boolean`
 
-ラボが再開されたかどうかを示すブール型の関数です。  ラボが再開された場合は、**True** となります。
+ラボが再開されたかどうかを示すブール型の関数です。ラボが再開された場合は、**True** となります。
 
  **パラメーター**
 
 なし。
 
 
-### resume
+### <a name="resume"></a>resume
 
  `public function resume(callback: Labs.Core.ILabCallback<void>): void`
 
-ラボで特定の試行の進行が再開されたことを示し、このプロセスの一環として既存のデータを読み込みます。 それを使用するには試行を再開する必要があります。
+ラボで特定の試行の進行が再開されたことを示し、このプロセスの一環として既存のデータを読み込みます。それを使用するには試行を再開する必要があります。
 
  **パラメーター**
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| _callback_|Callback function that is fired once the attempt has resumed.|
+| _callback_|試行が再開されると起動するコールバック関数。|
 
-### getState
+### <a name="getstate"></a>getState
 
  `public function getState(): Labs.ProblemState`
 
-Retrieves the state of the lab.
+ラボの状態を取得します。
 
  **パラメーター**
 
 なし。
 
 
-### processAction
+### <a name="processaction"></a>processAction
 
  `public function processAction(action: Labs.Core.IAction): void`
 
-Executes the action associated with the attempt.
+試行に関連するアクションを実行します。
 
  **パラメーター**
 
 なし。
 
 
-### getValues
+### <a name="getvalues"></a>getValues
 
  `public function getValues(key: string): Labs.ValueHolder<any>[]`
 
-Retrieves values associated with the attempt
+試行に関連する値を取得します。
 
  **パラメーター**
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| _Key_|The key associated with the value in the value map.|
+| _key_|値マップにある値と関連付けられているキー。|

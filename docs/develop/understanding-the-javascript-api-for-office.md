@@ -1,13 +1,13 @@
+﻿
+# <a name="understanding-the-javascript-api-for-office"></a>JavaScript API for Office について
 
-# JavaScript API for Office について
 
 
+この記事では、JavaScript API for Office とその使用方法に関する情報を提供します。参照情報については、「[JavaScript API for Office](../../reference/javascript-api-for-office.md)」を参照してください。Visual Studio プロジェクト ファイルを JavaScript API for Office の最新バージョンに更新する方法については、「[JavaScript API for Office およびマニフェスト スキーマ ファイルのバージョンを更新する](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md)」を参照してください。
 
-この記事では、JavaScript API for Office とその使用方法について取り上げます。リファレンス情報については、「[JavaScript API for Office](../../reference/javascript-api-for-office.md)」を参照してください。Excel Online に接続した Web ブラウザーで JavaScript API for Office のコードを実行および編集する方法については、「[Office の API チュートリアル](http://msdn.microsoft.com/en-us/office/dn449240.aspx)」を参照してください。Visual Studio プロジェクト ファイルを JavaScript API for Office の最新バージョンに更新する方法については、「[JavaScript API for Office およびマニフェスト スキーマ ファイルのバージョンを更新する](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md)」を参照してください。
+## <a name="referencing-the-javascript-api-for-office-library-in-your-add-in"></a>アドインで JavaScript API for Office ライブラリを参照する
 
-## アドインで JavaScript API for Office ライブラリを参照する
-
-[JavaScript API for Office](../../reference/javascript-api-for-office.md) ライブラリは、Office.js ファイルと関連するホスト アプリケーション固有のファイル (Excel-15.js や Outlook-15.js など) で構成されています。 最も簡単に API を参照する方法は、次に示す `<script>` をページの `<head>` タグに追加して、CDN を使用することです。  
+[JavaScript API for Office](../../reference/javascript-api-for-office.md) ライブラリは、Office.js ファイルと関連するホスト アプリケーション固有のファイル (Excel-15.js や Outlook-15.js など) で構成されています。最も簡単に API を参照する方法は、次に示す `<script>` をページの `<head>` タグに追加して、CDN を使用することです。  
 
 ```html
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
@@ -17,20 +17,20 @@
 
 バージョン管理や下位互換性の処理方法など、Office.js CDN に関する詳細については、「[Office ライブラリの JavaScript API をそのコンテンツ配信ネットワーク (CDN) から参照する](referencing-the-javascript-api-for-office-library-from-its-cdn.md)」を参照してください。
 
-## アドインの初期化
+## <a name="initializing-your-add-in"></a>アドインの初期化
 
 
  **適用対象:**すべての種類のアドイン
 
 
-Office.js は、API が完全に読み込まれていてユーザーによる操作ができる状態になっているときに起動されたとしても初期化を提供します。 **initialize** イベント ハンドラーを使用すると、ユーザーに Excel のセルを複数選択するように求めるメッセージを表示し、選択された値で初期化したグラフを挿入するなど、アドインの一般的な初期化シナリオを実装できるようになります。 また、アドインのその他のカスタム ロジックを初期化する場合 (バインドを確立する場合やアドインの既定の設定値を入力するように求めるメッセージを表示する場合) にも、initialize イベント ハンドラーが使用できます。
+Office.js は、API が完全に読み込まれていてユーザーによる操作ができる状態になっているときに起動されたとしても初期化を提供します。**initialize** イベント ハンドラーを使用すると、ユーザーに Excel のセルを複数選択するように求めるメッセージを表示し、選択された値で初期化したグラフを挿入するなど、アドインの一般的な初期化シナリオを実装できるようになります。また、アドインのその他のカスタム ロジックを初期化する場合 (バインドを確立する場合やアドインの既定の設定値を入力するように求めるメッセージを表示する場合) にも、initialize イベント ハンドラーが使用できます。
 
  最小限の initialize イベントは、次の例のようになります。     
 
 ```js
 Office.initialize = function () { };
 ```
-独自の初期化ハンドラーやテストを含む追加の JavaScript フレームワークを使用している場合、そのようなフレームワークは Office.initialize イベントの内側に配置する必要があります。 たとえば、[JQuery](https://jquery.com) の `$(document).ready()` 関数は次のように参照します。
+独自の初期化ハンドラーやテストを含む追加の JavaScript フレームワークを使用している場合、そのようなフレームワークは Office.initialize イベントの内側に配置する必要があります。たとえば、[JQuery](https://jquery.com) の `$(document).ready()` 関数は次のように参照します。
 
 ```js
 Office.initialize = function () {
@@ -40,12 +40,11 @@ Office.initialize = function () {
     });
   };
 ```
-Office アドイン内のすべてのページで、初期化イベント **Office.initialize** にイベント ハンドラーを割り当てる必要があります。
-イベント ハンドラーを割り当てないと、アドインの起動時にエラーが発生することがあります。 また、ユーザーが Excel Online、PowerPoint Online、Outlook Web App などの Office Online Web クライアントでアドインを使用しようとすると、アドインの実行が失敗します。 初期化コードが必要ない場合は、上の最初の例のように、**Office.initialize** に割り当てる関数の本体を空にできます。
+Office アドイン内のすべてのページで、初期化イベント **Office.initialize** にイベント ハンドラーを割り当てる必要があります。イベント ハンドラーを割り当てないと、アドインの起動時にエラーが発生することがあります。また、ユーザーが Excel Online、PowerPoint Online、Outlook Web App などの Office Online Web クライアントでアドインを使用しようとすると、アドインの実行が失敗します。初期化コードが必要ない場合は、上の最初の例のように、**Office.initialize** に割り当てる関数の本体を空にできます。
 
 アドインの初期化時のイベントのシーケンスの詳細については、「[DOM とランタイム環境を読み込む](../../docs/develop/loading-the-dom-and-runtime-environment.md)」を参照してください。
 
-#### 初期化の理由
+#### <a name="initialization-reason"></a>初期化の理由
 作業ウィンドウ (Take Pane) アドインおよびコンテンツ (Content) アドインについては、Office.initialize に追加の _reason_ パラメーターを使用できます。このパラメーターは、アドインがどのように現在のドキュメントに追加されたかを判断するために使用できます。これは、最初にアドインが挿入されたときと、既にアドインがドキュメント内に存在しているときに別のロジックを提供するために使用できます。 
 
 ```js
@@ -59,7 +58,7 @@ Office.initialize = function (reason) {
 ```
 詳細については、「[Office.initialize イベント](../../reference/shared/office.initialize.md)」および「[InitializationReason 列挙型](../../reference/shared/initializationreason-enumeration.md)」を参照してください。 
 
-## Context オブジェクト
+## <a name="context-object"></a>Context オブジェクト
 
  **適用対象:** すべてのアドインの種類
 
@@ -67,10 +66,10 @@ Office.initialize = function (reason) {
 
 たとえば、作業ウィンドウ アドインまたはコンテンツ アドインにおいて、[Context](../../reference/shared/office.context.document.md) オブジェクトの **document** プロパティを使用して、**Document** オブジェクトのプロパティおよびメソッドにアクセスし、Word 文書、Excel ワークシート、または Project スケジュールのコンテンツとやり取りできます。同様に、Outlook アドインにおいて、[Context](../../reference/outlook/Office.context.mailbox.md) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトのプロパティおよびメソッドにアクセスし、メッセージ、会議出席依頼または予定のコンテンツとやり取りできます。
 
-**Context** オブジェクトを使用すると、[contentLanguage](../../reference/shared/office.context.contentlanguage.md) プロパティと [displayLanguage](../../reference/shared/office.context.displaylanguage.md) プロパティにもアクセスできるようになり、ドキュメントやアイテム、またはホスト アプリケーションで使用するロケール (言語) を判断できます。 また、[roamingSettings](../../reference/outlook/Office.context.md) プロパティを使用すると、[RoamingSettings](../../reference/outlook/RoamingSettings.md) オブジェクトのメンバーにアクセスできます。 最後に、**Context** オブジェクトの [ui](../../reference/shared/officeui.md) プロパティを使用すると、アドインでポップアップ ダイアログを開始できます。
+**Context** オブジェクトを使用すると、[contentLanguage](../../reference/shared/office.context.contentlanguage.md) プロパティと [displayLanguage](../../reference/shared/office.context.displaylanguage.md) プロパティにもアクセスできるようになり、ドキュメントやアイテム、またはホスト アプリケーションで使用するロケール (言語) を判断できます。また、[roamingSettings](../../reference/outlook/Office.context.md) プロパティを使用すると、[RoamingSettings](../../reference/outlook/RoamingSettings.md) オブジェクトのメンバーにアクセスできます。最後に、**Context** オブジェクトの [ui](../../reference/shared/officeui.md) プロパティを使用すると、アドインでポップアップ ダイアログを開始できます。
 
 
-## Document オブジェクト
+## <a name="document-object"></a>Document オブジェクト
 
 
  **適用対象:** コンテンツ アドインおよび作業ウィンドウ アドインの種類
@@ -108,14 +107,14 @@ Excel、PowerPoint、および Word のドキュメント データを操作す�
 選択範囲ベースおよびバインドベースのデータ アクセス方法のしくみを理解するために、まず、データ アクセス API が、異なる Office アプリケーション間で一貫性のあるデータ アクセスを提供する方法について説明します。
 
 
-### Office アプリケーション間での一貫性のあるデータ アクセス
+### <a name="consistent-data-access-across-office-applications"></a>Office アプリケーション間での一貫性のあるデータ アクセス
 
  **適用対象:** コンテンツ アドインおよび作業ウィンドウ アドインの種類
 
 異なる Office ドキュメント間でシームレスに動作する拡張機能を作成するために、JavaScript API for Office では、共通のデータ型と、異なるドキュメント コンテンツを 3 つの共通のデータ型に強制的に割り当てる機能を通じて、各 Office アプリケーションの特殊性を抽象化します。
 
 
-#### 共通のデータ型
+#### <a name="common-data-types"></a>共通のデータ型
 
 選択範囲ベースとバインドベースのどちらのデータ アクセスでも、ドキュメント コンテンツは、サポートされているすべての Office アプリケーション間で共通のデータ型を通じて公開されます。Office 2013 では、3 つの主要なデータ型がサポートされています。
 
@@ -127,17 +126,17 @@ Excel、PowerPoint、および Word のドキュメント データを操作す�
 |マトリックス|選択範囲またはバインドに含まれるデータを 2 次元の **Array** として提供します (JavaScript で配列の配列として実装されているものです)。たとえば、2 つの列にある 2 つ行の **string** 値は ` [['a', 'b'], ['c', 'd']]` になり、3 つの行を持つ 1 つの列は `[['a'], ['b'], ['c']]` になります。|マトリックス データ アクセスは Excel 2013 および Word 2013 でのみサポートされています。|
 |テーブル|選択範囲またはバインド内のデータを [TableData](../../reference/shared/tabledata.md) オブジェクトとして提供します。**TableData** オブジェクトは、**headers** プロパティおよび **rows** プロパティを通じてデータを公開します。|テーブル データ アクセスは Excel 2013 および Word 2013 でのみサポートされています。|
 
-#### データ型の強制型変換
+#### <a name="data-type-coercion"></a>データ型の強制型変換
 
 **Document** オブジェクトおよび [Binding](../../reference/shared/binding.md) オブジェクトのデータ アクセス メソッドでは、これらのメソッドの _coercionType_ パラメーターおよび対応する [CoercionType](../../reference/shared/coerciontype-enumeration.md) 列挙値を使用した目的のデータ型の指定をサポートしています。バインドの実際の形状にかかわらず、さまざまな Office アプリケーションでは、要求されるデータ型にデータを強制的に型変換することによって、共通のデータ型をサポートします。たとえば、Word の表または段落が選択されている場合、開発者はそれをプレーン テキスト、HTML、Office Open XML、または表として読み取ることを指定でき、API 実装によって必要な変換やデータ変換が行われます。
 
 
- >**ヒント**   **どのようなタイミングでデータ アクセスにマトリックスを使用し、どのような場合にテーブルの coercionType を使用するか。** 行と列が追加されたときに表形式データが動的に増えるようにし、またテーブル ヘッダーを使用する必要がある場合は、テーブル データ型を使用します (**Document** または **Binding** オブジェクト データ アクセス メソッドの _coercionType_ パラメーターに `"table"` または **Office.CoercionType.Table** を指定)。 データ構造体内での行と列の追加はテーブル データとマトリックス データの両方でサポートされていますが、行と列の追加はテーブル データでのみサポートされています。 行と列を追加する予定がなく、データにヘッダー機能が必要ない場合は、マトリックス データ型を使用します (データ アクセス メソッドの _coercionType_ パラメーターに `"matrix"` または **Office.CoercionType.Matrix** を指定)。このデータ型では、データとのやり取りについて、より単純なモデルを採用しています。
+ >**ヒント**   **どのようなタイミングでデータ アクセスにマトリックスを使用し、どのような場合にテーブルの coercionType を使用するか。**行と列が追加されたときに表形式データが動的に増えるようにし、またテーブル ヘッダーを使用する必要がある場合は、テーブル データ型を使用します (**Document** または **Binding** オブジェクト データ アクセス メソッドの _coercionType_ パラメーターに `"table"` または **Office.CoercionType.Table** を指定)。データ構造体内での行と列の追加はテーブル データとマトリックス データの両方でサポートされていますが、行と列の追加はテーブル データでのみサポートされています。行と列を追加する予定がなく、データにヘッダー機能が必要ない場合は、マトリックス データ型を使用します (データ アクセス メソッドの _coercionType_ パラメーターに `"matrix"` または **Office.CoercionType.Matrix** を指定)。このデータ型では、データとのやり取りについて、より単純なモデルを採用しています。
 
 指定された型にデータを強制的に型変換できない場合は、コールバック内の [AsyncResult.status](../../reference/shared/asyncresult.error.md) プロパティが `"failed"` を返すため、[AsyncResult.error](../../reference/shared/asyncresult.context.md) プロパティを使用して [Error](../../reference/shared/error.md) オブジェクトにアクセスし、メソッド呼び出しが失敗した理由を確認できます。
 
 
-## Document オブジェクトによる選択範囲の操作
+## <a name="working-with-selections-using-the-document-object"></a>Document オブジェクトによる選択範囲の操作
 
 
 **Document** オブジェクトが公開しているメソッドを使用すると、ユーザーの現在の選択範囲に対して、"取得したら破棄する (get and forget)" 方式で読み取りと書き込みを行うことができます。これは、**Document** オブジェクトの **getSelectedDataAsync** メソッドと **setSelectedDataAsync** メソッドで行います。
@@ -145,7 +144,7 @@ Excel、PowerPoint、および Word のドキュメント データを操作す�
 選択範囲に関する操作の実行方法を示すコード例については、「[ドキュメントまたはスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)」を参照してください。
 
 
-## Bindings オブジェクトおよび Binding オブジェクトによるバインドの操作
+## <a name="working-with-bindings-using-the-bindings-and-binding-objects"></a>Bindings オブジェクトおよび Binding オブジェクトによるバインドの操作
 
 
 バインドベースのデータ アクセスを使用すると、コンテンツ アドインおよび作業ウィンドウ アドインで、バインドに関連付けられた識別子を介して、ドキュメントまたはスプレッドシートの特定の領域に一貫性のあるアクセスが可能になります。アドインは、最初に、ドキュメントの部分と一意の ID を関連付けるメソッドのいずれか ([addFromPromptAsync](../../reference/shared/bindings.addfrompromptasync.md)、[addFromSelectionAsync](../../reference/shared/bindings.addfromselectionasync.md)、または [addFromNamedItemAsync](../../reference/shared/bindings.addfromnameditemasync.md)) を呼び出すことによって、バインドを確立する必要があります。バインドが確立されると、アドインは提供された ID を使用して、ドキュメントまたはスプレッドシート内の関連付けられた領域に含まれるデータにアクセスできます。バインドを作成すると、アドインには次のようなメリットがあります。
@@ -175,7 +174,7 @@ _addFromSelectionAsync_ メソッド、**addFromPromptAsync** メソッド、ま
 バインドに関する操作の実行方法を示すコード例については、「[ドキュメントまたはスプレッドシート内の領域へのバインド](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)」を参照してください。
 
 
-## CustomXmlParts オブジェクトおよび CustomXmlPart オブジェクトによるカスタム XML パーツの操作
+## <a name="working-with-custom-xml-parts-using-the-customxmlparts-and-customxmlpart-objects"></a>CustomXmlParts オブジェクトおよび CustomXmlPart オブジェクトによるカスタム XML パーツの操作
 
 
  **適用対象:** Word の作業ウィンドウ アドイン
@@ -183,7 +182,7 @@ _addFromSelectionAsync_ メソッド、**addFromPromptAsync** メソッド、ま
 API の [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md) オブジェクトと [CustomXmlPart](../../reference/shared/customxmlpart.customxmlpart.md) オブジェクトを使用すると、Word 文書内のカスタム XML パーツにアクセスできます。これにより、文書のコンテンツに対する XML 主導の操作が可能になります。**CustomXmlParts** オブジェクトおよび **CustomXmlPart** オブジェクトとの連携のデモについては、「[Word-Add-in-Work-with-custom-XML-parts](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts)」のコード例を参照してください。
 
 
-## getFileAsync メソッドを使用したドキュメント全体の操作
+## <a name="working-with-the-entire-document-using-the-getfileasync-method"></a>getFileAsync メソッドを使用したドキュメント全体の操作
 
 
  **適用対象:** Word および PowerPoint の作業ウィンドウ アドイン
@@ -191,7 +190,7 @@ API の [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md
 [Document.getFileAsync](../../reference/shared/document.getfileasync.md) メソッド、および [File](../../reference/shared/file.md) オブジェクトと [Slice](../../reference/shared/slice.md) オブジェクトのメンバーは、一度に最大で 4 MB ずつのスライス (チャンク) に分割して Word および PowerPoint ドキュメント ファイル全体を取得する機能を提供します。詳細については、「[アドインのドキュメントですべてのファイルを取得する方法](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)」を参照してください。
 
 
-## Mailbox オブジェクト
+## <a name="mailbox-object"></a>Mailbox オブジェクト
 
 
  **適用対象:** Outlook アドイン
@@ -219,7 +218,7 @@ var item = Office.context.mailbox.item;
 Outlook アドインで JavaScript を使用する方法の詳細については、「[Outlook アドイン](../outlook/outlook-add-ins.md)」および「[Outlook アドインのアーキテクチャと機能の概要](../outlook/overview.md)」を参照してください。
 
 
-## API サポート マトリックス
+## <a name="api-support-matrix"></a>API サポート マトリックス
 
 
 この表は、アドインの種類 (コンテンツ、作業ウィンドウ、および Outlook) 全体でサポートされている API と機能、および [1.1 アドイン マニフェスト スキーマと機能 (JavaScript API for Office v1.1 でサポート)](http://msdn.microsoft.com/library/cff9fbdf-a530-4f6e-91ca-81bcacd90dcd%28Office.15%29.aspx) を使用して [アドインがサポートする Office のホスト アプリケーション](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md) を指定する際にこれらの API と機能をホストする Office アプリケーションについてまとめたものです。
@@ -228,11 +227,11 @@ Outlook アドインで JavaScript を使用する方法の詳細については
 |||||||||
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 ||**ホスト名**|データベース|ブック|メールボックス|プレゼンテーション|ドキュメント|Project|
-||**サポートされる****ホスト アプリケーション**|Access Web アプリ|Excel、Excel Online|Outlook、Outlook Web App、デバイス用 OWA|PowerPoint、PowerPoint Online|Word|Project|
+||**サポートされる** **ホスト アプリケーション**|Access Web アプリ|Excel、Excel Online|Outlook、Outlook Web App、デバイス用 OWA|PowerPoint、PowerPoint Online|Word|プロジェクト|
 |**サポートされるアドインの種類**|コンテンツ|Y|Y||Y|||
 ||作業ウィンドウ||Y||Y|Y|Y|
 ||Outlook|||Y||||
-|**サポートされているAPI 機能**|テキストの読み取り/書き込み||Y||Y|Y|Y (読み取り専用)|
+|**サポートされている API 機能**|テキストの読み取り/書き込み||Y||Y|Y|Y (読み取り専用)|
 ||マトリックスの読み取り/書き込み||Y|||Y||
 ||テーブルの読み取り/書き込み||Y|||Y||
 ||HTML の読み取り/書き込み|||||Y||

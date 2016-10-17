@@ -1,67 +1,67 @@
-﻿# ParagraphCollection オブジェクト (JavaScript API for OneNote)
+# <a name="paragraphcollection-object-(javascript-api-for-onenote)"></a>ParagraphCollection オブジェクト (JavaScript API for OneNote)
 
 _適用対象:OneNote Online_  
 
 
 Paragraph オブジェクトのコレクションを表します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明|フィードバック|
 |:---------------|:--------|:----------|:-------|
-|count|int|ページ内の段落の数を返します。読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-count)|
-|items|[Paragraph[]](paragraph.md)|Paragraph オブジェクトのコレクション。読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-items)|
+|count|int|ページ内の段落の数を返します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-count)|
+|items|[Paragraph[]](paragraph.md)|Paragraph オブジェクトのコレクション。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-items)|
 
-_プロパティのアクセスの[例](#例)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 なし
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明| フィードバック|
 |:---------------|:--------|:----------|:-------|
-|[getItem(index: number または string)](#getitemindex-number-または-string)|[段落](paragraph.md)|ID やコレクション内のインデックスで、Paragraph オブジェクトを取得します。読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-getItem)|
-|[getItemAt(index: number)](#getitematindex-number)|[段落](paragraph.md)|コレクション内での位置を基に段落を取得します。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-getItemAt)|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-load)|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[Paragraph](paragraph.md)|ID やコレクション内のインデックスで、Paragraph オブジェクトを取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-getItem)|
+|[getItemAt(index: number)](#getitematindex-number)|[Paragraph](paragraph.md)|コレクション内での位置を基に段落を取得します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-getItemAt)|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-load)|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### getItem(index: number または string)
+### <a name="getitem(index:-number-or-string)"></a>getItem(index: number または string)
 ID やコレクション内のインデックスで、Paragraph オブジェクトを取得します。読み取り専用です。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 paragraphCollectionObject.getItem(index);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |index|number または string|Paragraph オブジェクト の ID、またはコレクション内の Paragraph オブジェクトのインデックスの場所です。|
 
-#### 戻り値
-[段落](paragraph.md)
+#### <a name="returns"></a>戻り値
+[Paragraph](paragraph.md)
 
-### getItemAt(index: number)
+### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
 コレクション内での位置を基に段落を取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 paragraphCollectionObject.getItemAt(index);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |index|number|取得するオブジェクトのインデックス値。0 を起点とする番号になります。|
 
-#### 戻り値
-[段落](paragraph.md)
+#### <a name="returns"></a>戻り値
+[Paragraph](paragraph.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 OneNote.run(function (context) {
 
@@ -92,22 +92,22 @@ OneNote.run(function (context) {
     }
 }); 
 ```
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
-### プロパティのアクセスの例
+### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 **items**
 ```js

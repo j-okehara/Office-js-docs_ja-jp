@@ -1,16 +1,16 @@
 
-# Labs.Core.Permissions
+# <a name="labs.core.permissions"></a>Labs.Core.Permissions
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Static class representing the permissions enabled for a given user of the lab.
+特定のラボのユーザーに対して有効な権限を表す静的クラス。
 
 ```
 class Permissions
 ```
 
 
-## 値
+## <a name="values"></a>値
 
 
 |||

@@ -1,6 +1,6 @@
 
 
-# イベント
+# <a name="event"></a>イベント
 
 `event` オブジェクトは、UI を使用しないコマンド ボタンによって呼び出されるアドイン関数のパラメーターとして渡されます。オブジェクトにより、アドインはどのボタンがクリックされたかを識別し、その処理を行ったホストにシグナルを送ることができます。
 
@@ -39,17 +39,17 @@ function testEventObject(event) {
 }
 ```
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](./tutorial-api-requirement-sets.md)| 1.3|
-|[最小のアクセス許可レベル](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
+|[最小限のアクセス許可レベル](../../docs/outlook/understanding-outlook-add-in-permissions.md)| 制限あり|
 |適用可能な Outlook のモード| 作成または読み取り|
 
-### メンバー
+### <a name="members"></a>メンバー
 
-####  ソース: オブジェクト
+####  <a name="source-:object"></a>ソース: オブジェクト
 
 メソッドを呼び出したアドイン コマンド ボタンの識別子を取得します。
 
@@ -61,19 +61,19 @@ function testEventObject(event) {
 
 この値は、1 つ以上のボタンが同じ関数を呼び出すものの、どのボタンがクリックされたかによって異なる操作を実行しなければならない場合に使用できます。
 
-##### 型:
+##### <a name="type:"></a>型:
 
 *   オブジェクト
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](./tutorial-api-requirement-sets.md)| 1.3|
-|[最小のアクセス許可レベル](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
+|[最小限のアクセス許可レベル](../../docs/outlook/understanding-outlook-add-in-permissions.md)| 制限あり|
 |適用可能な Outlook のモード| 作成または読み取り|
 
-##### 例
+##### <a name="example"></a>例
 
 ```
 // Function is used by two buttons:
@@ -92,23 +92,23 @@ function multiButton (event) {
 }
 ```
 
-### メソッド
+### <a name="methods"></a>メソッド
 
-####  completed()
+####  <a name="completed()"></a>completed()
 
 アドインが、アドイン コマンド ボタンによりトリガーされた処理を完了したことを示します。
 
 このメソッドは、`Action` 属性が `xsi:type` に設定された `ExecuteFunction` 要素で定義されたアドイン コマンドにより呼び出された関数の最後に呼び出される必要があります。このメソッドを呼び出すと、関数が終了したことと、関数の呼び出しに関連するすべての状態をクリーンアップできることがホスト クライアントに通知されます。たとえば、ユーザーがこのメソッドを呼び出す前に Outlook を終了すると、関数が実行中であることが Outlook により警告されます。
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](./tutorial-api-requirement-sets.md)| 1.3|
-|[最小のアクセス許可レベル](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
+|[最小限のアクセス許可レベル](../../docs/outlook/understanding-outlook-add-in-permissions.md)| 制限あり|
 |適用可能な Outlook のモード| 作成または読み取り|
 
-##### 例
+##### <a name="example"></a>例
 
 ```
 function processItem (event) {

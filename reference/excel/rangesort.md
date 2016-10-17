@@ -1,35 +1,35 @@
-﻿# RangeSort オブジェクト (JavaScript API for Excel)
+# <a name="rangesort-object-(javascript-api-for-excel)"></a>RangeSort オブジェクト (JavaScript API for Excel)
 
-_適用対象: Excel 2016、Excel Online、Excel for iOS、Office 2016_
+_適用対象:Excel 2016、Excel Online、Excel for iOS、Office 2016_
 
 Range オブジェクトの並べ替え操作を管理します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 なし
 
-## 関係
+## <a name="relationships"></a>関係
 なし
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
 |[apply(fields:SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|void|並べ替え操作を実行します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### apply(fields:SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)
+### <a name="apply(fields:-sortfield[],-matchcase:-bool,-hasheaders:-bool,-orientation:-string,-method:-string)"></a>apply(fields:SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)
 並べ替え操作を実行します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |fields|SortField[]|並べ替えに使用する条件の一覧。|
@@ -38,10 +38,10 @@ rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 |orientation|string|省略可能。操作が行と列のどちらの並べ替えかを示します。使用可能な値は次のとおりです。Rows、Columns|
 |method|string|省略可能。中国語文字に使用される順序付けの方法です。使用可能な値は次のとおりです。PinYin、StrokeCount|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 Excel.run(function (ctx) { 
     var sheetName = "Sheet1";

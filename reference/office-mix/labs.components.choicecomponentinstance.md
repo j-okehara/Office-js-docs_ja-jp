@@ -1,5 +1,5 @@
-﻿
-# Labs.Components.ChoiceComponentInstance
+
+# <a name="labs.components.choicecomponentinstance"></a>Labs.Components.ChoiceComponentInstance
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,40 +10,40 @@ class ChoiceComponentInstance extends Labs.ComponentInstance<Components.ChoiceCo
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |プロパティ|説明|
 |:-----|:-----|
 | `public var component: Components.IChoiceComponentInstance`|The underlying [Labs.Components.IChoiceComponentInstance](../../reference/office-mix/labs.components.ichoicecomponentinstance.md) which this class represents.|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 
 
 
-### コンストラクター
+### <a name="constructor"></a>コンストラクター
 
  `function constructor(component: Components.IChoiceComponentInstance)`
 
-Creates a new instance of the  **ChoiceComponentInstance** class.
+**ChoiceComponentInstance** クラスの新しいインスタンスを作成します。
 
  **パラメーター**
 
 
 |パラメーター|説明|
 |:-----|:-----|
-| _コンポーネント_|The [Labs.Components.IChoiceComponentInstance](../../reference/office-mix/labs.components.ichoicecomponentinstance.md) object from which to create this class.|
+| _component_|このクラスの作成元になる [Labs.Components.IChoiceComponentInstance](../../reference/office-mix/labs.components.ichoicecomponentinstance.md) オブジェクト。|
 
-### buildAttempt
+### <a name="buildattempt"></a>buildAttempt
 
  `public function buildAttempt(createAttemptAction: Labs.Core.IAction): Components.ChoiceComponentAttempt`
 
-Builds a new  **ChoiceComponentAttempt** instance and implements the abstract method defined on the base class.
+新しい **ChoiceComponentAttempt** インスタンスを作成し、基底クラスに定義されている抽象メソッドを実装します。
 
  **パラメーター**
 
 
 |パラメーター|説明|
 |:-----|:-----|
-| _createAttemptResult_|The result from the create attempt action.|
+| _createAttemptResult_|作成の試行アクションの結果。|

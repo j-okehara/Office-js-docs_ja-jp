@@ -1,5 +1,5 @@
 
-# Office アドインにおける同一生成元ポリシーの制限への対処
+# <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Office アドインにおける同一生成元ポリシーの制限への対処
 
 
 ブラウザーによって適用される同一生成元ポリシーでは、あるドメインから読み込まれたスクリプトで別のドメインの Web ページのプロパティを取得または操作できないようにしています。つまり、既定で、要求された URL のドメインは現在の Web ページのドメインと同じである必要があります。たとえば、このポリシーを適用すると、あるドメインの Web ページから、そのページがホストされているドメインとは別のドメインに対して [XmlHttpRequest](http://www.w3.org/TR/XMLHttpRequest/) Web サービスを呼び出せません。
@@ -17,10 +17,10 @@ Office アドインはブラウザー コントロールでホストされるの
 - IFRAME および POST MESSAGE を使用して独自のプロキシを作成する。
     
 
-## JSON/P を使用した匿名アクセス
+## <a name="using-json/p-for-anonymous-access"></a>JSON/P を使用した匿名アクセス
 
 
-この制限に対処する方法の 1 つは、JSON/P を使用して Web サービスのプロキシを提供することです。 これを行うためには、任意のドメインでホストされているスクリプトを参照する `src` 属性を持つ `script` タグを使用します。 `script` タグをプログラムで作成し、`src` 属性で参照する URL を動的に作成すると、URI クエリ パラメーターを介してパラメーターを URL に渡すことができます。 Web サービス プロバイダーは、固有の URL で JavaScript コードを作成およびホストし、URI クエリ パラメーターに応じて異なるスクリプトを返します。 それらのスクリプトは挿入された場所で実行され、想定どおりに動作します。
+この制限に対処する方法の 1 つは、JSON/P を使用して Web サービスのプロキシを提供することです。これを行うためには、任意のドメインでホストされているスクリプトを参照する `src` 属性を持つ `script` タグを使用します。`script` タグをプログラムで作成し、`src` 属性で参照する URL を動的に作成すると、URI クエリ パラメーターを介してパラメーターを URL に渡すことができます。Web サービス プロバイダーは、固有の URL で JavaScript コードを作成およびホストし、URI クエリ パラメーターに応じて異なるスクリプトを返します。それらのスクリプトは挿入された場所で実行され、想定どおりに動作します。
 
 いずれの Office アドインでも機能する手法を使用する JSON/P の例を以下に示します。
 
@@ -40,7 +40,7 @@ function loadVideoDetails(videoIndex) {
 ```
 
 
-## トークン ベースの認証スキームを使用するサーバーサイド スクリプトの実装
+## <a name="implementing-server-side-script-using-a-token-based-authentication-scheme"></a>トークン ベースの認証スキームを使用するサーバーサイド スクリプトの実装
 
 
 同一生成元ポリシーの制限に対処する他の方法として、OAuth を使用する ASP ページ、または Cookie で資格情報をキャッシュする ASP ページとして、アドインの Web ページを実装する方法があります。
@@ -51,19 +51,19 @@ function loadVideoDetails(videoIndex) {
   `System.Net` の `Cookie` オブジェクトを使用して、Cookie の値を取得および設定する方法を示すサーバー側のコード例については、[Value](http://msdn2.microsoft.com/EN-US/library/4f772twc) プロパティを参照してください。
 
 
-## クロス オリジン リソース共有 (CORS) の使用
+## <a name="using-cross-origin-resource-sharing-(cors)"></a>クロス オリジン リソース共有 (CORS) の使用
 
 
 [XmlHttpRequest2](http://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html) のクロス オリジン リソース共有機能を使用する例については、「[New Tricks in XMLHttpRequest2 に関する新しいヒント](http://www.html5rocks.com/en/tutorials/file/xhr2/)」の「Cross Origin Resource Sharing (CORS)」セクションを参照してください。
 
 
-## IFRAME および POST MESSAGE を使用する独自のプロキシの作成
+## <a name="building-your-own-proxy-using-iframe-and-post-message"></a>IFRAME および POST MESSAGE を使用する独自のプロキシの作成
 
 
 IFRAME および POST MESSAGE を使用して独自のプロキシを作成する例については、「 [Cross-Window Messaging](http://ejohn.org/blog/cross-window-messaging/)」を参照してください。
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 - [Office アドインのプライバシーとセキュリティ](../../docs/develop/privacy-and-security.md)

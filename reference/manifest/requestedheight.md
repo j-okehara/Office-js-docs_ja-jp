@@ -1,11 +1,11 @@
 
-# RequestedHeight 要素
+# <a name="requestedheight-element"></a>RequestedHeight 要素
 コンテンツ アドインの初期高さをピクセル単位 (32 から 1000 まで可能) で指定します。
 
  **アドインの種類:**コンテンツ
 
 
-## 構文:
+## <a name="syntax:"></a>構文:
 
 
 ```XML
@@ -13,7 +13,7 @@
 ```
 
 
-## 次に含まれる:
+## <a name="contained-in:"></a>次に含まれる:
 
 [DefaultSettings](../../reference/manifest/defaultsettings.md) (コンテンツ アドイン)
 

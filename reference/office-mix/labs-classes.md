@@ -1,6 +1,6 @@
-﻿
-# Labs Classes
-JavaScript classes that are in the Labs module.
+
+# <a name="labs-classes"></a>Labs Classes
+Labs モジュールに含まれている JavaScript クラス。
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -11,7 +11,7 @@ JavaScript classes that are in the Labs module.
 
 |**名前**|**説明**|
 |:-----|:-----|
-|[Labs.ComponentInstanceBase](../../reference/office-mix/labs.componentinstancebase.md)|コンポーネント インスタンスの初期化用の基本クラスです。|
+|[Labs.ComponentInstanceBase](../../reference/office-mix/labs.componentinstancebase.md)|コンポーネント インスタンスの初期化用の基本クラス。|
 |[Labs.ComponentInstance](../../reference/office-mix/labs.componentinstance.md)|実行時にユーザーに指定されるコンポーネントのインスタンス化である、コンポーネントのインスタンスを表します。オブジェクトには、ラボの特定の実行のためのコンポーネントの翻訳されたビューが含まれます。|
 |[Labs.Command](../../reference/office-mix/labs.command.md)|クライアントとホスト間でメッセージを渡すのに使用される一般的なコマンドです。|
 |[Labs.LabEditor](../../reference/office-mix/labs.labeditor.md)|**LabEditor** オブジェクトを使うと、指定されたラボの編集に加えて、ラボに関連付けられている構成データを取得し、設定できます。|

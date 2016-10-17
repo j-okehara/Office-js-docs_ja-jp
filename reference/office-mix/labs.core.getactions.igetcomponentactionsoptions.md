@@ -1,5 +1,5 @@
-﻿
-# Labs.Core.GetActions.IGetComponentActionsOptions
+
+# <a name="labs.core.getactions.igetcomponentactionsoptions"></a>Labs.Core.GetActions.IGetComponentActionsOptions
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,7 +10,7 @@ interface IGetComponentActionsOptions extends Core.IGetActionOptions
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

@@ -1,29 +1,29 @@
-﻿# OfficeMenu 要素
-Office のコンテキスト メニューに追加するコントロールのコレクションを定義します。 Word、Excel、PowerPoint、OneNote アドインに適用されます。
+# <a name="officemenu-element"></a>OfficeMenu 要素
+Office のコンテキスト メニューに追加するコントロールのコレクションを定義します。Word、Excel、PowerPoint、OneNote アドインに適用されます。
 
-## 属性
+## <a name="attributes"></a>属性
 
 | 属性            | 必須 | 説明                          |
 |:---------------------|:--------:|:-------------------------------------|
 | [xsi:type](#xsitype) | はい      | 定義する OfficeMenu の種類。|
 
-## 子要素
+## <a name="child-elements"></a>子要素
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  [コントロール](#コントロール)    | はい |  1 つ以上のコントロール オブジェクトのコレクション。  |
+|  [Control](#control)    | はい |  1 つ以上のコントロール オブジェクトのコレクション。  |
 
-## xsi:type
+## <a name="xsi:type"></a>xsi:type
 この Office アドインを追加する Office クライアント アプリケーションの組み込みメニューを指定します。
 
-- `ContextMenuText` -  テキストが選ばれ、選ばれたテキストのコンテキスト メニューをユーザーが開いたときに (右クリック)、コンテキスト メニューに項目が表示されます。 Word、Excel、PowerPoint、OneNote に適用されます。
-- `ContextMenuCell` -  ユーザーがスプレッドシートのセルのコンテキスト メニューを開くと (右クリック)、コンテキスト メニューに項目が表示されます。 Excel に適用されます。 
+- `ContextMenuText` -  テキストが選ばれ、選ばれたテキストのコンテキスト メニューをユーザーが開いたときに (右クリック)、コンテキスト メニューに項目が表示されます。Word、Excel、PowerPoint、OneNote に適用されます。
+- `ContextMenuCell` -  ユーザーがスプレッドシートのセルのコンテキスト メニューを開くと (右クリック)、コンテキスト メニューに項目が表示されます。Excel に適用されます。 
 
-## コントロール
+## <a name="control"></a>コントロール
 
 各 **OfficeMenu** 要素には、1 つ以上の [メニュー](./menu.md#menu-control) コントロールが必要です。 
 
 
-## 例
+## <a name="example"></a>例
 
 ```xml
 <OfficeMenu id="ContextMenuCell">

@@ -1,46 +1,46 @@
-﻿# TableRow オブジェクト (JavaScript API for Excel)
+# <a name="tablerow-object-(javascript-api-for-excel)"></a>TableRow オブジェクト (JavaScript API for Excel)
 
 表の行を表します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
 |index|int|テーブルの行コレクション内の行のインデックス番号を返します。0 を起点とする番号になります。読み取り専用。|
 |values|object[][]|指定した範囲の Raw 値を表します。返されるデータの型は、文字列、数値、またはブール値のいずれかになります。エラーが含まれているセルは、エラー文字列を返します。|
 
-_プロパティのアクセスの[例](#例)をご覧ください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 なし
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
 |[delete()](#delete)|void|テーブルから行を削除します。|
-|[getRange()](#getrange)|[範囲](range.md)|行全体に関連付けられた Range オブジェクトを返します。|
+|[getRange()](#getrange)|[Range](range.md)|行全体に関連付けられた Range オブジェクトを返します。|
 |[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### delete()
+### <a name="delete()"></a>delete()
 テーブルから行を削除します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 tableRowObject.delete();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 Excel.run(function (ctx) { 
@@ -58,21 +58,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getRange()
+### <a name="getrange()"></a>getRange()
 行全体に関連付けられた Range オブジェクトを返します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 tableRowObject.getRange();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 Excel.run(function (ctx) { 
@@ -92,22 +92,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
-### プロパティのアクセスの例
+### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 ```js
 Excel.run(function (ctx) { 

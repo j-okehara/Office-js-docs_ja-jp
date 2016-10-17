@@ -1,10 +1,10 @@
 
-# Labs.Core Enumerations
-Enumerations in the Labs.Core module.
+# <a name="labs.core-enumerations"></a>Labs.Core Enumerations
+Labs.Core モジュール内の列挙体。
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-There is just one enumeration in the Labs.Core module of the Labs.js API.
+Labs.js API の Labs.Core モジュール内の列挙体は 1 つだけです。
 
 ## 
 

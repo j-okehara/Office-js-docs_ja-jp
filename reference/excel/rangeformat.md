@@ -1,8 +1,8 @@
-﻿# RangeFormat オブジェクト (JavaScript API for Excel)
+# <a name="rangeformat-object-(javascript-api-for-excel)"></a>RangeFormat オブジェクト (JavaScript API for Excel)
 
 範囲のフォント、塗りつぶし、境界線、配置などのプロパティをカプセル化する、書式設定オブジェクトです。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
@@ -12,17 +12,17 @@
 |verticalAlignment|string|指定したオブジェクトの垂直方向の配置を表します。使用可能な値は次のとおりです。Top、Center、Bottom、Justify、Distributed。|
 |wrapText|bool|Excel テキスト コントロールがオブジェクト内のテキストをラップするよう設定されていることを表します。null 値は、範囲全体で一様なラップ テキスト設定が使用されないことを表します。|
 
-_プロパティのアクセスの[例](#例)をご覧ください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 | リレーションシップ | 型   |説明|
 |:---------------|:--------|:----------|
-|Borders|[RangeBorderCollection](rangebordercollection.md)|選択した範囲全体に適用する Border オブジェクトのコレクションです。読み取り専用です。|
+|borders|[RangeBorderCollection](rangebordercollection.md)|選択した範囲全体に適用する Border オブジェクトのコレクションです。読み取り専用です。|
 |fill|[RangeFill](rangefill.md)|範囲全体に定義された塗りつぶしオブジェクトを返します。読み取り専用です。|
-|Font|[RangeFont](rangefont.md)|選択した範囲全体に定義されているフォント オブジェクトを返します。読み取り専用です。|
+|font|[RangeFont](rangefont.md)|選択した範囲全体に定義されているフォント オブジェクトを返します。読み取り専用です。|
 |protection|[FormatProtection](formatprotection.md)|範囲に対する書式保護オブジェクトを返します。読み取り専用です。|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
@@ -30,53 +30,53 @@ _プロパティのアクセスの[例](#例)をご覧ください。_
 |[autofitRows()](#autofitrows)|void|現在の行のデータに基づいて、現在の範囲の行の高さを最適な高さに変更します。|
 |[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### autofitColumns()
+### <a name="autofitcolumns()"></a>autofitColumns()
 現在の列のデータに基づいて、現在の範囲の列の幅を最適な幅に変更します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeFormatObject.autofitColumns();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-### autofitRows()
+### <a name="autofitrows()"></a>autofitRows()
 現在の行のデータに基づいて、現在の範囲の行の高さを最適な高さに変更します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeFormatObject.autofitRows();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
-### プロパティのアクセスの例
+### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 次の例では、範囲のすべての書式設定プロパティを出力します。 
 

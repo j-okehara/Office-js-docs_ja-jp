@@ -1,10 +1,10 @@
-﻿# SortField オブジェクト (JavaScript API for Excel)
+# <a name="sortfield-object-(javascript-api-for-excel)"></a>SortField オブジェクト (JavaScript API for Excel)
 
-_適用対象: Excel 2016、Excel Online、Excel for iOS、Office 2016_
+_適用対象:Excel 2016、Excel Online、Excel for iOS、Office 2016_
 
 並べ替え操作の条件を表します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
@@ -14,34 +14,34 @@ _適用対象: Excel 2016、Excel Online、Excel for iOS、Office 2016_
 |Key|int|条件の対象とする列 (または行。並べ替えの方向によって異なります) を表します。最初の列 (または行) からのオフセットとして表します。|
 |sortOn|string|この条件の並べ替えの種類を表します。使用可能な値は次のとおりです。Value、CellColor、FontColor、Icon。|
 
-_プロパティのアクセスの[例](#例)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 | リレーションシップ | 型   |説明|
 |:---------------|:--------|:----------|
-|アイコン|[Icon](icon.md)|並べ替えがセルのアイコンで行われるときに条件の対象となるアイコンを表します。|
+|icon|[Icon](icon.md)|並べ替えがセルのアイコンで行われるときに条件の対象となるアイコンを表します。|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void

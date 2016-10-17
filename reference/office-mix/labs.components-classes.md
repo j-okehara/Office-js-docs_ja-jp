@@ -1,10 +1,10 @@
-﻿
-# Labs.Components Classes
-Class in the  **LabsJS.Labs.Components** module
+
+# <a name="labs.components-classes"></a>Labs.Components Classes
+**LabsJS.Labs.Components** モジュール内のクラス
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-The  **LabsJS.Labs.Components** module contains the following classes.
+**LabsJS.Labs.Components** モジュールには次のクラスが含まれています。
 
 ## 
 

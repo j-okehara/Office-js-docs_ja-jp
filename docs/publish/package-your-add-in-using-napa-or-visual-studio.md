@@ -1,9 +1,9 @@
 
-# 発行のための準備として Napa または Visual Studio を使用してアドインをパッケージ化する
+# <a name="package-your-add-in-using-napa-or-visual-studio-to-prepare-for-publishing"></a>発行のための準備として Napa または Visual Studio を使用してアドインをパッケージ化する
 
 Office アドイン パッケージには、アドインを発行する際に使用する XML ファイルが含まれます。 プロジェクトの Web アプリケーション ファイルは、別々に発行する必要があります。
 
-## Napa を使用して作成した Office アドイン をパッケージ化する
+## <a name="package-an-office-add-in-that-you-create-by-using-napa"></a>Napa を使用して作成した Office アドイン をパッケージ化する
 
 
 
@@ -22,11 +22,11 @@ Office アドイン パッケージには、アドインを発行する際に使
 XML マニフェストを適切な場所にアップロードして [アドインを発行](../publish/publish.md)できるようになりました。 
 
 
-## Visual Studio 2015 を使用して Web プロジェクトを展開しアドインをパッケージ化する
+## <a name="deploy-your-web-project-and-package-your-add-in-by-using-visual-studio-2015"></a>Visual Studio 2015 を使用して Web プロジェクトを展開しアドインをパッケージ化する
 
 
 
-### Web プロジェクトを展開するには
+### <a name="to-deploy-your-web-project"></a>Web プロジェクトを展開するには
 
 
 1. [ **ソリューション エクスプローラー**] で、アドイン プロジェクトのショートカット メニューを開き、 [ **発行**] を選択します。
@@ -37,16 +37,17 @@ XML マニフェストを適切な場所にアップロードして [アドイ�
     
      >**注** 発行プロファイルは、配置先となるサーバー、サーバーへのログオンに必要な資格情報、配置するデータベース、その他の配置オプションを指定します。
 
-    [**新規...**] を選択した場合、[**発行プロファイルの作成**] ウィザードが表示されます。 このウィザードを使用して、Microsoft Azure などの Web サイトをホストするプロバイダーから発行プロファイルをインポートするか、新しいプロファイルを作成するかして、次の手順でサーバー、資格情報、その他の設定を追加することができます。
+    [**新規...**] を選択した場合、[**発行プロファイルの作成**] ウィザードが表示されます。このウィザードを使用して、Microsoft Azure などの Web サイトをホストするプロバイダーから発行プロファイルをインポートするか、新しいプロファイルを作成するかして、次の手順でサーバー、資格情報、その他の設定を追加することができます。
     
     発行プロファイルのインポートまたは新しい発行プロファイルの作成の詳細については、「[発行プロファイルの作成](http://msdn.microsoft.com/en-us/library/dd465337.aspx#creating_a_profile)」を参照してください。
     
 3. 「**アドインを発行する**」ページで、 [**Web プロジェクトの配置**] リンクを選択します。
     
-    [**Web の発行**] ダイアログ ボックスが表示されます。 このウィザードの使用方法の詳細については、「[方法: Visual Studio でオンクリック発行を使用して Web プロジェクトを配置する](http://msdn.microsoft.com/en-us/library/dd465337.aspx)」を参照してください。
+    
+  **[Web の発行]** ダイアログ ボックスが表示されます。このウィザードの使用方法の詳細については、「[方法:Visual Studio でオンクリック発行を使用して Web プロジェクトを配置する](http://msdn.microsoft.com/en-us/library/dd465337.aspx)」を参照してください。
     
 
-### アドインをパッケージ化するには
+### <a name="to-package-your-add-in"></a>アドインをパッケージ化するには
 
 
 1. [ **アドインを発行する**] ページで、 [ **アドインのパッケージ化**] リンクをクリックします。
@@ -55,7 +56,7 @@ XML マニフェストを適切な場所にアップロードして [アドイ�
     
 2. [ **Web サイトがホストされている場所**] ドロップダウン リストで、アドイン のコンテンツ ファイルをホストする Web サイトの URL を選択または入力して、[ **完了**] を選択します。
     
-    このウィザードを完了するには、HTTPS プレフィックスで始まるアドレスを指定する必要があります。 一般的には、Web サイトの HTTPS エンドポイントを使用する方法が最適ですが、アドインを Office ストアに発行する予定がない場合、これは必須ではありません。 パッケージが作成されると、マニフェストをメモ帳で開き、Web サイトの HTTPS プレフィックスを HTTP プレフィックスで置換できます。 詳細については、「[アプリおよびアドインを SSL でセキュリティ保護する理由](http://msdn.microsoft.com/en-us/library/jj591603#bk_q7)」を参照してください。 
+    このウィザードを完了するには、HTTPS プレフィックスで始まるアドレスを指定する必要があります。一般的には、Web サイトの HTTPS エンドポイントを使用する方法が最適ですが、アドインを Office ストアに発行する予定がない場合、これは必須ではありません。パッケージが作成されると、マニフェストをメモ帳で開き、Web サイトの HTTPS プレフィックスを HTTP プレフィックスで置換できます。詳細については、「[アプリおよびアドインを SSL でセキュリティ保護する理由](http://msdn.microsoft.com/en-us/library/jj591603#bk_q7)」を参照してください。 
     
      >**注** Azure の Web サイトは自動的に HTTPS エンドポイントを提供します。
 
@@ -68,11 +69,12 @@ XML マニフェストを適切な場所にアップロードして[アドイン
  `%UserProfile%\Documents\Visual Studio 2015\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 
 - [Office アドインを発行する](../publish/publish.md)
     
-- [Office ストアに Office アドインと SharePoint アドインおよび Office 365 Web アプリを提出する](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
+- 
+  [Office ストアに Office アドインと SharePoint アドインおよび Office 365 Web アプリを提出する](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
     

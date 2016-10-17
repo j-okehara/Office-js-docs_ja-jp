@@ -1,11 +1,11 @@
 
-# Labs.CommandType Variables
+# <a name="labs.commandtype-variables"></a>Labs.CommandType Variables
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Variables in the  **Labs.CommandType** module are simply strings representing the supported command types.
+**Labs.CommandType** モジュール内の変数は、サポートしているコマンドの種類を表す単なる文字列です。
 
-## 変数
+## <a name="variables"></a>変数
 
 
 |**名前**|**説明**|

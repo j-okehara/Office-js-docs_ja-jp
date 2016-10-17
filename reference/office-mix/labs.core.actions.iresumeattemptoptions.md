@@ -1,16 +1,16 @@
 
-# Labs.Core.Actions.IResumeAttemptOptions
+# <a name="labs.core.actions.iresumeattemptoptions"></a>Labs.Core.Actions.IResumeAttemptOptions
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Options associated with a resume attempt.
+再開の試行に関連するオプション。
 
 ```
 interface IResumeAttemptOptions extends Core.IActionOptions
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

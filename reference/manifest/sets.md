@@ -1,11 +1,11 @@
 
-# Sets 要素
+# <a name="sets-element"></a>Sets 要素
 Office アドインをアクティブにするために必要な JavaScript API for Office の最小限のサブセットを指定します。
 
  **アドインの種類:**コンテンツ、作業ウィンドウ、メール
 
 
-## 構文:
+## <a name="syntax:"></a>構文:
 
 
 ```XML
@@ -15,25 +15,25 @@ Office アドインをアクティブにするために必要な JavaScript API 
 ```
 
 
-## 次に含まれる:
+## <a name="contained-in:"></a>次に含まれる:
 
-[要件](../../reference/manifest/requirements.md)
+[Requirements](../../reference/manifest/requirements.md)
 
 
-## 含めることができるもの:
+## <a name="can-contain:"></a>含めることができるもの:
 
 [Set](../../reference/manifest/set.md)
 
 
-## 属性
+## <a name="attributes"></a>属性
 
 
 
-|**属性**|**種類**|**必須**|**説明**|
+|**属性**|**型**|**必須**|**説明**|
 |:-----|:-----|:-----|:-----|
 |DefaultMinVersion|文字列|省略可能|すべての子の **Set** 要素に対して、既定の [MinVersion](../../reference/manifest/set.md) 属性値を指定します。既定値は "1.1" です。|
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 要件セットの詳細については、「[Office ホストと API 要件を指定する](../../docs/overview/specify-office-hosts-and-api-requirements.md)」をご覧ください。
 

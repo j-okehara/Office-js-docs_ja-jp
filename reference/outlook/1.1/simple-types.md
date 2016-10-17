@@ -1,12 +1,12 @@
 
 
-# 単純型
+# <a name="simple-types"></a>単純型
 
-####  AsyncResult
+####  <a name="asyncresult"></a>AsyncResult
 
 要求が失敗した場合の状態やエラー情報など、非同期要求の結果をカプセル化するオブジェクト。
 
-##### プロパティ:
+##### <a name="properties:"></a>プロパティ:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -15,19 +15,19 @@
 |`status`| [Office.AsyncResultStatus](Office.md#.asyncresultstatus-string)|非同期操作の状態を取得します。|
 |`value`| Object|この非同期操作のペイロードまたはコンテンツを取得します (ある場合)。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
 |適用可能な Outlook のモード| 作成または読み取り|
-#### AttachmentDetails
+#### <a name="attachmentdetails"></a>AttachmentDetails
 
 サーバーからのアイテムの添付ファイルを表します。閲覧モードのみ。
 
 `AttachmentDetail` オブジェクトの配列が、`attachments` または `Appointment` オブジェクトの `Message` のプロパティとして返されます。
 
-##### プロパティ:
+##### <a name="properties:"></a>プロパティ:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -38,20 +38,20 @@
 |`name`| String|添付ファイルの名前を取得します。|
 |`size`| Number|添付ファイルのサイズをバイト単位で取得します。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 読み取り|
-#### Contact
+#### <a name="contact"></a>Contact
 
 サーバーに格納された連絡先を表します。閲覧モードのみ。
 
 アクティブなアイテムの `contacts` メソッドまたは `Entities` メソッドによって返される [`getEntities`](simple-types.md#entities) オブジェクトの `getEntitiesByType` プロパティに、電子メール メッセージまたは予定に関連付けられた連絡先のリストが返されます。
 
-##### プロパティ:
+##### <a name="properties:"></a>プロパティ:
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
@@ -62,22 +62,22 @@
 |`phoneNumbers`| Array.&lt;[PhoneNumber](simple-types.md#phonenumber)&gt;| &lt;nullable&gt;|連絡先に関連付けられた各電話番号の `PhoneNumber` オブジェクトが含まれている配列。|
 |`urls`| Array.&lt;String&gt;| &lt;nullable&gt;|連絡先に関連付けられているインターネットの URL を含む文字列の配列。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| 制限あり|
 |適用可能な Outlook のモード| 読み取り|
-####  EmailAddressDetails
+####  <a name="emailaddressdetails"></a>EmailAddressDetails
 
 電子メール メッセージまたは予定の送信者または指定受信者の電子メール プロパティを提供します。
 
-##### 型:
+##### <a name="type:"></a>型:
 
 *   Object
 
-##### プロパティ:
+##### <a name="properties:"></a>プロパティ:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -86,32 +86,32 @@
 |`emailAddress`| String|SMTP 電子メール アドレスを取得します。|
 |`recipientType`| [Office.MailboxEnums.RecipientType](Office.MailboxEnums.md#recipienttype-string)|受信者の電子メール アドレスの種類を取得します。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 作成または読み取り|
-#### EmailUser
+#### <a name="emailuser"></a>EmailUser
 
 Exchange Server 上の電子メール アカウントを表します。
 
-##### プロパティ:
+##### <a name="properties:"></a>プロパティ:
 
 |名前| 型| 説明|
 |---|---|---|
 |`displayName`| String|電子メール アドレスに関連付けられた表示名を取得します。|
 |`emailAddress`| String|SMTP 電子メール アドレスを取得します。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 読み取り|
-#### エンティティ
+#### <a name="entities"></a>エンティティ
 
 電子メール メッセージまたは予定に含まれているエンティティのコレクションを表します。閲覧モードのみ。
 
@@ -127,7 +127,7 @@ Exchange Server 上の電子メール アカウントを表します。
 
 `getEntitiesByType` メソッドによってプロパティ配列が返された場合、指定のエンティティのプロパティだけにデータが含まれ、それ以外のプロパティはすべて `null` になります。
 
-##### プロパティ:
+##### <a name="properties:"></a>プロパティ:
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
@@ -139,18 +139,18 @@ Exchange Server 上の電子メール アカウントを表します。
 |`taskSuggestions`| Array.&lt;[TaskSuggestion](simple-types.md#tasksuggestion)&gt;| &lt;nullable&gt;|電子メール メッセージまたは予定に含まれている、タスクの提案を取得します。|
 |`urls`| Array.&lt;String&gt;| &lt;nullable&gt;|電子メール メッセージまたは予定に含まれているインターネット URL を取得します。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 読み取り|
-#### LocalClientTime
+#### <a name="localclienttime"></a>LocalClientTime
 
 ローカルのクライアントのタイム ゾーンの日付と時刻を表します。閲覧モードのみ。
 
-##### プロパティ:
+##### <a name="properties:"></a>プロパティ:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -163,14 +163,14 @@ Exchange Server 上の電子メール アカウントを表します。
 |`milliseconds`| Number|ミリ秒を表す整数値。|
 |`timezoneOffset`| Number|ローカル タイム ゾーンと UTC との間の分数の差を表す整数値。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 読み取り|
-#### MeetingSuggestion
+#### <a name="meetingsuggestion"></a>MeetingSuggestion
 
 アイテムに含まれている提案された会議を表します。閲覧モードのみ。
 
@@ -178,7 +178,7 @@ Exchange Server 上の電子メール アカウントを表します。
 
 `start` および `end` の値は、会議の候補の開始日時と終了日時が含まれている Date オブジェクトの文字列表現です。値は、現在のユーザーに対して指定された既定のタイム ゾーンです。
 
-##### プロパティ:
+##### <a name="properties:"></a>プロパティ:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -189,24 +189,24 @@ Exchange Server 上の電子メール アカウントを表します。
 |`start`| String|提案された会議が開始する日時を取得します。|
 |`subject`| String|提案された会議の件名を取得します。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 読み取り|
-#### PhoneNumber
+#### <a name="phonenumber"></a>PhoneNumber
 
 アイテム内の識別される電話番号を表します。閲覧モードのみ。
 
 電子メール メッセージ内の電話番号が含まれる `PhoneNumber` オブジェクトの配列は、選択したアイテムの [`phoneNumbers`](simple-types.md#entities) メソッドを呼び出したときに返される、[`Entities`](Office.context.mailbox.item.md#getentities--entities) オブジェクトの `getEntities` プロパティに返されます。
 
-##### 型:
+##### <a name="type:"></a>型:
 
 *   Object
 
-##### プロパティ:
+##### <a name="properties:"></a>プロパティ:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -214,30 +214,30 @@ Exchange Server 上の電子メール アカウントを表します。
 |`phoneString`| String|電話番号が含まれている文字列を取得します。この文字列は、電話番号の数字のみを含みます。元のアイテムにかっこやハイフンなどの文字が含まれている場合でも、この文字列にはそれらの文字は含まれません。|
 |`type`| String|電話番号の種類 (`Home`、`Work`、`Mobile`、`Unspecified`) を識別する文字列を取得します。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 読み取り|
-#### TaskSuggestion
+#### <a name="tasksuggestion"></a>TaskSuggestion
 
 アイテム内の識別される推奨タスクを表します。閲覧モードのみ。
 
 アクティブなアイテムに対して [`taskSuggestions`](simple-types.md#entities) メソッドまたは [`Entities`](Office.context.mailbox.item.md#getentities--entities) メソッドが呼び出されたときに返される、[`Entities`][`getEntities`](Office.context.mailbox.item.md#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) オブジェクトの `getEntitiesByType` プロパティに、電子メール メッセージに含まれている提案されたタスクのリストが返されます。
 
-##### プロパティ:
+##### <a name="properties:"></a>プロパティ:
 
 |名前| 型| 説明|
 |---|---|---|
 |`assignees`| Array.&lt;[EmailUser](simple-types.md#emailuser)&gt;|推奨タスクに割り当てる必要のあるユーザーを取得します。|
 |`taskString`| String|タスクの提案として識別されたアイテムのテキストを取得します。|
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 読み取り|

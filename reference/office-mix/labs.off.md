@@ -1,5 +1,5 @@
-﻿
-# Labs.off
+
+# <a name="labs.off"></a>Labs.off
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,7 +10,7 @@ function off(event: string, handler: Core.IEventCallback): void
 ```
 
 
-## パラメーター
+## <a name="parameters"></a>パラメーター
 
 
 |**名前**|**説明**|
@@ -18,7 +18,7 @@ function off(event: string, handler: Core.IEventCallback): void
 |event|The event on which to remove the handler.|
 |handler|The event handler you wish to remove.|
 
-## Return value
+## <a name="return-value"></a>Return value
 
 なし。
 

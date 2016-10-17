@@ -1,11 +1,11 @@
 
-# Id 要素
+# <a name="id-element"></a>Id 要素
 Office アドインの一意の ID を GUID の形で指定します。
 
  **アドインの種類:**コンテンツ、作業ウィンドウ、メール
 
 
-## 構文:
+## <a name="syntax:"></a>構文:
 
 
 ```XML
@@ -13,7 +13,7 @@ Office アドインの一意の ID を GUID の形で指定します。
 ```
 
 
-## 次に含まれる:
+## <a name="contained-in:"></a>次に含まれる:
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 

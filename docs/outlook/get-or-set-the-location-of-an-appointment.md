@@ -1,5 +1,5 @@
 
-# Outlook で予定を作成するときに場所を取得または設定する
+# <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Outlook で予定を作成するときに場所を取得または設定する
 
 JavaScript API for Office には、ユーザーが作成する予定の場所を取得および設定する非同期メソッド ([getAsync](../../reference/outlook/Location.md) および [setAsync](../../reference/outlook/Location.md)) が用意されています。これらの非同期メソッドは、新規作成アドインでのみ使用できます。これらのメソッドを使用する場合は、新規作成フォームでアドインをアクティブ化するようアドイン マニフェストが Outlook 用に適切にセット アップされていることを確認してください。この手順については、「[新規作成フォーム用の Outlook アドインを作成する](../outlook/compose-scenario.md)」を参照してください。
 
@@ -26,7 +26,7 @@ item.location.getAsync
 JavaScript API for Office のほとんどの非同期メソッドと同じように、**getAsync** と **setAsync** はオプションの入力パラメーターを受け取ります。このオプションの入力パラメーターを指定する方法の詳細については、「[Office アドインにおける非同期プログラミング](../../docs/develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
 
 
-## 場所を取得するには
+## <a name="to-get-the-location"></a>場所を取得するには
 
 
 このセクションでは、ユーザーが新規作成する予定の場所を取得し、場所を表示するコード サンプルを示します。以下に示すとおり、このコード サンプルは、予定の新規作成フォームでアドインをアクティブ化するアドインのマニフェストのルールを想定しています。
@@ -76,7 +76,7 @@ function write(message){
 ```
 
 
-## 場所を設定するには
+## <a name="to-set-the-location"></a>場所を設定するには
 
 
 このセクションでは、ユーザーが新規作成する予定の場所を設定するコード サンプルを示します。前の例と同様、このコード サンプルは、予定の新規作成フォームでアドインをアクティブ化するアドインのマニフェストのルールを想定しています。
@@ -123,7 +123,7 @@ function write(message){
 ```
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

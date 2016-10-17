@@ -1,24 +1,24 @@
-﻿
-# Labs.DefaultHostBuilder
+
+# <a name="labs.defaulthostbuilder"></a>Labs.DefaultHostBuilder
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Use this object to construct a default [Labs.Core.ILabHost](../../reference/office-mix/labs.core.ilabhost.md) instance.
+このオブジェクトを使って、既定の [Labs.Core.ILabHost](../../reference/office-mix/labs.core.ilabhost.md) インスタンスを生成します。
 
 ```
 var DefaultHostBuilder: (): Core.ILabHost
 ```
 
 
-## パラメーター
+## <a name="parameters"></a>パラメーター
 
 なし。
 
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 
-#### 参照
+#### <a name="reference"></a>参照
 
 
 [Labs.Core.ILabHost](../../reference/office-mix/labs.core.ilabhost.md)

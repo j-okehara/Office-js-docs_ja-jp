@@ -1,9 +1,9 @@
 
-# iPad と Mac で Office アドインをデバッグする
+# <a name="debug-office-add-ins-on-ipad-and-mac"></a>iPad と Mac で Office アドインをデバッグする
 
 Windows でのアドインの開発とデバッグには Visual Studio を使用できますが、iPad と Mac で使用して アドインをデバッグすることはできません。アドインは HTML と Javascript を使用して開発されているため、さまざまなプラットフォームで機能するように設計されていますが、さまざまなブラウザーで HTML の表示方法に微妙な違いがあります。この記事では、iPad または Mac で動作するアドインをデバッグする方法を説明します。 
 
-## Vorlon.js を使用したデバッグ 
+## <a name="debugging-with-vorlon.js"></a>Vorlon.js を使用したデバッグ 
 
 Vorlon.js は、リモートで動作しさまざまなデバイスで Web ページをデバッグできる、F12 ツールに似た Web ページ用のデバッガーです。詳しくは、[Vorlon の Web サイト](http://www.vorlonjs.com)をご覧ください。  
 
@@ -15,11 +15,11 @@ Vorlon をインストールして設定するには
 
 3.  次のコマンドで依存関係をインストールします。`npm install`
 
-4.  アドインは HTTPS を必要とするため、アドインで使用するすべてのスクリプトも同様に HTTPS になるように拡張する必要があります。これには、Vorlon スクリプトも含まれます。 そのため、アドインで Vorlon を使用するには、SSL を使用するように Vorlon を構成することが必要になります。 Vorlon のインストール フォルダーにある、/Server フォルダーに移動して config.json ファイルを編集します。 **useSSL** プロパティを **true** に変更します。 このとき、Office アドインのプラグインも有効にすることができます (プラグインの "enabled" プロパティを true に変更します)。 
+4.  アドインは HTTPS を必要とするため、アドインで使用するすべてのスクリプトも同様に HTTPS になるように拡張する必要があります。これには、Vorlon スクリプトも含まれます。そのため、アドインで Vorlon を使用するには、SSL を使用するように Vorlon を構成することが必要になります。Vorlon のインストール フォルダーにある、/Server フォルダーに移動して config.json ファイルを編集します。**useSSL** プロパティを **true** に変更します。このとき、Office アドインのプラグインも有効にすることができます (プラグインの "enabled" プロパティを true に変更します)。 
 
 5.  コマンド `sudo vorlon` を使用して Vorlon サーバーを実行します。 
 
-6.  ブラウザー ウィンドウを開き、Vorlon インターフェイスの [http://localhost:1337](http://localhost:1337) に進みます。 セキュリティ証明書の信頼を求めるプロンプトが表示されるので、この証明書を信頼します。 セキュリティ証明書は、Vorlon フォルダーの /Server/cert 内にもあります。 
+6.  ブラウザー ウィンドウを開き、Vorlon インターフェイスの [http://localhost:1337](http://localhost:1337) に進みます。セキュリティ証明書の信頼を求めるプロンプトが表示されるので、この証明書を信頼します。セキュリティ証明書は、Vorlon フォルダーの /Server/cert 内にもあります。 
 
 7.  次のスクリプト タグを、アドインの home.html ファイル (またはメイン HTML ファイル) の `<head>` セクションに追加します。
 ```    
@@ -31,3 +31,6 @@ Vorlon をインストールして設定するには
 ![Vorlon.js インターフェイスを示すスクリーン ショット](../../images/vorlon_interface.png)
 
 Office プラグインにより Office.js に特別な機能 (オブジェクト モデルを調査する機能や Office.js の呼び出しを実行する機能など) が追加されます。 
+
+
+> **注:**アドインはパフォーマンス上の利用から、Office for Mac でキャッシュされることが多いです。アドインの開発中に再読み込みする必要がある場合は、Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/ フォルダーをクリアできます。  

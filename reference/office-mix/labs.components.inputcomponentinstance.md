@@ -1,5 +1,5 @@
-﻿
-# Labs.Components.InputComponentInstance
+
+# <a name="labs.components.inputcomponentinstance"></a>Labs.Components.InputComponentInstance
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,32 +10,32 @@ class InputComponentInstance extends Labs.ComponentInstance<Components.InputComp
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |プロパティ|説明|
 |:-----|:-----|
 | `public var component: Components.IInputComponentInstance`|The underlying [Labs.Components.IInputComponentInstance](../../reference/office-mix/labs.components.iinputcomponentinstance.md) object represented by this class.|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 
 
 
-### コンストラクター
+### <a name="constructor"></a>コンストラクター
 
  `function constructor(component: Components.IInputComponentInstance)`
 
-Creates a new [Labs.Components.IInputComponentInstance](../../reference/office-mix/labs.components.iinputcomponentinstance.md) instance.
+新しい [Labs.Components.IInputComponentInstance](../../reference/office-mix/labs.components.iinputcomponentinstance.md) インスタンスを作成します。
 
  **パラメーター**
 
 
 |パラメーター|説明|
 |:-----|:-----|
-| _コンポーネント_|The [Labs.Components.IInputComponentInstance](../../reference/office-mix/labs.components.iinputcomponentinstance.md) from which to create this class.|
+| _component_|このクラスを作成する [Labs.Components.IInputComponentInstance](../../reference/office-mix/labs.components.iinputcomponentinstance.md)。|
 
-### buildAttempt
+### <a name="buildattempt"></a>buildAttempt
 
  `public function buildAttempt(createAttemptAction: Labs.Core.IAction): Components.InputComponentAttempt`
 
@@ -46,4 +46,4 @@ Creates a new [Labs.Components.IInputComponentInstance](../../reference/office-m
 
 |パラメーター|説明|
 |:-----|:-----|
-| _createAttemptResult_|The result of a create attempt action.|
+| _createAttemptResult_|試行アクション作成の結果。|

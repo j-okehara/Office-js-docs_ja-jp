@@ -1,4 +1,4 @@
-# OneNote アドインの JavaScript API リファレンス
+# <a name="onenote-add-ins-javascript-api-reference"></a>OneNote アドインの JavaScript API リファレンス
 
 *適用対象:OneNote Online*
 
@@ -46,7 +46,7 @@
 
   - [TableCellCollection](tablecellcollection.md):TableRow 内の TableCell オブジェクトのコレクションです。
         
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 - [OneNote の JavaScript API のプログラミングの概要](../../docs/onenote/onenote-add-ins-programming-overview.md)
 - [最初の OneNote 用アドインをビルドする](../../docs/onenote/onenote-add-ins-getting-started.md)

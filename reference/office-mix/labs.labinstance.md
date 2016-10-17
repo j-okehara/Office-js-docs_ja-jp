@@ -1,5 +1,5 @@
-﻿
-# Labs.LabInstance
+
+# <a name="labs.labinstance"></a>Labs.LabInstance
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,7 +10,7 @@ class LabInstance
 ```
 
 
-## 変数
+## <a name="variables"></a>変数
 
 
 |||
@@ -18,47 +18,47 @@ class LabInstance
 | `public var data: any`|Container variable for holding user data.|
 | `public var components: Labs.ComponentInstanceBase[]`|Components that make up the lab instance.|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 
 
 
-### getState
+### <a name="getstate"></a>getState
 
  `public function getState(callback: Labs.Core.ILabCallback<any>): void`
 
-Retrieves the current state of the lab for a given user.
+特定のユーザー用のラボの現在の状態を取得します。
 
- **パラメーター**
+ **Parameters**
 
 
 |||
 |:-----|:-----|
-| _callback_|The callback function that fires when the lab state is retrieved.|
+| _callback_|ラボの状態を取得するときに起動するコールバック関数。|
 
-### setState
+### <a name="setstate"></a>setState
 
  `public function setState(state: any, callback: Labs.Core.ILabCallback<void>): void`
 
-Sets the state of the lab for a given user.
+特定のユーザー用のラボの状態を設定します。
 
- **パラメーター**
+ **Parameters**
 
 
 |||
 |:-----|:-----|
-| _state_|State to set.|
-| _callback_|Callback function that fires once the state is set.|
+| _state_|設定する状態。|
+| _callback_|状態が設定されると起動するコールバック関数。|
 
-### Done
+### <a name="done"></a>Done
 
  `public function done(callback: Labs.Core.ILabCallback<void>): void`
 
-Indicator function indicating that the user has finished taking the lab.
+ユーザーがラボの取得を完了したことを示すインジケーター関数。
 
- **パラメーター**
+ **Parameters**
 
 
 |||
 |:-----|:-----|
-| _callback_|Callback function that fires once the lab has finished.|
+| _callback_|ラボが完了すると起動するコールバック関数。|

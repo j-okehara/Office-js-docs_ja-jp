@@ -1,48 +1,48 @@
-﻿# WorksheetProtection オブジェクト (JavaScript API for Excel)
+# <a name="worksheetprotection-object-(javascript-api-for-excel)"></a>WorksheetProtection オブジェクト (JavaScript API for Excel)
 
-_適用対象: Excel 2016、Excel Online、Excel for iOS、Office 2016_
+_適用対象:Excel 2016、Excel Online、Excel for iOS、Office 2016_
 
 シート オブジェクトの保護を表します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
 |protected|bool|ワークシートが保護されているかどうかを示します。読み取り専用。|
 
-## リレーションシップ
+## <a name="relationships"></a>リレーションシップ
 | リレーションシップ | 型   |説明|
 |:---------------|:--------|:----------|
-|オプション|[WorksheetProtectionOptions](worksheetprotectionoptions.md)|シートの保護のオプション。読み取り専用。|
+|options|[WorksheetProtectionOptions](worksheetprotectionoptions.md)|シートの保護のオプション。読み取り専用。|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|プロキシ オブジェクトにシートの保護の詳細を設定します。|
-|[protect(options:WorksheetProtectionOptions)](#protectoptions-worksheetprotectionoptions)|void|ワークシートを保護します。ワークシートが保護されている場合はスローします。|
+|[protect(options:WorksheetProtectionOptions)](#protectoptions-worksheetprotectionoption)|void|ワークシートを保護します。ワークシートが保護されている場合はスローします。|
 |[unprotect()](#unprotect)|void|ワークシートの保護を解除します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 この例は、アクティブなワークシートの保護の詳細を読み込みます。
 ```js
 Excel.run(function (ctx) {
@@ -61,26 +61,26 @@ Excel.run(function (ctx) {
 });
 ```
 
-### protect(options:WorksheetProtectionOptions)
+### <a name="protect(options:-worksheetprotectionoptions)"></a>protect(options:WorksheetProtectionOptions)
 オプションの保護ポリシーを使用してワークシートを保護します。ワークシートが保護されている場合は例外をスローします。 
 
 オプションが指定されている場合は、個々のポリシーの有効/無効を切り替えられます。ポリシーが指定されていない場合、既定で有効になります。 
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 worksheetProtectionObject.protect(options);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |オプション|WorksheetProtectionOptions|省略可能。シートの保護のオプション。|
 
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 Excel.run(function (ctx) { 
     var sheet = ctx.workbook.worksheets.getItem("Sheet1");
@@ -95,21 +95,21 @@ Excel.run(function (ctx) {
 });
 
 ```
-### unprotect()
+### <a name="unprotect()"></a>unprotect()
 ワークシートの保護を解除します。 
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 worksheetProtectionObject.unprotect();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 Excel.run(function (ctx) { 
     var sheet = ctx.workbook.worksheets.getItem("Sheet1");  

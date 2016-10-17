@@ -1,10 +1,10 @@
-﻿# Range オブジェクト (JavaScript API for Excel)
+# <a name="range-object-(javascript-api-for-excel)"></a>Range オブジェクト (JavaScript API for Excel)
 
-_適用対象: Excel 2016、Excel Online、Excel for iOS、Office 2016_
+_適用対象:Excel 2016、Excel Online、Excel for iOS、Office 2016_
 
 範囲は、1 つ以上の隣接するセル (セル、行、列、セルのブロックなど) のセットを表します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
@@ -26,59 +26,59 @@ _適用対象: Excel 2016、Excel Online、Excel for iOS、Office 2016_
 |valueTypes|string|各セルのデータの種類を表します。読み取り専用です。使用可能な値は次のとおりです。Unknown、Empty、String、Integer、Double、Boolean、Error。|
 |values|object[][]|指定した範囲の Raw 値を表します。返されるデータの型は、文字列、数値、またはブール値のいずれかになります。エラーが含まれているセルは、エラー文字列を返します。|
 
-_プロパティのアクセスの[例](#例)をご覧ください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 | リレーションシップ | 型   |説明|
 |:---------------|:--------|:----------|
-|オプション パラメーターを適用する|[RangeFormat](rangeformat.md)|Format オブジェクト (範囲のフォント、塗りつぶし、罫線、配置などのプロパティをカプセル化するオブジェクト) を返します。読み取り専用です。|
+|format|[RangeFormat](rangeformat.md)|Format オブジェクト (範囲のフォント、塗りつぶし、罫線、配置などのプロパティをカプセル化するオブジェクト) を返します。読み取り専用です。|
 |sort|[RangeSort](rangesort.md)|範囲のソート順の構成を表します。読み取り専用です。|
-|worksheet|[ワークシート](worksheet.md)|現在の範囲を含んでいるワークシート。読み取り専用です。|
+|worksheet|[Worksheet](worksheet.md)|現在の範囲を含んでいるワークシート。読み取り専用です。|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
-|[clear(applyTo: string)](#clearapplyto-string)|void|範囲の値、書式、塗りつぶし、罫線などをクリアします。|
-|[delete(shift: string)](#deleteshift-string)|void|範囲に関連付けられているセルを削除します。|
-|[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[範囲](range.md)|指定した範囲を包含する、最小の Range オブジェクトを取得します。たとえば、"B2:C5" と "D10:E15" の getBoundingRect は、"B2:E15" になります。|
-|[getCell(row: number, column: number)](#getcellrow-number-column-number)|[範囲](range.md)|行と列の番号に基づいて、1 つのセルを含んだ範囲オブジェクトを取得します。このセルは、ワークシートのグリッド内であれば、親の範囲の境界の外のセルであってもかまいません。返されるセルは、範囲の左上のセルを基準に配置されます。|
-|[getColumn(column: number)](#getcolumncolumn-number)|[範囲](range.md)|範囲に含まれる列を 1 つ取得します。|
-|[getEntireColumn()](#getentirecolumn)|[範囲](range.md)|範囲に含まれるすべての列を表すオブジェクトを取得します。|
-|[getEntireRow()](#getentirerow)|[範囲](range.md)|範囲に含まれるすべての行を表すオブジェクトを取得します。|
-|[getIntersection(anotherRange: Range or string)](#getintersectionanotherrange-range-or-string)|[範囲](range.md)|指定した範囲の長方形の交差を表す Range オブジェクトを取得します。|
-|[getLastCell()](#getlastcell)|[範囲](range.md)|範囲内の最後のセルを取得します。たとえば、"B2:D5" の最後のセルは "D5" になります。|
-|[getLastColumn()](#getlastcolumn)|[範囲](range.md)|範囲内の最後の列を取得します。たとえば、"B2:D5" の最後の列は "D2:D5" になります。|
-|[getLastRow()](#getlastrow)|[範囲](range.md)|範囲内の最後の行を取得します。たとえば、"B2:D5" の最後の行は "B5:D5" になります。|
-|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[範囲](range.md)|指定した範囲からのオフセットで範囲を表すオブジェクトを取得します。返される範囲のディメンションは、この範囲と一致します。結果の範囲が、ワークシートのグリッドの境界線の外にはみ出る場合は、例外がスローされます。|
-|[getRow(row: number)](#getrowrow-number)|[範囲](range.md)|範囲に含まれている行を 1 つ取得します。|
-|[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool)|[範囲](range.md)|Range オブジェクトのうち使用されている部分範囲を返します。|
-|[insert(shift: string)](#insertshift-string)|[範囲](range.md)|この範囲を占めるセルまたはセルの範囲をワークシートに挿入し、領域を空けるために他のセルをシフトします。この時点で空き領域に位置する、新しい Range オブジェクトが返されます。|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
+|[clear(applyTo: string)](#clearapplyto-string)|(非推奨)|範囲の値、書式、塗りつぶし、罫線などをクリアします。|
+|[delete(shift: string)](#deleteshift-string)|(非推奨)|範囲に関連付けられているセルを削除します。|
+|[getBoundingRect(anotherRange:Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|指定した範囲を包含する、最小の Range オブジェクトを取得します。たとえば、"B2:C5" と "D10:E15" の getBoundingRect は、"B2:E15" になります。|
+|[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|行と列の番号に基づいて、1 つのセルを含んだ範囲オブジェクトを取得します。このセルは、ワークシートのグリッド内であれば、親の範囲の境界の外のセルであってもかまいません。返されるセルは、範囲の左上のセルを基準に配置されます。|
+|[getColumn(column: number)](#getcolumncolumn-number)|[Range](range.md)|範囲に含まれる列を 1 つ取得します。|
+|[getEntireColumn()](#getentirecolumn)|[Range](range.md)|範囲に含まれるすべての列を表すオブジェクトを取得します。|
+|[getEntireRow()](#getentirerow)|[Range](range.md)|範囲に含まれるすべての行を表すオブジェクトを取得します。|
+|[getIntersection(anotherRange:Range or string)](#getintersectionanotherrange-range-or-string)|[Range](range.md)|指定した範囲の長方形の交差を表す Range オブジェクトを取得します。|
+|[getLastCell()](#getlastcell)|[Range](range.md)|範囲内の最後のセルを取得します。たとえば、"B2:D5" の最後のセルは "D5" になります。|
+|[getLastColumn()](#getlastcolumn)|[Range](range.md)|範囲内の最後の列を取得します。たとえば、"B2:D5" の最後の列は "D2:D5" になります。|
+|[getLastRow()](#getlastrow)|[Range](range.md)|範囲内の最後の行を取得します。たとえば、"B2:D5" の最後の行は "B5:D5" になります。|
+|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|指定した範囲からのオフセットで範囲を表すオブジェクトを取得します。返される範囲のディメンションは、この範囲と一致します。結果の範囲が、ワークシートのグリッドの境界線の外にはみ出る場合は、例外がスローされます。|
+|[getRow(row: number)](#getrowrow-number)|[Range](range.md)|範囲に含まれている行を 1 つ取得します。|
+|[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool)|[Range](range.md)|Range オブジェクトのうち使用されている部分範囲を返します。|
+|[insert(shift: string)](#insertshift-string)|[Range](range.md)|この範囲を占めるセルまたはセルの範囲をワークシートに挿入し、領域を空けるために他のセルをシフトします。この時点で空き領域に位置する、新しい Range オブジェクトが返されます。|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 |[merge(across: bool)](#mergeacross-bool)|void|範囲内のセルをワークシートの 1 つの領域にマージします。|
 |[select()](#select)|void|Excel UI で指定した範囲を選択します。|
 |[unmerge()](#unmerge)|void|範囲内のセルを結合解除して別々のセルにします。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### clear(applyTo: string)
+### <a name="clear(applyto:-string)"></a>clear(applyTo: string)
 範囲の値、書式、塗りつぶし、罫線などをクリアします。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.clear(applyTo);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |applyTo|string|省略可能。クリア操作の種類を決定します。使用可能な値は次のとおりです。`All` (既定のオプション)、`Formats`、`Contents`|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 
 次の例では、範囲の書式と内容をクリアします。 
 
@@ -98,23 +98,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### delete(shift: string)
+### <a name="delete(shift:-string)"></a>delete(shift: string)
 範囲に関連付けられているセルを削除します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.delete(shift);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |<legacyBold>Shift</legacyBold>|string|セルをシフトする方向を指定します。使用可能な値は次のとおりです。Up、Left|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 Excel.run(function (ctx) { 
@@ -132,23 +132,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getBoundingRect(anotherRange: Range or string)
+### <a name="getboundingrect(anotherrange:-range-or-string)"></a>getBoundingRect(anotherRange: Range or string)
 指定した範囲を包含する、最小の Range オブジェクトを取得します。たとえば、"B2:C5" と "D10:E15" の GetBoundingRect は、"B2:E15" になります。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.getBoundingRect(anotherRange);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |anotherRange|Range または string|Range オブジェクト、アドレスまたは範囲名。|
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 
@@ -170,24 +170,24 @@ Excel.run(function (ctx) {
 ```
 
 
-### getCell(row: number, column: number)
+### <a name="getcell(row:-number,-column:-number)"></a>getCell(row: number, column: number)
 行と列の番号に基づいて、1 つのセルを含んだ範囲オブジェクトを取得します。このセルは、ワークシートのグリッド内であれば、親の範囲の境界の外のセルであってもかまいません。返されるセルは、範囲の左上のセルを基準に配置されます。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.getCell(row, column);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |row|number|取得するセルの行番号。0 を起点とする番号になります。|
 |列|number|取得セルの列番号。0 を起点とする番号になります。|
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 Excel.run(function (ctx) { 
@@ -209,23 +209,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getColumn(column: number)
+### <a name="getcolumn(column:-number)"></a>getColumn(column: number)
 範囲に含まれる列を 1 つ取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.getColumn(column);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |column|number|取得する範囲の列番号。0 を起点とする番号になります。|
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 
@@ -246,21 +246,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getEntireColumn()
+### <a name="getentirecolumn()"></a>getEntireColumn()
 範囲に含まれるすべての列を表すオブジェクトを取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.getEntireColumn();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 注: Range のグリッド プロパティ (values、numberFormat、formulas) には、当該の範囲に境界がないため、`null` が格納されます。
 
@@ -283,21 +283,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getEntireRow()
+### <a name="getentirerow()"></a>getEntireRow()
 範囲に含まれるすべての行を表すオブジェクトを取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.getEntireRow();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 
 Excel.run(function (ctx) {
@@ -318,23 +318,23 @@ Excel.run(function (ctx) {
 ```
 Range のグリッド プロパティ (values、numberFormat、formulas) には、当該の範囲に境界がないため、`null` が格納されます。
 
-### getIntersection(anotherRange: Range or string)
+### <a name="getintersection(anotherrange:-range-or-string)"></a>getIntersection(anotherRange: Range or string)
 指定した範囲の長方形の交差を表す Range オブジェクトを取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.getIntersection(anotherRange);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |anotherRange|Range または string|範囲の交差を判断するために使用される、Range オブジェクトまたは Range アドレス。|
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 
@@ -355,21 +355,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getLastCell()
+### <a name="getlastcell()"></a>getLastCell()
 範囲内の最後のセルを取得します。たとえば、"B2:D5" の最後のセルは "D5" になります。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.getLastCell();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 
@@ -390,21 +390,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getLastColumn()
+### <a name="getlastcolumn()"></a>getLastColumn()
 範囲内の最後の列を取得します。たとえば、"B2:D5" の最後の列は "D2:D5" になります。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.getLastColumn();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 
@@ -425,21 +425,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getLastRow()
+### <a name="getlastrow()"></a>getLastRow()
 範囲内の最後の行を取得します。たとえば、"B2:D5" の最後の行は "B5:D5" になります。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.getLastRow();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 
@@ -461,24 +461,24 @@ Excel.run(function (ctx) {
 
 
 
-### getOffsetRange(rowOffset: number, columnOffset: number)
+### <a name="getoffsetrange(rowoffset:-number,-columnoffset:-number)"></a>getOffsetRange(rowOffset: number, columnOffset: number)
 指定した範囲からのオフセットで範囲を表すオブジェクトを取得します。返される範囲のディメンションは、この範囲と一致します。結果の範囲が、ワークシートのグリッドの境界線の外にはみ出る場合は、例外がスローされます。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.getOffsetRange(rowOffset, columnOffset);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |rowOffset|number|範囲をオフセットする行数 (正、負、または 0)。正の値は下方向へのオフセットです。また、負の値は上方向へのオフセットです。|
 |columnOffset|number|範囲をオフセットする列数 (正、負、または 0)。正の値は右方向へのオフセットです。また、負の値は左方向へのオフセットです。|
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 Excel.run(function (ctx) { 
@@ -498,23 +498,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getRow(row: number)
+### <a name="getrow(row:-number)"></a>getRow(row: number)
 範囲に含まれている行を 1 つ取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.getRow(row);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |row|number|取得する範囲の行番号。0 を起点とする番号になります。|
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 
@@ -535,23 +535,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getUsedRange(valuesOnly: bool)
+### <a name="getusedrange(valuesonly:-bool)"></a>getUsedRange(valuesOnly: bool)
 指定した Range オブジェクトのうち使用されている範囲を返します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.getUsedRange(valuesOnly);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |valuesOnly|bool|省略可能。true の場合、現在値が入っているセルのみが使用中のセルとされます。既定値の false の場合、これまで使用されたことのあるすべてのセルが使用中とされます。|
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 
@@ -573,23 +573,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### insert(shift: string)
+### <a name="insert(shift:-string)"></a>insert(shift: string)
 この範囲を占めるセルまたはセルの範囲をワークシートに挿入し、領域を空けるために他のセルをシフトします。この時点で空き領域に位置する、新しい Range オブジェクトが返されます。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.insert(shift);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |<legacyBold>Shift</legacyBold>|string|セルをシフトする方向を指定します。使用可能な値は次のとおりです。Down、Right|
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
     
@@ -609,39 +609,39 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-### merge(across: bool)
+### <a name="merge(across:-bool)"></a>merge(across: bool)
 範囲内のセルをワークシートの 1 つの領域にマージします。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.merge(across);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |across|bool|省略可能。指定した範囲のセルを行ごとに結合して、行ごとに別のセルを作成する場合は True に設定します。既定値は False です。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 Excel.run(function (ctx) { 
     var sheetName = "Sheet1";
@@ -658,21 +658,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### select()
+### <a name="select()"></a>select()
 Excel UI で指定した範囲を選択します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.select();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 
@@ -692,21 +692,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### unmerge()
+### <a name="unmerge()"></a>unmerge()
 範囲内の結合済みセルを結合解除して別々のセルにします。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 rangeObject.unmerge();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 Excel.run(function (ctx) { 
     var sheetName = "Sheet1";
@@ -722,7 +722,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### プロパティのアクセスの例
+### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 次の例では、範囲アドレスを使用して、範囲オブジェクトを取得しています。
 

@@ -1,16 +1,16 @@
 
-# Labs.Core.ILabHostVersionInfo
+# <a name="labs.core.ilabhostversioninfo"></a>Labs.Core.ILabHostVersionInfo
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Version information about the lab host.
+ラボのホストに関するバージョン情報。
 
 ```
 interface ILabHostVersionInfo
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

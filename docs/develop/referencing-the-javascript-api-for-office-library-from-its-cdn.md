@@ -1,5 +1,5 @@
 
-# Office ライブラリの JavaScript API をそのコンテンツ配信ネットワーク (CDN) から参照する
+# <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-(cdn)"></a>Office ライブラリの JavaScript API をそのコンテンツ配信ネットワーク (CDN) から参照する
 
 
 [JavaScript API for Office](../../reference/javascript-api-for-office.md) ライブラリは、Office.js ファイルと関連するホスト アプリケーション固有のファイル (Excel-15.js や Outlook-15.js など) で構成されています。 
@@ -15,9 +15,9 @@ CDN URL で `/1/` の前にある `office.js` は、Office.js のバージョン
 
 Office ストアから Office アドインを発行する場合は、この CDN の参照を使用する必要があります。ローカル参照は、内部の開発およびデバッグ シナリオにのみ適用できます。
 
-> **重要:**任意の Office ホスト アプリケーションのアドインを開発する場合、ページの `<head>` セクション内から JavaScript API for Office を参照することが重要です。 これにより、API はあらゆる body 要素の前に完全に初期化されます。 Office ホストでは、ライセンス認証の 5 秒以内にアドインを初期化する必要があります。 このしきい値を超えるとアドインが応答なしと宣言され、エラー メッセージがユーザーに表示されます。       
+> **重要:**任意の Office ホスト アプリケーションのアドインを開発する場合、ページの `<head>` セクション内から JavaScript API for Office を参照することが重要です。これにより、API はあらゆる body 要素の前に完全に初期化されます。Office ホストでは、ライセンス認証の 5 秒以内にアドインを初期化する必要があります。このしきい値を超えるとアドインが応答なしと宣言され、エラー メッセージがユーザーに表示されます。       
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

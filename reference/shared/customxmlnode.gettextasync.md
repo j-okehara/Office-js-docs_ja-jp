@@ -1,28 +1,28 @@
 
-# CustomXmlNode.getTextAsync メソッド
+# <a name="customxmlnode.gettextasync-method"></a>CustomXmlNode.getTextAsync メソッド
 カスタム XML パーツ内の XML ノードのテキストを非同期的に取得します。
 
 |||
 |:-----|:-----|
 |**ホスト:**|Word|
 |**[要件セット](../../docs/overview/specify-office-hosts-and-api-requirements.md)に指定できるもの**|CustomXmlParts|
-|**で追加**|1.2|
+|**追加されたバージョン**|1.2|
 
 ```js
 customXmlNodeObj.getTextAsync([asyncContext,]callback(asyncResult);
 ```
 
 
-## パラメーター
+## <a name="parameters"></a>パラメーター
 
 
 
 |**名前**|**型**|**説明**|
 |:-----|:-----|:-----|
 | _asyncContext_|**object**|オプション。[AsyncResult](../../reference/shared/asyncresult.md) オブジェクトの asyncContext プロパティで取得できるユーザー定義のオブジェクト。これは、コールバックが名前付き関数の場合に、 **AsyncResult** にオブジェクトまたは値を提供するために使用します。|
-| _callback_|**object**|コールバックが戻るときに呼び出される関数で、唯一のパラメーターは  **AsyncResult** 型です。|
+| _callback_|**object**|コールバックが戻るときに呼び出される関数で、唯一のパラメーターは **AsyncResult** 型です。|
 
-## コールバック値
+## <a name="callback-value"></a>コールバック値
 
 _callback_ パラメーターに渡した関数が実行されると、[AsyncResult](../../reference/shared/asyncresult.md) オブジェクトを受け取ります。このオブジェクトには、コールバック関数の唯一のパラメーターからアクセスできます。
 
@@ -32,12 +32,12 @@ _callback_ パラメーターに渡した関数が実行されると、[AsyncRes
 
 |**プロパティ**|**使用目的**|
 |:-----|:-----|
-|[AsyncResult.value](../../reference/shared/asyncresult.value.md)|参照されるノードの内部テキストを格納している  **string** にアクセスします。|
+|[AsyncResult.value](../../reference/shared/asyncresult.value.md)|参照されるノードの内部テキストを格納している **string** にアクセスします。|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|操作の成功または失敗を示します。|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|操作が失敗した場合、エラーに関する情報を提供する [Error](../../reference/shared/error.md) オブジェクトにアクセスします。|
 |[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|ユーザー定義の  **object** または値を _asyncContext_ パラメーターとして渡した場合、そのオブジェクトまたは値にアクセスします。このプロパティは、 _asyncContext_ が設定されていない場合に未定義を返します。|
 
-## 例
+## <a name="example"></a>例
 
 カスタム XML パーツ内のノードのテキスト値を取得する方法について説明します。
 
@@ -72,7 +72,7 @@ Office.context.document.customXmlParts.getByIdAsync("{6C3C8BC8-F283-45AE-878A-BA
 ```
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このメソッドは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。
@@ -88,17 +88,17 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |:-----|:-----|
 |**要件セットに指定できるもの**|CustomXmlParts|
 |**最小限のアクセス許可レベル**|[ReadWriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**アプリの種類**|作業ウィンドウ|
+|**アドインの種類**|作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 ****
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|getTextAsync を追加しました。|

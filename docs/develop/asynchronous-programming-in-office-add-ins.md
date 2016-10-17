@@ -1,5 +1,5 @@
 
-# Office アドインにおける非同期プログラミング
+# <a name="asynchronous-programming-in-office-add-ins"></a>Office アドインにおける非同期プログラミング
 
 Office アドイン API で非同期プログラミングを使用する理由 JavaScript はシングルスレッドの言語であるため、スクリプトで実行時間の長い同期プロセスが呼び出されると、そのプロセスが完了するまで後続のすべてのスクリプト実行がブロックされます。Office Web クライアント (リッチ クライアントも同様) に特定の操作を同時に実行した場合、実行がブロックされることがあるので、JavaScript API for Office のほとんどのメソッドは非同期で実行されるように設計されています。これにより、Office アドインの応答性とパフォーマンスが向上します。このような非同期メソッドを利用するときは、多くの場合、コールバック関数の記述も必要です。
 
@@ -7,14 +7,14 @@ Office アドイン API で非同期プログラミングを使用する理由 J
 
 次の図は、サーバーベースの Word Online または Excel Online で開いたドキュメントでユーザーが選択したデータを読み込む "Async" メソッドの呼び出しを実行するフローを示したものです。"Async" が呼び出された時点で、JavaSript 実行スレッドは自由にクライアント側の追加処理を実行できます。(ただし、この追加処理は図に示されていません。) "Async" メソッドが戻ると、コールバックはスレッドの実行を再開します。アドインはデータにアクセスし、それで何らかの操作を行い、結果を表示できます。Word 2013 や Excel 2013 など、Office リッチ クライアント ホスト アプリケーションを使用しているときは、同じ非同期実行パターンが当てはまります。
 
-**図 1. 非同期プログラミング実行フロー**
+**図 1.非同期プログラミング実行フロー**
 
 
 ![非同期プログラミング スレッドの実行フロー](../../images/off15appAsyncProgFig01.png)
 
 リッチ クライアントと Web クライアントの両方でこの非同期設計をサポートすることは、Office アドイン開発モデルの "write once-run cross-platform (一度書けばどんなプラットフォームでも動く)" 設計目的の一部です。たとえば、Excel 2013 と Excel Online の両方で実行されるシングル コード ベースのコンテンツ アドインまたは作業ウィンドウ アドインを作成できます。
 
-## "Async" メソッドのコールバック関数を記述する
+## <a name="writing-the-callback-function-for-an-"async"-method"></a>"Async" メソッドのコールバック関数を記述する
 
 
 "Async" メソッドに _callback_ 引数として渡すコールバック関数では、コールバック関数の実行時にアドインのランタイムが [AsyncResult](../../reference/shared/asyncresult.md) オブジェクトへのアクセスを提供するために使用する 1 つのパラメーターを宣言する必要があります。次を記述できます。
@@ -27,7 +27,7 @@ Office アドイン API で非同期プログラミングを使用する理由 J
 匿名関数は、そのコードを一度だけ使用する場合に便利です。関数には名前がないため、コードの別の部分で参照できないためです。名前付き関数は、複数の "Async" メソッドにコールバック関数を再利用する場合に便利です。
 
 
-### 匿名コールバック関数を記述する
+### <a name="writing-an-anonymous-callback-function"></a>匿名コールバック関数を記述する
 
 次の匿名のコールバック関数により `result` という名前のパラメーターが宣言されます。このパラメーターは、コールバックが戻るときに [AsyncResult.value](../../reference/shared/asyncresult.status.md) プロパティからデータを取得します。
 
@@ -66,7 +66,7 @@ function write(message){
 **getSelectedDataAsync** メソッドの使用の詳細については、「[ドキュメントまたはスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)」を参照してください。 
 
 
-### 名前付き関数を記述する
+### <a name="writing-a-named-callback-function"></a>名前付き関数を記述する
 
 または、名前付き関数を記述し、その名前を "Async" メソッドの  _callback_ パラメーターに渡すことができます。たとえば、前の例は次のように `writeDataCallback` という名前の関数を _callback_ パラメーターとして渡すように書き換えることができます。
 
@@ -87,7 +87,7 @@ function write(message){
 ```
 
 
-## AsyncResult.value プロパティに返される内容の違い
+## <a name="differences-in-what's-returned-to-the-asyncresult.value-property"></a>AsyncResult.value プロパティに返される内容の違い
 
 
 **AsyncResult** オブジェクトの **asyncContext** プロパティ、**status** プロパティ、および **error** プロパティは、すべての "Async" メソッドに渡されるコールバック関数に同じ種類の情報を返します。ただし、**AsyncResult.value** プロパティに返される内容は "Async" メソッドの機能によって異なります。
@@ -99,7 +99,7 @@ function write(message){
 "Async" メソッドの**AsyncResult.value** プロパティに返される内容の説明については、そのメソッドの参照トピックの「コールバック値」セクションを参照してください。"Async" メソッドを提供するすべてのオブジェクトの概要については、[AsyncResult](../../reference/shared/asyncresult.md) オブジェクト トピックの下にある表を参照してください。
 
 
-## 非同期プログラミング パターン
+## <a name="asynchronous-programming-patterns"></a>非同期プログラミング パターン
 
 
 JavaScript API for Office は 2 種類の非同期プログラミング パターンをサポートします。
@@ -114,7 +114,7 @@ JavaScript API for Office は 2 種類の非同期プログラミング パタ�
 入れ子のコールバックを使用することは、ほとんどの JavaScript 開発者にとってなじみのあるプログラミング パターンですが、コールバックが深い入れ子になっているコードは読みにくく、理解しにくいものです。入れ子のコールバックの代替として、JavaScript API for Office は promise パターンの実装もサポートします。ただし、JavaScript API for Office の現在のバージョンでは、promise パターンは [Excel ワークシートと Word 文書のバインディング](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)のコードのみで使用できます。
 
 <a name="AsyncProgramming_NestedCallbacks" />
-### 入れ子のコールバック関数を使用する非同期プログラミング
+### <a name="asynchronous-programming-using-nested-callback-functions"></a>入れ子のコールバック関数を使用する非同期プログラミング
 
 
 多くの場合、タスクを完了するには、2 つ以上の非同期操作を実行する必要があります。これを実現するために、1 つの "Async" 呼び出し内で別の呼び出しを入れ子にできます。 
@@ -151,7 +151,7 @@ function write(message){
 次のセクションでは、非同期メソッドの入れ子のコールバックで匿名関数または名前付き関数を使用する方法を示します。
 
 
-#### 入れ子のコールバックとして匿名関数を使用する
+#### <a name="using-anonymous-functions-for-nested-callbacks"></a>入れ子のコールバックとして匿名関数を使用する
 
 次の例では、2 つの匿名関数がインラインで宣言され、入れ子のコールバックとして  **getByIdAsync** メソッドと **getDataAsync** メソッドに渡されます。関数は単純でインラインのため、実装の意図は明白です。
 
@@ -174,7 +174,7 @@ function write(message){
 ```
 
 
-#### 入れ子のコールバックとして名前付き関数を使用する
+#### <a name="using-named-functions-for-nested-callbacks"></a>入れ子のコールバックとして名前付き関数を使用する
 
 複雑な実装の場合、名前付き関数を使用すると、読みやすく、保守管理がしやすく、再利用しやすくなります。次の例では、前のセクションの例における 2 つの匿名関数が、 `deleteAllData` と `showResult` という名前の関数に書き換えられています。これらの名前付き関数は、名前を使用してコールバックとして **getByIdAsync** メソッドと **deleteAllDataValuesAsync** メソッドに渡されます。
 
@@ -201,7 +201,7 @@ function write(message){
 ```
 
 
-### promise パターンを使用してバインドのデータにアクセスする非同期プログラミング
+### <a name="asynchronous-programming-using-the-promises-pattern-to-access-data-in-bindings"></a>promise パターンを使用してバインドのデータにアクセスする非同期プログラミング
 
 
 コールバック関数を渡し、その関数が戻るのを待ってから実行を続行する代わりに、promise プログラミング パターンを使用すれば、その意図した結果を表すpromise オブジェクトがすぐに返されます。ただし、本物の同期プログラミングとは異なり、実際には Office アドインのランタイム環境が要求を完了できるまでは、「約束された」結果の履行は実際には延期されます。要求が履行されない状況に対処するために  _onError_ ハンドラーが用意されています。
@@ -253,7 +253,7 @@ function addBindingDataChangedEventHandler() {
  >**重要**   **Office.select** メソッドにより返された **Binding** オブジェクトの promise は **Binding** オブジェクトの 4 つのメソッドにのみアクセスを提供します。 **Binding** オブジェクトのその他のメンバーにアクセスする必要がある場合、代わりに **Document.bindings** プロパティと **Bindings.getByIdAsync** メソッドまたは **Bindings.getAllAsync** メソッドを使用し、 **Binding** オブジェクトを取得する必要があります。たとえば、 **Binding** オブジェクトのプロパティ ( **document** プロパティ、 **id** プロパティ、 **type** プロパティ) にアクセスする必要がある場合、または [MatrixBinding](../../reference/shared/binding.matrixbinding.md) オブジェクトまたは [TableBinding](../../reference/shared/binding.tablebinding.md) オブジェクトのプロパティにアクセスする必要がある場合、 **getByIdAsync** メソッドまたは **getAllAsync** メソッドを使用して **Binding** オブジェクトを取得する必要があります。
 
 
-## オプションのパラメーターを非同期メソッドに渡す
+## <a name="passing-optional-parameters-to-asynchronous-methods"></a>オプションのパラメーターを非同期メソッドに渡す
 
 
 すべての "Async" メソッドの一般的な構文は、次のパターンに従います。
@@ -265,7 +265,7 @@ function addBindingDataChangedEventHandler() {
 オプションのパラメーターが格納される JSON オブジェクトはインラインで作成するか、 `options` オブジェクトを作成し、それを _options_ パラメーターとして渡すことによって作成できます。
 
 
-### オプションのパラメーターをインラインで渡す
+### <a name="passing-optional-parameters-inline"></a>オプションのパラメーターをインラインで渡す
 
 たとえば、オプションのパラメーターをインラインで指定して [Document.setSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) メソッドを呼び出す場合の構文は、次のようになります。
 
@@ -298,7 +298,7 @@ function write(message){
 > **メモ:**オプションのパラメーターは、名前さえ正しければ、任意の順序で JSON オブジェクトに指定できます。
 
 
-### オプションのパラメーターを options オブジェクトで渡す
+### <a name="passing-optional-parameters-in-an-options-object"></a>オプションのパラメーターを options オブジェクトで渡す
 
 別の方法として、メソッド呼び出しとは別に、オプションのパラメーターを指定する  `options` という名前のオブジェクトを作成し、その `options` オブジェクトを _options_ 引数として渡すことができます。
 
@@ -383,7 +383,7 @@ function write(message){
 どちらのオプションのパラメーター例でも、_callback_ パラメーターが最後のパラメーターとして (インラインのオプションのパラメーターまたは _options_ 引数オブジェクトに続けて) 指定されています。_callback_ パラメーターは、インライン JSON オブジェクトの中で、または `options` オブジェクト内で指定することもできます。ただし、_callback_ パラメーターを渡せるのは _options_ オブジェクト (インラインまたは外部で作成) または最後のパラメーターのどちらか一方であり、両方に渡すことはできません。
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 - [JavaScript API for Office について](../../docs/develop/understanding-the-javascript-api-for-office.md)

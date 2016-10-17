@@ -1,58 +1,58 @@
-﻿# Section オブジェクト (JavaScript API for OneNote)
+# <a name="section-object-(javascript-api-for-onenote)"></a>Section オブジェクト (JavaScript API for OneNote)
 
 _適用対象:OneNote Online_   
 
 
-OneNote セクションを表します。 セクションには、ページを含めることができます。
+OneNote セクションを表します。セクションには、ページを含めることができます。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明|フィードバック|
 |:---------------|:--------|:----------|:-------|
-|clientUrl|string|セクションのクライアント url です。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-clientUrl)|
-|id|string|セクションの ID を取得します。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-id)|
-|name|string|セクションの名前を取得します。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-name)|
+|clientUrl|string|セクションのクライアント url です。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-clientUrl)|
+|id|string|セクションの ID を取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-id)|
+|name|string|セクションの名前を取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-name)|
 
-_プロパティのアクセスの[例](#例)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 | リレーションシップ | 型   |説明| フィードバック|
 |:---------------|:--------|:----------|:-------|
-|notebook|[Notebook](notebook.md)|セクションを含むノートブックを取得します。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-notebook)|
-|pages|[PageCollection](pagecollection.md)|セクション内のページのコレクションです。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-pages)|
-|parentSectionGroup|[セクション グループ](sectiongroup.md)|セクションを含むセクション グループを取得します。 セクションがノートブックの直接の子である場合は ItemNotFound をスローします。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-parentSectionGroup)|
-|parentSectionGroupOrNull|[セクション グループ](sectiongroup.md)|セクションを含むセクション グループを取得します。 セクションがノートブックの直接の子である場合は null を返します。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-parentSectionGroupOrNull)|
+|notebook|[Notebook](notebook.md)|セクションを含むノートブックを取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-notebook)|
+|pages|[PageCollection](pagecollection.md)|セクション内のページのコレクションです。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-pages)|
+|parentSectionGroup|[SectionGroup](sectiongroup.md)|セクションを含むセクション グループを取得します。セクションがノートブックの直接の子である場合は ItemNotFound をスローします。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-parentSectionGroup)|
+|parentSectionGroupOrNull|[SectionGroup](sectiongroup.md)|セクションを含むセクション グループを取得します。セクションがノートブックの直接の子である場合は null を返します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-parentSectionGroupOrNull)|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明| フィードバック|
 |:---------------|:--------|:----------|:-------|
-|[addPage(title: string)](#addpagetitle-string)|[Page](page.md)|セクションの末尾に新しいページを追加します。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-addPage)|
-|[copyToNotebook(destinationNotebook:Notebook)](#copytonotebookdestinationnotebook-notebook)|[Section](section.md)|指定したノートブックに、このセクションをコピーします。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-copyToNotebook)|
-|[copyToSectionGroup(destinationSectionGroup: SectionGroup)](#copytosectiongroupdestinationsectiongroup-sectiongroup)|[Section](section.md)|指定したセクション グループに、このセクションをコピーします。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-copyToSectionGroup)|
-|[insertSectionAsSibling(location: string、title: string)](#insertsectionassiblinglocation-string-title-string)|[セクション](section.md)|現在のセクションの前か後に、新しいセクションを挿入します。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-insertSectionAsSibling)|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-load)|
+|[addPage(title: string)](#addpagetitle-string)|[Page](page.md)|セクションの末尾に新しいページを追加します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-addPage)|
+|[copyToNotebook(destinationNotebook:Notebook)](#copytonotebookdestinationnotebook-notebook)|[Section](section.md)|指定したノートブックに、このセクションをコピーします。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-copyToNotebook)|
+|[copyToSectionGroup(destinationSectionGroup: SectionGroup)](#copytosectiongroupdestinationsectiongroup-sectiongroup)|[Section](section.md)|指定したセクション グループに、このセクションをコピーします。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-copyToSectionGroup)|
+|[insertSectionAsSibling(location: string, title: string)](#insertsectionassiblinglocation-string-title-string)|[Section](section.md)|現在のセクションの前か後に、新しいセクションを挿入します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-insertSectionAsSibling)|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-load)|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### addPage(title: string)
+### <a name="addpage(title:-string)"></a>addPage(title: string)
 セクションの末尾に新しいページを追加します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 sectionObject.addPage(title);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |title|string|新しいページのタイトルです。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 [Page](page.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 OneNote.run(function (context) {
             
@@ -82,23 +82,23 @@ OneNote.run(function (context) {
 ```
 
 
-### copyToNotebook(destinationNotebook:Notebook)
+### <a name="copytonotebook(destinationnotebook:-notebook)"></a>copyToNotebook(destinationNotebook:Notebook)
 指定したノートブックに、このセクションをコピーします。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 sectionObject.copyToNotebook(destinationNotebook);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |destinationNotebook|ノートブック|このセクションのコピー先のノートブック。|
 
-#### 戻り値
-[セクション](section.md)
+#### <a name="returns"></a>戻り値
+[Section](section.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 OneNote.run(function (context) {
     var app = context.application;
@@ -130,23 +130,23 @@ OneNote.run(function (context) {
 ```
 
 
-### copyToSectionGroup(destinationSectionGroup: SectionGroup)
+### <a name="copytosectiongroup(destinationsectiongroup:-sectiongroup)"></a>copyToSectionGroup(destinationSectionGroup: SectionGroup)
 指定したセクション グループに、このセクションをコピーします。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 sectionObject.copyToSectionGroup(destinationSectionGroup);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |destinationSectionGroup|セクション グループ|このセクションのコピー先のセクション グループ。|
 
-#### 戻り値
-[セクション](section.md)
+#### <a name="returns"></a>戻り値
+[Section](section.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 OneNote.run(function (ctx) {
     var app = ctx.application;
@@ -179,24 +179,24 @@ OneNote.run(function (ctx) {
 ```
 
 
-### insertSectionAsSibling(location: string、title: string)
+### <a name="insertsectionassibling(location:-string,-title:-string)"></a>insertSectionAsSibling(location: string、title: string)
 現在のセクションの前か後に、新しいセクションを挿入します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 sectionObject.insertSectionAsSibling(location, title);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |location|string|現在のセクションを基準にした新しいセクションの場所です。使用可能な値は次のとおりです。Before、After。|
 |title|string|新しいセクションの名前を指定します。|
 
-#### 戻り値
-[セクション](section.md)
+#### <a name="returns"></a>戻り値
+[Section](section.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 OneNote.run(function (context) {
             
@@ -225,22 +225,22 @@ OneNote.run(function (context) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
-### プロパティのアクセスの例
+### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 **id**
 ```js

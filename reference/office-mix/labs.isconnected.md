@@ -1,21 +1,21 @@
-﻿
-# Labs.isConnected
+
+# <a name="labs.isconnected"></a>Labs.isConnected
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Indicates whether the lab is connected to the host.
+ラボがホストに接続されているかどうかを示します。
 
 ```js
 function isConnected(): boolean
 ```
 
 
-## パラメーター
+## <a name="parameters"></a>パラメーター
 
 なし。
 
 
-## Return value
+## <a name="return-value"></a>Return value
 
 Returns  **true** if connected to the host.
 

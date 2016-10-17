@@ -1,5 +1,5 @@
 
-# Exchange で ID トークンを使用して Outlook アドインからサービスを呼び出す
+# <a name="call-a-service-from-an-outlook-add-in-by-using-an-identity-token-in-exchange"></a>Exchange で ID トークンを使用して Outlook アドインからサービスを呼び出す
 
 ID トークンは、各顧客の一意の識別子を提供します。この識別子を使用して、提供するサービスをカスタマイズできます。コードで Exchange サーバーに ID トークンを要求するには、Outlook アドインに文字列を返す非同期メソッド呼び出しを使用します。この文字列には、JWT (JSON Web Token) ID トークンが含まれます。アドインでトークンを展開する必要はありません。トークンを Web サービスに渡すと、サービスがアドインからの要求を認証します。
 
@@ -7,7 +7,7 @@ ID トークンは、各顧客の一意の識別子を提供します。この�
 
 アドインが送信するサービス要求に ID トークンを追加するのは簡単です。トークンを要求し、トークンを使用して、Web サービス応答を使用するだけです。ここでは、**XmlHttpRequest** メソッドを使用してサーバーに送信する簡単な XML ドキュメントでその方法を示します。
 
-## Exchange サーバーに対するトークンの要求
+## <a name="request-a-token-from-your-exchange-server"></a>Exchange サーバーに対するトークンの要求
 
 
 このアドインの単純な初期化メソッドでは、 **getUserIdentityTokenAsync** メソッドを使用して Exchange サーバーから ID トークンを要求します。 _getUserIdentityToken_ パラメーターは、サーバーへの非同期要求が戻るときに呼び出される関数です。コールバック メソッドについては、次の手順を参照してください。
@@ -29,7 +29,7 @@ Office.initialize = function () {
 ```
 
 
-## ID トークンの使用
+## <a name="use-the-identity-token"></a>ID トークンの使用
 
 
 **getUserIdentityTokenAsync** メソッドのコールバック関数にはパラメーターが 1 つあり、その **value** プロパティにユーザーの ID トークンが格納されます。
@@ -57,7 +57,7 @@ function getUserIdentityTokenCallback(asyncResult) {
 ```
 
 
-## Web サービス応答の使用
+## <a name="use-the-web-service-response"></a>Web サービス応答の使用
 
 
 Web サービスからの応答を処理する別の単純な関数を次に示します。この関数は、 **XHMHttpResponse** コールバック関数の標準パターンに従っています。Web サービスから応答全体が返されるのを待機し、応答の内容をアドインの UI に配置します。この関数が解析する応答は、Web サービスからの応答です。この応答については、「 [Exchange の ID トークンを検証する](../outlook/validate-an-identity-token.md)」を参照してください。 
@@ -86,7 +86,7 @@ function readyStateChange() {
 ```
 
 
-## 例: ID トークンを使用した Web サービスの呼び出し
+## <a name="example:-calling-a-web-service-with-identity-tokens"></a>例: ID トークンを使用した Web サービスの呼び出し
 
 
 ID トークンにより、サービスを呼び出しているクライアントの ID 情報が、サーバー上で実行されている Web サービスに提供されます。ID トークンを使用するには、次のものが必要です。
@@ -96,12 +96,12 @@ ID トークンにより、サービスを呼び出しているクライアン�
     
 - アドインの UI を提供するサーバー上で実行され、ID トークンを検証する Web サービス。この Web サービスを作成する際に必要な情報については、次のトピックを参照してください。
     
-      - [Exchange のトークン検証ライブラリを使用する](../outlook/use-the-token-validation-library.md) -- Microsoft が提供する検証ライブラリを使用する場合。
+      - 「[Exchange のトークン検証ライブラリを使用する](../outlook/use-the-token-validation-library.md)」 - Microsoft が提供する検証ライブラリを使用する場合。
     
   - 「[Exchange の ID トークンを検証する](../outlook/validate-an-identity-token.md)」 - 独自の検証コードを作成する場合。
     
 
-### サンプル アドインのコード
+### <a name="code-for-the-sample-add-in"></a>サンプル アドインのコード
 
 
 この記事に記載されているアドインでは、次のファイルが必要です。
@@ -114,7 +114,7 @@ ID トークンにより、サービスを呼び出しているクライアン�
 また、ID テスト Web サービスも必要となります。この Web サービスについては、「 [Exchange の ID トークンを検証する](../outlook/validate-an-identity-token.md)」を参照してください。
 
 
-#### IdentityTest.js
+#### <a name="identitytest.js"></a>IdentityTest.js
 
 次の例は、IdentityTest.js ファイルを示しています。
 
@@ -169,7 +169,7 @@ function readyStateChange() {
 ```
 
 
-#### IdentityTest.html
+#### <a name="identitytest.html"></a>IdentityTest.html
 
 次の例は、IdentityTest.html ファイルを示しています。
 
@@ -272,7 +272,7 @@ function readyStateChange() {
 ```
 
 
-## 次の手順
+## <a name="next-steps"></a>次の手順
 
 
 ID トークンの要求方法を理解したら、次に要求のサーバー側でトークンを使用する必要があります。次の記事が役立ちます。
@@ -285,7 +285,7 @@ ID トークンの要求方法を理解したら、次に要求のサーバー�
 - [Exchange の ID トークンを使用してユーザーを認証する](../outlook/authenticate-a-user-with-an-identity-token.md)
     
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

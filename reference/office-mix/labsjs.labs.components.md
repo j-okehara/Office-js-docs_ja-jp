@@ -1,22 +1,22 @@
-﻿
-# LabsJS.Labs.Components
+
+# <a name="labsjs.labs.components"></a>LabsJS.Labs.Components
 Labs.JS Labs.Components JavaScript API の概要について説明します。
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
 Labs.Components モジュール内の API は、現在ラボの開発用に使うことのできる 4 つの既定のコンポーネント (アクティビティ、選択、入力、動的コンポーネント) を表します。
 
-## Labs.Components モジュール
+## <a name="labs.components-module"></a>Labs.Components モジュール
 
 Labs.Components の種類を次に示します。
 
 
-### クラス
+### <a name="classes"></a>クラス
 
 
 |||
 |:-----|:-----|
-|[Labs.Components.ComponentAttempt](../../reference/office-mix/labs.components.componentattempt.md)|コンポーネントでの試行の基本クラス。|
+|[Labs.Components.ComponentAttempt](../../reference/office-mix/labs.components.componentattempt.md)|コンポーネントでの試行の基底クラス。|
 |[Labs.Components.ActivityComponentAttempt](../../reference/office-mix/labs.components.activitycomponentattempt.md)|アクティビティ コンポーネントの完了の試行を表す。|
 |[Labs.Components.ActivityComponentInstance](../../reference/office-mix/labs.components.activitycomponentinstance.md)|アクティビティ コンポーネントの現在のインスタンスを表す。|
 |[Labs.Components.ChoiceComponentAnswer](../../reference/office-mix/labs.components.choicecomponentanswer.md)|選択コンポーネントで発生した問題への回答。|
@@ -31,13 +31,13 @@ Labs.Components の種類を次に示します。
 |[Labs.Components.InputComponentResult](../../reference/office-mix/labs.components.inputcomponentresult.md)|入力コンポーネントの送信の結果。|
 |[Labs.Components.InputComponentSubmission](../../reference/office-mix/labs.components.inputcomponentsubmission.md)|入力コンポーネントへの送信を表す。|
 
-### インターフェイス
+### <a name="interfaces"></a>インターフェイス
 
 
 |||
 |:-----|:-----|
-|[Labs.Components.IActivityComponent](../../reference/office-mix/labs.components.iactivitycomponent.md)|Represents an activity component. Extends [Labs.Core.IComponent](../../reference/office-mix/labs.core.icomponent.md).|
-|[Labs.Components.IActivityComponentInstance](../../reference/office-mix/labs.components.iactivitycomponentinstance.md)|アクティビティ コンポーネントを表す。 [Labs.Core.IComponent](../../reference/office-mix/labs.core.icomponentinstance.md) を拡張する。|
+|[Labs.Components.IActivityComponent](../../reference/office-mix/labs.components.iactivitycomponent.md)|アクティビティ コンポーネントを表す。[Labs.Core.IComponent](../../reference/office-mix/labs.core.icomponent.md) を拡張します。|
+|[Labs.Components.IActivityComponentInstance](../../reference/office-mix/labs.components.iactivitycomponentinstance.md)|アクティビティ コンポーネントの特定のインスタンスを表す。[Labs.Core.IComponentInstance](../../reference/office-mix/labs.core.icomponentinstance.md) を拡張します。|
 |[Labs.Components.IChoice](../../reference/office-mix/labs.components.ichoice.md)|特定の問題に対して利用可能な選択肢。|
 |[Labs.Components.IChoiceComponent](../../reference/office-mix/labs.components.ichoicecomponent.md)|選択コンポーネントとの対話を有効にする。|
 |[Labs.Components.IChoiceComponentInstance](../../reference/office-mix/labs.components.ichoicecomponentinstance.md)|選択コンポーネントのインスタンス。|

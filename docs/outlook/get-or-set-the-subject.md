@@ -1,5 +1,5 @@
 
-# Outlook で予定またはメッセージを作成するときに件名を取得または設定する
+# <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>Outlook で予定またはメッセージを作成するときに件名を取得または設定する
 
 JavaScript API for Office には、ユーザーが作成する予定やメッセージの件名を取得および設定する非同期メソッド ([subject.getAsync](../../reference/outlook/Subject.md) と [subject.setAsync](../../reference/outlook/Subject.md)) が用意されています。これらのメソッドを使用する場合は、新規作成フォームでアドインをアクティブ化するようにアドイン マニフェストが Outlook 用に適切にセット アップされていることを確認してください。
 
@@ -26,7 +26,7 @@ item.subject.getAsync
 JavaScript API for Office のほとんどの非同期メソッドと同じように、**getAsync** と **setAsync** はオプションの入力パラメーターを受け取ります。オプションの入力パラメーターを指定する方法の詳細については、「[Office アドインにおける非同期プログラミング](../../docs/develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
 
 
-## 件名を取得するには
+## <a name="to-get-the-subject"></a>件名を取得するには
 
 
 このセクションでは、ユーザーが作成している予定またはメッセージの件名を取得して、その件名を表示するサンプル コードについて説明します。このサンプル コードは、以下に示すように、アドイン マニフェストのルールが、予定またはメッセージの新規作成フォームでアドインをアクティブにすることを想定しています。
@@ -79,7 +79,7 @@ function write(message){
 ```
 
 
-## 件名を設定するには
+## <a name="to-set-the-subject"></a>件名を設定するには
 
 
 このセクションでは、ユーザーが作成している予定またはメッセージの件名を設定するサンプル コードについて説明します。前のサンプルと同様に、このサンプル コードは、アドイン マニフェストのルールが、予定またはメッセージの新規作成フォームでアドインをアクティブにすることを想定しています。
@@ -132,7 +132,7 @@ function write(message){
 ```
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

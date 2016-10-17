@@ -1,47 +1,47 @@
-﻿# ChartPointsCollection オブジェクト (JavaScript API for Excel)
+# <a name="chartpointscollection-object-(javascript-api-for-excel)"></a>ChartPointsCollection オブジェクト (JavaScript API for Excel)
 
 グラフ内の系列内のすべてのグラフのポイントのコレクションです。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
 |count|int|コレクション内にあるグラフのポイントの数を取得します。値の取得のみ可能です。|
-|Items|[ChartPoint[]](chartpoint.md)|chartPoints オブジェクトのコレクション。値の取得のみ可能です。|
+|items|[ChartPoint[]](chartpoint.md)|chartPoints オブジェクトのコレクション。読み取り専用です。|
 
-_プロパティのアクセスの[例](#例)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 なし
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
 |[getItemAt(index: number)](#getitematindex-number)|[ChartPoint](chartpoint.md)|データ系列内の位置に基づくポイントを取得します。|
 |[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### getItemAt(index: number)
+### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
 データ系列内の位置に基づくポイントを取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 chartPointsCollectionObject.getItemAt(index);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |index|number|取得するオブジェクトのインデックス値。0 を起点とする番号になります。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 [ChartPoint](chartpoint.md)
 
-#### 例
+#### <a name="examples"></a>例
 points コレクション内の最初の要素の境界線の色を設定します。
 
 ```js
@@ -58,22 +58,22 @@ Excel.run(function (ctx) {
         }
 });
 ```
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
-### プロパティのアクセスの例
+### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 points コレクション内のポイントの名前を取得します。
 

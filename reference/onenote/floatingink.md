@@ -1,49 +1,49 @@
-﻿# FloatingInk オブジェクト (JavaScript API for OneNote)
+# <a name="floatingink-object-(javascript-api-for-onenote)"></a>FloatingInk オブジェクト (JavaScript API for OneNote)
 
 _適用対象:OneNote Online_  
 
 
 インク ストロークのグループを表します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明|フィードバック|
 |:---------------|:--------|:----------|:-------|
-|id|string|FloatingInk オブジェクトの ID を取得します。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-floatingInk-id)|
+|id|string|FloatingInk オブジェクトの ID を取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-floatingInk-id)|
 
-_プロパティのアクセスの[例](#例)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 | リレーションシップ | 型   |説明| フィードバック|
 |:---------------|:--------|:----------|:-------|
-|inkStrokes|[InkStrokeCollection](inkstrokecollection.md)|FloatingInk オブジェクトのストロークを取得します。 読み取り専用です。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-floatingInk-inkStrokes)|
-|pageContent|[ページ コンテンツ](pagecontent.md)|FloatingInk オブジェクトの PageContent の親を取得します。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-floatingInk-pageContent)|
+|inkStrokes|[InkStrokeCollection](inkstrokecollection.md)|FloatingInk オブジェクトのストロークを取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-floatingInk-inkStrokes)|
+|pageContent|[PageContent](pagecontent.md)|FloatingInk オブジェクトの PageContent の親を取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-floatingInk-pageContent)|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明| フィードバック|
 |:---------------|:--------|:----------|:-------|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-floatingInk-load)|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-floatingInk-load)|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
-### プロパティのアクセスの例
+### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 **id**
 ```js

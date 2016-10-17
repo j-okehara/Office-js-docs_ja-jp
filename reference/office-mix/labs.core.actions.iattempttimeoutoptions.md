@@ -1,16 +1,16 @@
 
-# Labs.Core.Actions.IAttemptTimeoutOptions
+# <a name="labs.core.actions.iattempttimeoutoptions"></a>Labs.Core.Actions.IAttemptTimeoutOptions
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Options available for the current attempt’s timeout action.
+現在の試行のタイムアウト アクションで使用できるオプション。
 
 ```
 interface IAttemptTimeoutOptions extends Core.IActionOptions
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

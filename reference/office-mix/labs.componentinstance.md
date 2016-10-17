@@ -1,5 +1,5 @@
-﻿
-# Labs.ComponentInstance
+
+# <a name="labs.componentinstance"></a>Labs.ComponentInstance
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,65 +10,65 @@ class ComponentInstance<T> extends Labs.ComponentInstanceBase
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 なし。
 
 
-## Methods
+## <a name="methods"></a>Methods
 
 
 
 
-### コンストラクター
+### <a name="constructor"></a>コンストラクター
 
  `function constructor()`
 
 Initializes a new instance of the  **ComponentInstance** class.
 
 
-### createAttempt
+### <a name="createattempt"></a>createAttempt
 
  `public function createAttempt(callback: Labs.Core.ILabCallback<T>): void`
 
-Creates a new attempt in the context of a component.
+コンポーネントのテキスト内で新しい試行を作成します。
 
  **パラメーター**
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| _callback_|Callback fired when the attempt has been created.|
+| _callback_|試行が作成されたときに起動するコールバック。|
 
-### getAttempts
+### <a name="getattempts"></a>getAttempts
 
  `public function getAttempts(callback: Labs.Core.ILabCallback<T[]>): void`
 
-Retrieves all attempts associated with the given component.
+指定のコンポーネントに関連するすべての試行を取得します。
 
  **パラメーター**
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| _callback_|Callback fired when the attempts have been retrieved.|
+| _callback_|試行が取得されると起動するコールバック。|
 
-### getCreateAttemptOptions
+### <a name="getcreateattemptoptions"></a>getCreateAttemptOptions
 
  `public function getCreateAttemptOptions(): Labs.Core.Actions.ICreateAttemptOptions`
 
-既定の作成試行オプションを取得します。 派生クラスによってオーバーライドできます。
+既定の作成試行オプションを取得します。派生クラスによってオーバーライドできます。
 
 
-### buildAttempt
+### <a name="buildattempt"></a>buildAttempt
 
  `public function buildAttempt(createAttemptResult: Labs.Core.IAction): T`
 
-特定のアクションからの試行を構築します。 派生クラスで実装される必要があります。
+特定のアクションからの試行を構築します。派生クラスで実装される必要があります。
 
  **パラメーター**
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| _createAttemptResult_|The create attempt action for the specified attempt.|
+| _createAttemptResult_|指定した試行の試行作成アクション。|

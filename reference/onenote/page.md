@@ -1,60 +1,60 @@
-﻿# Page オブジェクト (JavaScript API for OneNote)
+# <a name="page-object-(javascript-api-for-onenote)"></a>Page オブジェクト (JavaScript API for OneNote)
 
 _適用対象:OneNote Online_   
 
 
 OneNote ページを表します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明|フィードバック|
 |:---------------|:--------|:----------|:-------|
-|clientUrl|string|ページのクライアント URL。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-clientUrl)|
-|id|string|ページの ID を取得します。 読み取り専用です。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-id)|
-|pageLevel|int|ページのインデント レベルを取得または設定します。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-pageLevel)|
-|title|string|ページのタイトルを取得または設定します。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-title)|
-|webUrl|string|ページの Web URL。 読み取り専用です。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-webUrl)|
+|clientUrl|string|ページのクライアント URL。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-clientUrl)|
+|id|string|ページの ID を取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-id)|
+|pageLevel|int|ページのインデント レベルを取得または設定します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-pageLevel)|
+|title|string|ページのタイトルを取得または設定します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-title)|
+|webUrl|string|ページの Web URL。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-webUrl)|
 
-_プロパティのアクセスの[例](#例)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 | リレーションシップ | 型   |説明| フィードバック|
 |:---------------|:--------|:----------|:-------|
-|contents|[PageContentCollection](pagecontentcollection.md)|ページの PageContent オブジェクトのコレクション。 読み取り専用です。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-contents)|
-|inkAnalysisOrNull|[InkAnalysis](inkanalysis.md)|ページ上のインクのテキスト解釈。 インクの解析情報がない場合は null を返します。 読み取り専用です。 読み取り専用です。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-inkAnalysisOrNull)|
-|parentSection|[Section](section.md)|ページを含むセクションを取得します。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-parentSection)|
+|contents|[PageContentCollection](pagecontentcollection.md)|ページの PageContent オブジェクトのコレクション。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-contents)|
+|inkAnalysisOrNull|[InkAnalysis](inkanalysis.md)|ページ上のインクのテキスト解釈。インクの解析情報がない場合は null を返します。読み取り専用です。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-inkAnalysisOrNull)|
+|parentSection|[Section](section.md)|ページを含むセクションを取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-parentSection)|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明| フィードバック|
 |:---------------|:--------|:----------|:-------|
-|[addOutline(left: double, top: double, html:String)](#addoutlineleft-double-top-double-html-string)|[アウトライン](outline.md)|Outline をページの指定した位置に追加します。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-addOutline)|
-|[copyToSection(destinationSection:Section)](#copytosectiondestinationsection-section)|[Page](page.md)|このページを指定したセクションにコピーします。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-copyToSection)|
-|[insertPageAsSibling(location: string, title: string)](#insertpageassiblinglocation-string-title-string)|[Page](page.md)|現在のページの前か後に、新しいページを挿入します。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-insertPageAsSibling)|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-load)|
+|[addOutline(left: double, top: double, html:String)](#addoutlineleft-double-top-double-html-string)|[Outline](outline.md)|Outline をページの指定した位置に追加します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-addOutline)|
+|[copyToSection(destinationSection:Section)](#copytosectiondestinationsection-section)|[Page](page.md)|このページを指定したセクションにコピーします。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-copyToSection)|
+|[insertPageAsSibling(location: string, title: string)](#insertpageassiblinglocation-string-title-string)|[Page](page.md)|現在のページの前か後に、新しいページを挿入します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-insertPageAsSibling)|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-load)|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### addOutline(left: double, top: double, html:String)
+### <a name="addoutline(left:-double,-top:-double,-html:-string)"></a>addOutline(left: double, top: double, html:String)
 Outline をページの指定した位置に追加します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 pageObject.addOutline(left, top, html);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |left|double|Outline の左上隅の左の位置です。|
 |top|double|Outline の左上隅の上の位置です。|
-|html|String|Outline の視覚表示を記述する HTML 文字列。 OneNote アドインの JavaScript API については、「[サポートされる HTML](../../docs/onenote/onenote-add-ins-page-content.md#supported-html)」を参照してください。|
+|html|String|Outline の視覚表示を記述する HTML 文字列。OneNote アドインの JavaScript API については、「[サポートされる HTML](../../docs/onenote/onenote-add-ins-page-content.md#supported-html)」を参照してください。|
 
-#### 戻り値
-[アウトライン](outline.md)
+#### <a name="returns"></a>戻り値
+[Outline](outline.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 OneNote.run(function (context) {
 
@@ -92,23 +92,23 @@ OneNote.run(function (context) {
 ```
 
 
-### copyToSection(destinationSection:Section)
+### <a name="copytosection(destinationsection:-section)"></a>copyToSection(destinationSection:Section)
 このページを指定したセクションにコピーします。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 pageObject.copyToSection(destinationSection);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |destinationSection|Section|このページのコピー先のセクション。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 [Page](page.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -146,24 +146,24 @@ OneNote.run(function(ctx) {
 });
 ```
 
-### insertPageAsSibling(location: string, title: string)
+### <a name="insertpageassibling(location:-string,-title:-string)"></a>insertPageAsSibling(location: string, title: string)
 現在のページの前か後に、新しいページを挿入します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 pageObject.insertPageAsSibling(location, title);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |location|string|現在のページを基準にした新しいページの場所です。使用可能な値は次のとおりです。Before、After。|
 |title|string|新しいページのタイトルです。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 [Page](page.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 OneNote.run(function (context) {
 
@@ -191,22 +191,22 @@ OneNote.run(function (context) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
-### プロパティのアクセスの例
+### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 **contents**
 ```js

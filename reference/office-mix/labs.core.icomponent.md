@@ -1,16 +1,16 @@
 
-# Labs.Core.IComponent
+# <a name="labs.core.icomponent"></a>Labs.Core.IComponent
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Base class for representing components of a lab.
+ラボのコンポーネントを表す基底クラス。
 
 ```
 interface IComponent extends Core.ILabObject, Core.IUserData
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

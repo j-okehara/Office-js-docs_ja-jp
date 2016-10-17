@@ -1,5 +1,5 @@
-﻿
-# Labs.Components.InputComponentSubmission
+
+# <a name="labs.components.inputcomponentsubmission"></a>Labs.Components.InputComponentSubmission
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,7 +10,7 @@ class InputComponentSubmission
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |プロパティ|説明|
@@ -19,22 +19,22 @@ class InputComponentSubmission
 | `public var result: Components.InputComponentResult`|The result ([Labs.Components.InputComponentResult](../../reference/office-mix/labs.components.inputcomponentresult.md)) of the submission.|
 | `public var time: number`|The time at which the submission was received.|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 
 
 
-### コンストラクター
+### <a name="constructor"></a>コンストラクター
 
  `function constructor(answer: Components.InputComponentAnswer, result: Components.InputComponentResult, time: number)`
 
-Creates a new instance of the  **InputComponentSubmission** class.
+**InputComponentSubmission** クラスの新しいインスタンスを作成します。
 
  **パラメーター**
 
 
 |パラメーター|説明|
 |:-----|:-----|
-| _answer_|The answer associated with the submission.|
-| _result_|The result of the submission.|
-| _時間_|The time at which the submission was received.|
+| _answer_|送信に関連付けられている応答。|
+| _result_|送信の結果。|
+| _time_|送信が受信された時刻。|

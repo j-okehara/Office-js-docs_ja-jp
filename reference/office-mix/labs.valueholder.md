@@ -1,5 +1,5 @@
-﻿
-# Labs.ValueHolder
+
+# <a name="labs.valueholder"></a>Labs.ValueHolder
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,7 +10,7 @@ class ValueHolder<T>
 ```
 
 
-## 変数
+## <a name="variables"></a>変数
 
 
 |||
@@ -21,33 +21,33 @@ class ValueHolder<T>
 | `public var value: T`|The value that is held in the container.|
 | `public var id: string`|The ID of the value.|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 
 
 
-### getValue
+### <a name="getvalue"></a>getValue
 
  `public function getValue(callback: Labs.Core.ILabCallback<T>): void`
 
-Retrieves the specified value.
+指定された値を取得します。
 
- **パラメーター**
+ **Parameters**
 
 
 |||
 |:-----|:-----|
-| _callback_|Callback function that returns the specified value.|
+| _callback_|指定した値を返すコールバック関数です。|
 
-### provideValue
+### <a name="providevalue"></a>provideValue
 
  `public function provideValue(value: T): void`
 
-Internal method that provides the value to the value container.
+値コンテナーに値を提供する内部メソッド。
 
- **パラメーター**
+ **Parameters**
 
 
 |||
 |:-----|:-----|
-| _value_|The value to provide to the value container.|
+| _value_|値コンテナーに提供できる値。|

@@ -1,44 +1,44 @@
-﻿# ChartLineFormat オブジェクト (JavaScript API for Excel)
+# <a name="chartlineformat-object-(javascript-api-for-excel)"></a>ChartLineFormat オブジェクト (JavaScript API for Excel)
 
 直線要素の書式設定オプションをカプセル化します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
 |color|string|グラフの線の色を表す HTML カラー コード。|
 
-_プロパティのアクセスの[例](#例)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 なし
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
 |[clear()](#clear)|void|グラフ要素の線の書式をクリアします。|
 |[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### Clear
+### <a name="clear()"></a>Clear
 グラフ要素の線の書式をクリアします。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 chartLineFormatObject.clear();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 
 "Chart1" という名前のグラフの数値軸の目盛線の線の書式をクリアします。
 
@@ -57,22 +57,22 @@ Excel.run(function (ctx) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
-### プロパティのアクセスの例
+### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 グラフの数値軸の目盛線を赤色に設定します。
 

@@ -1,11 +1,11 @@
 
-# IconUrl 要素
+# <a name="iconurl-element"></a>IconUrl 要素
 挿入 UX と Office ストアの Office アドインを表すために使用されるイメージの URL を指定します。
 
  **アドインの種類:**コンテンツ、作業ウィンドウ、メール
 
 
-## 構文:
+## <a name="syntax:"></a>構文:
 
 
 ```XML
@@ -13,20 +13,20 @@
 ```
 
 
-## 含めることができるもの:
+## <a name="can-contain:"></a>含めることができるもの:
 
-[[優先]](../../reference/manifest/override.md)
-
-
-## 属性
+[Override](../../reference/manifest/override.md)
 
 
+## <a name="attributes"></a>属性
 
-|**属性**|**種類**|**必須**|**説明**|
+
+
+|**属性**|**型**|**必須**|**説明**|
 |:-----|:-----|:-----|:-----|
 |DefaultValue|文字列|必須|この設定の既定値を指定します。この値は、[DefaultLocale](../../reference/manifest/defaultlocale.md) 要素に指定されるロケールを対象としています。|
 
-## 解説
+## <a name="remarks"></a>解説
 
 メール アドインの場合、アイコンは、**[ファイル]**  >  **[アドインの管理]** UI (Outlook) または **[設定]**  >  **[アドインの管理]** UI (Outlook Web App) に表示されます。コンテンツ アドインまたは作業ウィンドウ アドインでは、アイコンは、**[挿入]**  >  **[アドイン]** UI に表示されます。どのアドインの種類についても、アドインを Office ストアに公開すると、アイコンは Office ストア サイトでも使用されます。
 

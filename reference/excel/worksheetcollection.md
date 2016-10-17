@@ -1,48 +1,48 @@
-﻿# WorksheetCollection オブジェクト (JavaScript API for Excel)
+# <a name="worksheetcollection-object-(javascript-api-for-excel)"></a>WorksheetCollection オブジェクト (JavaScript API for Excel)
 
 ブックの一部であるワークシート オブジェクトのコレクションを表します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
-|Items|[Worksheet[]](worksheet.md)|ワークシート オブジェクトのコレクション。値の取得のみ可能です。|
+|items|[Worksheet[]](worksheet.md)|ワークシート オブジェクトのコレクション。読み取り専用です。|
 
-_プロパティのアクセスの[例](#例)をご覧ください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 なし
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
-|[add(name: string)](#addname-string)|[ワークシート](worksheet.md)|新しいワークシートをブックに追加します。ワークシートは、既存のワークシートの末尾に追加されます。新しく追加したワークシートをアクティブにする場合は、そのワークシートに対して ".activate() を呼び出します。|
-|[getActiveWorksheet()](#getactiveworksheet)|[ワークシート](worksheet.md)|ブックの、現在作業中のワークシートを取得します。|
-|[getItem(key: string)](#getitemkey-string)|[ワークシート](worksheet.md)|名前または ID を使用して、ワークシート オブジェクトを取得します。|
+|[add(name: string)](#addname-string)|[Worksheet](worksheet.md)|新しいワークシートをブックに追加します。ワークシートは、既存のワークシートの末尾に追加されます。新しく追加したワークシートをアクティブにする場合は、そのワークシートに対して ".activate() を呼び出します。|
+|[getActiveWorksheet()](#getactiveworksheet)|[Worksheet](worksheet.md)|ブックの、現在作業中のワークシートを取得します。|
+|[getItem(key: string)](#getitemkey-string)|[Worksheet](worksheet.md)|名前または ID を使用して、ワークシート オブジェクトを取得します。|
 |[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### add(name: string)
+### <a name="add(name:-string)"></a>add(name: string)
 新しいワークシートをブックに追加します。ワークシートは、既存のワークシートの末尾に追加されます。新しく追加したワークシートをアクティブにする場合は、そのワークシートに対して ".activate() を呼び出します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 worksheetCollectionObject.add(name);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |name|string|省略可能。追加するワークシートの名前。指定する場合、名前は一意である必要があります。指定されていない場合は、Excel が新しいワークシートの名前を決定します。|
 
-#### 戻り値
-[ワークシート](worksheet.md)
+#### <a name="returns"></a>戻り値
+[Worksheet](worksheet.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 Excel.run(function (ctx) { 
@@ -61,21 +61,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getActiveWorksheet()
+### <a name="getactiveworksheet()"></a>getActiveWorksheet()
 ブックの、現在作業中のワークシートを取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 worksheetCollectionObject.getActiveWorksheet();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
-[ワークシート](worksheet.md)
+#### <a name="returns"></a>戻り値
+[Worksheet](worksheet.md)
 
-#### 例
+#### <a name="examples"></a>例
 
 ```js
 Excel.run(function (ctx) {  
@@ -93,38 +93,38 @@ Excel.run(function (ctx) {
 ```
 
 
-### getItem(key: string)
+### <a name="getitem(key:-string)"></a>getItem(key: string)
 名前または ID を使用して、ワークシート オブジェクトを取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 worksheetCollectionObject.getItem(key);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |Key|string|ワークシートの名前または ID。|
 
-#### 戻り値
-[ワークシート](worksheet.md)
+#### <a name="returns"></a>戻り値
+[Worksheet](worksheet.md)
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
-### プロパティのアクセスの例
+### <a name="property-access-examples"></a>プロパティのアクセスの例
 ```js
 Excel.run(function (ctx) {
   var worksheets = ctx.workbook.worksheets;

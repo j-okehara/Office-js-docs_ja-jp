@@ -1,7 +1,7 @@
-﻿# ワークシート関数
+# <a name="worksheet-functions"></a>ワークシート関数
 JavaScript または REST から呼び出すことができる Microsoft Excel ワークシート関数のコンテナーとして使用されます。
 
-## 戻り値の型
+## <a name="return-type"></a>戻り値の型
 ワークシート関数は、FunctionResult オブジェクトを返します。FunctionResult オブジェクトには、2 つのプロパティがあります。
 
 | プロパティ       | 型    |説明|メモ |
@@ -10,12 +10,12 @@ JavaScript または REST から呼び出すことができる Microsoft Excel �
 |エラー|string|指定されたワークシート関数を適用したときのエラー情報を返します。||
 
 
-## 構文
+## <a name="syntax"></a>構文
 ```js
 workbook.functions.functionMethod();
 ```
 
-## 例
+## <a name="examples"></a>例
 次のような、各種の工具の売上を追跡するサンプル表 (Excel) があるとします。この表のデータを使用して、ワークシート関数が機能するしくみについて説明します。
 
 ![サンプル](../../images/worksheetfunctionschainingResult.JPG)
@@ -68,7 +68,7 @@ workbook.functions.functionMethod();
 
 ```
 
-## [サポートされているワークシート関数の一覧](#サポートされているワークシート関数の一覧)
+## <a name="[list-of-supported-worksheet-functions](#list)"></a>[サポートされているワークシート関数の一覧](#list)
 
 | メソッド           | 戻り値の型    |説明|メモ |
 |:---------------|:--------|:----------|:-----|
@@ -140,7 +140,7 @@ workbook.functions.functionMethod();
 |[COUNTA 関数](https://support.office.com/en-us/article/COUNTA-function-7dc98875-d5c1-46f1-9a82-53f3219e2509)| FunctionResult |引数リストに含まれる値の個数をカウントします。|
 |[COUNTBLANK 関数](https://support.office.com/en-us/article/COUNTBLANK-function-6a92d772-675c-4bee-b346-24af6bd3ac22)| FunctionResult |指定された範囲に含まれる空白セルの個数をカウントします。|
 |[COUNTIF 関数](https://support.office.com/en-us/article/COUNTIF-function-e0de10c6-f885-4e71-abb4-1f464816df34)| FunctionResult |指定された範囲に含まれるセルのうち、検索条件に一致するセルの個数をカウントします。|
-|[COUNTIFS 関数](https://support.office.com/en-us/article/COUNTIFS-function-dda3dc6e-f74e-4aee-88bc-aa8c2a866842)| FunctionResult |指定された範囲に含まれるセルのうち、複数の検索条件に一致するセルの個数を返します。|
+|[ 関数](https://support.office.com/en-us/article/COUNTIFS-function-dda3dc6e-f74e-4aee-88bc-aa8c2a866842)| FunctionResult |指定された範囲に含まれるセルのうち、複数の検索条件に一致するセルの個数を返します。|
 |[COUPDAYBS 関数](https://support.office.com/en-us/article/COUPDAYBS-function-eb9a8dfb-2fb2-4c61-8e5d-690b320cf872)| FunctionResult |利払期間の第 1 日目から受渡日までの日数を返します。|
 |[COUPDAYS 関数](https://support.office.com/en-us/article/COUPDAYS-function-cc64380b-315b-4e7b-950c-b30b0a76f671)| FunctionResult |受渡日を含む利払期間内の日数を返します。|
 |[COUPDAYSNC 関数](https://support.office.com/en-us/article/COUPDAYSNC-function-5ab3f0b2-029f-4a8b-bb65-47d525eea547)| FunctionResult |受渡日から次の利払日までの日数を返します。|
@@ -303,7 +303,7 @@ workbook.functions.functionMethod();
 |[MOD 関数](https://support.office.com/en-us/article/MOD-function-9b6cd169-b6ee-406a-a97b-edf2a9dc24f3)| FunctionResult |除算の剰余を返します。|
 |[MONTH 関数](https://support.office.com/en-us/article/MONTH-function-579a2881-199b-48b2-ab90-ddba0eba86e8)| FunctionResult |シリアル値を月に変換します。|
 |[MROUND 関数](https://support.office.com/en-us/article/MROUND-function-c299c3b0-15a5-426d-aa4b-d2d5b3baf427)| FunctionResult |指定された値の倍数になるように、数値を四捨五入します。|
-|[MULTINOMIAL 関数](https://support.office.com/en-us/article/MULTINOMIAL-function-6fa6373c-6533-41a2-a45e-a56db1db1bf6)| FunctionResult |指定された複数の数値の多項係数を返します。|
+|[MULTINOMIAL function](https://support.office.com/en-us/article/MULTINOMIAL-function-6fa6373c-6533-41a2-a45e-a56db1db1bf6)| FunctionResult |指定された複数の数値の多項係数を返します。|
 |[N 関数](https://support.office.com/en-us/article/N-function-a624cad1-3635-4208-b54a-29733d1278c9)| FunctionResult |値を数値に変換します。|
 |[NA 関数](https://support.office.com/en-us/article/NA-function-5469c2d1-a90c-4fb5-9bbc-64bd9bb6b47c)| FunctionResult |エラー値 #N/A を返します。|
 |[NEGBINOM.DIST 関数](https://support.office.com/en-us/article/NEGBINOMDIST-function-c8239f89-c2d0-45bd-b6af-172e570f8599)| FunctionResult |負の二項分布を返します。|

@@ -1,5 +1,5 @@
-﻿
-# Labs.Timeline
+
+# <a name="labs.timeline"></a>Labs.Timeline
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,28 +10,28 @@ class Timeline
 ```
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 
 
 
-### method
+### <a name="method"></a>method
 
  `function constructor(labsInternal: Labs.LabsInternal)`
 
 Creates a new instance of the  **Timeline** class.
 
 
-### 次へ
+### <a name="next"></a>次へ
 
  `public function next(completionStatus: Labs.Core.ICompletionStatus, callback: Labs.Core.ILabCallback<void>): void`
 
-Indicates that the timeline should advance to the next slide.
+タイムラインが次のスライドに進むことを示します。
 
- **パラメーター**
+ **Parameters**
 
 
 |||
 |:-----|:-----|
-| _completionStatus_|Indicates the current status of the lab.|
-| _callback_|Callback function that fires when the lab has moved to the next slide.|
+| _completionStatus_|ラボの現在の状況を示します。|
+| _callback_|ラボが次のスライドに移動させたときのコールバック関数。|

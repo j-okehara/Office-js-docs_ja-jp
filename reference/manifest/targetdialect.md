@@ -1,11 +1,11 @@
 
-# TargetDialect 要素
+# <a name="targetdialect-element"></a>TargetDialect 要素
  この辞書でサポートされる言語を定義します。これはカルチャ名文字列として表現されます。
 
  **アドインの種類:**作業ウィンドウ
 
 
-## 構文:
+## <a name="syntax:"></a>構文:
 
 
 ```XML
@@ -15,17 +15,17 @@
 ```
 
 
-## 次に含まれる:
+## <a name="contained-in:"></a>次に含まれる:
 
 [TargetDialects](../../reference/manifest/targetdialects.md)
 
 
-## 解説
+## <a name="remarks"></a>注釈
 
 `"en-US"` などの BCP 47 言語タグの書式で値を指定します。
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

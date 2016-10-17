@@ -1,5 +1,5 @@
-﻿
-# Labs Variables
+
+# <a name="labs-variables"></a>ラボの変数
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,17 +10,17 @@
 
 |||
 |:-----|:-----|
-|[Labs.DefaultHostBuilder](../../reference/office-mix/labs.defaulthostbuilder.md)|Use this object to construct a default [Labs.Core.ILabHost](../../reference/office-mix/labs.core.ilabhost.md) instance.|
+|[Labs.DefaultHostBuilder](../../reference/office-mix/labs.defaulthostbuilder.md)|このオブジェクトを使って、既定の [Labs.Core.ILabHost](../../reference/office-mix/labs.core.ilabhost.md) インスタンスを生成します。|
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 
-- [Labs Functions](../../reference/office-mix/labs-functions.md)
+- [ラボの関数](../../reference/office-mix/labs-functions.md)
     
-- [Labs Classes](../../reference/office-mix/labs-classes.md)
+- [ラボのクラス](../../reference/office-mix/labs-classes.md)
     
-- [ラボ インターフェイス](../../reference/office-mix/labs-interfaces.md)
+- [ラボのインターフェイス](../../reference/office-mix/labs-interfaces.md)
     
-- [Labs Enumerations](../../reference/office-mix/labs-enumerations.md)
+- [ラボの列挙体](../../reference/office-mix/labs-enumerations.md)
     

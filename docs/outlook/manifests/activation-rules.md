@@ -1,5 +1,5 @@
-﻿
-# Outlook アドインのアクティブ化ルール
+
+# <a name="activation-rules-for-outlook-add-ins"></a>Outlook アドインのアクティブ化ルール
 
 Outlook は、ユーザーが閲覧または作成しているメッセージや予定が、アドインのアクティブ化ルールの条件を満たしている場合に、ある種のアドインをアクティブ化します。この仕組みは、1.1 マニフェスト スキーマを使用するすべてのアドインと、カスタム ウィンドウ アドインに適用されます。その後、ユーザーは Outlook UI からそのアドインを選択して、現在のアイテムに対して起動できます。
 
@@ -8,29 +8,29 @@ Outlook は、ユーザーが閲覧または作成しているメッセージや
 ![メール読み取りアプリがアクティブ化されたことを示すアプリ バー](../../../images/mod_off15_MailAppAppBar.png)
 
 
-## マニフェストでのアクティブ化ルールの指定
+## <a name="specify-activation-rules-in-a-manifest"></a>マニフェストでのアクティブ化ルールの指定
 
 
 Outlook に特定の条件でアドインをアクティブ化させるには、アドインのマニフェストにアクティブ化ルールを指定します。このルールの指定には、次に示すどちらかの **Rule** 要素を使用します。
 
 - [Rule 要素 (MailApp complexType)](../../../reference/manifest/rule.md): 個別のルールを指定します。
-- [Rule 要素 (RuleCollection complexType)](#rule-要素-rulecollection-complextype): 論理演算子を使用して複数のルールを結合します。
+- [Rule 要素 (RuleCollection complexType)](#rulecollection-rule): 論理演算子を使用して複数のルールを結合します。
     
 
- > **注:**個別のルールを指定するために使用する **Rule** 要素は、抽象 [Rule](../../../reference/manifest/rule.md) 複合型です。 次のルールの各型は、この抽象 **Rule** 複合型を拡張します。 したがって、マニフェストで個別のルールを指定するときは、[xsi:type](http://www.w3.org/TR/xmlschema-1/) 属性を使用してルールの以下の型の 1 つをさらに定義する必要があります。 たとえば、次のルールは [ItemIs](#itemis) ルールを定義します。`<Rule xsi:type="ItemIs" ItemType="Message" />` **FormType** 属性はマニフェスト v1.1 のアクティブ化ルールに適用されますが、**VersionOverrides** v1.0 では定義されていません。 したがって、[ItemIs](#itemis) を **VersionOverrides** ノードで使用するときは使用できません。
+ > **注:**個別のルールを指定するために使用する **Rule** 要素は、抽象 [Rule](../../../reference/manifest/rule.md) 複合型です。次のルールの各型は、この抽象 **Rule** 複合型を拡張します。したがって、マニフェストで個別のルールを指定するときは、[xsi:type](http://www.w3.org/TR/xmlschema-1/) 属性を使用してルールの次の型の 1 つをさらに定義する必要があります。たとえば、次のルールは [ItemIs](#itemis-rule) ルールを定義します。`<Rule xsi:type="ItemIs" ItemType="Message" />`**FormType** 属性は、マニフェスト v1.1 のアクティブ化ルールに適用されますが、**VersionOverrides** v1.0 では定義されていません。したがって、[Itemls](#itemis-rule) を **VersionOverrides** ノードで使用するときは使用できません。
 
 次の表は、使用できるルールの種類を示しています。詳細については、この表の後の説明と、「[閲覧フォーム用の Outlook アドインを作成する](../../outlook/read-scenario.md)」の該当記事を参照してください。
 
 
 |**ルール名**|**該当するフォーム**|**説明**|
 |:-----|:-----|:-----|
-|[ItemIs](#itemis)|閲覧、新規作成、カスタムのウィンドウ|現在選択されているアイテムは指定された種類のアイテム (メッセージまたは予定) かどうかを調べます。また、アイテム クラス、フォームの種類、さらにはオプションでアイテム メッセージ クラスも調べることができます。|
-|[ItemHasAttachment](#itemhasattachment)|閲覧、カスタム ウィンドウ|選択されているアイテムに添付ファイルが含まれるかどうかを調べます。|
-|[ItemHasKnownEntity](#itemhasknownentity)|閲覧、カスタム ウィンドウ|選択されているアイテムに 1 つ以上の一般的なエンティティが含まれるかどうかを調べます。詳細: 「[Outlook アイテム内の文字列を既知のエンティティとして照合する](../../outlook/match-strings-in-an-item-as-well-known-entities.md)」。|
-|[ItemHasRegularExpressionMatch](#itemhasregularexpressionmatch)|閲覧、カスタム ウィンドウ|選択されているアイテムの送信者の電子メール アドレス、件名、本文に正規表現と一致するものが含まれるかどうかを調べます。詳細: [正規表現アクティブ化ルールを使用して Outlook アドインを表示する](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)|
-|[RuleCollection](#rulecollection)|閲覧、新規作成、カスタム ウィンドウ|複数のルールを組み合わせて、より複雑なルールを作成できます。|
+|[ItemIs](#itemis-rule)|閲覧、新規作成、カスタム ウィンドウ|現在選択されているアイテムは指定された種類のアイテム (メッセージまたは予定) かどうかを調べます。また、アイテム クラス、フォームの種類、さらにはオプションでアイテム メッセージ クラスも調べることができます。|
+|[ItemHasAttachment](#itemhasattachment-rule)|閲覧、カスタム ウィンドウ|選択されているアイテムに添付ファイルが含まれるかどうかを調べます。|
+|[ItemHasKnownEntity](#itemhasknownentity-rule)|閲覧、カスタム ウィンドウ|選択されているアイテムに 1 つ以上の一般的なエンティティが含まれるかどうかを調べます。詳細: 「[Outlook アイテム内の文字列を既知のエンティティとして照合する](../../outlook/match-strings-in-an-item-as-well-known-entities.md)」。|
+|[ItemHasRegularExpressionMatch](#itemhasregularexpressionmatch-rule)|閲覧、カスタム ウィンドウ|選択されているアイテムの送信者の電子メール アドレス、件名、本文に正規表現と一致するものが含まれるかどうかを調べます。詳細: [正規表現アクティブ化ルールを使用して Outlook アドインを表示する](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)|
+|[RuleCollection](#rulecollection-rule)|閲覧、新規作成、カスタム ウィンドウ|複数のルールを組み合わせて、より複雑なルールを作成できます。|
 
-## ItemIs ルール
+## <a name="itemis-rule"></a>ItemIs ルール
 
 
 **ItemIs** 複合型は、現在のアイテムがアイテムの種類と一致していル場合 (また、オプションとしてルールに明記されている場合はアイテムのメッセージ クラスとも一致している場合) に **true** と評価されるルールを定義します。
@@ -42,7 +42,7 @@ Outlook に特定の条件でアドインをアクティブ化させるには、
 |**値**|**説明**|
 |:-----|:-----|
 |**Appointment**|Outlook の予定表内のアイテムを指定します。このアイテムには、開催者と出席者を持つ応答済みの会議アイテムと、開催者と出席者を持たない、単なる予定表上のアイテムである予定が含まれます。これは Outlook の IPM.Appointment メッセージ クラスに対応します。|
-|**メッセージ**|通常は受信トレイで受信された次のアイテムのいずれかを指定します。 <ul><li><p>電子メール メッセージ。これは Outlook の IPM.Note メッセージ クラスに対応します。</p></li><li><p>会議出席依頼、返信、または取り消し。Outlook の次のメッセージ クラスに対応します。</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
+|**Message**|通常は受信トレイで受信される次のアイテムのいずれかを指定します。 <ul><li><p>電子メール メッセージ。これは Outlook の IPM.Note メッセージ クラスに対応します。</p></li><li><p>会議出席依頼、返信、または取り消し。Outlook の次のメッセージ クラスに対応します。</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
 **FormType** 属性は、アドインをアクティブ化するときのモード (閲覧または新規作成) を指定するために使用します。
 
 
@@ -70,7 +70,7 @@ Outlook に特定の条件でアドインをアクティブ化させるには、
 ```
 
 
-## ItemHasAttachment ルール
+## <a name="itemhasattachment-rule"></a>ItemHasAttachment ルール
 
 
 **ItemHasAttachment** 複合型は、選択されているアイテムに添付ファイルが含まれるかどうかを調べるルールを定義します。
@@ -80,7 +80,7 @@ Outlook に特定の条件でアドインをアクティブ化させるには、
 ```
 
 
-## ItemHasKnownEntity ルール
+## <a name="itemhasknownentity-rule"></a>ItemHasKnownEntity ルール
 
 アドインがアイテムを処理できるようになる前に、サーバーによってそのアイテムが調べられ、件名または本文に既知のエンティティのいずれかである可能性があるテキストが含まれるかどうかが判別されます。それらのいずれかのエンティティが発見されると、そのエンティティは既知のエンティティのコレクションに格納されます。これらのエンティティには、そのアイテムの  **getEntities** メソッドまたは **getEntitiesByType** メソッドを使用してアクセスします。
 
@@ -115,7 +115,7 @@ Outlook に特定の条件でアドインをアクティブ化させるには、
 アクティブ化ルールのエンティティの詳細については、「 [Outlook アイテム内の文字列を既知のエンティティとして照合する](../../outlook/match-strings-in-an-item-as-well-known-entities.md)」を参照してください。
 
 
-## ItemHasRegularExpressionMatch ルール
+## <a name="itemhasregularexpressionmatch-rule"></a>ItemHasRegularExpressionMatch ルール
 
 
 **ItemHasRegularExpressionMatch** 複合型は、アイテムの指定プロパティの内容を照合する正規表現を使用するルールを定義します。正規表現に一致するテキストがアイテムの指定プロパティ内に見つかった場合に、Outlook はアドイン バーをアクティブ化してそのアドインを表示します。指定された正規表現と一致したものを取得するには、現在選択されているアイテムを表すオブジェクトの **getRegExMatches** メソッドまたは **getRegExMatchesByName** メソッドを使用します。
@@ -129,7 +129,7 @@ Outlook に特定の条件でアドインをアクティブ化させるには、
 **ItemHasRegularExpressionMatch** ルールの使用方法の詳細については、「[正規表現アクティブ化ルールを使用して Outlook アドインを表示する](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)」を参照してください。
 
 
-## RuleCollection ルール
+## <a name="rulecollection-rule"></a>RuleCollection ルール
 
 
 **RuleCollection** 複合型は、複数のルールを 1 つのルールに結合します。**Mode** 属性を使用すると、コレクション内のルールを論理 OR または論理 AND のどちらで結合するかを指定できます。
@@ -161,7 +161,7 @@ Outlook に特定の条件でアドインをアクティブ化させるには、
 ```
 
 
-## ルールと正規表現の制約事項
+## <a name="limits-for-rules-and-regular-expressions"></a>ルールと正規表現の制約事項
 
 
 Outlook アドインで満足のゆくエクスペリエンスを提供するには、アクティベーションと API の使用に関するガイドラインに従う必要があります。以下の表に、正規表現とルールに関する一般的な制約事項を示します。ただし、ホストごとの特有のルールも存在します。詳しくは、「 [Outlook アドインのアクティブ化と JavaScript API の制限](../../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)」および「 [Outlook アドインのアクティブ化のトラブルシューティング](../../outlook/troubleshoot-outlook-add-in-activation.md)」をご覧ください。
@@ -173,12 +173,13 @@ Outlook アドインで満足のゆくエクスペリエンスを提供するに
 |ItemHasKnownEntity|Outlook リッチ クライアントでは、本文の最初の 1 MB にルールを適用し、残りの部分には適用しません。|
 |正規表現|すべての Outlook ホストに対する ItemHasKnownEntity または ItemHasRegularExpressionMatch ルールの場合:<br><ul><li>Outlook アドインのアクティベーション ルールで指定する正規表現は 5 個までにしてください。その制約数を超えるアドインをインストールすることはできません。</li><li>予期される結果が <b>getRegExMatches</b> メソッド呼び出しによって返されて、それらが最初の 50 件以内に収まるように、正規表現を指定します。 </li><li>正規表現で前読みアサーションは指定できますが、後読み (?<=text) および否定後読み (?<!text) アサーションは指定できません。</li><li>一致数が次の表の制限を超えない正規表現を指定します。<br/><br/><table><tr><th>正規表現の長さ制限</th><th>Outlook リッチ クライアント</th><th>デバイス用 Outlook Web App</th></tr><tr><td>アイテムの本文がテキスト形式の場合</td><td>1.5 KB</td><td>3 KB</td></tr><tr><td>アイテムの本文が HTML の場合</td><td>3 KB</td><td>3 KB</td></tr></table>|
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 - [Outlook アドイン](../../outlook/outlook-add-ins.md)
 - [新規作成フォーム用の Outlook アドインを作成する](../../outlook/compose-scenario.md)
 - [Outlook アドインのアクティブ化と JavaScript API の制限](../../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
-- [アイテムの種類とメッセージ クラス](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
+- 
+  [アイテムの種類とメッセージ クラス](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
 - [正規表現アクティブ化ルールを使用して Outlook アドインを表示する](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)
 - [Outlook アイテム内の文字列を既知のエンティティとして照合する](../../outlook/match-strings-in-an-item-as-well-known-entities.md)
     

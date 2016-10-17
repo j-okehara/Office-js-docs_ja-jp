@@ -1,5 +1,5 @@
-﻿
-# Labs.Components.ActivityComponentInstance
+
+# <a name="labs.components.activitycomponentinstance"></a>Labs.Components.ActivityComponentInstance
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,40 +10,40 @@ class ActivityComponentInstance extends Labs.ComponentInstance<Components.Activi
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| `public var component: Components.IActivityComponentInstance`|The underlying [Labs.Components.IActivityComponentInstance](../../reference/office-mix/labs.components.iactivitycomponentinstance.md) this class represents|
+| `public var component: Components.IActivityComponentInstance`|このクラスが表す、基になる [Labs.Components.IActivityComponentInstance](../../reference/office-mix/labs.components.iactivitycomponentinstance.md)|
 
-## メソッド
-
-
+## <a name="methods"></a>メソッド
 
 
-### コンストラクター
+
+
+### <a name="constructor"></a>コンストラクター
 
  `function constructor(component: Components.IActivityComponentInstance)`
 
-Creates a new instance of the [Labs.Components.IActivityComponentInstance](../../reference/office-mix/labs.components.iactivitycomponentinstance.md) class.
+[Labs.Components.IActivityComponentInstance](../../reference/office-mix/labs.components.iactivitycomponentinstance.md) クラスの新しいインスタンスを作成します。
 
  **パラメーター**
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| _コンポーネント_|The  **IActivityComponentInstance** to create this class from this class.|
+| _component_|このクラスからこのクラスを作成する **IActivityComponentInstance**|
 
-### buildAttempt
+### <a name="buildattempt"></a>buildAttempt
 
  `public function buildAttempt(createAttemptAction: Labs.Core.IAction): Components.ActivityComponentAttempt`
 
-Builds a new  **ActivityComponentAttempt** instance and implements the abstract method defined on the base class
+新しい **ActivityComponentAttempt** インスタンスを作成して、基底クラスに定義されている抽象メソッドを実装します。
 
  **パラメーター**
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| _createAttemptResult_|The result of a create attempt action.|
+| _createAttemptResult_|試行アクション作成の結果。|

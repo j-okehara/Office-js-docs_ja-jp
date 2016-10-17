@@ -1,5 +1,5 @@
 
-# Outlook で新規作成フォームのアイテムに添付ファイルを追加および削除する
+# <a name="add-and-remove-attachments-to-an-item-in-a-compose-form-in-outlook"></a>Outlook で新規作成フォームのアイテムに添付ファイルを追加および削除する
 
 [addFileAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md) メソッドおよび [addItemAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md) メソッドを使用して、ユーザーが作成しているアイテムにファイルおよび Outlook アイテムをそれぞれ添付することができます。どちらも非同期メソッドであり、添付ファイルの追加アクションの完了を待たずに実行を進めることができます。追加される添付ファイルの元の場所とサイズに応じて、添付ファイルの追加の非同期呼び出しが完了するのに少し時間がかかる場合があります。アクションの完了に依存するタスクがある場合は、それらのタスクをコールバック メソッドで実行する必要があります。このコールバック メソッドはオプションで、添付ファイルのアップロードが完了したときに呼び出されます。コールバック メソッドは、添付ファイルの追加アクションのステータス、エラー、および戻り値を提供する出力パラメーターとして [AsyncResult](http://dev.outlook.com/reference/add-ins/simple-types.md) オブジェクトを受け取ります。コールバックが追加のパラメーターを必要とする場合は、オプションの _options.aysncContext_ パラメーターで指定できます。 _options.asyncContext_ は、コールバック メソッドが必要とする任意の型にすることができます。
 
@@ -18,7 +18,7 @@
  >**メモ**  ベスト プラクティスとして、添付ファイル ID を使用して添付ファイルを削除するのは、同じアドインが同じセッションでその添付ファイルを追加した場合のみにしてください。Outlook Web App と デバイス用 OWA では、添付ファイル ID は同じセッション内でのみ有効です。ユーザーがアドインを閉じたとき、またはユーザーがインライン フォームで作成を開始した後インライン フォームから出て別のウィンドウで作業を続行したとき、セッションは終了します。
 
 
-## ファイルの添付
+## <a name="attaching-a-file"></a>ファイルの添付
 
 **addFileAttachmentAsync** メソッドを使用してファイルの URI を指定することで、新規作成フォームのメッセージまたは予定にファイルを添付できます。ファイルが保護されている場合は、URI クエリ文字列パラメーターとして、適切な ID または認証トークンを含めることができます。Exchange は添付ファイルを取得するために URI への呼び出しを行います。また、ファイルを保護する Web サービスは認証手段としてトークンを使用する必要があります。
 
@@ -68,7 +68,7 @@ function write(message){
 ```
 
 
-## Outlook アイテムの添付
+## <a name="attaching-an-outlook-item"></a>Outlook アイテムの添付
 
 Outlook アイテム (メール、予定表、連絡先アイテムなど) の Exchange Web Services (EWS) ID を指定して  **addItemAttachmentAsync** メソッドを使用して、新規作成フォームのメッセージまたは予定にそのアイテムを添付できます。ユーザーのメールボックスのメール、予定表、連絡先、タスク アイテムの EWS ID は、 [mailbox.makeEwsRequestAsync](../../reference/outlook/Office.context.mailbox.md) メソッドを使用して、EWS 操作の [FindItem](http://msdn.microsoft.com/en-us/library/ebad6aae-16e7-44de-ae63-a95b24539729%28Office.15%29.aspx) にアクセスすることにより取得できます。閲覧フォームの既存のアイテムでは、 [item.itemId](http://dev.outlook.com/reference/add-ins/Office.context.mailbox.item.md) プロパティでも EWS ID が取得できます。
 
@@ -108,7 +108,7 @@ function addItemAttachment(ID) {
  >**メモ**  新規作成アドインを使用して、Outlook Web App または デバイス用 OWA の定期的な予定のインスタンスを添付できます。ただし、サポート Outlook リッチ クライアントでは、インスタンスを 1 つ添付しようとしても、定期的な一連の予定 (マスター予定) が添付されます。
 
 
-## 添付ファイルを削除する
+## <a name="removing-an-attachment"></a>添付ファイルを削除する
 
 
 新規作成フォームのメッセージまたは予定からのファイルまたはアイテムの添付の削除は、該当する添付ファイル ID を指定して [removeAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md) メソッドを使用することにより実行できます。削除する添付ファイルは、同じアドインが同じセッションで追加した添付ファイルだけにする必要があります。添付ファイル ID が有効な添付ファイルに対応していることを確認する必要があります。対応していないと、メソッドがエラーを返します。 **addFileAttachmentAsync** メソッドや **addItemAttachmentAsync** メソッドと同様に、 **removeAttachmentAsync** は非同期メソッドです。ステータスとエラーを確認するには、コールバック メソッドを提供して **AsyncResult** 出力パラメーター オブジェクトを使用する必要があります。キーと値のペアの JSON オブジェクトであるオプションの **asyncContext** パラメーターを使用して、追加のパラメーターをコールバック メソッドに渡すこともできます。
@@ -146,7 +146,7 @@ function removeAttachment(ID) {
 ```
 
 
-## 添付ファイルの追加と削除のヒント
+## <a name="tips-for-adding-and-removing-attachments"></a>添付ファイルの追加と削除のヒント
 
 
 新規作成アドインが添付ファイルを追加および削除する場合は、有効な添付ファイル ID を添付ファイルの削除呼び出しに渡し、 **AsyncResult.error** で **InvalidAttachmentId** が返される場合を処理するようにコードを構成してください。添付ファイルの場所とサイズに応じて、ファイルまたはアイテムの添付の完了に時間がかかる場合があります。次の使用例は、 **addFileAttachmentAsync**、 `write`、および **removeAttachmentAsync** の呼び出しを含みます。呼び出しは、1 つずつ連続して実行することを想定しています。
@@ -288,7 +288,7 @@ function write(message){
 **removeAttachmentAsync** のコールバックは、**addFileAttachmentAsync** のコールバックの内部にネストされていることに注意してください。**addFileAttachmentAsync** と **removeAttachmentAsync** は非同期であるため、**addFileAttachmentAsync** のコールバックの最後の行は **removeAttachmentAsync** のコールバックが完了する前に実行できます。
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

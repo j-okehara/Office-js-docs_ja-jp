@@ -1,5 +1,5 @@
-﻿
-# Labs.takeLab
+
+# <a name="labs.takelab"></a>Labs.takeLab
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,7 +10,7 @@ function takeLab(callback: Core.ILabCallback<LabInstance>): void
 ```
 
 
-## パラメーター
+## <a name="parameters"></a>パラメーター
 
 
 |**名前**|**説明**|

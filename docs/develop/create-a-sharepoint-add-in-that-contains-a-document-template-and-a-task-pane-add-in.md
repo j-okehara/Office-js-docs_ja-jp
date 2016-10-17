@@ -1,5 +1,5 @@
 
-# ドキュメント テンプレートと作業ウィンドウ アドインを含む SharePoint アドインを作成する
+# <a name="create-a-sharepoint-add-in-that-contains-a-document-template-and-a-task-pane-add-in"></a>ドキュメント テンプレートと作業ウィンドウ アドインを含む SharePoint アドインを作成する
 
 
 ドキュメント テンプレート (経費明細書など) を含む SharePoint アドインを作成できます。ドキュメントには、SharePoint データを操作する作業ウィンドウ アドインを含めることができます。たとえば、ユーザーは、Business Connectivity Services (BCS) のデータを使用して請求書のフィールドにデータを設定したり、SharePoint リストから経費カテゴリを選択して経費明細書を作成したりできます。
@@ -7,7 +7,7 @@
 このチュートリアルでは、Excel ブックを含む SharePoint アドインの作成方法を示します。Excel ブックには、作業ウィンドウ アドインに SharePoint の日付が付いたドロップダウン リスト ボックスを作成するために SharePoint 2013 で提供される REST インターフェイスを使用する作業ウィンドウ アドインが含まれています。
 
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 
 始める前に、次のコンポーネントをインストールします。
@@ -17,16 +17,16 @@
 
 - SharePoint 開発環境
     
-      - To develop SharePoint Add-ins that target SharePoint in Office 365, see [How to: Set up an environment for developing SharePoint Add-ins on Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).
+      - SharePoint in Office 365 を対象とする SharePoint アドインを開発する場合は、「[方法:Office 365 で SharePoint アドインを開発する環境の設定](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29)」を参照してください。
     
-  - オンプレミス インストールの SharePoint を対象とする SharePoint アドインを開発する場合は、「 [SharePoint アドインのオンプレミスの開発環境をセットアップする](http://msdn.microsoft.com/en-us/library/office/apps/fp179923%28v=office.15%29)」を参照してください。
+  - SharePoint のオンプレミス インストールを対象とする SharePoint アドインを開発する場合は、「[方法:SharePoint アドインのオンプレミス開発環境の設定](http://msdn.microsoft.com/en-us/library/office/apps/fp179923%28v=office.15%29)」を参照してください。
     
 - [Visual Studio 2015 と Microsoft Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs)
     
 - Excel 2013 または Office 365 アカウント
     
 
-## Visual Studio で SharePoint アドイン プロジェクトを作成する
+## <a name="create-a-sharepoint-add-in-project-in-visual-studio"></a>Visual Studio で SharePoint アドイン プロジェクトを作成する
 
 
 
@@ -50,7 +50,7 @@
 7. 次のページで、 **[SharePoint 2013]** を選択し、 **[完了]** ボタンを選択してダイアログ ボックスを閉じます。
     
 
-## 作業ウィンドウ アドイン アイテムを追加する
+## <a name="add-a-task-pane-add-in-item"></a>作業ウィンドウ アドイン アイテムを追加する
 
 
 次に、プロジェクトに Office アドインを追加します。任意の種類のアドインを追加できます。ここでは作業ウィンドウ アドインを追加します。
@@ -70,10 +70,10 @@
     
 6. [ **Office アドインを新規ドキュメントまたは既存のドキュメントのどちらに表示しますか**] ページで、[ **新規ドキュメントを作成してアドインを挿入する**] を選択して、[ **完了**] を選択します。
     
-    SharePoint で、ライブラリのドキュメント ライブラリとブックのテンプレートが追加されます。 ブックには作業ウィンドウ アドインが含まれています。
+    SharePoint で、ライブラリのドキュメント ライブラリとブックのテンプレートが追加されます。ブックには作業ウィンドウ アドインが含まれています。
     
 
-## ドキュメント ライブラリを追加する
+## <a name="add-a-document-library"></a>ドキュメント ライブラリを追加する
 
 
 この手順では、ドキュメント ライブラリを追加して、ブックをドキュメント ライブラリの既定のテンプレートにします。
@@ -103,11 +103,12 @@
     
 12. マニフェスト デザイナーで、[ **スタート ページ**] の値を ~appWebUrl/Lists/MyDocumentLibrary に設定します。これにより、OfficeEnabledAddin/Lists/MyDocumentLibrary の値が変換されます。
     
-     >**注**  この URL は、ドキュメント ライブラリを参照しています。 アドイン Web 内のアイテムを参照している Office アドイン マニフェスト内の URL の先頭で、~appWebUrl トークンを使用する必要があります。 SharePoint アドイン プロジェクトでの URL トークンの詳細については、「[SharePoint アドインの URL 文字列とトークン](http://msdn.microsoft.com/library/800ec8cd-a448-46bc-b41e-d4030eeb4048%28Office.15%29.aspx)」を参照してください。
+     >
+  **注**  この URL は、ドキュメント ライブラリを参照しています。アドイン Web 内のアイテムを参照している Office アドイン マニフェスト内の URL の先頭で、~appWebUrl トークンを使用する必要があります。SharePoint アドイン プロジェクトでの URL トークンの詳細については、「[SharePoint アドインの URL 文字列とトークン](http://msdn.microsoft.com/library/800ec8cd-a448-46bc-b41e-d4030eeb4048%28Office.15%29.aspx)」を参照してください。
 13. マニフェスト デザイナーを閉じ、変更内容を保存します。
     
 
-## 作業ウィンドウで SharePoint データを使用する
+## <a name="consume-sharepoint-data-in-the-task-pane"></a>作業ウィンドウで SharePoint データを使用する
 
 
 この手順では、SharePoint 2013 で提供される REST インターフェイスを使用して、サイト ユーザーの一覧を表示します。
@@ -115,14 +116,16 @@
 この例では、SharePoint のリストのデータが表示されるだけですが、このようなデータをドキュメント承認アドインの一部として使用することができます。ユーザーがリストから名前を選択した際に、コードがドキュメント追跡リストの校閲者列の値を設定します。そのリストに関連するワークフローは、そのユーザーに校閲通知を送信することができます。また、選択した名前でドキュメント設定に保存できます。その後、ユーザーがドキュメントを開く際に、現在のユーザーとドキュメント設定に保存したユーザーが同じである場合にのみ、作業ウィンドウ アドインにコントロールを表示することができます。詳細については、次のトピックを参照してください。
 
 
-- [SharePoint 2013 REST エンドポイントを使用して基本的な操作を完了する](http://msdn.microsoft.com/library/e3000415-50a0-426e-b304-b7de18f2f7d9%28Office.15%29.aspx)
+- 
+  [SharePoint 2013 REST エンドポイントを使用して基本的な操作を完了する](http://msdn.microsoft.com/library/e3000415-50a0-426e-b304-b7de18f2f7d9%28Office.15%29.aspx)
     
-- [SharePoint 2013 の JavaScript ライブラリ コードを使用して基本的な操作を完了する](http://msdn.microsoft.com/library/29089af8-dbc0-49b7-a1a0-9e311f49c826%28Office.15%29.aspx)
+- 
+  [SharePoint 2013 の JavaScript ライブラリ コードを使用して基本的な操作を完了する](http://msdn.microsoft.com/library/29089af8-dbc0-49b7-a1a0-9e311f49c826%28Office.15%29.aspx)
     
 - [アドインの状態および設定を保持する](../../docs/develop/persisting-add-in-state-and-settings.md)
     
 
-1. [ **ソリューション エクスプローラー**] で [ **MyTaskPaneAddin**] フォルダーを展開し、[ **Home**] フォルダーを展開して [ **Home.html**] ファイルを選択します。
+1. **[ソリューション エクスプローラー]** で **[MyTaskPaneAddin]** フォルダーを展開し、**[Home]** フォルダーを展開して **[Home.html]** ファイルを選択します。
     
     コード エディターに Home.html ファイルが開きます。
     
@@ -176,13 +179,13 @@
 10. [ **アクセス許可**] 列のドロップダウン リストからアイテムの [ **読み取り**] を選択します。
     
 
-## 作業ウィンドウ アドインをデバッグする
+## <a name="debug-the-task-pane-add-in"></a>作業ウィンドウ アドインをデバッグする
 
 
 ドキュメントを開始または SharePoint アドインを開始し、ドキュメント ライブラリからドキュメントを開くことで、作業ウィンドウ アドインをデバッグできます。
 
 
-### ドキュメントを開始して作業ウィンドウ アドインをデバッグする
+### <a name="debugging-your-task-pane-add-in-by-starting-the-document"></a>ドキュメントを開始して作業ウィンドウ アドインをデバッグする
 
 
 
@@ -213,7 +216,7 @@
     `getDataFromSelection` メソッドの横に設定したブレークポイントの位置で実行が停止します。
     
 
-### SharePoint を開始して作業ウィンドウ アドインをデバッグする
+### <a name="debugging-your-task-pane-add-in-by-starting-sharepoint"></a>SharePoint を開始して作業ウィンドウ アドインをデバッグする
 
 
 
@@ -258,7 +261,7 @@
     
      >**注**  ブックにデータが含まれていない場合は、ブックのツール バーで [**ブックの編集**]、[**Excel Online で編集**] の順に選択することによって、データを追加できます。
 
-## アドインをパッケージ化して発行する
+## <a name="package-and-publish-the-add-in"></a>アドインをパッケージ化して発行する
 
 
 アドインの発行用にパッケージ化する準備ができたら、 **Office と SharePoint アドインの発行**ウィザードを開きます。
@@ -266,10 +269,11 @@
 
 - **ソリューション エクスプローラー**で、SharePoint アドイン プロジェクトのショートカット メニューを開き、[**発行**] を選択します。
     
-    [**Office アドインおよび SharePoint アドインを発行する**] ウィザードが表示されます。 詳細については、「[Visual Studio を使用して SharePoint アドインを公開する](http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx)」を参照してください。
+    
+  **[Office アドインおよび SharePoint アドインを発行する]** ウィザードが表示されます。詳細については、「[Visual Studio を使用して SharePoint アドインを公開する](http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx)」を参照してください。
     
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 - [Office アドインの設計ガイドライン](../../docs/design/add-in-design.md)

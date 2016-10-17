@@ -1,5 +1,5 @@
 
-# Microsoft Azure で Office アドインをホストする
+# <a name="host-an-office-add-in-on-microsoft-azure"></a>Microsoft Azure で Office アドインをホストする
 
 最も簡単な Office アドインは XML マニフェスト ファイルと HTML ページからできています。XML マニフェスト ファイルは、アドイン名、どんな Office クライアント アプリケーションでアドインが実行できるか、アドインの HTML ページの URL など、アドインの特性を記述しています。HTML ページは Office アドイン Web サイトに含まれており、ユーザーはアドインのインストールおよび実行時にこれを確認し、操作します。 
 
@@ -14,13 +14,13 @@ Office アドインの Web サイトは、Azure を含む多くの Web ホステ
 - Azure Web サイト上で Office アドインの発行とホストを行う方法
     
 
-**Azure にホストされた Office アドイン Web サイト**
+**Azure でホストされている Office アドイン Web サイト**
 
 
 ![Microsoft Azure でホストされている Office アドイン Web サイト](../../images/off15app_HowToPublishA4OtoAzure_fig17.png)
 
 
-## Azure SDK for .NET、Azure サブスクリプション、および Office 2013 で開発コンピューターをセットアップする
+## <a name="set-up-your-development-computer-with-azure-sdk-for-.net,-an-azure-subscription,-and-office-2013"></a>Azure SDK for .NET、Azure サブスクリプション、および Office 2013 で開発コンピューターをセットアップする
 
 
 
@@ -39,12 +39,12 @@ Office アドインの Web サイトは、Azure を含む多くの Web ホステ
      >**注:** 有効期限が [1 か月間の試用版](http://office.microsoft.com/en-us/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786)を入手できます。
 3. Azure アカウントを取得します。
     
-     >**注:** MSDN サブスクライバーである場合は、[MSDN サブスクリプションの一部として Azure サブスクリプションが提供されます](http://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits/)。 MSDN サブスクライバーでない場合でも、[Windows Azure の Web サイトで Azure の無料試用版を取得できます](https://azure.microsoft.com/en-us/pricing/free-trial/)。 
+     >**注:** MSDN サブスクライバーである場合は、[MSDN サブスクリプションの一部として Azure サブスクリプションが提供されます](http://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits/)。MSDN サブスクライバーでない場合でも、[Windows Azure の Web サイトで Azure の無料試用版を取得できます](https://azure.microsoft.com/en-us/pricing/free-trial/)。 
 
 チュートリアルを複雑にせずにOffice アドインで Azure を使用することに焦点を当てるために、信頼できるカタログとしてローカル ファイル共有を使用します。そこは、アドインの XML マニフェスト ファイルを保存するところです。1 つまたは複数のビジネスで使うことを目的とするアドインでは、アドインのマニフェスト ファイルを SharePoint に保管するか、アドインを Office ストアに発行します。 
 
 
-## 手順 1: アドインのマニフェスト ファイルをホストするネットワーク ファイル共有を作成する
+## <a name="step-1:-create-a-network-file-share-to-host-your-add-in-manifest-file"></a>手順 1: アドインのマニフェスト ファイルをホストするネットワーク ファイル共有を作成する
 
 
 
@@ -59,7 +59,7 @@ Office アドインの Web サイトは、Azure を含む多くの Web ホステ
 5. **[ファイル共有]** で、ドロップダウンの矢印を選択してから、**[すべてのユーザー]**  >  **[追加]**  >  **[共有]** の順に選択します。
     
 
-## 手順 2: Office クライアント アプリケーションが Office アドインのインストール先の場所を信頼するよう、ファイル共有を信頼できるアドイン カタログに追加する
+## <a name="step-2:-add-the-file-share-to-the-trusted-add-ins-catalog-so-that-office-client-applications-will-trust-the-location-where-you-install-office-add-ins"></a>手順 2: Office クライアント アプリケーションが Office アドインのインストール先の場所を信頼するよう、ファイル共有を信頼できるアドイン カタログに追加する
 
 
 
@@ -74,13 +74,13 @@ Office アドインの Web サイトは、Azure を含む多くの Web ホステ
 5. **[メニューに表示する]** のチェックボックスを選択します。信頼できるアドイン カタログである共有にアドインの XML マニフェスト ファイルを保存すると、アドインが **[Office アドイン]** ダイアログボックスの **[共有フォルダー]** に表示されます。
     
 
-## 手順 3: Azure に Web サイトを作成する
+## <a name="step-3:-create-a-website-in-azure"></a>手順 3: Azure に Web サイトを作成する
 
 
 空のAzure Web サイトを作成するには、いくつかの方法があります。Visual Studio 2015 をお使いの場合は、「[Visual Studio 2015 を使用する](../publish/host-an-office-add-in-on-microsoft-azure.md#using-visual-studio-2015)」の手順に従って Visual Studio IDE 内から Azure Web サイトを作成します。また、「[Azure 管理ポータルを使用する](../publish/host-an-office-add-in-on-microsoft-azure.md#using-the-azure-management-portal)」の手順に従って Azure Web サイトを作成することもできます。
 
 
-### Visual Studio 2015 を使用する
+### <a name="using-visual-studio-2015"></a>Visual Studio 2015 を使用する
 
 
 
@@ -110,7 +110,7 @@ Office アドインの Web サイトは、Azure を含む多くの Web ホステ
 6. Visual Studio 2015 で、**サーバー エクスプローラー**にある新しい Web サイトを右クリックし、**[発行プロファイルのダウンロード]** を選択してから、お使いのコンピューターにプロファイルを保存します。発行プロファイルには資格情報が含まれるため、「[手順 5: Office アドインを Azure Web サイトに発行する](../publish/host-an-office-add-in-on-microsoft-azure.md#step-5-publish-your-office-add-in-to-the-azure-website)」を行えるようになります。
     
 
-### Azure 管理ポータルを使用する
+### <a name="using-the-azure-management-portal"></a>Azure 管理ポータルを使用する
 
 
 
@@ -124,7 +124,7 @@ Office アドインの Web サイトは、Azure を含む多くの Web ホステ
     
 5. **[WEB アプリの作成]** をクリックします。Azure 管理ポータルは、Web サイトを作成し、**[Web サイト]** のページにリダイレクトします。ここでは Web サイトのステータスを確認できます。
     
-    Web サイトの状態が [**実行中**] である場合、[**NAME**] 列で Web サイトの URL を選びます。 ブラウザーが開き、**Web アプリが作成されました。**というメッセージを含む Web ページを表示します。 
+    Web サイトの状態が **[実行中] **である場合、**[NAME]** 列で Web サイトの URL を選びます。ブラウザーが開き、**Web アプリが作成されました。**というメッセージを含む Web ページが表示されます。 
     
     ブラウザーのアドレス バーで、HTTPS を使用するように Web サイトの URL を変更し、**Enter** キーを押して HTTPS プロトコルが有効であることを確認します。Office アドイン モデルでは、アドインは HTTPS プロトコルを使用する必要があります。
     
@@ -135,7 +135,7 @@ Office アドインの Web サイトは、Azure を含む多くの Web ホステ
     発行プロファイルには資格情報が含められます。これにより、Azure への発行を安全に行うことができます。 
     
 
-## 手順 4: Visual Studio で Office アドインを作成する
+## <a name="step-4:-create-an-office-add-in-in-visual-studio"></a>手順 4: Visual Studio で Office アドインを作成する
 
 
 
@@ -153,7 +153,7 @@ Office アドインの Web サイトは、Azure を含む多くの Web ホステ
     
 基本的な Office アドインが作成され、Azure に発行する準備ができました。Azure に発行する方法に焦点を当てているため、Visual Studio で標準的な Office アドインのテンプレートを使用して作成したサンプル アドインには変更を加えません。
 
-## 手順 5: Office アドインを Azure Web サイトに発行する
+## <a name="step-5:-publish-your-office-add-in-to-the-azure-website"></a>手順 5: Office アドインを Azure Web サイトに発行する
 
 
 
@@ -177,10 +177,10 @@ Office アドインの Web サイトは、Azure を含む多くの Web ホステ
     
 8. Visual Studio が Web プロジェクトの発行を終了する際、お使いのブラウザーが開き、「Web アプリは正常に作成されました」と記載された Web ページが表示されます。これが Web サイトの現在の既定のページです。
     
-    アドインの Web ページを表示するには、https: を使用するように URL を変更し、アドインの既定の HTML ページのパスを追加します。 たとえば、変更した URL は、https://YourDomain.azurewebsites.net/Addin/Home/Home.html のようになります。 これにより、アドインの Web サイトが Azure でホストされるようになったことを確認できます。 この URL は、このトピックの後半でアドイン マニフェスト ファイルを編集するときに必要になるため、コピーしておきます。
+    アドインの Web ページを表示するには、https: を使用するように URL を変更し、アドインの既定の HTML ページのパスを追加します。たとえば、変更した URL は、https://YourDomain.azurewebsites.net/Addin/Home/Home.html のようになります。これにより、アドインの Web サイトが Azure でホストされるようになったことを確認できます。この URL は、このトピックの後半でアドイン マニフェスト ファイルを編集するときに必要になるため、コピーしておきます。
     
 
-## 手順 6: アドインのマニフェスト ファイルを編集して Azure の Office アドインを指定する
+## <a name="step-6:-edit-the-add-in-manifest-file-to-point-to-the-office-add-in-on-azure"></a>手順 6: アドインのマニフェスト ファイルを編集して Azure の Office アドインを指定する
 
 
 
@@ -199,7 +199,7 @@ Office アドインの Web サイトは、Azure を含む多くの Web ホステ
 7. このトピックで前に作成したネットワーク ファイル共有を参照し、マニフェスト ファイルをフォルダーに貼り付けます。
     
 
-## 手順 7: Office クライアント アプリケーションにアプリを挿入し、実行する
+## <a name="step-7:-insert-and-run-the-add-in-in-the-office-client-application"></a>手順 7: Office クライアント アプリケーションにアプリを挿入し、実行する
 
 
 
@@ -214,7 +214,7 @@ Office アドインの Web サイトは、Azure を含む多くの Web ホステ
 5. ドキュメントでテキストを作成してからそれを選択し、**[選択対象からデータを取得]** をクリックして、アドインが動作しているかどうかをテストします。
     
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

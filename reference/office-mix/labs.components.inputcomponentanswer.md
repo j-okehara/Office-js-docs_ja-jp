@@ -1,5 +1,5 @@
-﻿
-# Labs.Components.InputComponentAnswer
+
+# <a name="labs.components.inputcomponentanswer"></a>Labs.Components.InputComponentAnswer
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,27 +10,27 @@ class InputComponentAnswer
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |プロパティ|説明|
 |:-----|:-----|
 | `public var answer: any`|The answer value.|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 
 
 
-### コンストラクター
+### <a name="constructor"></a>コンストラクター
 
  `function constructor(answer: any)`
 
-Creates a new instance of the  **InputComponentAnswer** class.
+**InputComponentAnswer** クラスの新しいインスタンスを作成します。
 
  **パラメーター**
 
 
 |パラメーター|説明|
 |:-----|:-----|
-| _answer_|The answer value.|
+| _answer_|応答の値。|

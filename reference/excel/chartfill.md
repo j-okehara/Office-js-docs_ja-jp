@@ -1,40 +1,40 @@
-﻿# ChartFill オブジェクト (JavaScript API for Excel)
+# <a name="chartfill-object-(javascript-api-for-excel)"></a>ChartFill オブジェクト (JavaScript API for Excel)
 
 グラフ要素の塗りつぶしの書式設定を表します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 なし
 
-## 関係
+## <a name="relationships"></a>関係
 なし
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
 |[clear()](#clear)|void|グラフ要素の塗りつぶしの色をクリアします。|
 |[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|グラフ要素の塗りつぶしの書式設定を均一な色に設定します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### clear()
+### <a name="clear()"></a>clear()
 グラフ要素の塗りつぶしの色をクリアします。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 chartFillObject.clear();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 
 "Chart1" という名前のグラフの数値軸の目盛線の線の書式をクリアします。
 
@@ -53,23 +53,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### setSolidColor(color: string)
+### <a name="setsolidcolor(color:-string)"></a>setSolidColor(color: string)
 グラフ要素の塗りつぶしの書式設定を均一な色に設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 chartFillObject.setSolidColor(color);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |color|string|枠線の色を表す HTML カラー コード。形式は #RRGGBB (例:"FFA500")、または名前付きの HTML 色 (例: "orange") です。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 
 Chart1 の背景色を赤に設定します。
 

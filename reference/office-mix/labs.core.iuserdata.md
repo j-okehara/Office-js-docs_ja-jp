@@ -1,16 +1,16 @@
-﻿
-# Labs.Core.IUserData
+
+# <a name="labs.core.iuserdata"></a>Labs.Core.IUserData
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-The base interface to represent custom user data that is stored on an object.
+オブジェクトに格納されているカスタム ユーザー データを表す基本インターフェイス。
 
 ```
 interface IUserData
 ```
 
 
-## フィールド
+## <a name="fields"></a>フィールド
 
 
 |||

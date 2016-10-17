@@ -1,18 +1,18 @@
-﻿
-# Labs.Core.Actions.ICreateAttemptResult
+
+# <a name="labs.core.actions.icreateattemptresult"></a>Labs.Core.Actions.ICreateAttemptResult
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-The result of creating an attempt for the given component.
+指定のコンポーネントに対する試行の結果。
 
 ```
 interface ICreateAttemptResult extends Core.IActionResult
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| `attemptId: string`|The ID of the created attempt|
+| `attemptId: string`|作成した試行の ID。|

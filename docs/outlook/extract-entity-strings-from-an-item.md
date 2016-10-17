@@ -1,5 +1,5 @@
-﻿
-# Outlook アイテムからエンティティ文字列を抽出する
+
+# <a name="extract-entity-strings-from-an-outlook-item"></a>Outlook アイテムからエンティティ文字列を抽出する
 
 この記事では、選択した Outlook アイテムの件名と本文に含まれる、サポートされる既知のエンティティの文字列インスタンスを抽出する **[エンティティの表示]** Outlook アドインを作成する方法について説明します。対象のアイテムは、予定、メール メッセージ、会議出席依頼、会議出席依頼の返信、または会議の取り消しです。サポートされるエンティティには次のようなものがあります。
 
@@ -21,7 +21,7 @@
 
 このアドインにはユーザーがエンティティの種類を選択するためのボタンがあります。ユーザーがエンティティを選択すると、アドインは選択されたエンティティのインスタンスをアドイン ウィンドウに表示します。後続の各セクションでは、エンティティ アドインの XML マニフェスト、HTML ファイル、および JavaScript ファイルの内容を示し、それぞれのエンティティの抽出をサポートするコードについて詳しく説明します。
 
-## XML マニフェスト
+## <a name="xml-manifest"></a>XML マニフェスト
 
 
 エンティティ アドインには、論理 OR 演算で結合された 2 つのアクティブ化ルールがあります。 
@@ -85,10 +85,10 @@ xsi:type="MailApp">
 ```
 
 
-## HTML の実装
+## <a name="html-implementation"></a>HTML の実装
 
 
-エンティティ アドインの HTML ファイルでは、ユーザーがエンティティの種類を選択するためのボタンと、表示されたエンティティのインスタンスを消去するためのボタンを指定しています。このファイルでは、後の「[JavaScript の実装](#javascript-の実装)」で説明する default_entities.js という JavaScript ファイルを指定しています。JavaScript ファイルには、それぞれのボタンに対するイベント ハンドラーが含まれています。
+エンティティ アドインの HTML ファイルでは、ユーザーがエンティティの種類を選択するためのボタンと、表示されたエンティティのインスタンスを消去するためのボタンを指定しています。このファイルでは、後の「[JavaScript の実装](#javascript-implementation)」で説明する default_entities.js という JavaScript ファイルを指定しています。JavaScript ファイルには、それぞれのボタンに対するイベント ハンドラーが含まれています。
 
 すべての Outlook アドインに office.js を含める必要があります。以下の HTML ファイルには、CDN に office.js のバージョン 1.1 が含まれます。 
 
@@ -132,7 +132,7 @@ xsi:type="MailApp">
 ```
 
 
-## スタイル シート
+## <a name="style-sheet"></a>スタイル シート
 
 
 エンティティ アドインでは、default_entities.css というオプションの CSS ファイルを使用して出力のレイアウトを指定しています。次に、この CSS ファイルの内容を示します。
@@ -190,13 +190,13 @@ div#meeting_suggestions
 ```
 
 
-## JavaScript の実装
+## <a name="javascript-implementation"></a>JavaScript の実装
 
 
 残りのセクションでは、このサンプル (default_entities.js ファイル) を使用して、ユーザーが表示中のメッセージまたは予定の件名と本文から一般的なエンティティを抽出する方法について説明します。 
 
 
-## 初期化時のエンティティの抽出
+## <a name="extracting-entities-upon-initialization"></a>初期化時のエンティティの抽出
 
 
 [Office.initialize](../../reference/shared/office.initialize.md) イベントが発生すると、エンティティ アドインは現在のアイテムの [getEntities](../../reference/outlook/Office.context.mailbox.item.md) メソッドを呼び出します。**getEntities** メソッドは、グローバル変数 `_MyEntities` を返します。この変数は、サポートされているエンティティのインスタンスの配列です。関連する JavaScript コードを次に示します。
@@ -225,7 +225,7 @@ Office.initialize = function () {
 ```
 
 
-## 住所の抽出
+## <a name="extracting-addresses"></a>住所の抽出
 
 
 ユーザーが **[Get Addresses]** ボタンをクリックすると、`myGetAddresses` イベント ハンドラーが `_MyEntities` オブジェクトの [addresses](../../reference/outlook/simple-types.md) プロパティから住所の配列を取得します (住所が抽出されていた場合)。抽出された各住所は、文字列として配列に格納されます。`myGetAddresses` はローカル HTML 文字列を .mdText` で生成し、抽出された住所の一覧を表示します。関連する JavaScript コードを次に示します。
@@ -249,7 +249,7 @@ function myGetAddresses()
 ```
 
 
-## 連絡先情報の抽出
+## <a name="extracting-contact-information"></a>連絡先情報の抽出
 
 
 ユーザーが **[Get Contact Information]** ボタンをクリックすると、`myGetContacts` イベント ハンドラーが `_MyEntities` オブジェクトの [contacts](../../reference/outlook/simple-types.md) プロパティから連絡先の配列をそれぞれの情報と共に取得します (連絡先が抽出されていた場合)。抽出された各連絡先は、[Contact](../../reference/outlook/simple-types.md) オブジェクトとして配列に格納されます。`myGetContacts` は、各連絡先に関する詳細なデータを取得します。Outlook がアイテムから連絡先を抽出できるかどうかはコンテキスト次第であることに注意してください。電子メール メッセージの末尾の署名、または少なくとも次のいくつかの情報が連絡先の周辺に存在している必要があります。
@@ -337,7 +337,7 @@ function myGetContacts()
 ```
 
 
-## 電子メール アドレスの抽出
+## <a name="extracting-email-addresses"></a>電子メール アドレスの抽出
 
 
 ユーザーが **[Get Email Addresses]** ボタンをクリックすると、`myGetEmailAddresses` イベント ハンドラーが `_MyEntities` オブジェクトの [emailAddresses](../../reference/outlook/simple-types.md) プロパティから SMTP 電子メール アドレスの配列を取得します (メール アドレスが抽出されていた場合)。抽出された各電子メール アドレスは、文字列として配列に格納されます。`myGetEmailAddresses` はローカル HTML 文字列を `htmlText` で生成し、抽出された電子メール アドレスの一覧を表示します。関連する JavaScript コードを次に示します。
@@ -360,7 +360,7 @@ function myGetEmailAddresses() {
 ```
 
 
-## 会議提案の抽出
+## <a name="extracting-meeting-suggestions"></a>会議提案の抽出
 
 
 ユーザーが **[Get Meeting Suggestions]** ボタンをクリックすると、`myGetMeetingSuggestions` イベント ハンドラーが `_MyEntities` オブジェクトの [meetingSuggestions](../../reference/outlook/simple-types.md) プロパティから会議提案の配列を取得します (会議提案が抽出されていた場合)。
@@ -445,7 +445,7 @@ function myGetMeetingSuggestions() {
 ```
 
 
-## 電話番号の抽出
+## <a name="extracting-phone-numbers"></a>電話番号の抽出
 
 
 ユーザーが **[Get Phone Numbers]** ボタンをクリックすると、`myGetPhoneNumbers` イベント ハンドラーが `_MyEntities` オブジェクトの [phoneNumbers](../../reference/outlook/simple-types.md) プロパティから電話番号の配列を取得します (電話番号が抽出されていた場合)。抽出された各電話番号は、[PhoneNumber](../../reference/outlook/simple-types.md) オブジェクトとして配列に格納されます。`myGetPhoneNumbers` は、各電話番号に関する次の詳細なデータを取得します。
@@ -496,7 +496,7 @@ function myGetPhoneNumbers()
 ```
 
 
-## タスクの提案の抽出
+## <a name="extracting-task-suggestions"></a>タスクの提案の抽出
 
 
 ユーザーが **[Get Task Suggestions]** ボタンをクリックすると、`myGetTaskSuggestions` イベント ハンドラーが `_MyEntities` オブジェクトの [taskSuggestions](../../reference/outlook/simple-types.md) プロパティからタスクの提案の配列を取得します (タスクの提案が抽出されていた場合)。抽出された各タスクの提案は、[TaskSuggestion](../../reference/outlook/simple-types.md) オブジェクトとして配列に格納されます。`myGetTaskSuggestions` は、各タスクの提案に関する次の詳細なデータを取得します。
@@ -561,7 +561,7 @@ function myGetTaskSuggestions()
 ```
 
 
-## URL の抽出
+## <a name="extracting-urls"></a>URL の抽出
 
 
 ユーザーが **[Get URLs]** ボタンをクリックすると、`myGetUrls` イベント ハンドラーが `_MyEntities` オブジェクトの [urls](../../reference/outlook/simple-types.md) プロパティから URL の配列を取得します (URL が抽出されていた場合)。抽出された各 URL は、文字列として配列に格納されます。`myGetUrls` はローカル HTML 文字列を `htmlText` で生成し、抽出された URL の一覧を表示します。
@@ -586,7 +586,7 @@ function myGetUrls()
 ```
 
 
-## 表示されたエンティティ文字列の消去
+## <a name="clearing-displayed-entity-strings"></a>表示されたエンティティ文字列の消去
 
 
 最後に、エンティティ アドインでは表示された文字列を消去する `myClearEntitiesBox` イベント ハンドラーを指定しています。関連するコードを次に示します。
@@ -601,7 +601,7 @@ function myClearEntitiesBox()
 ```
 
 
-## JavaScript の内容
+## <a name="javascript-listing"></a>JavaScript の内容
 
 
 次に、JavaScript の実装の内容全体を示します。
@@ -819,7 +819,7 @@ function myGetUrls()
 ```
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 
@@ -827,5 +827,5 @@ function myGetUrls()
     
 - [Outlook アイテム内の文字列を既知のエンティティとして照合する](../outlook/match-strings-in-an-item-as-well-known-entities.md)
     
-- [item.getEntities メソッド](../../reference/outlook/Office.context.mailbox.item.md)
+- [item.getEntities](../../reference/outlook/Office.context.mailbox.item.md) メソッド
     

@@ -1,5 +1,5 @@
 
-# Office アドインを実行するための要件
+# <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
 
 
 この記事では、Office アドインを実行するためのソフトウェアとデバイスの要件について説明します。
@@ -7,7 +7,7 @@
 >**注:**現時点での Office アドインのサポート状況について、概要は「[Office アドインを使用できるホストおよびプラットフォーム](http://dev.office.com/add-in-availability)」ページを参照してください。 
 
 
-## サーバーの要件
+## <a name="server-requirements"></a>サーバーの要件
 
 Office アドインをインストールおよび実行できるようにするには、まずアドインの UI とコードのマニフェストと Web ページ ファイルを、適切なサーバーの場所に展開する必要があります。
 
@@ -25,7 +25,7 @@ Outlook アドインをテストおよび実行するには、ユーザーの Ou
 
 
 
-## クライアントの要件:Windows のデスクトップとタブレット
+## <a name="client-requirements:-windows-desktop-and-tablet"></a>クライアントの要件: Windows デスクトップおよびタブレット
 
 Windows ベースのデスクトップ、ノート PC、または タブレット デバイス上で実行されるサポート対象の Office デスクトップ クライアントまたは Web クライアント向けの Office アドインを開発するには、以下のソフトウェアが必要です。
 
@@ -43,7 +43,7 @@ Windows ベースのデスクトップ、ノート PC、または タブレッ�
 - メモ帳などの HTML および JavaScript エディター、 [Visual Studio および Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs)、またはサードパーティの Web 開発ツール。
 
 
-## クライアントの要件: OS X デスクトップ
+## <a name="client-requirements:-os-x-desktop"></a>クライアントの要件: OS X デスクトップ
 
 Outlook for Mac は Office 365 に付属していて、Outlook アドインをサポートします。Outlook アドインを Outlook for Mac で実行するための要件は、Outlook for Mac そのものの要件と同じです。オペレーティング システムは、少なくとも OS X v10.10 "Yosemite" である必要があります。Outlook for Mac はレイアウト エンジンとして WebKit を使用して、アドイン ページを表示するので、追加のブラウザーの依存関係はありません。
 
@@ -52,12 +52,12 @@ Outlook for Mac は Office 365 に付属していて、Outlook アドインを�
 - Excel for Mac バージョン 15.19 (160206) 
 - PowerPoint for Mac バージョン 15.24 (160614)
 
-## クライアントの要件:Office Online Web クライアントと SharePoint のブラウザー サポート
+## <a name="client-requirements:-browser-support-for-office-online-web-clients-and-sharepoint"></a>クライアントの要件: Office Online Web クライアントと SharePoint のブラウザー サポート
 
 Internet Explorer 9、Chrome 13、Firefox 5、Safari 5.0.6、またはこれらのブラウザーの以降のバージョンなど ECMAScript 5.1、HTML5、および CSS3 をサポートする任意のブラウザー。
 
 
-## クライアントの要件: Windows 以外のスマートフォンおよび タブレット
+## <a name="client-requirements:-non-windows-smartphone-and-tablet"></a>クライアントの要件: Windows 以外のスマートフォンおよび タブレット
 
 特に、スマートフォンや Windows 以外のタブレット デバイス上のブラウザーで動作する デバイス用 OWA と Outlook Web App の場合、Outlook アドインをテストおよび実行するのに以下のソフトウェアが必要です。
 
@@ -70,8 +70,8 @@ Internet Explorer 9、Chrome 13、Firefox 5、Safari 5.0.6、またはこれら�
 |Outlook Web App|iPhone 4 以降、iPad 2 以降、iPod Touch 4 以降|iOS 5 以降|Office 365、Exchange Online、または Exchange Server 2013 以降の社内型が対象|Safari|
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 - [Office アドイン プラットフォームの概要](../../docs/overview/office-add-ins.md)
-- [Office アドインを使用できるホストおよびプラットフォーム](http://dev.office.com/add-in-availability)
+- [Office アドインのホストとプラットフォームの可用性](http://dev.office.com/add-in-availability)
 

@@ -1,19 +1,19 @@
 
-# ユーザーのメールボックスにアクセスする Outlook アドインのためのアクセス許可を指定する
+# <a name="understanding-outlook-add-in-permissions"></a>ユーザーのメールボックスにアクセスする Outlook アドインのためのアクセス許可を指定する
 
 Outlook アドインでは、マニフェストに必要なアクセス許可のレベルを指定します。使用可能なレベルは  **Restricted**、 **ReadItem**、 **ReadWriteItem**、 **ReadWriteMailbox** です。これらのアクセス許可のレベルは累積的です。 **Restricted** が一番下のレベルで、上の各レベルには下のレベルのアクセス許可がすべて含まれます。 **ReadWriteMailbox** には、サポートするアクセス許可がすべて含まれます。
 
 メール アドインが要求するアクセス許可を、Office ストア からメール アドインをインストールする前に表示できます。Exchange 管理センターで、インストールしたアドインに必要なアクセス許可を表示することもできます。
 
 
-## 制限付きアクセス許可
+## <a name="restricted-permission"></a>制限付きアクセス許可
 
 
 
   **Restricted** アクセス許可は、最も基本的なレベルのアクセス許可です。マニフェストの **Permissions** 要素に [Restricted](http://msdn.microsoft.com/en-us/library/c20cdf29-74b0-564c-e178-b75d148b36d1%28Office.15%29.aspx) を指定することによってこのアクセス許可を要求できます。メール アドインのマニフェストに特定のアクセス許可の要求がない場合、Outlook はそのアドインにこのアクセス許可を既定で割り当てます。
 
 
-### できること
+### <a name="can-do"></a>できること
 
 
 - アイテムの件名または本文から [特定のエンティティのみを取得](../outlook/match-strings-in-an-item-as-well-known-entities.md) (電話番号、アドレス、URL)。
@@ -23,7 +23,7 @@ Outlook アドインでは、マニフェストに必要なアクセス許可の
 - ユーザーまたはアイテムに関する特定の情報に関連 **しない** プロパティーとメソッドにアクセス。(関連するメンバーのリストは、次のセクションを参照。)
     
 
-### できないこと
+### <a name="can't-do"></a>できないこと
 
 
 - 連絡先、電子メール アドレス、会議の提案、タスクの提案のエンティティで [ItemHasKnownEntity](http://msdn.microsoft.com/en-us/library/87e10fd2-eab4-c8aa-bec3-dff92d004d39%28Office.15%29.aspx) ルールを使用。
@@ -84,13 +84,13 @@ Outlook アドインでは、マニフェストに必要なアクセス許可の
   - [Time](../../reference/outlook/Time.md) およびその子メンバーすべて
     
 
-## ReadItem アクセス許可
+## <a name="readitem-permission"></a>ReadItem アクセス許可
 
 
 **ReadItem** アクセス許可は、アクセス許可モデルの次のレベルのアクセス許可です。マニフェストの **Permissions** 要素に **ReadItem** を指定すると、このアクセス許可を要求できます。
 
 
-### できること
+### <a name="can-do"></a>できること
 
 
 - 閲覧フォームまたは [新規作成フォーム](../outlook/item-data.md)の現在のアイテムの [すべてのプロパティの読み取り](../outlook/get-and-set-item-data-in-a-compose-form.md)。たとえば、閲覧フォームの [item.to](../../reference/outlook/Office.context.mailbox.item.md) および新規作成フォームの [item.to.getAsync](../../reference/outlook/Recipients.md)。
@@ -101,7 +101,8 @@ Outlook アドインでは、マニフェストに必要なアクセス許可の
     
 - アイテムの件名または本文から、サブセットだけでなく [存在する既知のエンティティをすべて取得する](../outlook/match-strings-in-an-item-as-well-known-entities.md)。
     
-- [ItemHasKnownEntity](../outlook/manifests/activation-rules.md#itemhasknownentity-rule) ルールの [既知のエンティティ](http://msdn.microsoft.com/en-us/library/87e10fd2-eab4-c8aa-bec3-dff92d004d39%28Office.15%29.aspx)、または [ItemHasRegularExpressionMatch](../outlook/manifests/activation-rules.md#itemhasregularexpressionmatch-rule) ルールの [正規表現](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx)をすべて使用します。次の例は、スキーマ v1.1 に従っています。選択されたメッセージの件名または本文に既知のエンティティが 1 つ以上ある場合にアクティブ化されるルールを示しています。
+- 
+  [ItemHasKnownEntity](../outlook/manifests/activation-rules.md#itemhasknownentity-rule) ルールの [既知のエンティティ](http://msdn.microsoft.com/en-us/library/87e10fd2-eab4-c8aa-bec3-dff92d004d39%28Office.15%29.aspx)、または [ItemHasRegularExpressionMatch](../outlook/manifests/activation-rules.md#itemhasregularexpressionmatch-rule) ルールの [正規表現](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx)をすべて使用します。次の例は、スキーマ v1.1 に従っています。選択されたメッセージの件名または本文に既知のエンティティが 1 つ以上ある場合にアクティブ化されるルールを示しています。
     
 
 ```XML
@@ -124,9 +125,9 @@ Outlook アドインでは、マニフェストに必要なアクセス許可の
 ```
 
 
-### できないこと
+### <a name="can't-do"></a>できないこと
 
-Access  **mailbox.makeEWSRequestAsync** or the following write methods:
+**mailbox.makeEWSRequestAsync** または次の書き込みメソッドにアクセスする。
 
 
 - [item.addFileAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md)
@@ -170,13 +171,13 @@ Access  **mailbox.makeEWSRequestAsync** or the following write methods:
 - [item.to.setAsync](../../reference/outlook/Recipients.md)
     
 
-## ReadWriteItem アクセス許可
+## <a name="readwriteitem-permission"></a>ReadWriteItem アクセス許可
 
 
 マニフェストの  **Permissions** 要素に **ReadWriteItem** を指定すると、このアクセス許可を要求できます。作成フォームでアクティブになり、書き込みメソッド ( **Message.to.addAsync** または **Message.to.setAsync**) を使用するメール アドインは、このレベル以上のアクセス許可を使用する必要があります。
 
 
-### できること
+### <a name="can-do"></a>できること
 
 
 - Outlook で閲覧または新規作成されているアイテムの [すべてのアイテム レベルのプロパティを読み書き](../outlook/item-data.md)。
@@ -186,12 +187,12 @@ Access  **mailbox.makeEWSRequestAsync** or the following write methods:
 - JavaScript API for Office の中でメール アドインに適用される、 **Mailbox.makeEWSRequestAsync** を除くほかのすべてのメンバーの使用。
     
 
-### できないこと
+### <a name="can't-do"></a>できないこと
 
 Use  **Mailbox.makeEWSRequestAsync**.
 
 
-## ReadWriteMailbox アクセス許可
+## <a name="readwritemailbox-permission"></a>ReadWriteMailbox アクセス許可
 
 
 **ReadWriteMailbox** アクセス許可は、最上位レベルのアクセス許可です。マニフェストの **Permissions** 要素に **ReadWriteMailbox** を指定すると、このアクセス許可を要求できます。
@@ -205,41 +206,55 @@ Use  **Mailbox.makeEWSRequestAsync**.
     
 - そのメール ボックスからのアイテムの送信。
     
-Through  **mailbox.makeEWSRequestAsync**, you can access the following EWS operations:
+**mailbox.makeEWSRequestAsync** を使用して、次の EWS の操作にアクセスできます。
 
 
-- [CopyItem](http://msdn.microsoft.com/en-us/library/bcc68f9e-d511-4c29-bba6-ed535524624a%28Office.15%29.aspx)
+- 
+  [CopyItem](http://msdn.microsoft.com/en-us/library/bcc68f9e-d511-4c29-bba6-ed535524624a%28Office.15%29.aspx)
     
-- [CreateFolder](http://msdn.microsoft.com/en-us/library/6f6c334c-b190-4e55-8f0a-38f2a018d1b3%28Office.15%29.aspx)
+- 
+  [CreateFolder](http://msdn.microsoft.com/en-us/library/6f6c334c-b190-4e55-8f0a-38f2a018d1b3%28Office.15%29.aspx)
     
-- [CreateItem](http://msdn.microsoft.com/en-us/library/78a52120-f1d0-4ed7-8748-436e554f75b6%28Office.15%29.aspx)
+- 
+  [CreateItem](http://msdn.microsoft.com/en-us/library/78a52120-f1d0-4ed7-8748-436e554f75b6%28Office.15%29.aspx)
     
-- [FindConversation](http://msdn.microsoft.com/en-us/library/2384908a-c203-45b6-98aa-efd6a4c23aac%28Office.15%29.aspx)
+- 
+  [FindConversation](http://msdn.microsoft.com/en-us/library/2384908a-c203-45b6-98aa-efd6a4c23aac%28Office.15%29.aspx)
     
-- [FindFolder](http://msdn.microsoft.com/en-us/library/7a9855aa-06cc-45ba-ad2a-645c15b7d031%28Office.15%29.aspx)
+- 
+  [FindFolder](http://msdn.microsoft.com/en-us/library/7a9855aa-06cc-45ba-ad2a-645c15b7d031%28Office.15%29.aspx)
     
-- [FindItem](http://msdn.microsoft.com/en-us/library/ebad6aae-16e7-44de-ae63-a95b24539729%28Office.15%29.aspx)
+- 
+  [FindItem](http://msdn.microsoft.com/en-us/library/ebad6aae-16e7-44de-ae63-a95b24539729%28Office.15%29.aspx)
     
-- [GetConversationItems](http://msdn.microsoft.com/en-us/library/8ae00a99-b37b-4194-829c-fe300db6ab99%28Office.15%29.aspx)
+- 
+  [GetConversationItems](http://msdn.microsoft.com/en-us/library/8ae00a99-b37b-4194-829c-fe300db6ab99%28Office.15%29.aspx)
     
-- [GetFolder](http://msdn.microsoft.com/en-us/library/355bcf93-dc71-4493-b177-622afac5fdb9%28Office.15%29.aspx)
+- 
+  [GetFolder](http://msdn.microsoft.com/en-us/library/355bcf93-dc71-4493-b177-622afac5fdb9%28Office.15%29.aspx)
     
-- [GetItem](http://msdn.microsoft.com/en-us/library/e3590b8b-c2a7-4dad-a014-6360197b68e4%28Office.15%29.aspx)
+- 
+  [GetItem](http://msdn.microsoft.com/en-us/library/e3590b8b-c2a7-4dad-a014-6360197b68e4%28Office.15%29.aspx)
     
-- [MarkAsJunk](http://msdn.microsoft.com/en-us/library/1f71f04d-56a9-4fee-a4e7-d1034438329e%28Office.15%29.aspx)
+- 
+  [MarkAsJunk](http://msdn.microsoft.com/en-us/library/1f71f04d-56a9-4fee-a4e7-d1034438329e%28Office.15%29.aspx)
     
-- [MoveItem](http://msdn.microsoft.com/en-us/library/dcf40fa7-7796-4a5c-bf5b-7a509a18d208%28Office.15%29.aspx)
+- 
+  [MoveItem](http://msdn.microsoft.com/en-us/library/dcf40fa7-7796-4a5c-bf5b-7a509a18d208%28Office.15%29.aspx)
     
-- [SendItem](http://msdn.microsoft.com/en-us/library/337b89ef-e1b7-45ed-92f3-8abe4200e4c7%28Office.15%29.aspx)
+- 
+  [SendItem](http://msdn.microsoft.com/en-us/library/337b89ef-e1b7-45ed-92f3-8abe4200e4c7%28Office.15%29.aspx)
     
-- [UpdateFolder](http://msdn.microsoft.com/en-us/library/3494c996-b834-4813-b1ca-d99642d8b4e7%28Office.15%29.aspx)
+- 
+  [UpdateFolder](http://msdn.microsoft.com/en-us/library/3494c996-b834-4813-b1ca-d99642d8b4e7%28Office.15%29.aspx)
     
-- [UpdateItem](http://msdn.microsoft.com/en-us/library/5d027523-e0bc-4da2-b60b-0cb9fc1fdfe4%28Office.15%29.aspx)
+- 
+  [UpdateItem](http://msdn.microsoft.com/en-us/library/5d027523-e0bc-4da2-b60b-0cb9fc1fdfe4%28Office.15%29.aspx)
     
 サポートされていない操作を使用すると、エラーが返されます。
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

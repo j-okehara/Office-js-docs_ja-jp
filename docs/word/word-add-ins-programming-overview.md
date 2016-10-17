@@ -1,5 +1,5 @@
 
-# Word アドインの概要
+# <a name="word-add-ins-overview"></a>Word アドインの概要
 
 Word の機能を拡張するソリューション - たとえば、ドキュメントの自動アセンブリや、他のデータ ソースからの Word 文書のデータへのバインドやアクセスを可能にするソリューションの作成をご希望ではありませんか。Word JavaScript API と JavaScript API for Office を含む Office アドイン プラットフォームを使用して、Windows デスクトップ、Mac、またはクラウドで実行する Word クライアントを拡張できます。
 
@@ -35,7 +35,7 @@ Word JavaScript API を使用すると、アプリケーションから Word 文
 
 アドインを 1 回作成すれば、それをプラットフォームの異なるすべてのバージョンの Word で実行できます。詳細については、「[Office アドインを使用できるホストおよびプラットフォーム](https://dev.office.com/add-in-availability)」を参照してください。
 
-## Word 用 JavaScript API
+## <a name="javascript-apis-for-word"></a>Word 用 JavaScript API
 
 2 セットの JavaScript API を使用して、Word 文書のオブジェクトおよびメタデータと対話できます。1 つ目は、Office 2013 で導入された [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office?product=word) です。これは共有 API です -- 2 つ以上の Office クライアントでホストされているアドインで、多くのオブジェクトを使用することができます。この API は、広範囲にわたってコールバックを使用します。 
 
@@ -57,7 +57,7 @@ Word JavaScript API のオブジェクト モデルはより簡単に使用で�
 * カスタム XML パーツを使用する。
 * ダイアログ ボックスを開く。
 
-## 次の手順
+## <a name="next-steps"></a>次の手順
 
 最初の Word アドインを作成する準備はできましたか?「[最初の Word アドインをビルドする](word-add-ins.md)」を参照してください。また、対話式の「[作業の開始エクスペリエンス](http://dev.office.com/getting-started/addins?product=Word)」も使用できます。[アドインのマニフェスト](../overview/add-in-manifests.md)を使用して、アドインがホストされている場所や表示方法の説明と、アクセス許可およびその他の情報の定義を行います。
 
@@ -65,13 +65,13 @@ Word JavaScript API のオブジェクト モデルはより簡単に使用で�
 
 アドインを作成したら、ネットワーク共有、アプリ カタログ、または Office ストアに[発行](../publish/publish.md)できます。
 
-## 今後の Word アドイン
+## <a name="what's-coming-up-for-word-add-ins?"></a>今後の Word アドイン
 
 新しい Word アドイン用の API の設計と開発にあたり、[Open API の仕様](../../reference/openspec.md) ページでこれらに対するフィードバックの提供が可能になります。Word JavaScript API 用のパイプラインの新機能をご確認いただき、設計の仕様に関する情報をお寄せください。
 
 また、[変更ログ](http://dev.office.com/changelog) ページでも Word JavaScript API の新機能を確認できます。
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 * [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
 * [Word JavaScript API リファレンス](../../reference/word/word-add-ins-reference-overview.md)

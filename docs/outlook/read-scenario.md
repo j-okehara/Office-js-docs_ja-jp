@@ -1,5 +1,5 @@
 
-# 閲覧フォーム用の Outlook アドインを作成する
+# <a name="create-outlook-add-ins-for-read-forms"></a>閲覧フォーム用の Outlook アドインを作成する
 
 閲覧アドインは、Outlook の閲覧ウィンドウか閲覧インスペクター内でアクティブ化される Outlook アドインです。閲覧アドインは、作成アドイン (ユーザーがメッセージや予定を作成しているときにアクティブ化される Outlook アドイン) とは違って、次のユーザー シナリオで使用できます。
 
@@ -10,18 +10,18 @@
     
 - ユーザーが会議の開催者になっている会議アイテムの表示 (Outlook 2013 および Exchange 2013 の RTM リリースのみ)
     
-     >**注** Office 2013 SP1 リリースより、ユーザーが開催する会議アイテムを表示する場合、作成アドインのみをアクティブ化して使用することができます。 閲覧アドインは、このシナリオでは使用できなくなります。
+     >**注** Office 2013 SP1 リリースより、ユーザーが開催する会議アイテムを表示する場合、作成アドインのみをアクティブ化して使用することができます。閲覧アドインは、このシナリオでは使用できなくなります。
 * Outlook が閲覧フォームでアドインをアクティブ化しないメッセージの種類があります。これには、別のメッセージの添付ファイルになっているアイテムと、Outlook の [下書き] フォルダーや [迷惑メール] フォルダー内にあるアイテム、あるいは他の方法で暗号化または保護されているアイテムが含まれます。
 
 これらの各閲覧シナリオで、アクティブ化の条件が満たされていると Outlook でアドインがアクティブ化されるので、ユーザーはアクティブ化されたアドインを閲覧ウィンドウか閲覧インスペクター内のアドイン バーで選択して開くことができます。図 1 は、ユーザーが住所を含むメッセージを閲覧するとアクティブ化されて開かれる  **[Bing マップ]** アドインを示しています。
 
 
-**図 1. 選択されている住所を含んだ Outlook メッセージに対してアクティブ化されている [Bing マップ] アドインが表示されたアドイン ウィンドウ**
+**図 1.選択されている住所を含んだ Outlook メッセージに対してアクティブ化されている [Bing 地図] アドインが表示されたアドイン ウィンドウ**
 
-![Outlook の Bing Maps メール アプリ](../../images/off15appsdk_BingMapMailAppScreenshot.jpg)
+![Outlook の Bing 地図メール アプリ](../../images/off15appsdk_BingMapMailAppScreenshot.jpg)
 
 
-## 閲覧モードで使用できるアドインの種類
+## <a name="types-of-add-ins-available-in-read-mode"></a>閲覧モードで使用できるアドインの種類
 
 
 閲覧アドインでは、以下のいずれの種類の組み合わせも可能です。
@@ -34,7 +34,7 @@
 - [カスタム ウィンドウの Outlook アドイン](../outlook/custom-pane-outlook-add-ins.md)
     
 
-## 閲覧アドインで使用できる API 機能
+## <a name="api-features-available-to-read-add-ins"></a>閲覧アドインで使用できる API 機能
 
 
 JavaScript API for Office が閲覧フォームで Outlook アドインに提供する機能の一覧については、「 [バージョンごとのメール アプリ機能](http://msdn.microsoft.com/library/f34e2f44-8c9d-4e90-b1d7-3f29506adb92%28Office.15%29.aspx)」の表 1 と表 2 を参照してください。 
@@ -42,7 +42,7 @@ JavaScript API for Office が閲覧フォームで Outlook アドインに提供
 関連項目:
 
 
-- 閲覧フォームでアドインをアクティブ化することについては、「 [マニフェストでのアクティブ化ルールの指定](../outlook/manifests/activation-rules.md#specify-activation-rules-in-a-manifest)」の表 1 を参照してください。
+- 閲覧フォームでアドインをアクティブ化することについては、「[マニフェストでのアクティブ化ルールの指定](../outlook/manifests/activation-rules.md#specify-activation-rules-in-a-manifest)」の表 1 を参照してください。
     
 - [正規表現アクティブ化ルールを使用して Outlook アドインを表示する](../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)
     
@@ -53,7 +53,7 @@ JavaScript API for Office が閲覧フォームで Outlook アドインに提供
 - [サーバーから Outlook アイテムの添付ファイルを取得する](../outlook/get-attachments-of-an-outlook-item.md)
     
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

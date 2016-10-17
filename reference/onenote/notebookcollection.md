@@ -1,52 +1,52 @@
-﻿# NotebookCollection オブジェクト (JavaScript API for OneNote)
+# <a name="notebookcollection-object-(javascript-api-for-onenote)"></a>NotebookCollection オブジェクト (JavaScript API for OneNote)
 
 _適用対象:OneNote Online_  
 
 
 ノートブックのコレクションを表します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明|フィードバック|
 |:---------------|:--------|:----------|:-------|
-|count|int|コレクション内のノートブックの数を取得します。読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-count)|
-|Items|[Notebook[]](notebook.md)|ノートブック オブジェクトのコレクションです。読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-items)|
+|count|int|コレクション内のノートブックの数を取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-count)|
+|items|[Notebook[]](notebook.md)|Notebook オブジェクトのコレクションです。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-items)|
 
-_プロパティのアクセスの[例](#例)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 なし
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明| フィードバック|
 |:---------------|:--------|:----------|:-------|
-|[getByName(name: string)](#getbynamename-string)|[NotebookCollection](notebookcollection.md)|アプリケーション インスタンスで開いている、指定された名前のノートブックのコレクションを取得します。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-getByName)|
-|[getItem(index: number or string)](#getitemindex-number-or-string)|[ノートブック](notebook.md)|ID やコレクション内のインデックスで、ノートブックを取得します。読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-getItem)|
-|[getItemAt(index: number)](#getitematindex-number)|[ノートブック](notebook.md)|コレクション内での位置を基にノートブックを取得します。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-getItemAt)|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-load)|
+|[getByName(name: string)](#getbynamename-string)|[NotebookCollection](notebookcollection.md)|アプリケーション インスタンスで開いている、指定された名前のノートブックのコレクションを取得します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-getByName)|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[Notebook](notebook.md)|ID やコレクション内のインデックスで、ノートブックを取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-getItem)|
+|[getItemAt(index: number)](#getitematindex-number)|[Notebook](notebook.md)|コレクション内での位置を基にノートブックを取得します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-getItemAt)|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-load)|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### getByName(name: string)
+### <a name="getbyname(name:-string)"></a>getByName(name: string)
 アプリケーション インスタンスで開いている、指定された名前のノートブックのコレクションを取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 notebookCollectionObject.getByName(name);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |name|string|ノートブックの名前。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 [NotebookCollection](notebookcollection.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 OneNote.run(function (context) {
 
@@ -77,56 +77,56 @@ OneNote.run(function (context) {
 });
 ```
 
-### getItem(index: number または string)
+### <a name="getitem(index:-number-or-string)"></a>getItem(index: number または string)
 ID やコレクション内のインデックスで、ノートブックを取得します。読み取り専用です。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 notebookCollectionObject.getItem(index);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |index|number または string|ノートブックの ID、またはコレクション内のノートブックのインデックスの場所です。|
 
-#### 戻り値
-[ノートブック](notebook.md)
+#### <a name="returns"></a>戻り値
+[Notebook](notebook.md)
 
-### getItemAt(index: number)
+### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
 コレクション内での位置を基にノートブックを取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 notebookCollectionObject.getItemAt(index);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |index|number|取得するオブジェクトのインデックス値。0 を起点とする番号になります。|
 
-#### 戻り値
-[ノートブック](notebook.md)
+#### <a name="returns"></a>戻り値
+[Notebook](notebook.md)
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
-### プロパティのアクセスの例
+### <a name="property-access-examples"></a>プロパティのアクセスの例
 
-**Items**
+**items**
 ```js
 OneNote.run(function (context) {
 

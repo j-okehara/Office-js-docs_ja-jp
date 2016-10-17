@@ -1,16 +1,16 @@
 
-# Labs.Core.IValue
+# <a name="labs.core.ivalue"></a>Labs.Core.IValue
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Base class for values stored with a lab.
+ラボに格納されている値の基底クラス。
 
 ```
 interface IValue
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

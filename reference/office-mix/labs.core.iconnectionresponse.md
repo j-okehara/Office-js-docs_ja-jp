@@ -1,16 +1,16 @@
 
-# Labs.Core.IConnectionResponse
+# <a name="labs.core.iconnectionresponse"></a>Labs.Core.IConnectionResponse
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Response information returning from a connection call.
+接続の呼び出しから返される応答情報。
 
 ```
 interface IConnectionResponse
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||

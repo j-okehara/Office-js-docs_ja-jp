@@ -1,5 +1,5 @@
-﻿
-# Labs.Components.InputComponentResult
+
+# <a name="labs.components.inputcomponentresult"></a>Labs.Components.InputComponentResult
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,29 +10,29 @@ class InputComponentResult
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |プロパティ|説明|
 |:-----|:-----|
-| `public var score: any`|送信と関連付けられたスコアです。|
-| `public var complete: boolean`|送信された結果によって試行が完了したかどうかを示します。試行が完了している場合は、**True** です。|
+| `public var score: any`|The score associated with the submission.|
+| `public var complete: boolean`|Indicates whether the result submitted resulted in the completion of the attempt.  **True** if the attempt is completed.|
 
-## メソッド
-
-
+## <a name="methods"></a>メソッド
 
 
-### コンストラクター
+
+
+### <a name="constructor"></a>コンストラクター
 
  `function constructor(score: any, complete: boolean)`
 
-Creates a new instance of the  **InputComponentResult** class.
+**InputComponentResult** クラスの新しいインスタンスを作成します。
 
  **パラメーター**
 
 
 |パラメーター|説明|
 |:-----|:-----|
-| _score_|The score associated with the result.|
-| _complete_|Boolean  **true** if the result completed the attempt.|
+| _score_|結果に関連付けられているスコア。|
+| _Complete_|試行が完了している結果の場合、ブール値は **true** です。|

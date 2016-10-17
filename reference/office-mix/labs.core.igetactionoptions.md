@@ -1,16 +1,16 @@
-﻿
-# Labs.Core.IGetActionOptions
+
+# <a name="labs.core.igetactionoptions"></a>Labs.Core.IGetActionOptions
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Options that are passed as part of a  **get** action.
+**get** アクションの一貫として渡されるオプション。
 
 ```
 interface IGetActionOptions
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 なし。
 

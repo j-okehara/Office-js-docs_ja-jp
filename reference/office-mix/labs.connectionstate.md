@@ -1,5 +1,5 @@
-﻿
-# Labs.ConnectionState
+
+# <a name="labs.connectionstate"></a>Labs.ConnectionState
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,7 +10,7 @@ enum ConnectionState
 ```
 
 
-## Enumeration values
+## <a name="enumeration-values"></a>Enumeration values
 
 
 |||

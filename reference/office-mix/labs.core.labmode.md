@@ -1,19 +1,19 @@
-﻿
-# Labs.Core.LabMode
+
+# <a name="labs.core.labmode"></a>Labs.Core.LabMode
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-The current mode of the lab, either edit mode or view mode.
+ラボの現在のモード (編集モードまたは表示モード)。
 
 ```
 enum LabMode
 ```
 
 
-## フィールド
+## <a name="fields"></a>フィールド
 
 
 |||
 |:-----|:-----|
-|**Edit**|Edit mode.|
-|**表示**|View mode.|
+|**Edit**|編集モード。|
+|**View**|表示モード。|

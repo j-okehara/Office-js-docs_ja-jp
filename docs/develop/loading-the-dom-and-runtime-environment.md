@@ -1,11 +1,11 @@
 
-# DOM とランタイム環境を読み込む
+# <a name="loading-the-dom-and-runtime-environment"></a>DOM とランタイム環境を読み込む
 
 
 
 アドインでは、DOM と Office アドイン両方のランタイム環境が、独自のカスタム ロジックを実行する前に読み込まれていることを確認する必要があります。 
 
-## コンテンツまたは作業ウィンドウ アドインの起動
+## <a name="startup-of-a-content-or-task-pane-add-in"></a>コンテンツまたは作業ウィンドウ アドインの起動
 
 次の図は、Excel、PowerPoint、Project、Word、または Access でコンテンツ アドインまたは作業ウィンドウ アドインの起動に関連するイベントのフローを示しています。
 
@@ -30,7 +30,7 @@
 6. DOM と HTML 本文の読み込み、およびアドインの初期化が完了すると、アドインのメイン関数は処理を続行できます。
     
 
-## Outlook アドインの起動
+## <a name="startup-of-an-outlook-add-in"></a>Outlook アドインの起動
 
 
 
@@ -57,7 +57,7 @@ Outlook アドインが起動すると、次のイベントが発生します。
 7. DOM および HTML 本文の読み込みが終わると、アドインは初期化を完了し、アドインのメイン関数は処理を続行できます。
     
 
-## 読み込み状態のチェック
+## <a name="checking-the-load-status"></a>読み込み状態のチェック
 
 
 DOM と ランタイム環境の両方の読み込みが完了したことを確認する方法の 1 つに、jQuery [.ready()](http://api.jquery.com/ready/)関数の  `$(document).ready()` を使用する方法があります。たとえば、次の **initialize** イベント ハンドラー関数は、アプリを初期化する固有のコードを実行する前に、DOM が読み込まれていることを確認します。その後、 **initialize** イベント ハンドラーは [mailbox.item](../../reference/outlook/Office.context.mailbox.item.md) プロパティを使用して、Outlook で現在選択されているアイテムを取得し、アプリのメイン関数 `initDialer` を呼び出します。
@@ -94,7 +94,7 @@ Office.initialize = function () {
 アドインに複数のページが含まれる場合、新しいページが読み込まれるときに、そのページに  **Office.initialize** イベント ハンドラーが含まれるか、そのページからこのイベント ハンドラーを呼び出されなければなりません。
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

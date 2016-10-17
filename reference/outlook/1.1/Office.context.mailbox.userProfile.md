@@ -1,82 +1,82 @@
 
 
-# userProfile
+# <a name="userprofile"></a>userProfile
 
 ## [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md). userProfile
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 作成または読み取り|
 
-### メンバー
+### <a name="members"></a>メンバー
 
-####  displayName :String
+####  <a name="displayname-:string"></a>displayName :String
 
 ユーザーの表示名を取得します。
 
-##### 型:
+##### <a name="type:"></a>型:
 
 *   String
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 作成または読み取り|
 
-##### 例
+##### <a name="example"></a>例
 
 ```
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
-####  emailAddress :String
+####  <a name="emailaddress-:string"></a>emailAddress :String
 
 ユーザーの SMTP 電子メール アドレスを取得します。
 
-##### 型:
+##### <a name="type:"></a>型:
 
 *   String
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 作成または読み取り|
 
-##### 例
+##### <a name="example"></a>例
 
 ```
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
 
-####  timeZone :String
+####  <a name="timezone-:string"></a>timeZone :String
 
 ユーザーの既定のタイム ゾーンを取得します。
 
-##### 型:
+##### <a name="type:"></a>型:
 
 *   String
 
-##### 要件
+##### <a name="requirements"></a>要件
 
 |要件| 値|
 |---|---|
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
-|[最小のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 作成または読み取り|
 
-##### 例
+##### <a name="example"></a>例
 
 ```
 // Example: Pacific Standard Time

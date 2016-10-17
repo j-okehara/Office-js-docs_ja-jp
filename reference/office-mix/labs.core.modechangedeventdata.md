@@ -1,18 +1,18 @@
 
-# Labs.Core.ModeChangedEventData
+# <a name="labs.core.modechangedeventdata"></a>Labs.Core.ModeChangedEventData
 
- _**適用対象:** Office ???? | Office ???? | Office Mix | PowerPoint_
+ _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-Data associated with a mode changed event.
+モードの変更イベントに関連付けられたデータ。
 
 ```
 interface ModeChangedEventData
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |||
 |:-----|:-----|
-|**mode: string**|The mode being set.|
+|**mode: string**|設定されるモード。|

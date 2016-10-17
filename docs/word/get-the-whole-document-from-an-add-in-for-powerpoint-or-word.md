@@ -1,9 +1,9 @@
 
-# PowerPoint または Word 用アドインからドキュメント全体を取得する
+# <a name="get-the-whole-document-from-an-add-in-for-powerpoint-or-word"></a>PowerPoint または Word 用アドインからドキュメント全体を取得する
 
 Word 2013 または PowerPoint 2013 のドキュメントをワンクリックでリモートの場所に送信または発行できるようにする Office アドインを作成できます。この記事では、プレゼンテーション全体をデータ オブジェクトとして取得し、そのデータを HTTP 要求を通じて Web サーバーに送信する、PowerPoint 2013 用の簡単な作業ウィンドウ アドインの作成方法を具体例によって示します。
 
-## PowerPoint または Word 用アドインを作成するための前提条件
+## <a name="prerequisites-for-creating-an-add-in-for-powerpoint-or-word"></a>PowerPoint または Word 用アドインを作成するための前提条件
 
 
 この記事では、PowerPoint または Word 用の作業ウィンドウ アドインの作成にテキスト エディターを使用することを前提にしています。この作業ウィンドウ アドインを作成するには、以下のファイルを作成する必要があります。
@@ -11,7 +11,7 @@ Word 2013 または PowerPoint 2013 のドキュメントをワンクリック�
 
 - 共有ネットワーク フォルダーまたは Web サーバー上に次のファイルが必要です。
     
-      - An HTML file (GetDoc_App.html) that contains the user interface plus links to the JavaScript files (including office.js and host-specific .js files) and Cascading Style Sheet (CSS) files.
+      - HTML ファイル (GetDoc_App.html)。このファイルには、ユーザー インターフェイスに加えて、JavaScript ファイル (office.js やホスト固有の .js ファイルなど) およびカスケード スタイル シート (CSS) ファイルへのリンクが格納されます。
     
   - JavaScript ファイル (GetDoc_App.js)。このファイルにはアドインのプログラミング ロジックが格納されます。
     
@@ -22,12 +22,12 @@ Word 2013 または PowerPoint 2013 のドキュメントをワンクリック�
 PowerPoint または Word 用アドインの作成には、Visual Studio 2015 または Napa Office 365 開発ツール を使用することもできます。Office アドインの作成方法の詳細については、表 1 を参照してください。
 
 
-### 作業ウィンドウ アドインを作成するために知っておくべき主要な概念
+### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>作業ウィンドウ アドインを作成するために知っておくべき主要な概念
 
 この PowerPoint または Word 用アドインの作成を開始する前に、Office アドインの作成と HTTP 要求の操作についてよく理解しておくことが必要です。この記事では、Web サーバー上の HTTP 要求から Base64 エンコード テキストをデコードする方法については説明しません。 
 
 
-## アドインのマニフェストを作成する
+## <a name="create-the-manifest-for-the-add-in"></a>アドインのマニフェストを作成する
 
 
 PowerPoint 用アドインの XML マニフェスト ファイルは、アドインをホストできるアプリケーション、HTML ファイルの場所、アドインのタイトルと説明、およびその他の多くの特性に関する重要な情報を提供します。
@@ -62,7 +62,7 @@ PowerPoint 用アドインの XML マニフェスト ファイルは、アドイ
 - このファイルを、UTF-8 エンコードを使用して、GetDoc_App.xml としてネットワークの場所またはアドイン カタログに保存します。
     
 
-## アドインのユーザー インターフェイスを作成する
+## <a name="create-the-user-interface-for-the-add-in"></a>アドインのユーザー インターフェイスを作成する
 
 
 アドインのユーザー インターフェイスとしては、GetDoc_App.html ファイルに直接書き込んだ HTML を使用できます。このアドインのプログラミング ロジックと機能は、JavaScript ファイル (例: GetDoc_App.js) に入れる必要があります。
@@ -132,7 +132,7 @@ input [type="submit"], input[type="button"]
 - このファイルを、UTF-8 エンコードを使用して、Program.css としてネットワークの場所または Web サーバー (GetDoc_App.html を保存した場所) に保存します。
     
 
-## ドキュメントを取得するための JavaScript を追加する
+## <a name="add-the-javascript-to-get-the-document"></a>ドキュメントを取得するための JavaScript を追加する
 
 
 アドインのコードでは、[Office.initialize](../../reference/shared/office.initialize.md) イベントのハンドラーが、フォーム上の **[送信]** ボタンのクリック イベントのハンドラーを追加し、アドインの準備ができたことをユーザーに知らせます。
@@ -172,7 +172,7 @@ _fileType_ パラメーターは、[FileType](../../reference/shared/filetype-en
 
 **getFileAsync** メソッドは、このファイルへの参照を [File](../../reference/shared/file.md) オブジェクトとして返します。**File** オブジェクトは、[size](../../reference/shared/file.size.md) プロパティ、[sliceCount](../../reference/shared/file.slicecount.md) プロパティ、[getSliceAsync](../../reference/shared/file.getsliceasync.md) メソッド、[closeAsync](../../reference/shared/file.closeasync.md) メソッドという 4 つのメンバーを公開します。**size** プロパティはファイルのバイト数を返します。**sliceCount** は、ファイル内の [Slice](../../reference/shared/document.md) オブジェクト (この記事で後述) の数を返します。
 
-次のコードは、**document.getFileAsync()** メソッドを使用して、PowerPoint または Word ドキュメントを **File** オブジェクトとして取得します。 次に、結果の **File** オブジェクト、ゼロになったカウンター、および [sliceCount](../../reference/shared/file.slicecount.md) を匿名オブジェクトにパッケージ化します。 次に、このオブジェクトはローカルで定義された `getSlice` 関数に渡されます。 
+次のコードは、**document.getFileAsync()** メソッドを使用して、PowerPoint または Word ドキュメントを **File** オブジェクトとして取得します。次に、結果の **File** オブジェクト、ゼロになったカウンター、および [sliceCount](../../reference/shared/file.slicecount.md) を匿名オブジェクトにパッケージ化します。次に、このオブジェクトはローカルで定義された `getSlice` 関数に渡されます。 
 
 ```js
 // Get all the content from a PowerPoint or Word document in 100-KB chunks of text.

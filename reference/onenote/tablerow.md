@@ -1,70 +1,70 @@
-﻿# TableRow オブジェクト (JavaScript API for OneNote)
+# <a name="tablerow-object-(javascript-api-for-onenote)"></a>TableRow オブジェクト (JavaScript API for OneNote)
 
 _適用対象:OneNote Online_  
 
 
 表の行を表します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明|フィードバック|
 |:---------------|:--------|:----------|:-------|
-|cellCount|int|行のセルの数を取得します。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-cellCount)|
-|id|string|行の ID を取得します。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-id)|
-|rowIndex|int|親テーブル内の行のインデックスを取得します。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-rowIndex)|
+|cellCount|int|行のセルの数を取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-cellCount)|
+|id|string|行の ID を取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-id)|
+|rowIndex|int|親テーブル内の行のインデックスを取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-rowIndex)|
 
-_プロパティのアクセスの[例](#例)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 | リレーションシップ | 型   |説明| フィードバック|
 |:---------------|:--------|:----------|:-------|
-|cells|[TableCellCollection](tablecellcollection.md)|行のセルを取得します。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-cells)|
-|parentTable|[Table](table.md)|親テーブルを取得します。 読み取り専用です。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-parentTable)|
+|cells|[TableCellCollection](tablecellcollection.md)|行のセルを取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-cells)|
+|parentTable|[テーブル](table.md)|親テーブルを取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-parentTable)|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明| フィードバック|
 |:---------------|:--------|:----------|:-------|
-|[clear()](#clear)|void|行の内容をクリアします。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-clear)|
-|[insertRowAsSibling(insertLocation: string, values: string[])](#insertrowassiblinginsertlocation-string-values-string)|[TableRow](tablerow.md)|現在の行の前後に行を挿入します。|[検索](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-insertRowAsSibling)|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-load)|
-|[setShadingColor(colorCode: string)](#setshadingcolorcolorcode-string)|void|行のすべてのセルの網かけの色を設定します。|[実行](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-setShadingColor)|
+|[clear()](#clear)|void|行の内容をクリアします。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-clear)|
+|[insertRowAsSibling(insertLocation: string, values: string[])](#insertrowassiblinginsertlocation-string-values-string)|[TableRow](tablerow.md)|現在の行の前後に行を挿入します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-insertRowAsSibling)|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-load)|
+|[setShadingColor(colorCode: string)](#setshadingcolorcolorcode-string)|void|行のすべてのセルの網かけの色を設定します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-setShadingColor)|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
 
-### clear()
+### <a name="clear()"></a>clear()
 行の内容をクリアします。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 tableRowObject.clear();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-### insertRowAsSibling(insertLocation: string, values: string[])
+### <a name="insertrowassibling(insertlocation:-string,-values:-string[])"></a>insertRowAsSibling(insertLocation: string, values: string[])
 現在の行の前後に行を挿入します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 tableRowObject.insertRowAsSibling(insertLocation, values);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
-|insertLocation|string|現在の行からの相対位置で、新しい行を挿入する場所。  使用可能な値は次のとおりです。Before、After|
-|values|string[]|省略可能。 配列として指定された、新しい行に挿入する文字列。 現在の行内のセルよりも多くのセル数にすることはできません。 省略可能。|
+|insertLocation|string|現在の行からの相対位置で、新しい行を挿入する場所。使用可能な値は次のとおりです。Before、After|
+|values|string[]|省略可能。配列として指定された、新しい行に挿入する文字列。現在の行内のセルよりも多くのセル数にすることはできません。省略可能。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 [TableRow](tablerow.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -104,38 +104,38 @@ OneNote.run(function(ctx) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-### setShadingColor(colorCode: string)
+### <a name="setshadingcolor(colorcode:-string)"></a>setShadingColor(colorCode: string)
 行のすべてのセルの網かけの色を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 tableRowObject.setShadingColor(colorCode);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |colorCode|string|セルに設定する色コード /param|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
-### プロパティのアクセスの例
+### <a name="property-access-examples"></a>プロパティのアクセスの例
 **id、cellCount、rowIndex**
 ```js
 OneNote.run(function(ctx) {

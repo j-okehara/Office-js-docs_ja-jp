@@ -1,4 +1,4 @@
-# オブジェクト読み込みオプション (JavaScript API for Excel)
+# <a name="object-load-options-(javascript-api-for-excel)"></a>オブジェクト読み込みオプション (JavaScript API for Excel)
 
 Excel オブジェクトとそれに対応するアドインの JavaScript のプロキシ オブジェクトの間で状態を同期する sync() メソッドの実行時に読み込まれるプロパティと関係のセットを指定する load メソッドに渡すことができるオブジェクトを表します。これは、オブジェクトに読み込まれるプロパティのセットを指定する select パラメータや expand パラメータなどのオプションを取りことができ、コレクションでの改ページを可能にします。
 
@@ -11,7 +11,7 @@ object.load  ('<var1>,<relation1/var2>');
 object.load (["var1", "relation1/var2"]);
 ```
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 | プロパティ     | 型   |説明|
 |:---------------|:--------|:----------|
 |select|object|executeAsync の呼び出しの際に読み込まれるパラメーター名またはリレーションシップ名のコンマ区切りのリストまたは配列を提供します。例: "property1, relationship1", [ "property1", "relationship1"]。省略可能です。|
@@ -19,7 +19,7 @@ object.load (["var1", "relation1/var2"]);
 |top|int| 結果に組み込まれるクエリ コレクション内の項目の数を指定します。省略可能。|
 |skip|int|スキップされて結果に含まれないコレクション内の項目の数を指定します。`top` が指定されている場合は、指定された数の項目がスキップされた後で結果の選択が開始されます。省略可能。|
 
-#### 例
+#### <a name="examples"></a>例
 
 以下の例は、表の上から 100 行を選択します。
 

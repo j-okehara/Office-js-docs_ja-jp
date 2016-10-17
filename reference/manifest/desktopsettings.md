@@ -1,11 +1,11 @@
 
-# DesktopSettings 要素
+# <a name="desktopsettings-element"></a>DesktopSettings 要素
 このメール アドインがデスクトップ コンピューターで使用されるときに適用するソースの場所と制御の設定を指定します。
 
  **アドインの種類:**メール
 
 
-## 構文:
+## <a name="syntax:"></a>構文:
 
 
 ```XML
@@ -15,7 +15,7 @@
 ```
 
 
-## 次に含まれる:
+## <a name="contained-in:"></a>次に含まれる:
 
 [Form](../../reference/manifest/form.md)
 

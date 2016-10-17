@@ -1,6 +1,6 @@
-# FunctionFile 要素
+# <a name="functionfile-element"></a>FunctionFile 要素
 
-UI を表示する代わりに JavaScript 関数を実行するアドイン コマンドによってアドインが公開する操作のソース コード ファイルを指定します。 **FunctionFile** 要素は、[FormFactor](./formfactor) の子要素です。 **FunctionFile** 要素の **resid** 属性は、HTML ファイルの URL を含む **Resources** 要素内の **Url** 要素の **id** 属性値に設定されます。この HTML ファイルには、[Control](control.md) 要素の定義に従い、UI なしのアドイン コマンド ボタンに使用されるすべての JavaScript 関数が含まれるか、読み込まれます。
+UI を表示する代わりに JavaScript 関数を実行するアドイン コマンドによってアドインが公開する操作のソース コード ファイルを指定します。**FunctionFile** 要素は、[FormFactor](./formfactor) の子要素です。**FunctionFile** 要素の **resid** 属性は、HTML ファイルの URL を含む **Resources** 要素内の **Url** 要素の **id** 属性値に設定されます。この HTML ファイルには、[Control 要素](control.md)の定義に従い、UI なしのアドイン コマンド ボタンに使用されるすべての JavaScript 関数が含まれるか、読み込まれます。
 
 **FunctionFile** 要素の例を次に示します。
 
@@ -68,4 +68,4 @@ function trackMessage (event) {
 ```
 
 
- >**重要**  **event.completed** に対する呼び出しにより、イベントが正常に処理されたことが通知されます。 同一のアドイン コマンドを複数回クリックするなど、関数を複数回呼び出すと、すべてのイベントが自動的にキューに入れられます。 最初のイベントが自動的に実行され、その他のイベントはキューに残ります。 関数により **event.completed** が呼び出されると、キューに入れられている、その関数に対する次の呼び出しが実行されます。 **event.completed** を実装する必要があります。実装しない場合、関数は実行されません。
+ >**重要**  **event.completed** に対する呼び出しにより、イベントが正常に処理されたことが通知されます。同一のアドイン コマンドを複数回クリックするなど、関数を複数回呼び出すと、すべてのイベントが自動的にキューに入れられます。最初のイベントが自動的に実行され、その他のイベントはキューに残ります。関数により **event.completed** が呼び出されると、キューに入れられている、その関数に対する次の呼び出しが実行されます。**event.completed** を実装する必要があります。実装しない場合、関数は実行されません。

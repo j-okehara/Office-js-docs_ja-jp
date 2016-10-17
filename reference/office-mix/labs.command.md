@@ -1,5 +1,5 @@
-﻿
-# Labs.Command
+
+# <a name="labs.command"></a>Labs.Command
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
@@ -10,20 +10,20 @@ class Command
 ```
 
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-| `public var type: string`|The type of the command.|
+| `public var type: string`|コマンドの型。|
 | `public var commandData: any`|Optional data associated with the command.|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 
 
 
-### コンストラクター
+### <a name="constructor"></a>コンストラクター
 
  `function constructor(type: string, commandData?: any)`
 
@@ -34,5 +34,5 @@ class Command
 
 |||
 |:-----|:-----|
-| `type`|The type of the command.|
+| `type`|コマンドの型。|
 | `commandData`|Optional data associated with the command.|

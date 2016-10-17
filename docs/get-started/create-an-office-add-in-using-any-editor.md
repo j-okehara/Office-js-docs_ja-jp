@@ -1,12 +1,12 @@
 
-# 任意のエディターを使用して Office アドインを作成する
+# <a name="create-an-office-add-in-using-any-editor"></a>任意のエディターを使用して Office アドインを作成する
 
 Office アドインは、Office アプリケーションでホストされる Web アプリです。この記事では、プロジェクトのスキャフォールディングとビルド管理を提供する Yeoman ジェネレーターの使用方法について説明します。アドインがある場所と表示方法は `manifest.xml` ファイルで Office アプリケーションに通知します。Office アプリケーションは、Office 内でのホストを管理します。
 
  >**メモ**  指示には、Windows コマンド プロンプトを使用しますが、その他のシェル環境でも同様に適用可能です。 
 
 
-## Yeoman ジェネレーターのための前提条件
+## <a name="prerequisites-for-yeoman-generator"></a>Yeoman ジェネレーターのための前提条件
 
 Yeoman Office ジェネレーターを実行するには、以下が必要です。
 
@@ -23,7 +23,7 @@ Yeoman Office ジェネレーターを実行するには、以下が必要です
     
 - [TSD](http://definitelytyped.org/tsd/)
     
-Git と npm のみ、別途インストールが必要です。その他は npm を使用してインストールできます。
+Git と npm だけ別のインストールが必要です。他のものは npm を使用してインストールできます。
 
 Git をインストールする場合は、次のオプションを選択する以外、既定の設定を使用します。 
 
@@ -42,7 +42,7 @@ npm install -g bower yo generator-office gulp tsd
 ```
 
 
-## アドインの既定のファイルを作成する
+## <a name="create-the-default-files-for-your-add-in"></a>アドインの既定のファイルを作成する
 
 Office アドインを開発する前に、最初にプロジェクトのフォルダーを作成して、そこからジェネレーターを実行します。Yeoman ジェネレーターは、プロジェクトをスキャフォールディングするディレクトリで実行します。 
 
@@ -86,12 +86,12 @@ yo office
 これは、アドインの構造および基本的なファイルを作成します。
 
 
-## Office アドインのホスト
+## <a name="hosting-your-office-add-in"></a>Office アドインのホスト
 
 Office アドインは、HTTPS を経由する必要があります。Office アプリケーションは、HTTP である場合に Web アプリをアドインとして読み込みません。アドインをローカルで開発、デバッグ、ホストするには、HTTPS を使用して、Web アプリをローカルに作成して動かす方法が必要です。gulp (次のセクションで説明) により自己ホスト型の HTTPS サイトを作成することも、Azure を使用することもできます。 
 
 
-### 自己ホスト型の HTTPS サイトの使用
+### <a name="using-a-self-hosted-https-site"></a>自己ホスト型の HTTPS サイトの使用
 
 gulp-webserver プラグインは、自己ホスト型の HTTPS サイトを作成します。Office ジェネレーターは、生成されるプロジェクトの serve-static という名前のタスクとして gulpfile.js にこのサイトを追加します。次のステートメントを使用して、自己ホスト型 Web サーバーを開始します。 
 
@@ -103,19 +103,19 @@ gulp serve-static
 これは、https://localhost:8443 にある HTTPS サーバーを開始します。
 
 
-## Office アドインの開発
+## <a name="develop-your-office-add-in"></a>Office アドインの開発
 
 任意のテキスト エディターを使用して、カスタム Office アドインのファイルを開発できます。
 
 
-### JavaScript のプロジェクトのサポート
+### <a name="javascript-project-support"></a>JavaScript のプロジェクトのサポート
 
-プロジェクトを作成するとき、Office ジェネレーターは、jsconfig.json ファイルを作成します。 このファイルを使用すると、プロジェクト内のすべての JavaScript ファイルを推論し、反復的な /// <reference path="../App.js" /> コード ブロックを含める必要がなくなります。
+プロジェクトを作成するとき、Office ジェネレーターは、jsconfig.json ファイルを作成します。このファイルを使用すると、プロジェクト内のすべての JavaScript ファイルを推論し、反復的な /// <reference path="../App.js" /> コード ブロックを含める必要がなくなります。
 
 [JavaScript 言語](https://code.visualstudio.com/docs/languages/javascript#_javascript-projects-jsconfigjson) ページの jsconfig.json ファイルについて説明します。
 
 
-### JavaScript の intellisense サポート
+### <a name="javascript-intellisense-support"></a>JavaScript の intellisense サポート
 
 また、プレーンな JavaScript を作成している場合でも、TypeScript 型定義ファイル ( `*.d.ts`) を使用して、追加の IntelliSense のサポートを提供することができます。Office ジェネレーターは、選択したプロジェクト型によって使用されるすべてのサード パーティのライブラリへの参照を持つ作成済みファイルに、 `tsd.json` ファイルを追加します。
 
@@ -129,13 +129,13 @@ tsd install
 ```
 
 
-### Hello World Office アドイン の作成
+### <a name="create-a-hello-world-office-add-in"></a>Hello World Office アドイン の作成
 
 
 この例では、Hello World アドインを作成します。このアドインの UI は、必要に応じて JavaScript プログラミング ロジックを記述できる HTML ファイルによって提供されます。 
 
 
-### Hello World アドインのファイルを作成するには
+### <a name="to-create-the-files-for-a-hello-world-add-in"></a>Hello World アドインのファイルを作成するには
 
 
 - プロジェクト フォルダーで、_[project folder]/app/home_ (この例では myHelloWorldaddin/app/home) に移動し、home.html を開いて、既存のコードを次のコードで置き換えます。次のコードでは、アドインの UI を表示するための、最小限の HTML タグのセットを提供しています。
@@ -179,7 +179,7 @@ tsd install
     
 - 親プロジェクト フォルダーに戻り、次の XML コードが manifest-myHelloWorldaddin.xml という名前の XML ファイルに含まれていることを確認します。
     
-     >**重要**  `<id>` タグの値は、Yeoman ジェネレーターがプロジェクト生成時に作成する GUID です。 アドイン用に Yeoman ジェネレーターが作成した GUID は変更しないでください。ホストが Azure の場合、`SourceLocation` の値は _https:// [Web アプリの名前].azurewebsites.net/[アドインのパス]_ のような URL です。 この例のように、自己ホスト型のオプションを使用する場合は、_https://localhost:8443/[アドインのパス]_ になります。
+     >**重要**  `<id>` タグの値は、Yeoman ジェネレーターがプロジェクト生成時に作成する GUID です。アドイン用に Yeoman ジェネレーターが作成した GUID は変更しないでください。ホストが Azure の場合、`SourceLocation` の値は _https:// [Web アプリの名前].azurewebsites.net/[アドインのパス]_ のような URL です。この例のように、自己ホスト型のオプションを使用する場合は、_https://localhost:8443/[アドインのパス]_ になります。
 
 ```XML
      <?xml version="1.0" encoding="utf-8"?> 
@@ -208,7 +208,7 @@ tsd install
 ```
 
 
-### アドインをローカルで実行する
+### <a name="running-the-add-in-locally"></a>アドインをローカルで実行する
 
 
 アドインをローカルにテストするには、ブラウザーを開き、home.html ファイルの URL を入力します。これは、Web サーバーまたは自己ホスト型の HTTPS サイトのいずれかです。ローカルにホストした場合は、URL をブラウザーに入力します。この例では、 `https://localhost:8443/app/home/home.html` です。 
@@ -219,19 +219,19 @@ tsd install
  >**メモ**  生成されたアドインには、自己署名証明書とキーが付属します。これらを証明書の信頼できる証明機関リストに追加して、ブラウザーが証明書に関する警告を発行しないようにします。独自の自己署名証明書を使用する場合は、[gulp-webserver](https://www.npmjs.com/package/gulp-webserver)のドキュメントを参照してください。OS X Yosemite で証明書を信頼する方法の手順は、 [この KB 記事#PH18677](https://support.apple.com/kb/PH18677?locale=en_US) を参照してください。
 
 
-## テスト用にアドインをインストールする
+## <a name="install-the-add-in-for-testing"></a>テスト用にアドインをインストールする
 
 サイドロードを使用して、テストのためにアドインをインストールできます。
 
 
-- [テストのために Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+- [テスト用に Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
     
-- [テストのために Outlook アドインをサイドロードする](../outlook/testing-and-tips.md)
+- [テスト用に Outlook アドインをサイドロードする](../outlook/testing-and-tips.md)
     
-あるいは、アドインをカタログまたはネットワーク共有に発行し、それをエンドユーザーが行う方法でインストールすることもできます。 詳細については、「[作業ウィンドウ アドインおよびコンテンツ アドイン用のネットワーク共有フォルダー カタログを作成する](https://technet.microsoft.com/en-us/browser/fp123503(v=office.14))」をご覧ください。
+あるいは、アドインをカタログまたはネットワーク共有に発行し、それをエンドユーザーが行う方法でインストールすることもできます。詳細については、「[作業ウィンドウ アドインおよびコンテンツ アドイン用のネットワーク共有フォルダー カタログを作成する](https://technet.microsoft.com/en-us/browser/fp123503(v=office.14))」をご覧ください。
 
 
-## Office アドインのデバッグ
+## <a name="debugging-your-office-add-in"></a>Office アドインのデバッグ
 
 アドインをデバッグする方法はいくつかあります。
 
@@ -243,7 +243,7 @@ tsd install
 
 
 
-## その他のリソース
+## <a name="additional-resources"></a>その他のリソース
 
 
 

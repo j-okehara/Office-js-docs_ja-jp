@@ -1,5 +1,5 @@
 
-# Binding オブジェクト
+# <a name="binding-object"></a>Binding オブジェクト
 ドキュメントのセクションへのバインドを表す抽象クラス。
 
 |||
@@ -12,7 +12,7 @@
 Office.context.document.bindings.getByIdAsync(id);
 ```
 
-## メンバー
+## <a name="members"></a>メンバー
 
 
 **オブジェクト**
@@ -29,9 +29,9 @@ Office.context.document.bindings.getByIdAsync(id);
 
 |**名前**|**説明**|
 |:-----|:-----|
-|[document](../../reference/shared/binding.document.md)|バインドに関連付けられた  **Document** オブジェクトを取得します。|
+|[document](../../reference/shared/binding.document.md)|バインドに関連付けられた **Document** オブジェクトを取得します。|
 |[id](../../reference/shared/binding.id.md)|オブジェクトの識別子を取得します。|
-|[型](../../reference/shared/binding.type.md)|バインドの種類を取得します。|
+|[type](../../reference/shared/binding.type.md)|バインドの種類を取得します。|
 
 **メソッド**
 
@@ -44,7 +44,7 @@ Office.context.document.bindings.getByIdAsync(id);
 |[setDataAsync](../../reference/shared/binding.setdataasync.md)|指定されたバインド オブジェクトで表されるドキュメントのバインド セクションにデータを書き込みます。|
 |[TableBinding.setFormatsAsync](../../reference/shared/binding.tablebinding.setformatsasync.md)|バインド テーブル内の指定のアイテムとデータの書式を設定または更新します。|
 
-**Events**
+**イベント**
 
 
 |**名前**|**説明**|
@@ -52,14 +52,14 @@ Office.context.document.bindings.getByIdAsync(id);
 |[bindingDataChanged](../../reference/shared/binding.bindingdatachangedevent.md)|バインド内でデータが変更されるときに発生します。|
 |[bindingSelectionChanged](../../reference/shared/binding.bindingselectionchangedevent.md)|バインド内で選択が変更されるときに発生します。|
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 **Binding** オブジェクトは、種類にかかわらず、すべてのバインドが所有する機能を公開します。
 
 **Binding** オブジェクトが直接呼び出されることはありません。このオブジェクトは、バインドの種類 ([MatrixBinding](../../reference/shared/binding.matrixbinding.md)、[TableBinding](../../reference/shared/binding.tablebinding.md)、または [TextBinding](../../reference/shared/binding.textbinding.md)) を表すオブジェクトの抽象親クラスです。これら 3 つのオブジェクトはすべて、**Binding** オブジェクトから **getDataAsync** および **setDataAsync** メソッドを継承して、バインド内のデータを操作できます。また、**id** および **type** プロパティを継承して、これらのプロパティ値をクエリすることもできます。さらに、**MatrixBinding** および **TableBinding** オブジェクトは、行数と列数をカウントする機能など、マトリックスおよびテーブル固有の機能も公開します。
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 **Binding** オブジェクトの各 API メンバーのサポートは、Office のホスト アプリケーションの間で異なります。各メンバーのホストのサポート情報のトピックにある「サポートの詳細」セクションを参照してください。
@@ -70,6 +70,6 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |||
 |:-----|:-----|
 |**要件セットに指定できるもの**|MatrixBinding, TableBinding, TextBinding|
-|**アプリの種類**|コンテンツ、作業ウィンドウ|
+|**アドインの種類**|コンテンツ、作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
