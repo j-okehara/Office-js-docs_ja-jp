@@ -1,5 +1,5 @@
-﻿
-# Context.displayLanguage プロパティ
+
+# <a name="context.displaylanguage-property"></a>Context.displayLanguage プロパティ
 Office ホスト アプリケーションの UI 用にユーザーが指定したロケール (言語) を取得します。
 
 |||
@@ -12,21 +12,19 @@ var myDisplayLanguage = Office.context.displayLanguage;
 ```
 
 
-## 戻り値
+## <a name="return-value"></a>戻り値
 
 RFC 1766 言語タグ形式の **string** ( `en-US` など) です。
 
 
-## 解説 
+## <a name="remarks"></a>解説
 
- 
-**displayLanguage** の値は、Office ホスト アプリケーションの **[ファイル]** 、 **[オプション]** 、 **[言語]** の順に指定した現在の **[表示言語]** 設定に反映されます。 
- 
+The  **displayLanguage** value reflects the current **Display Language** setting specified with **File** > **Options** > **Language** in the Office host application.
 
 Access Web アプリのコンテンツ アドインで、  **displayLanguage** プロパティはアドインの言語 (たとえば「en-US」) を取得します。
 
 
-## 例
+## <a name="example"></a>例
 
 
 
@@ -52,7 +50,7 @@ function write(message){
 
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このメソッドは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。
@@ -71,19 +69,19 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 
 |||
 |:-----|:-----|
-|**最小限のアクセス許可レベル**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**最小限のアクセス許可レベル**|[制限あり](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**アドインの種類**|コンテンツ、作業ウィンドウ、Outlook|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 ****
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|PowerPoint Online のサポートが追加されました。|
 |1.1|Office for iPad で Excel、PowerPoint、および Word のサポートが追加されました。|

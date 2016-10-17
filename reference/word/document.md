@@ -1,46 +1,46 @@
-﻿# Document オブジェクト (JavaScript API for Word)
+# <a name="document-object-(javascript-api-for-word)"></a>Document オブジェクト (JavaScript API for Word)
 
 Document オブジェクトは、最上位レベルのオブジェクトです。ドキュメント オブジェクトには、1 つ以上のセクション、コンテンツ コントロール、ドキュメントの内容を含む本文が含まれています。
 
-_適用対象:Word 2016、Word for iPad、Word for Mac_
+_適用対象:Word 2016、Word for iPad、Word for Mac、Word Online_
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
 |Saved|bool|ドキュメント内の変更が保存されているかどうかを示します。値 true は、ドキュメントが保存されてから変更されていないことを示します。読み取り専用です。|
 
-## 関係
+## <a name="relationships"></a>関係
 | リレーションシップ | 型   |説明|
 |:---------------|:--------|:----------|
-|body|[本文](body.md)|ドキュメントの本文を取得します。本文は、ヘッダー、フッター、脚注、テキストボックスなどを除いたテキストです。読み取り専用です。|
+|body|[Body](body.md)|ドキュメントの本文を取得します。本文は、ヘッダー、フッター、脚注、テキストボックスなどを除いたテキストです。読み取り専用です。|
 |contentControls|[ContentControlCollection](contentcontrolcollection.md)|現在のドキュメントにあるコンテンツ コントロール オブジェクトのコレクションを取得します。これには、ドキュメントの本文、ヘッダー、フッター、テキストボックスなどにあるコンテンツ コントロールが含まれます.読み取り専用です。|
 |sections|[SectionCollection](sectioncollection.md)|ドキュメントにあるセクション オブジェクトのコレクションを取得します。読み取り専用です。|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
-|[getSelection()](#getselection)|[範囲](range.md)|ドキュメントの現在の選択範囲を取得します。複数選択はサポートされていません。|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
+|[getSelection()](#getselection)|[Range](range.md)|ドキュメントの現在の選択範囲を取得します。複数選択はサポートされていません。|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 |[save()](#save)|void|ドキュメントを保存します。ここでは、ドキュメントが保存されたことがない場合は、Word の既定のファイルの名前付け規則を使用します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
-### getSelection()
+### <a name="getselection()"></a>getSelection()
 ドキュメントの現在の選択範囲を取得します。複数選択はサポートされていません。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 documentObject.getSelection();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -71,23 +71,23 @@ Word.run(function (context) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -120,21 +120,21 @@ Word.run(function (context) {
 });
 ```
 
-### save()
+### <a name="save()"></a>save()
 ドキュメントを保存します。ここでは、ドキュメントが保存されたことがない場合は、Word の既定のファイルの名前付け規則を使用します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 documentObject.save();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -171,5 +171,5 @@ Word.run(function (context) {
 });
 ```
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 実行時のチェックで[要件セット](../office-add-in-requirement-sets.md)を使用して、アプリケーションが Word のホスト バージョンによってサポートされていることを確かめます。Office ホスト アプリケーションとサーバーの要件の詳細については、「[Office アドインを実行するための要件](../../docs/overview/requirements-for-running-office-add-ins.md)」を参照してください。

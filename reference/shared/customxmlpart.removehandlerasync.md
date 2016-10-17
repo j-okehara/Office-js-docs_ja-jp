@@ -1,31 +1,31 @@
 
-# CustomXmlPart.removeHandlerAsync メソッド
+# <a name="customxmlpart.removehandlerasync-method"></a>CustomXmlPart.removeHandlerAsync メソッド
 **CustomXmlPart** オブジェクト イベントのイベント ハンドラーを削除します。
 
 |||
 |:-----|:-----|
 |**ホスト:**|Word|
 |**[要件セット](../../docs/overview/specify-office-hosts-and-api-requirements.md)に指定できるもの**|CustomXmlParts|
-|**で追加**|1.1|
+|**追加されたバージョン**|1.1|
 
 ```
 customXmlPart.removeHandlerAsync(eventType, handler [,options], callback);
 ```
 
 
-## パラメーター
+## <a name="parameters"></a>パラメーター
 
 
 
 |**名前**|**型**|**説明**|**サポートのメモ**|
 |:-----|:-----|:-----|:-----|
 | _eventType_|[EventType](../../reference/shared/eventtype-enumeration.md)|削除するイベントの種類を指定します。必須です。**CustomXmlPart** オブジェクト イベントの場合、_eventType_ パラメーターには、**Office.EventType.DataNodeDeleted**、**Office.EventType.DataNodeInserted**、**Office.EventType.DataNodeReplaced**、またはこれらの列挙型の対応するテキスト値を指定できます。||
-| _オプション_|**object**|次の[オプションのパラメーター](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)のいずれかを指定します||
+| _options_|**object**|次の[オプションのパラメーター](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)のいずれかを指定します||
 | _handler_|**string**|削除するハンドラーの名前を指定します。 ||
-| _asyncContext_|**array**、 **boolean**、 **null**、 **number**、 **object** 、 **string**、または  **undefined**|変更されずに  **AsyncResult** オブジェクトで返される任意の型のユーザー定義項目。||
-| _callback_|**object**|コールバックが戻るときに呼び出される関数で、唯一のパラメーターは  **AsyncResult** 型です。||
+| _asyncContext_|**array**、**boolean**、**null**、**number**、**object**、**string**、または **undefined**|変更されずに **AsyncResult** オブジェクトで返される任意の型のユーザー定義項目。||
+| _callback_|**object**|コールバックが戻るときに呼び出される関数で、唯一のパラメーターは **AsyncResult** 型です。||
 
-## コールバック値
+## <a name="callback-value"></a>コールバック値
 
 _callback_ パラメーターに渡した関数が実行されると、[AsyncResult](../../reference/shared/asyncresult.md) オブジェクトを受け取ります。このオブジェクトには、コールバック関数の唯一のパラメーターからアクセスできます。
 
@@ -35,17 +35,17 @@ _callback_ パラメーターに渡した関数が実行されると、[AsyncRes
 
 |**プロパティ**|**使用目的**|
 |:-----|:-----|
-|[AsyncResult.value](../../reference/shared/asyncresult.value.md)|イベント ハンドラーを削除するときに取得するデータまたはオブジェクトがないので、常に  **undefined** を返します。|
+|[AsyncResult.value](../../reference/shared/asyncresult.value.md)|イベント ハンドラーを削除するときに取得するデータまたはオブジェクトがないので、常に **undefined** を返します。|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|操作の成功または失敗を判断します。|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|操作が失敗した場合、エラーに関する情報を提供する [Error](../../reference/shared/error.md) オブジェクトにアクセスします。|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|ユーザー定義の  **object** または値を _asyncContext_ パラメーターとして渡した場合、そのオブジェクトまたは値にアクセスします。|
+|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|ユーザー定義の **object** または値を _asyncContext_ パラメーターとして渡した場合、そのオブジェクトまたは値にアクセスします。|
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 _removeHandlerAsync_ メソッドを呼び出すときにオプションの **handler** パラメーターが省略された場合、指定した _eventType_ のすべてのイベント ハンドラーが削除されます。
 
 
-## 例
+## <a name="example"></a>例
 
 
 
@@ -63,7 +63,7 @@ function removeNodeInsertedEventHandler() {
 
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このメソッドは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。
@@ -73,24 +73,24 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 
 ||**Windows デスクトップ版 Office**|**Office Online (ブラウザー)**|**Office for iPad**|
 |:-----|:-----|:-----|:-----|
-|**Word**|Y||Y|
+|**Word**|Y|Y|Y|
 
 |||
 |:-----|:-----|
 |**要件セットに指定できるもの**|CustomXmlParts|
 |**最小限のアクセス許可レベル**|[ReadWriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**アプリの種類**|作業ウィンドウ|
+|**アドインの種類**|作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 ****
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|Office for iPad における Word のサポートが追加されました。|
 |1.0|導入|

@@ -1,6 +1,6 @@
 
 
-# Settings.set メソッド
+# <a name="settings.set-method"></a>Settings.set メソッド
 指定された設定を行うかまたは作成します。
 
 |||
@@ -14,7 +14,7 @@ Office.context.document.settings.set(name, value);
 ```
 
 
-## パラメーター
+## <a name="parameters"></a>パラメーター
 
 
 
@@ -30,7 +30,7 @@ _value_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;格納する値を指定します。
     
 
-## 解説
+## <a name="remarks"></a>解説
 
 **set**メソッドは、指定された名前の設定がまだ存在しない場合に新しい設定を作成するか、または設定プロパティ バッグのメモリ内コピーにある指定された名前の既存の設定に設定します。[Settings.saveAsync](../../reference/shared/settings.saveasync.md) メソッドを呼び出した後で、その値はそのデータ型のシリアル化された JSON 表現としてドキュメントに格納されます。各アドインの設定に最大 2 MB を使用できます。
 
@@ -38,7 +38,7 @@ _value_<br/>
  >**重要**:  **Settings.set** メソッドは、設定プロパティ バッグのメモリ内コピーに対してのみ動作します。再度ドキュメントを開いたときにも設定に対する追加や変更がアドインに反映されるようにするには、**Settings.set** メソッドの呼び出し後アドインを閉じるまでの間に **Settings.saveAsync** メソッドを呼び出して、ドキュメントに設定を保存する必要があります。
 
 
-## 例
+## <a name="example"></a>例
 
 
 
@@ -53,7 +53,7 @@ function setMySetting() {
 
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このメソッドは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。
@@ -72,17 +72,17 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |||
 |:-----|:-----|
 |**要件セットに指定できるもの**|設定値|
-|**最小限のアクセス許可レベル**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**アプリの種類**|コンテンツ、作業ウィンドウ|
+|**最小限のアクセス許可レベル**|[制限あり](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**アドインの種類**|コンテンツ、作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|PowerPoint Online のサポートが追加されました。|
 |1.1|Office for iPad で Excel、PowerPoint、および Word のサポートが追加されました。|

@@ -1,11 +1,11 @@
 
-# ProjectResourceFields 列挙型
+# <a name="projectresourcefields-enumeration"></a>ProjectResourceFields 列挙型
 **[getResourceFieldAsync](../../reference/shared/projectdocument.getresourcefieldasync.md)** メソッドのパラメーターとして使用できるリソース フィールドを指定します。
 
 |||
 |:-----|:-----|
 |**ホスト:**|Project|
-|**で追加**|1.0|
+|**追加されたバージョン**|1.0|
 
 ```js
 ProjectResourceFields={
@@ -213,7 +213,7 @@ ProjectResourceFields={
 ```
 
 
-## メンバー
+## <a name="members"></a>メンバー
 
 
 **ProjectResourceFields** 列挙のメンバーは次のとおりです。
@@ -423,13 +423,13 @@ ProjectResourceFields={
 |Text8|198|リソースのテキスト フィールド。|
 |Text9|199|リソースのテキスト フィールド。|
 
-## 解説
+## <a name="remarks"></a>解説
 
 
 **ProjectResourceFields** 定数は、[getResourceFieldAsync method](../../reference/shared/projectdocument.getresourcefieldasync.md) メソッドのパラメーターとして使用できます。<br/><br/>Project 内のフィールドを操作する方法の詳細については、「[利用可能なフィールド リファレンス](http://office.microsoft.com/en-us/project-help/available-fields-reference-HA102749299.aspx?CTT=1)」をご参照ください。Project のヘルプでは、_利用可能なフィールド_を検索してください。
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、この列挙は、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションがこの列挙をサポートしないことを示します。
@@ -446,22 +446,22 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 
 |||
 |:-----|:-----|
-|**アプリの種類**|作業ウィンドウ|
+|**アドインの種類**|作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.0|導入|
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 
 
-#### その他の技術情報
+#### <a name="other-resources"></a>その他の技術情報
 
 [getResourceFieldAsync メソッド](../../reference/shared/projectdocument.getresourcefieldasync.md)
 

@@ -1,43 +1,43 @@
-﻿# ParagraphCollection オブジェクト (JavaScript API for Word)
+# <a name="paragraphcollection-object-(javascript-api-for-word)"></a>ParagraphCollection オブジェクト (JavaScript API for Word)
 
 [Paragraph](paragraph.md)オブジェクトのコレクションを格納します。
 
-_適用対象:Word 2016、Word for iPad、Word for Mac_
+_適用対象:Word 2016、Word for iPad、Word for Mac、Word Online_
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
-|Items|[Paragraph[]](paragraph.md)|段落オブジェクトのコレクション。読み取り専用です。|
+|Items|[Paragraph[]](paragraph.md)|Paragraph オブジェクトのコレクション。読み取り専用です。|
 
-## 関係
+## <a name="relationships"></a>関係
 なし
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -75,5 +75,5 @@ Word.run(function (context) {
 });
 ```
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 実行時のチェックで[要件セット](../office-add-in-requirement-sets.md)を使用して、アプリケーションが Word のホスト バージョンによってサポートされていることを確かめます。Office ホスト アプリケーションとサーバーの要件の詳細については、「[Office アドインを実行するための要件](../../docs/overview/requirements-for-running-office-add-ins.md)」を参照してください。

@@ -1,5 +1,5 @@
 
-# Document.getSelectedDataAsync メソッド
+# <a name="document.getselecteddataasync-method"></a>Document.getSelectedDataAsync メソッド
 ドキュメントの現在の選択範囲に含まれるデータを読み取ります。
 
 |||
@@ -13,21 +13,21 @@ Office.context.document.getSelectedDataAsync(coercionType [, options], callback)
 ```
 
 
-## パラメーター
+## <a name="parameters"></a>パラメーター
 
 
 
 |**名前**|**型**|**説明**|**サポートのメモ**|
 |:-----|:-----|:-----|:-----|
-| _coercionType_|[CoercionType](../../reference/shared/coerciontype-enumeration.md)<br/><table><tr><td></td><td><b>ホストのサポート</b></td></tr><tr><td><b>Office.CoercionType.Text</b> (文字列)</td><td>Excel、Excel Online、PowerPoint、PowerPoint Online、Word、および Word Online のみ</td></tr><tr><td><b>Office.CoercionType.Matrix</b> (配列の配列)</td><td>Excel、Word、および Word Online のみ</td></tr><tr><td><b>Office.CoercionType.Table</b> ([TableData](../../reference/shared/tabledata.md) オブジェクト)</td><td>Access、Excel、Word、および Word Online のみ</td></tr><tr><td><b>Office.CoercionType.Html</b></td><td>Word のみ。</td></tr><tr><td><b>Office.CoercionType.Ooxml</b> (Office Open XML)</td><td>Word および Word Online のみ</td></tr><tr><td><b>Office.CoercionType.SlideRange</b></td><td>PowerPoint および PowerPoint Online のみ</td></tr></table>|返されるデータ構造の種類です。必須です。||
-| _オプション_|**object**<br/><table><tr><td><i>valueFormat</i></td><td><b>[ValueFormat](../../reference/shared/valueformat-enumeration.md)</b></td><td>結果を数値で返すか、または書式設定ありまたはなしの日付値で返すかを指定します。</td><td></td></tr><tr><td><i>filterType</i></td><td>[FilterType](../../reference/shared/filtertype-enumeration.md)</td><td>データの取得時にフィルターを適用するかどうかを指定します。省略可能です。</td><td>このパラメータは Word 文書では無視されます。</td></tr><tr><td><i>asyncContext</i></td><td><b>array</b>、<b>boolean</b>、<b>null</b>、<b>number</b>、<b>object</b>、<b>string</b>、または <b>undefined</b></td><td>変更されずに <b>AsyncResult</b> オブジェクトで返される任意の型のユーザー定義項目。</td><td></td></tr></table>|次の[オプションのパラメーター](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)のいずれかを指定します||
-| _callback_|**object**|コールバックが戻るときに呼び出される関数で、唯一のパラメーターは  **AsyncResult** 型です。||
+| _coercionType_|[CoercionType](../../reference/shared/coerciontype-enumeration.md)<br/><table><tr><td></td><td><b>ホスト サポート</b></td></tr><tr><td><b>Office.CoercionType.Text</b> (文字列)</td><td>Excel、Excel Online、PowerPoint、PowerPoint Online、Word、および Word Online のみ</td></tr><tr><td><b>Office.CoercionType.Matrix</b> (配列の配列)</td><td>Excel、Word、および Word Online のみ</td></tr><tr><td><b>Office.CoercionType.Table</b> ([TableData](../../reference/shared/tabledata.md) オブジェクト)</td><td>Access、Excel、Word、および Word Online のみ</td></tr><tr><td><b>Office.CoercionType.Html</b></td><td>Word のみ。</td></tr><tr><td><b>Office.CoercionType.Ooxml</b> (Office Open XML)</td><td>Word および Word Online のみ</td></tr><tr><td><b>Office.CoercionType.SlideRange</b></td><td>PowerPoint および PowerPoint Online のみ</td></tr></table>|返されるデータ構造の種類です。必須。||
+| _options_|**object**<br/><table><tr><td><i>valueFormat</i></td><td><b>[ValueFormat](../../reference/shared/valueformat-enumeration.md)</b></td><td>結果を数値で返すか、または書式設定ありまたはなしの日付値で返すかを指定します。</td><td></td></tr><tr><td><i>filterType</i></td><td>[FilterType](../../reference/shared/filtertype-enumeration.md)</td><td>データの取得時にフィルターを適用するかどうかを指定します。省略可能。</td><td>このパラメーターは Word 文書では無視されます。</td></tr><tr><td><i>asyncContext</i></td><td><b>array</b>、<b>boolean</b>、<b>null</b>、<b>number</b>、<b>object</b>、<b>string</b>、または <b>undefined</b></td><td>変更されずに <b>AsyncResult</b> オブジェクトで返される任意の型のユーザー定義項目。</td><td></td></tr></table>|次の[オプションのパラメーター](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)のいずれかを指定します||
+| _callback_|**object**|コールバックが戻るときに呼び出される関数で、唯一のパラメーターは **AsyncResult** 型です。||
 
-## コールバック値
+## <a name="callback-value"></a>コールバック値
 
 _callback_ パラメーターに渡した関数が実行されると、[AsyncResult](../../reference/shared/asyncresult.md) オブジェクトを受け取ります。このオブジェクトには、コールバック関数の唯一のパラメーターからアクセスできます。
 
-コールバック関数が  **getSelectedDataAsync** メソッドに渡された場合、 **AsyncResult** オブジェクトのプロパティを使用して、次の情報を返すことができます。
+**getSelectedDataAsync** メソッドに渡されるコールバック関数では、**AsyncResult** オブジェクトのプロパティを使用して、次の情報を返すことができます。
 
 
 
@@ -36,9 +36,9 @@ _callback_ パラメーターに渡した関数が実行されると、[AsyncRes
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|現在選択されている値にアクセスします。この値は、 _coercionType_ パラメーターで指定したデータ構造またはデータ形式で返されます (データの強制型変換の詳細については、「 **コメント** 」を参照してください)。|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|操作の成功または失敗を判断します。|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|操作が失敗した場合、エラーに関する情報を提供する [Error](../../reference/shared/error.md) オブジェクトにアクセスします。|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|ユーザー定義の  **object** または値を _asyncContext_ パラメーターとして渡した場合、そのオブジェクトまたは値にアクセスします。|
+|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|ユーザー定義の **object** または値を _asyncContext_ パラメーターとして渡した場合、そのオブジェクトまたは値にアクセスします。|
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 作業ウィンドウ アドインまたはコンテンツ アドインで、 **getSelectedDataAsync** メソッドを使用して、ドキュメント、スプレッドシート、プレゼンテーション、またはプロジェクトのユーザーの選択内容からデータを読み取るスクリプトを記述します。たとえば、ユーザーが Word ドキュメントのコンテンツを選択したら、 **getSelectedDataAsync** メソッドを使用して、その選択を読み取り、それをクエリしたりその他の何らかの操作としたりして、Web サービスに送信することができます。
 
@@ -61,7 +61,7 @@ _callback_ パラメーターに渡した関数が実行されると、[AsyncRes
 選択内容のデータ構造が指定した  _coercionType_ に一致しない場合、 **getSelectedDataAsync** メソッドはデータをその型または構造にデータを強制型変換しようとします。選択内容を、指定した **Office.CoercionType** に強制型変換できない場合、 **AsyncResult.status** プロパティは `"failed"` を返します。
 
 
-## 例
+## <a name="example"></a>例
 
 現在の選択内容の値を取得するには、選択を読み取るコールバック関数を記述する必要があります。次の例は、その方法を示しています。
 
@@ -99,7 +99,7 @@ function write(message){
 
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このメソッドは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。
@@ -122,15 +122,15 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |:-----|:-----|
 |**要件セットに指定できるもの**|選択内容|
 |**最小限のアクセス許可レベル**|[ReadDocument (Office Open XML を取得するために必要な ReadAllDocument)](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**アプリの種類**|コンテンツ、作業ウィンドウ|
+|**アドインの種類**|コンテンツ、作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|PowerPoint Online のサポートが追加されました。|
 |1.1| Word Online で、 **coercionType** パラメーターとして **Office.CoercionType.Matrix** と _Office.CoercionType.Table_ のサポートが追加されました。|

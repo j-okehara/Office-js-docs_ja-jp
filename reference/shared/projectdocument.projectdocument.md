@@ -1,19 +1,19 @@
 
 
-# ProjectDocument オブジェクト
+# <a name="projectdocument-object"></a>ProjectDocument オブジェクト
 Office アドインが対話するプロジェクト ドキュメント (アクティブ プロジェクト) を表す抽象クラス。
 
 |||
 |:-----|:-----|
 |**ホスト:**|Project|
-|**で追加**|1.0|
+|**追加されたバージョン**|1.0|
 
 ```js
 Office.context.document
 ```
 
 
-## メンバー
+## <a name="members"></a>メンバー
 
 
 **メソッド**
@@ -39,21 +39,21 @@ Office.context.document
 |[setResourceFieldAsync メソッド](../../reference/shared/projectdocument.setresourcefieldasync.md)|指定したリソースの指定したフィールドの値を非同期に設定します。|
 |[setTaskFieldAsync メソッド](../../reference/shared/projectdocument.settaskfieldasync.md)|指定したタスクの指定したフィールドの値を非同期に設定します。|
 
-**Events**
+**イベント**
 
 
 |**名前**|**説明**|
 |:-----|:-----|
-|[ResourceSelectionChanged イベント](../../reference/shared/projectdocument.resourceselectionchanged.event.md)|アクティブ プロジェクト内でリソースの選択が変更されるときに発生します。|
-|[TaskSelectionChanged イベント](../../reference/shared/projectdocument.taskselectionchanged.event.md)|アクティブ プロジェクト内でタスクの選択が変更されるときに発生します。|
-|[ViewSelectionChanged イベント](../../reference/shared/projectdocument.viewselectionchanged.event.md)|アクティブなプロジェクトでアクティブ ビューが変更されたときに発生します。|
+|[ResourceSelectionChanged イベント](../../reference/shared/projectdocument.resourceselectionchanged.event.md)|アクティブなプロジェクト内でリソースの選択が変更されるときに発生します。|
+|[TaskSelectionChanged イベント](../../reference/shared/projectdocument.taskselectionchanged.event.md)|アクティブなプロジェクト内でタスクの選択が変更されるときに発生します。|
+|[ViewSelectionChanged イベント](../../reference/shared/projectdocument.viewselectionchanged.event.md)|アクティブなプロジェクト内でアクティブ ビューが変更されるときに発生します。|
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 スクリプトで  **ProjectDocument** オブジェクトを直接呼び出したりインスタンス化したりしないでください。
 
 
-## 例
+## <a name="example"></a>例
 
 次の例では、アドインを初期化してから、Project ドキュメントのコンテキストで入手可能な [Document](../../reference/shared/document.md) オブジェクトのプロパティを取得します。Project ドキュメントは開いたアクティブなプロジェクトです。 **ProjectDocument** オブジェクトのメンバーにアクセスするには、 **ProjectDocument** メソッドとイベントのコード例に示されているように、 **Office.context.document** オブジェクトを使用します。
 
@@ -94,7 +94,7 @@ Office.context.document
 ```
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このオブジェクトは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのオブジェクトをサポートしないことを示します。
@@ -108,22 +108,22 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 
 |||
 |:-----|:-----|
-|**アプリの種類**|作業ウィンドウ|
+|**アドインの種類**|作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.0|導入|
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 
 
-#### その他の技術情報
+#### <a name="other-resources"></a>その他の技術情報
 
 
 [Project 用の作業ウィンドウ アドイン](../../docs/project/project-add-ins.md)

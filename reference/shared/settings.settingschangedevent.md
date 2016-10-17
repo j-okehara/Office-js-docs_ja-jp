@@ -1,6 +1,6 @@
 
 
-# Settings.settingsChanged イベント
+# <a name="settings.settingschanged-event"></a>Settings.settingsChanged イベント
 [Settings.saveAsync](../../reference/shared/settings.saveasync.md) メソッドによって、設定プロパティ バッグのメモリ内コピーがドキュメントに保存された場合に発生します。
 
 |||
@@ -14,7 +14,7 @@ Office.EventType.SettingsChanged
 ```
 
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 **settingsChanged** イベントのイベント ハンドラーを追加するには、[Settings](../../reference/shared/settings.addhandlerasync.md) オブジェクトの **addHandlerAsync** メソッドを使用します。
 
@@ -26,7 +26,7 @@ Office.EventType.SettingsChanged
  >**重要**  アドインが Excel クライアントで実行されている場合、アドインのコードで **settingsChanged** イベントのハンドラーを登録できますが、このイベントが発生するのは、アドインが Excel Online で開かれているスプレッドシートと共に読み込まれ、_なおかつ_ 複数のユーザーがこのスプレッドシートで作業している (共同編集) 場合のみです。そのため、**settingsChanged** イベントが効率的にサポートされるのは、共同編集シナリオの Excel Online 内のみです。
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このイベントは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションがこのイベントをサポートしないことを示します。
@@ -42,16 +42,16 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |||
 |:-----|:-----|
 |**要件セットに指定できるもの**|設定値|
-|**最小限のアクセス許可レベル**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**アプリの種類**|コンテンツ、作業ウィンドウ|
+|**最小限のアクセス許可レベル**|[制限あり](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**アドインの種類**|コンテンツ、作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.0|導入|

@@ -1,10 +1,10 @@
-﻿# ContentControl オブジェクト (JavaScript API for Word)
+# <a name="contentcontrol-object-(javascript-api-for-word)"></a>ContentControl オブジェクト (JavaScript API for Word)
 
 コンテンツ コントロールを表します。コンテンツ コントロールは、特定の種類のコンテンツのコンテナーとして機能し、ドキュメント内で境界線で区切られ、ラベルが付いた領域になる場合もあります。個々のコンテンツ コントロールには、画像、表、書式設定されたテキストの段落などの内容が含まれていることがあります。現時点では、リッチ テキスト コンテンツ コントロールのみがサポートされています。
 
-_適用対象:Word 2016、Word for iPad、Word for Mac_
+_適用対象:Word 2016、Word for iPad、Word for Mac、Word Online_
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
 |cannotDelete|bool|ユーザーがコンテンツ コントロールを削除できるかどうかを示す値を取得または設定します。removeWhenEdited と同時に使用することはできません。|
@@ -17,56 +17,56 @@ _適用対象:Word 2016、Word for iPad、Word for Mac_
 |text|string|コンテンツ コントロールのテキストを取得します。読み取り専用です。|
 |title|string|コンテンツ コントロールのタイトルを取得または設定します。|
 
-_プロパティのアクセスの[例](#例)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 | リレーションシップ | 型   |説明|
 |:---------------|:--------|:----------|
 |appearance|**ContentControlAppearance**|コンテンツ コントロールの外観を取得または設定します。値には 'boundingBox'、'tags'、または 'hidden' を指定できます。|
 |contentControls|[ContentControlCollection](contentcontrolcollection.md)|コンテンツ コントロールのコンテンツ コントロール オブジェクトのコレクションを取得します。読み取り専用です。|
-|Font|[フォント](font.md)|コンテンツ コントロールのテキストの書式設定を取得します。これを使用して、フォント名、サイズ、色、およびその他のプロパティを取得および設定します。読み取り専用です。|
+|font|[Font](font.md)|コンテンツ コントロールのテキストの書式設定を取得します。これを使用して、フォント名、サイズ、色、およびその他のプロパティを取得および設定します。読み取り専用です。|
 |id|**uint**|コンテンツ コントロールの識別子を表す整数値を取得します。読み取り専用です。|
 |inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|コンテンツ コントロールに含まれる inlinePicture オブジェクトのコレクションを取得します。コレクションに浮動イメージは含まれません。読み取り専用です。|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|コンテンツ コントロールにある段落オブジェクトのコレクションを取得します。読み取り専用です。|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|コンテンツ コントロールにある Paragraph オブジェクトのコレクションを取得します。読み取り専用です。|
 |parentContentControl|[ContentControl](contentcontrol.md)|コンテンツ コントロールを含むコンテンツ コントロールを取得します。親コンテンツ コントロールがない場合は null を返します。読み取り専用です。|
-|type|**ContentControlType**|コンテンツ コントロールの種類を取得します。現在、リッチ テキストのコンテンツ コントロールのみがサポートされています。読み取り専用です。|
+|型|**ContentControlType**|コンテンツ コントロールの種類を取得します。現在、リッチ テキストのコンテンツ コントロールのみがサポートされています。読み取り専用です。|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
 |[clear()](#clear)|void|コンテンツ コントロールの内容をクリアします。ユーザーは、消去された内容を元に戻す操作を実行できます。|
-|[delete(keepContent: bool)](#deletekeepcontent-bool)|void|コンテンツ コントロールとそのコンテンツを削除します。keepContent が true の場合、コンテンツは削除されません。|
+|[delete(keepContent: bool)](#deletekeepcontent-bool)|(非推奨)|コンテンツ コントロールとそのコンテンツを削除します。keepContent が true の場合、コンテンツは削除されません。|
 |[getHtml()](#gethtml)|string|コンテンツ コントロール オブジェクトの HTML 表記を取得します。|
 |[getOoxml()](#getooxml)|string|コンテンツ コントロール オブジェクトの Office Open XML (OOXML) 表記を取得します。|
 |[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|指定した位置に、区切りを挿入します。改行以外の区切りは、メインドキュメント本文に含まれるオブジェクトにのみ挿入できます。改行は、いずれの本文オブジェクトにも挿入できます。insertLocation の値には、'Before'、'After'、'Start'、'End' のいずれかを指定できます。|
-|[insertFileFromBase64(base64File: string, insertLocation:InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[範囲](range.md)|現在のコンテンツ コントロール内の指定された位置にドキュメントを挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
-|[insertHtml(html: string, insertLocation:InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[範囲](range.md)|コンテンツ コントロール内の指定された位置に HTML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|コンテンツ コントロール内の指定された位置にインライン画像を挿入します。insertLocation の値は、'Replace'、'Start'、'End' のいずれかになります。 |
-|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[範囲](range.md)|コンテンツ コントロール内の指定された位置に OOXML または wordProcessingML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
-|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[段落](paragraph.md)|指定した位置に、段落を挿入します。insertLocation の値には、'Before'、'After'、'Start'、'End' のいずれかを指定できます。|
-|[insertText(text: string, insertLocation:InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[範囲](range.md)|コンテンツ コントロール内の指定された位置にテキストを挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
-|[search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|コンテンツ コントロール オブジェクトの範囲で、指定した searchOptions を使って検索を実行します。検索結果は、範囲オブジェクトのコレクションです。|
+|[insertFileFromBase64(base64File: string, insertLocation:InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|現在のコンテンツ コントロール内の指定された位置にドキュメントを挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
+|[insertHtml(html: string, insertLocation:InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|コンテンツ コントロール内の指定された位置に HTML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|コンテンツ コントロール内の指定された位置にインライン画像を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。 |
+|[insertOoxml(ooxml: string, insertLocation:InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|コンテンツ コントロール内の指定された位置に OOXML または wordProcessingML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
+|[insertParagraph(paragraphText: string, insertLocation:InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|指定した位置に、段落を挿入します。insertLocation の値には、'Before'、'After'、'Start'、'End' のいずれかを指定できます。|
+|[insertText(text: string, insertLocation:InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|コンテンツ コントロール内の指定された位置にテキストを挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
+|[search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|コンテンツ コントロール オブジェクトの範囲で、指定した searchOptions を使って検索を実行します。検索結果は、範囲オブジェクトのコレクションです。|
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|コンテンツ コントロールを選択します。その結果、Word は選択範囲にスクロールされます。選択モードは、'Select'、'Start'、'End' のいずれかになります。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
-### clear()
+### <a name="clear()"></a>clear()
 コンテンツ コントロールの内容をクリアします。ユーザーは、消去された内容を元に戻す操作を実行できます。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 contentControlObject.clear();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -105,23 +105,23 @@ Word.run(function (context) {
 
 ```
 
-### delete(keepContent: bool)
+### <a name="delete(keepcontent:-bool)"></a>delete(keepContent: bool)
 コンテンツ コントロールとそのコンテンツを削除します。keepContent が true の場合、コンテンツは削除されません。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 contentControlObject.delete(keepContent);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |keepContent|bool|必須。コンテンツ コントロールを使用してコンテンツを削除する必要があるかどうかを示します。keepContent が true の場合、コンテンツは削除されません。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -161,21 +161,21 @@ Word.run(function (context) {
 ```
 
 
-### getHtml()
+### <a name="gethtml()"></a>getHtml()
 コンテンツ コントロール オブジェクトの HTML 表記を取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 contentControlObject.getHtml();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 string
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -213,21 +213,21 @@ Word.run(function (context) {
 });
 ```
 
-### getOoxml()
+### <a name="getooxml()"></a>getOoxml()
 コンテンツ コントロール オブジェクトの Office Open XML (OOXML) 表記を取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 contentControlObject.getOoxml();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 string
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -265,27 +265,27 @@ Word.run(function (context) {
 });
 ```
 
-### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
+### <a name="insertbreak(breaktype:-breaktype,-insertlocation:-insertlocation)"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
 指定した位置に、区切りを挿入します。改行以外の区切りは、メインドキュメント本文に含まれるオブジェクトにのみ挿入できます。改行は、いずれの本文オブジェクトにも挿入できます。insertLocation の値には、'Before'、'After'、'Start'、'End' のいずれかを指定できます。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 contentControlObject.insertBreak(breakType, insertLocation);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |breakType|BreakType|必須。区切りの種類 (breakType.md)|
 |insertLocation|InsertLocation|必須。値には、'Before'、'After'、'Start'、または 'End' を指定できます。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 追加の詳細
+#### <a name="additional-details"></a>追加の詳細
 ヘッダー、フッター、脚注、文末脚注、コメント、テキスト ボックスに含まれたオブジェクトに改行以外の区切りを挿入することはできません。  
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -324,41 +324,41 @@ Word.run(function (context) {
 });
 ```
 
-### insertFileFromBase64(base64File: string, insertLocation:InsertLocation)
+### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation:InsertLocation)
 現在のコンテンツ コントロール内の指定された位置にドキュメントを挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 contentControlObject.insertFileFromBase64(base64File, insertLocation);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |base64File|string|必須。base64 でエンコードされた挿入するファイルのコンテンツ。|
 |insertLocation|InsertLocation|必須。値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-### insertHtml(html: string, insertLocation:InsertLocation)
+### <a name="inserthtml(html:-string,-insertlocation:-insertlocation)"></a>insertHtml(html: string, insertLocation:InsertLocation)
 コンテンツ コントロール内の指定された位置に HTML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 contentControlObject.insertHtml(html, insertLocation);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |Html|string|必須。コンテンツ コントロールに挿入する HTML。|
 |insertLocation|InsertLocation|必須。値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -396,41 +396,41 @@ Word.run(function (context) {
 });
 ```
 
-### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
+### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
 コンテンツ コントロール内の指定された位置にインライン画像を挿入します。insertLocation の値は、'Replace'、'Start'、'End' のいずれかになります。
 
-#### 構文
+#### <a name="syntax"></a>構文
 contentControlObject.insertInlinePictureFromBase64(image, insertLocation);
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |base64EncodedImage|string|必須。コンテンツ コントロールに挿入される base64 でエンコードされた画像。|
 |insertLocation|InsertLocation|必須。値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 [InlinePicture](inlinepicture.md)
 
 
 
-### insertOoxml(ooxml: string, insertLocation: InsertLocation)
+### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation:InsertLocation)
 コンテンツ コントロール内の指定された位置に OOXML または wordProcessingML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 contentControlObject.insertOoxml(ooxml, insertLocation);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |ooxml|string|必須。コンテンツ コントロールに挿入する OOXML または wordProcessingML。|
 |insertLocation|InsertLocation|必須。値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -468,27 +468,27 @@ Word.run(function (context) {
 });
 ```
 
-#### 追加情報
+#### <a name="additional-information"></a>追加情報
 OOXML の操作の詳細については、「[Office Open XML を使用して Word のより良いアドインを作成する](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx)」をお読みください。
 
-### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
+### <a name="insertparagraph(paragraphtext:-string,-insertlocation:-insertlocation)"></a>insertParagraph(paragraphText: string, insertLocation: InsertLocation)
 指定した位置に、段落を挿入します。insertLocation の値には、'Before'、'After'、'Start'、'End' のいずれかを指定できます。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 contentControlObject.insertParagraph(paragraphText, insertLocation);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |paragraphText|string|必須。挿入する段落テキスト。|
 |insertLocation|InsertLocation|必須。値には、'Before'、'After'、'Start'、または 'End' を指定できます。|
 
-#### 戻り値
-[段落](paragraph.md)
+#### <a name="returns"></a>戻り値
+[Paragraph](paragraph.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -526,24 +526,24 @@ Word.run(function (context) {
 });
 ```
 
-### insertText(text: string, insertLocation:InsertLocation)
+### <a name="inserttext(text:-string,-insertlocation:-insertlocation)"></a>insertText(text: string, insertLocation:InsertLocation)
 コンテンツ コントロール内の指定された位置にテキストを挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 contentControlObject.insertText(text, insertLocation);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |text|string|必須。コンテンツ コントロールに挿入する テキスト。|
 |insertLocation|InsertLocation|必須。値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 
-#### 戻り値
-[範囲](range.md)
+#### <a name="returns"></a>戻り値
+[Range](range.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -583,23 +583,23 @@ Word.run(function (context) {
 
 [Silly stories](https://aka.ms/sillystorywordaddin) サンプル アドインは、**insertText** メソッドの使用方法を示しています。
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -632,40 +632,40 @@ Word.run(function (context) {
 });
 ```
 
-### search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)
+### <a name="search(searchtext:-string,-searchoptions:-paramtypestrings.searchoptions)"></a>search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)
 コンテンツ コントロール オブジェクトの範囲で、指定した searchOptions を使って検索を実行します。検索結果は、範囲オブジェクトのコレクションです。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 contentControlObject.search(searchText, searchOptions);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
-|searchText|string|必須。検索テキスト。|
+|searchText|文字列|必須。検索テキスト。|
 |[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|省略可能。検索のオプション。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 [SearchResultCollection](searchresultcollection.md)
 
-### select(selectionMode: SelectionMode)
+### <a name="select(selectionmode:-selectionmode)"></a>select(selectionMode: SelectionMode)
 コンテンツ コントロールを選択します。その結果、Word は選択範囲にスクロールされます。選択モードは、'Select'、'Start'、'End' のいずれかになります。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 contentControlObject.select(selectionMode);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |selectionMode|SelectionMode|省略可能。選択モードは、'Select'、'Start'、'End' のいずれかになります。'Select' が既定値です。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -703,9 +703,9 @@ Word.run(function (context) {
 });
 ```
 
-## プロパティのアクセスの例
+## <a name="property-access-examples"></a>プロパティのアクセスの例
 
-### すべてのコンテンツ コントロールのプロパティを読み込む
+### <a name="load-all-of-the-content-control-properties"></a>すべてのコンテンツ コントロールのプロパティを読み込む
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -771,5 +771,5 @@ Word.run(function (context) {
 });
 ```
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 実行時のチェックで[要件セット](../office-add-in-requirement-sets.md)を使用して、アプリケーションが Word のホスト バージョンによってサポートされていることを確かめます。Office ホスト アプリケーションとサーバーの要件の詳細については、「[Office アドインを実行するための要件](../../docs/overview/requirements-for-running-office-add-ins.md)」を参照してください。

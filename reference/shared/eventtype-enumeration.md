@@ -1,6 +1,6 @@
 
-# EventType 列挙型
-発生したイベントの種類を指定します。" **イベント名** " _EventArgs_ オブジェクトの **type** プロパティから返されます。
+# <a name="eventtype-enumeration"></a>EventType 列挙型
+発生したイベントの種類を指定します。_EventName_**EventArgs** オブジェクトの**type** プロパティによって返されます。
 
 |||
 |:-----|:-----|
@@ -12,13 +12,13 @@ Office.EventType
 ```
 
 
-## メンバー
+## <a name="members"></a>メンバー
 
 
 **値**
 
 
-|列挙体|値|説明|
+|列挙|値|説明|
 |:-----|:-----|:-----|
 |Office.EventType.ActiveViewChanged|"documentActiveViewChanged"|[Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md) イベントが発生しました。|
 |Office.EventType.DocumentSelectionChanged|"documentSelectionChanged"|[Document.SelectionChanged](../../reference/shared/document.selectionchanged.event.md) イベントが発生しました。|
@@ -29,13 +29,13 @@ Office.EventType
 |Office.EventType.DataNodeReplaced|"nodeReplaced"|[CustomXmlPart.dataNodeReplaced](../../reference/shared/customxmlpart.datanodereplaced.event.md) イベントが発生しました。|
 |Office.EventType.SettingsChanged|"settingsChanged"|[Settings.settingsChanged](../../reference/shared/settings.settingschangedevent.md) イベントが発生しました。|
 
-## 解説
+## <a name="remarks"></a>解説
 
 
  >**メモ**  Project 用アドインは、イベントの種類 **Office.EventType.ResourceSelectionChanged**、**Office.EventType.TaskSelectionChanged**、および **Office.EventType.ViewSelectionChanged** をサポートしています。
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、この列挙は、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションがこの列挙をサポートしないことを示します。
@@ -55,15 +55,15 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 
 |||
 |:-----|:-----|
-|**アプリの種類**|コンテンツ、作業ウィンドウ|
+|**アドインの種類**|コンテンツ、作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1| 列挙 Office.EventType.ActiveViewChanged が新しい **Document.ActiveViewChanged** イベントに追加されました。|
 |1.0|導入|

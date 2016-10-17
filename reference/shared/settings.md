@@ -1,5 +1,5 @@
 
-# Settings オブジェクト
+# <a name="settings-object"></a>Settings オブジェクト
 ホスト ドキュメントに名前/値のペアとして格納される、作業ウィンドウ アドインまたはコンテンツ アドインのカスタム設定を表します。
 
 |||
@@ -13,7 +13,7 @@ Office.context.document.settings
 ```
 
 
-## メンバー
+## <a name="members"></a>メンバー
 
 
 **メソッド**
@@ -29,14 +29,14 @@ Office.context.document.settings
 |[saveAsync](../../reference/shared/settings.saveasync.md)|設定を保存します。|
 |[set](../../reference/shared/settings.set.md)|指定された設定を行うかまたは作成します。|
 
-**Events**
+**イベント**
 
 
 |**名前**|**説明**|
 |:-----|:-----|
 |[settingsChanged](../../reference/shared/settings.settingschangedevent.md)|設定が変更されるときに発生します。|
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 **Settings** オブジェクトのメソッドを使用して作成される設定は、アドイン単位およびドキュメント単位で保存されます。つまり、これらの設定は、それを作成したアドインでのみ、かつ設定が保存されているドキュメントからのみ使用できます。
 
@@ -45,7 +45,7 @@ Office.context.document.settings
 **Settings** オブジェクトは [Document](../../reference/shared/document.md) オブジェクトの一部として自動的に読み込まれます。Settings オブジェクトを使用するには、アドインがアクティブになったときに Document オブジェクトの [settings](../../reference/shared/document.settings.md) プロパティを呼び出します。開発者は、設定を削除または追加した後 [saveAsync](../../reference/shared/settings.saveasync.md) メソッドを呼び出してその設定をドキュメントに保存する必要があります。
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このオブジェクトは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのオブジェクトをサポートしないことを示します。
@@ -67,10 +67,10 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|Office for iPad で Excel、PowerPoint、および Word のサポートが追加されました。|
-|1.1|**addHandlerAsync** メソッドと **removeHandlerAsync** メソッドについては、Access 用コンテンツ アドインにおけるイベントのイベント ハンドラーの追加と削除のサポートが追加されました。 **get**、**refreshAsync**、**remove**、**saveAsync**、**set** メソッドについては、Access 用コンテンツ アドインにおけるカスタム設定のサポートが追加されました。|
+|1.1|**addHandlerAsync** メソッドと **removeHandlerAsync** メソッドについては、Access 用コンテンツ アドインにおけるイベントのイベント ハンドラーの追加と削除のサポートが追加されました。**get**、**refreshAsync**、**remove**、**saveAsync**、**set** メソッドについては、Access 用コンテンツ アドインにおけるカスタム設定のサポートが追加されました。|
 |1.0|導入|

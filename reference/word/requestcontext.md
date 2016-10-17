@@ -1,39 +1,39 @@
-﻿# RequestContext オブジェクト (JavaScript API for Word)
+# <a name="requestcontext-object-(javascript-api-for-word)"></a>RequestContext オブジェクト (JavaScript API for Word)
 
 RequestContext オブジェクトは、2 つのアプリケーションが別のプロセスで実行されているときの、Word アドインから Word への要求を容易にします。
 
-_適用対象:Word 2016、Word for iPad、Word for Mac_
+_適用対象:Word 2016、Word for iPad、Word for Mac、Word Online_
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 なし
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド         | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
 |[load(object: object, option: object)](#loadobject-object-option-object)  |void     |JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオプションを設定します。|
-|[sync()](#sync)  |約束オブジェクト |要求キューを Word に送信し、さらに多くの操作を連続的に繋ぐために使用できる約束オブジェクトを返します。|
+|[sync()](#sync)  |Promise オブジェクト |要求キューを Word に送信し、さらに多くの操作を連続的に繋ぐために使用できる約束オブジェクトを返します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
-### load(object: object, option: object)
+### <a name="load(object:-object,-option:-object)"></a>load(object: object, option: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオプションを設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 requestContextObject.load(object, loadOption);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター       | 型    |説明|
 |:----------------|:--------|:----------|
 |object|object|省略可能。読み込むオブジェクトの名前を指定します。|
-|オプション|[loadOption](loadoption.md)|省略可能ですが、このオプションの使用をお勧めします。select、expand、skip、top などの読み込みオプションを指定します。 |
+|option|[loadOption](loadoption.md)|省略可能ですが、このオプションの使用をお勧めします。select、expand、skip、top などの読み込みオプションを指定します。 |
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-##### 例
+##### <a name="examples"></a>例
 
 次の例は、要求コンテキストを使用して、text プロパティを段落コレクションに読み込む方法を示しています。
 
@@ -70,25 +70,25 @@ Word.run(function (context) {
 
 ```
 
-#### その他の情報
+#### <a name="additional-information"></a>その他の情報
 
 追跡対象のオブジェクトを追加した後は、load() を呼び出す必要があります。
 
-### sync()
+### <a name="sync()"></a>sync()
 要求キューを Word に送信し、さらに多くの操作を連続的に繋ぐために使用できる約束オブジェクトを返します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 requestContextObject.sync();
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 Promise オブジェクト。
 
-#### 例
+#### <a name="examples"></a>例
 
 次の例は、2 回使用されている sync メソッドを示しています。1) コンテンツ コントロールのコレクションに、それぞれのコンテンツ コントロールの text プロパティを読み込み、2) コレクション内の最初のコンテンツ コントロールの内容をクリアします。
 
@@ -130,5 +130,5 @@ Word.run(function (context) {
 
 ```
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 実行時のチェックで[要件セット](../office-add-in-requirement-sets.md)を使用して、アプリケーションが Word のホスト バージョンによってサポートされていることを確かめます。Office ホスト アプリケーションとサーバーの要件の詳細については、「[Office アドインを実行するための要件](../../docs/overview/requirements-for-running-office-add-ins.md)」を参照してください。

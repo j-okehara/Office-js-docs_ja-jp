@@ -1,11 +1,11 @@
 
-# ProjectViewTypes 列挙型
+# <a name="projectviewtypes-enumeration"></a>ProjectViewTypes 列挙型
 **[getSelectedViewAsync](../../reference/shared/projectdocument.getselectedviewasync.md)** メソッドで認識できるビューの種類を指定します。
 
 |||
 |:-----|:-----|
 |**ホスト:**|Project|
-|**で追加**|1.0|
+|**追加されたバージョン**|1.0|
 
 ```
 ProjectViewTypes={
@@ -29,15 +29,15 @@ ProjectViewTypes={
 ```
 
 
-## メンバー
+## <a name="members"></a>メンバー
 
 
 ****
 
 
-|**メンバー	**|**説明**|
+|**メンバー**|**説明**|
 |:-----|:-----|
-|**ガント**|ガント チャート ビュー。|
+|**Gantt**|ガント チャート ビュー。|
 |**NetworkDiagram**|ネットワーク ダイアグラム ビュー。|
 |**TaskDiagram**|タスク ダイアグラム ビュー。|
 |**TaskForm**|タスク フォーム ビュー。|
@@ -48,19 +48,19 @@ ProjectViewTypes={
 |**ResourceGraph**|リソース グラフ ビュー。|
 |**TeamPlanner**|チーム プランナー ビュー。|
 |**TaskDetails**|タスクの詳細ビュー。|
-|**TaskNameForm**|タスク フォーム (簡易) ビュー。|
+|**TaskNameForm**|タスク名フォームの簡易ビュー。|
 |**ResourceNames**|リソース名ビュー。|
-|**予定表**|カレンダー ビュー。|
+|**Calendar**|カレンダー ビュー。|
 |**TaskUsage**|タスク配分状況ビュー。|
 |**ResourceUsage**|リソース配分状況ビュー。|
-|**タイムライン**|タイムライン ビュー。|
+|**TimeLine**|タイムライン ビュー。|
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 **[getSelectedViewAsync](../../reference/shared/projectdocument.getselectedviewasync.md)** メソッドは、アクティブ ビューに対応する **ProjectViewTypes** の定数値と名前を返します。
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、この列挙は、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションがこの列挙をサポートしないことを示します。
@@ -77,26 +77,26 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 
 |||
 |:-----|:-----|
-|**アプリの種類**|作業ウィンドウ|
+|**アドインの種類**|作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 ****
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.0|導入|
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 
 
-#### その他の技術情報
+#### <a name="other-resources"></a>その他の技術情報
 
 
 [getSelectedViewAsync メソッド](../../reference/shared/projectdocument.getselectedviewasync.md)

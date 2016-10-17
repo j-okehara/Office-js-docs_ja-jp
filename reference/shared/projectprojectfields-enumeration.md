@@ -1,11 +1,11 @@
 
-# ProjectProjectFields 列挙型
+# <a name="projectprojectfields-enumeration"></a>ProjectProjectFields 列挙型
 **[getProjectFieldAsync](../../reference/shared/projectdocument.getprojectfieldasync.md)** メソッドのパラメーターとして使用できるプロジェクト フィールドを指定します。
 
 |||
 |:-----|:-----|
 |**ホスト:**|Project|
-|**で追加**|1.0|
+|**追加されたバージョン**|1.0|
 
 ```
 ProjectProjectFields={
@@ -26,13 +26,13 @@ ProjectProjectFields={
 ```
 
 
-## メンバー
+## <a name="members"></a>メンバー
 
 
 ****
 
 
-|**メンバー	**|**説明**|
+|**メンバー**|**説明**|
 |:-----|:-----|
 |**CurrencyDigits**|通貨の小数点以下の桁数。|
 |**CurrencySymbol**|通貨記号。|
@@ -41,18 +41,18 @@ ProjectProjectFields={
 |**Finish**|プロジェクトの終了日。|
 |**Start**|プロジェクトの開始日。|
 |**ReadOnly**|プロジェクトが読み取り専用かどうかを指定します。|
-|**バージョン**|プロジェクトのバージョン。|
+|**VERSION**|プロジェクトのバージョン。|
 |**WorkUnits**|プロジェクトの作業単位 (日数、時間数など)。|
-|**ProjectServerUrl**|Project Server に保存されるプロジェクトの Project Web App UR。|
+|**ProjectServerUrl**|Project Server に保存されるプロジェクトの Project Web App の URL。|
 |**WSSUrl**|SharePoint リストと同期されるプロジェクトの SharePoint URL。|
 |**WSSList**|タスク リストと同期されるプロジェクトの SharePoint リストの名前。|
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 **ProjectProjectFields** 定数は、**[getProjectFieldAsync](../../reference/shared/projectdocument.getprojectfieldasync.md)** メソッドのパラメーターとして使用できます。
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、この列挙は、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションがこの列挙をサポートしないことを示します。
@@ -69,26 +69,26 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 
 |||
 |:-----|:-----|
-|**アプリの種類**|作業ウィンドウ|
+|**アドインの種類**|作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 ****
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.0|導入|
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 
 
-#### その他の技術情報
+#### <a name="other-resources"></a>その他の技術情報
 
 
 [getProjectFieldAsync メソッド](../../reference/shared/projectdocument.getprojectfieldasync.md)

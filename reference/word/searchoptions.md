@@ -1,22 +1,22 @@
-# SearchOptions オブジェクト (JavaScript API for Word)
+# <a name="searchoptions-object-(javascript-api-for-word)"></a>SearchOptions オブジェクト (JavaScript API for Word)
 
 検索操作に含めるオプションを指定します。
 
-_適用対象:Word 2016、Word for iPad、Word for Mac_
+_適用対象:Word 2016、Word for iPad、Word for Mac、Word Online_
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
 |ignorePunct|bool|単語間のすべての区切り記号を無視するかどうかを示す値を取得または設定します。[検索と置換] ダイアログ ボックスの [句読点を無視する] チェック ボックスに相当します。|
 |ignoreSpace|bool|単語間のすべての空白を無視するかどうかを示す値を取得または設定します。[検索と置換] ダイアログ ボックスの [空白文字を無視する] チェック ボックスに相当します。|
 |matchCase|bool|大文字と小文字を区別する検索を実行するかどうかを示す値を取得または設定します。[検索と置換] ダイアログ ボックス ([編集] メニュー) の [大文字と小文字を区別する] チェック ボックスに相当します。|
 |matchPrefix|bool|検索文字列で始まる単語と一致するかどうかを示す値を取得または設定します。[検索と置換] ダイアログ ボックスの [接頭辞に一致する] チェック ボックスに相当します。|
-|matchSoundsLike|bool|**このオプションは 2016 年 6 月の更新で廃止されました**。 検索文字列と似ている単語を検出するかどうかを示す値を取得または設定します。 [検索と置換] ダイアログ ボックスの [あいまい検索] に相当します。|
+|matchSoundsLike|bool|**このオプションは 2016 年 6 月の更新で廃止されました**。検索文字列と似ている単語を検出するかどうかを示す値を取得または設定します。[検索と置換] ダイアログ ボックスの [あいまい検索] に相当します。|
 |matchSuffix|bool|検索文字列で終わる語句と一致するかどうかを示す値を取得または設定します。[検索と置換] ダイアログ ボックスの [接尾辞に一致する] に相当します。|
 |matchWholeWord|bool|長い単語の一部ではなく、単語全体のみを検索操作の対象にするかどうかを示す値を取得または設定します。[検索と置換] ダイアログ ボックスの [完全に一致する単語だけを検索する] チェック ボックスに相当します。|
 |matchWildCards|bool|特殊な検索演算子を使用して検索を実行するかどうかを示す値を取得または設定します。[検索と置換] ダイアログ ボックスの [ワイルドカードを使用する] チェック ボックスに相当します。|
 
-_プロパティのアクセスの[例](#property-access-examples)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
 検索のオプションは、省略可能です。検索のオプションは、すべての検索方法でオブジェクト リテラルを使用して指定する必要があります。
 
@@ -26,37 +26,37 @@ _プロパティのアクセスの[例](#property-access-examples)を参照し�
 
 1 つ以上の検索オプションのプロパティをオブジェクト リテラルで指定して、検索オプションを指定できます。 
 
-## 関係
+## <a name="relationships"></a>関係
 なし
 
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-## プロパティのアクセスの例
+## <a name="property-access-examples"></a>プロパティのアクセスの例
 
-### 句読点を無視する検索
+### <a name="ignore-punctuation-search"></a>句読点を無視する検索
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -92,7 +92,7 @@ Word.run(function (context) {
 });
 ```
 
-### 接頭辞に基づく検索
+### <a name="search-based-on-a-prefix"></a>接頭辞に基づく検索
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -128,7 +128,7 @@ Word.run(function (context) {
 });
 ```
 
-### 接尾辞に基づく検索
+### <a name="search-based-on-a-suffix"></a>接尾辞に基づく検索
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -164,7 +164,7 @@ Word.run(function (context) {
 });
 ```
 
-### ワイルドカードを使用する検索
+### <a name="search-using-a-wildcard"></a>ワイルドカードを使用する検索
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -202,7 +202,7 @@ Word.run(function (context) {
 ```
 
 
-## ワイルドカードのガイダンス 
+## <a name="wildcard-guidance"></a>ワイルドカードのガイダンス 
 
 | 検索対象         | ワイルドカード |  サンプル |
 |:-----------------|:--------|:----------|
@@ -219,5 +219,5 @@ Word.run(function (context) {
 |直前の文字または式の 1 回以上の出現|@ |lo@t では、lot や loot が検出されます。|
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 実行時のチェックで[要件セット](../office-add-in-requirement-sets.md)を使用して、アプリケーションが Word のホスト バージョンによってサポートされていることを確かめます。Office ホスト アプリケーションとサーバーの要件の詳細については、「[Office アドインを実行するための要件](../../docs/overview/requirements-for-running-office-add-ins.md)」を参照してください。

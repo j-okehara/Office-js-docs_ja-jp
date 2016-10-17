@@ -1,18 +1,18 @@
 
-# TableData オブジェクト
+# <a name="tabledata-object"></a>TableData オブジェクト
 テーブルまたは [TableBinding](../../reference/shared/binding.tablebinding.md) 内のデータを表します。
 
 |||
 |:-----|:-----|
 |**ホスト:**|Excel、Word|
 |**[要件セット](../../docs/overview/specify-office-hosts-and-api-requirements.md)に指定できるもの**|TableBindings|
-|**で追加**|1.1|
+|**追加されたバージョン**|1.1|
 
 ```
 TableData
 ```
 
-## メンバー
+## <a name="members"></a>メンバー
 
 
 **プロパティ**
@@ -23,7 +23,7 @@ TableData
 |[headers](../../reference/shared/tabledata.headers.md)|テーブル内のヘッダーを取得または設定します。|
 |[rows](../../reference/shared/tabledata.rows.md)|テーブル内の行を取得または設定します。|
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このオブジェクトは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのオブジェクトをサポートしないことを示します。
@@ -39,16 +39,16 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |||
 |:-----|:-----|
 |**要件セットに指定できるもの**|TableBindings|
-|**アプリの種類**|コンテンツ、作業ウィンドウ|
+|**アドインの種類**|コンテンツ、作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|Word Online のサポートが追加されました。|
 |1.1|Office for iPad における Excel と Word のサポートが追加されました。|

@@ -1,5 +1,5 @@
 
-# Document.ActiveViewChanged イベント
+# <a name="document.activeviewchanged-event"></a>Document.ActiveViewChanged イベント
 ユーザーがドキュメントの現在のビューを変更したときに発生します。
 
 |||
@@ -12,12 +12,12 @@ Office.EventType.ActiveViewChanged
 ```
 
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 ドキュメントの **ActiveViewChanged** イベントのイベント ハンドラーを追加するには、[Document](../../reference/shared/document.addhandlerasync.md) オブジェクトの **addHandlerAsync** メソッドを使用します。このイベント ハンドラーは、[ActiveViewChangedEventArgs](../../reference/shared/document.activeviewchangedeventargs.md) 型の引数を受け取ります。
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このメソッドは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。

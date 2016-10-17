@@ -1,5 +1,5 @@
 
-# FileType 列挙型
+# <a name="filetype-enumeration"></a>FileType 列挙型
 ドキュメントを返す形式を指定します。
 
 |||
@@ -12,19 +12,19 @@ Office.FileType
 ```
 
 
-## メンバー
+## <a name="members"></a>メンバー
 
 
 **値**
 
 
-|**列挙体**|**値**|**Office.FileType.Compressed**|
+|**列挙**|**値**|**説明**|
 |:-----|:-----|:-----|
 |"compressed"|"compressed"|ドキュメント全体 (.pptx または .docx) を Office Open XML (OOXML) 形式でバイト配列として返します。|
 |Office.FileType.Pdf|PDF 形式のドキュメント全体をバイト配列として返します。|Office.FileType.Text|
 |Office.FileType.Text|"text"|ドキュメントのテキストのみを  **string** として返します。(Word のみ)|
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、この列挙は、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションがこの列挙をサポートしないことを示します。
@@ -42,14 +42,14 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 
 |||
 |:-----|:-----|
-|**アプリの種類**|コンテンツ、作業ウィンドウ|
+|**アドインの種類**|コンテンツ、作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|Office for iPad で PowerPoint と Word のサポートが追加されました。|
 |1.1|PDF として保存するためのサポートが追加されました。|

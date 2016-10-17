@@ -1,12 +1,12 @@
-# BreakType (JavaScript API for Word)
+# <a name="breaktype-(javascript-api-for-word)"></a>BreakType (JavaScript API for Word)
 
 区切りの形式を指定します。
 
-_適用対象:Word 2016、Word for iPad、Word for Mac_
+_適用対象:Word 2016、Word for iPad、Word for Mac、Word Online_
 
 API でサポートされている区切りの種類を次に示します。
 
-| **値**         | **種類** | **説明**     |
+| **値**         | **型** | **説明**     |
 |:-----------------|:--------|:----|
 |column| | 挿入位置に段区切りを挿入します。 |
 |line| | 改行します。 |
@@ -19,5 +19,5 @@ API でサポートされている区切りの種類を次に示します。
 |sectionOdd| string | セクション区切りを挿入し、次の奇数ページから次のセクションを開始します。セクション区切りを奇数ページに挿入した場合、次の偶数ページは空白になります。|
 |textWrapping| string | 現在の行を終了し、画像、表、またはその他の項目の下に続きの文字列を配置します。続きの文字列の開始位置は、左端または右端に揃えられた表を含まない、次の空白行です。|
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 実行時のチェックで[要件セット](../office-add-in-requirement-sets.md)を使用して、アプリケーションが Word のホスト バージョンによってサポートされていることを確かめます。Office ホスト アプリケーションとサーバーの要件の詳細については、「[Office アドインを実行するための要件](../../docs/overview/requirements-for-running-office-add-ins.md)」を参照してください。

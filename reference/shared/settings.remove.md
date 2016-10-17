@@ -1,6 +1,6 @@
 
 
-# Settings.remove メソッド
+# <a name="settings.remove-method"></a>Settings.remove メソッド
 指定された設定を削除します。
 
 |||
@@ -14,12 +14,12 @@ Office.context.document.settings.remove(name);
 ```
 
 
-## パラメーター
+## <a name="parameters"></a>パラメーター
 
 
 
 _name_<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;型: **string**
+&nbsp;&nbsp;&nbsp;&nbsp;型:  **string**
 
 &nbsp;&nbsp;&nbsp;&nbsp;削除する設定の名前 (大文字と小文字を区別)。
 
@@ -27,7 +27,7 @@ _name_<br/>
 
 
 
-## 解説
+## <a name="remarks"></a>解説
 
  **null** は設定として有効な値です。したがって、 **null** を設定に割り当ててもその設定が設定プロパティ バッグから削除されるわけではありません。
 
@@ -35,7 +35,7 @@ _name_<br/>
  >**重要**: **Settings.remove** メソッドは、設定プロパティ バッグのメモリ内コピーに対してのみ動作します。指定した設定の削除をドキュメントに保存するには、**Settings.remove** メソッドの呼び出し後アドインを閉じるまでの間に [Settings.saveAsync](../../reference/shared/settings.saveasync.md) メソッドを呼び出す必要があります。
 
 
-## 例
+## <a name="example"></a>例
 
 
 
@@ -49,7 +49,7 @@ function removeMySetting() {
 
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このメソッドは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。
@@ -68,17 +68,17 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |||
 |:-----|:-----|
 |**要件セットに指定できるもの**|設定値|
-|**最小限のアクセス許可レベル**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**アプリの種類**|コンテンツ、作業ウィンドウ|
+|**最小限のアクセス許可レベル**|[制限あり](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**アドインの種類**|コンテンツ、作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|PowerPoint Online のサポートが追加されました。|
 |1.1|Office for iPad で Excel、PowerPoint、および Word のサポートが追加されました。|

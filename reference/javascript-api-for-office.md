@@ -1,5 +1,5 @@
 
-# JavaScript API for Office リファレンス
+# <a name="javascript-api-for-office-reference"></a>JavaScript API for Office リファレンス
 
 JavaScript API for Office を使用すると、Office ホスト アプリケーションのオブジェクト モデルと対話する Web アプリケーションを作成できます。ユーザーのアプリケーションは、スクリプト ローダーである office.js ライブラリを参照します。Office.js ライブラリは、アドインを実行している Office アプリケーションに適用可能なオブジェクト モデルを読み込みます。次の JavaScript オブジェクト モデルを使用できます。
 
@@ -10,7 +10,7 @@ JavaScript API for Office を使用すると、Office ホスト アプリケー�
 
 Office クライアントを TOC の上のドロップダウン リストから選択して、対象のホスト アプリケーションに基づいてコンテンツをフィルター処理します。
 
-## サポートされるホスト アプリケーション
+## <a name="supported-host-applications"></a>サポートされるホスト アプリケーション
 * Access
 * Excel
 * Outlook
@@ -20,7 +20,7 @@ Office クライアントを TOC の上のドロップダウン リストから�
 
 [サポートされるホストとその他の要件](../docs/overview/requirements-for-running-office-add-ins.md)の詳細について説明します。
 
-## Open API の仕様
+## <a name="open-api-specifications"></a>Open API の仕様
 
 新しい Office アドイン用の API の設計と開発にあたり、[Open API の仕様](openspec.md) ページでこれらに対するフィードバックの提供が可能になります。パイプラインの新機能をご確認いただき、設計の仕様に関する情報をお寄せください。
 

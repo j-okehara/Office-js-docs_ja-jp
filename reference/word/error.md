@@ -1,43 +1,43 @@
-﻿# OfficeExtension.Error オブジェクト (JavaScript API for Word)
+# <a name="officeextension.error-object-(javascript-api-for-word)"></a>OfficeExtension.Error オブジェクト (JavaScript API for Word)
 
 Word JavaScript API の使用時に発生するエラーを表します。
 
-_適用対象:Word 2016、Word for iPad、Word for Mac_
+_適用対象:Word 2016、Word for iPad、Word for Mac、Word Online_
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
-|code|string|エラーの種類を示す値を取得します。 次の値をとることができます。"AccessDenied"、"GeneralException"、"ActivityLimitReached"、"InvalidArgument"、"ItemNotFound"、"NotImplemented"。 <!-- Values come from OfficeExtension.Error and Word.ErrorCodes. -->|
+|code|string|エラーの種類を示す値を取得します。次の値をとることができます。"AccessDenied"、"GeneralException"、"ActivityLimitReached"、"InvalidArgument"、"ItemNotFound"、"NotImplemented"。<!-- Values come from OfficeExtension.Error and Word.ErrorCodes. -->|
 |debugInfo|string|エラーが発生したときに何が起こったかを示す値を取得します。この値は、開発中またはデバッグ中のみに使用することが想定されています。  |
 |message |string| エラー コードに対応する、人間が判読できるローカライズされた文字列を取得します。|
 |name |string| 常に "OfficeExtension.Error" である値を取得します。 |
-|traceMessages |string[]| Context.trace(); を使用して設定するインストルメンテーション メッセージに対応する値の配列を取得します。 |
+|traceMessages |string[]| Context.trace(); を使用して設定するインストルメント メッセージに対応する値の配列を取得します。 |
 
-_プロパティのアクセスの[例](#例)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
 |[toString()](#tostring)|string|次の形式でエラー コードとメッセージの値を返します: "{0}: {1}", コード, メッセージ。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
-### toString()
+### <a name="tostring()"></a>toString()
 次の形式でエラー コードとメッセージの値を返します: "{0}: {1}", コード, メッセージ。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 error.toString()
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 なし。
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 string
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -61,9 +61,9 @@ Word.run(function (context) {
 
 ```
 
-## プロパティのアクセスの例
+## <a name="property-access-examples"></a>プロパティのアクセスの例
 
-### トレース メッセージのインストルメンテーション
+### <a name="trace-message-instrumentation"></a>トレース メッセージのインストルメンテーション
 
 次の例は、エラーが発生した場所を判別するコマンドのバッチをインストルメントする方法を示しています。最初のバッチは最初の 2 つの段落を正常に挿入し、エラーは発生していません。2 番目のバッチは 3 番目と 4 番目の段落を正常に挿入しましたが、5 番目の段落を挿入する呼び出しに失敗しました。5 番目のトレース メッセージを追加するコマンドを含め、バッチ内で失敗したコマンドより後の他のすべてのコマンドは実行されていません。この例では、4 番目の段落が挿入された後、5 番目のトレース メッセージを追加する前にエラーが発生しました。
 

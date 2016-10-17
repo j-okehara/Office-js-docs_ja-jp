@@ -1,5 +1,5 @@
 
-# Office.initialize イベント
+# <a name="office.initialize-event"></a>Office.initialize イベント
 ランタイム環境が読み込まれ、アプリケーションやホストされたドキュメントを対話操作するアドインの準備ができたときに発生します。 
 
 |||
@@ -12,7 +12,7 @@ Office.initialize = function (reason) {/* initialization code */}
 ```
 
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 _initialize_ イベント リスナー関数の **reason** パラメーターは、初期化の実行方法を指定する [InitializationReason](../../reference/shared/initializationreason-enumeration.md) 列挙値を返します。作業ウィンドウ アドインまたはコンテンツ アドインは、次の 2 つの場合に初期化できます。
 
@@ -25,7 +25,7 @@ _initialize_ イベント リスナー関数の **reason** パラメーターは
  >**メモ**: **initialize** イベント リスナー関数の reason パラメーターは、作業ウィンドウ アドインとコンテンツ アドインの **InitializationReason** 列挙値のみを返し、Outlook アドインの値は返しません。
 
 
-## 例
+## <a name="example"></a>例
 
 **InitializationEnumeration** の値を使用すると、アドインが初めて挿入された場合と、アドインが既にドキュメントの一部になっている場合とで、異なるロジックを実装できます。次の例は、_reason_ パラメーターの値を使用して、作業ウィンドウ アドインまたはコンテンツアドインが初期化された方法を表示する単純なロジックを示しています。
 
@@ -53,7 +53,7 @@ function write(message){
 
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このイベントは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションがこのイベントをサポートしないことを示します。
@@ -72,17 +72,17 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 
 |||
 |:-----|:-----|
-|**最小限のアクセス許可レベル**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**最小限のアクセス許可レベル**|[制限あり](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**アドインの種類**|コンテンツ、Outlook、作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|PowerPoint Online のサポートが追加されました。|
 |1.1|Office for iPad で Excel、PowerPoint、および Word のサポートが追加されました。|

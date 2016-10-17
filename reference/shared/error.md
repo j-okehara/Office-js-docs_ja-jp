@@ -1,5 +1,5 @@
 
-# Error オブジェクト
+# <a name="error-object"></a>Error オブジェクト
 非同期的なデータ操作中に発生したエラーに関する特定の情報を提供します。
 
 |||
@@ -12,7 +12,7 @@ asyncResult.error
 ```
 
 
-## メンバー
+## <a name="members"></a>メンバー
 
 
 **プロパティ**
@@ -24,12 +24,12 @@ asyncResult.error
 |[name](../../reference/shared/error.name.md)|エラーの名前を取得します。|
 |[message](../../reference/shared/error.message.md)|エラーの詳細な説明を取得します。|
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 **Error** オブジェクトには [AsyncResult](../../reference/shared/asyncresult.md) オブジェクトからアクセスします。このオブジェクトは、_Document_ オブジェクトの [setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) メソッドなど、非同期的なデータ操作の **callback** 引数として渡される関数で返されます。
 
 
-## 例
+## <a name="example"></a>例
 
 次の例では、 **setSelectedDataAsync** メソッドを使用して、選択されたテキストに "Hello World!" と設定します。操作が失敗した場合は、 **Error** オブジェクトの **name** および **message** プロパティの値を表示します。
 
@@ -54,7 +54,7 @@ function write(message){
 
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このメソッドは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。
@@ -72,19 +72,19 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 
 |||
 |:-----|:-----|
-|**最小限のアクセス許可レベル**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**最小限のアクセス許可レベル**|[制限あり](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**アドインの種類**|コンテンツ、作業ウィンドウ、Outlook|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 ****
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|Office for iPad で Excel、PowerPoint、および Word のサポートが追加されました。|
 |1.1|Access 用コンテンツのアドインのサポートが追加されました。|

@@ -1,5 +1,5 @@
 
-# Context.roamingSettings プロパティ
+# <a name="context.roamingsettings-property"></a>Context.roamingSettings プロパティ
 ユーザーのメールボックスに保存されている、Outlook アドインのカスタム設定または状態を表すオブジェクトを取得します。
 
 |||
@@ -13,18 +13,18 @@ var appSettings = office.context.roamingSettings;
 ```
 
 
-## 戻り値
+## <a name="return-value"></a>戻り値
 
 
   [RoamingSettings](http://msdn.microsoft.com/library/cf21bb08-7274-4ad6-ae9e-b2c12f92abc9%28Office.15%29.aspx) オブジェクト。
 
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 **RoamingSettings** オブジェクトを使用すると、ユーザーのメールボックスに保存されている、Outlook アドインのデータの保存やアクセスを実行できます。そのため、Outlook アドインは、このメールボックスへのアクセスに使用するどのホスト クライアント アプリケーションから実行されても、このデータを使用できます。
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このメソッドは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。
@@ -39,18 +39,18 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |||
 |:-----|:-----|
 |**要件セットに指定できるもの**|メールボックス|
-|**最小限のアクセス許可レベル**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**最小限のアクセス許可レベル**|[制限あり](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**アドインの種類**|Outlook|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 ****
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.0|導入|

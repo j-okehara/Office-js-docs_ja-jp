@@ -1,5 +1,5 @@
-﻿
-# Document.getFileAsync メソッド
+
+# <a name="document.getfileasync-method"></a>Document.getFileAsync メソッド
 ドキュメント ファイル全体を、最大で 4194304 バイト (4 MB) のスライスに分割して返します。iOS 用アドインの場合は、最大 65536 バイト (64KB) のファイル スライスがサポートされます。許可されている制限を超えてスライス サイズを指定すると、"内部エラー" が発生しますのでご注意ください。 
 
 |||
@@ -13,19 +13,19 @@ Office.context.document.getFileAsync(fileType [, options], callback);
 ```
 
 
-## パラメーター
+## <a name="parameters"></a>パラメーター
 
 
 
 |**名前**|**型**|**説明**|**サポートのメモ**|
 |:-----|:-----|:-----|:-----|
-| _fileType_|[FileType](../../reference/shared/filetype-enumeration.md)|ファイルが返される形式を指定します。必須です。<br/><table><tr><th>ホスト</th><th>サポート対象 fileType</th></tr><tr><td>Excel Online</td><td>Office.FileType.Compressed</td></tr><tr><td>Windows デスクトップの PowerPoint</td><td>Office.FileType.Compressed、Office.FileType.Pdf</td></tr><tr><td>Windows デスクトップの Word、MAC および iPad</td><td>Office.FileType.Compressed、Office.FileType.Pdf、Office.FileType.Text</td></tr><tr><td>Word Online</td><td>Office.FileType.Compressed、Office.FileType.Pdf、Office.FileType.Text</td></tr><tr><td>PowerPoint Online</td><td>Office.FileType.Compressed、Office.FileType.Pdf</td></tr></table>|**変更対象:** 1.1。「[サポート履歴](#サポート履歴)」をご覧ください|
-| _オプション_|**object**|次の[オプションのパラメーター](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)のいずれかを指定します||
+| _fileType_|[FileType](../../reference/shared/filetype-enumeration.md)|ファイルが返される形式を指定します。必須。<br/><table><tr><th>Host</th><th>サポート対象 fileType</th></tr><tr><td>Excel Online</td><td>Office.FileType.Compressed</td></tr><tr><td>Windows デスクトップの PowerPoint</td><td>Office.FileType.Compressed、Office.FileType.Pdf</td></tr><tr><td>Windows デスクトップの Word、MAC および iPad</td><td>Office.FileType.Compressed、Office.FileType.Pdf、Office.FileType.Text</td></tr><tr><td>Word Online</td><td>Office.FileType.Compressed、Office.FileType.Pdf、Office.FileType.Text</td></tr><tr><td>PowerPoint Online</td><td>Office.FileType.Compressed、Office.FileType.Pdf</td></tr></table>|**変更対象:** 1.1。「[サポート履歴](#support-history)」をご覧ください|
+| _options_|**object**|次の[オプションのパラメーター](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)のいずれかを指定します||
 | _sliceSize_|**number**|目的のスライス サイズをバイト単位で指定します。最大は 4194304 バイト (4 MB) です。指定しない場合は、既定のスライス サイズである 4194304 バイト (4 MB) が使用されます。 ||
-| _asyncContext_|**array**、 **boolean**、 **null**、 **number**、 **object** 、 **string**、または  **undefined**|変更されずに  **AsyncResult** オブジェクトで返される任意の型のユーザー定義項目。||
-| _callback_|**object**|コールバックが戻るときに呼び出される関数で、唯一のパラメーターは  **AsyncResult** 型です。||
+| _asyncContext_|**array**、**boolean**、**null**、**number**、**object**、**string**、または **undefined**|変更されずに **AsyncResult** オブジェクトで返される任意の型のユーザー定義項目。||
+| _callback_|**object**|コールバックが戻るときに呼び出される関数で、唯一のパラメーターは **AsyncResult** 型です。||
 
-## コールバック値
+## <a name="callback-value"></a>コールバック値
 
 _callback_ パラメーターに渡した関数が実行されると、[AsyncResult](../../reference/shared/asyncresult.md) オブジェクトを受け取ります。このオブジェクトには、コールバック関数の唯一のパラメーターからアクセスできます。
 
@@ -38,9 +38,9 @@ _callback_ パラメーターに渡した関数が実行されると、[AsyncRes
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|[File](../../reference/shared/file.md) オブジェクトにアクセスします。|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|操作の成功または失敗を判断します。|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|操作が失敗した場合、エラーに関する情報を提供する [Error](../../reference/shared/error.md) オブジェクトにアクセスします。|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|ユーザー定義の  **object** または値を _asyncContext_ パラメーターとして渡した場合、そのオブジェクトまたは値にアクセスします。|
+|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|ユーザー定義の **object** または値を _asyncContext_ パラメーターとして渡した場合、そのオブジェクトまたは値にアクセスします。|
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 Office for iOS 以外の Office ホスト アプリケーションで実行するアドインの場合、**getFileAsync** メソッドは最大 4194304 バイト (4MB) にスライスしたファイルの取得をサポートします。iOS アプリの Office で実行するアドインの場合は、**getFileAsync** メソッドは最大 65536 バイト (64KB) にスライスしたファイルの取得をサポートします。
 
@@ -50,7 +50,7 @@ _fileType_ パラメーターは、次の列挙型またはテキスト値を使
 **FileType 列挙型**
 
 
-|**値**|**値**|**Office.FileType.Compressed**|
+|**列挙**|**値**|**説明**|
 |:-----|:-----|:-----|
 |"compressed"|ドキュメント全体 (.docx、.pptx、.xslx) を Office Open XML (OOXML) 形式でバイト配列として返します。|Office.FileType.Pdf|
 |"pdf"|PDF 形式のドキュメント全体をバイト配列として返します。|Office.FileType.Text|
@@ -58,7 +58,7 @@ _fileType_ パラメーターは、次の列挙型またはテキスト値を使
 2 つを超えるドキュメントがメモリに存在する場合、**getFileAsync** 操作は失敗します。ファイルを使い終わったら、[File.closeAsync](../../reference/shared/file.closeasync.md) メソッドを使用してファイルを閉じてください。
 
 
-## 例 - Office Open XML ("圧縮") 形式でドキュメントを取得する
+## <a name="example---get-a-document-in-office-open-xml-("compressed")-format"></a>例 - Office Open XML ("圧縮") 形式でドキュメントを取得する
 
 次の使用例では、Office Open XML ("圧縮") 形式のドキュメントを 65536 バイト (64KB) のスライスで取得しています。注意: この例での  `app.showNotification` の実装は、Office アドイン用の Visual Studio テンプレートに由来します。
 
@@ -130,7 +130,7 @@ function onGotAllSlices(docdataSlices) {
 ```
 
 
-## 例 - PDF 形式でドキュメントを取得する
+## <a name="example---get-a-document-in-pdf-format"></a>例 - PDF 形式でドキュメントを取得する
 
 次の例では、PDF 形式でドキュメントを取得します。
 
@@ -156,7 +156,7 @@ Office.context.document.getFileAsync(Office.FileType.Pdf,
 ```
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このメソッドは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。
@@ -177,14 +177,14 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |:-----|:-----|
 |**要件セットに指定できるもの**|ファイル|
 |**最小限のアクセス許可レベル**|[ReadAllDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**アプリの種類**|コンテンツ、作業ウィンドウ|
+|**アドインの種類**|コンテンツ、作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1| PowerPoint Online で、**fileType** パラメーターとして _Office.FileType.Pdf_ のサポートが追加されました。|
 |1.1| PowerPoint Online で、**fileType** パラメーターとして _Office.FileType.Compressed_ のサポートが追加されました。|

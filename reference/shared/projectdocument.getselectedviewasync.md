@@ -1,30 +1,30 @@
 
 
-# ProjectDocument.getSelectedViewAsync メソッド
+# <a name="projectdocument.getselectedviewasync-method"></a>ProjectDocument.getSelectedViewAsync メソッド
 ドキュメント内のアクティブ ビューのビューの種類と名前を非同期に取得します。
 
 |||
 |:-----|:-----|
 |**ホスト:**|Project|
 |**[要件セット](../../docs/overview/specify-office-hosts-and-api-requirements.md)に指定できるもの**|選択内容|
-|**で追加**|1.0|
+|**追加されたバージョン**|1.0|
 
 ```js
 Office.context.document.getSelectedViewAsync([options,] [callback]);
 ```
 
 
-## パラメーター
+## <a name="parameters"></a>パラメーター
 
 
 
 |**名前**|**型**|**説明**|**サポートのメモ**|
 |:-----|:-----|:-----|:-----|
-| _オプション_|**object**|次の[オプションのパラメーター](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)のいずれかを指定します。||
-| _asyncContext_|**array**、 **boolean**、 **null**、 **number**、 **object** 、 **string**、または  **undefined**|変更されずに  **AsyncResult** オブジェクトで返される任意の型のユーザー定義項目。||
-| _callback_|**object**|コールバックが戻るときに呼び出される関数で、唯一のパラメーターは  **AsyncResult** 型です。||
+| _options_|**object**|次の[オプションのパラメーター](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)のいずれかを指定します。||
+| _asyncContext_|**array**、**boolean**、**null**、**number**、**object**、**string**、または **undefined**|変更されずに **AsyncResult** オブジェクトで返される任意の型のユーザー定義項目。||
+| _callback_|**object**|コールバックが戻るときに呼び出される関数で、唯一のパラメーターは **AsyncResult** 型です。||
 
-## コールバック値
+## <a name="callback-value"></a>コールバック値
 
 _callback_ 関数が実行されるとき、その関数は [AsyncResult](../../reference/shared/asyncresult.md) オブジェクトを受け取ります。このオブジェクトは、コールバック関数のパラメーターからアクセスできます。
 
@@ -36,12 +36,12 @@ _callback_ 関数が実行されるとき、その関数は [AsyncResult](../../
 
 |**名前**|**説明**|
 |:-----|:-----|
-|[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|省略可能な  _asyncContext_ に入れて渡されたデータ (このパラメーターが使用された場合)。|
-|[エラー](../../reference/shared/asyncresult.error.md)|**status** プロパティが **failed** と等しい場合に、エラーに関する情報。|
-|[status](../../reference/shared/asyncresult.status.md)|非同期呼び出しの  **succeeded** または **failed** 状態。|
-|[value](../../reference/shared/asyncresult.value.md)|次のプロパティが含まれます。<br/><br/><div>* **viewName** - ビューの名前 ([ProjectViewTypes](../../reference/shared/projectviewtypes-enumeration.md) 定数)。<br/>* **viewType** - ビューの種類 ([ProjectViewTypes](../../reference/shared/projectviewtypes-enumeration.md) 定数の整数値)。</div>|
+|[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|省略可能な _asyncContext_ パラメーターに入れて渡されたデータ (このパラメーターが使用された場合)。|
+|[error](../../reference/shared/asyncresult.error.md)|**status** プロパティが **failed** と等しい場合に、エラーに関する情報。|
+|[status](../../reference/shared/asyncresult.status.md)|非同期呼び出しの **succeeded** または **failed** 状態。|
+|[value](../../reference/shared/asyncresult.value.md)|次のプロパティが含まれています。<br/><br/><div>* **viewName** プロパティは、[ProjectViewTypes](../../reference/shared/projectviewtypes-enumeration.md) 定数としての、ビューの名前です。<br/>* **viewType** プロパティは、[ProjectViewTypes](../../reference/shared/projectviewtypes-enumeration.md) 定数の整数値としての、ビューの種類です。</div>|
 
-## 例
+## <a name="example"></a>例
 
 次のコード例では、ドキュメント内のアクティブ ビューの名前と種類を取得する  [getSelectedViewAsync](../../reference/shared/projectdocument.viewselectionchanged.event.md) を呼び出す**ViewSelectionChanged** イベント ハンドラーを追加します。
 
@@ -97,7 +97,7 @@ _callback_ 関数が実行されるとき、その関数は [AsyncResult](../../
 ```
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このメソッドは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。
@@ -113,26 +113,26 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |:-----|:-----|
 |**要件セットに指定できるもの**|選択内容|
 |**最小限のアクセス許可レベル**|[ReadDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**アプリの種類**|作業ウィンドウ|
+|**アドインの種類**|作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 ****
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.0|導入|
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 
 
-#### その他の技術情報
+#### <a name="other-resources"></a>その他の技術情報
 
 
 [ProjectViewTypes 列挙](../../reference/shared/projectviewtypes-enumeration.md)

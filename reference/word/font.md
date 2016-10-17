@@ -1,10 +1,10 @@
-﻿# フォント オブジェクト (JavaScript API for Word)
+# <a name="font-object-(javascript-api-for-word)"></a>フォント オブジェクト (JavaScript API for Word)
 
 フォントを表します。
 
-_適用対象:Word 2016、Word for iPad、Word for Mac_
+_適用対象:Word 2016、Word for iPad、Word for Mac、Word Online_
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
 |bold|bool|フォントが太字かどうかを示す値を取得または設定します。フォントの書式設定が太字の場合は true、それ以外の場合は false です。|
@@ -17,39 +17,39 @@ _適用対象:Word 2016、Word for iPad、Word for Mac_
 |subscript|bool|フォントが下付き文字かどうかを示す値を取得または設定します。フォントの書式が下付き文字である場合は true、それ以外の場合は false です。|
 |superscript|bool|フォントが上付き文字かどうかを示す値を取得または設定します。フォントの書式が上付き文字である場合は true、それ以外の場合は false です。|
 
-_プロパティのアクセスの[例](#例)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
-## リレーションシップ
+## <a name="relationships"></a>関係
 | リレーションシップ | 型   |説明|
 |:---------------|:--------|:----------|
-|size|**浮動小数点数**|フォント サイズをポイント単位で表す値を取得または設定します。|
+|size|**float**|フォント サイズをポイント単位で表す値を取得または設定します。|
 |underline|**string**|フォントの下線の種類を示す値を取得または設定します。有効な値は次のとおりです。"None"、"Single"、"Word"、"Double"、"Dotted"、"Hidden"、"Thick"、"Dashline"、"Dotline"、"DotDashLine"、"TwoDotDashLine"、"Wave"|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -88,9 +88,9 @@ Word.run(function (context) {
 });
 ```
 
-## プロパティのアクセスの例
+## <a name="property-access-examples"></a>プロパティのアクセスの例
 
-### フォント名の変更
+### <a name="change-the-font-name"></a>フォント名の変更
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -115,7 +115,7 @@ Word.run(function (context) {
 });
 ```
 
-### フォントの色の変更
+### <a name="change-the-font-color"></a>フォントの色の変更
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -140,7 +140,7 @@ Word.run(function (context) {
 });
 ```
 
-### フォント サイズの変更
+### <a name="change-the-font-size"></a>フォント サイズの変更
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -165,7 +165,7 @@ Word.run(function (context) {
 });
 ```
 
-### 選択したテキストの強調表示
+### <a name="highlight-selected-text"></a>選択したテキストの強調表示
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -190,7 +190,7 @@ Word.run(function (context) {
 });
 ```
 
-### 太字のテキスト
+### <a name="bold-format-text"></a>太字のテキスト
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -216,7 +216,7 @@ Word.run(function (context) {
 
 ```
 
-### 下線付きのテキスト
+### <a name="underline-format-text"></a>下線付きのテキスト
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -241,7 +241,7 @@ Word.run(function (context) {
 });
 ```
 
-### 取り消し線付きのテキスト
+### <a name="strike-format-text"></a>取り消し線付きのテキスト
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -266,5 +266,5 @@ Word.run(function (context) {
 });
 ```
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 実行時のチェックで[要件セット](../office-add-in-requirement-sets.md)を使用して、アプリケーションが Word のホスト バージョンによってサポートされていることを確かめます。Office ホスト アプリケーションとサーバーの要件の詳細については、「[Office アドインを実行するための要件](../../docs/overview/requirements-for-running-office-add-ins.md)」を参照してください。

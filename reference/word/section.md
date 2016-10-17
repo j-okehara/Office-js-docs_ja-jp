@@ -1,44 +1,44 @@
-﻿# セクション オブジェクト (JavaScript API for Word)
+# <a name="section-object-(javascript-api-for-word)"></a>セクション オブジェクト (JavaScript API for Word)
 
 Word 文書内のセクションを表します。
 
-_適用対象:Word 2016、Word for iPad、Word for Mac_
+_適用対象:Word 2016、Word for iPad、Word for Mac、Word Online_
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 なし
 
-## 関係
+## <a name="relationships"></a>関係
 | リレーションシップ | 型   |説明|
 |:---------------|:--------|:----------|
-|body|[本文](body.md)|セクションの本文を取得します。これには、headerfooter およびその他のセクション メタデータは含まれません。読み取り専用です。|
+|body|[Body](body.md)|セクションの本文を取得します。これには、headerfooter およびその他のセクション メタデータは含まれません。読み取り専用です。|
 
-## メソッド
+## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
-|[getFooter(type: HeaderFooterType)](#getfootertype-headerfootertype)|[本文](body.md)|セクションのフッターの 1 つを取得します。|
-|[getHeader(type: HeaderFooterType)](#getheadertype-headerfootertype)|[本文](body.md)|セクションのヘッダーの 1 つを取得します。|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
+|[getFooter(type: HeaderFooterType)](#getfootertype-headerfootertype)|[Body](body.md)|セクションのフッターの 1 つを取得します。|
+|[getHeader(type: HeaderFooterType)](#getheadertype-headerfootertype)|[Body](body.md)|セクションのヘッダーの 1 つを取得します。|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
-## メソッドの詳細
+## <a name="method-details"></a>メソッドの詳細
 
-### getFooter(type: HeaderFooterType)
+### <a name="getfooter(type:-headerfootertype)"></a>getFooter(type: HeaderFooterType)
 セクションのフッターの 1 つを取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 sectionObject.getFooter(type);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |型|HeaderFooterType|必須。返されるフッターの型。この値は 'primary'、'firstPage'、または 'evenPages' です。|
 
-#### 戻り値
-[本文](body.md)
+#### <a name="returns"></a>戻り値
+[Body](body.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -77,23 +77,23 @@ Word.run(function (context) {
     }
 });
 ```
-### getHeader(type: HeaderFooterType)
+### <a name="getheader(type:-headerfootertype)"></a>getHeader(type: HeaderFooterType)
 セクションのヘッダーの 1 つを取得します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 sectionObject.getHeader(type);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |型|HeaderFooterType|必須。返されるヘッダーの型。この値は 'primary'、'firstPage'、または 'evenPages' です。|
 
-#### 戻り値
-[本文](body.md)
+#### <a name="returns"></a>戻り値
+[Body](body.md)
 
-#### 例
+#### <a name="examples"></a>例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -133,21 +133,21 @@ Word.run(function (context) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
-#### 構文
+#### <a name="syntax"></a>構文
 ```js
 object.load(param);
 ```
 
-#### パラメーター
+#### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
-#### 戻り値
+#### <a name="returns"></a>戻り値
 void
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 実行時のチェックで[要件セット](../office-add-in-requirement-sets.md)を使用して、アプリケーションが Word のホスト バージョンによってサポートされていることを確かめます。Office ホスト アプリケーションとサーバーの要件の詳細については、「[Office アドインを実行するための要件](../../docs/overview/requirements-for-running-office-add-ins.md)」を参照してください。

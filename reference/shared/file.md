@@ -1,5 +1,5 @@
 
-# File オブジェクト
+# <a name="file-object"></a>File オブジェクト
 Office アドインに関連付けられているドキュメント ファイルを表します。
 
 |||
@@ -13,7 +13,7 @@ file
 ```
 
 
-## メンバー
+## <a name="members"></a>メンバー
 
 
 **プロパティ**
@@ -32,12 +32,12 @@ file
 |**[closeAsync](../../reference/shared/file.closeasync.md)**|ドキュメント ファイルを閉じます。|
 |**[getSliceAsync](../../reference/shared/file.getsliceasync.md)**|指定したスライスを返します。|
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 **File** オブジェクトには、[Document.getFileAsync](../../reference/shared/asyncresult.value.md) メソッドに渡されるコールバック関数の [AsyncResult.value](../../reference/shared/document.getfileasync.md) プロパティを使用してアクセスします。
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このオブジェクトは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのオブジェクトをサポートしないことを示します。
@@ -58,14 +58,14 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 ****
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|Office for iPad で PowerPoint と Word のサポートが追加されました。|
 |1.0|導入|

@@ -1,32 +1,32 @@
 
-# Document.goToByIdAsync メソッド
+# <a name="document.gotobyidasync-method"></a>Document.goToByIdAsync メソッド
 ドキュメント内の指定されたオブジェクトまたは場所に移動します。
 
 |||
 |:-----|:-----|
 |**ホスト:**|Excel、PowerPoint、Word|
 |**要件セットに指定できるもの**|セットには指定できない|
-|**で追加**|1.1|
+|**追加されたバージョン**|1.1|
 
 ```js
 Office.context.document.goToByIdAsync(id, goToType, [,options], callback);
 ```
 
 
-## パラメーター
+## <a name="parameters"></a>パラメーター
 
 
 
 |**名前**|**型**|**説明**|**サポートのメモ**|
 |:-----|:-----|:-----|:-----|
-| _id_|**string** または **number**|移動先のオブジェクトまたは場所の識別子です。必ず指定します。||
-| _goToType_|[GoToType](../../reference/shared/gototype-enumeration.md)|移動先の場所の型です。必ず指定します。||
-| _オプション_|**object**|次の[オプションのパラメーター](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)のいずれかを指定します||
+| _id_|**string** または **number**|移動先のオブジェクトまたは場所の識別子です。必須。||
+| _goToType_|[GoToType](../../reference/shared/gototype-enumeration.md)|移動先の場所の型です。必須。||
+| _options_|**object**|次の[オプションのパラメーター](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)のいずれかを指定します||
 | _selectionMode_|[SelectionMode](../../reference/shared/selectionmode-enumeration.md)|_id_ パラメーターで指定した場所が選択されている (強調表示されている) かどうかを指定します。|**Excel の場合:**<br/> **Office.SelectionMode.Selected** は、バインド内のすべてのコンテンツ、または名前付きアイテムを選択します。 <br/>**Office.SelectionMode.None** では、テキスト バインドの場合は、セルを選択します。マトリックス バインド、テーブル バインド、および名前付きアイテムの場合は、最初のデータ セルを選択します (テーブルの見出し行の最初のセルではありません)。<br/><br/> **PowerPoint の場合:**<br/> **Office.SelectionMode.Selected** は、スライド タイトルまたはスライドの最初のテキストボックスを選択します。<br/> **Office.SelectionMode.None** は何も選択しません。<br/><br/> **Word の場合:**<br/> **Office.SelectionMode.Selected** は、バインド内のすべてのコンテンツを選択します。 <br/>**Office.SelectionMode.None** では、テキスト バインドの場合はテキストの最初までカーソルを移動します。マトリックス バインドとテーブル バインドの場合は、最初のデータ セルを選択します (テーブルの見出し行の最初のセルではありません)。|
-| _asyncContext_|**array**、 **boolean**、 **null**、 **number**、 **object** 、 **string**、または  **undefined**|変更されずに  **AsyncResult** オブジェクトで返される任意の型のユーザー定義項目。||
-| _callback_|**object**|コールバックが戻るときに呼び出される関数で、唯一のパラメーターは  **AsyncResult** 型です。||
+| _asyncContext_|**array**、**boolean**、**null**、**number**、**object**、**string**、または **undefined**|変更されずに **AsyncResult** オブジェクトで返される任意の型のユーザー定義項目。||
+| _callback_|**object**|コールバックが戻るときに呼び出される関数で、唯一のパラメーターは **AsyncResult** 型です。||
 
-## コールバック値
+## <a name="callback-value"></a>コールバック値
 
 _callback_ パラメーターに渡した関数が実行されると、[AsyncResult](../../reference/shared/asyncresult.md) オブジェクトを受け取ります。このオブジェクトには、コールバック関数の唯一のパラメーターからアクセスできます。
 
@@ -39,14 +39,14 @@ _callback_ パラメーターに渡した関数が実行されると、[AsyncRes
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|現在のビューを返します。|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|操作の成功または失敗を判断します。|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|操作が失敗した場合、エラーに関する情報を提供する [Error](../../reference/shared/error.md) オブジェクトにアクセスします。|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|ユーザー定義の  **object** または値を _asyncContext_ パラメーターとして渡した場合、そのオブジェクトまたは値にアクセスします。|
+|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|ユーザー定義の **object** または値を _asyncContext_ パラメーターとして渡した場合、そのオブジェクトまたは値にアクセスします。|
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 PowerPoint では、 **マスター表示**で  **goToByIdAsync** メソッドがサポートされません。
 
 
-## 例
+## <a name="example"></a>例
 
  **ID でバインドに移動する (Word と Excel)**
 
@@ -130,7 +130,7 @@ function goToTable() {
     
 -  操作の状態を返す **匿名のコールバック関数を** _goToByIdAsync_ メソッドの **callback**パラメーターに渡します。
     
--  アドインのページに  `asyncResult.value` から返された、文字列に変換された JSON オブジェクトの **値を表示します**。これには選択されたスライドに関する情報が含まれています。
+-  アドインのページに `asyncResult.value` から返された、文字列に変換された JSON オブジェクトの **値を表示します**。これには選択されたスライドに関する情報が含まれています。
     
 
 
@@ -197,7 +197,7 @@ function goToSlideByIndex() {
 
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このメソッドは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。
@@ -218,15 +218,15 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |:-----|:-----|
 |**要件セットに指定できるもの**|セットには指定できない|
 |**最小限のアクセス許可レベル**|[ReadDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**アプリの種類**|コンテンツ、作業ウィンドウ|
+|**アドインの種類**|コンテンツ、作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.1|PowerPoint Online のサポートが追加されました。|
 |1.1|Office for iPad で Excel、PowerPoint、および Word のサポートが追加されました。|

@@ -1,4 +1,4 @@
-# Settings.settingschangedeventargs オブジェクト
+# <a name="settings.settingschangedeventargs-object"></a>Settings.settingschangedeventargs オブジェクト
 [settingsChanged イベント](settings.settingschangedevent.md)が発生した設定についての情報を提供します。
 
 |||
@@ -11,16 +11,16 @@
 Office.EventType.SettingsChanged
 ```
 
-## メンバー
+## <a name="members"></a>メンバー
 
 **プロパティ**
 
 |**名前**|**説明**|
 |:-----|:-----|
-|**[設定](settings.settingschangedeventargs.setting.md)**|settingsChanged イベントが発生した設定を表す **Settings** オブジェクトを取得します。|
+|**[settings](settings.settingschangedeventargs.setting.md)**|settingsChanged イベントが発生した設定を表す **Settings** オブジェクトを取得します。|
 |**[type](settings.settingschangedeventargs.type.md)**|発生したイベントの種類を識別する **EventType** 列挙値を取得します。|
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 **settingsChanged** イベントのイベント ハンドラーを追加するには、[Settings](settings.addhandlerasync.md) オブジェクトの **addHandlerAsync** メソッドを使用します。
 
@@ -33,7 +33,7 @@ Office.EventType.SettingsChanged
 
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このオブジェクトは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのオブジェクトをサポートしないことを示します。
@@ -49,13 +49,13 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |||
 |:-----|:-----|
 |**要件セットに指定できるもの**|設定値|
-|**最小限のアクセス許可レベル**|Restricted|
-|**アプリの種類**|コンテンツ、作業ウィンドウ|
+|**最小限のアクセス許可レベル**|制限あり|
+|**アドインの種類**|コンテンツ、作業ウィンドウ|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.0|導入|

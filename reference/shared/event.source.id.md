@@ -1,13 +1,13 @@
 
 
-# event.source.id
+# <a name="event.source.id"></a>event.source.id
 この関数の呼び出しをトリガーしたコントロールの ID を取得します。
 
 ****
 
 |||
 |:-----|:-----|
-|**ホスト:**Outlook|**アドインの種類:** Outlook|
+|**ホスト:**Outlook|**アドインの種類:**Outlook|
 |**[要件セット](../../docs/overview/specify-office-hosts-and-api-requirements.md)に指定できるもの**|メールボックス|
 |**メールボックスの最終変更**|1.3|
 |**適用可能な Outlook のモード**|読み取りおよび作成|
@@ -19,19 +19,19 @@ event.source.id;
 ```
 
 
-## 戻り値
+## <a name="return-value"></a>戻り値
 
 この関数の呼び出しをトリガーしたコントロールの ID。この ID はマニフェストに基づきます。
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 以下の表の大文字 Y は、対象プロパティが対応する Outlook ホスト アプリケーションでサポートされていることを示します。セルが空の場合、Outlook ホスト アプリケーションは対象プロパティをサポートしません。
 
 Office ホスト アプリケーションとサーバーの要件の詳細については、「[Office アドインを実行するための要件](../../docs/overview/requirements-for-running-office-add-ins.md)」をご覧ください。
 
- **重要:** 現在アドイン コマンドおよびアドイン コマンドに関連付けられている API は、Windows デスクトップ上の [Office 2016 Preview](https://products.office.com/en-us/office-2016-preview) の Outlook でしか動作しません。
+ **重要:**現在アドイン コマンドおよびアドイン コマンドに関連付けられている API は、Windows デスクトップ上の [Office 2016 Preview](https://products.office.com/en-us/office-2016-preview) の Outlook でしか動作しません。
 
 
 **サポートされるホスト (プラットフォーム別)**
@@ -48,11 +48,11 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.3|導入|

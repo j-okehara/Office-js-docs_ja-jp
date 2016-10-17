@@ -1,5 +1,5 @@
 
-# Office.cast.item プロパティ
+# <a name="office.cast.item-property"></a>Office.cast.item プロパティ
 新規作成モードまたは閲覧モードのメッセージおよび予定に固有の IntelliSense を提供します。
 
 |||
@@ -47,12 +47,12 @@ Office.cast.item.toMessage(Office.context.mailbox.item);
 ```
 
 
-## 戻り値
+## <a name="return-value"></a>戻り値
 
 Outlook アドイン用の適切な IntelliSense を選択できるようにする一連のメソッド。
 
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 このプロパティとそのメソッドは、Outlook アドインを Visual Studio 上で開発する場合にのみ IntelliSense をサポートします。他の開発ツールには効果がありません。
 
@@ -61,7 +61,7 @@ Outlook アドイン用の適切な IntelliSense を選択できるようにす�
 実行時に  **Office.cast.item** のメソッドは Outlook アドインに影響を与えません。
 
 
-## 例
+## <a name="example"></a>例
 
 次の例では **toMessageCompose** メソッドを使用して **Office.context.mailbox.item** プロパティをキャストして、新規作成モードで **Message** オブジェクトの IntelliSense のみが表示されるようにします。キャストした後、 `message` 変数には、新規作成モードで使用できるメソッドおよびプロパティの IntelliSense のみが表示されます。
 
@@ -72,7 +72,7 @@ var message = Office.cast.item.toMessageCompose(Office.context.mailbox.item);
 ```
 
 
-## サポートの詳細
+## <a name="support-details"></a>サポートの詳細
 
 
 次の表で、大文字 Y は、このメソッドは、対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。
@@ -86,15 +86,15 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |||
 |:-----|:-----|
 |**要件セットに指定できるもの**|メールボックス|
-|**最小限のアクセス許可レベル**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**最小限のアクセス許可レベル**|[制限あり](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**アドインの種類**|Outlook|
 |**ライブラリ**|Office.js|
 |**名前空間**|Office|
 
-## サポート履歴
+## <a name="support-history"></a>サポート履歴
 
 
 
-|**変更内容**|**1.1**|
+|**バージョン**|**変更内容**|
 |:-----|:-----|
 |1.0|導入|
