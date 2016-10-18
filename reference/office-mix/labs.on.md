@@ -15,10 +15,10 @@ function on(event: string, handler: Core.IEventCallback): void
 
 |**名前**|**説明**|
 |:-----|:-----|
-|event|The event you wish to add.|
-|handler|The event handler you wish to add, using [Labs.Core.IEventCallback](../../reference/office-mix/labs.core.ieventcallback.md) interface.|
+|event|追加対象のイベント。|
+|handler|イベント ハンドラーを追加するを使用して[Labs.Core.IEventCallback](../../reference/office-mix/labs.core.ieventcallback.md) インタ フェースです。|
 
-## <a name="return-value"></a>Return value
+## <a name="return-value"></a>戻り値
 
 なし。
 

@@ -15,6 +15,6 @@ interface IChoice
 
 |名前|説明|
 |:-----|:-----|
-| `id: string`|Unique ID for the choice.|
-| `name: string`|Represents the value to place in the value type.|
-| `value: any`|Value of the choice.|
+| `id: string`|選択肢の一意の ID。|
+| `name: string`|値の種類に指定する値を表します。|
+| `value: any`|選択肢の値。|

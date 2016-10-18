@@ -15,5 +15,5 @@ interface IUserInfo
 
 |||
 |:-----|:-----|
-| `id: string`|Unique identifier for the lab user.|
-| `permissions: string[]`|The set of permission that control the user’s access to the lab.|
+| `id: string`|ラボ ユーザーの一意の ID。|
+| `permissions: string[]`|ラボへのユーザーのアクセスを制御するためのアクセス許可のセット。|

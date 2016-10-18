@@ -15,8 +15,8 @@ class LabInstance
 
 |||
 |:-----|:-----|
-| `public var data: any`|Container variable for holding user data.|
-| `public var components: Labs.ComponentInstanceBase[]`|Components that make up the lab instance.|
+| `public var data: any`|ユーザー データを保持するコンテナー変数。|
+| `public var components: Labs.ComponentInstanceBase[]`|ラボ インスタンスを構成するコンポーネント。|
 
 ## <a name="methods"></a>メソッド
 

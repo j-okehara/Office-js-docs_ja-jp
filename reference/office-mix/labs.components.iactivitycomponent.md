@@ -15,4 +15,4 @@ interface IActivityComponent extends Labs.Core.IComponent
 
 |名前|説明|
 |:-----|:-----|
-| `secure: boolean`|Indicates whether an input component is secure.|
+| `secure: boolean`|入力コンポーネントがセキュリティで保護されているかどうかを示します。|

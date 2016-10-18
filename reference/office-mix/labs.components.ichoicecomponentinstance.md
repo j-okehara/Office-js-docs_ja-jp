@@ -15,10 +15,10 @@ interface IChoiceComponentInstance extends Labs.Core.IComponentInstance
 
 |名前|説明|
 |:-----|:-----|
-| `choices: Components.IChoice[]`|An array representing the list of choices associated with the problem.|
-| `timeLimit: number`|Time limit for completing the problem.|
-| `maxAttempts: number`|Maximum number of attempts allowed for the problem.|
-| `maxScore: number`|The maximum score for the problem.|
+| `choices: Components.IChoice[]`|問題に関連付けられている選択肢の一覧を表す配列。|
+| `timeLimit: number`|問題を完了するための時間制限。|
+| `maxAttempts: number`|問題に対して許可されている最大試行数。|
+| `maxScore: number`|問題の最大スコア。|
 | `hasAnswer: boolean`|問題に答えがある場合は、**True** です。|
 | `answer: any`|問題の答えです。複数の答えがサポートされている場合は配列、答えが 1 つしかサポートされていない場合は単一の ID です。|
 | `secure: boolean`|テストがセキュリティで保護されているかどうかに限らず、セキュリティで保護されたフィールドはユーザーに公表されません。|

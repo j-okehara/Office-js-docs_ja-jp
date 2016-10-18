@@ -15,5 +15,5 @@ interface IValue
 
 |||
 |:-----|:-----|
-| `isHint: boolean`|Boolean to indicate whether this value is a hint.|
-| `value: any`|The value.|
+| `isHint: boolean`|この値がヒントかどうかを示すブール値。|
+| `value: any`|値。|

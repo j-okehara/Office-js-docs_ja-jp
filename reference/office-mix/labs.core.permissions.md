@@ -15,5 +15,5 @@ class Permissions
 
 |||
 |:-----|:-----|
-| `static var Edit: string`|User has permission to edit the lab.|
-| `static var Take: string`|User has permission to take (or run) the lab.|
+| `static var Edit: string`|ユーザーはラボを編集するアクセス許可があります。|
+| `static var Take: string`|ユーザーはラボを始める (実行する) アクセス許可があります。|

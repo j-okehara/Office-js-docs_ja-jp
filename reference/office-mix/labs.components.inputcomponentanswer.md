@@ -15,7 +15,7 @@ class InputComponentAnswer
 
 |プロパティ|説明|
 |:-----|:-----|
-| `public var answer: any`|The answer value.|
+| `public var answer: any`|応答の値。|
 
 ## <a name="methods"></a>メソッド
 

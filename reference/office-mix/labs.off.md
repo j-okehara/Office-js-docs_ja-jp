@@ -15,8 +15,8 @@ function off(event: string, handler: Core.IEventCallback): void
 
 |**名前**|**説明**|
 |:-----|:-----|
-|event|The event on which to remove the handler.|
-|handler|The event handler you wish to remove.|
+|event|ハンドラーを削除する対象のイベント。|
+|handler|削除するイベント ハンドラー。|
 
 ## <a name="return-value"></a>Return value
 

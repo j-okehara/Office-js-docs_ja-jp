@@ -15,5 +15,5 @@ interface IVersion
 
 |||
 |:-----|:-----|
-| `major: number`|The major version.|
-| `minor: number`|The minor version.|
+| `major: number`|メジャー バージョン。|
+| `minor: number`|マイナー バージョン。|

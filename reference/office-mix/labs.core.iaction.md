@@ -15,7 +15,7 @@ interface IAction
 
 |||
 |:-----|:-----|
-| `type: string`|The type of action taken by the user.|
+| `type: string`|ユーザーが実行するアクションの種類。|
 | `options: Core.IActionOptions`|The [Labs.Core.IActionOptions](../../reference/office-mix/labs.core.iactionoptions.md) options sent with the action taken by the user.|
 | `result: Core.IActionResult`|The [Labs.Core.IActionResult](../../reference/office-mix/labs.core.iactionresult.md) result of the action.|
-| `time: number`|The time at which the action was completed, represented in milliseconds elapsed since 01 January 1970 00:00:00 UTC.|
+| `time: number`|アクションを完了した時刻です (1 月 1 日 1970 00:00:00 UTC からの経過時間がミリ秒で表されます)。|

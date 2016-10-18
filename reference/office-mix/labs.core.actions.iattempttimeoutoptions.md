@@ -15,4 +15,4 @@ interface IAttemptTimeoutOptions extends Core.IActionOptions
 
 |||
 |:-----|:-----|
-| `attemptId: string`|The ID of the attempt that timed out.|
+| `attemptId: string`|タイムアウトした試行の ID。|

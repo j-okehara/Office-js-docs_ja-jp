@@ -15,4 +15,4 @@ interface ICloseComponentOptions extends Core.IActionOptions
 
 |||
 |:-----|:-----|
-| `componentId: string`|The component to close.|
+| `componentId: string`|終了するコンポーネント。|

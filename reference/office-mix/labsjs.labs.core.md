@@ -4,11 +4,11 @@ LabsJS.Labs.Core JavaScript API リファレンスの概要について説明し
 
  _**適用対象:** Office 用アプリ | Office アドイン | Office Mix | PowerPoint_
 
-The core interfaces, data structures, and classes are components that are shared by LabsJS and the presentation driver (in this case, Office Mix), to create an interactive bridge between the two.
+LabsJS とプレゼンテーション ドライバー (この場合は、Office Mix) の間で共有され、この 2 者間の橋渡しをする、中心的なインターフェイス、データ構造、クラス。
 
 ## <a name="labsjs.labs.core-api-module"></a>LabsJS.Labs.Core API module
 
-The Labs.Core module contains the following types:
+Labs.Core モジュールには次の種類が含まれます。
 
 
 ### <a name="classes"></a>クラス

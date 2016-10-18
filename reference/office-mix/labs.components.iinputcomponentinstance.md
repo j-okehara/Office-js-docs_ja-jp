@@ -16,5 +16,5 @@ interface IInputComponentInstance extends Labs.Core.IComponentInstance
 |**名前**|**説明**|
 |:-----|:-----|
 | `maxScore: number`|入力コンポーネントの許容最大スコア。|
-| `timeLimit: number`|Time limit for the input problem.|
-| `answer: any`|The answer to the component problem.|
+| `timeLimit: number`|入力の問題の時間制限。|
+| `answer: any`|コンポーネントの問題に対する応答。|

@@ -47,7 +47,7 @@ class ChoiceComponentAttempt extends Components.ComponentAttempt
 
  `public function getSubmissions(): Components.ChoiceComponentSubmission[]`
 
-Retrieves all submissions that have been previously submitted for a given attempt.
+特定の試行で、以前に送信されたすべての送信を取得します。
 
 
 ### <a name="submit"></a>submit
@@ -69,5 +69,5 @@ Retrieves all submissions that have been previously submitted for a given attemp
 
  `public function processAction(action: Labs.Core.IAction): void`
 
-Initiates processing of the [Labs.Core.IAction](../../reference/office-mix/labs.core.iaction.md) action.
+処理を開始します	[Labs.Core.IAction](../../reference/office-mix/labs.core.iaction.md)アクション
 

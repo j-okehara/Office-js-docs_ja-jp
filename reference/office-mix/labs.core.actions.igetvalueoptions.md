@@ -15,6 +15,6 @@ interface IGetValueOptions extends Core.IActionOptions
 
 |||
 |:-----|:-----|
-| `componentId: string`|The component associated with the get value operation.|
-| `attemptId: string`|The attempt to get the value for.|
-| `valueId: string`|The ID of the value to receive.|
+| `componentId: string`|get value 操作に関連付けられているコンポーネント。|
+| `attemptId: string`|値を取得する試行。|
+| `valueId: string`|受信する値の ID。|

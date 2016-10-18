@@ -15,5 +15,5 @@ interface ITimelineConfiguration
 
 |||
 |:-----|:-----|
-| `duration: number`|The duration of the lab, in seconds.|
-| `capabilities: string[]`|An array list of timeline capabilities that the lab supports, for example, play, pause, seek, and so forth.|
+| `duration: number`|ラボの期間 (秒単位)|
+| `capabilities: string[]`|再生、一時停止、シークなど、ラボがサポートするタイムライン機能の配列一覧。|

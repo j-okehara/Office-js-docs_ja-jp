@@ -15,4 +15,4 @@ interface IUserData
 
 |||
 |:-----|:-----|
-| `data?: any`|Optional data field to store user data on an object.|
+| `data?: any`|オブジェクトにユーザー データを格納する省略可能なデータ フィールド。|

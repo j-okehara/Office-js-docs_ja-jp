@@ -48,7 +48,7 @@ class InputComponentAttempt extends Components.ComponentAttempt
 
  `public function getSubmissions(): Components.InputComponentSubmission[]`
 
-Retrieves all of the submissions that have previously been submitted for the specified attempt.
+指定の試行で、以前に送信されたすべての送信を取得します。
 
 
 ### <a name="submit"></a>submit

@@ -15,4 +15,4 @@ interface IGetAttemptOptions extends Core.IGetActionOptions
 
 |||
 |:-----|:-----|
-| `attemptId: string`|The attempt ID for which to retrieve all actions.|
+| `attemptId: string`|すべてのアクションを取得する対象の試行 ID。|

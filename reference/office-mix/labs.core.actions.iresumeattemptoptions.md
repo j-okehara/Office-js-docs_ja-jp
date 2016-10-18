@@ -15,5 +15,5 @@ interface IResumeAttemptOptions extends Core.IActionOptions
 
 |||
 |:-----|:-----|
-| `componentId: string`|The component associated with the attempt.|
-| `attemptId: string`|The attempt that is being resumed.|
+| `componentId: string`|試行に関連付けられているコンポーネント。|
+| `attemptId: string`|再開される試行。|

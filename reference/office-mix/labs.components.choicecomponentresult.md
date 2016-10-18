@@ -15,7 +15,7 @@ class ChoiceComponentResult
 
 |プロパティ|説明|
 |:-----|:-----|
-| `public var score: any`|The score associated with the submission.|
+| `public var score: any`|送信に関連付けられているスコア。|
 | `public var complete: boolean`|Whether or not the result completed the attempt.  **True** if the result completed the attempt.|
 
 ## <a name="methods"></a>メソッド

@@ -11,10 +11,10 @@ Labs.js API の Labs.Core.Actions モジュール内の変数宣言。
 
 |||
 |:-----|:-----|
-| `var CloseComponentAction: string`|Closes the component and indicates there will be no future actions against it.|
-| `var CreateAttemptAction: string`|Action to create a new attempt.|
-| `var CreateComponentAction: string`|Action to create a new component.|
-| `var AttemptTimeoutAction: string`|Attempt a timeout action.|
+| `var CloseComponentAction: string`|コンポーネントを閉じ、今後それに対するアクションがないことを示します。|
+| `var CreateAttemptAction: string`|新しい試行を作成するアクションです。|
+| `var CreateComponentAction: string`|新しいコンポーネントを作成するアクションです。|
+| `var AttemptTimeoutAction: string`|タイムアウト アクションを試行します。|
 | `var GetValueAction: string`|試行に関連付けられた値を取得するアクションです。|
 | `var ResumeAttemptAction: string`|試行アクションを再開します。ユーザーが指定の試行に対して作業を再開していることを示すために使用されます。|
 | `var SubmitAnswerAction: string`|指定の試行で、応答を送信するためのアクションです。|

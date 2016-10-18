@@ -16,7 +16,7 @@ class Command
 |**名前**|**説明**|
 |:-----|:-----|
 | `public var type: string`|コマンドの型。|
-| `public var commandData: any`|Optional data associated with the command.|
+| `public var commandData: any`|コマンドに関連付けられている省略可能なデータ。|
 
 ## <a name="methods"></a>メソッド
 
@@ -35,4 +35,4 @@ class Command
 |||
 |:-----|:-----|
 | `type`|コマンドの型。|
-| `commandData`|Optional data associated with the command.|
+| `commandData`|コマンドに関連付けられている省略可能なデータ。|

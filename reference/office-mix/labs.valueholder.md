@@ -18,8 +18,8 @@ class ValueHolder<T>
 | `public var isHint: boolean`|**True** if the value is a hint.|
 | `public var hasBeenRequested: boolean`|**True** if the value has been requested by the lab.|
 | `public var hasValue: boolean`|**True** if the value container currently has the desired value.|
-| `public var value: T`|The value that is held in the container.|
-| `public var id: string`|The ID of the value.|
+| `public var value: T`|コンテナーに保持されている値。|
+| `public var id: string`|値の ID。|
 
 ## <a name="methods"></a>メソッド
 

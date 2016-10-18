@@ -10,11 +10,11 @@ enum ConnectionState
 ```
 
 
-## <a name="enumeration-values"></a>Enumeration values
+## <a name="enumeration-values"></a>列挙値
 
 
 |||
 |:-----|:-----|
-|Disconnected|The lab is not connected to the host.|
-|Connecting|The lab is in the process of connecting to the host.|
-|Connected|The lab is connected to the host.|
+|Disconnected|ラボはホストに接続されていません。|
+|Connecting|ラボはホストに接続中です。|
+|Connected|ラボはホストに接続されています。|

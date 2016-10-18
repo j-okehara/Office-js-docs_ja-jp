@@ -15,6 +15,6 @@ interface ICreateComponentOptions extends Core.IActionOptions
 
 |||
 |:-----|:-----|
-| `componentId: string`|The component invoking the create component action.|
+| `componentId: string`|コンポーネント アクションの作成を呼び出すコンポーネント。|
 | `component: Core.IComponent`|作成する [Labs.Core.IComponent](../../reference/office-mix/labs.core.icomponent.md) コンポーネント|
 | `correlationId?: string`|ラボのすべてのインスタンスにわたってこのコンポーネントを関連付けるための省略可能なフィールドです。ホストが同じコンポーネントでさまざまな試行を識別できるようにします。|

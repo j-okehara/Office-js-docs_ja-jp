@@ -15,9 +15,9 @@ class InputComponentSubmission
 
 |プロパティ|説明|
 |:-----|:-----|
-| `public var answer: Components.InputComponentAnswer`|The answer ([Labs.Components.InputComponentAnswer](../../reference/office-mix/labs.components.inputcomponentanswer.md)) associated with the submission.|
-| `public var result: Components.InputComponentResult`|The result ([Labs.Components.InputComponentResult](../../reference/office-mix/labs.components.inputcomponentresult.md)) of the submission.|
-| `public var time: number`|The time at which the submission was received.|
+| `public var answer: Components.InputComponentAnswer`|送信に関連付けられている応答 ([Labs.Components.InputComponentAnswer](../../reference/office-mix/labs.components.inputcomponentanswer.md))。|
+| `public var result: Components.InputComponentResult`|送信の結果 ([Labs.Components.InputComponentResult](../../reference/office-mix/labs.components.inputcomponentresult.md))。|
+| `public var time: number`|送信を受信した時刻。|
 
 ## <a name="methods"></a>メソッド
 
@@ -37,4 +37,4 @@ class InputComponentSubmission
 |:-----|:-----|
 | _answer_|送信に関連付けられている応答。|
 | _result_|送信の結果。|
-| _time_|送信が受信された時刻。|
+| _time_|送信を受信した時刻。|

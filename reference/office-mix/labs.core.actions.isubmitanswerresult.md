@@ -17,4 +17,4 @@ interface ISubmitAnswerResult extends Core.IActionResult
 |:-----|:-----|
 | `submissionId: string`|送信に関連付けられた ID です。サーバーによって指定されます。|
 | `complete: boolean`|最新の送信により試行が完了した場合は、**true** を返します。|
-| `score: any`|Score information associated with the submission.|
+| `score: any`|送信に関連付けられているスコア情報。|

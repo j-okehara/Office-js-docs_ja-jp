@@ -15,7 +15,7 @@ class InputComponentResult
 
 |プロパティ|説明|
 |:-----|:-----|
-| `public var score: any`|The score associated with the submission.|
+| `public var score: any`|送信に関連付けられているスコア。|
 | `public var complete: boolean`|Indicates whether the result submitted resulted in the completion of the attempt.  **True** if the attempt is completed.|
 
 ## <a name="methods"></a>メソッド

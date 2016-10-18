@@ -15,5 +15,5 @@ interface IGetComponentActionsOptions extends Core.IGetActionOptions
 
 |||
 |:-----|:-----|
-| `componentId: string`|The component being searched for.|
-| `action: string`|The type of action being searched for.|
+| `componentId: string`|検索対象となるコンポーネント。|
+| `action: string`|検索対象となるアクションの種類。|

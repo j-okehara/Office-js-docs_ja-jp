@@ -15,6 +15,6 @@ interface ISubmitAnswerOptions extends Core.IActionOptions
 
 |||
 |:-----|:-----|
-| `componentId: string`|The component associated with the submission.|
-| `attemptId: string`|The attempt associated with the submission.|
-| `answer: any`|The answer being submitted.|
+| `componentId: string`|送信に関連付けられているコンポーネント。|
+| `attemptId: string`|送信に関連付けられている試行。|
+| `answer: any`|送信される応答。|

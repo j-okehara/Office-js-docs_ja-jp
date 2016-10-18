@@ -15,7 +15,7 @@ interface IValueInstance
 
 |||
 |:-----|:-----|
-| `valueId: string`|ID of the value which this instance represents.|
-| `isHint: boolean`|Boolean  **true** if this value is considered a hint.|
+| `valueId: string`|このインスタンスが表す値の ID |
+| `isHint: boolean`|Boolean  **true** 場合は、この値は、ヒントと見なされます。|
 | `hasValue: boolean`|インスタンス情報に値が含まれていない場合は、ブール値 (**true**) です。|
 | `value?: any`|値です。このパラメーターは、非表示かどうかによって、設定される場合と設定されない場合があります。|

@@ -15,4 +15,4 @@ interface IGetValueResult extends Core.IActionResult
 
 |||
 |:-----|:-----|
-| `value: any`|The retrieved value.|
+| `value: any`|取得した値。|

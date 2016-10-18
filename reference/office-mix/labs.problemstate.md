@@ -10,11 +10,11 @@ enum ProblemState
 ```
 
 
-## <a name="enumeration-values"></a>Enumeration values
+## <a name="enumeration-values"></a>列挙値
 
 
 |||
 |:-----|:-----|
-|InProgress|The lab is currently in progress.|
-|Timeout|The lab has timed out.|
-|Completed|The lab has been completed.|
+|InProgress|ラボは現在進行中です。|
+|Timeout|ラボがタイムアウトしました。|
+|Completed|ラボが完了しました。|
