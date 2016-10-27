@@ -47,7 +47,7 @@ Office ホストでダイアログ ボックスを表示します。
 ## <a name="syntax"></a>構文
 
 ```js
-office.context.ui.displayDialogAsync(startAddress, options, callback);
+Office.context.ui.displayDialogAsync(startAddress, options, callback);
 ```
 ##<a name="examples"></a>例
 
@@ -72,7 +72,7 @@ office.context.ui.displayDialogAsync(startAddress, options, callback);
 |:---------------|:--------|:----------|
 |**width**|object|省略可能。現在の表示のパーセンテージとして、ダイアログ ボックスの幅を定義します。既定値は 80% です。最小解像度は 250 ピクセルです。|
 |**height**|object|省略可能。現在の表示のパーセンテージとして、ダイアログ ボックスの高さを定義します。既定値は 80% です。最小解像度は 150 ピクセルです。|
-|**displayInIFrame**|object|省略可能。ダイアログ ボックスを Office Online クライアントの IFrame 内に表示する必要があるかどうかを指定します。デスクトップ クライアントでは、この設定は無視されます。指定可能な値は次のいずれかです。<ul><li>False (既定値) - ダイアログ ボックスは、新しいブラウザー ウィンドウ (ポップアップ) として表示されます。IFrame に表示できない認証ページに推奨されます。 </li><li>True - ダイアログ ボックスは、IFrame のフローティング オーバーレイとして表示されます。これは、ユーザー エクスペリエンスとパフォーマンスに最適です。</li>|
+|**displayInIframe**|オブジェクト|省略可能。ダイアログ ボックスを Office Online クライアントの IFrame 内に表示する必要があるかどうかを指定します。デスクトップ クライアントでは、この設定は無視されます。指定可能な値は次のいずれかです。<ul><li>False (既定値) - ダイアログは、新しいブラウザー ウィンドウ (ポップアップ) として表示されます。IFrame に表示できない認証ページに推奨されます。 </li><li>True - ダイアログは、IFrame のフローティング オーバーレイとして表示されます。これは、ユーザー エクスペリエンスとパフォーマンスに最適です。</li>|
 
 
 ## <a name="callback-value"></a>コールバック値

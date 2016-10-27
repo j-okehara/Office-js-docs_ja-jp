@@ -24,8 +24,6 @@ OAuth の基本的な考え方は、ユーザーやグループと同様に、�
 
 [Office-js-helpers](https://github.com/OfficeDev/office-js-helpers)
 
-リポジトリの \demo フォルダーには、いくつかの大手のサービス (Google、Facebook、Office 365 など) へのアクセスにライブラリを使用するサンプル アドインが含まれています。
-
 後述の「**ライブラリ**」セクションも参照してください。
 
 ## <a name="using-the-authorization-code-flow-in-office-add-ins"></a>Office アドインに認証コード フローを使用する
@@ -39,7 +37,8 @@ OAuth の基本的な考え方は、ユーザーやグループと同様に、�
 
 ### <a name="relay/proxy-functions"></a>Relay 関数と Proxy 関数
 
-サーバーなしの Web アプリケーションでも、サービスでホストされる簡単な関数 ([Azure Functions](https://azure.microsoft.com/en-us/services/functions) や [Amazon Lambda](https://aws.amazon.com/lambda) など) で*クライアント ID* と*クライアント シークレット*の値を使用すると、認証コード フローを使用できます。この関数は、特定のコードを適切な*アクセス トークン*に交換して、それを中継してクライアントに戻します。このアプローチのセキュリティは、関数へのアクセスが、どの程度適切に保護されているかによって異なります。
+サーバーなしの Web アプリケーションでも、サービスでホストされる簡単な関数 ([Azure Functions](https://azure.microsoft.com/en-us/services/functions) や [Amazon Lambda](https://aws.amazon.com/lambda) など) で*クライアント ID* と*クライアント シークレット*の値を使用すると、認証コード フローを使用できます。
+この関数は、特定のコードを適切な*アクセス トークン*に交換して、それを中継してクライアントに戻します。このアプローチのセキュリティは、関数へのアクセスが、どの程度適切に保護されているかによって異なります。
 
 この技法を使用する場合は、アドインでオンライン サービス (Google や Facebook など) のログイン画面を示す UI やポップアップを表示します。ユーザーがオンライン サービスにログオンして、自分のリソースへのアクセス権をアドインに付与すると、開発者はオンライン関数に送信できるコードを受信します。後述の**仲介者サービス**は、これと同様のフローを使用します。 
 

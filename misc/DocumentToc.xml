@@ -20,7 +20,8 @@
       </Item>	
     	<Item text="UX 設計パターン" url="design/ux-design-patterns" SEODescription="Office アドインの UX 設計パターン テンプレートを使用して、UI の拡張機能を作成します。" />
 	<Item text="Excel、Word、PowerPoint のアドイン コマンド" url="design/add-in-commands" SEODescription="アドインでアドイン コマンドを使用して、Excel、Word、PowerPoint の既定の Office UI を拡張します。" />
-  	<Item text="データのビジュアル化のスタイル ガイドライン" url="design/data-visualization-guidelines" SEODescription="Office アドインでのデータのビジュアル化のガイドラインを提供します。" />
+  	<Item text="アドイン コマンドのアイコンをデザインする" url="design/design-icons" SEODescription="Office UI とシームレスに統合するアドイン コマンドのアイコンをデザインします。" />
+	<Item text="データのビジュアル化のスタイル ガイドライン" url="design/data-visualization-guidelines" SEODescription="Office アドインでのデータのビジュアル化のガイドラインを提供します。" />
     	<Item text="音声のガイドライン" url="design/voice-guidelines" SEODescription="Office アドインの UI テキストに使用する音声のためのガイドラインについて説明します。" />
     	<Item text="アクセシビリティ ガイドライン" url="design/accessibility-guidelines" SEODescription="すべてのユーザーが Office アドインにアクセスできるようにする方法を確認します。" />
     </Item>

@@ -360,7 +360,10 @@ bodyObject.insertOoxml(ooxml, insertLocation);
 |insertLocation|InsertLocation|必須。値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 
 #### <a name="returns"></a>戻り値
-[Range](range.md)
+[範囲](range.md)
+
+#### <a name="known-issues"></a>既知の問題
+このメソッドを使用すると Word オンラインの待機時間が長くなります。これはアドインのユーザー エクスペリエンスに影響を与える可能性があります。他のソリューションが利用できない場合にのみ、このメソッドを使用することをお勧めします。 
 
 #### <a name="examples"></a>例
 ```js

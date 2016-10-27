@@ -125,5 +125,5 @@ API でバインディングが作成される場合、ソリューション開�
 
 - [Office アドインの API とスキーマ参照](../reference/reference.md)
     
-- [Office アドインの開発ライフ サイクル](../docs/design/add-in-development-lifecycle.md)
+- [Office アドインの開発ライフ サイクル](../docs/develop/add-in-development-lifecycle.md)
     

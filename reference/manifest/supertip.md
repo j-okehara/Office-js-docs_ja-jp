@@ -1,5 +1,5 @@
 ## <a name="supertip"></a>Supertip
-豊富なヒント (タイトルと説明の両方) を定義します。コントロールの[ボタン](./button.md)と[メニュー](./menu-control.md)の両方で使用されます。 
+豊富なヒント (タイトルと説明の両方) を定義します。[ボタン](./control.md#button-control) または [メニュー](./control.md#menu-dropdown-button-controls) コントロールの両方で使用されます。 
 
 ## <a name="child-elements"></a>子要素
 |  要素 |  必須  |  説明  |

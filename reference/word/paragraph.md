@@ -39,14 +39,14 @@ _適用対象:Word 2016、Word for iPad、Word for Mac、Word Online_
 |[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|指定した位置に区切りを挿入します。改行以外の区切りは、メイン文書の本体に含まれている段落にのみ挿入できます。改行はどの本文オブジェクトにも挿入できます。insertLocation の値には 'After' または 'Before' を指定できます。|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Paragraph オブジェクトを、リッチ テキスト コンテンツ コントロールでラップします。|
 |[insertFileFromBase64(base64File: string, insertLocation:InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|現在の段落の指定した位置に、文書を挿入します。insertLocation の値には、'Start' または 'End' を指定できます。|
-|[insertHtml(html: string, insertLocation:InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|段落の指定した位置に、HTML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
+|[insertHtml(html: string, insertLocation:InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|段落の指定した位置に、HTML を挿入します。insertLocation 値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 |[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|段落の指定した位置に、図を挿入します。insertLocation の値には、'Before'、'After'、'Start'、'End' のいずれかを指定できます。|
-|[insertOoxml(ooxml: string, insertLocation:InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|段落の指定した位置に OOXML または wordProcessingML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
+|[insertOoxml(ooxml: string, insertLocation:InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|段落の指定した位置に OOXML または wordProcessingML を挿入します。insertLocation 値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 |[insertParagraph(paragraphText: string, insertLocation:InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|指定した位置に、段落を挿入します。有効な insertLocation の値は、'Before' または 'After' です。|
-|[insertText(text: string, insertLocation:InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|段落の指定した位置に、テキストを挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
+|[insertText(text: string, insertLocation:InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|段落の指定した位置に、テキストを挿入します。insertLocation 値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 |[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 |[search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|段落オブジェクトの範囲で、searchOptions を指定した検索を実行します。検索結果は、Range オブジェクトのコレクションです。|
-|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|段落を選択して、その段落に Word の UI を移動します。選択モードは、'Select'、'Start'、'End' のいずれかになります。'Select' が既定値です。|
+|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|無効|段落を選択して、その段落に Word の UI を移動します。選択モードは、'Select'、'Start'、'End' のいずれかになります。'Select' が既定値です。|
 
 ## <a name="method-details"></a>メソッドの詳細
 
@@ -350,7 +350,7 @@ Word.run(function (context) {
 [Word-Add-in-DocumentAssembly][paragraph.insertContentControl] サンプルは、insertContentControl メソッドを使う方法を示しています。
 
 ### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation:InsertLocation)
-現在の段落の指定した位置に、文書を挿入します。insertLocation の値には、'Start' または 'End' を指定できます。
+現在の段落の指定した位置に、ドキュメントを挿入します。insertLocation 値には、'Replace'、'Start'、'End' のいずれかを指定できます。
 
 #### <a name="syntax"></a>構文
 ```js
@@ -361,7 +361,7 @@ paragraphObject.insertFileFromBase64(base64File, insertLocation);
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |base64File|string|必須。挿入するファイルの内容が base64 エンコードされているファイル。|
-|insertLocation|InsertLocation|必須。有効な値は、'Start' または 'End' です。|
+|insertLocation|InsertLocation|必須。値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 
 #### <a name="returns"></a>戻り値
 [Range](range.md)
@@ -404,7 +404,7 @@ Word.run(function (context) {
 ```
 
 ### <a name="inserthtml(html:-string,-insertlocation:-insertlocation)"></a>insertHtml(html: string, insertLocation:InsertLocation)
-段落の指定した位置に、HTML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。
+段落の指定した位置に、HTML を挿入します。insertLocation 値には、'Replace'、'Start'、'End' のいずれかを指定できます。
 
 #### <a name="syntax"></a>構文
 ```js
@@ -459,7 +459,7 @@ Word.run(function (context) {
 ```
 
 ### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)
-段落の指定した位置に、図を挿入します。insertLocation の値には、'Before'、'After'、'Start'、'End' のいずれかを指定できます。
+段落の指定した位置に、図を挿入します。insertLocation 値には、'Replace'、'Start'、'End' のいずれかを指定できます。
 
 #### <a name="syntax"></a>構文
 ```js
@@ -470,7 +470,7 @@ paragraphObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |base64EncodedImage|string|必須。段落に挿入する HTML。|
-|insertLocation|InsertLocation|必須。値には、'Before'、'After'、'Start'、または 'End' を指定できます。|
+|insertLocation|InsertLocation|必須。値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 
 #### <a name="returns"></a>戻り値
 [InlinePicture](inlinepicture.md)
@@ -516,8 +516,8 @@ Word.run(function (context) {
 #### <a name="additional-information"></a>追加情報
 [Word-Add-in-DocumentAssembly][paragraph.insertpicture] サンプルは、段落に画像を挿入する別の例を提供しています。
 
-### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
-段落内の指定された位置に OOXML または wordProcessingML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。
+### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation:InsertLocation)
+段落の指定した位置に OOXML または wordProcessingML を挿入します。insertLocation 値には、'Replace'、'Start'、'End' のいずれかを指定できます。
 
 #### <a name="syntax"></a>構文
 ```js
@@ -531,7 +531,10 @@ paragraphObject.insertOoxml(ooxml, insertLocation);
 |insertLocation|InsertLocation|必須。値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 
 #### <a name="returns"></a>戻り値
-[Range](range.md)
+[範囲](range.md)
+
+#### <a name="known-issues"></a>既知の問題
+このメソッドを使用すると Word オンラインの待機時間が長くなります。これはアドインのユーザー エクスペリエンスに影響を与える可能性があります。他のソリューションが利用できない場合にのみ、このメソッドを使用することをお勧めします。 
 
 #### <a name="examples"></a>例
 ```js
@@ -629,7 +632,7 @@ Word.run(function (context) {
 ```
 
 ### <a name="inserttext(text:-string,-insertlocation:-insertlocation)"></a>insertText(text: string, insertLocation:InsertLocation)
-段落の指定した位置に、テキストを挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。
+段落の指定した位置に、テキストを挿入します。insertLocation 値には、'Replace'、'Start'、'End' のいずれかを指定できます。
 
 #### <a name="syntax"></a>構文
 ```js
@@ -772,7 +775,7 @@ paragraphObject.select(selectionMode);
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
-|selectionMode|SelectionMode|省略可能。選択モードは、'Select'、'Start'、'End' のいずれかになります。'Select' が既定値です。|
+|selectionMode|SelectionMode|省略可能。 選択モードは、'Select'、'Start'、'End' のいずれかになります。'Select' が既定値です。|
 
 #### <a name="returns"></a>戻り値
 void

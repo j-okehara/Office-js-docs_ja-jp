@@ -410,7 +410,10 @@ rangeObject.insertOoxml(ooxml, insertLocation);
 |insertLocation|InsertLocation|必須。値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 
 #### <a name="returns"></a>戻り値
-[Range](range.md)
+[範囲](range.md)
+
+#### <a name="known-issues"></a>既知の問題
+このメソッドを使用すると Word オンラインの待機時間が長くなります。これはアドインのユーザー エクスペリエンスに影響を与える可能性があります。他のソリューションが利用できない場合にのみ、このメソッドを使用することをお勧めします。 
 
 #### <a name="examples"></a>例
 ```js
@@ -485,7 +488,7 @@ Word.run(function (context) {
 ```
 
 ### <a name="inserttext(text:-string,-insertlocation:-insertlocation)"></a>insertText(text: string, insertLocation:InsertLocation)
-範囲の指定した位置にテキストを挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。
+範囲の指定した場所にテキストを挿入します。insertLocation 値は、'Replace'、'Start'、'End'、'Before' または 'After' のいずれかです。
 
 #### <a name="syntax"></a>構文
 ```js
@@ -496,7 +499,7 @@ rangeObject.insertText(text, insertLocation);
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |text|string|必須。挿入するテキスト。|
-|insertLocation|InsertLocation|必須。値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
+|insertLocation|InsertLocation|必須。値は、'Replace'、'Start'、'End'、'Before'、'After' のいずれかになります。|
 
 #### <a name="returns"></a>戻り値
 [Range](range.md)

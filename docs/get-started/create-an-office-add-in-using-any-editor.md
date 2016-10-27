@@ -1,41 +1,31 @@
 
 # <a name="create-an-office-add-in-using-any-editor"></a>任意のエディターを使用して Office アドインを作成する
 
-Office アドインは、Office アプリケーションでホストされる Web アプリです。この記事では、プロジェクトのスキャフォールディングとビルド管理を提供する Yeoman ジェネレーターの使用方法について説明します。アドインがある場所と表示方法は `manifest.xml` ファイルで Office アプリケーションに通知します。Office アプリケーションは、Office 内でのホストを管理します。
+Office アドインに Yeoman ジェネレーターを使用することができます。Yeoman ジェネレーターは、プロジェクトのスキャフォールディングとビルドの管理を提供します。`manifest.xml` ファイルで、アドインが格納されている場所と表示方法を Office アプリケーションに指示します。Office アプリケーションは Office 内でホスティングを行います。
 
- >**メモ**  指示には、Windows コマンド プロンプトを使用しますが、その他のシェル環境でも同様に適用可能です。 
+ >**注:**この手順では、Windows コマンド プロンプトを使いますが、その他のシェル環境を使うこともできます。 
 
 
-## <a name="prerequisites-for-yeoman-generator"></a>Yeoman ジェネレーターのための前提条件
+## <a name="prerequisites-for-yeoman-generator"></a>Yeoman ジェネレーターの前提条件
 
 Yeoman Office ジェネレーターを実行するには、以下が必要です。
 
 
-- [Git](https://git-scm.com/downloads)
-    
+- [Git](https://git-scm.com/downloads)  
 - [npm](https://www.nodejs.org/en/download)
-    
 - [Bower](http://bower.io/)
-    
 - [Yeoman Office ジェネレーター](https://www.npmjs.com/package/generator-office)
-    
 - [Gulp](http://gulpjs.com/)
-    
 - [TSD](http://definitelytyped.org/tsd/)
     
 Git と npm だけ別のインストールが必要です。他のものは npm を使用してインストールできます。
 
 Git をインストールする場合は、次のオプションを選択する以外、既定の設定を使用します。 
 
-
 - Windows コマンド プロンプトから Git を使用する
-    
 - Windows の既定のコンソール ウィンドウを使用する
     
-既定値を使用して npm をインストールします。次に、管理者としてコマンド プロンプトを開き、その他のソフトウェアをグローバルにインストールします。次のように行います。
-
-
-
+既定値を使用して npm をインストールします。管理者としてコマンド プロンプトを開き、他のソフトウェアをグローバルにインストールします。
 
 ```
 npm install -g bower yo generator-office gulp tsd
@@ -44,7 +34,7 @@ npm install -g bower yo generator-office gulp tsd
 
 ## <a name="create-the-default-files-for-your-add-in"></a>アドインの既定のファイルを作成する
 
-Office アドインを開発する前に、最初にプロジェクトのフォルダーを作成して、そこからジェネレーターを実行します。Yeoman ジェネレーターは、プロジェクトをスキャフォールディングするディレクトリで実行します。 
+Office アドインを開発する前に、プロジェクト用のフォルダーを作成し、そこでジェネレーターを実行する必要があります。プロジェクトをスキャホールディングするディレクトリで Yeoman ジェネレーターを実行します。 
 
 コマンド プロンプトで、プロジェクトを作成する親フォルダーに移動します。次のコマンドを使用して、 _myHelloWorldaddin_ という名前の新しいフォルダーを作成し、そこを現在のディレクトリにします。
 
@@ -56,7 +46,7 @@ mkdir myHelloWorldaddin
 cd myHelloWorldaddin
 ```
 
-Yeoman ジェネレーターを使用して、選択した Office アドイン (Outlook、コンテンツ、または作業ウィンドウ) を作成します。このトピックでは、作業ウィンドウのアドインを作成します。ジェネレーターを実行するには、次の命令を入力します。
+Yeoman ジェネレーターを使用して、任意のアドイン(Outlook アドイン、コンテンツ アドイン、または作業ウィンドウ アドイン) を作成します。この記事の手順では、作業ウィンドウ アドインを作成します。ジェネレーターを実行するには、次の命令を入力します。
 
 
 
@@ -65,17 +55,13 @@ Yeoman ジェネレーターを使用して、選択した Office アドイン (
 yo office
 ```
 
-ジェネレーターは、次の確認を求めるメッセージを表示します。 
+ジェネレーターは、確認を求める以下のメッセージを表示します。 
 
 
-- アドインの名前 --  _myHelloWorldaddin_ を使用します
-    
+- アドインの名前 --  _myHelloWorldaddin_ を使用します 
 - プロジェクトのルート フォルダー -  _現在のフォルダー_ を使用します
-    
 - アドインの種類 -  _作業ウィンドウ_ を使用します
-    
 - アドインを作成するテクノロジ - _HTML、CSS&amp; JavaScript_ を使用します
-    
 - サポートされている Office アプリケーション - 任意のアプリケーションを選択できます
     
 
@@ -86,9 +72,9 @@ yo office
 これは、アドインの構造および基本的なファイルを作成します。
 
 
-## <a name="hosting-your-office-add-in"></a>Office アドインのホスト
+## <a name="hosting-your-office-add-in"></a>Office アドインのホスティング
 
-Office アドインは、HTTPS を経由する必要があります。Office アプリケーションは、HTTP である場合に Web アプリをアドインとして読み込みません。アドインをローカルで開発、デバッグ、ホストするには、HTTPS を使用して、Web アプリをローカルに作成して動かす方法が必要です。gulp (次のセクションで説明) により自己ホスト型の HTTPS サイトを作成することも、Azure を使用することもできます。 
+Office アドインは、HTTPS 経由で提供する必要があります。HTTP では、Office アプリケーションは、アドインとして Web アプリを読み込めません。アドインをローカルで開発、デバッグ、およびホスティングするには、HTTPS を使用してローカルで Web アプリケーションを作成し、提供する手段が必要になります。Gulp (次のセクションで説明) で自己ホスト型の HTTPS サイトを作成するか、Azure を使用することができます。 
 
 
 ### <a name="using-a-self-hosted-https-site"></a>自己ホスト型の HTTPS サイトの使用
@@ -119,7 +105,7 @@ gulp serve-static
 
 また、プレーンな JavaScript を作成している場合でも、TypeScript 型定義ファイル ( `*.d.ts`) を使用して、追加の IntelliSense のサポートを提供することができます。Office ジェネレーターは、選択したプロジェクト型によって使用されるすべてのサード パーティのライブラリへの参照を持つ作成済みファイルに、 `tsd.json` ファイルを追加します。
 
-Yeoman Office ジェネレーターを使用してプロジェクトを作成した後でする必要があるのは、次のコマンドを実行して、参照される型定義ファイルをダウンロードすることです。
+Yeoman Office ジェネレーターを使用してプロジェクトを作成したら、あとは次のコマンドを実行して、参照される型定義ファイルをダウンロードするだけです。
 
 
 
@@ -129,16 +115,16 @@ tsd install
 ```
 
 
-### <a name="create-a-hello-world-office-add-in"></a>Hello World Office アドイン の作成
+### <a name="create-a-hello-world-office-add-in"></a>Hello World Office アドインの作成
 
 
-この例では、Hello World アドインを作成します。このアドインの UI は、必要に応じて JavaScript プログラミング ロジックを記述できる HTML ファイルによって提供されます。 
+この例では、Hello World アドインを作成します。アドインの UI は、必要に応じて JavaScript プログラミング ロジックを記述できる HTML ファイルから提供されます。 
 
 
 ### <a name="to-create-the-files-for-a-hello-world-add-in"></a>Hello World アドインのファイルを作成するには
 
 
-- プロジェクト フォルダーで、_[project folder]/app/home_ (この例では myHelloWorldaddin/app/home) に移動し、home.html を開いて、既存のコードを次のコードで置き換えます。次のコードでは、アドインの UI を表示するための、最小限の HTML タグのセットを提供しています。
+- プロジェクト フォルダーで、_[project folder]/app/home_ (この例では myHelloWorldaddin/app/home) に移動し、home.html を開いて、既存のコードを次のコードで置き換えます。このコードは、アドインの UI を表示するための、最小限の HTML タグのセットを提供します。
     
 ```HTML
         <!DOCTYPE html>  
@@ -177,9 +163,9 @@ tsd install
    } 
 ```
     
-- 親プロジェクト フォルダーに戻り、次の XML コードが manifest-myHelloWorldaddin.xml という名前の XML ファイルに含まれていることを確認します。
+- 親プロジェクト フォルダーに戻り、manifest-myHelloWorldaddin.xml という名前の XML ファイルに次の XML コードが含まれていることを確認します。
     
-     >**重要**  `<id>` タグの値は、Yeoman ジェネレーターがプロジェクト生成時に作成する GUID です。アドイン用に Yeoman ジェネレーターが作成した GUID は変更しないでください。ホストが Azure の場合、`SourceLocation` の値は _https:// [Web アプリの名前].azurewebsites.net/[アドインのパス]_ のような URL です。この例のように、自己ホスト型のオプションを使用する場合は、_https://localhost:8443/[アドインのパス]_ になります。
+     >**重要:**`<id>` タグの値は、Yeoman ジェネレーターがプロジェクト生成時に作成する GUID です。アドイン用に Yeoman ジェネレーターが作成した GUID は変更しないでください。ホストが Azure の場合、`SourceLocation` の値は _https:// [Web アプリの名前].azurewebsites.net/[アドインのパス]_ のような URL です。この例のように、自己ホスト型のオプションを使用する場合は、_https://localhost:8443/[アドインのパス]_ になります。
 
 ```XML
      <?xml version="1.0" encoding="utf-8"?> 
@@ -211,25 +197,22 @@ tsd install
 ### <a name="running-the-add-in-locally"></a>アドインをローカルで実行する
 
 
-アドインをローカルにテストするには、ブラウザーを開き、home.html ファイルの URL を入力します。これは、Web サーバーまたは自己ホスト型の HTTPS サイトのいずれかです。ローカルにホストした場合は、URL をブラウザーに入力します。この例では、 `https://localhost:8443/app/home/home.html` です。 
+アドインをローカルでテストするには、ブラウザーを開き、home.html ファイルの URL を入力します。これは、Web サーバーまたは自己ホスト型の HTTPS サイトのいずれかで行います。ローカルにホスティングしている場合は、ただブラウザーにその URL を入力します。この例では、`https://localhost:8443/app/home/home.html` となります。 
 
 「このWeb サイトのセキュリティ証明書には問題があります」のようなエラーが表示されます。「この Web サイトの閲覧を続行する...」を選択すると、"Hello World!" というテキストが表示されます。
 
 
- >**メモ**  生成されたアドインには、自己署名証明書とキーが付属します。これらを証明書の信頼できる証明機関リストに追加して、ブラウザーが証明書に関する警告を発行しないようにします。独自の自己署名証明書を使用する場合は、[gulp-webserver](https://www.npmjs.com/package/gulp-webserver)のドキュメントを参照してください。OS X Yosemite で証明書を信頼する方法の手順は、 [この KB 記事#PH18677](https://support.apple.com/kb/PH18677?locale=en_US) を参照してください。
+ >**注:**生成されたアドインには、自己署名証明書とキーが付属します。これらを証明書の信頼できる証明機関リストに追加して、ブラウザーが証明書に関する警告を発行しないようにします。独自の自己署名証明書を使用する場合は、[gulp-webserver](https://www.npmjs.com/package/gulp-webserver) のドキュメントを参照してください。OS X Yosemite の証明書を信頼する方法の詳細については、「[OS X Yosemite: 証明書が受け入れられない場合](https://support.apple.com/kb/PH18677?locale=en_US)」を参照してください。
 
 
 ## <a name="install-the-add-in-for-testing"></a>テスト用にアドインをインストールする
 
 サイドロードを使用して、テストのためにアドインをインストールできます。
 
-
-- [テスト用に Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-    
+- [テスト用に Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+- [テスト用に iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)   
 - [テスト用に Outlook アドインをサイドロードする](../outlook/testing-and-tips.md)
     
-あるいは、アドインをカタログまたはネットワーク共有に発行し、それをエンドユーザーが行う方法でインストールすることもできます。詳細については、「[作業ウィンドウ アドインおよびコンテンツ アドイン用のネットワーク共有フォルダー カタログを作成する](https://technet.microsoft.com/en-us/browser/fp123503(v=office.14))」をご覧ください。
-
 
 ## <a name="debugging-your-office-add-in"></a>Office アドインのデバッグ
 
@@ -237,14 +220,9 @@ tsd install
 
 
 - Office Web クライアントを使用して、ブラウザーの開発者ツールを開き、ほかのクライアント側 JavaScript アプリケーションと同様にアドインをデバッグします。 
-    
 - Windows 10 でデスクトップの Office を使用している場合、 [Windows 10 で F12 開発者ツールを使用してアドインをデバッグする](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)が可能です。
     
-
-
-
 ## <a name="additional-resources"></a>その他のリソース
-
 
 
 - [Visual Studio での Office アドインの作成とデバッグ](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)

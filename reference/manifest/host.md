@@ -37,7 +37,7 @@
 ---
 
 ## <a name="versionoverrides-node"></a>VersionOverrides ノード
-[VersionOverrides](./versionoverrides) で定義されている場合、ホストの種類は `xsi:type` 属性によって決定されます。 
+[VersionOverrides](./versionoverrides.md) で定義されている場合、ホストの種類は `xsi:type` 属性によって決定されます。 
 
 ### <a name="attributes"></a>属性
 

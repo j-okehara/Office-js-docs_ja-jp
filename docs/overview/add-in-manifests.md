@@ -16,7 +16,6 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
     
 - Outlook アドインでは、アプリがアクティブ化されてメッセージ、予定、または会議出席依頼アイテムを操作するコンテキストを指定するルールを定義する。
     
-たとえば、「[マニフェスト v1.1 の XML ファイルの例](#manifest-v1.1-xml-file-examples-and-schemas)」を参照してください。
 
 ## <a name="required-elements"></a>必要な要素
 
@@ -36,57 +35,74 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
 
 |**要素**|**コンテンツ**|**作業ウィンドウ**|**Outlook**|
 |:-----|:-----|:-----|:-----|
-|
-  [OfficeApp](http://msdn.microsoft.com/en-us/library/68f1cada-66f8-4341-45f5-14e0634c24fb%28Office.15%29.aspx)|X|X|X|
-|
-  [Id](http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx)|X|X|X|
-|
-  [Version](http://msdn.microsoft.com/en-us/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx)|X|X|X|
-|
-  [ProviderName](http://msdn.microsoft.com/en-us/library/0062693a-fafa-ea2d-051a-75dac0f6c323%28Office.15%29.aspx)|X|X|X|
-|
-  [DefaultLocale](http://msdn.microsoft.com/en-us/library/04796a3a-3afa-dc85-db66-4677560c185c%28Office.15%29.aspx)|X|X|X|
-|
-  [DisplayName](http://msdn.microsoft.com/en-us/library/529159ca-53bf-efcf-c245-e572dab0ef57%28Office.15%29.aspx)|X|X|X|
-|
-  [Description](http://msdn.microsoft.com/en-us/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx)|X|X|X|
-|
-  [IconUrl](http://msdn.microsoft.com/library/c7dac2d4-4fda-6fc7-3774-49f02b2d3e1e%28Office.15%29.aspx)|X|X|X|
-|
-  [HighResolutionIconUrl](http://msdn.microsoft.com/library/ff7b2647-ec8e-70dc-4e4a-e1a1377ff3f2%28Office.15%29.aspx)|||X|
-|
-  [DefaultSettings (ContentApp)](http://msdn.microsoft.com/en-us/library/f7edc689-551f-1a17-ea81-ffd58f534557%28Office.15%29.aspx)<br/>
-  [DefaultSettings (TaskPaneApp)](http://msdn.microsoft.com/en-us/library/36e3d139-56a4-fb3d-0a21-cbd14e606765%28Office.15%29.aspx)|X|X||
-|
-  [SourceLocation (ContentApp)](http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx)<br/>
-  [SourceLocation (TaskPaneApp)](http://msdn.microsoft.com/en-us/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx)|X|X||
-|
-  [DesktopSettings](http://msdn.microsoft.com/en-us/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c%28Office.15%29.aspx)|||X|
-|
-  [SourceLocation (MailApp)](http://msdn.microsoft.com/en-us/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx)|||X|
-|
-  [Permissions (ContentApp)](http://msdn.microsoft.com/en-us/library/9f3dcf9c-fced-c115-4f0d-38d60fb7c583%28Office.15%29.aspx)<br/>
-  [Permissions (TaskPaneApp)](http://msdn.microsoft.com/en-us/library/d4cfe645-353d-8240-8495-f76fb36602fe%28Office.15%29.aspx)<br/>
-  [Permissions (MailApp)](http://msdn.microsoft.com/en-us/library/c20cdf29-74b0-564c-e178-b75d148b36d1%28Office.15%29.aspx)|X|X|X|
-|
-  [Rule (RuleCollection)](http://msdn.microsoft.com/en-us/library/c6ce9d52-4b53-c6a6-de7e-c64106135c81%28Office.15%29.aspx)<br/>
-  [Rule (MailApp)](http://msdn.microsoft.com/en-us/library/56dfc32e-2b8c-1724-05be-5595baf38aa3%28Office.15%29.aspx)|||X|
-|
-  [Dictionary](http://msdn.microsoft.com/en-us/library/f78898f4-059e-d5dc-5eab-1f6b92214068%28Office.15%29.aspx)||||
-|
-  [*Requirements (MailApp)](http://msdn.microsoft.com/en-us/library/9536ea30-34f7-76b5-7f30-1508626840e4%28Office.15%29.aspx)||X|
-|
-  [*Set](http://msdn.microsoft.com/en-us/library/1506daa1-332c-30e1-6402-3371bcd0b895%28Office.15%29.aspx)<br/>
-  [**Sets (MailAppRequirements)](http://msdn.microsoft.com/en-us/library/2a6a2484-eeee-37e4-43bc-c185e8ae0d1d%28Office.15%29.aspx)|||X|
-|
-  [*Form](http://msdn.microsoft.com/en-us/library/77a8ac83-c22b-1225-4fc4-ba4038b68648%28Office.15%29.aspx)<br/>
-  [**FormSettings](http://msdn.microsoft.com/en-us/library/0d1a311d-939d-78c1-e968-89ddf7ebc4b4%28Office.15%29.aspx)|||X|
-|
-  [*Sets (Requirements)](http://msdn.microsoft.com/en-us/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx)||X|
-|
-  [*Hosts](http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx)||X|
+|[OfficeApp](http://msdn.microsoft.com/en-us/library/68f1cada-66f8-4341-45f5-14e0634c24fb%28Office.15%29.aspx)|X|X|X|
+|[Id](http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx)|X|X|X|
+|[Version](http://msdn.microsoft.com/en-us/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx)|X|X|X|
+|[ProviderName](http://msdn.microsoft.com/en-us/library/0062693a-fafa-ea2d-051a-75dac0f6c323%28Office.15%29.aspx)|X|X|X|
+|[DefaultLocale](http://msdn.microsoft.com/en-us/library/04796a3a-3afa-dc85-db66-4677560c185c%28Office.15%29.aspx)|X|X|X|
+|[DisplayName](http://msdn.microsoft.com/en-us/library/529159ca-53bf-efcf-c245-e572dab0ef57%28Office.15%29.aspx)|X|X|X|
+|[Description](http://msdn.microsoft.com/en-us/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx)|X|X|X|
+|[IconUrl](http://msdn.microsoft.com/library/c7dac2d4-4fda-6fc7-3774-49f02b2d3e1e%28Office.15%29.aspx)|X|X|X|
+|[HighResolutionIconUrl](http://msdn.microsoft.com/library/ff7b2647-ec8e-70dc-4e4a-e1a1377ff3f2%28Office.15%29.aspx)|||X|
+|[DefaultSettings (ContentApp)](http://msdn.microsoft.com/en-us/library/f7edc689-551f-1a17-ea81-ffd58f534557%28Office.15%29.aspx)<br/>[DefaultSettings (TaskPaneApp)](http://msdn.microsoft.com/en-us/library/36e3d139-56a4-fb3d-0a21-cbd14e606765%28Office.15%29.aspx)|X|X||
+|[SourceLocation (ContentApp)](http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx)<br/>[SourceLocation (TaskPaneApp)](http://msdn.microsoft.com/en-us/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx)|X|X||
+|[DesktopSettings](http://msdn.microsoft.com/en-us/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c%28Office.15%29.aspx)|||X|
+|[SourceLocation (MailApp)](http://msdn.microsoft.com/en-us/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx)|||X|
+|[Permissions (ContentApp)](http://msdn.microsoft.com/en-us/library/9f3dcf9c-fced-c115-4f0d-38d60fb7c583%28Office.15%29.aspx)<br/>[Permissions (TaskPaneApp)](http://msdn.microsoft.com/en-us/library/d4cfe645-353d-8240-8495-f76fb36602fe%28Office.15%29.aspx)<br/>[Permissions (MailApp)](http://msdn.microsoft.com/en-us/library/c20cdf29-74b0-564c-e178-b75d148b36d1%28Office.15%29.aspx)|X|X|X|
+|[Rule (RuleCollection)](http://msdn.microsoft.com/en-us/library/c6ce9d52-4b53-c6a6-de7e-c64106135c81%28Office.15%29.aspx)<br/>[Rule (MailApp)](http://msdn.microsoft.com/en-us/library/56dfc32e-2b8c-1724-05be-5595baf38aa3%28Office.15%29.aspx)|||X|
+|[Dictionary](http://msdn.microsoft.com/en-us/library/f78898f4-059e-d5dc-5eab-1f6b92214068%28Office.15%29.aspx)||||
+|[*Requirements (MailApp)](http://msdn.microsoft.com/en-us/library/9536ea30-34f7-76b5-7f30-1508626840e4%28Office.15%29.aspx)||X|
+|[*Set](http://msdn.microsoft.com/en-us/library/1506daa1-332c-30e1-6402-3371bcd0b895%28Office.15%29.aspx)<br/>[**Sets (MailAppRequirements)](http://msdn.microsoft.com/en-us/library/2a6a2484-eeee-37e4-43bc-c185e8ae0d1d%28Office.15%29.aspx)|||X|
+|[*Form](http://msdn.microsoft.com/en-us/library/77a8ac83-c22b-1225-4fc4-ba4038b68648%28Office.15%29.aspx)<br/>[**FormSettings](http://msdn.microsoft.com/en-us/library/0d1a311d-939d-78c1-e968-89ddf7ebc4b4%28Office.15%29.aspx)|||X|
+|[*Sets (Requirements)](http://msdn.microsoft.com/en-us/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx)||X|
+|[*Hosts](http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx)||X|
+
 *Office アドイン マニフェスト スキーマ バージョン 1.1 で追加されました。
 
+
+## <a name="validate-the-office-add-ins-manifest"></a>Office アドイン マニフェストを検証する
+
+Office アドインを記述するマニフェスト ファイルが正確かつ完全であることを確認するために、[XML スキーマ定義 (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) ファイルと比較してマニフェスト ファイルを検証します。XML スキーマ検証ツールまたは [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) を使用してマニフェストを検証できます。 
+
+Visual Studio を使用するには、[作成] > [発行] の順に移動し、**[検証チェックを実行]** を選択します。
+
+コマンド ライン XML スキーマ検証ツールを使用してマニフェストを検証するには、次のようにします。
+
+1.  [tar](https://www.gnu.org/software/tar/) および [libxml](http://xmlsoft.org/FAQ.html) をまだインストールしていない場合はインストールします。 
+2.  次のコマンドを実行します。XSD_FILE をマニフェスト XSD ファイルへのパスに置き換え、XML_FILE をマニフェスト XML ファイルへのパスに置き換えます。
+
+    xmllint --noout --schema XSD_FILE XML_FILE
+
+
+
+## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>アドイン ウィンドウで開くドメインの指定
+
+
+既定では、アドインがスタート ページ (マニフェスト ファイルの [SourceLocation](http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx) 要素で指定されるページ) をホストするドメインとは異なるドメインの URL に移動しようとすると、移動先の URL は Office ホスト アプリケーションのアドイン ウィンドウとは別の新しいブラウザー ウィンドウで開かれます。この既定の動作は、埋め込まれている **iframe** 要素によるアドイン ウィンドウ内での予期しないページ ナビゲーションからユーザーを守るためのものです。
+
+この動作を変更するには、マニフェスト ファイルの [AppDomains](http://msdn.microsoft.com/en-us/library/13cf867d-9b24-786f-0687-6bcdc954628e%28Office.15%29.aspx) 要素で指定するドメインの一覧で、アドイン ウィンドウで開く各ドメインを指定します。この一覧にないドメインの URL にアドインが移動しようとすると、その URL は新しいブラウザー ウィンドウ (アドイン ウィンドウとは別のウィンドウ) で開きます。
+
+次に示す XML マニフェストの例では、**SourceLocation** 要素に指定された `https://www.contoso.com` ドメインでメイン アドイン ページをホストします。また、この例では、**AppDomains** 要素リスト内の [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) 要素の `https://www.northwindtraders.com` ドメインも指定しています。アドインが www.northwindtraders.com ドメイン内のページに移動すると、そのページはアドイン ウィンドウで開きます。
+
+
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+  <Id>c6890c26-5bbb-40ed-a321-37f07909a2f0</Id>
+  <Version>1.0</Version>
+  <ProviderName>Contoso, Ltd</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Northwind Traders Excel" />
+  <Description DefaultValue="Search Northwind Traders data from Excel"/>
+  <AppDomains>
+    <AppDomain>https://www.northwindtraders.com</AppDomain>
+  </AppDomains>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://www.contoso.com/search_app/Default.aspx" />
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+</OfficeApp>
+```
 
 ## <a name="manifest-v1.1-xml-file-examples-and-schemas"></a>マニフェスト v1.1 XML ファイルの例とスキーマ
 
@@ -416,44 +432,6 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
   </Rule>
 </OfficeApp>
 
-```
-
-
-## <a name="validate-the-office-add-ins-manifest"></a>Office アドインのマニフェストを検証する
-
-
-Office アドインを説明するマニフェスト ファイルが正確で完全なことを確認するには、[XML スキーマ定義 (XSD) ファイル](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)に対してマニフェストを検証します。マニフェストの検証には、XML スキーマ検証ツールまたは Visual Studio を使用できます。[Office アプリ互換性キット](https://www.microsoft.com/en-us/download/details.aspx?id=46831)をダウンロードし、アドインに対して実行することもできます。
-
-スキーマに対するマニフェストの検証の詳細については、「[XML Schema (XSD) 検証ツール](http://stackoverflow.com/questions/124865/xml-schema-xsd-validation-tool)」を参照してください。
-
-
-## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>アドイン ウィンドウで開くドメインの指定
-
-
-既定では、アドインがスタート ページ (マニフェスト ファイルの [SourceLocation](http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx) 要素で指定されるページ) をホストするドメインとは異なるドメインの URL に移動しようとすると、移動先の URL は Office ホスト アプリケーションのアドイン ウィンドウとは別の新しいブラウザー ウィンドウで開かれます。この既定の動作は、埋め込まれている **iframe** 要素によるアドイン ウィンドウ内での予期しないページ ナビゲーションからユーザーを守るためのものです。
-
-この動作を変更するには、マニフェスト ファイルの [AppDomains](http://msdn.microsoft.com/en-us/library/13cf867d-9b24-786f-0687-6bcdc954628e%28Office.15%29.aspx) 要素で指定するドメインの一覧で、アドイン ウィンドウで開く各ドメインを指定します。この一覧にないドメインの URL にアドインが移動しようとすると、その URL は新しいブラウザー ウィンドウ (アドイン ウィンドウとは別のウィンドウ) で開きます。
-
-次に示す XML マニフェストの例では、**SourceLocation** 要素に指定された `https://www.contoso.com` ドメインでメイン アドイン ページをホストします。また、この例では、**AppDomains** 要素リスト内の [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) 要素の `https://www.northwindtraders.com` ドメインも指定しています。アドインが www.northwindtraders.com ドメイン内のページに移動すると、そのページはアドイン ウィンドウで開きます。
-
-
-```XML
-<?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
-  <Id>c6890c26-5bbb-40ed-a321-37f07909a2f0</Id>
-  <Version>1.0</Version>
-  <ProviderName>Contoso, Ltd</ProviderName>
-  <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Northwind Traders Excel" />
-  <Description DefaultValue="Search Northwind Traders data from Excel"/>
-  <AppDomains>
-    <AppDomain>https://www.northwindtraders.com</AppDomain>
-  </AppDomains>
-  <DefaultSettings>
-    <SourceLocation DefaultValue="https://www.contoso.com/search_app/Default.aspx" />
-  </DefaultSettings>
-  <Permissions>ReadWriteDocument</Permissions>
-</OfficeApp>
 ```
 
 ## <a name="additional-resources"></a>その他のリソース

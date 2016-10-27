@@ -20,7 +20,7 @@ VersionOverrides 要素には、次の子要素が含まれます。
 
 次の図は、アドイン コマンドの定義に使用する要素の階層を示しています。 
 
-![マニフェスト内のアドイン コマンド要素の階層](../../images/080da303-51c4-4882-b74a-7ba11517c0ad.png)
+![マニフェスト内のアドイン コマンド要素の階層](../../../images/080da303-51c4-4882-b74a-7ba11517c0ad.png)
 
 ## <a name="rule-changes-for-outlook-add-in-commands"></a>Outlook アドイン コマンドのルールの変更点
 

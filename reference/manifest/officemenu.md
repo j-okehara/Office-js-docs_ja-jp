@@ -20,7 +20,7 @@ Office のコンテキスト メニューに追加するコントロールのコ
 
 ## <a name="control"></a>コントロール
 
-各 **OfficeMenu** 要素には、1 つ以上の [メニュー](./menu.md#menu-control) コントロールが必要です。 
+各 **OfficeMenu** 要素には、1 つ以上の [メニュー](./control.md#menu-dropdown-button-controls) コントロールが必要です。 
 
 
 ## <a name="example"></a>例

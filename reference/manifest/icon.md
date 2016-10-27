@@ -1,5 +1,5 @@
-# <a name="icon-element"></a>Icon 要素
-[Button](./button.md) および [Menu](./menu-control.md) コントロールの **Image** 要素を定義します。
+# <a name="icon-element"></a>アイコン要素
+[ボタン](./control.md#button-control) または [メニュー](./control.md#menu-dropdown-button-controls) コントロールの **イメージ** 要素を定義します。
 
 ## <a name="child-elements"></a>子要素
 |  要素 |  必須  |  説明  |

@@ -9,7 +9,7 @@ Napa を使用して、簡単な Office アドインを作成できます。こ�
 
 - [Microsoft アカウント](http://www.microsoft.com/en-us/account/default.aspx)
     
-- [Napa](https://www.napacloudapp.com/ ) Web アプリの URL
+- [Napa](https://www.napacloudapp.com) Web アプリの URL
 
 >**注:**OneNote 用のアドインを使い始めるには、「[最初の OneNote 用アドインをビルドする](../onenote/onenote-add-ins-getting-started.md)」を参照してください。
 
@@ -17,7 +17,7 @@ Napa を使用して、簡単な Office アドインを作成できます。こ�
 
 
 
-1. ブラウザーで [Napa](https://www.napacloudapp.com/ ) を開きます。
+1. ブラウザーで [Napa](https://www.napacloudapp.com) を開きます。
     
 2. **[新しいプロジェクトの追加]** タイルを選択します。
     
@@ -31,7 +31,8 @@ Napa を使用して、簡単な Office アドインを作成できます。こ�
 
     コード エディターが開き、既定の Web ページが表示されます。このページには、何も作業しなくても実行できるサンプル コードが既に含まれています。
     
-4. ページの横側にある [実行] ボタン (![[実行] ボタン](../../images/Apps_NAPA_Run_Button.png)) を選択します。
+4. ページの横側にある [実行] ボタン (
+![[実行] ボタン](../../images/Apps_NAPA_Run_Button.png)) を選択します。
     
     選択したアドインの種類に関連付けられている Office アプリケーションが開き、サンプル アドインが表示されます。アドインの機能を試せるようになります。
     

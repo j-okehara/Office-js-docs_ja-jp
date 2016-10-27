@@ -10,7 +10,7 @@ _適用対象:Word 2016、Word for iPad、Word for Mac、Word Online_
 |cannotDelete|bool|ユーザーがコンテンツ コントロールを削除できるかどうかを示す値を取得または設定します。removeWhenEdited と同時に使用することはできません。|
 |cannotEdit|bool|ユーザーがコンテンツ コントロールのコンテンツを編集できるかどうかを示す値を取得または設定します。|
 |color|string|コンテンツ コントロールの色を取得または設定します。色は、"#RRGGBB" 形式で設定するか、色の名前を使用して設定します。|
-|placeholderText|string|コンテンツ コントロールのプレースホルダー テキストを取得または設定します。コンテンツ コントロールが空の場合は、淡色のテキストが表示されます。|
+|placeholderText|文字列|コンテンツ コントロールのプレースホルダー テキストを取得または設定します。コンテンツ コントロールが空の場合は、淡色のテキストが表示されます。このプロパティは Word オンラインで現在サポートされていません。|
 |removeWhenEdited|bool|コンテンツ コントロールを編集後に削除できるかどうかを示す値を取得または設定します。cannotDelete と同時に使用することはできません。|
 |style|string|コンテンツ コントロールに使用するスタイルを取得または設定します。これは、事前にインストールされている、またはユーザー定義のスタイルの名前です。|
 |tag|string|コンテンツ コントロールを識別するタグを取得または設定します。[Silly stories](https://aka.ms/sillystorywordaddin) サンプル アドインは、**tag** プロパティの使用方法を示しています。|
@@ -411,7 +411,8 @@ contentControlObject.insertInlinePictureFromBase64(image, insertLocation);
 #### <a name="returns"></a>戻り値
 [InlinePicture](inlinepicture.md)
 
-
+#### <a name="known-issues"></a>既知の問題
+Word オンラインでは、_insertLocation_ パラメーターに対して 'Replace' 値のみがサポートされています。'Start' または 'End' 値を使用した場合は、操作は失敗します。
 
 ### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation:InsertLocation)
 コンテンツ コントロール内の指定された位置に OOXML または wordProcessingML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。
@@ -428,7 +429,10 @@ contentControlObject.insertOoxml(ooxml, insertLocation);
 |insertLocation|InsertLocation|必須。値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 
 #### <a name="returns"></a>戻り値
-[Range](range.md)
+[範囲](range.md)
+
+#### <a name="known-issues"></a>既知の問題
+このメソッドを使用すると Word オンラインの待機時間が長くなります。これはアドインのユーザー エクスペリエンスに影響を与える可能性があります。他のソリューションが利用できない場合にのみ、このメソッドを使用することをお勧めします。 
 
 #### <a name="examples"></a>例
 ```js
@@ -541,7 +545,10 @@ contentControlObject.insertText(text, insertLocation);
 |insertLocation|InsertLocation|必須。値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 
 #### <a name="returns"></a>戻り値
-[Range](range.md)
+[範囲](range.md)
+
+#### <a name="known-issues"></a>既知の問題
+Word オンラインでは、_insertLocation_ パラメーターに対して 'Replace' 値のみがサポートされています。'Start' または 'End' 値を使用した場合は、操作は失敗します。
 
 #### <a name="examples"></a>例
 ```js

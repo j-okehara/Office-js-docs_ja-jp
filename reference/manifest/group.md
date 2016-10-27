@@ -20,7 +20,7 @@
 必ず指定します。グループのラベルです。 **resid** 属性には、 **Resources** 要素の **ShortStrings** 要素にある [String](./resources.md#shortstrings) 要素の [id](./resources.md) 属性の値を設定する必要があります。
 
 ## <a name="control"></a>Control
-1 つのグループに少なくとも 1 つのコントロールが必要です。現在、[buttons](./control.md#button-control) と [menus](./menu.md#menu-control) のみがサポートされています。 
+1 つのグループに少なくとも 1 つのコントロールが必要です。現在、[ボタン](./control.md#button-control)と[メニュー](./control.md#menu-dropdown-button-controls)のみがサポートされています。 
 
 ```xml
 <Group id="msgreadCustomTab.grp1">

@@ -152,8 +152,10 @@ function addOutlineToPage() {
 3 - [OneNote Online](https://www.onenote.com/notebooks) でノートブックを開きます。
 
 4 - **[挿入] > [Office アドイン]** を選択します。これで、[Office アドイン] ダイアログが開きます。
-  - コンシューマー アカウントでログインしている場合は、**[マイ アドイン]** タブを選択し、**[マイ アドインのアップロード]** を選択します。
-  - 職場または学校アカウントでログインしている場合は、**[自分の所属組織]** タブを選択し、**[マイ アドインのアップロード]** を選択します。 
+
+  -コンシューマー アカウントでログインしている場合は、**[マイ アドイン]** タブを選択し、**[マイ アドインのアップロード]** を選択します。
+  
+  -職場または学校アカウントでログインしている場合は、**[自分の所属組織]** タブを選択し、**[マイ アドインのアップロード]** を選択します。 
   
   次の図は、コンシューマー ノートブックの **[マイ アドイン]** タブを示しています。
 
@@ -164,20 +166,22 @@ function addOutlineToPage() {
 6 - アドインは、OneNote ページの横にある iFrame で開きます。テキスト領域にテキストを入力し、**[アウトラインの追加]** をクリックします。入力したテキストは、ページに追加されます。 
 
 ## <a name="troubleshooting-and-tips"></a>トラブルシューティングとヒント
-- ブラウザーの開発者ツールを使ってアドインをデバッグできます。Gulp Web サーバーを使っており、Internet Explorer や Chrome でデバッグしている場合は、ローカルで変更を保存して、アドインの iFrame を更新するだけです。
+-ブラウザーの開発者ツールを使ってアドインをデバッグできます。Gulp Web サーバーを使っており、Internet Explorer や Chrome でデバッグしている場合は、ローカルで変更を保存してから、アドインの iFrame を更新するだけです。
 
-- OneNote オブジェクトを調べる場合、現在使用可能なプロパティに実際の値が表示されます。読み込む必要のあるプロパティには、*undefined* と表示されます。`_proto_` ノードを展開し、オブジェクトで定義されているものの、まだ読み込まれていないプロパティを確認します。
+-OneNote オブジェクトを調べる場合、現在使用可能なプロパティに実際の値が表示されます。読み込む必要のあるプロパティには、*undefined* と表示されます。`_proto_` ノードを展開し、オブジェクトで定義されているものの、まだ読み込まれていないプロパティを確認します。
 
       ![Unloaded OneNote object in the debugger](../../images/onenote-debug.png)
 
-- アドインで任意の HTTP リソースを使っている場合は、ブラウザーで混在したコンテンツを有効にする必要があります。運用アドインでは、セキュリティで保護された HTTPS リソースのみを使う必要があります。
+-アドインで任意の HTTP リソースを使っている場合は、ブラウザーで混在したコンテンツを有効にする必要があります。運用アドインでは、セキュリティで保護された HTTPS リソースのみを使う必要があります。
 
--  作業ウィンドウ アドインは、任意の場所から開くことができますが、コンテンツアドインは、通常のページ コンテンツ (タイトル、イメージ、iframe などは含まない) の内部にのみ挿入できます。 
+-作業ウィンドウ アドインは、任意の場所から開くことができますが、コンテンツ アドインは、通常のページ コンテンツ (タイトル、画像、iframe などは含まない) の内部にのみ挿入できます。 
 
-## <a name="additional-resources"></a>その他の技術情報
+## <a name="additional-resources"></a>その他のリソース
 
-- [OneNote の JavaScript API のプログラミングの概要](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API リファレンス](../../reference/onenote/onenote-add-ins-javascript-reference.md)
-- [Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Office アドイン プラットフォームの概要](https://dev.office.com/docs/add-ins/overview/office-add-ins)
+-[OneNote の JavaScript API のプログラミングの概要](onenote-add-ins-programming-overview.md)
 
+-[OneNote JavaScript API リファレンス](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+
+-[Rubric Grader のサンプル](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
+
+-[Office アドイン プラットフォームの概要](https://dev.office.com/docs/add-ins/overview/office-add-ins)
