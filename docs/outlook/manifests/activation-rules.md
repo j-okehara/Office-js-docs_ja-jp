@@ -1,9 +1,9 @@
 
-# <a name="activation-rules-for-outlook-add-ins"></a>Outlook アドインのアクティブ化ルール
+# <a name="activation-rules-for-outlook-addins"></a>Outlook アドインのアクティブ化ルール
 
-Outlook は、ユーザーが閲覧または作成しているメッセージや予定が、アドインのアクティブ化ルールの条件を満たしている場合に、ある種のアドインをアクティブ化します。この仕組みは、1.1 マニフェスト スキーマを使用するすべてのアドインと、カスタム ウィンドウ アドインに適用されます。その後、ユーザーは Outlook UI からそのアドインを選択して、現在のアイテムに対して起動できます。
+Outlook では、ユーザーが読み取りや作成をしようとしているメッセージまたは予定が、アドインのアクティブ化のルールに準ずる場合に、ある種類のアドインをアクティブにします。これは、1.1 マニフェストのスキーマを使用するすべてのアドインについて同様です。ユーザーは、Outlook UI からアドインを選び、現在のアイテムに、そのアドインを起動することができます。
 
-次の図は、閲覧ウィンドウにあるメッセージ用にアドイン バーの中でアクティブ化された Outlook アドインを示しています。 
+次の図は、閲覧ウィンドウにあるアドイン バーでアクティブ化されたメッセージ用の Outlook アドインを示しています。 
 
 ![メール読み取りアプリがアクティブ化されたことを示すアプリ バー](../../../images/mod_off15_MailAppAppBar.png)
 
@@ -24,11 +24,11 @@ Outlook に特定の条件でアドインをアクティブ化させるには、
 
 |**ルール名**|**該当するフォーム**|**説明**|
 |:-----|:-----|:-----|
-|[ItemIs](#itemis-rule)|閲覧、新規作成、カスタム ウィンドウ|現在選択されているアイテムは指定された種類のアイテム (メッセージまたは予定) かどうかを調べます。また、アイテム クラス、フォームの種類、さらにはオプションでアイテム メッセージ クラスも調べることができます。|
-|[ItemHasAttachment](#itemhasattachment-rule)|閲覧、カスタム ウィンドウ|選択されているアイテムに添付ファイルが含まれるかどうかを調べます。|
-|[ItemHasKnownEntity](#itemhasknownentity-rule)|閲覧、カスタム ウィンドウ|選択されているアイテムに 1 つ以上の一般的なエンティティが含まれるかどうかを調べます。詳細: 「[Outlook アイテム内の文字列を既知のエンティティとして照合する](../../outlook/match-strings-in-an-item-as-well-known-entities.md)」。|
-|[ItemHasRegularExpressionMatch](#itemhasregularexpressionmatch-rule)|閲覧、カスタム ウィンドウ|選択されているアイテムの送信者の電子メール アドレス、件名、本文に正規表現と一致するものが含まれるかどうかを調べます。詳細: [正規表現アクティブ化ルールを使用して Outlook アドインを表示する](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)|
-|[RuleCollection](#rulecollection-rule)|閲覧、新規作成、カスタム ウィンドウ|複数のルールを組み合わせて、より複雑なルールを作成できます。|
+|[ItemIs](#itemis-rule)|読み取り、作成|現在選択されているアイテムは指定された種類のアイテム (メッセージまたは予定) かどうかを調べます。また、アイテム クラス、フォームの種類、さらにはオプションでアイテム メッセージ クラスも調べることができます。|
+|[ItemHasAttachment](#itemhasattachment-rule)|読み取り|選択されているアイテムに添付ファイルが含まれるかどうかを調べます。|
+|[ItemHasKnownEntity](#itemhasknownentity-rule)|読み取り|選択されているアイテムに 1 つ以上の一般的なエンティティが含まれるかどうかを調べます。詳細: 「[Outlook アイテム内の文字列を既知のエンティティとして照合する](../../outlook/match-strings-in-an-item-as-well-known-entities.md)」。|
+|[ItemHasRegularExpressionMatch](#itemhasregularexpressionmatch-rule)|読み取り|選択されているアイテムの送信者の電子メール アドレス、件名、本文に正規表現と一致するものが含まれるかどうかを調べます。詳細: [正規表現アクティブ化ルールを使用して Outlook アドインを表示する](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)|
+|[RuleCollection](#rulecollection-rule)|読み取り、作成|複数のルールを組み合わせて、より複雑なルールを作成できます。|
 
 ## <a name="itemis-rule"></a>ItemIs ルール
 
@@ -178,8 +178,7 @@ Outlook アドインで満足のゆくエクスペリエンスを提供するに
 - [Outlook アドイン](../../outlook/outlook-add-ins.md)
 - [新規作成フォーム用の Outlook アドインを作成する](../../outlook/compose-scenario.md)
 - [Outlook アドインのアクティブ化と JavaScript API の制限](../../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
-- 
-  [アイテムの種類とメッセージ クラス](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
+- [アイテムの種類とメッセージ クラス](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
 - [正規表現アクティブ化ルールを使用して Outlook アドインを表示する](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)
 - [Outlook アイテム内の文字列を既知のエンティティとして照合する](../../outlook/match-strings-in-an-item-as-well-known-entities.md)
     

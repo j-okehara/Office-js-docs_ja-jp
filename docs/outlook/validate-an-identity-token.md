@@ -1,7 +1,7 @@
 
 # <a name="validate-an-exchange-identity-token"></a>Exchange の ID トークンを検証する
 
-Outlook アドインから ID トークンが送信されることがありますが、要求を信頼する前に、適切な Exchange サーバーから受け取ったトークンであることを検証する必要があります。この記事では、C# で作成した検証オブジェクトで Exchange の ID トークンを検証する方法の例について説明します。なお、検証には他のプログラミング言語も使用できます。トークンの検証に必要な手順については、「[JSON Web Token (JWT) Internet Draft](http://self-issued.info/docs/draft-goland-json-web-token-00.mdl)」に記載されています。 
+Outlook アドインから ID トークンが送信されることがありますが、要求を信頼する前に、適切な Exchange サーバーから受け取ったトークンであることを検証する必要があります。この記事では、C# で作成した検証オブジェクトで Exchange の ID トークンを検証する方法の例について説明します。なお、検証には他のプログラミング言語も使用できます。トークンの検証に必要な手順については、「[JSON Web Token (JWT) Internet Draft](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html)」に記載されています。 
 
 ID トークンの検証およびユーザーの一意識別子の取得は 4 つのステップで進めることをお勧めします。まず、Base64 で URL エンコードされた文字列から JSON Web トークン (JWT) を抽出します。次に、トークンが整形式であること、自分の Outlook アドイン向けのトークンであること、有効期限が切れていないこと、認証メタデータ ドキュメントの有効な URL を抽出できることを確認します。次に、Exchange サーバーから認証メタデータ ドキュメントを取得し、ID トークンに添付されている署名を検証します。最後に、ユーザーの Exchange ID と認証メタデータ ドキュメントの URL のハッシュ値を求めることによって、ユーザーの一意識別子を計算します。全体で見ると一見複雑なプロセスですが、細分化したそれぞれの作業は非常にシンプルです。これらの例を含むソリューションは、Web「[Outlook-Add-in-JavaScript-ValidateIdentityToken](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ValidateIdentityToken)」からダウンロードできます。
  
@@ -54,7 +54,7 @@ ID トークンの検証およびユーザーの一意識別子の取得は 4 �
     }
 ```
 
-**Base64Decode** メソッドは、「[JSON Web Token (JWT) Internet Draft](http://self-issued.info/docs/draft-goland-json-web-token-00.mdl)」の付録「Notes on implementing base64url encoding without padding」に記載されているデコードのロジックを実装しています。
+**Base64Decode** メソッドは、「[JSON Web Token (JWT) Internet Draft](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html)」の付録「Notes on implementing base64url encoding without padding」に記載されているデコードのロジックを実装しています。
 
 
 

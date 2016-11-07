@@ -1,7 +1,7 @@
 
 # <a name="use-php-to-validate-an-identity-token"></a>PHP を使用して ID トークンを検証する
 
-Outlook アドインから ID トークンを受け取ることができますが、要求を信頼する前に、適切な Exchange サーバーから送信されたトークンであることを検証する必要があります。この記事では、PHP を使用して ID トークンを検証する方法の例について説明します。なお、検証には他のプログラミング言語も使用できます。トークンの検証に必要な手順については、「[JSON Web トークン (JWT) インターネット ドラフト](http://self-issued.info/docs/draft-goland-json-web-token-00.html)」に記載されています。
+Outlook アドインから ID トークンを受け取ることができますが、要求を信頼する前に、適切な Exchange サーバーから送信されたトークンであることを検証する必要があります。この記事では、PHP を使用して ID トークンを検証する方法の例について説明します。なお、検証には他のプログラミング言語も使用できます。トークンの検証に必要な手順については、「[JSON Web トークン (JWT) インターネット ドラフト](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html)」に記載されています。
 
 ID トークンの検証およびユーザーの一意識別子の取得は 4 つのステップで進めることをお勧めします。 
 

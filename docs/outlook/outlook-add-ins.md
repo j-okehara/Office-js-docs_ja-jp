@@ -1,5 +1,5 @@
 
-# <a name="outlook-add-ins"></a>Outlook アドイン
+# <a name="outlook-addins"></a>Outlook アドイン
 
 Outlook アドインは、新しい Web テクノロジ ベースのプラットフォームを使用してサードパーティ企業によって Outlook に組み込まれた統合です。Outlook アドインには次の 3 つの主な側面があります。
 
@@ -21,26 +21,20 @@ Outlook アドインは、Windows で実行する Outlook に固有の古い統�
 拡張点は、アドインが Outlook と統合する方法です。これを行う方法は以下のとおりです。
 
 
-- アドインは、メッセージと予定のコマンド サーフェスに表示されるボタンを宣言できます。詳細は、「[Outlook のアドイン コマンド](../outlook/add-in-commands-for-outlook.md)」をご覧ください。
+- アドインは、メッセージと予定のコマンド サーフェスに表示されるボタンを宣言できます。詳細は、「 [Outlook のアドイン コマンド](../outlook/add-in-commands-for-outlook.md)」をご覧ください。
     
     **リボン上の [コマンド] ボタンがあるアドイン**
 
     ![アドイン コマンドの UI なし図形](../../images/41e46a9c-19ec-4ccc-98e6-a227283623d1.png)
 
-- アドインは、メッセージおよび予定内の正規表現に一致するものや検出されたエンティティのリンクをオフにすることができます。詳細は、「[コンテキスト Outlook アドイン](../outlook/contextual-outlook-add-ins.md)」をご覧ください。
+- アドインは、メッセージおよび予定内の正規表現に一致するものや検出されたエンティティのリンクをオフにすることができます。 詳細は、「 [コンテキスト Outlook アドイン](../outlook/contextual-outlook-add-ins.md)」をご覧ください。
     
     **強調表示されたエンティティ (アドレス) 用のコンテキスト アドイン**
 
-    ![カード内のコンテキスト アプリを示します](../../images/59bcabc2-7cb0-4b9b-bb9f-06089dca9c31.png)
-
-- アドインは、メッセージや予定の本文の上に水平方向のウィンドウで表示できます。これは、メッセージや予定の添付ファイルの存在や Exchange アイテム クラスなどの複雑な規則に基づきます。 詳細については、「 [カスタム ウィンドウの Outlook アドイン](../outlook/custom-pane-outlook-add-ins.md)」をご覧ください。
-    
-    **閲覧モードのカスタム ウィンドウのあるアドイン**
-
-    ![メッセージ閲覧フォームにカスタム ウィンドウが表示されています。](../../images/c585ab0a-6c33-42d0-a20f-5deb8b54f480.png)
+    ![カード内のコンテキスト アプリを示す](../../images/59bcabc2-7cb0-4b9b-bb9f-06089dca9c31.png)
 
 
-## <a name="mailbox-items-available-to-add-ins"></a>アドインで使用可能なメールボックスのアイテム
+## <a name="mailbox-items-available-to-addins"></a>アドインで使用可能なメールボックス アイテム
 
 
 Outlook アドインは、作成中や読み取り中にメッセージや予定で使用することができますが、他のアイテムの種類では使用できません。新規作成フォームまたは閲覧フォームで現在のメッセージ アイテムが次のいずれかの場合、Outlook はアドインをアクティブ化しません。
@@ -65,7 +59,7 @@ Outlook アドインは、作成中や読み取り中にメッセージや予定
 Outlook アドインは、Outlook 2013 以降のバージョン、Outlook 2016 for Mac、オンプレミスの Exchange 2013 用 Outlook Web アプリ、Office 365 および Outlook.com 用 Outlook Web アプリでサポートされています。すべての最新機能がすべてのクライアントで同時にサポートされるとは限りません。これらがどのホストでサポートされているのか (またはされていないのか) を確認するには、個々のトピックと API リファレンスを参照してください。
 
 
-## <a name="get-started-building-outlook-add-ins"></a>Outlook アドインの作成を開始する
+## <a name="get-started-building-outlook-addins"></a>Outlook アドインの作成を開始する
 
 
 Outlook アドインの作成を開始するには、「[Office 365 の Outlook アドインを使用する](https://dev.outlook.com/MailAppsGettingStarted/GetStarted)」を参照してください。
@@ -77,9 +71,7 @@ Outlook アドインの作成を開始するには、「[Office 365 の Outlook 
 - [Outlook アドインのアーキテクチャと機能の概要](../outlook/overview.md)
 - [Office アドイン開発のベスト プラクティス](../../docs/overview/add-in-development-best-practices.md)
 - [Office アドインの設計ガイドライン](../../docs/design/add-in-design.md)
-- 
-  [Office アドインおよび SharePoint アドインのライセンス](http://msdn.microsoft.com/library/3e0e8ff6-66d6-44ff-b0c2-59108ebd9181%28Office.15%29.aspx)
+- [Office アドインおよび SharePoint アドインのライセンス](http://msdn.microsoft.com/library/3e0e8ff6-66d6-44ff-b0c2-59108ebd9181%28Office.15%29.aspx)
 - [Office アドインを発行する](../publish/publish.md)
-- 
-  [Office ストアに Office アドインと SharePoint アドインおよび Office 365 Web アプリを提出する](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
+- [Office ストアに Office アドインと SharePoint アドインおよび Office 365 Web アプリを提出する](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
 

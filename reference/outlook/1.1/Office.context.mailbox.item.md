@@ -34,11 +34,11 @@ Office.initialize = function () {
 
 ### <a name="members"></a>メンバー
 
-#### <a name="attachments-:array.<[attachmentdetails](simple-types.md#attachmentdetails)>"></a>attachments :Array.<[AttachmentDetails](simple-types.md#attachmentdetails)>
+#### <a name="attachments-arrayattachmentdetailssimpletypesmdattachmentdetails"></a>attachments :Array.<[AttachmentDetails](simple-types.md#attachmentdetails)>
 
 アイテムの添付ファイルの配列を取得します。閲覧モードのみ。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   Array.<[AttachmentDetails](simple-types.md#attachmentdetails)>
 
@@ -74,11 +74,11 @@ if (_Item.attachments.length > 0) {
 // Do something with outputString
 ```
 
-####  <a name="bcc-:[recipients](recipients.md)"></a>bcc :[Recipients](Recipients.md)
+####  <a name="bcc-recipientsrecipientsmd"></a>bcc :[Recipients](Recipients.md)
 
 メッセージの BCC (ブラインド カーボン コピー) 行の受信者を取得または設定します。新規作成モードのみ。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   [Recipients](Recipients.md)
 
@@ -101,11 +101,11 @@ function callback(asyncResult) {
 }
 ```
 
-####  <a name="body-:[body](body.md)"></a>body :[Body](Body.md)
+####  <a name="body-bodybodymd"></a>body :[Body](Body.md)
 
 アイテムの本文を操作するメソッドを提供するオブジェクトを取得します。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   [Body](Body.md)
 
@@ -128,7 +128,7 @@ function callback(asyncResult) {
 
 `cc` プロパティは、メッセージの **CC** 行にある受信者を操作するメソッドを提供する `Recipients` オブジェクトを返します。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)> | [Recipients](Recipients.md)
 
@@ -151,7 +151,7 @@ function callback(asyncResult) {
 }
 ```
 
-####  <a name="(nullable)-conversationid-:string"></a>(nullable) conversationId :String
+####  <a name="nullable-conversationid-string"></a>(nullable) conversationId :String
 
 特定のメッセージが含まれている電子メールの会話の識別子を取得します。
 
@@ -159,7 +159,7 @@ function callback(asyncResult) {
 
 新規作成フォームで新しいアイテムに対してこのプロパティに null を取得します。ユーザーが件名を設定し、アイテムを保存する場合、`conversationId` プロパティは値を返します。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   String
 
@@ -170,11 +170,11 @@ function callback(asyncResult) {
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
 |[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 作成または読み取り|
-#### <a name="datetimecreated-:date"></a>dateTimeCreated :Date
+#### <a name="datetimecreated-date"></a>dateTimeCreated :Date
 
 アイテムが作成された日時を取得します。閲覧モードのみ。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   日付
 
@@ -192,11 +192,11 @@ function callback(asyncResult) {
 var created = Office.context.mailbox.item.dateTimeCreated;
 ```
 
-#### <a name="datetimemodified-:date"></a>dateTimeModified :Date
+#### <a name="datetimemodified-date"></a>dateTimeModified :Date
 
 アイテムが最後に変更された日時を取得します。閲覧モードのみ。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   日付
 
@@ -214,7 +214,7 @@ var created = Office.context.mailbox.item.dateTimeCreated;
 var modified = Office.context.mailbox.item.dateTimeModified;
 ```
 
-####  <a name="end-:date|[time](time.md)"></a>end :Date|[Time](Time.md)
+####  <a name="end-datetimetimemd"></a>end :Date|[Time](Time.md)
 
 予定が終了する日時を取得または設定します。
 
@@ -230,7 +230,7 @@ var modified = Office.context.mailbox.item.dateTimeModified;
 
 [`Time.setAsync`](Time.md#setasync) メソッドを使用して終了時刻を設定する場合、[`convertToUtcClientTime`](Office.context.mailbox.md#converttoutcclienttimeinput--date) メソッドを使用して、クライアント上のローカルの時刻をサーバーの UTC に変換する必要があります。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   Date | [Time](Time.md)
 
@@ -263,13 +263,13 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 });
 ```
 
-#### <a name="from-:[emailaddressdetails](simple-types.md#emailaddressdetails)"></a>from :[EmailAddressDetails](simple-types.md#emailaddressdetails)
+#### <a name="from-emailaddressdetailssimpletypesmdemailaddressdetails"></a>from :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 メッセージの送信者の電子メール アドレスを取得します。閲覧モードのみ。
 
 メッセージが代理人から送信された場合を除き、`from` プロパティと [`sender`](Office.context.mailbox.item.md#sender) プロパティは同一人物を表します。代理人から送信された場合、`from` プロパティは委任者を、sender プロパティは代理人を表します。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   [EmailAddressDetails](simple-types.md#emailaddressdetails)
 
@@ -280,11 +280,11 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
 |[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 読み取り|
-#### <a name="internetmessageid-:string"></a>internetMessageId :String
+#### <a name="internetmessageid-string"></a>internetMessageId :String
 
 電子メール メッセージのインターネット メッセージ ID を取得します。閲覧モードのみ。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   String
 
@@ -302,20 +302,20 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 var internetMessageId = Office.context.mailbox.item.internetMessageId;
 ```
 
-#### <a name="itemclass-:string"></a>itemClass :String
+#### <a name="itemclass-string"></a>itemClass :String
 
 選択されたアイテムの Exchange Web サービスのアイテム クラスを取得します。閲覧モードのみ。
 
 `itemClass` プロパティには、選択したアイテムのメッセージ クラスを指定します。次に、メッセージまたは予定アイテムの既定のメッセージ クラスを示します。
 
-| 種類 | 説明 | アイテム クラス |
+| 型 | 説明 | アイテム クラス |
 | --- | --- | --- |
 | 予定アイテム | アイテム クラス `IPM.Appointment` または `IPM.Appointment.Occurence` の予定表アイテムは次のとおりです。 | `IPM.Appointment`<br />`IPM.Appointment.Occurence` |
 | メッセージ アイテム | これには、既定のメッセージ クラス `IPM.Note` を持つ電子メール メッセージ、および基本メッセージ クラスとして `IPM.Schedule.Meeting` を使用する会議出席依頼、返信、または取り消しが含まれます。 | `IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled` |
 
 既定のメッセージ クラスを拡張したカスタム メッセージ クラス (たとえば、カスタム予定表メッセージ クラス`IPM.Appointment.Contoso` など) を作成できます。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   String
 
@@ -333,15 +333,15 @@ var internetMessageId = Office.context.mailbox.item.internetMessageId;
 var itemClass = Office.context.mailbox.item.itemClass;
 ```
 
-#### <a name="(nullable)-itemid-:string"></a>(nullable) itemId :String
+#### <a name="nullable-itemid-string"></a>(nullable) itemId :String
 
 現在のアイテムの Exchange Web サービスのアイテム識別子を取得します。閲覧モードのみ。
 
 `itemId` プロパティから返される識別子は、Exchange Web サービスのアイテム識別子と同じです。`itemId` プロパティは、Outlook のエントリ ID と同じではありません。
 
-`itemId` プロパティは、新規作成モードでストアに保存されていないアイテムの `null` を返します。アイテム識別子が必要な場合、[`saveAsync`](Office.context.mailbox.item.md#saveAsync) メソッドを使用してアイテムをストアに保存できます。そうすると、コールバック関数の [`AsyncResult.value`](simple-types.md#asyncresult) パラメーターでアイテム識別子が返されます。
+新規作成モードでは、`itemId` プロパティは使用できません。アイテム識別子が必要な場合、[`saveAsync`](Office.context.mailbox.item.md#saveAsync) メソッドを使用してアイテムをストアに保存できます。そうすると、コールバック関数の [`AsyncResult.value`](simple-types.md#asyncresult) パラメーターでアイテム識別子が返されます。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   String
 
@@ -366,13 +366,13 @@ if (itemId === null || itemId == undefined) {
 }
 ```
 
-####  <a name="itemtype-:[office.mailboxenums.itemtype](office.mailboxenums.md#itemtype-string)"></a>itemType :[Office.MailboxEnums.ItemType](Office.MailboxEnums.md#itemtype-string)
+####  <a name="itemtype-officemailboxenumsitemtypeofficemailboxenumsmditemtypestring"></a>itemType :[Office.MailboxEnums.ItemType](Office.MailboxEnums.md#itemtype-string)
 
 インスタンスが表しているアイテムの種類を取得します。
 
 `itemType` プロパティは、`ItemType` 列挙値の 1 つを返します。これは `item` オブジェクト インスタンスがメッセージと予定のどちらであるかを示すものです。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   [Office.MailboxEnums.ItemType](Office.MailboxEnums.md#itemtype-string)
 
@@ -393,7 +393,7 @@ else
   // do something else
 ```
 
-####  <a name="location-:string|[location](location.md)"></a>location :String|[Location](Location.md)
+####  <a name="location-stringlocationlocationmd"></a>location :String|[Location](Location.md)
 
 予定の場所を取得または設定します。
 
@@ -405,7 +405,7 @@ else
 
 `location` プロパティは予定の場所を取得または設定するために使用するメソッドを提供する `Location` オブジェクトを返します。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   String | [Location](Location.md)
 
@@ -429,13 +429,13 @@ function callback(asyncResult) {
 }
 ```
 
-#### <a name="normalizedsubject-:string"></a>normalizedSubject :String
+#### <a name="normalizedsubject-string"></a>normalizedSubject :String
 
 すべてのプレフィックス (`RE:` や `FWD:` など) が削除されたアイテムの件名を取得します。閲覧モードのみ。
 
 normalizedSubject プロパティは、アイテムの件名に電子メール プログラムによって標準のプレフィックス (`RE:` や `FW:` など) が追加されたものを取得します。これらのプレフィックスが付いたままの状態でアイテムの件名を取得するには、[`subject`](Office.context.mailbox.item.md#subject) プロパティを使用します。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   String
 
@@ -453,7 +453,7 @@ normalizedSubject プロパティは、アイテムの件名に電子メール �
 var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 ```
 
-####  <a name="optionalattendees-:array.<[emailaddressdetails](simple-types.md#emailaddressdetails)>|[recipients](recipients.md)"></a>optionalAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
+####  <a name="optionalattendees-arrayemailaddressdetailssimpletypesmdemailaddressdetailsrecipientsrecipientsmd"></a>optionalAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
 
 任意出席者の電子メール アドレスのリストを取得または設定します。
 
@@ -465,7 +465,7 @@ var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 
 `optionalAttendees` プロパティは会議への任意出席者を取得および設定するためのメソッドを提供する `Recipients` オブジェクトを返します。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)> | [Recipients](Recipients.md)
 
@@ -488,11 +488,11 @@ function callback(asyncResult) {
 }
 ```
 
-#### <a name="organizer-:[emailaddressdetails](simple-types.md#emailaddressdetails)"></a>organizer :[EmailAddressDetails](simple-types.md#emailaddressdetails)
+#### <a name="organizer-emailaddressdetailssimpletypesmdemailaddressdetails"></a>organizer :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
-指定の会議の会議開催者の電子メール アドレスを取得します。閲覧モードのみ。
+指定の会議の開催者の電子メール アドレスを取得します。閲覧モードのみ。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   [EmailAddressDetails](simple-types.md#emailaddressdetails)
 
@@ -511,7 +511,7 @@ var organizerName = Office.context.mailbox.item.organizer.displayName;
 var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 ```
 
-####  <a name="requiredattendees-:array.<[emailaddressdetails](simple-types.md#emailaddressdetails)>|[recipients](recipients.md)"></a>requiredAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
+####  <a name="requiredattendees-arrayemailaddressdetailssimpletypesmdemailaddressdetailsrecipientsrecipientsmd"></a>requiredAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
 
 必須出席者の電子メール アドレスのリストを取得または設定します。
 
@@ -523,7 +523,7 @@ var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 
 `requiredAttendees` プロパティは会議への必須出席者を取得および設定するためのメソッドを提供する `Recipients` オブジェクトを返します。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)> | [Recipients](Recipients.md)
 
@@ -546,11 +546,11 @@ function callback(asyncResult) {
 }
 ```
 
-#### <a name="resources-:[emailaddressdetails](simple-types.md#emailaddressdetails)"></a>resources :[EmailAddressDetails](simple-types.md#emailaddressdetails)
+#### <a name="resources-emailaddressdetailssimpletypesmdemailaddressdetails"></a>resources :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 予定に必要なリソースを取得します。閲覧モードのみ。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   [EmailAddressDetails](simple-types.md#emailaddressdetails)
 
@@ -561,13 +561,13 @@ function callback(asyncResult) {
 |[メールボックスの最小要件セットのバージョン](../tutorial-api-requirement-sets.md)| 1.0|
 |[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 読み取り|
-#### <a name="sender-:[emailaddressdetails](simple-types.md#emailaddressdetails)"></a>sender :[EmailAddressDetails](simple-types.md#emailaddressdetails)
+#### <a name="sender-emailaddressdetailssimpletypesmdemailaddressdetails"></a>sender :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 電子メール メッセージの送信者の電子メール アドレスを取得します。閲覧モードのみ。
 
 メッセージが代理人から送信された場合を除き、[`from`](Office.context.mailbox.item.md#from) プロパティと `sender` プロパティは同一人物を表します。代理人から送信された場合、`from` プロパティは委任者を、sender プロパティは代理人を表します。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   [EmailAddressDetails](simple-types.md#emailaddressdetails)
 
@@ -586,7 +586,7 @@ var senderName = Office.context.mailbox.item.sender.displayName;
 var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 ```
 
-####  <a name="start-:date|[time](time.md)"></a>start :Date|[Time](Time.md)
+####  <a name="start-datetimetimemd"></a>start :Date|[Time](Time.md)
 
 予定を開始する日時を取得または設定します。
 
@@ -602,7 +602,7 @@ var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 
 [`Time.setAsync`](Time.md#setasync) メソッドを使用して開始時刻を設定する場合、[`convertToUtcClientTime`](Office.context.mailbox.md#converttoutcclienttimeinput--date) メソッドを使用して、クライアント上のローカルの時刻をサーバーの UTC に変換する必要があります。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   Date | [Time](Time.md)
 
@@ -635,7 +635,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 });
 ```
 
-####  <a name="subject-:string|[subject](subject.md)"></a>subject :String|[Subject](Subject.md)
+####  <a name="subject-stringsubjectsubjectmd"></a>subject :String|[Subject](Subject.md)
 
 アイテムの件名フィールドに示される説明を取得または設定します。
 
@@ -661,7 +661,7 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   String | [Subject](Subject.md)
 
@@ -684,7 +684,7 @@ function callback(asyncResult) {
 
 `to` プロパティは、メッセージの **To** 行にある受信者を操作するメソッドを提供する `Recipients` オブジェクトを返します。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)> | [Recipients](Recipients.md)
 
@@ -709,7 +709,7 @@ function callback(asyncResult) {
 
 ### <a name="methods"></a>メソッド
 
-####  <a name="addfileattachmentasync(uri,-attachmentname,-[options],-[callback])"></a>addFileAttachmentAsync(uri, attachmentName, [options], [callback])
+####  <a name="addfileattachmentasyncuri-attachmentname-options-callback"></a>addFileAttachmentAsync(uri, attachmentName, [options], [callback])
 
 ファイルを添付ファイルとしてメッセージまたは予定に追加します。
 
@@ -717,12 +717,12 @@ function callback(asyncResult) {
 
 その後、[`removeAttachmentAsync`](Office.context.mailbox.item.md#removeattachmentasyncattachmentid-options-callback) メソッドで識別子を使用して同じセッションの添付ファイルを削除できます。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-|`uri`| String||メッセージまたは予定に添付するファイルの場所を示す URI。最大の長さは 2048 文字です。|
-|`attachmentName`| String||添付ファイルをアップロードするときに表示される添付ファイルの名前です。最大の長さは 255 文字です。|
+|`uri`| String||メッセージまたは予定に添付するファイルの場所を示す URI。最大長は 2048 文字です。|
+|`attachmentName`| String||添付ファイルのアップロード時に表示される添付ファイルの名前。最大長は 255 文字です。|
 |`options`| Object| &lt;optional&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラルです。<br/><br/>**プロパティ**<br/><table class="nested-table"><thead><tr><th>名前</th><th>型</th><th>属性</th><th>説明</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。</td></tr></tbody></table>|
 |`callback`| function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](simple-types.md#asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。 <br/>成功すると、添付ファイルの識別子が `asyncResult.value` プロパティに設定されます。<br/>添付ファイルのアップロードが失敗した場合、`asyncResult` オブジェクトには、エラーの説明を提供する `Error` オブジェクトが含まれます。<br/><table class="nested-table"><thead><tr><th>エラー コード</th><th>説明</th></tr></thead><tbody><tr><td><code>AttachmentSizeExceeded</code></td><td>添付ファイルのサイズが上限を超えています。</td></tr><tr><td><code>FileTypeNotSupported</code></td><td>許可されていない拡張子の添付ファイルです。</td></tr><tr><td><code>NumberOfAttachmentsExceeded</code></td><td>メッセージまたは予定の添付ファイルが多すぎます。</td></tr></tbody></table>|
 
@@ -754,7 +754,7 @@ function addAttachment() {
 }
 ```
 
-####  <a name="additemattachmentasync(itemid,-attachmentname,-[options],-[callback])"></a>addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
+####  <a name="additemattachmentasyncitemid-attachmentname-options-callback"></a>addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
 
 メッセージなどの Exchange アイテムを添付ファイルとして、メッセージまたは予定に追加します。
 
@@ -764,12 +764,12 @@ function addAttachment() {
 
 Office アドインを Outlook Web App で実行している場合、`addItemAttachmentAsync` メソッドはアイテムを、編集中のアイテム以外のアイテムに添付できますが、これはサポートされておらず、推奨されていません。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-|`itemId`| String||添付するアイテムの Exchange 識別子。最大の長さは 100 文字です。|
-|`attachmentName`| String||添付するアイテムの件名。最大の長さは 255 文字です。|
+|`itemId`| String||添付するアイテムの Exchange 識別子。最大長は 100 文字です。|
+|`attachmentName`| String||添付するアイテムの件名。最大長は 255 文字です。|
 |`options`| Object| &lt;optional&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラルです。<br/><br/>**プロパティ**<br/><table class="nested-table"><thead><tr><th>名前</th><th>型</th><th>属性</th><th>説明</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。</td></tr></tbody></table>|
 |`callback`| function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](simple-types.md#asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。 <br/>成功すると、添付ファイルの識別子が `asyncResult.value` プロパティに設定されます。<br/>添付ファイルの追加が失敗した場合、`asyncResult` オブジェクトには、エラーの説明を提供する `Error` オブジェクトが含まれます。<br/><table class="nested-table"><thead><tr><th>エラー コード</th><th>説明</th></tr></thead><tbody><tr><td><code>NumberOfAttachmentsExceeded</code></td><td>メッセージまたは予定の添付ファイルが多すぎます。</td></tr></tbody></table>|
 
@@ -806,7 +806,7 @@ function addAttachment() {
 }
 ```
 
-#### <a name="displayreplyallform(formdata)"></a>displayReplyAllForm(formData)
+#### <a name="displayreplyallformformdata"></a>displayReplyAllForm(formData)
 
 選択したメッセージの送信者とすべての受信者、または選択した予定の開催者とすべての参加者を示した回答フォームが表示されます。
 
@@ -816,7 +816,7 @@ Outlook Web App では、回答フォームは、3 列表示のポップアウ�
 
 > **注:**`displayReplyAllForm` に対する呼び出しに添付ファイルを含める機能は、要件セット 1.1 ではサポートされていません。添付ファイルのサポートは、要件セット 1.2 以降で `displayReplyAllForm` に追加されました。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -867,7 +867,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-#### <a name="displayreplyform(formdata)"></a>displayReplyForm(formData)
+#### <a name="displayreplyformformdata"></a>displayReplyForm(formData)
 
 選択したメッセージの送信者のみ、または選択した予定の開催者のみを示した回答フォームが表示されます。
 
@@ -877,7 +877,7 @@ Outlook Web App では、回答フォームは、3 列表示のポップアウ�
 
 > **注:**`displayReplyForm` に対する呼び出しに添付ファイルを含める機能は、要件セット 1.1 ではサポートされていません。添付ファイルのサポートは、要件セット 1.2 以降で `displayReplyForm` に追加されました。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -928,7 +928,7 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
-#### <a name="getentities()-→-{[entities](simple-types.md#entities)}"></a>getEntities() → {[Entities](simple-types.md#entities)}
+#### <a name="getentities-entitiessimpletypesmdentities"></a>getEntities() → {[Entities](simple-types.md#entities)}
 
 選択したアイテムにあるエンティティを取得します。
 
@@ -940,7 +940,7 @@ Office.context.mailbox.item.displayReplyForm(
 |[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 読み取り|
 
-##### <a name="returns:"></a>戻り値:
+##### <a name="returns"></a>戻り値:
 
 型:
 [Entities](simple-types.md#entities)
@@ -953,11 +953,11 @@ Office.context.mailbox.item.displayReplyForm(
 var contacts = Office.context.mailbox.item.getEntities().contacts;
 ```
 
-#### <a name="getentitiesbytype(entitytype)-→-(nullable)-{array.<(string|[contact](simple-types.md#contact)|[meetingsuggestion](simple-types.md#meetingsuggestion)|[phonenumber](simple-types.md#phonenumber)|[tasksuggestion](simple-types.md#tasksuggestion))>}"></a>getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
+#### <a name="getentitiesbytypeentitytype-nullable-arraystringcontactsimpletypesmdcontactmeetingsuggestionsimpletypesmdmeetingsuggestionphonenumbersimpletypesmdphonenumbertasksuggestionsimpletypesmdtasksuggestion"></a>getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
 
 選択したアイテム内で検出された指定のエンティティ型のすべてのエンティティを含む配列を取得します。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -971,7 +971,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 |[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| 制限あり|
 |適用可能な Outlook のモード| 読み取り|
 
-##### <a name="returns:"></a>戻り値:
+##### <a name="returns"></a>戻り値:
 
 `entityType` に渡された値が `EntityType` 列挙型の有効なメンバーでない場合、メソッドは null を返します。指定した型のエンティティがアイテムに存在しない場合、メソッドは空の配列を返します。それ以外の場合は、返される配列内のオブジェクトの型は、`entityType` パラメーター内の要求されたエンティティの型によって異なります。
 
@@ -979,13 +979,13 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 
 | `entityType` の値 | 返される配列内のオブジェクトの型 | 必要なアクセス許可のレベル |
 | --- | --- | --- |
-| `Address` | String | **制限あり** |
+| `Address` | 文字列 | **制限あり** |
 | `Contact` | 連絡先 | **ReadItem** |
-| `EmailAddress` | String | **ReadItem** |
+| `EmailAddress` | 文字列 | **ReadItem** |
 | `MeetingSuggestion` | MeetingSuggestion | **ReadItem** |
 | `PhoneNumber` | PhoneNumber | **制限あり** |
 | `TaskSuggestion` | TaskSuggestion | **ReadItem** |
-| `URL` | String | **制限あり** |
+| `URL` | 文字列 | **制限あり** |
 
 型:Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))></dd>
 
@@ -1008,13 +1008,13 @@ Office.initialize = function () {
 }
 ```
 
-#### <a name="getfilteredentitiesbyname(name)-→-(nullable)-{array.<(string|[contact](simple-types.md#contact)|[meetingsuggestion](simple-types.md#meetingsuggestion)|[phonenumber](simple-types.md#phonenumber)|[tasksuggestion](simple-types.md#tasksuggestion))>}"></a>getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
+#### <a name="getfilteredentitiesbynamename-nullable-arraystringcontactsimpletypesmdcontactmeetingsuggestionsimpletypesmdmeetingsuggestionphonenumbersimpletypesmdphonenumbertasksuggestionsimpletypesmdtasksuggestion"></a>getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
 
 マニフェスト XML ファイルで定義された名前付きフィルターを通過する、選択したアイテム内の既知のエンティティを返します。
 
 `getFilteredEntitiesByName` メソッドは、マニフェスト XML ファイル内の、指定された `FilterName` 要素値を持つ [ItemHasKnownEntity](https://msdn.microsoft.com/en-us/library/office/fp161166.aspx) ルール要素で定義された正規表現に一致するエンティティを返します。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -1028,15 +1028,15 @@ Office.initialize = function () {
 |[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 読み取り|
 
-##### <a name="returns:"></a>戻り値:
+##### <a name="returns"></a>戻り値:
 
 `FilterName` 要素の値が `name` パラメーターと一致するマニフェスト内に `ItemHasKnownEntity` 要素がない場合、メソッドは `null` を返します。`name` パラメーターがマニフェスト内の `ItemHasKnownEntity` 要素と一致せず、現在のアイテム内に一致するエンティティがない場合は、メソッドは空の配列を返します。
 
 
-型:Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>
+型:
+Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>
 
-
-#### <a name="getregexmatches()-→-{object}"></a>getRegExMatches() → {Object}
+#### <a name="getregexmatches-object"></a>getRegExMatches() → {Object}
 
 選択したアイテム内の、マニフェスト XML ファイルで定義された正規表現に一致する文字列の値を返します。
 
@@ -1073,7 +1073,7 @@ Office.initialize = function () {
 |[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 読み取り|
 
-##### <a name="returns:"></a>戻り値:
+##### <a name="returns"></a>戻り値:
 
 マニフェスト XML ファイルで定義された正規表現に一致する文字列の配列が格納されたオブジェクト。各配列の名前は、一致する `ItemHasRegularExpressionMatch` ルールの `RegExName` 属性、または一致する `ItemHasKnownEntity` ルールの `FilterName` 属性の対応する値と等しくなります。
 
@@ -1095,7 +1095,7 @@ var fruits = allMatches.fruits;
 var veges = allMatches.veggies;
 ```
 
-#### <a name="getregexmatchesbyname(name)-→-(nullable)-{array.<string>}"></a>getRegExMatchesByName(name) → (nullable) {Array.<String>}
+#### <a name="getregexmatchesbynamename-nullable-arraystring"></a>getRegExMatchesByName(name) → (nullable) {Array.<String>}
 
 選択したアイテム内の、マニフェスト XML ファイルで定義された、指定された正規表現に一致する文字列の値を返します。
 
@@ -1103,7 +1103,7 @@ var veges = allMatches.veggies;
 
 アイテムの body プロパティに `ItemHasRegularExpressionMatch` ルールを指定する場合、正規表現でさらに本文をフィルター処理し、アイテムの本文全体を返さないようにします。`.*` などの正規表現を使用してアイテムの本文全体を取得しても、期待する結果が返されないことがあります。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -1117,7 +1117,7 @@ var veges = allMatches.veggies;
 |[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 読み取り|
 
-##### <a name="returns:"></a>戻り値:
+##### <a name="returns"></a>戻り値:
 
 マニフェスト XML ファイルで定義された正規表現に一致する文字列が格納された配列。
 
@@ -1136,13 +1136,13 @@ var fruits = Office.context.mailbox.item.getRegExMatchesByName("fruits");
 var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ```
 
-####  <a name="getselecteddataasync(coerciontype,-[options],-callback)-→-{string}"></a>getSelectedDataAsync(coercionType, [options], callback) → {String}
+####  <a name="getselecteddataasynccoerciontype-options-callback-string"></a>getSelectedDataAsync(coercionType, [options], callback) → {String}
 
 メッセージの件名または本文から非同期的に選択したデータを返します。
 
 選択したデータがなく、カーソルが本文または件名にある場合、選択したデータに対して null が返されます。本文または件名以外のフィールドが選択されている場合、`InvalidSelection` エラーが返されます。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
@@ -1160,7 +1160,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 |[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteItem|
 |適用可能な Outlook のモード| 作成|
 
-##### <a name="returns:"></a>戻り値:
+##### <a name="returns"></a>戻り値:
 
 選択されたデータ (`coercionType` で決定された形式の文字列)。
 
@@ -1192,13 +1192,13 @@ function setCallback(asyncResult) {
 }
 ```
 
-####  <a name="loadcustompropertiesasync(callback,-[usercontext])"></a>loadCustomPropertiesAsync(callback, [userContext])
+####  <a name="loadcustompropertiesasynccallback-usercontext"></a>loadCustomPropertiesAsync(callback, [userContext])
 
 選択されたアイテムのこのアドインのカスタム プロパティを非同期に読み込みます。
 
 カスタム プロパティは、アプリケーションごと、アイテムごとのキーと値のペアとして格納されます。このメソッドは、コールバックで `CustomProperties` オブジェクトを返します。このオブジェクトは、現在のアイテムおよび現在のアドインに固有のカスタム プロパティにアクセスするためのメソッドを提供します。カスタム プロパティは、アイテム上では暗号化されません。そのため、セキュリティ保護記憶域として使用するべきではありません。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
@@ -1242,17 +1242,17 @@ function saveCallback(asyncResult) {
 }
 ```
 
-####  <a name="removeattachmentasync(attachmentid,-[options],-[callback])"></a>removeAttachmentAsync(attachmentId, [options], [callback])
+####  <a name="removeattachmentasyncattachmentid-options-callback"></a>removeAttachmentAsync(attachmentId, [options], [callback])
 
 メッセージまたは予定から添付ファイルを削除します。
 
 `removeAttachmentAsync` メソッドは、指定した識別子の添付ファイルをアイテムから削除します。ベスト プラクティスとして、同じメール アプリが同じセッションで添付ファイルを追加した場合にのみ、その添付ファイルの識別子を使用して添付ファイルを削除することをお勧めします。Outlook Web App とデバイス用 OWA では、添付ファイルの識別子は同じセッション内でのみ有効です。ユーザーがアプリを閉じるか、ユーザーがインライン フォームで新規作成を開始してインライン フォームが表示され、別ウィンドウで操作を継続すると、セッションは終了します。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
-|`attachmentId`| String||削除する添付ファイルの識別子。文字列の最大の長さは 100 文字です。|
+|`attachmentId`| String||削除する添付ファイルの識別子。文字列の最大長は 100 文字です。|
 |`options`| Object| &lt;optional&gt;|次のプロパティのうち 1 つ以上を含むオブジェクト リテラルです。<br/><br/>**プロパティ**<br/><table class="nested-table"><thead><tr><th>名前</th><th>型</th><th>属性</th><th>説明</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>開発者は、コールバック メソッドでアクセスしたい任意のオブジェクトを提供できます。</td></tr></tbody></table>|
 |`callback`| function| &lt;optional&gt;|メソッドが完了すると、`callback` パラメーターに渡された関数が、[`AsyncResult`](simple-types.md#asyncresult) オブジェクトである 1 つのパラメーター `asyncResult` で呼び出されます。 <br/>添付ファイルの削除に失敗すると、`asyncResult.error` プロパティにはエラー コードとエラーの理由が含まれます。<br/><table class="nested-table"><thead><tr><th>エラー コード</th><th>説明</th></tr></thead><tbody><tr><td><code>InvalidAttachmentId</code></td><td>添付ファイル識別子が存在しません。</td></tr></tbody></table>|
 

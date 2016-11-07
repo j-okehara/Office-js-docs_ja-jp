@@ -1,4 +1,4 @@
-# <a name="build-your-first-onenote-add-in"></a>最初の OneNote 用アドインをビルドする
+# <a name="build-your-first-onenote-addin"></a>最初の OneNote 用アドインをビルドする
 
 この記事では、いくつかのテキストを OneNote ページに追加する簡単な作業ウィンドウ アドインのビルドについて説明します。
 
@@ -7,7 +7,7 @@
    ![このチュートリアルでビルドした OneNote アドイン](../../images/onenote-first-add-in.png)
 
 <a name="setup"></a>
-## <a name="step-1:-set-up-your-dev-environment-and-create-an-add-in-project"></a>手順 1:開発環境をセットアップし、アドイン プロジェクトを作成する
+## <a name="step-1-set-up-your-dev-environment-and-create-an-addin-project"></a>手順 1:開発環境をセットアップし、アドイン プロジェクトを作成する
 指示に従って、[任意のエディターを使用して Office アドインを作成](../get-started/create-an-office-add-in-using-any-editor.md)して必要な前提条件をインストールし、Office Yeoman ジェネレーターを実行して新しいアドイン プロジェクトを作成します。次の表に、Yeoman ジェネレーターで選択するプロジェクト属性を示します。
 
 | オプション | 値 |
@@ -19,7 +19,7 @@
 | 使うテクノロジ | HTML、CSS、JavaScript |
 
 <a name="develop"></a>
-## <a name="step-2:-modify-the-add-in"></a>手順 2:アドインを変更する
+## <a name="step-2-modify-the-addin"></a>手順 2:アドインを変更する
 任意のテキスト エディターや IDE を使ってアドイン ファイルを編集できます。まだ Visual Studio Code をお試しいただいていない場合は、Linux、Mac OSX、Windows で[無料でダウンロード](https://code.visualstudio.com/)できます。
 
 1 - **[アプリ] または [ホーム]** フォルダーにある *home.html* を開きます。 
@@ -128,7 +128,7 @@ function addOutlineToPage() {
 ```
 
 <a name="test"></a>
-## <a name="step-3:-test-the-add-in-on-onenote-online"></a>手順 3:OneNote Online でのアドインのテスト
+## <a name="step-3-test-the-addin-on-onenote-online"></a>手順 3:OneNote Online でのアドインのテスト
 1 - Gulp Web サーバーを実行します。  
 
   a.**cmd** プロンプトを開き、アドイン プロジェクトのフォルダーに移動します。 
@@ -170,7 +170,7 @@ function addOutlineToPage() {
 
 -OneNote オブジェクトを調べる場合、現在使用可能なプロパティに実際の値が表示されます。読み込む必要のあるプロパティには、*undefined* と表示されます。`_proto_` ノードを展開し、オブジェクトで定義されているものの、まだ読み込まれていないプロパティを確認します。
 
-      ![Unloaded OneNote object in the debugger](../../images/onenote-debug.png)
+![デバッガーでアンロードされた OneNote オブジェクト](../../images/onenote-debug.png)
 
 -アドインで任意の HTTP リソースを使っている場合は、ブラウザーで混在したコンテンツを有効にする必要があります。運用アドインでは、セキュリティで保護された HTTPS リソースのみを使う必要があります。
 

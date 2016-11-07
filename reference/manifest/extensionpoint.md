@@ -9,7 +9,7 @@
 |  **xsi:type**  |  はい  | 定義される拡張点の種類。|
 
 
-## <a name="extension-points-for-word,-excel,-powerpoint,-and-onenote-add-in-commands"></a>Word、Excel、PowerPoint、OneNote アドイン コマンドの拡張点
+## <a name="extension-points-for-word-excel-powerpoint-and-onenote-addin-commands"></a>Word、Excel、PowerPoint、OneNote アドイン コマンドの拡張点
 
 - **PrimaryCommandSurface** - Office のリボン。
 - **ContextMenu**Office UI で右クリックしたときに表示されるショートカット メニュー。
@@ -66,41 +66,13 @@
 |**Tooltip**|省略可能。グループのツールヒント。 **resid** 属性は、 **String** 要素の **id** 属性の値に設定する必要があります。 **String** 要素は、 **Resources** 要素の子要素である **LongStrings** 要素の子要素です。|
 |**Control**|各グループには、1 つ以上のコントロールが必要です。 **Control** 要素は、 **Button** または **Menu** のいずれかにすることができます。ボタンのコントロールのドロップダウンリストを指定するには、 **Menu** を使用します。現在、ボタンとメニューのみがサポートされています。詳しくは、「 [ボタン コントロール](#button-controls)」および「 [メニュー コントロール](#menu-controls)」のセクションをご覧ください。<br/>**注** トラブルシューティングを簡単にするために、**Control** 要素と関連する **Resources** 子要素を一度に 1 つずつ追加することをお勧めします。
 
-## <a name="extension-points-for-outlook-add-in-commands"></a>Outlook アドイン コマンドの拡張点
+## <a name="extension-points-for-outlook-addin-commands"></a>Outlook アドイン コマンドの拡張点
 
-- [CustomPane](#custompane) 
 - [MessageReadCommandSurface](#messagereadcommandsurface) 
 - [MessageComposeCommandSurface](#messagecomposecommandsurface) 
 - [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) ([DesktopFormFactor](./formfactor.md) でのみ使用できます。)
-
-### <a name="custompane"></a>CustomPane
-
-CustomPane 拡張点には、指定したルールが満たされた場合にアクティブになるアドインを定義します。これは閲覧フォーム専用で、水平方向のウィンドウに表示されます。 
-
-**子要素**
-
-|  要素 |  必須  |  説明  |
-|:-----|:-----|:-----|
-|  **RequestedHeight** | いいえ |  デスクトップ コンピューターで実行する場合に、表示ウィンドウに必要な高さをピクセル単位で指定します。32 から 450 ピクセルを指定できます。  |
-|  **SourceLocation**  | はい |  アドインのソース コード ファイルの URL。これは、[Resources](./resources.md) 要素の **Url** 要素を指します。  |
-|  **Rule**  | はい |  アドインをいつアクティブ化するかを指定するルールのルールまたはコレクション。詳細については、「[Outlook アドインのアクティブ化ルール](../../docs/outlook/manifests/activation-rules.md)」を参照してください。 |
-|  **DisableEntityHighlighting**  | いいえ |  エンティティの強調表示をオフにするかどうかを指定します。 |
-
-
-#### <a name="custompane-example"></a>CustomPane の例
-```xml
-<ExtensionPoint xsi:type="CustomPane">
-   <RequestedHeight>100< /RequestedHeight> 
-   <SourceLocation resid="residReadTaskpaneUrl"/>
-   <Rule xsi:type="RuleCollection" Mode="Or">
-     <Rule xsi:type="ItemIs" ItemType="Message"/>
-     <Rule xsi:type="ItemHasAttachment"/>
-     <Rule xsi:type="ItemHasKnownEntity" EntityType="Address"/>
-   </Rule>
-</ExtensionPoint>
-```
 
 ### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
 この拡張点により、メールの閲覧ビューのコマンド サーフェスにボタンが配置されます。Outlook デスクトップでは、これはリボンに表示されます。

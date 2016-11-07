@@ -1,5 +1,5 @@
 
-# <a name="document.activeviewchanged-event"></a>Document.ActiveViewChanged イベント
+# <a name="documentactiveviewchanged-event"></a>Document.ActiveViewChanged イベント
 ユーザーがドキュメントの現在のビューを変更したときに発生します。
 
 |||
@@ -30,7 +30,7 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 
 ||**Windows デスクトップ版 Office**|**Office Online (ブラウザー)**|**Office for iPad**|
 |:-----|:-----|:-----|:-----|
-|**PowerPoint**|Y|Y|Y|
+|**PowerPoint**|Y||Y|
 
 |||
 |:-----|:-----|

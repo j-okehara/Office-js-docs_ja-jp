@@ -58,7 +58,7 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 |**Access**||Y||
 |**Excel**|Y|Y|Y|
 |**PowerPoint**|Y|Y|Y|
-|**Word**|Y||Y|
+|**Word**|Y|Y|Y|
 
 |||
 |:-----|:-----|

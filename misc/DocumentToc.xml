@@ -26,9 +26,10 @@
     	<Item text="アクセシビリティ ガイドライン" url="design/accessibility-guidelines" SEODescription="すべてのユーザーが Office アドインにアクセスできるようにする方法を確認します。" />
     </Item>
   <Item text="開発" url="develop">
-	<Item text="アドイン開発のライフサイクル" url="design/add-in-development-lifecycle" SEODescription="Office アプリケーションを拡張するための作業ウィンドウ アドイン、コンテンツ アドイン、および Outlook アドインを開発するエンド ツー エンド プロセスを計画します。" />
+	<Item text="アドイン開発のライフサイクル" url="develop/add-in-development-lifecycle" SEODescription="Office アプリケーションを拡張するための作業ウィンドウ アドイン、コンテンツ アドイン、および Outlook アドインを開発するエンド ツー エンド プロセスを計画します。" />
 	<Item text="Office の最新バージョンをインストールする" url="develop/install-latest-office-version" SEODescription="Office の最新のビルドを取得するためにオプトインする方法を確認します。" />
 	<Item text="iPad 用のアドインを開発する" url="develop/develop-office-add-ins-for-the-ipad" SEODescription="Office for iPad で Office アドインを使用できるようにします。" />
+	<Item text="Angular 2 でアドインを作成するためのヒント" url="develop/add-ins-with-angular2" SEODescription="Angular 2 を使って Office アドインを開発します。" />
 	<Item text="マニフェスト" url="overview/add-in-manifests">	
 		<Item text="アドイン コマンドを定義する" url="outlook/manifests/define-add-in-commands" SEODescription="アドイン マニフェストの VersionOverrides 要素を使用して、アドイン コマンドを定義します。" />
 		<Item text="Office ホストを指定する" url="overview/specify-office-hosts-and-api-requirements" SEODescription="Office ホストと API の要件をマニフェストで指定する方法を確認します。" /> 	
@@ -85,8 +86,7 @@
     <Item text="概要" url="outlook/overview" SEODescription="Outlook アドインのアーキテクチャと機能について説明します。" Scope="outlook" />
     <Item text="Outlook のアドイン コマンド" url="outlook/add-in-commands-for-outlook" SEODescription="アドイン コマンドを使用して、Outlook アドインを Outlook UI と統合します。" Scope="outlook" />
     <Item text="コンテキスト Outlook アドイン" url="outlook/contextual-outlook-add-ins" SEODescription="メッセージまたは予定で指定されたテキストに基づいて、Outlook アドインをアクティブにします。" Scope="outlook" />
-    <Item text="カスタム ウィンドウの Outlook アドイン" url="outlook/custom-pane-outlook-add-ins" SEODescription="特定の規則に基づいてアクティブになる Outlook アドインを定義する方法を説明します。" Scope="outlook" />
-	<Item text="Outlook アドインのモジュール拡張機能" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="モジュール拡張機能をナビゲーション バーに追加することによって、Outlook UI を拡張します。" /> 
+    <Item text="Outlook アドインのモジュール拡張機能" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="モジュール拡張機能をナビゲーション バーに追加することによって、Outlook UI を拡張します。" /> 
 	<Item text="API" url="outlook/apis" SEODescription="Outlook アドインに必要な API を指定する方法について説明します。" Scope="outlook" />
 	<Item text="マニフェスト" url="overview/add-in-manifests" Scope="outlook" SEODescription="XML マニフェストを使用して、アドインをアクティブにする方法を指定します。">
       <Item text="マニフェスト" url="outlook/manifests/manifests" SEODescription="閲覧フォームまたは新規作成フォーム用の Outlook アドインのマニフェストを作成します。" Scope="outlook" /><Item text="アクティブ化ルール" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Outlook アドイン マニフェストでアクティブ化ルールを定義して、Outlook がいつアドインを表示するかを指定します。" Scope="outlook" />

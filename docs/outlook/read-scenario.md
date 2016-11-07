@@ -1,5 +1,5 @@
 
-# <a name="create-outlook-add-ins-for-read-forms"></a>閲覧フォーム用の Outlook アドインを作成する
+# <a name="create-outlook-addins-for-read-forms"></a>閲覧フォーム用の Outlook アドインを作成する
 
 閲覧アドインは、Outlook の閲覧ウィンドウか閲覧インスペクター内でアクティブ化される Outlook アドインです。閲覧アドインは、作成アドイン (ユーザーがメッセージや予定を作成しているときにアクティブ化される Outlook アドイン) とは違って、次のユーザー シナリオで使用できます。
 
@@ -18,10 +18,10 @@
 
 **図 1.選択されている住所を含んだ Outlook メッセージに対してアクティブ化されている [Bing 地図] アドインが表示されたアドイン ウィンドウ**
 
-![Outlook の Bing 地図メール アプリ](../../images/off15appsdk_BingMapMailAppScreenshot.jpg)
+![Outlook の Bing Maps メール アプリ](../../images/off15appsdk_BingMapMailAppScreenshot.jpg)
 
 
-## <a name="types-of-add-ins-available-in-read-mode"></a>閲覧モードで使用できるアドインの種類
+## <a name="types-of-addins-available-in-read-mode"></a>閲覧モードで使用できるアドインの種類
 
 
 閲覧アドインでは、以下のいずれの種類の組み合わせも可能です。
@@ -31,10 +31,8 @@
     
 - [コンテキスト Outlook アドイン](../outlook/contextual-outlook-add-ins.md)
     
-- [カスタム ウィンドウの Outlook アドイン](../outlook/custom-pane-outlook-add-ins.md)
-    
 
-## <a name="api-features-available-to-read-add-ins"></a>閲覧アドインで使用できる API 機能
+## <a name="api-features-available-to-read-addins"></a>閲覧アドインで使用できる API 機能
 
 
 JavaScript API for Office が閲覧フォームで Outlook アドインに提供する機能の一覧については、「 [バージョンごとのメール アプリ機能](http://msdn.microsoft.com/library/f34e2f44-8c9d-4e90-b1d7-3f29506adb92%28Office.15%29.aspx)」の表 1 と表 2 を参照してください。 

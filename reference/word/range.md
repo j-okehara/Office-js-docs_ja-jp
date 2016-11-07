@@ -1,4 +1,4 @@
-# <a name="range-object-(javascript-api-for-word)"></a>Range オブジェクト (JavaScript API for Word)
+# <a name="range-object-javascript-api-for-word"></a>Range オブジェクト (JavaScript API for Word)
 
 文書内の連続した領域を表します。
 
@@ -7,7 +7,7 @@ _適用対象:Word 2016、Word for iPad、Word for Mac、Word Online_
 ## <a name="properties"></a>プロパティ
 | プロパティ     | 型   |説明
 |:---------------|:--------|:----------|
-|style|string|範囲に使用されるスタイルを取得または設定します。これは、事前にインストールされているスタイルまたはユーザー設定のスタイルの名前です。|
+|style|string|範囲に使用されるスタイルを取得または設定します。これは、事前にインストールされているスタイルまたはユーザー設定のスタイルの名前です。Word Online では、スタイル名がアルファベット文字だけでできている場合は最初の文字を除くすべての文字は*必ず*小文字に、最初の文字だけは*必ず*大文字にしなければなりません。スタイルにアルファベット以外の文字が 1 つ以上含まれている場合は、大文字か小文字かにかかわらず既知のスタイルに合わせ、もし複数のスタイルがある場合は、最後に定義されているスタイルが適用されます。|
 |text|string|範囲のテキストを取得します。読み取り専用です。|
 
 ## <a name="relationships"></a>リレーションシップ
@@ -16,32 +16,32 @@ _適用対象:Word 2016、Word for iPad、Word for Mac、Word Online_
 |contentControls|[ContentControlCollection](contentcontrolcollection.md)|範囲に含まれるコンテンツ コントロール オブジェクトのコレクションを取得します。読み取り専用です。|
 |font|[Font](font.md)|範囲のテキスト形式を取得します。これを使用して、フォント名、サイズ、色、およびその他のプロパティを取得および設定します。読み取り専用です。|
 |inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|範囲に含まれる inlinePicture オブジェクトのコレクションを取得します。読み取り専用です。|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|範囲に含まれる Paragraph オブジェクトのコレクションを取得します。読み取り専用です。|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|範囲に含まれる段落オブジェクトのコレクションを取得します。読み取り専用です。|
 |parentContentControl|[ContentControl](contentcontrol.md)|範囲を格納するコンテンツ コントロールを取得します。親コンテンツ コントロールがない場合は、null を返します。読み取り専用です。|
 
 ## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明|
 |:---------------|:--------|:----------|
-|[clear()](#clear)|void|範囲オブジェクトの内容をクリアします。ユーザーは、消去された内容を元に戻す操作を実行できます。|
+|[clear()](#clear)|void|範囲オブジェクトの内容をクリアします。ユーザーは、クリアしたコンテンツを元に戻す操作を実行できます。|
 |[delete()](#delete)|void|文書から範囲と、その範囲の内容を削除します。|
 |[getHtml()](#gethtml)|string|Range オブジェクトの HTML 表記を取得します。|
 |[getOoxml()](#getooxml)|string|Range オブジェクトの OOXML 表記を取得します。|
 |[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|指定した位置に、区切りを挿入します。改行以外の区切りは、メイン文書本文内に含まれた範囲オブジェクトにのみ挿入できます。改行はどの本文オブジェクトにも挿入できます。有効な insertLocation の値は、'Before' または 'After' です。|
-|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Range オブジェクトを、リッチ テキスト コンテンツ コントロールでラップします。|
+|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|範囲オブジェクトを、リッチ テキストのコンテンツ コントロールでラップします。|
 |[insertFileFromBase64(base64File: string, insertLocation:InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|範囲の指定した位置に文書を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 |[insertHtml(html: string, insertLocation:InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|範囲の指定した位置に HTML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|範囲の指定した位置に画像を挿入します。有効な insertLocation の値は、'Replace'、'Start'、'End'、'Before' または 'After' です。
-|[insertOoxml(ooxml: string, insertLocation:InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|範囲の指定した位置に OOXML または wordProcessingML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|画像を範囲の指定された位置に挿入します。insertLocation の値は、'Replace'、'Start'、'End'、'Before' 、'After' のいずれかになります。
+|[insertOoxml(ooxml: string, insertLocation:InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|範囲内の指定された位置に OOXML または wordProcessingML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 |[insertParagraph(paragraphText: string, insertLocation:InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|範囲の指定した位置に段落を挿入します。有効な insertLocation の値は、'Before' または 'After' です。|
 |[insertText(text: string, insertLocation:InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|範囲の指定した位置にテキストを挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 |[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
-|[search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Range オブジェクトの範囲で、searchOptions を指定した検索を実行します。検索結果は、Range オブジェクトのコレクションです。|
+|[search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|範囲オブジェクトの範囲で、searchOptions を指定した検索を実行します。検索結果は、範囲オブジェクトのコレクションになります。|
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|範囲を選択して、その範囲に Word の UI を移動します。selectionMode 値は、'Select'、'Start'、'End' のいずれかになります。|
 
 ## <a name="method-details"></a>メソッドの詳細
 
-### <a name="clear()"></a>clear()
+### <a name="clear"></a>clear()
 範囲オブジェクトの内容をクリアします。ユーザーは、クリアしたコンテンツを元に戻す操作を実行できます。
 
 #### <a name="syntax"></a>構文
@@ -80,7 +80,7 @@ Word.run(function (context) {
     }
 });
 ```
-### <a name="delete()"></a>delete()
+### <a name="delete"></a>delete()
 文書から範囲と、その範囲の内容を削除します。
 
 #### <a name="syntax"></a>構文
@@ -120,7 +120,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="gethtml()"></a>getHtml()
+### <a name="gethtml"></a>getHtml()
 範囲オブジェクトの HTML 表記を取得します。
 
 #### <a name="syntax"></a>構文
@@ -160,7 +160,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="getooxml()"></a>getOoxml()
+### <a name="getooxml"></a>getOoxml()
 Range オブジェクトの OOXML 表記を取得します。
 
 #### <a name="syntax"></a>構文
@@ -200,7 +200,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertbreak(breaktype:-breaktype,-insertlocation:-insertlocation)"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
+### <a name="insertbreakbreaktype-breaktype-insertlocation-insertlocation"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
 指定した位置に、区切りを挿入します。改行以外の区切りは、メイン文書本文内に含まれた範囲オブジェクトにのみ挿入できます。改行はどの本文オブジェクトにも挿入できます。有効な insertLocation の値は、'Before' または 'After' です。
 
 #### <a name="syntax"></a>構文
@@ -246,7 +246,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertcontentcontrol()"></a>insertContentControl()
+### <a name="insertcontentcontrol"></a>insertContentControl()
 範囲オブジェクトを、リッチ テキストのコンテンツ コントロールでラップします。
 
 #### <a name="syntax"></a>構文
@@ -293,7 +293,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation:InsertLocation)
+### <a name="insertfilefrombase64base64file-string-insertlocation-insertlocation"></a>insertFileFromBase64(base64File: string, insertLocation:InsertLocation)
 範囲の指定した位置に文書を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。
 
 #### <a name="syntax"></a>構文
@@ -337,7 +337,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="inserthtml(html:-string,-insertlocation:-insertlocation)"></a>insertHtml(html: string, insertLocation:InsertLocation)
+### <a name="inserthtmlhtml-string-insertlocation-insertlocation"></a>insertHtml(html: string, insertLocation:InsertLocation)
 範囲の指定した位置に HTML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。
 
 #### <a name="syntax"></a>構文
@@ -380,7 +380,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
+### <a name="insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
 画像を範囲の指定された位置に挿入します。insertLocation の値は、'Replace'、'Start'、'End'、'Before' 、'After' のいずれかになります。
 
 #### <a name="syntax"></a>構文
@@ -395,7 +395,7 @@ rangeObject.insertInlinePictureFromBase64(image, insertLocation);
 #### <a name="returns"></a>戻り値
 [InlinePicture](inlinepicture.md)
 
-### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation:InsertLocation)
+### <a name="insertooxmlooxml-string-insertlocation-insertlocation"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
 範囲内の指定された位置に OOXML または wordProcessingML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。
 
 #### <a name="syntax"></a>構文
@@ -444,7 +444,7 @@ Word.run(function (context) {
 #### <a name="additional-information"></a>追加情報
 OOXML の操作の詳細については、「[Office Open XML を使用して Word のより良いアドインを作成する](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx)」をお読みください。
 
-### <a name="insertparagraph(paragraphtext:-string,-insertlocation:-insertlocation)"></a>insertParagraph(paragraphText: string, insertLocation: InsertLocation)
+### <a name="insertparagraphparagraphtext-string-insertlocation-insertlocation"></a>insertParagraph(paragraphText: string, insertLocation: InsertLocation)
 範囲の指定した位置に段落を挿入します。有効な insertLocation の値は、'Before' または 'After' です。
 
 #### <a name="syntax"></a>構文
@@ -487,7 +487,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="inserttext(text:-string,-insertlocation:-insertlocation)"></a>insertText(text: string, insertLocation:InsertLocation)
+### <a name="inserttexttext-string-insertlocation-insertlocation"></a>insertText(text: string, insertLocation:InsertLocation)
 範囲の指定した場所にテキストを挿入します。insertLocation 値は、'Replace'、'Start'、'End'、'Before' または 'After' のいずれかです。
 
 #### <a name="syntax"></a>構文
@@ -530,7 +530,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
 #### <a name="syntax"></a>構文
@@ -579,7 +579,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="search(searchtext:-string,-searchoptions:-paramtypestrings.searchoptions)"></a>search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)
+### <a name="searchsearchtext-string-searchoptions-paramtypestringssearchoptions"></a>search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)
 範囲オブジェクトの範囲で、searchOptions を指定した検索を実行します。検索結果は、範囲オブジェクトのコレクションになります。
 
 #### <a name="syntax"></a>構文
@@ -590,14 +590,14 @@ rangeObject.search(searchText, searchOptions);
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
-|searchText|文字列|必須。検索テキスト。|
+|searchText|string|必須。検索テキスト。|
 |[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|省略可能。検索のオプション。|
 
 #### <a name="returns"></a>戻り値
 [SearchResultCollection](searchresultcollection.md)
 
 
-### <a name="select(selectionmode:-selectionmode)"></a>select(selectionMode: SelectionMode)
+### <a name="selectselectionmode-selectionmode"></a>select(selectionMode: SelectionMode)
 範囲を選択して、その範囲に Word の UI を移動します。selectionMode 値は、'Select'、'Start'、'End' のいずれかになります。
 
 #### <a name="syntax"></a>構文

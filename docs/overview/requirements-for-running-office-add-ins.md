@@ -1,5 +1,5 @@
 
-# <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
+# <a name="requirements-for-running-office-addins"></a>Office アドインを実行するための要件
 
 
 この記事では、Office アドインを実行するためのソフトウェアとデバイスの要件について説明します。
@@ -25,7 +25,7 @@ Outlook アドインをテストおよび実行するには、ユーザーの Ou
 
 
 
-## <a name="client-requirements:-windows-desktop-and-tablet"></a>クライアントの要件: Windows デスクトップおよびタブレット
+## <a name="client-requirements-windows-desktop-and-tablet"></a>クライアントの要件: Windows デスクトップおよびタブレット
 
 Windows ベースのデスクトップ、ノート PC、または タブレット デバイス上で実行されるサポート対象の Office デスクトップ クライアントまたは Web クライアント向けの Office アドインを開発するには、以下のソフトウェアが必要です。
 
@@ -36,14 +36,14 @@ Windows ベースのデスクトップ、ノート PC、または タブレッ�
 
     - Excel 2013、Outlook 2013、PowerPoint 2013、Project Professional 2013、Project 2013 SP1、Word 2013、またはそれ以降の Office クライアントのバージョン (特にこれらの Office デスクトップ クライアントを対象として Office アドインをテストまたは実行する場合)。Office デスクトップ クライアントはオンプレミスでインストールすることも、クイック実行によってクライアント コンピューターにインストールすることもできます。
 
-- Internet Explorer 9 以降。インストールが必要ですが、既定のブラウザーである必要はありません。Office アドインをサポートするために、ホストとして機能する Office クライアントは Internet Explorer 9 以上を構成しているブラウザー コンポーネントを使用します。
+- Internet Explorer 11 以降をインストールする必要がありますが、必ずしも既定のブラウザーにする必要はありません。Office アドインをサポートするために、ホストとして動作する Office のクライアントは、Internet Explorer 11 以降に組み込まれているブラウザー コンポーネントを使用します。
 
-- 次のいずれかの既定のブラウザー: Internet Explorer 9、Safari 5.0.6、Firefox 5、Chrome 13、またはこれらのブラウザーのそれ以降のバージョン。
+- 既定のブラウザーとして次のいずれか:Internet Explorer 11 以降、Edge、Chrome、Firefox、Safari (Mac OS) の最新バージョンのうちいずれか。
 
 - メモ帳などの HTML および JavaScript エディター、 [Visual Studio および Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs)、またはサードパーティの Web 開発ツール。
 
 
-## <a name="client-requirements:-os-x-desktop"></a>クライアントの要件: OS X デスクトップ
+## <a name="client-requirements-os-x-desktop"></a>クライアントの要件: OS X デスクトップ
 
 Outlook for Mac は Office 365 に付属していて、Outlook アドインをサポートします。Outlook アドインを Outlook for Mac で実行するための要件は、Outlook for Mac そのものの要件と同じです。オペレーティング システムは、少なくとも OS X v10.10 "Yosemite" である必要があります。Outlook for Mac はレイアウト エンジンとして WebKit を使用して、アドイン ページを表示するので、追加のブラウザーの依存関係はありません。
 
@@ -52,12 +52,12 @@ Outlook for Mac は Office 365 に付属していて、Outlook アドインを�
 - Excel for Mac バージョン 15.19 (160206) 
 - PowerPoint for Mac バージョン 15.24 (160614)
 
-## <a name="client-requirements:-browser-support-for-office-online-web-clients-and-sharepoint"></a>クライアントの要件: Office Online Web クライアントと SharePoint のブラウザー サポート
+## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>クライアントの要件:Office Online Web クライアントと SharePoint のブラウザー サポート
 
-Internet Explorer 9、Chrome 13、Firefox 5、Safari 5.0.6、またはこれらのブラウザーの以降のバージョンなど ECMAScript 5.1、HTML5、および CSS3 をサポートする任意のブラウザー。
+Internet Explorer 11 以降、Edge、Chrome、Firefox、Safari (Mac OS) の最新バージョンなど ECMAScript 5.1、HTML5、および CSS3 をサポートする任意のブラウザー。
 
 
-## <a name="client-requirements:-non-windows-smartphone-and-tablet"></a>クライアントの要件: Windows 以外のスマートフォンおよび タブレット
+## <a name="client-requirements-nonwindows-smartphone-and-tablet"></a>クライアントの要件: Windows 以外のスマートフォンおよびタブレット
 
 特に、スマートフォンや Windows 以外のタブレット デバイス上のブラウザーで動作する デバイス用 OWA と Outlook Web App の場合、Outlook アドインをテストおよび実行するのに以下のソフトウェアが必要です。
 

@@ -1,5 +1,5 @@
 
-# <a name="office-add-in-requirement-sets"></a>Office アドインの要件セット
+# <a name="office-addin-requirement-sets"></a>Office アドインの要件セット
 
 要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、実行時チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳細については、「[Office ホストと API 要件を指定する](../docs/overview/specify-office-hosts-and-api-requirements.md)」をご覧ください。
 
@@ -23,7 +23,7 @@ Outlook の要件セットについては、「[Outlook API 要件セットに�
 | CompressedFile    | 1.1 |PowerPoint<br>Word 2013 以降<br>Word 2016 for Mac<br>Word Online<br>Word for iPad<br/>Excel Online<br/>PowerPoint Online|Document.getFileAsync メソッドを使用するときの、<br>バイト配列 (Office.FileType.Compressed) としての Office Open XML (OOXML) 形式への出力をサポートします。|
 | CustomXmlParts    | 1.1 |Word 2013 以降<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
 | DialogAPI | 1.1 | Excel<br>PowerPoint<br>Word 2016<br>Outlook|Office.context.ui.displayDialogAsync()<br>Office.context.ui.messageParent()<br>Office.context.ui.close()|
-| DocumentEvents    | 1.1 | Excel<br>Excel Online<br>PowerPoint<br>Word 2013 以降<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
+| DocumentEvents    | 1.1 | Excel<br>Excel Online<br>PowerPoint Online<br>Word 2013 以降<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
 | File  | 1.1 | PowerPoint<br>Word 2013 以降<br>Word 2016 for Mac<br>Word Online<br>Word for iPad<br>PowerPoint Online|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
 | HtmlCoercion  | 1.1 | Word 2013 以降<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync、または Binding.setDataAsync メソッドを使用してデータを読み書きするときの、<br>HTML (Office.CoercionType.Html) への強制型変換をサポートします。|
 | ImageCoercion | 1.1 | Word 2013 以降<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Document.setSelectedDataAsync メソッドを使用してデータを書き込むときに、画像 (Office.CoercionType.Image) への変換をサポートしています。|
@@ -41,7 +41,7 @@ Outlook の要件セットについては、「[Outlook API 要件セットに�
 | TextCoercion  | 1.1 | Excel<br>Excel Online<br>PowerPoint<br>Project<br>Word 2013 以降<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync、または Binding.setDataAsync の各メソッドを使用してデータを読み書きするとき、テキスト形式への強制型変換 (Office.CoercionType.Text) をサポートします。|
 | TextFile  | 1.1 | Word 2013 以降<br>Word 2016 for Mac<br>Word Online<br>Word for iPad<br/>|Document.getFileAsync メソッドを使用するとき、テキスト形式 (Office.FileType.Text) への出力をサポートします。|
 
-## <a name="methods-that-aren't-part-of-a-requirement-set"></a>要件セットの一部ではないメソッド
+## <a name="methods-that-arent-part-of-a-requirement-set"></a>要件セットの一部ではないメソッド
 
 
 JavaScript API for Office の以下のメソッドは、要件セットの一部ではありません。アドインでこれらのメソッドが必要な場合は、アドインのマニフェストで **Methods** 要素と **Method** 要素を使用してメソッドが必要であると宣言するか、または if ステートメントを使用してランタイム チェックを実行します。詳細については、「[Office のホストと API 要件を指定する](../docs/overview/specify-office-hosts-and-api-requirements.md)」をご覧ください。

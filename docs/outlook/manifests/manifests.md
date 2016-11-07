@@ -1,12 +1,9 @@
 
-# <a name="outlook-add-in-manifests"></a>Outlook アドインのマニフェスト
+# <a name="outlook-addin-manifests"></a>Outlook アドインのマニフェスト
 
 Outlook アドインは 2 つのコンポーネント (XML のアドイン マニフェストと Web ページ) で構成され、Office アドイン用 JavaScript ライブラリ (office.js) でサポートされています。マニフェストには、アドインが Outlook クライアントと統合する方法が記述されます。現在、マニフェスト スキーマには、**VersionOverrides** を含む 3 つのバージョンがあります。アドインの作成には、マニフェスト スキーマ バージョン 1.1 と **VersionOverrides** 1.0 の使用をお勧めします。以下に例を示します。
 
  >**メモ**  次のサンプルの URL 値はすべて「YOUR_WEB_SERVER」で始まります。この値はプレースホルダーであり、有効な実際のマニフェストでは、この部分には有効な HTTPS Web URL が入ります。
-
-
-
 
 ```XML
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -112,16 +109,6 @@ Outlook アドインは 2 つのコンポーネント (XML のアドイン マ�
 
                 <DesktopFormFactor>
                     <FunctionFile resid="functionFile" />
-
-                    <!-- Custom pane, only applies to read form -->
-                    <ExtensionPoint xsi:type="CustomPane">
-                        <RequestedHeight>100</RequestedHeight>
-                        <SourceLocation resid="customPaneUrl" />
-                        <Rule xsi:type="RuleCollection" Mode="Or">
-                            <Rule xsi:type="ItemIs" ItemType="Message" />
-                            <Rule xsi:type="ItemIs" ItemType="AppointmentAttendee" />
-                        </Rule>
-                    </ExtensionPoint>
 
                     <!-- Message compose form -->
                     <ExtensionPoint xsi:type="MessageComposeCommandSurface">
@@ -549,7 +536,6 @@ Outlook アドインは 2 つのコンポーネント (XML のアドイン マ�
                 <bt:Url id="functionFile" DefaultValue="YOUR_WEB_SERVER/FunctionFile/Functions.html" />
                 <bt:Url id="readTaskPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppRead/TaskPane/TaskPane.html" />
                 <bt:Url id="composeTaskPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppCompose/TaskPane/TaskPane.html" />
-                <bt:Url id="customPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppRead/CustomPane/CustomPane.html" />
             </bt:Urls>
             <bt:ShortStrings>
                 <bt:String id="groupLabel" DefaultValue="Add-in Demo" />
@@ -646,8 +632,7 @@ Outlook アドイン マニフェストのルート要素は  **OfficeApp** で�
 
 ## <a name="version"></a>バージョン
 
-特定のアドインのバージョンです。開発者がマニフェスト内で何かを更新する場合、バージョンも同様に上げる必要があります。このように、新しいマニフェストをインストールすると、既存のマニフェストが上書きされ、ユーザーは新機能を取得します。このアドインがストアに送信済みのものであれば、新しいマニフェストが再度送信され検証される必要があります。その後、このアドインのユーザーは、新しく更新されたマニフェストが承認されてから数時間後に、このマニフェストを自動的に取得します。 
-
+特定のアドインのバージョンです。開発者がマニフェスト内で何かを更新する場合、バージョンも同様に上げる必要があります。このように、新しいマニフェストをインストールすると、既存のマニフェストが上書きされ、ユーザーは新機能を取得します。このアドインがストアに送信済みのものであれば、新しいマニフェストが再度送信され検証される必要があります。その後、このアドインのユーザーは、新しく更新されたマニフェストが承認されてから数時間後に、このマニフェストを自動的に取得します。 
 
 アドインに必要なアクセス許可が変更された場合、ユーザーは、アップグレードを行いアドインに再同意するように求められます。管理者が組織全体にこのアドインをインストール済みである場合、管理者がまず再同意する必要があります。それまでの間、ユーザーには引き続き古い機能が表示されます。
 
@@ -795,7 +780,7 @@ Outlook アドインでは、次のように  **Hosts** 要素を指定します
 アクティブ化ルールの詳細とサンプルについて詳しくは、「[Outlook アドインのアクティブ化ルール](../../outlook/manifests/activation-rules.md)」を参照してください。
 
 
-## <a name="next-steps:-add-in-commands"></a>次の手順: アドイン コマンド
+## <a name="next-steps-addin-commands"></a>次の手順: アドイン コマンド
 
 
 基本のマニフェストを定義したら、 [アドインのアドイン コマンドを定義](../../outlook/manifests/define-add-in-commands.md)します。アドイン コマンドは、リボン内にボタンを表示して、ユーザーがアドインを簡単かつ直感的な方法でアクティブ化できるようにします。詳細は、「 [Outlook のアドイン コマンド](../../outlook/add-in-commands-for-outlook.md)」をご覧ください。
@@ -811,8 +796,7 @@ Outlook アドインでは、次のように  **Hosts** 要素を指定します
     
 - [Office アドインのローカライズ](../../develop/localization.md)
     
-- 
-  [デスクトップ、タブレット、モバイル デバイスで実行される Outlook 用のメール アドインを作成する (スキーマ v1.1)](http://msdn.microsoft.com/library/8d425fb3-8a7c-429d-87b3-8046e964b153%28Office.15%29.aspx)
+- [デスクトップ、タブレット、モバイル デバイスで実行される Outlook 用のメール アドインを作成する (スキーマ v1.1)](http://msdn.microsoft.com/library/8d425fb3-8a7c-429d-87b3-8046e964b153%28Office.15%29.aspx)
     
 - [Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](../../outlook/privacy-and-security.md)
     
@@ -822,8 +806,7 @@ Outlook アドインでは、次のように  **Hosts** 要素を指定します
     
 - [Office アドイン マニフェストのスキーマ リファレンス (v1.1)](../../overview/add-in-manifests.md)
     
-- 
-  [アイテムの種類とメッセージ クラス](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
+- [アイテムの種類とメッセージ クラス](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
     
 - [Office アドインの設計ガイドライン](../../design/add-in-design.md)
     

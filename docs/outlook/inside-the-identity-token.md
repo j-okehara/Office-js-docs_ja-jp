@@ -6,12 +6,12 @@ Exchange 2013の ID トークンの中身について説明します。
 
 Exchange サーバーから Outlook アドインに送信される認証 ID トークンがどのようなものであるかをアドインは知りません。また、ユーザーの側で ID トークンをサーバーに送信するためにトークンの中身を調べる必要はありません。しかし、Outlook アドインとのやり取りを行う Web サービス コードを記述する場合には、この ID トークンに何が含まれているかを理解しておく必要があります。
 
-## <a name="what-is-an-identity-token?"></a>ID トークンとは
+## <a name="what-is-an-identity-token"></a>ID トークンとは
 
 
 ID トークンとは、そのトークンを送信する Exchange サーバーによって自己署名された Base64 URL エンコードの文字列です。このトークンは暗号化されていません。署名の検証に使用する公開キーは、そのトークンを発行した Exchange サーバーに保存されています。このトークンは、ヘッダー、ペイロード、および署名の 3 つのパーツから成ります。トークン文字列では、トークンを容易に分割できるように、各パーツが文字 "." (ピリオド) で区切られています。
 
-Exchange 2013では、JSON Web トークン (JWT) を ID トークンに使用します。JWT トークンについては、「[JSON Web Token (JWT) Internet Draft](http://self-issued.info/docs/draft-goland-json-web-token-00.html)」を参照してください。
+Exchange 2013では、JSON Web トークン (JWT) を ID トークンに使用します。JWT トークンについては、「[JSON Web Token (JWT) Internet Draft](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html)」を参照してください。
 
 
 ### <a name="identity-token-header"></a>ID トークンのヘッダー
