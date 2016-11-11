@@ -38,9 +38,9 @@ Windows ベースのデスクトップ、ノート PC、または タブレッ�
 
 - Internet Explorer 11 以降をインストールする必要がありますが、必ずしも既定のブラウザーにする必要はありません。Office アドインをサポートするために、ホストとして動作する Office のクライアントは、Internet Explorer 11 以降に組み込まれているブラウザー コンポーネントを使用します。
 
-- 既定のブラウザーとして次のいずれか:Internet Explorer 11 以降、Edge、Chrome、Firefox、Safari (Mac OS) の最新バージョンのうちいずれか。
+- 既定のブラウザーとして次のいずれか:Internet Explorer 11 以降、Microsoft Edge、Chrome、Firefox、Safari (Mac OS) の最新バージョンのうちいずれか。
 
-- メモ帳などの HTML および JavaScript エディター、 [Visual Studio および Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs)、またはサードパーティの Web 開発ツール。
+- メモ帳などの HTML および JavaScript エディター、[Visual Studio および Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs)、またはサードパーティの Web 開発ツール。
 
 
 ## <a name="client-requirements-os-x-desktop"></a>クライアントの要件: OS X デスクトップ
@@ -54,7 +54,7 @@ Outlook for Mac は Office 365 に付属していて、Outlook アドインを�
 
 ## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>クライアントの要件:Office Online Web クライアントと SharePoint のブラウザー サポート
 
-Internet Explorer 11 以降、Edge、Chrome、Firefox、Safari (Mac OS) の最新バージョンなど ECMAScript 5.1、HTML5、および CSS3 をサポートする任意のブラウザー。
+Internet Explorer 11 以降、Microsoft Edge、Chrome、Firefox、Safari (Mac OS) の最新バージョンなど ECMAScript 5.1、HTML5、および CSS3 をサポートする任意のブラウザー。
 
 
 ## <a name="client-requirements-nonwindows-smartphone-and-tablet"></a>クライアントの要件: Windows 以外のスマートフォンおよびタブレット

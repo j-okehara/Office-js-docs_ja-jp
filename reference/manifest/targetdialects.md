@@ -1,11 +1,11 @@
 
 # <a name="targetdialects-element"></a>TargetDialects 要素
-この辞書でサポートされる言語を定義します。
+この辞書でサポートされる地域言語を定義します。
 
  **アドインの種類:**作業ウィンドウ
 
 
-## <a name="syntax:"></a>構文:
+## <a name="syntax"></a>構文:
 
 
 ```XML
@@ -15,7 +15,7 @@
 ```
 
 
-## <a name="contained-in:"></a>次に含まれる:
+## <a name="contained-in"></a>次に含まれる:
 
 [Dictionary](../../reference/manifest/dictionary.md)
 

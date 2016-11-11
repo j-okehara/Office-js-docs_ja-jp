@@ -1,4 +1,4 @@
-# <a name="ui.displaydialogasync-method"></a>UI.displayDialogAsync メソッド
+# <a name="uidisplaydialogasync-method"></a>UI.displayDialogAsync メソッド
 
 Office ホストでダイアログ ボックスを表示します。 
 
@@ -53,7 +53,14 @@ Office.context.ui.displayDialogAsync(startAddress, options, callback);
 
 **displayDialogAsync** メソッドを使用する簡単な例については、GitHub の「[Office アドイン ダイアログ API の例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/)」を参照してください。
 
-認証のシナリオを示す例については、GitHub の「[AngularJS の Office アドイン Office 365 クライアント認証](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)」の例を参照してください。
+認証シナリオを示す例については、以下を参照してください。
+
+- [Microsoft Graph ASP.Net の PowerPoint アドイン グラフの挿入](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
+- [Office アドイン Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
+- [Excel アドイン ASP.NET QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
+- [Office アドインのサーバー認証サンプル ASP.net MVC 用](https://github.com/dougperkes/Office-Add-in-AspNetMvc-ServerAuth/tree/Office2016DisplayDialog)
+- [Office アドイン Office 365 のクライアント認証 AngularJS 用](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)
+
 
  
 ## <a name="parameters"></a>パラメーター
@@ -72,7 +79,7 @@ Office.context.ui.displayDialogAsync(startAddress, options, callback);
 |:---------------|:--------|:----------|
 |**width**|object|省略可能。現在の表示のパーセンテージとして、ダイアログ ボックスの幅を定義します。既定値は 80% です。最小解像度は 250 ピクセルです。|
 |**height**|object|省略可能。現在の表示のパーセンテージとして、ダイアログ ボックスの高さを定義します。既定値は 80% です。最小解像度は 150 ピクセルです。|
-|**displayInIframe**|オブジェクト|省略可能。ダイアログ ボックスを Office Online クライアントの IFrame 内に表示する必要があるかどうかを指定します。デスクトップ クライアントでは、この設定は無視されます。指定可能な値は次のいずれかです。<ul><li>False (既定値) - ダイアログは、新しいブラウザー ウィンドウ (ポップアップ) として表示されます。IFrame に表示できない認証ページに推奨されます。 </li><li>True - ダイアログは、IFrame のフローティング オーバーレイとして表示されます。これは、ユーザー エクスペリエンスとパフォーマンスに最適です。</li>|
+|**displayInIframe**|object|省略可能。ダイアログ ボックスを Office Online クライアントの IFrame 内に表示する必要があるかどうかを指定します。デスクトップ クライアントでは、この設定は無視されます。指定可能な値は次のいずれかです。<ul><li>False (既定値) - ダイアログは、新しいブラウザー ウィンドウ (ポップアップ) として表示されます。IFrame に表示できない認証ページに推奨されます。 </li><li>True - ダイアログは、IFrame のフローティング オーバーレイとして表示されます。これは、ユーザー エクスペリエンスとパフォーマンスに最適です。</li>|
 
 
 ## <a name="callback-value"></a>コールバック値
@@ -88,6 +95,17 @@ _callback_ パラメーターに渡した関数が実行されると、[AsyncRes
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|操作の成功または失敗を判断します。|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|操作が失敗した場合、エラーに関する情報を提供する [Error](../../reference/shared/error.md) オブジェクトにアクセスします。|
 |[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|ユーザー定義のオブジェクトまたは値を _asyncContext_ パラメーターとして渡した場合、そのオブジェクトまたは値にアクセスします。|
+
+### <a name="errors-from-displaydialogasync"></a>displayDialogAsync のエラー
+
+一般的なプラットフォームやシステムのエラーのほかに、**displayDialogAsync** の呼び出しに特有の次のエラーがあります。
+
+|**コード番号**|**意味**|
+|:-----|:-----|
+|12004|`displayDialogAsync` に渡される URL のドメイン は信頼されていません。ドメインは、ホスト ページと同じドメイン (プロトコルとポート番号を含む) にするか、またはアドイン マニフェストの `<AppDomains>` セクションで登録する必要があります。|
+|12005|`displayDialogAsync` に渡される URL には HTTP プロトコルを使用します。HTTPS が必要です。(Office の一部のバージョンでは、12004 で返されるのと同じエラー メッセージが 12005 でも返されます。)|
+|12007|ダイアログ ボックスは、作業ウィンドウで既に開いています。作業ウィンドウ アドインで一度に開けるダイアログ ボックスは 1 つだけです。|
+
 
 
 ## <a name="design-considerations"></a>設計上の考慮事項

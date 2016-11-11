@@ -47,8 +47,8 @@
     
 	<Item text="SupportUrl" url="manifest/supporturl" SEODescription="アドインのサポート情報を提供するページの URL を指定します。" />
     <Item text="TabletSettings" url="manifest/tabletsettings" Scope="outlook" SEODescription="メール アドインがタブレットで使用されるときに適用される制御の設定を指定します。" />
-    <Item text="TargetDialect" url="manifest/targetdialect" Scope="excel, word, powerpoint, project" SEODescription="この辞書でサポートされる言語を定義します。これはカルチャ名文字列として表現されます。" />
-    <Item text="TargetDialects" url="manifest/targetdialects" Scope="excel, word, powerpoint, project" SEODescription="この辞書でサポートされる言語を定義します。" />
+    <Item text="TargetDialect" url="manifest/targetdialect" Scope="excel, word, powerpoint, project" SEODescription="この辞書でサポートされる地域言語を定義します。これはカルチャ名文字列として表現されます。" />
+    <Item text="TargetDialects" url="manifest/targetdialects" Scope="excel, word, powerpoint, project" SEODescription="この辞書でサポートされる地域言語を定義します。" />
     <Item text="バージョン" url="manifest/version" SEODescription="Office アドインのバージョンを指定します。" />
 	<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint" SEODescription="アドインによって実装されたアドイン コマンドに関する情報を格納するルート要素です。"> 
 		<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint" SEODescription="ユーザーがボタンまたはメニューのコントロールを選択したときに実行する操作を指定します。" />

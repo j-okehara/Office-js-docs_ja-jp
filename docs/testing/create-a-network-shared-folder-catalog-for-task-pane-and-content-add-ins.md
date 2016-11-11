@@ -1,5 +1,5 @@
 
-# <a name="sideload-office-add-ins-for-testing"></a>テストのために Office アドインをサイドロードする
+# <a name="sideload-office-addins-for-testing"></a>テストのために Office アドインをサイドロードする
 
 共有フォルダー カタログを使用して、マニフェストをネットワークのファイル共有に発行することで、Windows を実行する Office クライアントのテストのために Office アドインをインストールすることができます。 
 
@@ -8,6 +8,11 @@
 マニフェストのファイルのみを共有フォルダーのカタログに展開します。Web アプリケーション自体は Web サーバーに展開し、マニフェスト ファイルの **SourceLocation** 要素に URL を指定します。
 
  >**重要**  外部データとサービスにアクセスするアドインのセキュリティを高めるため、アドインでは、ハイパーテキスト転送プロトコル セキュア (HTTPS) などのセキュリティで保護されたプロトコルを使用して外部データとサービスに接続する必要があります。アドインがアドイン コマンドを使用する場合、HTTPS を使用する必要があります。
+
+次のビデオでは、Office デスクトップまたは Office Online のアドインをサイドローディングする手順について説明します。
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XXsAw2UUiQo" frameborder="0" allowfullscreen></iframe>
+
 
 ## <a name="share-a-folder"></a>フォルダーの共有
 
@@ -38,7 +43,7 @@
 
 9. Office アプリケーションを閉じると変更内容が有効になります。
     
-## <a name="sideload-your-add-in"></a>アドインのサイドロード
+## <a name="sideload-your-addin"></a>アドインのサイドロード
 
 
 1. テストするアドインのマニフェスト ファイルを共有フォルダー カタログに置きます。

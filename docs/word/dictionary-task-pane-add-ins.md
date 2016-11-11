@@ -1,19 +1,22 @@
 
-# <a name="create-a-dictionary-task-pane-add-in"></a>辞書の作業ウィンドウ アドインを作成する
+# <a name="create-a-dictionary-task-pane-addin"></a>辞書の作業ウィンドウ アドインを作成する
 
 
 この記事では、Word 2013 のドキュメントでユーザーの現在の選択範囲に対応する辞書の定義や類義語辞典の類義語を表示する作業ウィンドウ アドインの例と、それに付随する Web サービスについて取り上げます。 
 
 辞書の Office アドインは、標準的な作業ウィンドウ アドインを基盤として、辞書の XML Web サービスに対するクエリの機能と、取得した定義を Office アプリケーションの UI 上の別の場所に表示する機能が追加されたものです。 
 
-一般的な辞書作業ウィンドウ アドインの場合、ユーザーが自分のドキュメントで単語または語句を選択すると、アドインの背景にある JavaScript ロジックにより、この選択はディクショナリ プロバイダーの XML Web サービスに渡されます。ディクショナリ プロバイダーの Web ページは更新され、ユーザーに選択範囲の定義が表示されます。XML Web サービス コンポーネントは、OfficeDefinitions XML スキーマが定める形式で、最大 3 つの定義を返します。アプリはこれを、ホストの Office アプリケーションの UI 上の別の場所に表示します。図 1 は、Word 2013 で実行されている Bing ブランドの辞書アドインの選択および表示エクスペリエンスを示しています。
+一般的な辞書作業ウィンドウ アドインの場合、ユーザーが自分のドキュメントで単語または語句を選択すると、アドインの背景にある JavaScript ロジックにより、この選択はディクショナリ プロバイダーの XML Web サービスに渡されます。
+ディクショナリ プロバイダーの Web ページは更新され、ユーザーに選択範囲の定義が表示されます。XML Web サービス コンポーネントは、OfficeDefinitions XML スキーマが定める形式で、最大 3 つの定義を返します。アプリはこれを、ホストの Office アプリケーションの UI 上の別の場所に表示します。
+図 1 は、Word 2013 で実行されている Bing ブランドの辞書アドインの選択および表示エクスペリエンスを示しています。
 
 **図 1.選択した語句の定義を表示する辞書アドイン**
 
 
 ![定義が表示されている辞書アプリ](../../images/DictionaryAgave01.jpg)
 
-辞書アドインの HTML UI で 「**さらに表示**」リンクをクリックして、作業ウィンドウ内に詳細情報を表示するか、別のブラウザー ウィンドウを開いて、選択した単語または語句の完全な Web ページを表示するかはユーザー次第です。図 2 は、ユーザーがインストール済みの辞書を簡単に起動するための、**[定義]** コンテキスト メニュー コマンドを示しています。図 3 から 5 は、辞書 XML サービスを使用して Word 2013 で定義を提供する、Office UI の場所を示しています。
+辞書アドインの HTML UI で 「**さらに表示**」リンクをクリックして、作業ウィンドウ内に詳細情報を表示するか、別のブラウザー ウィンドウを開いて、選択した単語または語句の完全な Web ページを表示するかはユーザー次第です。図 2 は、ユーザーがインストール済みの辞書を簡単に起動するための、**[定義]** コンテキスト メニュー コマンドを示しています。
+図 3 から 5 は、辞書 XML サービスを使用して Word 2013 で定義を提供する、Office UI の場所を示しています。
 
 **図 2.コンテキスト メニューの定義コマンド**
 
@@ -178,7 +181,7 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-## <a name="creating-the-components-of-a-dictionary-add-in"></a>辞書アドインのコンポーネントの作成
+## <a name="creating-the-components-of-a-dictionary-addin"></a>辞書アドインのコンポーネントの作成
 
 
 辞書アドインは 3 つの主要なコンポーネント ファイルで構成されます。
@@ -191,7 +194,7 @@ public class WebService : System.Web.Services.WebService {
 - ユーザーの選択範囲をドキュメントから取得し、選択範囲をクエリとして Web サービスに送信し、返された結果をアドインの UI に表示するロジックを記述した JavaScript ファイル。
     
 
-### <a name="creating-a-dictionary-add-in's-manifest-file"></a>辞書アドインのマニフェスト ファイルの作成
+### <a name="creating-a-dictionary-addins-manifest-file"></a>辞書アドインのマニフェスト ファイルの作成
 
 辞書アドインのマニフェスト ファイルの例を次に示します。
 
@@ -222,7 +225,7 @@ public class WebService : System.Web.Services.WebService {
   <!--Permissions is the set of permissions a user will have to give your dictionary. If you need write access, such as to allow a user to replace the highlighted word with a synonym, use ReadWriteDocument. -->
   <Permissions>ReadDocument</Permissions>
   <Dictionary>
-    <!--TargetDialects is the set of dialects your dictionary contains. For example, if your dictionary applies to Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that here. This is for different dialects of the same language. Please do NOT put more than one language (for example, Spanish and English) here. Publish separate languages as separate dictionaries. -->
+    <!--TargetDialects is the set of regional languages your dictionary contains. For example, if your dictionary applies to Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that here. Do not put more than one language (for example, Spanish and English) here. Publish separate languages as separate dictionaries. -->
     <TargetDialects>
       <TargetDialect>EN-AU</TargetDialect>
       <TargetDialect>EN-BZ</TargetDialect>
@@ -277,7 +280,7 @@ public class WebService : System.Web.Services.WebService {
 #### <a name="targetdialects-element"></a>TargetDialects 要素
 
 
-この辞書がサポートする方言を指定します。辞書アドインでは必須です。
+この辞書がサポートする地域言語を指定します。必須 (辞書アドインの場合)。
 
  **親要素**
 
@@ -289,7 +292,7 @@ public class WebService : System.Web.Services.WebService {
 
  **注釈**
 
-**TargetDialects** 要素とその子要素では、辞書に含まれる一連の方言を指定します。たとえば、スペイン語 (メキシコ) とスペイン語 (ペルー) の両方言には該当するが、スペイン語 (スペイン) には該当しない辞書の場合は、この要素でそのことを指定します。この要素は、同じ言語の異なる方言を指定するためだけのものです。複数の言語 (たとえばスペイン語と英語) をこのマニフェストで指定しないでください。異なる言語は別の辞書として発行します。
+**TargetDialects** 要素とその子要素は、辞書に含める地域言語のセットを指定します。たとえば、スペイン語 (メキシコ) とスペイン語 (ペルー) の両方、ただしスペイン語 (スペイン) は含まないというような指定を、この要素で行うことができます。このマニフェストでは、複数の言語 (たとえば、スペイン語と英語) は指定しないでください。異なる言語は、別個の辞書として発行してください。
 
  **例**
 
@@ -323,7 +326,7 @@ public class WebService : System.Web.Services.WebService {
 #### <a name="targetdialect-element"></a>TargetDialect 要素
 
 
-この辞書がサポートする方言を指定します。辞書アドインでは必須です。
+この辞書がサポートする地域言語を指定します。必須 (辞書アドインの場合)。
 
  **親要素**
 
@@ -331,7 +334,7 @@ public class WebService : System.Web.Services.WebService {
 
  **注釈**
 
-RFC1766 `language` タグの形式 (たとえば EN-US) で方言の値を指定します。
+RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の値を指定します。
 
  **例**
 
@@ -346,7 +349,7 @@ RFC1766 `language` タグの形式 (たとえば EN-US) で方言の値を指定
 #### <a name="queryuri-element"></a>QueryUri 要素
 
 
-辞書クエリ サービスのエンドポイントを指定します。辞書アドインでは必須です。
+辞書のクエリ サービスのエンドポイントを指定します。辞書アドインでは必須です。
 
  **親要素**
 
@@ -354,7 +357,7 @@ RFC1766 `language` タグの形式 (たとえば EN-US) で方言の値を指定
 
  **注釈**
 
-ディクショナリ プロバイダー用の XML Web サービスの URI です。適切にエスケープされたクエリは、この URI に追加されます。 
+これは、辞書プロバイダーの XML Web サービスの URI です。この URI の末尾に、適切にエスケープされたクエリが付加されます。 
 
  **例**
 
@@ -441,7 +444,7 @@ RFC1766 `language` タグの形式 (たとえば EN-US) で方言の値を指定
 ```
 
 
-### <a name="creating-a-dictionary-add-in's-html-user-interface"></a>辞書アドインの HTML ユーザー インターフェイスの作成
+### <a name="creating-a-dictionary-addins-html-user-interface"></a>辞書アドインの HTML ユーザー インターフェイスの作成
 
 
 次の 2 つの例は、デモの辞書アドインの UI の HTML ファイルと CSS ファイルを示します。アドインの作業ウィンドウでの UI の表示については、コードの下の図 6 を参照してください。Dictionary.js ファイル内の JavaScript の実装でこの HTML の UI のプログラミング ロジックを実現する方法については、次の「JavaScript の実装の記述」を参照してください。
