@@ -38,6 +38,7 @@ Office ホストでダイアログ ボックスを表示します。
 ### <a name="supported-platforms"></a>サポートされるプラットフォーム
 現在、DialogAPI 要件セットは次のプラットフォームでサポートされています。
 
+  - Windows デスクトップ版 Office 2013 (ビルド 15.0.4855.1000 以降)
   - Windows デスクトップ版 Office 2016 (ビルド 16.0.6741.0000 以降)
   - Office for IPad (ビルド 1.22 以降)
   - Office for Mac (ビルド 15.20 以降) 

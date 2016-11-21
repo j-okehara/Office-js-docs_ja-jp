@@ -28,9 +28,9 @@ Office ホスト アプリケーションとサーバーの要件の詳細につ
 **サポートされるホスト (プラットフォーム別)**
 
 
-||**Windows デスクトップ版 Office**|**Office Online (ブラウザー)**|**Office for iPad**|
-|:-----|:-----|:-----|:-----|
-|**PowerPoint**|Y||Y|
+||**Windows デスクトップ版 Office**|**Office Online (ブラウザー)**|**Office for Mac**|**Office for iPad**|
+|:-----|:-----|:-----|:-----|:-----|
+|**PowerPoint**|Y||Y|Y|
 
 |||
 |:-----|:-----|

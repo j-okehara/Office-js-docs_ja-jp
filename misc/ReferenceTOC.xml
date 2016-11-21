@@ -87,6 +87,7 @@
     <Item text="SearchResultCollection" url="word/searchresultcollection" FriendlyUrl="word/referencesearchresultcollection" Scope="word" SEODescription="検索操作の結果としての範囲オブジェクトのコレクションが含まれます。" />
     <Item text="セクション" url="word/section" FriendlyUrl="word/referencesection" Scope="word" SEODescription="Word 文書内のセクションを表します。" />
     <Item text="SectionCollection" url="word/sectioncollection" FriendlyUrl="word/referencesectioncollection" Scope="word" SEODescription="ドキュメントのセクション オブジェクトのコレクションが含まれます。" />
+	<Item text="Word JavaScript API の要件セット" url="requirement-sets/word-api-requirement-sets" Scope="word" SEODescription="Word の要件セット、その要件セットをサポートする Office ホスト アプリケーション、それらのアプリケーションのビルド番号またはバージョン番号に関する情報について説明します。" />
   </Item>
   
   <Item text="Excel" url="excel" Scope="excel">
@@ -139,11 +140,12 @@
     <Item text="TableRowCollection" url="excel/tablerowcollection" SEODescription="表の一部であるすべての行のコレクションを表します。" />
     <Item text="TableSort" url="excel/tablesort" SEODescription="Table オブジェクトの並べ替え操作を管理します。" />
     <Item text="TrackedObjectsCollection" url="excel/trackedobjectscollection" SEODescription="アドインが sync() バッチ間で範囲オブジェクトの参照を管理できるようにします。" />
-    <Item text="Workbook" url="excel/workbook" SEODescription="ワークシート、テーブル、範囲などの関連するブック オブジェクトを含みます。" />
-    <Item text="Worksheet" url="excel/worksheet" SEODescription="データ、テーブル、グラフを含むセルのグリッドを表します。" />
+    <Item text="ブック" url="excel/workbook" SEODescription="ワークシート、テーブル、範囲などの関連するブック オブジェクトを含みます。" />
+    <Item text="ワークシート" url="excel/worksheet" SEODescription="データ、テーブル、グラフを含むセルのグリッドを表します。" />
     <Item text="WorksheetCollection" url="excel/worksheetcollection" SEODescription="ブックの一部であるワークシート オブジェクトのコレクションを表します。" />
     <Item text="WorksheetFunctions" url="excel/functions" SEODescription="JavaScript や REST から呼び出すことができる Excel ワークシート関数のコンテナーとして使用されます。" />
     <Item text="WorksheetProtection" url="excel/worksheetprotection" SEODescription="シート オブジェクトの保護を表します。" />
+	<Item text="Excel JavaScript API の要件セット" url="requirement-sets/excel-api-requirement-sets" Scope="excel" SEODescription="Excel の要件セット、その要件セットをサポートする Office ホスト アプリケーション、それらのアプリケーションのビルド番号またはバージョン番号に関する情報について説明します。" />
   </Item>
   
   <Item text="Outlook" url="outlook" Scope="Outlook">
@@ -412,11 +414,12 @@
     <Item text="Sectiongroupcollection" url="onenote/sectiongroupcollection" SEODescription="OneNote アドインの参照。" />
     <Item text="Outline" url="onenote/outline" SEODescription="OneNote アドインの参照。" />
     <Item text="Image" url="onenote/image" SEODescription="OneNote アドインの参照。" />
+	<Item text="OneNote JavaScript API の要件セット" url="requirement-sets/onenote-api-requirement-sets" SEODescription="OneNote の要件セット、それらの要件セットをサポートする Office ホスト アプリケーション、ビルド バージョンまたは一般提供開始日に関する情報について説明します。" />
   </Item>  
   <Item text="共有 API" url="shared/shared-api">
     <Item text="JavaScript API for Office" url="javascript-api-for-office" SEODescription="JavaScript API for Office には、Office アドイン コードで使用できるオブジェクト、メソッド、プロパティ、イベント、および列挙体があります。" />
 	<Item text="JavaScript API for Office の変更点" url="what's-changed-in-the-javascript-api-for-office" SEODescription="JavaScript API for Office は、Office アドインの機能を拡張するため、オブジェクト、メソッド、プロパティ、イベント、列挙体の新規追加や更新によって、定期的に更新が加えられています。" />
-	<Item text="Office アドインの要件セット" url="office-add-in-requirement-sets" SEODescription="要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、実行時チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。" />
+	<Item text="Office の共通要件セット" url="requirement-sets/office-add-in-requirement-sets" SEODescription="要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、実行時チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。" />
 	<Item text="JavaScript API for Office のエラー コード" url="javascript-api-for-office-error-codes" SEODescription="JavaScript API for Office (Office.js) の使用時に発生する可能性のあるエラー メッセージ。" />
 	<Item text="列挙型" url="shared/enumerations" FriendlyUrl="reference/enumerationsenumerations">
       <Item text="ActiveView 列挙" url="shared/activeview-enumeration" FriendlyUrl="reference/enumerationsactiveview-enumeration" Scope="powerpoint" SEODescription="ユーザーがドキュメントを編集できるかどうかなど、ドキュメントのアクティブなビューの状態を指定します。" />
@@ -643,6 +646,7 @@
     	<Item text="Dialog オブジェクト" url="shared/officeui.dialog" Scope="outlook, excel, word, powerpoint" SEODescription="displayDialogAsync メソッドが呼び出されたときに返されるオブジェクト。" />
     	<Item text="DisplayDialog メソッド" url="shared/officeui.displaydialogasync" Scope="outlook, excel, word, powerpoint" SEODescription="Office ホスト内に Web ダイアログを表示します。" />
     	<Item text="MessageParent メソッド" url="shared/officeui.messageparent" Scope="outlook, excel, word, powerpoint" SEODescription="メッセージをダイアログ ボックスからその親/オープナー ページに配信します。" />
+		<Item text="ダイアログ API の要件セット" url="requirement-sets/dialog-api-requirement-sets" Scope="outlook, excel, word, powerpoint" SEODescription="ダイアログ API の要件セット、その要件セットをサポートする Office ホスト アプリケーション、Office アプリケーションのビルド番号またはバージョン番号に関する情報について説明します。" />
     </Item>
   </Item>
   <Item text="仕様を開く" url="openspec" Scope="Excel, PowerPoint, Word, Outlook, OneNote" SEODescription="継続的なデザイン API の作業について学習し、フィードバックを送る" />

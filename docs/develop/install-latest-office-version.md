@@ -20,4 +20,14 @@
 
 インストール処理の完了時点で、最新の Office 2016 アプリケーションがインストールされています。最新のビルドであることを確認するには、任意の Office アプリケーションから **[ファイル]**  >  **[アカウント]** に移動します。[Office 更新プログラム] に、[(Office Insiders)] ラベルが表示され、その下にバージョン番号が表示されます。
 
-![[Office Insiders] のラベルと製品情報を示すスクリーンショット](../../images/officeinsider.PNG)
+![Office Insiders のラベルと製品情報を示すスクリーンショット](../../images/officeinsider.PNG)
+
+## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a>Office JavaScript API の要件セットの最小 Office ビルド
+
+API の要件セットの各プラットフォームの最小製品ビルドについては、次をご覧ください。
+
+- [Word JavaScript API の要件セット](../../reference/requirement-sets/word-api-requirement-sets.md)
+- [Excel JavaScript API の要件セット](../../reference/requirement-sets/excel-api-requirement-sets.md)
+- [OneNote JavaScript API の要件セット](../../reference/requirement-sets/onenote-api-requirement-sets.md)
+- [ダイアログ API の要件セット](../../reference/requirement-sets/dialog-api-requirement-sets.md)
+- [Office 共通 API の要件セット](../../reference/requirement-sets/office-add-in-requirement-sets.md)
