@@ -1,19 +1,50 @@
+# <a name="powerpoint-add-ins"></a>PowerPoint アドイン
 
-# <a name="create-content-and-task-pane-add-ins-for-powerpoint"></a>PowerPoint 用のコンテンツ アドインと作業ウィンドウ アドインを作成する
+PowerPoint のアドインを使って、Windows、iOS、Office Online、Mac などのプラットフォームでユーザーのプレゼンテーションのための魅力的なソリューションをビルドすることができます。アドインの 2 種類のうちいずれかを作成できます:
 
-この記事のコード例は、PowerPoint コンテンツ アドインの開発におけるいくつかの基本的なタスクを示しています。情報を表示する場合、これらの例は Visual StudioOffice アドイン プロジェクト テンプレートに含まれる  `app.showNotification` 関数に依存しています。アドインの開発に Visual Studio を使用しない場合は、 `showNotification` 関数を独自のコードに置き換える必要があります。これらの例のいくつかは、これらの関数の範囲外で宣言されている `globals` オブジェクト ( `var globals = {activeViewHandler:0, firstSlideId:0};`) にも依存しています。
+- **コンテンツ アドイン**を使うと、プレゼンテーションに HTML5 の動的コンテンツが追加されます。たとえば [PowerPoint のための LucidChart ダイアグラム](https://store.office.com/en-us/app.aspx?assetid=WA104380117&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Productivity&homapppos=3&homchv=2&appredirect=false) アドインでは、これを使って LucidChart からデッキにインタラクティブな図を挿入することができます。
+- **作業ウィンドウ アドイン**を使えば、サービスを介して、参照情報を取り込んだり、スライドにデータを挿入したりすることができます。たとえば [Shutterstock イメージ](https://store.office.com/en-us/app.aspx?assetid=WA104380169&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Editor%2527s%2BPicks&homapppos=0&homchv=1&appredirect=false) アドインでは、これを使ってプロの写真をプレゼンテーションに追加することができます。 
+
+
+## <a name="powerpoint-add-in-scenarios"></a>PowerPoint アドイン シナリオ
+
+この記事で紹介するコード例では、PowerPoint のコンテンツ アドインの開発のための基本的なタスクをいくつか示します。 
+
+情報を表示するために、これらの例は `app.showNotification` 関数に依存しています。これは、Visual Studio の Office アドイン プロジェクト テンプレートに含まれています。アドインを開発するのに Visual Studio を使用していない場合は、`showNotification` 関数を独自のコードに置き換える必要があります。これらの例のうちいくつかは、これらの関数 `var globals = {activeViewHandler:0, firstSlideId:0};` の範囲外で宣言されたこの `globals` オブジェクトにも依存しています。
 
 これらのコード例では、プロジェクトが [Office.js v1.1 以降のライブラリを参照](../../docs/develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md)している必要があります。
 
 
-## <a name="detect-the-presentation's-active-view-and-handle-the-activeviewchanged-event"></a>プレゼンテーションのアクティブ ビューの検出と ActiveViewChanged イベントの処理を行う
+## <a name="detect-the-presentations-active-view-and-handle-the-activeviewchanged-event"></a>プレゼンテーションのアクティブ ビューの検出と ActiveViewChanged イベントの処理を行う
 
-`getFileView` 関数は [Document.getActiveViewAsync](../../reference/shared/document.getactiveviewasync.md) メソッドを呼び出して、プレゼンテーションの現在のビューが "編集" ビュー (**[標準]** や **[アウトライン表示]** などの、スライドを編集できるビュー) なのか "読み取り" ビュー (**[スライド ショー]** や **[閲覧表示]**) なのかを返します。
+コンテンツ アドインをビルドする場合は、プレゼンテーションのアクティブ ビューを取得して、Office.Initialize ハンドラーの一部として、ActiveViewChanged イベントを処理する必要があります。
+
+
+- `getActiveFileView` 関数は [Document.getActiveViewAsync](../../reference/shared/document.getactiveviewasync.md) メソッドを呼び出して、プレゼンテーションの現在のビューが "編集" ビュー (**[標準]** や **[アウトライン表示]** などの、スライドを編集できるビュー) なのか "読み取り" ビュー (**[スライド ショー]** や **[閲覧表示]**) なのかを返します。
+
+
+- `registerActiveViewChanged` 関数は、[Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md) イベントのハンドラーを登録するための [addHandlerAsync](../../reference/shared/document.addhandlerasync.md) メソッドを呼び出します。 
+> 注:PowerPoint Online では [Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md) イベントは、スライド ショー モードが新しいセッションとして扱われるようには起動しません。この場合、下に示すように、アドインで読み込むアクティブ ビューをフェッチしなければなりません。
+
 
 
 ```js
-function getFileView() {
+
+//general Office.initialize function. Fires on load of the add-in.
+Office.initialize = function(){
+
     //Gets whether the current view is edit or read.
+    var currentView = getActiveFileView();
+
+    //register for the active view changed handler
+    registerActiveViewChanged();
+
+    //render the content based off of the currentView
+    //....
+}
+
+function getActiveFileView()
+{
     Office.context.document.getActiveViewAsync(function (asyncResult) {
         if (asyncResult.status == "failed") {
             app.showNotification("Action failed with error: " + asyncResult.error.message);
@@ -22,15 +53,10 @@ function getFileView() {
             app.showNotification(asyncResult.value);
         }
     });
+
 }
-```
-
-`registerActiveViewChanged` 関数は [addHandlerAsync](../../reference/shared/document.addhandlerasync.md) メソッドを呼び出して、[Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md) イベントのハンドラーを登録します。この関数を実行した後は、プレゼンテーションのビューを変更するときに、`app.showNotification` の通知でアクティブなビュー モード ("読み取り" または "編集") が表示されるようになります。
 
 
-
-
-```js
 function registerActiveViewChanged() {
     Globals.activeViewHandler = function (args) {
         app.showNotification(JSON.stringify(args));
@@ -39,7 +65,7 @@ function registerActiveViewChanged() {
     Office.context.document.addHandlerAsync(Office.EventType.ActiveViewChanged, Globals.activeViewHandler, 
         function (asyncResult) {
             if (asyncResult.status == "failed") {
-            app.showNotification("Action failed with error: " + asyncResult.error.message);
+           app.showNotification("Action failed with error: " + asyncResult.error.message);
         }
             else {
             app.showNotification(asyncResult.status);
@@ -47,28 +73,7 @@ function registerActiveViewChanged() {
         });
 }
 ```
-
-
-## <a name="get-the-url-of-the-presentation"></a>プレゼンテーションの URL を取得する
-
-`getFileUrl` 関数は [Document.getFileProperties](../../reference/shared/document.getfilepropertiesasync.md) メソッドを呼び出して、プレゼンテーション ファイルの URL を取得します。
-
-
-```js
-function getFileUrl() {
-    //Get the URL of the current file.
-    Office.context.document.getFilePropertiesAsync(function (asyncResult) {
-        var fileUrl = asyncResult.value.url;
-        if (fileUrl == "") {
-            app.showNotification("The file hasn't been saved yet. Save the file and try again");
-        }
-        else {
-            app.showNotification(fileUrl);
-        }
-    });
-}
-```
-
+    
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>プレゼンテーションの特定のスライドに移動する
 
@@ -134,10 +139,30 @@ function goToSlideByIndex() {
 }
 ```
 
+## <a name="get-the-url-of-the-presentation"></a>プレゼンテーションの URL を取得する
+
+`getFileUrl` 関数は [Document.getFileProperties](../../reference/shared/document.getfilepropertiesasync.md) メソッドを呼び出して、プレゼンテーション ファイルの URL を取得します。
+
+
+```js
+function getFileUrl() {
+    //Get the URL of the current file.
+    Office.context.document.getFilePropertiesAsync(function (asyncResult) {
+        var fileUrl = asyncResult.value.url;
+        if (fileUrl == "") {
+            app.showNotification("The file hasn't been saved yet. Save the file and try again");
+        }
+        else {
+            app.showNotification(fileUrl);
+        }
+    });
+}
+```
 
 
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="additional-resources"></a>追加リソース
+- [PowerPoint のコード サンプル](https://dev.office.com/code-samples#?filters=powerpoint)
 
 - [コンテンツ アドインおよび作業ウィンドウ アドインで、ドキュメントごとにアドインの状態と設定を保存する方法](../../docs/develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 

@@ -1,18 +1,18 @@
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
-要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のホストと API の要件を指定する](../docs/overview/specify-office-hosts-and-api-requirements.md)」をご覧ください。
+要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のホストと API の要件を指定する](../../docs/overview/specify-office-hosts-and-api-requirements.md)」をご覧ください。
 
 Office ホストでのアドインのサポート状況について詳しくは、「[Office アドインを使用できるホストおよびプラットフォーム](https://dev.office.com/add-in-availability)」をご覧ください。
 
-## <a name="hostspecific-api-requirement-sets"></a>ホスト固有の API 要件セットについて
+## <a name="host-specific-api-requirement-sets"></a>ホスト固有の API 要件セットについて
 
 Excel、Word、OneNote、Outlook、ダイアログ API の要件セットについて詳しくは、次をご覧ください。
 
-- [Excel JavaScript API の要件セット](excel-api-requirement-sets.md)
-- [Word JavaScript API の要件セット](word-api-requirement-sets.md)
-- [OneNote JavaScript API の要件セット](onenote-api-requirement-sets.md)
-- [Outlook API 要件セットについて](../outlook/tutorial-api-requirement-sets.md)
-[ダイアログ API の要件セット](dialog-api-requirement-sets.md)
+- [Excel JavaScript API 要件セット](excel-api-requirement-sets.md) (ExcelApi)
+- [Word JavaScript API 要件セット](word-api-requirement-sets.md) (WordApi)
+- [OneNote JavaScript API 要件セット](onenote-api-requirement-sets.md) (OneNoteApi)
+- [Outlook API 要件セットについて](../outlook/tutorial-api-requirement-sets.md) (MailBox)
+- [ダイアログ API 要件セット](dialog-api-requirement-sets.md) (DialogApi)
 
 ## <a name="common-api-requirement-sets"></a>共通 API の要件セット
 
@@ -68,7 +68,9 @@ JavaScript API for Office の以下のメソッドは、要件セットの一部
 
 ## <a name="additional-resources"></a>その他のリソース
 
-- [Office のホストと API の要件を指定する](../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Office のホストと API の要件を指定する](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Office アドインの XML マニフェスト](../../docs/overview/add-in-manifests.md)
+
 
 
 

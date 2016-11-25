@@ -1,7 +1,7 @@
 
 # <a name="dialog-api-requirement-sets"></a>ダイアログ API の要件セット
 
-要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のホストと API の要件を指定する](../docs/overview/specify-office-hosts-and-api-requirements.md)」をご覧ください。
+要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のホストと API の要件を指定する](../../docs/overview/specify-office-hosts-and-api-requirements.md)」をご覧ください。
 
 Office アドインは Office の複数のバージョンで機能します。次の表は、ダイアログ API の要件セット、その要件セットをサポートする Office ホスト アプリケーション、Office アプリケーションのビルド番号またはバージョン番号の一覧です。
 
@@ -23,7 +23,8 @@ Office アドインは Office の複数のバージョンで機能します。�
 ## <a name="dialog-api-11"></a>ダイアログ API 1.1 
 ダイアログ API 1.1 は、API の最初のバージョンです。API について詳しくは、[ダイアログ API](../shared/officeui.md) リファレンスのトピックをご覧ください。
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="additional-resources"></a>追加リソース
 
-- [Office のホストと API の要件を指定する](../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [Office アドインの XML マニフェスト](https://dev.office.com/docs/add-ins/overview/add-in-manifests)
+- [Office のホストと API の要件を指定する](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Office アドインの XML マニフェスト](../../docs/overview/add-in-manifests.md)
+

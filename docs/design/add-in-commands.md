@@ -1,10 +1,10 @@
-c
-# <a name="addin-commands-for-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint のアドイン コマンド
+# <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word および PowerPoint のアドイン コマンド
 
 アドイン コマンドは Office UI を拡張する UI 要素であり、アドインのアクションを開始します。リボンにボタンを追加したり、コンテキスト メニューに項目を追加したりできます。ユーザーがアドイン コマンドを選択すると、JavaScript コードの実行や、作業ウィンドウでのアドインのページの表示といったアクションを開始します。アドイン コマンドにより、アドインを検索して利用できるようになり、アドインの導入と再利用性が向上し、顧客維持が向上します。
 
 機能の概要については、ビデオ「[Office リボンのアドイン コマンド](https://channel9.msdn.com/events/Build/2016/P551)」を参照してください。
 
+>**注:**SharePoint カタログは、アドイン コマンドをサポートしません。[集中展開](https://support.office.com/en-ie/article/Deploy-Office-Add-ins-in-the-Office-365-new-Admin-Center-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE) または [Office ストア](https://msdn.microsoft.com/en-us/library/jj220033.aspx) でアドイン コマンドを展開するか、または [サイドロード](https://dev.office.com/docs/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins) を使ってテストのためのアドイン コマンドを展開できます。 
 
 **Excel デスクトップで実行するコマンドを含むアドイン**
 ![アドイン コマンド](../../images/addincommands1.png)
@@ -39,11 +39,11 @@ c
 
 その他のプラットフォームは近日公開します。
 
-## <a name="get-started-with-addin-commands"></a>アドイン コマンドの使用を開始する
+## <a name="get-started-with-add-in-commands"></a>アドイン コマンドの使用を開始する
 
-アドイン コマンドの使用を開始する最善の方法は**サンプル**を使用をすることです。GitHub の「[Office アドイン コマンドのサンプル](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)」をご覧ください。
+はじめて使うのに最適なのは、**サンプル**からアドイン コマンドを使う方法です。GitHub の「[Office アドイン コマンドのサンプル](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)」を参照してください。
 
-マニフェス参照情報について詳しくは、「[マニフェストでアドイン コマンドを定義する](http://dev.office.com/docs/add-ins/outlook/manifests/define-add-in-commands)」をご覧ください。
+マニフェスト参照情報について詳しくは、「[マニフェストでアドイン コマンドを定義する](http://dev.office.com/docs/add-ins/outlook/manifests/define-add-in-commands)」をご覧ください。
 
 
 

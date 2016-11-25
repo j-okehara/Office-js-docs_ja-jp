@@ -1,6 +1,6 @@
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API の要件セット
 
-要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のホストと API の要件を指定する](../docs/overview/specify-office-hosts-and-api-requirements.md)」をご覧ください。
+要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のホストと API の要件を指定する](../../docs/overview/specify-office-hosts-and-api-requirements.md)」をご覧ください。
 
 Word アドインは、Office 2016 for Windows、Office for iPad、Office for Mac、および Office Online など、複数のバージョンの Office で機能します。次の表は、Word の要件セット、その要件セットをサポートする Office ホスト アプリケーション、およびそれらのアプリケーションのビルド番号またはバージョン番号の一覧です。
 
@@ -187,7 +187,7 @@ Word アドインは、Office 2016 for Windows、Office for iPad、Office for Ma
 |[table](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md)|_メソッド_ > [getNext()](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md#getnext)|次のテーブルを取得します。|1.3|
 |[table](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md)|_メソッド_ > [getRange(rangeLocation:RangeLocation)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md#getrangerangelocation-rangelocation)|このテーブルを含む範囲、あるいはテーブルの開始または終了の範囲を取得します。|1.3|
 |[table](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md)|_メソッド_ > [insertContentControl()](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md#insertcontentcontrol)|テーブルにコンテンツ コントロールを挿入します。|1.3|
-|[table](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md)|_メソッド_ > [insertParagraph(paragraphText: string, insertLocation:InsertLocation)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md#insertparagraphparagraphtext-string-insertlocation-insertlocation)|指定した位置に段落を挿入します。insertLocation の値には、'Before' または 'After' を指定できます。|1.3|
+|[table](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md)|_メソッド_ > [insertParagraph(paragraphText: string, insertLocation:InsertLocation)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md#insertparagraphparagraphtext-string-insertlocation-insertlocation)|指定した位置に、段落を挿入します。有効な insertLocation の値は、'Before' または 'After' です。|1.3|
 |[table](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md)|_メソッド_ > [insertTable(rowCount: number, columnCount: number, insertLocation:InsertLocation, values: string[][])](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|指定した数の行と列を含むテーブルを挿入します。insertLocation の値には、'Before' または 'After' を指定できます。|1.3|
 |[table](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md)|_メソッド_ > [search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|テーブル オブジェクトの範囲で、searchOptions を指定した検索を実行します。検索結果は、範囲オブジェクトのコレクションになります。|1.3|
 |[table](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md)|_メソッド_ > [select(selectionMode:SelectionMode)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md#selectselectionmode-selectionmode)|テーブル、あるいはテーブルの開始位置または終了位置を選択して、Word の UI に移動します。|1.3|
@@ -217,7 +217,7 @@ Word アドインは、Office 2016 for Windows、Office for iPad、Office for Ma
 |[tableCellCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecellcollection.md)|_プロパティ_ > items|tableCell オブジェクトのコレクション。読み取り専用。|1.3|
 |[tableCellCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecellcollection.md)|_メソッド_ > [getFirst()](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecellcollection.md#getfirst)|このコレクション内の最初のテーブル セルを取得します。|1.3|
 |[tableCellCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecellcollection.md)|_メソッド_ > [getItem(index: number)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecellcollection.md#getitemindex-number)|コレクション内のインデックスを使用して、テーブル セル オブジェクトを取得します。|1.3|
-|[tableCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecollection.md)|_プロパティ_ > items|テーブル オブジェクトのコレクション。読み取り専用。|1.3|
+|[tableCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecollection.md)|_プロパティ_ > items|Table オブジェクトのコレクション。読み取り専用です。|1.3|
 |[tableCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecollection.md)|_メソッド_ > [getFirst()](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecollection.md#getfirst)|このコレクション内の最初のテーブルを取得します。|1.3|
 |[tableCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecollection.md)|_メソッド_ > [getItem(index: number)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecollection.md#getitemindex-number)|コレクション内のインデックスを使用して、テーブル オブジェクトを取得します。|1.3|
 |[tableRow](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablerow.md)|_プロパティ_ > cellCount|行のセルの数を取得します。読み取り専用。|1.3|
@@ -250,15 +250,15 @@ Word アドインは、Office 2016 for Windows、Office for iPad、Office for Ma
 
 |オブジェクト| 新機能| 説明|要件セット|
 |:-----|-----|:----|:----|
-|[contentControl](../word/contentcontrol.md)|_メソッド_ > [insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)](../word/contentcontrol.md#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|コンテンツ コントロール内の指定された位置にインライン イメージを挿入します。insertLocation の値には、'Replace'、'Start'、または 'End' を指定できます。|1.2|
+|[contentControl](../word/contentcontrol.md)|_メソッド_ > [insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)](../word/contentcontrol.md#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|コンテンツ コントロール内の指定された位置にインライン画像を挿入します。insertLocation の値は、'Replace'、'Start'、'End' のいずれかになります。|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_リレーションシップ_ > paragraph|インライン イメージを含む親段落を取得します。読み取り専用。|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_メソッド_ > [delete()](../word/inlinepicture.md#delete)|ドキュメントからインライン画像を削除します。|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_メソッド_ > [insertBreak(breakType:BreakType, insertLocation:InsertLocation)](../word/inlinepicture.md#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|メイン文書の指定した位置に、区切りを挿入します。insertLocation の値には、'Before' または 'After' を指定できます。|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_メソッド_ > [insertFileFromBase64(base64File: string, insertLocation:InsertLocation)](../word/inlinepicture.md#insertfilefrombase64base64file-string-insertlocation-insertlocation)|指定した位置に文書を挿入します。insertLocation の値には、'Before' または 'After' を指定できます。|1.2|
-|[inlinePicture](../word/inlinepicture.md)|_メソッド_ > [insertHtml(html: string, insertLocation:InsertLocation)](../word/inlinepicture.md#inserthtmlhtml-string-insertlocation-insertlocation)|指定した位置に HTML を挿入します。insertLocation の値には、'Before' または 'After' を指定できます。|1.2|
+|[inlinePicture](../word/inlinepicture.md)|_メソッド_ > [insertHtml(html: string, insertLocation:InsertLocation)](../word/inlinepicture.md#inserthtmlhtml-string-insertlocation-insertlocation)|指定した位置にHTML を挿入します。insertLocation の値は、'Before' か 'After' になります。|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_メソッド_ > [insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)](../word/inlinepicture.md#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|指定された位置にインライン画像を挿入します。insertLocation の値には、'Replace'、'Before' または 'After' を指定できます。|1.2|
-|[inlinePicture](../word/inlinepicture.md)|_メソッド_ > [insertOoxml(ooxml: string, insertLocation:InsertLocation)](../word/inlinepicture.md#insertooxmlooxml-string-insertlocation-insertlocation)|指定した位置に OOXML を挿入します。insertLocation の値には、'Before' または 'After' を指定できます。|1.2|
-|[inlinePicture](../word/inlinepicture.md)|_メソッド_ > [insertParagraph(paragraphText: string, insertLocation:InsertLocation)](../word/inlinepicture.md#insertparagraphparagraphtext-string-insertlocation-insertlocation)|指定した位置に段落を挿入します。insertLocation の値には、'Before' または 'After' を指定できます。|1.2|
+|[inlinePicture](../word/inlinepicture.md)|_メソッド_ > [insertOoxml(ooxml: string, insertLocation:InsertLocation)](../word/inlinepicture.md#insertooxmlooxml-string-insertlocation-insertlocation)|指定した位置に、OOXML を挿入します。insertLocation の値は、'Before' か 'After' になります。|1.2|
+|[inlinePicture](../word/inlinepicture.md)|_メソッド_ > [insertParagraph(paragraphText: string, insertLocation:InsertLocation)](../word/inlinepicture.md#insertparagraphparagraphtext-string-insertlocation-insertlocation)|指定した位置に、段落を挿入します。有効な insertLocation の値は、'Before' または 'After' です。|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_メソッド_ > [insertText(text: string, insertLocation:InsertLocation)](../word/inlinepicture.md#inserttexttext-string-insertlocation-insertlocation)|指定した位置にテキストを挿入します。insertLocation の値には、'Before' または 'After' を指定できます。|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_メソッド_ > [select(selectionMode:SelectionMode)](../word/inlinepicture.md#selectselectionmode-selectionmode)|インライン画像を選択します。その結果、Word は選択範囲にスクロールされます。|1.2|
 |[range](../word/range.md)|_リレーションシップ_ > inlinePictures|範囲に含まれるインライン画像オブジェクトのコレクションを取得します。読み取り専用。|1.2|
@@ -267,7 +267,8 @@ Word アドインは、Office 2016 for Windows、Office for iPad、Office for Ma
 ## <a name="word-javascript-api-11"></a>Word JavaScript API 1.1
 Word JavaScript API 1.1 は、API の最初のバージョンです。API の詳細については、[Word JavaScript API](../word/word-add-ins-reference-overview.md) リファレンスのトピックを参照してください。 
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="additional-resources"></a>追加リソース
 
-- [Office のホストと API の要件を指定する](../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [Office アドインの XML マニフェスト](https://dev.office.com/docs/add-ins/overview/add-in-manifests)
+- [Office のホストと API の要件を指定する](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Office アドインの XML マニフェスト](../../docs/overview/add-in-manifests.md)
+
