@@ -6,6 +6,11 @@
 
 _**重要:**以下の機能は、まだ設計とレビュー中の段階であり、まだ一般公開されていません。これらの機能と API は変更される場合があります。_
 
+## <a name="visio-javascript-apis"></a>Visio JavaScript API
+Visio Online は、Visio 図面を Web 上で表示し共有する新しい方法です。Visio JavaScript API 1.1 を使用して Visio Online の機能を拡張できます。SharePoint ページに埋め込まれた Visio 図面に対して、これらの API を使用します。現在、Visio JavaScript API は [Office アドイン](https://dev.office.com/docs/add-ins/overview/office-add-ins)には適用されませんのでご注意ください。
+
+**詳細については、[Visio JavaScript API 1.1](https://github.com/OfficeDev/office-js-docs/tree/VisioJs_1.1_Openspec) のページを参照し、フィードバックを提供してください。**
+
 ## <a name="new-excel-javascript-apis"></a>新しい Excel JavaScript API
 新しい Excel JavaScript API の設計のレビューにご参加ください。新しい API および更新された API には、カスタム XML パーツ、ピボット テーブルの更新、フィルターされたビューの範囲、イメージの範囲とテーブル、テーブルへの複数行の追加、その他の機能が含まれています。 
 
