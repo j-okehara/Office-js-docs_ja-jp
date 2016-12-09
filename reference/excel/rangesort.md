@@ -1,6 +1,4 @@
-# <a name="rangesort-object-(javascript-api-for-excel)"></a>RangeSort オブジェクト (JavaScript API for Excel)
-
-_適用対象:Excel 2016、Excel Online、Excel for iOS、Office 2016_
+# <a name="rangesort-object-javascript-api-for-excel"></a>RangeSort オブジェクト (JavaScript API for Excel)
 
 Range オブジェクトの並べ替え操作を管理します。
 
@@ -14,14 +12,14 @@ Range オブジェクトの並べ替え操作を管理します。
 
 ## <a name="methods"></a>メソッド
 
-| メソッド           | 戻り値の型    |説明|
-|:---------------|:--------|:----------|
-|[apply(fields:SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|void|並べ替え操作を実行します。|
+| メソッド           | 戻り値の型    |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|[apply(fields:SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|void|並べ替え操作を実行します。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
 
-### <a name="apply(fields:-sortfield[],-matchcase:-bool,-hasheaders:-bool,-orientation:-string,-method:-string)"></a>apply(fields:SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)
+### <a name="applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string"></a>apply(fields:SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)
 並べ替え操作を実行します。
 
 #### <a name="syntax"></a>構文
@@ -31,7 +29,7 @@ rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |fields|SortField[]|並べ替えに使用する条件の一覧。|
 |matchCase|bool|省略可能。大文字小文字の区別が文字列の順序に影響を与えるかどうか。|
 |hasHeaders|bool|省略可能。範囲にヘッダーがあるかどうか。|
@@ -40,24 +38,3 @@ rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 
 #### <a name="returns"></a>戻り値
 void
-
-#### <a name="examples"></a>例
-```js
-Excel.run(function (ctx) { 
-    var sheetName = "Sheet1";
-    var rangeAddress = "D4:G6";
-    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-    range.sort.apply([ 
-            {
-                key: 2,
-                ascending: true
-            },
-        ], true);
-    return ctx.sync(); 
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```

@@ -1,32 +1,32 @@
-# <a name="chartlegend-object-(javascript-api-for-excel)"></a>ChartLegend オブジェクト (JavaScript API for Excel)
+# <a name="chartlegend-object-javascript-api-for-excel"></a>ChartLegend オブジェクト (JavaScript API for Excel)
 
 グラフに凡例を表します。
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明
-|:---------------|:--------|:----------|
-|overlay|bool|グラフの凡例をグラフの本体に重ねるかどうかを指定するブール型の値です。|
-|position|string|グラフの凡例の位置を表します。使用可能な値は次のとおりです。Top、Bottom、Left、Right、Corner、Custom.|
-|visible|bool|ChartLegend オブジェクトを表示または非表示にするかを表すブール型の値。|
+| プロパティ     | 型   |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|overlay|bool|グラフの凡例をグラフの本体に重ねるかどうかを指定するブール型の値です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|position|string|グラフの凡例の位置を表します。使用可能な値は次のとおりです。Top、Bottom、Left、Right、Corner、Custom。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|visible|bool|ChartLegend オブジェクトを表示または非表示にするかを表すブール型の値。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
 ## <a name="relationships"></a>関係
-| リレーションシップ | 型   |説明|
-|:---------------|:--------|:----------|
-|format|[ChartLegendFormat](chartlegendformat.md)|グラフの凡例の書式設定を表します。これには塗りつぶしとフォントの書式設定などがあります。値の取得のみ可能です。|
+| リレーションシップ | 型   |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|format|[ChartLegendFormat](chartlegendformat.md)|グラフの凡例の書式設定を表します。これには塗りつぶしとフォントの書式設定などがあります。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>メソッド
 
-| メソッド           | 戻り値の型    |説明|
-|:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
+| メソッド           | 戻り値の型    |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
 #### <a name="syntax"></a>構文
@@ -36,8 +36,8 @@ object.load(param);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
-|param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
+|:---------------|:--------|:----------|:---|
+|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
 #### <a name="returns"></a>戻り値
 void

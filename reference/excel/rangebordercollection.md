@@ -1,13 +1,13 @@
-# <a name="rangebordercollection-object-(javascript-api-for-excel)"></a>RangeBorderCollection オブジェクト (JavaScript API for Excel)
+# <a name="rangebordercollection-object-javascript-api-for-excel"></a>RangeBorderCollection オブジェクト (JavaScript API for Excel)
 
 範囲の境界線を構成する複数の境界線オブジェクトを表します。
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明
-|:---------------|:--------|:----------|
-|count|int|コレクションに含まれる境界線オブジェクトの数。読み取り専用です。|
-|items|[RangeBorder[]](rangeborder.md)|rangeBorder オブジェクトのコレクション。読み取り専用です。|
+| プロパティ     | 型   |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|count|int|コレクションに含まれる境界線オブジェクトの数。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[RangeBorder[]](rangeborder.md)|rangeBorder オブジェクトのコレクション。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
@@ -17,17 +17,17 @@ _プロパティのアクセスの[例を参照してください。](#property-
 
 ## <a name="methods"></a>メソッド
 
-| メソッド           | 戻り値の型    |説明|
-|:---------------|:--------|:----------|
-|[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|オブジェクトの名前を使用して、境界線オブジェクトを取得します。|
-|[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|オブジェクトのインデックスを使用して、境界線オブジェクトを取得します。|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
+| メソッド           | 戻り値の型    |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|オブジェクトの名前を使用して、境界線オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|オブジェクトのインデックスを使用して、境界線オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
 
-### <a name="getitem(index:-string)"></a>getItem(index: string)
-オブジェクトの名前を使用して、境界線オブジェクトを取得します。 
+### <a name="getitemindex-string"></a>getItem(index: string)
+オブジェクトの名前を使用して、境界線オブジェクトを取得します。
 
 #### <a name="syntax"></a>構文
 ```js
@@ -36,8 +36,8 @@ rangeBorderCollectionObject.getItem(index);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
-|index|string|取得する境界線オブジェクトのインデックス値。使用可能な値は次のとおりです。EdgeTop、EdgeBottom、EdgeLeft、EdgeRight、InsideVertical、InsideHorizontal、DiagonalDown、DiagonalUp|
+|:---------------|:--------|:----------|:---|
+|index|文字列|取得する境界線オブジェクトのインデックス値。使用可能な値は次のとおりです。EdgeTop、EdgeBottom、EdgeLeft、EdgeRight、InsideVertical、InsideHorizontal、DiagonalDown、DiagonalUp|
 
 #### <a name="returns"></a>戻り値
 [RangeBorder](rangeborder.md)
@@ -72,7 +72,7 @@ Excel.run(function (ctx) {
     var rangeAddress = "A1:F8";
     var worksheet = ctx.workbook.worksheets.getItem(sheetName);
     var range = worksheet.getRange(rangeAddress);
-    var border = ctx.workbook.borders.getItemAt(0);
+    var border = range.format.borders.getItemAt(0);
     border.load('sideIndex');
     return ctx.sync().then(function() {
             console.log(border.sideIndex);
@@ -86,7 +86,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
+### <a name="getitematindex-number"></a>getItemAt(index: number)
 オブジェクトのインデックスを使用して、境界線オブジェクトを取得します。
 
 #### <a name="syntax"></a>構文
@@ -96,7 +96,7 @@ rangeBorderCollectionObject.getItemAt(index);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|number|取得するオブジェクトのインデックス値。0 を起点とする番号になります。|
 
 #### <a name="returns"></a>戻り値
@@ -110,7 +110,7 @@ Excel.run(function (ctx) {
     var rangeAddress = "A1:F8";
     var worksheet = ctx.workbook.worksheets.getItem(sheetName);
     var range = worksheet.getRange(rangeAddress);
-    var border = ctx.workbook.borders.getItemAt(0);
+    var border = range.format.borders.getItemAt(0);
     border.load('sideIndex');
     return ctx.sync().then(function() {
             console.log(border.sideIndex);
@@ -124,7 +124,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
 #### <a name="syntax"></a>構文
@@ -134,8 +134,8 @@ object.load(param);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
-|param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
+|:---------------|:--------|:----------|:---|
+|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
 #### <a name="returns"></a>戻り値
 void
@@ -148,7 +148,7 @@ Excel.run(function (ctx) {
     var worksheet = ctx.workbook.worksheets.getItem(sheetName);
     var range = worksheet.getRange(rangeAddress);
     var borders = range.format.borders;
-    borders.load('items');
+    border.load('items');
     return ctx.sync().then(function() {
         console.log(borders.count);
         for (var i = 0; i < borders.items.length; i++)

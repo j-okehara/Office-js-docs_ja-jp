@@ -6,17 +6,19 @@ Excel アドインは、Office 2016 for Windows、Office for iPad、Office for M
 
 |  要件セット  |  Office 2016 for Windows*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |
 |:-----|-----|:-----|:-----|:-----|
-| ExcelApi 1.3  | バージョン 1608 以降| 1.27 以降 |  15.27 以降| 2016 年 9 月 | 
-| ExcelApi 1.2  | バージョン 1601 以降 | 1.21 以降 | 15.22 以降| 2016 年 1 月 |
+| ExcelApi 1.3  | バージョン 1608 (ビルド 7369.2055) 以降| 1.27 以降 |  15.27 以降| 2016 年 9 月 | 
+| ExcelApi 1.2  | バージョン 1601 (ビルド 6741.2088) 以降 | 1.21 以降 | 15.22 以降| 2016 年 1 月 |
 | ExcelApi 1.1  | バージョン 1509 (ビルド 4266.1001) 以降 | 1.19 以降 | 15.20 以降| 2016 年 1 月 |
 
 > &#42; **注**:MSI からインストールされた Office 2016 のビルド番号は、16.0.4266.1001 です。このバージョンには、ExcelApi 1.1 の要件セットのみが含まれています。
 
 バージョンとビルド番号について詳しくは、次をご覧ください。
 
-- [Office 365 クライアントの更新プログラム チャネル リリースのバージョン番号およびビルド番号](https://technet.microsoft.com/en-us/library/mt592918.aspx)
+- 
+  [Office 365 クライアントの更新プログラム チャネル リリースのバージョン番号およびビルド番号](https://technet.microsoft.com/en-us/library/mt592918.aspx)
 - [使用している Office のバージョンを確認する方法](https://support.office.com/en-us/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19?ui=en-US&rs=en-US&ad=US&fromAR=1)
-- [Office 365 クライアント アプリケーションのバージョン番号およびビルド番号を確認することができます。](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
+- 
+  [Office 365 クライアント アプリケーションのバージョン番号およびビルド番号を確認することができます。](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
 
 ## <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 共通 API の要件セットについて詳しくは、「[Office 共通 API の要件セット](office-add-in-requirement-sets.md)」をご覧ください。
@@ -166,4 +168,3 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。API に�
 
 - [Office のホストと API の要件を指定する](../../docs/overview/specify-office-hosts-and-api-requirements.md)
 - [Office アドインの XML マニフェスト](../../docs/overview/add-in-manifests.md)
-

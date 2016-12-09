@@ -1,13 +1,13 @@
-# <a name="tablerow-object-(javascript-api-for-excel)"></a>TableRow オブジェクト (JavaScript API for Excel)
+# <a name="tablerow-object-javascript-api-for-excel"></a>TableRow オブジェクト (JavaScript API for Excel)
 
 表の行を表します。
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明
-|:---------------|:--------|:----------|
-|index|int|テーブルの行コレクション内の行のインデックス番号を返します。0 を起点とする番号になります。読み取り専用。|
-|values|object[][]|指定した範囲の Raw 値を表します。返されるデータの型は、文字列、数値、またはブール値のいずれかになります。エラーが含まれているセルは、エラー文字列を返します。|
+| プロパティ     | 型   |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|index|int|テーブルの行コレクション内の行のインデックス番号を返します。0 を起点とする番号になります。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|values|object[][]|指定した範囲の Raw 値を表します。返されるデータの型は、文字列、数値、またはブール値のいずれかになります。エラーが含まれているセルは、エラー文字列を返します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
@@ -17,16 +17,16 @@ _プロパティのアクセスの[例を参照してください。](#property-
 
 ## <a name="methods"></a>メソッド
 
-| メソッド           | 戻り値の型    |説明|
-|:---------------|:--------|:----------|
-|[delete()](#delete)|void|テーブルから行を削除します。|
-|[getRange()](#getrange)|[Range](range.md)|行全体に関連付けられた Range オブジェクトを返します。|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
+| メソッド           | 戻り値の型    |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|[delete()](#delete)|void|テーブルから行を削除します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange()](#getrange)|[Range](range.md)|行全体に関連付けられた範囲オブジェクトを返します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
 
-### <a name="delete()"></a>delete()
+### <a name="delete"></a>delete()
 テーブルから行を削除します。
 
 #### <a name="syntax"></a>構文
@@ -45,10 +45,9 @@ void
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
+    var row = ctx.workbook.tables.getItem(tableName).rows.getItemAt(2);
     row.delete();
     return ctx.sync(); 
-    });
 }).catch(function(error) {
         console.log("Error: " + error);
         if (error instanceof OfficeExtension.Error) {
@@ -58,7 +57,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getrange()"></a>getRange()
+### <a name="getrange"></a>getRange()
 行全体に関連付けられた Range オブジェクトを返します。
 
 #### <a name="syntax"></a>構文
@@ -77,7 +76,7 @@ tableRowObject.getRange();
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(0);
+    var row = ctx.workbook.tables.getItem(tableName).rows.getItemAt(0);
     var rowRange = row.getRange();
     rowRange.load('address');
     return ctx.sync().then(function() {
@@ -92,7 +91,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
 #### <a name="syntax"></a>構文
@@ -102,8 +101,8 @@ object.load(param);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
-|param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
+|:---------------|:--------|:----------|:---|
+|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
 #### <a name="returns"></a>戻り値
 void
@@ -112,7 +111,7 @@ void
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var row = ctx.workbook.tables.getItem(tableName).tableRows.getItem(0);
+    var row = ctx.workbook.tables.getItem(tableName).rows.getItem(0);
     row.load('index');
     return ctx.sync().then(function() {
         console.log(row.index);
@@ -129,7 +128,8 @@ Excel.run(function (ctx) {
 Excel.run(function (ctx) { 
     var tables = ctx.workbook.tables;
     var newValues = [["New", "Values", "For", "New", "Row"]];
-    var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
+    var tableName = 'Table1';
+    var row = ctx.workbook.tables.getItem(tableName).rows.getItemAt(2);
     row.values = newValues;
     row.load('values');
     return ctx.sync().then(function() {

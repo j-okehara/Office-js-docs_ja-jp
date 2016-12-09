@@ -1,13 +1,12 @@
-# <a name="filterdatetime-object-javascript-api-for-excel"></a>FilterDatetime オブジェクト (JavaScript API for Excel)
+# <a name="rangeviewcollection-object-javascript-api-for-excel"></a>RangeViewCollection オブジェクト (JavaScript API for Excel)
 
-値をフィルター処理するときに日付をフィルター処理する方法を表します。
+ブックの一部であるワークシート オブジェクトのコレクションを表します。
 
 ## <a name="properties"></a>プロパティ
 
 | プロパティ     | 型   |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
-|date|string|データのフィルター処理に使用する ISO8601 形式の日付です。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|specificity|string|データを保持するのに、日付をどの程度詳細に使用するか。たとえば、date が 2005-04-02 で "month" に設定した場合、フィルター操作では 2005 年 4 月の日付データを含むすべての行が保持されます。使用可能な値は次のとおりです。Year、Month、Day、Hour、Minute、Second。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[RangeView[]](rangeview.md)|rangeView オブジェクトのコレクション。読み取り専用です。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
@@ -19,10 +18,27 @@ _プロパティのアクセスの[例を参照してください。](#property-
 
 | メソッド           | 戻り値の型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
+|[getItemAt(index: number)](#getitematindex-number)|[RangeView](rangeview.md)|RangeView のインデックスから RangeView の行番号を取得します。0 を起点とする番号になります。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
+
+### <a name="getitematindex-number"></a>getItemAt(index: number)
+RangeView のインデックスから RangeView の行番号を取得します。0 を起点とする番号になります。
+
+#### <a name="syntax"></a>構文
+```js
+rangeViewCollectionObject.getItemAt(index);
+```
+
+#### <a name="parameters"></a>パラメーター
+| パラメーター    | 型   |説明|
+|:---------------|:--------|:----------|:---|
+|index|number|表示されている行のインデックス。|
+
+#### <a name="returns"></a>戻り値
+[RangeView](rangeview.md)
 
 ### <a name="loadparam-object"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。

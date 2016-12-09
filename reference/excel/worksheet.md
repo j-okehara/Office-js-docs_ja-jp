@@ -1,40 +1,41 @@
-# <a name="worksheet-object-(javascript-api-for-excel)"></a>Worksheet オブジェクト (JavaScript API for Excel)
+# <a name="worksheet-object-javascript-api-for-excel"></a>Worksheet オブジェクト (JavaScript API for Excel)
 
 Excel のワークシートは、セルのグリッドになっています。そこに、データ、表、グラフなどを含めることができます。
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明
-|:---------------|:--------|:----------|
-|id|string|指定されたブックのワークシートを一意に識別する値を返します。この識別子の値は、ワークシートの名前を変更したり移動したりしても同じままです。ファイルが開かれるたびにセッションごとに値は変更されます。読み取り専用です。|
-|name|string|ワークシートの表示名。|
-|position|int|0 を起点とした、ブック内のワークシートの位置。|
-|visibility|string|ワークシートの可視性。使用可能な値は次のとおりです。Visible、Hidden、VeryHidden。|
+| プロパティ     | 型   |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|id|string|指定されたブックのワークシートを一意に識別する値を返します。この識別子の値は、ワークシートの名前を変更したり移動したりしても同じままです。値の取得のみ可能です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|name|string|ワークシートの表示名。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|position|int|0 を起点とした、ブック内のワークシートの位置。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|visibility|string|ワークシートの可視性。使用可能な値は次のとおりです。Visible、Hidden、VeryHidden。|[1.1、表示状態を読み取る場合は 1.1、表示状態を設定する場合は 1.2。](../requirement-sets/excel-api-requirement-sets.md)|
 
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
 ## <a name="relationships"></a>関係
-| リレーションシップ | 型   |説明|
-|:---------------|:--------|:----------|
-|グラフ|[ChartCollection](chartcollection.md)|ワークシートの一部になっているグラフのコレクションを返します。読み取り専用です。|
-|保護|[WorksheetProtection](worksheetprotection.md)|ワークシートのシート保護オブジェクトを返します。読み取り専用です。|
-|tables|[TableCollection](tablecollection.md)|ワークシートの一部になっているグラフのコレクション。値の取得のみ可能です。|
+| リレーションシップ | 型   |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|charts|[ChartCollection](chartcollection.md)|ワークシートの一部になっているグラフのコレクションを返します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|pivotTables|[PivotTableCollection](pivottablecollection.md)|ワークシートの一部になっているピボットテーブルのコレクション。読み取り専用です。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|protection|[WorksheetProtection](worksheetprotection.md)|ワークシートのシート保護オブジェクトを返します。読み取り専用です。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|tables|[TableCollection](tablecollection.md)|ワークシートの一部になっているグラフのコレクション。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>メソッド
 
-| メソッド           | 戻り値の型    |説明|
-|:---------------|:--------|:----------|
-|[activate()](#activate)|void|Excel UI でワークシートをアクティブにします。|
-|[delete()](#delete)|void|ブックからワークシートを削除します。|
-|[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|行と列の番号に基づいて、1 つのセルを含んだ範囲オブジェクトを取得します。このセルは、このワークシートのグリッド内であれば、親の範囲の境界の外のセルであってもかまいません。|
-|[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|アドレスまたは名前で指定された範囲オブジェクトを取得します。|
-|[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool)|[Range](range.md)|使用範囲とは、値または書式設定が割り当たっているすべてのセルを包含する最小の範囲です。ワークシートが空白の場合、この関数は左上のセルを返します。|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
+| メソッド           | 戻り値の型    |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|[activate()](#activate)|void|Excel UI でワークシートをアクティブにします。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[delete()](#delete)|void|ブックからワークシートを削除します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|行と列の番号に基づいて、1 つのセルを含んだ範囲オブジェクトを取得します。このセルは、ワークシートのグリッド内であれば、親の範囲の境界の外のセルであってもかまいません。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|アドレスまたは名前で指定された範囲オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRange(valuesOnly)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|使用範囲とは、値または書式設定が割り当たっているすべてのセルを包含する最小の範囲です。ワークシートが空白の場合、この関数は左上のセルを返します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
 
-### <a name="activate()"></a>activate()
+### <a name="activate"></a>activate()
 Excel UI でワークシートをアクティブにします。
 
 #### <a name="syntax"></a>構文
@@ -56,7 +57,6 @@ Excel.run(function (ctx) {
     var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
     worksheet.activate();
     return ctx.sync(); 
-    });
 }).catch(function(error) {
         console.log("Error: " + error);
         if (error instanceof OfficeExtension.Error) {
@@ -66,7 +66,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="delete()"></a>delete()
+### <a name="delete"></a>delete()
 ブックからワークシートを削除します。
 
 #### <a name="syntax"></a>構文
@@ -88,7 +88,6 @@ Excel.run(function (ctx) {
     var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
     worksheet.delete();
     return ctx.sync(); 
-    });
 }).catch(function(error) {
         console.log("Error: " + error);
         if (error instanceof OfficeExtension.Error) {
@@ -98,8 +97,8 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getcell(row:-number,-column:-number)"></a>getCell(row: number, column: number)
-行と列の番号に基づいて、1 つのセルを含んだ範囲オブジェクトを取得します。このセルは、このワークシートのグリッド内であれば、親の範囲の境界の外のセルであってもかまいません。
+### <a name="getcellrow-number-column-number"></a>getCell(row: number, column: number)
+行と列の番号に基づいて、1 つのセルを含んだ範囲オブジェクトを取得します。このセルは、ワークシートのグリッド内であれば、親の範囲の境界の外のセルであってもかまいません。
 
 #### <a name="syntax"></a>構文
 ```js
@@ -108,7 +107,7 @@ worksheetObject.getCell(row, column);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |row|number|取得するセルの行番号。0 を起点とする番号になります。|
 |column|number|取得するセルの列番号。0 を起点とする番号になります。|
 
@@ -126,7 +125,6 @@ Excel.run(function (ctx) {
     cell.load('address');
     return ctx.sync().then(function() {
         console.log(cell.address);
-    });
 }).catch(function(error) {
         console.log("Error: " + error);
         if (error instanceof OfficeExtension.Error) {
@@ -136,7 +134,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getrange(address:-string)"></a>getRange(address: string)
+### <a name="getrangeaddress-string"></a>getRange(address: string)
 アドレスまたは名前で指定された範囲 オブジェクトを取得します。
 
 #### <a name="syntax"></a>構文
@@ -146,7 +144,7 @@ worksheetObject.getRange(address);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |address|string|省略可能。範囲のアドレスまたは名前。指定されていない場合は、ワークシート全体の範囲が返されます。|
 
 #### <a name="returns"></a>戻り値
@@ -193,7 +191,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="getusedrange(valuesonly:-bool)"></a>getUsedRange(valuesOnly: bool)
+### <a name="getusedrangevaluesonly"></a>getUsedRange(valuesOnly)
 使用範囲とは、値または書式設定が割り当たっているすべてのセルを包含する最小の範囲です。ワークシートが空白の場合、この関数は左上のセルを返します。
 
 #### <a name="syntax"></a>構文
@@ -203,8 +201,8 @@ worksheetObject.getUsedRange(valuesOnly);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
-|valuesOnly|bool|省略可能。値の入っているセルのみを使用セルと見なします (書式設定は無視されます)。|
+|:---------------|:--------|:----------|:---|
+|valuesOnly|[ApiSet(Version|値の入っているセルのみを使用セルと見なします (書式設定は無視されます)。|
 
 #### <a name="returns"></a>戻り値
 [Range](range.md)
@@ -229,7 +227,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
 #### <a name="syntax"></a>構文
@@ -239,8 +237,8 @@ object.load(param);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
-|param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
+|:---------------|:--------|:----------|:---|
+|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
 #### <a name="returns"></a>戻り値
 void
@@ -279,4 +277,3 @@ Excel.run(function (ctx) {
         }
 });
 ```
-

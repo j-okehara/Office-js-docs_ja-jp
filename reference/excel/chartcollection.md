@@ -1,15 +1,15 @@
-# <a name="chartcollection-object-(javascript-api-for-excel)"></a>ChartCollection オブジェクト (JavaScript API for Excel)
+# <a name="chartcollection-object-javascript-api-for-excel"></a>ChartCollection オブジェクト (JavaScript API for Excel)
 
 ワークシート上のすべてのグラフ オブジェクトのコレクション。
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明
-|:---------------|:--------|:----------|
-|count|int|ワークシート上のグラフの数を返します。値の取得のみ可能です。|
-|items|[Chart[]](chart.md)|グラフ オブジェクトのコレクション。読み取り専用です。|
+| プロパティ     | 型   |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|count|int|ワークシート上のグラフの数を返します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[Chart[]](chart.md)|グラフ オブジェクトのコレクション。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
-_プロパティのアクセスの[例](#property-access-examples)を参照してください。_
+_プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
 ## <a name="relationships"></a>関係
 なし
@@ -17,17 +17,18 @@ _プロパティのアクセスの[例](#property-access-examples)を参照し�
 
 ## <a name="methods"></a>メソッド
 
-| メソッド           | 戻り値の型    |説明|
-|:---------------|:--------|:----------|
-|[add(type: string, sourceData:Range, seriesBy: string)](#addtype-string-sourcedata-range-seriesby-string)|[Chart](chart.md)|新しいグラフを作成します。|
-|[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|グラフ名を使用してグラフを取得します。同じ名前の複数のグラフがある場合は、最初の 1 つが返されます。|
-|[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|コレクション内での位置を基にグラフを取得します。|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
+| メソッド           | 戻り値の型    |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|[add(type: string, sourceData:Range, seriesBy: string)](#addtype-string-sourcedata-range-seriesby-string)|[Chart](chart.md)|新しいグラフを作成します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|グラフを、名前を使用して取得します。同じ名前のグラフが複数ある場合は、最初のグラフが返されます。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|コレクション内の位置に基づいて、グラフを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNull(name: string)](#getitemornullname-string)|[Chart](chart.md)|グラフを、名前を使用して取得します。同じ名前のグラフが複数ある場合は、最初のグラフが返されます。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
 
-### <a name="add(type:-string,-sourcedata:-range,-seriesby:-string)"></a>add(type: 文字列、sourceData:範囲、seriesBy: 文字列)
+### <a name="addtype-string-sourcedata-range-seriesby-string"></a>add(type: 文字列、sourceData:範囲、seriesBy: 文字列)
 新しいグラフを作成します。
 
 #### <a name="syntax"></a>構文
@@ -37,24 +38,25 @@ chartCollectionObject.add(type, sourceData, seriesBy);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |type|string|グラフの種類を表します。使用可能な値は次のとおりです。ColumnClustered、ColumnStacked、ColumnStacked100、BarClustered、BarStacked、BarStacked100、LineStacked、LineStacked100、LineMarkers、LineMarkersStacked、LineMarkersStacked100、PieOfPie など。|
-|sourceData|Range|元データを含む range オブジェクト。|
-|seriesBy|string|省略可能。列や行がグラフのデータ系列として使用される方法を指定します。使用可能な値は次のとおりです。自動、列、行|
+|sourceData|Range|データ ソースに対応する Range オブジェクトです。|
+|seriesBy|文字列|省略可能。列や行がグラフのデータ系列として使用される方法を指定します。使用可能な値は次のとおりです。自動、列、行|
 
 #### <a name="returns"></a>戻り値
 [Chart](chart.md)
 
 #### <a name="examples"></a>例
 
-`chartType` が "A1:B4" の範囲で、`sourceData` が "auto" に設定されたワークシート "Charts" で、`seriesBy` "ColumnClustered" のグラフを追加します。
+`sourceData` が "A1:B4" の範囲で、`seriresBy` が "auto" に設定された、`chartType` が "ColumnClustered" であるグラフをワークシート "Charts" に追加します。
 
 ```js
 Excel.run(function (ctx) { 
-    var sheetName = "Sheet1";
-    var sourceData = sheetName + "!" + "A1:B4";
-    var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("ColumnClustered", sourceData, "auto");
-    return ctx.sync().then(function() {
+    var rangeSelection = "A1:B4";
+    var range = ctx.workbook.worksheets.getItem(sheetName)
+        .getRange(rangeSelection);
+    var chart = ctx.workbook.worksheets.getItem(sheetName)
+        .charts.add("ColumnClustered", range, "auto");  return ctx.sync().then(function() {
             console.log("New Chart Added");
     });
 }).catch(function(error) {
@@ -66,7 +68,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitem(name:-string)"></a>getItem(name: string)
+### <a name="getitemname-string"></a>getItem(name: string)
 グラフ名を使用してグラフを取得します。同じ名前の複数のグラフがある場合は、最初の 1 つが返されます。
 
 #### <a name="syntax"></a>構文
@@ -76,7 +78,7 @@ chartCollectionObject.getItem(name);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |name|string|取得するグラフの名前。|
 
 #### <a name="returns"></a>戻り値
@@ -137,7 +139,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
+### <a name="getitematindex-number"></a>getItemAt(index: number)
 コレクション内での位置を基にグラフを取得します。
 
 #### <a name="syntax"></a>構文
@@ -147,7 +149,7 @@ chartCollectionObject.getItemAt(index);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|number|取得するオブジェクトのインデックス値。0 を起点とする番号になります。|
 
 #### <a name="returns"></a>戻り値
@@ -171,7 +173,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="getitemornullname-string"></a>getItemOrNull(name: string)
+グラフを、名前を使用して取得します。同じ名前の複数のグラフがある場合は、最初の 1 つが返されます。
+
+#### <a name="syntax"></a>構文
+```js
+chartCollectionObject.getItemOrNull(name);
+```
+
+#### <a name="parameters"></a>パラメーター
+| パラメーター    | 型   |説明|
+|:---------------|:--------|:----------|:---|
+|name|string|取得するグラフの名前。|
+
+#### <a name="returns"></a>戻り値
+[Chart](chart.md)
+
+### <a name="loadparam-object"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
 #### <a name="syntax"></a>構文
@@ -181,8 +199,8 @@ object.load(param);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
-|param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
+|:---------------|:--------|:----------|:---|
+|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
 #### <a name="returns"></a>戻り値
 void
@@ -196,7 +214,6 @@ Excel.run(function (ctx) {
         for (var i = 0; i < charts.items.length; i++)
         {
             console.log(charts.items[i].name);
-            console.log(charts.items[i].index);
         }
     });
 }).catch(function(error) {

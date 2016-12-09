@@ -1,12 +1,12 @@
-# <a name="nameditemcollection-object-(javascript-api-for-excel)"></a>NamedItemCollection オブジェクト (JavaScript API for Excel)
+# <a name="nameditemcollection-object-javascript-api-for-excel"></a>NamedItemCollection オブジェクト (JavaScript API for Excel)
 
 ブックの一部であるすべての nameditem オブジェクトのコレクション。
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明
-|:---------------|:--------|:----------|
-|items|[NamedItem[]](nameditem.md)|namedItem オブジェクトのコレクション。読み取り専用です。|
+| プロパティ     | 型   |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|items|[NamedItem[]](nameditem.md)|namedItem オブジェクトのコレクション。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
@@ -16,15 +16,16 @@ _プロパティのアクセスの[例を参照してください。](#property-
 
 ## <a name="methods"></a>メソッド
 
-| メソッド           | 戻り値の型    |説明|
-|:---------------|:--------|:----------|
-|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|名前を使用して、nameditem オブジェクトを取得します。|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
+| メソッド           | 戻り値の型    |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|nameditem オブジェクトを、名前を使用して取得します|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNull(name: string)](#getitemornullname-string)|[NamedItem](nameditem.md)|nameditem オブジェクトを、名前を使用して取得します。nameditem オブジェクトが存在しない場合、返されたオブジェクトの isNull プロパティは true になります。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
 
-### <a name="getitem(name:-string)"></a>getItem(name: string)
+### <a name="getitemname-string"></a>getItem(name: 文字列)
 名前を使用して、nameditem オブジェクトを取得します。
 
 #### <a name="syntax"></a>構文
@@ -34,7 +35,7 @@ namedItemCollectionObject.getItem(name);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |name|string|nameditem 名。|
 
 #### <a name="returns"></a>戻り値
@@ -44,7 +45,8 @@ namedItemCollectionObject.getItem(name);
 
 ```js
 Excel.run(function (ctx) { 
-    var nameditem = ctx.workbook.names.getItem(wSheetName);
+    var sheetName = 'Sheet1';
+    var nameditem = ctx.workbook.names.getItem(sheetName);
     nameditem.load('type');
     return ctx.sync().then(function() {
             console.log(nameditem.type);
@@ -56,24 +58,23 @@ Excel.run(function (ctx) {
         }
 });
 ```
+### <a name="getitemornullname-string"></a>getItemOrNull(name: string)
+nameditem オブジェクトを、名前を使用して取得します。nameditem オブジェクトが存在しない場合、返されたオブジェクトの isNull プロパティは true になります。
 
-#### <a name="examples"></a>例
-
+#### <a name="syntax"></a>構文
 ```js
-Excel.run(function (ctx) { 
-    var nameditem = ctx.workbook.names.getItemAt(0);
-    nameditem.load('name');
-    return ctx.sync().then(function() {
-            console.log(nameditem.name);
-    });
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
+namedItemCollectionObject.getItemOrNull(name);
 ```
-### <a name="load(param:-object)"></a>load(param: object)
+
+#### <a name="parameters"></a>パラメーター
+| パラメーター    | 型   |説明|
+|:---------------|:--------|:----------|:---|
+|name|string|nameditem 名。|
+
+#### <a name="returns"></a>戻り値
+[NamedItem](nameditem.md)
+
+### <a name="loadparam-object"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
 #### <a name="syntax"></a>構文
@@ -83,8 +84,8 @@ object.load(param);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
-|param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
+|:---------------|:--------|:----------|:---|
+|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
 #### <a name="returns"></a>戻り値
 void
@@ -109,20 +110,4 @@ Excel.run(function (ctx) {
 });
 ```
 
-nameditems の数を取得します。
-
-```js
-Excel.run(function (ctx) { 
-    var nameditems = ctx.workbook.names;
-    nameditems.load('count');
-    return ctx.sync().then(function() {
-        console.log("nameditems: Count= " + nameditems.count);
-    });
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
 

@@ -1,38 +1,38 @@
-# <a name="tablecolumn-object-(javascript-api-for-excel)"></a>TableColumn オブジェクト (JavaScript API for Excel)
+# <a name="tablecolumn-object-javascript-api-for-excel"></a>TableColumn オブジェクト (JavaScript API for Excel)
 
 テーブル内にある 1 つの列を表します。
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明
-|:---------------|:--------|:----------|
-|id|int|表内の列を識別する一意のキーを返します。読み取り専用です。|
-|index|int|表の列コレクション内の列のインデックス番号を返します。0 を起点とする番号になります。読み取り専用です。|
-|name|string|テーブル列の名前を取得します。読み取り専用です。|
-|values|object[][]|指定した範囲の Raw 値を表します。返されるデータの型は、文字列、数値、またはブール値のいずれかになります。エラーが含まれているセルは、エラー文字列を返します。|
+| プロパティ     | 型   |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|id|int|テーブル内の列を識別する一意のキーを返します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|index|int|テーブルの列コレクション内の列のインデックス番号を返します。0 を起点とする番号になります。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|name|string|テーブル列の名前を返します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|values|object[][]|指定した範囲の Raw 値を表します。返されるデータの型は、文字列、数値、またはブール値のいずれかになります。エラーが含まれているセルは、エラー文字列を返します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
 ## <a name="relationships"></a>関係
-| リレーションシップ | 型   |説明|
-|:---------------|:--------|:----------|
-|filter|[Filter](filter.md)|列に適用されるフィルターを取得します。読み取り専用です。|
+| リレーションシップ | 型   |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|filter|[Filter](filter.md)|列に適用されるフィルターを取得します。読み取り専用です。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>メソッド
 
-| メソッド           | 戻り値の型    |説明|
-|:---------------|:--------|:----------|
-|[delete()](#delete)|void|テーブルから列を削除します。|
-|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|列のデータ本体に関連付けられた範囲オブジェクトを取得します。|
-|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|列のヘッダー行に関連付けられた範囲オブジェクトを取得します。|
-|[getRange()](#getrange)|[Range](range.md)|列全体に関連付けられた範囲オブジェクトを取得します。|
-|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|列の集計行に関連付けられた範囲オブジェクトを取得します。|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
+| メソッド           | 戻り値の型    |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|[delete()](#delete)|void|テーブルから列を削除します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|列のデータ本体に関連付けられた範囲オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|列のヘッダー行に関連付けられた範囲オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange()](#getrange)|[Range](range.md)|列全体に関連付けられた範囲オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|列の集計行に関連付けられた範囲オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
 
-### <a name="delete()"></a>delete()
+### <a name="delete"></a>delete()
 テーブルから列を削除します。
 
 #### <a name="syntax"></a>構文
@@ -51,7 +51,7 @@ void
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
+    var column = ctx.workbook.tables.getItem(tableName).columns.getItemAt(2);
     column.delete();
     return ctx.sync(); 
 }).catch(function(error) {
@@ -63,7 +63,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getdatabodyrange()"></a>getDataBodyRange()
+### <a name="getdatabodyrange"></a>getDataBodyRange()
 列のデータ本体に関連付けられた範囲オブジェクトを取得します。
 
 #### <a name="syntax"></a>構文
@@ -82,7 +82,7 @@ tableColumnObject.getDataBodyRange();
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+    var column = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
     var dataBodyRange = column.getDataBodyRange();
     dataBodyRange.load('address');
     return ctx.sync().then(function() {
@@ -96,7 +96,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getheaderrowrange()"></a>getHeaderRowRange()
+### <a name="getheaderrowrange"></a>getHeaderRowRange()
 列のヘッダー行に関連付けられた範囲オブジェクトを取得します。
 
 #### <a name="syntax"></a>構文
@@ -115,7 +115,7 @@ tableColumnObject.getHeaderRowRange();
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+    var columns = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
     var headerRowRange = columns.getHeaderRowRange();
     headerRowRange.load('address');
     return ctx.sync().then(function() {
@@ -129,7 +129,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="getrange()"></a>getRange()
+### <a name="getrange"></a>getRange()
 列全体に関連付けられた範囲オブジェクトを取得します。
 
 #### <a name="syntax"></a>構文
@@ -148,7 +148,7 @@ tableColumnObject.getRange();
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+    var columns = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
     var columnRange = columns.getRange();
     columnRange.load('address');
     return ctx.sync().then(function() {
@@ -163,7 +163,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="gettotalrowrange()"></a>getTotalRowRange()
+### <a name="gettotalrowrange"></a>getTotalRowRange()
 列の集計行に関連付けられた範囲オブジェクトを取得します。
 
 #### <a name="syntax"></a>構文
@@ -182,7 +182,7 @@ tableColumnObject.getTotalRowRange();
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+    var columns = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
     var totalRowRange = columns.getTotalRowRange();
     totalRowRange.load('address');
     return ctx.sync().then(function() {
@@ -197,7 +197,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
 #### <a name="syntax"></a>構文
@@ -207,8 +207,8 @@ object.load(param);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
-|param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
+|:---------------|:--------|:----------|:---|
+|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
 #### <a name="returns"></a>戻り値
 void
@@ -217,7 +217,7 @@ void
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItem(0);
+    var column = ctx.workbook.tables.getItem(tableName).columns.getItem(0);
     column.load('index');
     return ctx.sync().then(function() {
         console.log(column.index);
@@ -232,9 +232,10 @@ Excel.run(function (ctx) {
 
 ```js
 Excel.run(function (ctx) { 
+    var tableName = 'Table1';
     var tables = ctx.workbook.tables;
     var newValues = [["New"], ["Values"], ["For"], ["New"], ["Column"]];
-    var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
+    var column = ctx.workbook.tables.getItem(tableName).columns.getItemAt(2);
     column.values = newValues;
     column.load('values');
     return ctx.sync().then(function() {

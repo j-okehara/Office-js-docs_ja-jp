@@ -1,13 +1,13 @@
-# <a name="chartseriescollection-object-(javascript-api-for-excel)"></a>ChartSeriesCollection オブジェクト (JavaScript API for Excel)
+# <a name="chartseriescollection-object-javascript-api-for-excel"></a>ChartSeriesCollection オブジェクト (JavaScript API for Excel)
 
 グラフ系列のコレクションを表します。
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明
-|:---------------|:--------|:----------|
-|count|int|コレクション内にあるデータ系列の数を取得します。値の取得のみ可能です。|
-|items|[ChartSeries[]](chartseries.md)|chartSeries オブジェクトのコレクション。読み取り専用です。|
+| プロパティ     | 型   |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|count|int|コレクション内にあるデータ系列の数を取得します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[ChartSeries[]](chartseries.md)|chartSeries オブジェクトのコレクション。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
@@ -17,15 +17,15 @@ _プロパティのアクセスの[例を参照してください。](#property-
 
 ## <a name="methods"></a>メソッド
 
-| メソッド           | 戻り値の型    |説明|
-|:---------------|:--------|:----------|
-|[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|コレクション内の位置に基づいてデータ系列を取得します。|
-|[load(param: object)](#loadparam-object)|void|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
+| メソッド           | 戻り値の型    |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|コレクション内の位置に基づいてデータ系列を取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
 
-### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
+### <a name="getitematindex-number"></a>getItemAt(index: number)
 コレクション内の位置に基づいてデータ系列を取得します。
 
 #### <a name="syntax"></a>構文
@@ -35,7 +35,7 @@ chartSeriesCollectionObject.getItemAt(index);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|number|取得するオブジェクトのインデックス値。0 を起点とする番号になります。|
 
 #### <a name="returns"></a>戻り値
@@ -61,7 +61,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
 #### <a name="syntax"></a>構文
@@ -71,8 +71,8 @@ object.load(param);
 
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|
-|param|object|省略可能。パラメーター名とリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
+|:---------------|:--------|:----------|:---|
+|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
 #### <a name="returns"></a>戻り値
 void
