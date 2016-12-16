@@ -4,21 +4,20 @@
 
 Excel アドインは、Office 2016 for Windows、Office for iPad、Office for Mac、Office Online など、複数のバージョンの Office で機能します。次の表は、Excel の要件セット、その要件セットをサポートする Office ホスト アプリケーション、それらのアプリケーションのビルド バージョンまたはビルド番号の一覧です。 
 
-|  要件セット  |  Office 2016 for Windows*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |
-|:-----|-----|:-----|:-----|:-----|
-| ExcelApi 1.3  | バージョン 1608 (ビルド 7369.2055) 以降| 1.27 以降 |  15.27 以降| 2016 年 9 月 | 
-| ExcelApi 1.2  | バージョン 1601 (ビルド 6741.2088) 以降 | 1.21 以降 | 15.22 以降| 2016 年 1 月 |
-| ExcelApi 1.1  | バージョン 1509 (ビルド 4266.1001) 以降 | 1.19 以降 | 15.20 以降| 2016 年 1 月 |
+|  要件セット  |  Office 2016 for Windows*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  Office Online Server  |
+|:-----|-----|:-----|:-----|:-----|:-----|
+| ExcelApi 1.3  | バージョン 1608 (ビルド 7369.2055) 以降| 1.27 以降 |  15.27 以降| 2016 年 9 月 | バージョン 1608 (ビルド 7601.6800) 以降|
+| ExcelApi 1.2  | バージョン 1601 (ビルド 6741.2088) 以降 | 1.21 以降 | 15.22 以降| 2016 年 1 月 ||
+| ExcelApi 1.1  | バージョン 1509 (ビルド 4266.1001) 以降 | 1.19 以降 | 15.20 以降| 2016 年 1 月 ||
 
-> &#42; **注**:MSI からインストールされた Office 2016 のビルド番号は、16.0.4266.1001 です。このバージョンには、ExcelApi 1.1 の要件セットのみが含まれています。
+> **注**:MSI からインストールされた Office 2016 のビルド番号は、16.0.4266.1001 です。このバージョンには、ExcelApi 1.1 の要件セットのみが含まれています。
 
-バージョンとビルド番号について詳しくは、次をご覧ください。
+バージョン、ビルド番号、および Office Online Server の詳細については以下を参照してください。
 
-- 
-  [Office 365 クライアントの更新プログラム チャネル リリースのバージョン番号およびビルド番号](https://technet.microsoft.com/en-us/library/mt592918.aspx)
+- [Office 365 クライアントの更新プログラム チャネル リリースのバージョン番号およびビルド番号](https://technet.microsoft.com/en-us/library/mt592918.aspx)
 - [使用している Office のバージョンを確認する方法](https://support.office.com/en-us/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19?ui=en-US&rs=en-US&ad=US&fromAR=1)
-- 
-  [Office 365 クライアント アプリケーションのバージョン番号およびビルド番号を確認することができます。](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
+- [Office 365 クライアント アプリケーションのバージョン番号およびビルド番号を確認することができます。](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
+- [Office Online Server 概要](https://technet.microsoft.com/en-us/library/jj219437(v=office.16).aspx)
 
 ## <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 共通 API の要件セットについて詳しくは、「[Office 共通 API の要件セット](office-add-in-requirement-sets.md)」をご覧ください。
@@ -28,53 +27,53 @@ Excel アドインは、Office 2016 for Windows、Office for iPad、Office for M
 
 |オブジェクト| 新機能| 説明|要件セット|
 |:----|:----|:----|:----|
-|[binding](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/binding.md)|_メソッド_ > [delete()](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/binding.md#delete)|バインドを削除します。|1.3|
-|[bindingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md)|_メソッド_ > [add(range:Range or string, bindingType: string, id: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md#addrange-range-or-string-bindingtype-string-id-string)|特定の範囲に新しいバインドを追加します。|1.3|
-|[bindingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md)|_メソッド_ > [addFromNamedItem(name: string, bindingType: string, id: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md#addfromnameditemname-string-bindingtype-string-id-string)|ブック内の名前付きアイテムに基づいて新しいバインドを追加します。|1.3|
-|[bindingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md)|_メソッド_ > [addFromSelection(bindingType: string, id: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md#addfromselectionbindingtype-string-id-string)|現在の選択範囲に基づいて新しいバインドを追加します。|1.3|
-|[bindingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md)|_メソッド_ > [getItemOrNull(id: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md#getitemornullid-string)|ID を使用してバインド オブジェクトを取得します。バインド オブジェクトが存在しない場合、戻りオブジェクトの isNull プロパティは true になります。|1.3|
-|[chartCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/chartcollection.md)|_メソッド_ > [getItemOrNull(name: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/chartcollection.md#getitemornullname-string)|グラフ名を使用してグラフを取得します。同じ名前の複数のグラフがある場合は、最初の 1 つが返されます。|1.3|
-|[namedItemCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/nameditemcollection.md)|_メソッド_ > [getItemOrNull(name: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/nameditemcollection.md#getitemornullname-string)|nameditem オブジェクトを、名前を使用して取得します。nameditem オブジェクトが存在しない場合、返されたオブジェクトの isNull プロパティは true になります。|1.3|
-|[pivotTable](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottable.md)|_プロパティ_ > name|ピボットテーブルの名前。|1.3|
-|[pivotTable](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottable.md)|_リレーションシップ_ > worksheet|現在のピボットテーブルを含んでいるワークシート。読み取り専用。|1.3|
-|[pivotTable](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottable.md)|_メソッド_ > [refresh()](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottable.md#refresh)|ピボットテーブルを更新します。|1.3|
-|[pivotTableCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottablecollection.md)|_プロパティ_ > items|ピボットテーブル オブジェクトのコレクション。読み取り専用。|1.3|
-|[pivotTableCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottablecollection.md)|_メソッド_ > [getItem(name: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottablecollection.md#getitemname-string)|名前を使用してピボットテーブルを取得します。|1.3|
-|[pivotTableCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottablecollection.md)|_メソッド_ > [getItemOrNull(name: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottablecollection.md#getitemornullname-string)|名前を使用してピボットテーブルを取得します。ピボットテーブルが存在しない場合、戻りオブジェクトの isNull プロパティは true になります。|1.3|
-|[range](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/range.md)|_メソッド_ > [getIntersectionOrNull(anotherRange:Range or string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/range.md#getintersectionornullanotherrange-range-or-string)|指定した範囲の長方形の交差部分を表す Range オブジェクトを取得します。交差部分が見つからない場合は、null オブジェクトを返します。|1.3|
-|[range](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/range.md)|_メソッド_ > [getVisibleView()](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/range.md#getvisibleview)|現在の範囲の表示されている行を表します。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_プロパティ_ > cellAddresses|RangeView のセル アドレスを表します。読み取り専用。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_プロパティ_ > columnCount|表示されている列の数を返します。読み取り専用。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_プロパティ_ > formulas|A1 スタイル表記の数式を表します。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_プロパティ_ > formulasLocal|ユーザーの言語と数値書式ロケールで、A1 スタイル表記の数式を表します。たとえば、英語の数式 "=SUM(A1, introduced in 1.5" は、ドイツ語では "=SUMME(A1; 1,5)" になります。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_プロパティ_ > formulasR1C1|R1C1 スタイル表記の数式を表します。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_プロパティ_ > index|RangeView のインデックスを表す値を返します。読み取り専用。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_プロパティ_ > numberFormat|指定したセルの Excel の数値書式コードを表します。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_プロパティ_ > rowCount|表示されている行の数を返します。読み取り専用。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_プロパティ_ > text|指定した範囲のテキスト値。テキスト値は、セルの幅には依存しません。Excel UI で発生する # 記号による置換は、この API から返されるテキスト値には影響しません。読み取り専用です。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_プロパティ_ > valueTypes|各セルのデータの種類を表します。読み取り専用です。使用可能な値は次のとおりです。Unknown、Empty、String、Integer、Double、Boolean、Error。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_プロパティ_ > values|指定した範囲ビューの Raw 値を表します。返されるデータの型は、文字列、数値、ブール値のいずれかになります。エラーが含まれているセルは、エラー文字列を返します。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_リレーションシップ_ > rows|範囲に関連付けられている範囲ビューのコレクションを表します。読み取り専用。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_メソッド_ > [getRange()](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md#getrange)|現在の RangeView に関連付けられている親の範囲を取得します。|1.3|
-|[rangeViewCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeviewcollection.md)|_プロパティ_ > items|rangeView オブジェクトのコレクション。読み取り専用。|1.3|
-|[rangeViewCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeviewcollection.md)|_メソッド_ > [getItemAt(index: number)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeviewcollection.md#getitematindex-number)|RangeView のインデックスから RangeView の行番号を取得します。0 を起点とする番号になります。|1.3|
-|[setting](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/setting.md)|_プロパティ_ > key|Setting の ID を表すキーを返します。読み取り専用。|1.3|
-|[setting](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/setting.md)|_メソッド_ > [delete()](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/setting.md#delete)|設定を削除します。|1.3|
-|[settingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/settingcollection.md)|_プロパティ_ > items|setting オブジェクトのコレクション。読み取り専用。|1.3|
-|[settingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/settingcollection.md)|_メソッド_ > [getItem(key: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/settingcollection.md#getitemkey-string)|キーから Setting エントリを取得します。|1.3|
-|[settingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/settingcollection.md)|_メソッド_ > [getItemOrNull(key: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/settingcollection.md#getitemornullkey-string)|キーから Setting エントリを取得します。Setting が存在しない場合、返されたオブジェクトの isNull プロパティは true になります。|1.3|
-|[settingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/settingcollection.md)|_メソッド_ > [set(key: string, value: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/settingcollection.md#setkey-string-value-string)|指定した設定をブックに設定または追加します。|1.3|
-|[settingsChangedEventArgs](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/settingschangedeventargs.md)|_リレーションシップ_ > settingCollection|SettingsChanged イベントが発生したバインドを表す Setting オブジェクトを取得します。|1.3|
-|[table](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/table.md)|_プロパティ_ > highlightFirstColumn|最初の列に特別な書式設定が含まれているかどうかを示します。|1.3|
-|[table](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/table.md)|_プロパティ_ > highlightLastColumn|最後の列に特別な書式設定が含まれているかどうかを示します。|1.3|
-|[table](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/table.md)|_プロパティ_ > showBandedColumns|テーブルを見やすくするため、奇数列を偶数列とは異なる方法で強調表示する書式設定にして、列を縞模様で表示するかどうかを示します。|1.3|
-|[table](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/table.md)|_プロパティ_ > showBandedRows|テーブルを見やすくするため、奇数行を偶数行とは異なる方法で強調表示する書式設定にして、行を縞模様で表示するかどうかを示します。|1.3|
-|[table](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/table.md)|_プロパティ_ > showFilterButton|フィルター ボタンを各列のヘッダーの上部に表示するかどうかを示します。これは、テーブルにヘッダー行が含まれている場合のみ設定できます。|1.3|
-|[tableCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/tablecollection.md)|_メソッド_ > [getItemOrNull(key: number or string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/tablecollection.md#getitemornullkey-number-or-string)|名前または ID を使用してテーブルを取得します。テーブルが存在しない場合、戻りオブジェクトの isNull プロパティは true になります。|1.3|
-|[tableColumnCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/tablecolumncollection.md)|_メソッド_ > [getItemOrNull(key: number or string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/tablecolumncollection.md#getitemornullkey-number-or-string)|名前または ID を使用して列オブジェクトを取得します。列が存在しない場合、返されたオブジェクトの isNull プロパティは true になります。|1.3|
-|[workbook](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/workbook.md)|_リレーションシップ_ > pivotTables|ブックに関連付けられているピボットテーブルのコレクションを表します。読み取り専用。|1.3|
-|[workbook](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/workbook.md)|_リレーションシップ_ > settings|ブックに関連付けられている Setting のコレクションを表します。読み取り専用。|1.3|
-|[worksheet](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/worksheet.md)|_リレーションシップ_ > pivotTables|ワークシートの一部になっているピボットテーブルのコレクション。読み取り専用。|1.3|
+|[binding](../excel/binding.md)|_メソッド_ > [delete()](../excel/binding.md#delete)|バインドを削除します。|1.3|
+|[bindingCollection](../excel/bindingcollection.md)|_メソッド_ > [add(range:Range or string, bindingType: string, id: string)](../excel/bindingcollection.md#addrange-range-or-string-bindingtype-string-id-string)|特定の範囲に新しいバインドを追加します。|1.3|
+|[bindingCollection](../excel/bindingcollection.md)|_メソッド_ > [addFromNamedItem(name: string, bindingType: string, id: string)](../excel/bindingcollection.md#addfromnameditemname-string-bindingtype-string-id-string)|ブック内の名前付きアイテムに基づいて新しいバインドを追加します。|1.3|
+|[bindingCollection](../excel/bindingcollection.md)|_メソッド_ > [addFromSelection(bindingType: string, id: string)](../excel/bindingcollection.md#addfromselectionbindingtype-string-id-string)|現在の選択範囲に基づいて新しいバインドを追加します。|1.3|
+|[bindingCollection](../excel/bindingcollection.md)|_メソッド_ > [getItemOrNull(id: string)](../excel/bindingcollection.md#getitemornullid-string)|ID を使用してバインド オブジェクトを取得します。バインド オブジェクトが存在しない場合、戻りオブジェクトの isNull プロパティは true になります。|1.3|
+|[chartCollection](../excel/chartcollection.md)|_メソッド_ > [getItemOrNull(name: string)](../excel/chartcollection.md#getitemornullname-string)|グラフ名を使用してグラフを取得します。同じ名前の複数のグラフがある場合は、最初の 1 つが返されます。|1.3|
+|[namedItemCollection](../excel/nameditemcollection.md)|_メソッド_ > [getItemOrNull(name: string)](../excel/nameditemcollection.md#getitemornullname-string)|nameditem オブジェクトを、名前を使用して取得します。nameditem オブジェクトが存在しない場合、返されたオブジェクトの isNull プロパティは true になります。|1.3|
+|[pivotTable](../excel/pivottable.md)|_プロパティ_ > name|ピボットテーブルの名前。|1.3|
+|[pivotTable](../excel/pivottable.md)|_リレーションシップ_ > worksheet|現在のピボットテーブルを含んでいるワークシート。読み取り専用。|1.3|
+|[pivotTable](../excel/pivottable.md)|_メソッド_ > [refresh()](../excel/pivottable.md#refresh)|ピボットテーブルを更新します。|1.3|
+|[pivotTableCollection](../excel/pivottablecollection.md)|_プロパティ_ > items|ピボットテーブル オブジェクトのコレクション。読み取り専用。|1.3|
+|[pivotTableCollection](../excel/pivottablecollection.md)|_メソッド_ > [getItem(name: string)](../excel/pivottablecollection.md#getitemname-string)|名前を使用してピボットテーブルを取得します。|1.3|
+|[pivotTableCollection](../excel/pivottablecollection.md)|_メソッド_ > [getItemOrNull(name: string)](../excel/pivottablecollection.md#getitemornullname-string)|名前を使用してピボットテーブルを取得します。ピボットテーブルが存在しない場合、戻りオブジェクトの isNull プロパティは true になります。|1.3|
+|[range](../excel/range.md)|_メソッド_ > [getIntersectionOrNull(anotherRange:Range or string)](../excel/range.md#getintersectionornullanotherrange-range-or-string)|指定した範囲の長方形の交差部分を表す Range オブジェクトを取得します。交差部分が見つからない場合は、null オブジェクトを返します。|1.3|
+|[range](../excel/range.md)|_メソッド_ > [getVisibleView()](../excel/range.md#getvisibleview)|現在の範囲の表示されている行を表します。|1.3|
+|[rangeView](../excel/rangeview.md)|_プロパティ_ > cellAddresses|RangeView のセル アドレスを表します。読み取り専用。|1.3|
+|[rangeView](../excel/rangeview.md)|_プロパティ_ > columnCount|表示されている列の数を返します。読み取り専用。|1.3|
+|[rangeView](../excel/rangeview.md)|_プロパティ_ > formulas|A1 スタイル表記の数式を表します。|1.3|
+|[rangeView](../excel/rangeview.md)|_プロパティ_ > formulasLocal|ユーザーの言語と数値書式ロケールで、A1 スタイル表記の数式を表します。たとえば、英語の数式 "=SUM(A1, introduced in 1.5" は、ドイツ語では "=SUMME(A1; 1,5)" になります。|1.3|
+|[rangeView](../excel/rangeview.md)|_プロパティ_ > formulasR1C1|R1C1 スタイル表記の数式を表します。|1.3|
+|[rangeView](../excel/rangeview.md)|_プロパティ_ > index|RangeView のインデックスを表す値を返します。読み取り専用。|1.3|
+|[rangeView](../excel/rangeview.md)|_プロパティ_ > numberFormat|指定したセルの Excel の数値書式コードを表します。|1.3|
+|[rangeView](../excel/rangeview.md)|_プロパティ_ > rowCount|表示されている行の数を返します。読み取り専用。|1.3|
+|[rangeView](../excel/rangeview.md)|_プロパティ_ > text|指定した範囲のテキスト値。テキスト値は、セルの幅には依存しません。Excel UI で発生する # 記号による置換は、この API から返されるテキスト値には影響しません。読み取り専用です。|1.3|
+|[rangeView](../excel/rangeview.md)|_プロパティ_ > valueTypes|各セルのデータの種類を表します。読み取り専用です。使用可能な値は次のとおりです。Unknown、Empty、String、Integer、Double、Boolean、Error。|1.3|
+|[rangeView](../excel/rangeview.md)|_プロパティ_ > values|指定した範囲ビューの Raw 値を表します。返されるデータの型は、文字列、数値、ブール値のいずれかになります。エラーが含まれているセルは、エラー文字列を返します。|1.3|
+|[rangeView](../excel/rangeview.md)|_リレーションシップ_ > rows|範囲に関連付けられている範囲ビューのコレクションを表します。読み取り専用。|1.3|
+|[rangeView](../excel/rangeview.md)|_メソッド_ > [getRange()](../excel/rangeview.md#getrange)|現在の RangeView に関連付けられている親の範囲を取得します。|1.3|
+|[rangeViewCollection](../excel/rangeviewcollection.md)|_プロパティ_ > items|rangeView オブジェクトのコレクション。読み取り専用。|1.3|
+|[rangeViewCollection](../excel/rangeviewcollection.md)|_メソッド_ > [getItemAt(index: number)](../excel/rangeviewcollection.md#getitematindex-number)|RangeView のインデックスから RangeView の行番号を取得します。0 を起点とする番号になります。|1.3|
+|[setting](../excel/setting.md)|_プロパティ_ > key|Setting の ID を表すキーを返します。読み取り専用。|1.3|
+|[setting](../excel/setting.md)|_メソッド_ > [delete()](../excel/setting.md#delete)|設定を削除します。|1.3|
+|[settingCollection](../excel/settingcollection.md)|_プロパティ_ > items|setting オブジェクトのコレクション。読み取り専用。|1.3|
+|[settingCollection](../excel/settingcollection.md)|_メソッド_ > [getItem(key: string)](../excel/settingcollection.md#getitemkey-string)|キーから Setting エントリを取得します。|1.3|
+|[settingCollection](../excel/settingcollection.md)|_メソッド_ > [getItemOrNull(key: string)](../excel/settingcollection.md#getitemornullkey-string)|キーから Setting エントリを取得します。Setting が存在しない場合、返されたオブジェクトの isNull プロパティは true になります。|1.3|
+|[settingCollection](../excel/settingcollection.md)|_メソッド_ > [set(key: string, value: string)](../excel/settingcollection.md#setkey-string-value-string)|指定した設定をブックに設定または追加します。|1.3|
+|[settingsChangedEventArgs](../excel/settingschangedeventargs.md)|_リレーションシップ_ > settingCollection|SettingsChanged イベントが発生したバインドを表す Setting オブジェクトを取得します。|1.3|
+|[table](../excel/table.md)|_プロパティ_ > highlightFirstColumn|最初の列に特別な書式設定が含まれているかどうかを示します。|1.3|
+|[table](../excel/table.md)|_プロパティ_ > highlightLastColumn|最後の列に特別な書式設定が含まれているかどうかを示します。|1.3|
+|[table](../excel/table.md)|_プロパティ_ > showBandedColumns|テーブルを見やすくするため、奇数列を偶数列とは異なる方法で強調表示する書式設定にして、列を縞模様で表示するかどうかを示します。|1.3|
+|[table](../excel/table.md)|_プロパティ_ > showBandedRows|テーブルを見やすくするため、奇数行を偶数行とは異なる方法で強調表示する書式設定にして、行を縞模様で表示するかどうかを示します。|1.3|
+|[table](../excel/table.md)|_プロパティ_ > showFilterButton|フィルター ボタンを各列のヘッダーの上部に表示するかどうかを示します。これは、テーブルにヘッダー行が含まれている場合のみ設定できます。|1.3|
+|[tableCollection](../excel/tablecollection.md)|_メソッド_ > [getItemOrNull(key: number or string)](../excel/tablecollection.md#getitemornullkey-number-or-string)|名前または ID を使用してテーブルを取得します。テーブルが存在しない場合、戻りオブジェクトの isNull プロパティは true になります。|1.3|
+|[tableColumnCollection](../excel/tablecolumncollection.md)|_メソッド_ > [getItemOrNull(key: number or string)](../excel/tablecolumncollection.md#getitemornullkey-number-or-string)|名前または ID を使用して列オブジェクトを取得します。列が存在しない場合、返されたオブジェクトの isNull プロパティは true になります。|1.3|
+|[workbook](../excel/workbook.md)|_リレーションシップ_ > pivotTables|ブックに関連付けられているピボットテーブルのコレクションを表します。読み取り専用。|1.3|
+|[workbook](../excel/workbook.md)|_リレーションシップ_ > settings|ブックに関連付けられている Setting のコレクションを表します。読み取り専用。|1.3|
+|[worksheet](../excel/worksheet.md)|_リレーションシップ_ > pivotTables|ワークシートの一部になっているピボットテーブルのコレクション。読み取り専用。|1.3|
 
 ## <a name="whats-new-in-excel-javascript-api-12"></a>Excel JavaScript API 1.2 の新機能
 要件セット 1.2 の Excel JavaScript API に新たに追加された点は次のとおりです。 

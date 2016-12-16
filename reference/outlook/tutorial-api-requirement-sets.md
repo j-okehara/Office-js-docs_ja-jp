@@ -20,7 +20,7 @@ Outlook アドインは、[マニフェスト](https://msdn.microsoft.com/EN-US/
 
 ## <a name="using-apis-from-later-requirement-sets"></a>後続の要件セットからの API の使用
 
-要件セットを設定しても、アドインを使用できる API は制限されません。たとえば、アドインでは要件セット 1.1 が指定されていて、1.3 をサポートしている Outlook クライアントで実行されている場合、アドインは要件セット 1.3 の API を使用できます。\.
+要件セットを設定しても、アドインを使用できる API は制限されません。たとえば、アドインでは要件セット 1.1 が指定されていて、1.3 をサポートしている Outlook クライアントで実行されている場合、アドインは要件セット 1.3 の API を使用できます。
 
 より新しい API を使用するために、開発者は標準の JavaScript を使用して新しい API の有無を確認できます。
 
@@ -42,10 +42,10 @@ if (item.somePropertyOrFunction !== undefined) {
 
 | クライアント | サポートされる API の要件セット |
 | --- | --- |
-| Windows 版 Outlook 2016 | 1.1、1.2、1.3 |
+| Outlook 2016 for Windows | 1.1, 1.2, 1.3, 1.4 |
 | Outlook 2016 for Mac | 1.1 |
 | Windows 版 Outlook 2013 | 1.1、1.2、1.3 |
-| Outlook on the web (Office 365 および Outlook.com) | 1.1, 1.2, 1.3 |
+| Outlook on the web (Office 365 および Outlook.com) | 1.1, 1.2, 1.3, 1.4 |
 | Outlook Web App (Exchange 2013 On-Premise) | 1.1 |
 | Outlook Web App (Exchange 2016 On-Premise) | 1.1, 1.2. 1.3 |
 >**注** Outlook 2013 での 1.3 のサポートは、[2015 年 12 月 8 日付、Outlook 2013 用更新プログラム (KB3114349) ](https://support.microsoft.com/en-us/kb/3114349) の一部として追加されました。    

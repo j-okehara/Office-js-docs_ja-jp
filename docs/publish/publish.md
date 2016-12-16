@@ -1,6 +1,5 @@
 
-# <a name="deploy-and-publish-your-office-addin"></a>Office アドインを展開し、発行する
-
+# <a name="deploy-and-publish-your-office-add-in"></a>Office アドインを展開し、発行する
 
 さまざまな方法を利用し、テスト目的またはユーザーに配布する目的で、Office アドインを展開できます。 
 
@@ -9,9 +8,10 @@
 - [Office ストア] - ユーザーに配布する目的でアドインを公開するために使用します。
 - [SharePoint カタログ](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) - 開発プロセスの一環として利用し、アドインをテストしたり、オンプレミス環境から、アドインを組織内のユーザーに配布したりします。
 
-利用できるオプションは、ターゲットとする Office タイプや作成するアドインの種類によって異なります。
+利用できるオプションは、対象とする Office ホストや作成するアドインの種類によって異なります。
+>**注:**アドインをビルドするとき、アドインを Office ストアで[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/en-us/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、マニフェストの Requirements 要素で定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります ([セクション 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) を参照してください)。
 
-### <a name="deployment-options-for-word-excel-and-powerpoint-addins"></a>Word、Excel、PowerPoint アドインの開発オプション
+## <a name="deployment-options-for-word-excel-and-powerpoint-add-ins"></a>Word、Excel、PowerPoint アドインの開発オプション
 
 | 拡張点            | サイドロード | Office 365 管理センター プレビュー |Office ストア  | SharePoint カタログ  |
 |:----------------|:-----------:|:------------------:|:-------------------------------:|:------------:|
@@ -21,7 +21,7 @@
 
 > **注**:SharePoint カタログは Office 2016 for Mac ではサポートされていません。Office アドインを Mac クライアントに展開するには、それを [Office ストア]に提出する必要があります。    
 
-### <a name="deployment-options-for-outlook-addins"></a>Outlook アドインの展開オプション
+## <a name="deployment-options-for-outlook-add-ins"></a>Outlook アドインの展開オプション
 
 | 拡張点     | サイドロード | Exchange サーバー | Office ストア |
 |:---------|:-----------:|:---------------:|:------------:|

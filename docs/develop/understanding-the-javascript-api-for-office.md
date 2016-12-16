@@ -1,9 +1,11 @@
-﻿
+
 # <a name="understanding-the-javascript-api-for-office"></a>JavaScript API for Office について
 
 
 
 この記事では、JavaScript API for Office とその使用方法に関する情報を提供します。参照情報については、「[JavaScript API for Office](../../reference/javascript-api-for-office.md)」を参照してください。Visual Studio プロジェクト ファイルを JavaScript API for Office の最新バージョンに更新する方法については、「[JavaScript API for Office およびマニフェスト スキーマ ファイルのバージョンを更新する](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md)」を参照してください。
+
+>**注:**アドインをビルドするとき、アドインを Office ストアで[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/en-us/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、マニフェストの Requirements 要素で定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります ([セクション 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) を参照してください)。
 
 ## <a name="referencing-the-javascript-api-for-office-library-in-your-add-in"></a>アドインで JavaScript API for Office ライブラリを参照する
 
@@ -20,7 +22,7 @@
 ## <a name="initializing-your-add-in"></a>アドインの初期化
 
 
- **適用対象:**すべての種類のアドイン
+ **適用対象:** すべてのアドインの種類
 
 
 Office.js は、API が完全に読み込まれていてユーザーによる操作ができる状態になっているときに起動されたとしても初期化を提供します。**initialize** イベント ハンドラーを使用すると、ユーザーに Excel のセルを複数選択するように求めるメッセージを表示し、選択された値で初期化したグラフを挿入するなど、アドインの一般的な初期化シナリオを実装できるようになります。また、アドインのその他のカスタム ロジックを初期化する場合 (バインドを確立する場合やアドインの既定の設定値を入力するように求めるメッセージを表示する場合) にも、initialize イベント ハンドラーが使用できます。
@@ -227,7 +229,7 @@ Outlook アドインで JavaScript を使用する方法の詳細については
 |||||||||
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 ||**ホスト名**|データベース|ブック|メールボックス|プレゼンテーション|ドキュメント|Project|
-||**サポートされる** **ホスト アプリケーション**|Access Web アプリ|Excel、Excel Online|Outlook、Outlook Web App、デバイス用 OWA|PowerPoint、PowerPoint Online|Word|プロジェクト|
+||**サポートされる****ホスト アプリケーション**|Access Web アプリ|Excel、Excel Online|Outlook、Outlook Web App、デバイス用 OWA|PowerPoint、PowerPoint Online|Word|プロジェクト|
 |**サポートされるアドインの種類**|コンテンツ|Y|Y||Y|||
 ||作業ウィンドウ||Y||Y|Y|Y|
 ||Outlook|||Y||||

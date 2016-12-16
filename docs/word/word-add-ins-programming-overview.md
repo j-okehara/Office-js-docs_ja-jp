@@ -3,7 +3,11 @@
 
 Word の機能を拡張するソリューション - たとえば、ドキュメントの自動アセンブリや、他のデータ ソースからの Word 文書のデータへのバインドやアクセスを可能にするソリューションの作成をご希望ではありませんか。Word JavaScript API と JavaScript API for Office を含む Office アドイン プラットフォームを使用して、Windows デスクトップ、Mac、またはクラウドで実行する Word クライアントを拡張できます。
 
-Word のアドインは、[Office アドイン プラットフォーム](../overview/office-add-ins.md)にある数多くの開発オプションのひとつです。アドイン コマンドを使用して、Word の UI を拡張したり、Word 文書のコンテンツと対話する JavaScript を実行する作業ウィンドウを起動したりすることができます。ブラウザーで実行できるあらゆるコードは、Word アドインで実行できます。Word 文書のコンテンツと対話するアドインは、Word オブジェクトを操作し、オブジェクトの状態を同期する要求を作成します。次の図は、作業ウィンドウで実行される Word アドインの例を示します。
+Word のアドインは、[Office アドイン プラットフォーム](../overview/office-add-ins.md)にある数多くの開発オプションのひとつです。アドイン コマンドを使用して、Word の UI を拡張したり、Word 文書のコンテンツと対話する JavaScript を実行する作業ウィンドウを起動したりすることができます。ブラウザーで実行できるあらゆるコードは、Word アドインで実行できます。Word 文書のコンテンツと対話するアドインは、Word オブジェクトを操作し、オブジェクトの状態を同期する要求を作成します。 
+
+>**注:**アドインをビルドするとき、アドインを Office ストアで[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/en-us/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、マニフェストの Requirements 要素で定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります ([セクション 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) を参照してください)。
+
+次の図は、作業ウィンドウで実行される Word アドインの例を示します。
 
 **図 1.Word の作業ウィンドウで実行されているアドイン**
 
@@ -65,7 +69,7 @@ Word JavaScript API のオブジェクト モデルはより簡単に使用で�
 
 アドインを作成したら、ネットワーク共有、アプリ カタログ、または Office ストアに[発行](../publish/publish.md)できます。
 
-## <a name="what's-coming-up-for-word-add-ins?"></a>今後の Word アドイン
+## <a name="whats-coming-up-for-word-add-ins"></a>今後の Word アドイン
 
 新しい Word アドイン用の API の設計と開発にあたり、[Open API の仕様](../../reference/openspec.md) ページでこれらに対するフィードバックの提供が可能になります。Word JavaScript API 用のパイプラインの新機能をご確認いただき、設計の仕様に関する情報をお寄せください。
 

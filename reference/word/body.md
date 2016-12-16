@@ -1,4 +1,4 @@
-# <a name="body-object-(javascript-api-for-word)"></a>本文オブジェクト (JavaScript API for Word)
+# <a name="body-object-javascript-api-for-word"></a>本文オブジェクト (JavaScript API for Word)
 
 文書またはセクションの本文を表します。
 
@@ -18,7 +18,7 @@ _プロパティのアクセスの[例を参照してください。](#property-
 |contentControls|[ContentControlCollection](contentcontrolcollection.md)|本文に含まれるリッチ テキストのコンテンツ コントロール オブジェクトのコレクションを取得します。読み取り専用です。|
 |font|[Font](font.md)|本文のテキスト形式を取得します。これを使用して、フォント名、サイズ、色、およびその他のプロパティを取得および設定します。読み取り専用です。|
 |inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|本文に含まれる inlinePicture オブジェクトのコレクションを取得します。コレクションには、浮動イメージは含まれません。読み取り専用です。|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|本文に含まれる Paragraph オブジェクトのコレクションを取得します。読み取り専用です。|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|本文に含まれる段落オブジェクトのコレクションを取得します。読み取り専用です。|
 |parentContentControl|[ContentControl](contentcontrol.md)|本文を含むコンテンツ コントロールを取得します。親コンテンツ コントロールがない場合は null を返します。読み取り専用です。|
 
 ## <a name="methods"></a>メソッド
@@ -32,17 +32,17 @@ _プロパティのアクセスの[例を参照してください。](#property-
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|リッチ テキスト コンテンツ コントロールで本文オブジェクトをラップします。|
 |[insertFileFromBase64(base64File: string, insertLocation:InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|文書を本文の指定された位置に挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 |[insertHtml(html: string, insertLocation:InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|指定した位置に HTML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|画像を本文の指定された位置に挿入します。insertLocation の値には、'Start' または 'End' を指定できます。 |
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|画像を本文の指定された位置に挿入します。insertLocation の値は、'Start' か 'End' になります。 |
 |[insertOoxml(ooxml: string, insertLocation:InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|指定した位置に OOXML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
-|[insertParagraph(paragraphText: string, insertLocation:InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|指定した位置に、段落を挿入します。insertLocation の値には、'Start' または 'End' を指定できます。|
+|[insertParagraph(paragraphText: string, insertLocation:InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|指定した位置に段落を挿入します。insertLocation の値には、'Start' または 'End' を指定できます。|
 |[insertText(text: string, insertLocation:InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|テキストを本文の指定された位置に挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。|
 |[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
-|[search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|本文オブジェクトの範囲で、指定した searchOptions を使って検索を実行します。検索結果は、Range オブジェクトのコレクションです。|
+|[search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|本文オブジェクトの範囲で、指定した searchOptions を使って検索を実行します。検索結果は、範囲オブジェクトのコレクションです。|
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|本文を選択し、その本文に Word の UI を移動します。selectionMode 値は、'Select'、'Start'、'End' のいずれかになります。|
 
 ## <a name="method-details"></a>メソッドの詳細
 
-### <a name="clear()"></a>clear()
+### <a name="clear"></a>clear()
 本文オブジェクトの内容を消去します。ユーザーは、消去された内容を元に戻す操作を実行できます。
 
 #### <a name="syntax"></a>構文
@@ -83,7 +83,7 @@ Word.run(function (context) {
 
 [Silly stories](https://aka.ms/sillystorywordaddin) アドイン サンプルは、**clear** メソッドを使用して文書のコンテンツをクリアする方法を示します。
 
-### <a name="gethtml()"></a>getHtml()
+### <a name="gethtml"></a>getHtml()
 本文のオブジェクトの HTML 表記を取得します。
 
 #### <a name="syntax"></a>構文
@@ -122,7 +122,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="getooxml()"></a>getOoxml()
+### <a name="getooxml"></a>getOoxml()
 本文オブジェクトの OOXML (Office オープン XML) 表記を取得します。
 
 #### <a name="syntax"></a>構文
@@ -161,7 +161,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertbreak(breaktype:-breaktype,-insertlocation:-insertlocation)"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
+### <a name="insertbreakbreaktype-breaktype-insertlocation-insertlocation"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
 指定した位置に区切りを挿入します。区切りは、どの本文オブジェクトにも挿入可能な改行である場合を除き、メイン文書本文にのみ挿入できます。insertLocation の値には、'Start' または 'End' を指定できます。
 
 #### <a name="syntax"></a>構文
@@ -205,7 +205,7 @@ Word.run(function (ctx) {
     }
 });
 ```
-### <a name="insertcontentcontrol()"></a>insertContentControl()
+### <a name="insertcontentcontrol"></a>insertContentControl()
 リッチ テキスト コンテンツ コントロールで本文オブジェクトをラップします。
 
 #### <a name="syntax"></a>構文
@@ -243,7 +243,7 @@ Word.run(function (context) {
     }
 });
 ```
-### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation:InsertLocation)
+### <a name="insertfilefrombase64base64file-string-insertlocation-insertlocation"></a>insertFileFromBase64(base64File: string, insertLocation:InsertLocation)
 文書を本文の指定された位置に挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。
 
 #### <a name="syntax"></a>構文
@@ -288,7 +288,7 @@ Word.run(function (context) {
 
 [Silly stories](https://aka.ms/sillystorywordaddin) アドイン サンプルは、**insertFileFromBase64** メソッドを使用して、サービスから docx ファイルを挿入する方法を示しています。
 
-### <a name="inserthtml(html:-string,-insertlocation:-insertlocation)"></a>insertHtml(html: string, insertLocation:InsertLocation)
+### <a name="inserthtmlhtml-string-insertlocation-insertlocation"></a>insertHtml(html: string, insertLocation:InsertLocation)
 指定した位置に HTML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。
 
 #### <a name="syntax"></a>構文
@@ -330,7 +330,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
+### <a name="insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
 画像を本文の指定された位置に挿入します。insertLocation の値は、'Start' か 'End' になります。
 
 #### <a name="syntax"></a>構文
@@ -345,7 +345,7 @@ bodyObject.insertInlinePictureFromBase64(image, insertLocation);
 #### <a name="returns"></a>戻り値
 [InlinePicture](inlinepicture.md)
 
-### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation:InsertLocation)
+### <a name="insertooxmlooxml-string-insertlocation-insertlocation"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
 指定した位置に OOXML を挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。
 
 #### <a name="syntax"></a>構文
@@ -391,9 +391,9 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>追加情報
-OOXML の操作の詳細については、「[Office Open XML を使用して Word のより良いアドインを作成する](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx)」をお読みください。[[Word-Add-in-DocumentAssembly]][[body.insertOoxml]] サンプルは、この API を使ってドキュメントを組み立てる方法を示しています。
+OOXML の操作の詳細については、「[Office Open XML を使用して Word のより良いアドインを作成する](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx)」をお読みください。[Word-Add-in-DocumentAssembly][body.insertOoxml] サンプルは、この API を使ってドキュメントを組み立てる方法を示しています。
 
-### <a name="insertparagraph(paragraphtext:-string,-insertlocation:-insertlocation)"></a>insertParagraph(paragraphText: string, insertLocation:InsertLocation)
+### <a name="insertparagraphparagraphtext-string-insertlocation-insertlocation"></a>insertParagraph(paragraphText: string, insertLocation:InsertLocation)
 指定した位置に段落を挿入します。insertLocation の値には、'Start' または 'End' を指定できます。
 
 #### <a name="syntax"></a>構文
@@ -436,9 +436,9 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>追加情報
-[[Word-Add-in-DocumentAssembly]][[body.insertParagraph]] サンプルは、insertParagraph メソッドを使ってドキュメントを組み立てる方法を示しています。
+[Word-Add-in-DocumentAssembly][body.insertParagraph] サンプルは、insertParagraph メソッドを使ってドキュメントを組み立てる方法を示しています。
 
-### <a name="inserttext(text:-string,-insertlocation:-insertlocation)"></a>insertText(text: string, insertLocation:InsertLocation)
+### <a name="inserttexttext-string-insertlocation-insertlocation"></a>insertText(text: string, insertLocation:InsertLocation)
 テキストを本文の指定された位置に挿入します。insertLocation の値には、'Replace'、'Start'、'End' のいずれかを指定できます。
 
 #### <a name="syntax"></a>構文
@@ -479,7 +479,7 @@ Word.run(function (context) {
     }
 });
 ```
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
 #### <a name="syntax"></a>構文
@@ -526,7 +526,7 @@ Word.run(function (context) {
     }
 });
 ```
-### <a name="search(searchtext:-string,-searchoptions:-paramtypestrings.searchoptions)"></a>search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)
+### <a name="searchsearchtext-string-searchoptions-paramtypestringssearchoptions"></a>search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)
 本文オブジェクトの範囲で、指定した検索オプションを使って検索を実行します。検索結果は、範囲オブジェクトのコレクションです。
 
 #### <a name="syntax"></a>構文
@@ -537,7 +537,7 @@ bodyObject.search(searchText, searchOptions);
 #### <a name="parameters"></a>パラメーター
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
-|searchText|文字列|必須。検索テキスト。|
+|searchText|string|必須。検索テキスト。|
 |[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|省略可能。検索のオプション。|
 
 #### <a name="returns"></a>戻り値
@@ -588,7 +588,7 @@ Word.run(function (context) {
 #### <a name="additional-information"></a>追加情報
 [Word-Add-in-DocumentAssembly][body.search] サンプルは、ドキュメントを検索する方法の別の例を示しています。
 
-### <a name="select(selectionmode:-selectionmode)"></a>select(selectionMode: SelectionMode)
+### <a name="selectselectionmode-selectionmode"></a>select(selectionMode: SelectionMode)
 本文を選択し、その本文に Word の UI を移動します。selectionMode 値は、'Select'、'Start'、'End' のいずれかになります。
 
 #### <a name="syntax"></a>構文
@@ -656,7 +656,7 @@ Word.run(function (context) {
     }
 });
 ```
-### <a name="get-the-style-and-the-font-size,-font-name,-and-font-color-properties-on-the-body-object."></a>本文オブジェクトのスタイルとフォント サイズ、フォント名、フォントの色のプロパティを取得します。
+### <a name="get-the-style-and-the-font-size-font-name-and-font-color-properties-on-the-body-object"></a>本文オブジェクトのスタイルとフォント サイズ、フォント名、フォントの色のプロパティを取得します。
 
 ```js
 // Run a batch operation against the Word object model.
@@ -694,6 +694,6 @@ Word.run(function (context) {
 実行時のチェックで[要件セット](../office-add-in-requirement-sets.md)を使用して、アプリケーションが Word のホスト バージョンによってサポートされていることを確かめます。Office ホスト アプリケーションとサーバーの要件の詳細については、「[Office アドインを実行するための要件](../../docs/overview/requirements-for-running-office-add-ins.md)」を参照してください。
 
 
-[body.insertOoxml]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L127 "insert OOXML"
-[body.insertParagraph]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L153 "insert paragraph"
-[body.search]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L261 "body search"
+[body.insertOoxml]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L127 "OOXML の挿入"
+[body.insertParagraph]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L153 "段落の挿入"
+[body.search]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L261 "本文の検索"

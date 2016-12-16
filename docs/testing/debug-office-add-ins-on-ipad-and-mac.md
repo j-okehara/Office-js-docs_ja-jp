@@ -3,7 +3,7 @@
 
 Windows でのアドインの開発とデバッグには Visual Studio を使用できますが、iPad と Mac で使用して アドインをデバッグすることはできません。アドインは HTML と Javascript を使用して開発されているため、さまざまなプラットフォームで機能するように設計されていますが、さまざまなブラウザーで HTML の表示方法に微妙な違いがあります。この記事では、iPad または Mac で動作するアドインをデバッグする方法を説明します。 
 
-## <a name="debugging-with-vorlon.js"></a>Vorlon.js を使用したデバッグ 
+## <a name="debugging-with-vorlonjs"></a>Vorlon.js を使用したデバッグ 
 
 Vorlon.js は、リモートで動作しさまざまなデバイスで Web ページをデバッグできる、F12 ツールに似た Web ページ用のデバッガーです。詳しくは、[Vorlon の Web サイト](http://www.vorlonjs.com)をご覧ください。  
 
@@ -19,7 +19,7 @@ Vorlon をインストールして設定するには
 
 5.  コマンド `sudo vorlon` を使用して Vorlon サーバーを実行します。 
 
-6.  ブラウザー ウィンドウを開き、Vorlon インターフェイスの [http://localhost:1337](http://localhost:1337) に進みます。セキュリティ証明書の信頼を求めるプロンプトが表示されるので、この証明書を信頼します。セキュリティ証明書は、Vorlon フォルダーの /Server/cert 内にもあります。 
+6.  ブラウザー ウィンドウを開き、Vorlon インターフェイスの [http://localhost:1337](http://localhost:1337) に進みます。指示に従い、セキュリティ証明書を**常に**信頼する、を選択します。セキュリティ証明書は、Vorlon フォルダーの /Server/cert 内にもあります。 
 
 7.  次のスクリプト タグを、アドインの home.html ファイル (またはメイン HTML ファイル) の `<head>` セクションに追加します。
 ```    

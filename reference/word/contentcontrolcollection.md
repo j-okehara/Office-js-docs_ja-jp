@@ -1,4 +1,4 @@
-# <a name="contentcontrolcollection-object-(javascript-api-for-word)"></a>ContentControlCollection オブジェクト (JavaScript API for Word)
+# <a name="contentcontrolcollection-object-javascript-api-for-word"></a>ContentControlCollection オブジェクト (JavaScript API for Word)
 
 ContentControl オブジェクトのコレクションが含まれます。コンテンツ コントロールは、特定の種類のコンテンツのコンテナーとして機能する、ラベルを付けることのできる、境界線で区切られたドキュメント内の領域です。個々のコンテンツ コントロールには、画像、表、または書式設定されたテキストの段落などを内容として格納できます。現在、リッチ テキストのコンテンツ コントロールのみがサポートされています。
 
@@ -9,7 +9,7 @@ _適用対象:Word 2016、Word for iPad、Word for Mac、Word Online_
 |:---------------|:--------|:----------|
 |Items|[ContentControl[]](contentcontrol.md)|contentControl オブジェクトのコレクション。読み取り専用です。|
 
-## <a name="relationships"></a>関係
+## <a name="relationships"></a>リレーションシップ
 なし
 
 
@@ -24,7 +24,7 @@ _適用対象:Word 2016、Word for iPad、Word for Mac、Word Online_
 
 ## <a name="method-details"></a>メソッドの詳細
 
-### <a name="getbyid(id:-number)"></a>getById(id: number)
+### <a name="getbyidid-number"></a>getById(id: number)
 コンテンツ コントロールの識別子によってコンテンツ コントロールを取得します。
 
 #### <a name="syntax"></a>構文
@@ -65,7 +65,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="getbytag(tag:-string)"></a>getByTag(tag: string)
+### <a name="getbytagtag-string"></a>getByTag(tag: string)
 指定されたタグを含むコンテンツ コントロールを取得します。
 
 #### <a name="syntax"></a>構文
@@ -112,10 +112,10 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>追加情報
-[[Word-Add-in-DocumentAssembly]][[contentControls.getByTag]] サンプルは、getByTag メソッドを使う別の例を示しています。
+[Word-Add-in-DocumentAssembly][contentControls.getByTag] サンプルは、getByTag メソッドを使う別の例を示しています。
 
 
-### <a name="getbytitle(title:-string)"></a>getByTitle(title: string)
+### <a name="getbytitletitle-string"></a>getByTitle(title: string)
 指定されたタイトルを含むコンテンツ コントロールを取得します。
 
 #### <a name="syntax"></a>構文
@@ -162,9 +162,9 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>追加情報
-[[Word-Add-in-DocumentAssembly]][[contentControls.getByTitle]] サンプルは、getByTitle メソッドを使う別の例を示しています。
+[Word-Add-in-DocumentAssembly][contentControls.getByTitle] サンプルは、getByTitle メソッドを使う別の例を示しています。
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
 #### <a name="syntax"></a>構文
@@ -252,6 +252,6 @@ Word.run(function (context) {
 実行時のチェックで[要件セット](../office-add-in-requirement-sets.md)を使用して、アプリケーションが Word のホスト バージョンによってサポートされていることを確かめます。Office ホスト アプリケーションとサーバーの要件の詳細については、「[Office アドインを実行するための要件](../../docs/overview/requirements-for-running-office-add-ins.md)」を参照してください。
 
 
-[contentControls.getByTag]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L300 "タグで取得する"
-[contentControls.getByTitle]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L331 "タイトルで取得する"
+[contentControls.getByTag]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L300 "タグにより取得"
+[contentControls.getByTitle]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L331 "タイトルにより取得"
 

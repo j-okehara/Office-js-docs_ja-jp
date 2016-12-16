@@ -12,24 +12,36 @@ Visio Online は、Visio 図面を Web 上で表示し共有する新しい方�
 **詳細については、[Visio JavaScript API 1.1](https://github.com/OfficeDev/office-js-docs/tree/VisioJs_1.1_Openspec) のページを参照し、フィードバックを提供してください。**
 
 ## <a name="new-excel-javascript-apis"></a>新しい Excel JavaScript API
-新しい Excel JavaScript API の設計のレビューにご参加ください。新しい API および更新された API には、カスタム XML パーツ、ピボット テーブルの更新、フィルターされたビューの範囲、イメージの範囲とテーブル、テーブルへの複数行の追加、その他の機能が含まれています。 
+新しい Excel JavaScript API の設計のレビューにご参加ください。新規および更新された API には customXML パーツ、名前付きアイテムの追加メソッド、条件付き書式などが含まれます。 
 
-**詳細については [Excel JavaScript 1.3 API のページ](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec)を参照し、フィードバックを提供してください。**
+**詳細については [Excel JavaScript 1.4 API のページ](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.4_OpenSpec)を参照し、フィードバックを提供してください。**
 
-## <a name="new-word-javascript-apis"></a>新しい Word JavaScript API
+## <a name="new-word-javascript-apis-13"></a>新しい Word JavaScript API (1.3)
 Word JavaScript API 1.3 更新プログラムには、この API の導入以降実装された最大の変更セットが含まれています。新しい API を使用すると、以下を行えます。 
 
-* メモリ内のドキュメントを作成し、変更します
 * リスト オブジェクトを作成し、アクセスします
 * テーブル オブジェクトを作成し、アクセスします
 * 範囲オブジェクトにアクセスし比較するためのオプションがさらに用意されています
+* ドキュメント プロパティ
 
 Word JavaScript API のほぼすべてのオブジェクト間で、これらの変更が実装されました。この機能は、現在、またはまもなく Windows と Mac 両方のデスクトップと iPad 上の Word 2016 のプレビュー版で利用できます。クライアントを最新のビルドに毎月更新して、これら魅力的な機能の実装を開始してください。
 
-**詳細については、[Word JS 1.3 API のページ](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.3_Openspec/word)を参照し、フィードバックを提供してください。**
+**詳細については、[Word JS API 1.3 のページ](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.3_Openspec/word)を参照し、フィードバックを提供してください。**
 
-## <a name="document-properties-access"></a>ドキュメント プロパティへのアクセス
-ドキュメント レベルのプロパティにアクセス (get、set) する Web アドインの機能を追加する作業中です。アドインは、この機能によって、ドキュメント プロパティをカスタム ワークフローの一部として統合でき、またドキュメント プロパティの読み取り/設定ができるようなります。Word、Excel、およびおそらく PowerPoint は、この機能をサポートします。この機能は Excel REST API でも使用できます (Excel では、REST サービスをサポートします)。API が追加される場合の機能の仕方に関するユース ケースとコード スニペットを通して、設計の基本的な考え方と機能についてご紹介します。設計に関するフィードバックをお寄せください。 
+## <a name="new-word-javascript-apis-14"></a>新しい Word JavaScript API (1.4)
+Word JavaScript API 1.4 の更新プログラムに含まれている、重要な追加機能:
 
-**詳細については、[ドキュメント プロパティのオープン仕様のページ](https://github.com/OfficeDev/office-js-docs/tree/DocumentProperties_OpenSpec)を参照し、フィードバックを提供してください。**
+* メモリ内のドキュメントの作成と変更
+* Promise ベースの構文を使った API の設定
+* Promise ベースの構文を使ったカスタム XML ドキュメント
+* ブックマークの挿入 
+* テーブルの結合セル
+* テーブルの行の結合と列の分割
+
+**詳細については、[Word JS API 1.4 のページ](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_Openspec/word)を参照し、フィードバックを提供してください。**
+
+## <a name="host-platform-information-and-diagnostic-information"></a>ホスト、プラットフォームの情報および診断情報 
+アドインの実行時環境の情報および診断情報を開発者に提供するために、Office.Context オブジェクトへの計画済みの追加機能を確認してください。 
+
+**詳細については、「[Office コンテキストの追加機能の仕様](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec)」を参照し、フィードバックを提供してください。**
 

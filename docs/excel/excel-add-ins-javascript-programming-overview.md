@@ -2,6 +2,8 @@
 
 この記事では、Excel JavaScript API を使用して Excel 2016 のアドインをビルドする方法について説明します。また、RequestContext、JavaScript プロキシ オブジェクト、sync()、Excel.run()、load() などの API を使用するために知っておくべき主な概念について紹介します。この記事の末尾に掲載したコード例では、この概念を応用する方法を示します。
 
+>**注:**アドインをビルドするとき、アドインを Office ストアで[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/en-us/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、マニフェストの Requirements 要素で定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります ([セクション 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) を参照してください)。
+
 ## <a name="requestcontext"></a>RequestContext
 
 RequestContext オブジェクトは、Excel アプリケーションへの要求を容易にします。Office アドインと Excel アプリケーションは 2 つの異なるプロセスで実行されているため、アドインから Excel やその関連オブジェクト (ワークシートやテーブル) にアクセスするには、要求のコンテキストが必要になります。要求のコンテキストは次のように作成されます。
@@ -20,17 +22,17 @@ var ctx = new Excel.RequestContext();
 var selectedRange = ctx.workbook.getSelectedRange();
 ```
 
-## <a name="sync()"></a>sync()
+## <a name="sync"></a>sync()
 
 要求のコンテキストで使用可能な Sync() メソッドは、JavaScript のプロキシ オブジェクトと Excel の実際のオブジェクトの間で状態を同期させます。これは、このコンテキストでキューに入れられた命令を実行し、コードで使用するために読み込まれた Office オブジェクトのプロパティを取得することによって行われます。このメソッドは、同期処理が完了したときに解決される約束を返します。
 
-## <a name="excel.run(function(context)-{-batch-})"></a>Excel.run(function(context) { batch })
+## <a name="excelrunfunctioncontext-batch-"></a>Excel.run(function(context) { batch })
 
 Excel.run() は、Excel オブジェクト モデルに対してアクションを実行するバッチ スクリプトを実行します。このバッチ コマンドには、JavaScript のローカル プロキシ オブジェクトの定義と、ローカル オブジェクトと Excel オブジェクトの間で状態を同期し、解決される約束を返す sync() メソッドが含まれます。Excel.run() で要求をバッチ処理する利点は、約束が解決されるときに、実行中に割り当てられたすべての追跡範囲オブジェクトが自動的に解放されることです。
 
 run メソッドは、RequestContext を取り込み、約束  (通常は、単なる ctx.sync() の結果) を返します。バッチ操作は Excel.run() の外部で実行することができます。ただし、このようなシナリオでは、範囲オブジェクトの参照は、手動で追跡および管理する必要があります。
 
-## <a name="load()"></a>load()
+## <a name="load"></a>load()
 
 load() メソッドは、アドインの JavaScript レイヤーで作成されたプロキシ オブジェクトに設定を取り込むために使用されます。オブジェクト、たとえばワークシート、を取得しようとすると、まず JavaScript レイヤーでローカル プロキシ オブジェクトが作成されます。このようなオブジェクトは、そのプロパティと呼び出しメソッドの設定をキューに登録するために使用できます。しかし、オブジェクトのプロパティや関係を読み取るためには、最初に load() メソッドと sync() メソッドを呼び出す必要があります。load() メソッドは、sync() メソッドが呼び出されたときに読み込まれる必要があるプロパティと関係を取り込みます。
 
@@ -48,7 +50,7 @@ object.load({loadOption});
 * `properties` は、読み込まれるプロパティ名やリレーションシップ名の一覧で、名前のコンマ区切りの文字列または配列として指定されます。詳細は、各オブジェクトの下の .load() メソッドを参照してください。
 * `loadOption` は、selection、expansion、top、skip の各オプションについて説明するオブジェクトを指定します。詳細については、オブジェクトの読み込みの[オプション](../../reference/excel/loadoption.md)を参照してください。
 
-## <a name="example:-write-values-from-an-array-to-a-range-object"></a>例:配列の値を範囲オブジェクトに書き込む
+## <a name="example-write-values-from-an-array-to-a-range-object"></a>例:配列の値を範囲オブジェクトに書き込む
 
 次の例は、配列の値を範囲オブジェクトに書き込む方法を示しています。
 
@@ -83,7 +85,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-## <a name="example:-copy-values"></a>例: 値をコピーする
+## <a name="example-copy-values"></a>例: 値をコピーする
 
 次の例は、範囲オブジェクトで load() メソッドを使用して、作業中のワークシートの A1:A2 から B1:B2 までの範囲の値をコピーする方法を示しています。
 
@@ -197,7 +199,7 @@ null は有効なカラー値ではないため、以下も無効になります
 
 例:
 
-* `values` の場合は、範囲の値がクリアされています。これは、アプリケーションの内容をクリアするのと同じです。
+* `values` の場合は、範囲の値がクリアされます。これは、アプリケーションの内容をクリアするのと同じです。
 
 * `numberFormat` の場合は、番号書式が `General` に設定されます。
 
@@ -225,7 +227,7 @@ null は有効なカラー値ではないため、以下も無効になります
 
 API が無制限のセル範囲を取得する要求を行う場合 (`getRange('C:C')` など)、返される応答では、`values`、`text`、`numberFormat`、`formula` などのセル レベルのプロパティに `null` が含まれます。`address`、`cellCount` などその他の範囲プロパティは、無制限の範囲を反映します。
 
-### <a name="write"></a>Write
+### <a name="write"></a>書き込み
 
 無制限のセル範囲にセル レベルのプロパティ ( values、numberFormat など) を設定することは、入力要求が長すぎて処理できない可能性があるため、**許可されていません**。
 

@@ -5,8 +5,8 @@
 	<Item text="アドインを実行するための要件" url="overview/requirements-for-running-office-add-ins" SEODescription="Office アドインを実行するためのソフトウェアとデバイスの要件について説明します。" />	
 	<Item text="アドイン開発のベスト プラクティス" url="overview/add-in-development-best-practices" SEODescription="ユーザー エクスペリエンスを最適化する Office アドインをビルドするためのベスト プラクティスを適用します。" />
 	</Item>
-  <Item text="概要" url="get-started">
-    <Item text="Visual Studio を使用する" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="Visual Studio で Office アドインの構築を開始する" />
+  <Item text="作業の開始" url="get-started">
+    <Item text="Visual Studio の使用" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="Visual Studio で Office アドインの構築を開始する" />
 	  <Item text="任意のエディターを使用する" url="get-started/create-an-office-add-in-using-any-editor" SEODescription="Mac や Windows PC 上で任意のエディターを使って Office アドインの構築を開始する" />
     <Item text="Napa を使用する" url="get-started/create-an-office-add-in-with-napa" SEODescription="ブラウザーから Napa Office 365 開発ツールを使用して、Excel、Outlook、PowerPoint、Project、Word 用の基本的なコンテンツ アドイン 、作業ウィンドウ アドイン、Outlook アドインを作成することから、Office アドインを始めます。" />
   </Item>
@@ -119,8 +119,7 @@
 		<Item text="トークン検証ライブラリを使用する" url="outlook/use-the-token-validation-library" SEODescription="EWS マネージ API 検証ライブラリを使用して、Exchange の ID トークンを検証する方法について説明します。" Scope="outlook" />
 		<Item text="ID トークンを検証する" url="outlook/validate-an-identity-token" SEODescription="ID トークンを使用して、Outlook アドインのユーザーのメール アカウントを Web サービスが提供する情報に結び付ける方法について説明します。" Scope="outlook" />
 		<Item text="PHP を使用して ID トークンを検証する" url="outlook/use-php-to-validate-an-identity-token" SEODescription="PHP を使用して、Outlook アドインのユーザーのメール アカウントをサービスが提供する情報に結び付ける、Exchange 2013 の ID トークンを検証する方法について説明します。" Scope="outlook" />
-		<Item text="ID トークンを使用してユーザーを認証する" url="outlook/authenticate-a-user-with-an-identity-token" SEODescription="ID トークンによって表される一意の ID とサービスの資格情報のセットを認証オブジェクトがどのように対応付けるかを示すコード例をご覧ください。" Scope="outlook" />    
-    	 </Item>
+		<Item text="ID トークンを使用してユーザーを認証する" url="outlook/authenticate-a-user-with-an-identity-token" SEODescription="ID トークンによって表される一意の ID とサービスの資格情報のセットを認証オブジェクトがどのように対応付けるかを示すコード例をご覧ください。" Scope="outlook" /></Item>
 	<Item text="テストとヒント" url="outlook/testing-and-tips" FriendlyUrl="outlook/testingtesting-and-tips" Scope="outlook">
 		<Item text="Outlook for Mac の Outlook アドイン サポートの比較" url="outlook/compare-outlook-add-in-support-in-outlook-for-mac" SEOKeyword="不正なリンクを dev.office.com に送信します。 表の箇条書きのリストを修正しました。" Scope="outlook" />
 		<Item text="Outlook アドインで日付値を処理するためのヒント" url="outlook/tips-for-handling-date-values-in-outlook-add-ins" Scope="outlook" SEODescription="Date オブジェクトを使用して、Outlook アドインで日付値を処理します。" />

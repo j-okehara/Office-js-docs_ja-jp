@@ -1,5 +1,5 @@
 
-# <a name="outlook-addins"></a>Outlook アドイン
+# <a name="outlook-add-ins"></a>Outlook アドイン
 
 Outlook アドインは、新しい Web テクノロジ ベースのプラットフォームを使用してサードパーティ企業によって Outlook に組み込まれた統合です。Outlook アドインには次の 3 つの主な側面があります。
 
@@ -14,6 +14,7 @@ Outlook アドインは、Windows で実行する Outlook に固有の古い統�
 
 メール アドインをサポートする Outlook アイテムには、メール メッセージ、会議出席依頼、会議出席依頼の返信、会議の取り消し、予定などがあります。それぞれのメール アドインでは、メール アドインが使用できるコンテキストを定義します。これにはアイテムの種類、およびユーザーがアイテムの読み取り (または作成) を行っているかどうかなどがあります。
 
+>**注:**アドインをビルドするとき、アドインを Office ストアで[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/en-us/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、マニフェストの Requirements 要素で定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります ([セクション 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) を参照してください)。
 
 ## <a name="extension-points"></a>拡張点
 
@@ -34,7 +35,7 @@ Outlook アドインは、Windows で実行する Outlook に固有の古い統�
     ![カード内のコンテキスト アプリを示す](../../images/59bcabc2-7cb0-4b9b-bb9f-06089dca9c31.png)
 
 
-## <a name="mailbox-items-available-to-addins"></a>アドインで使用可能なメールボックス アイテム
+## <a name="mailbox-items-available-to-add-ins"></a>アドインで使用可能なメールボックス アイテム
 
 
 Outlook アドインは、作成中や読み取り中にメッセージや予定で使用することができますが、他のアイテムの種類では使用できません。新規作成フォームまたは閲覧フォームで現在のメッセージ アイテムが次のいずれかの場合、Outlook はアドインをアクティブ化しません。
@@ -59,7 +60,7 @@ Outlook アドインは、作成中や読み取り中にメッセージや予定
 Outlook アドインは、Outlook 2013 以降のバージョン、Outlook 2016 for Mac、オンプレミスの Exchange 2013 用 Outlook Web アプリ、Office 365 および Outlook.com 用 Outlook Web アプリでサポートされています。すべての最新機能がすべてのクライアントで同時にサポートされるとは限りません。これらがどのホストでサポートされているのか (またはされていないのか) を確認するには、個々のトピックと API リファレンスを参照してください。
 
 
-## <a name="get-started-building-outlook-addins"></a>Outlook アドインの作成を開始する
+## <a name="get-started-building-outlook-add-ins"></a>Outlook アドインの作成を開始する
 
 
 Outlook アドインの作成を開始するには、「[Office 365 の Outlook アドインを使用する](https://dev.outlook.com/MailAppsGettingStarted/GetStarted)」を参照してください。

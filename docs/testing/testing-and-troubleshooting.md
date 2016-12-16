@@ -15,12 +15,12 @@
 
 |**エラー メッセージ**|**解決策**|
 |:-----|:-----|
-|アプリのエラー:カタログに到達できませんでした|ファイアウォールの設定を確認します。「カタログ」は、Office ストアを指します。このメッセージは、ユーザーが Office ストアにアクセスできないことを示します。|
+|アプリのエラー: カタログに到達できませんでした|ファイアウォールの設定を確認します。「カタログ」は、Office ストアを指します。このメッセージは、ユーザーが Office ストアにアクセスできないことを示します。|
 |アプリのエラー: このアプリは起動できませんでした。このダイアログを閉じて問題を無視するか、 [再起動] をクリックしてやり直してください。|Office の最新の更新プログラムがインストールされていることを確認するか、[Office 2013 更新プログラム ](https://support.microsoft.com/en-us/kb/2986156/)をダウンロードします。|
 |エラー: オブジェクトがプロパティまたはメソッド 'defineProperty' をサポートしていません|Internet Explorerが互換モードで実行されていないことを確認します。 [ツール] >  **[互換表示設定]** に移動します。|
 |ブラウザーのバージョンがサポートされていないため、アプリを読み込めませんでした。サポートされているブラウザーのバージョンの一覧についてはここをクリックしてください。|ブラウザーが HTML5 のローカル ストレージをサポートしていることを確認するか、Internet Explorer の設定をリセットします。サポートされているブラウザーの詳細については、「[Office アドインを実行するための要件](../../docs/overview/requirements-for-running-office-add-ins.md)」を参照してください。|
 
-## <a name="outlook-add-in-doesn't-work-correctly"></a>Outlook アドインが正常に機能しない
+## <a name="outlook-add-in-doesnt-work-correctly"></a>Outlook アドインが正常に機能しない
 
 Windows で実行している Outlook アドインが正常に機能しない場合は、Internet Explorer でスクリプトのデバッグを有効にしてみてください。 
 
@@ -32,7 +32,7 @@ Windows で実行している Outlook アドインが正常に機能しない場
 これらの設定は、問題のトラブルシューティングを行う場合にのみチェックボックスをオフにすることをお勧めします。チェックボックスをオフにしたままにすると、参照時にメッセージが表示されます。問題が解決したら、 **[スクリプトのデバッグを無効にする (Internet Explorer)]** と **[スクリプトのデバッグを無効にする (その他)]** の各チェックボックスをオンにしてください。
 
 
-## <a name="add-in-doesn't-activate-in-office-2013"></a>Office 2013 でアドインがアクティブにならない
+## <a name="add-in-doesnt-activate-in-office-2013"></a>Office 2013 でアドインがアクティブにならない
 
 ユーザーが次の手順を実行したときに、アドインがアクティブにならない場合があります。
 
@@ -43,10 +43,13 @@ Windows で実行している Outlook アドインが正常に機能しない場
     
 3. アドインを挿入しようとする際に、メッセージに従って ID の確認を行う。
     
-このような場合は、Office の最新の更新プログラムがインストールされていることを確認するか、 [Office 2013 更新プログラム](https://support.microsoft.com/en-us/kb/2986156/)をダウンロードしてください。
+Office の最新の更新プログラムがインストールされていることを確認するか、[Office 2013 更新プログラム](https://support.microsoft.com/en-us/kb/2986156/)をダウンロードしてください。
 
+## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>アドインが作業ウィンドウで読み込まれない、または他のアドイン マニフェストの問題
 
-## <a name="additional-resources"></a>その他のリソース
+[ランタイム ログ](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest)を使用して、アドイン マニフェストの問題をデバッグします。
+
+## <a name="additional-resources"></a>追加リソース
 
 
 
@@ -59,4 +62,6 @@ Windows で実行している Outlook アドインが正常に機能しない場
 - [Visual Studio での Office アドインの作成とデバッグ](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)
     
 - [テスト用に Outlook アドインを展開してインストールする](../outlook/testing-and-tips.md)
+    
+- [ランタイム ログを使用して、マニフェストをデバッグする](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest)
     

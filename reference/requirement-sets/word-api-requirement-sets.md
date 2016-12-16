@@ -4,19 +4,20 @@
 
 Word アドインは、Office 2016 for Windows、Office for iPad、Office for Mac、および Office Online など、複数のバージョンの Office で機能します。次の表は、Word の要件セット、その要件セットをサポートする Office ホスト アプリケーション、およびそれらのアプリケーションのビルド番号またはバージョン番号の一覧です。
 
-|  要件セット  |   Office 2016 for Windows*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |
-|:-----|-----|:-----|:-----|:-----|
-| WordApi 1.3  | バージョン 1605 (ビルド 6925.1000) 以降のプレビュー| 2016 年 5 月、1.22 以降のプレビュー  | 15.22 以降のプレビュー| 準備中。 | 
-| WordApi 1.2  | 2015年 12 月更新プログラム、バージョン 1601 (ビルド 6568.1000) 以降 | 2016 年 1 月、1.18 以降 | 2016 年 1 月、15.19 以降| 2016 年 9 月 | 
-| WordApi 1.1  | バージョン 1509 (ビルド 4266.1001) 以降| 2016 年 1 月、1.18 以降 | 2016 年 1 月、15.19 以降| 2016 年 9 月 | 
+|  要件セット  |   Office 2016 for Windows*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  | Office Online Server  |
+|:-----|-----|:-----|:-----|:-----|:-----|
+| WordApi 1.3  | バージョン 1605 (ビルド 6925.1000) 以降のプレビュー| 2016 年 5 月、1.22 以降のプレビュー  | 15.22 以降のプレビュー| 準備中。 ||
+| WordApi 1.2  | 2015年 12 月更新プログラム、バージョン 1601 (ビルド 6568.1000) 以降 | 2016 年 1 月、1.18 以降 | 2016 年 1 月、15.19 以降| 2016 年 9 月 | バージョン 1608 (ビルド 7601.6800) 以降|
+| WordApi 1.1  | バージョン 1509 (ビルド 4266.1001) 以降| 2016 年 1 月、1.18 以降 | 2016 年 1 月、15.19 以降| 2016 年 9 月 | |
 
-> &#42; **注**:MSI からインストールされた Office 2016 のビルド番号は、16.0.4266.1001 です。このバージョンにのみ、WordApi 1.1 の要件セットが含まれています。
+> **注**:MSI からインストールされた Office 2016 のビルド番号は、16.0.4266.1001 です。このバージョンには、WordApi 1.1 の要件セットのみが含まれています。
 
-バージョンとビルド番号について詳しくは、次をご覧ください。
+バージョン、ビルド番号、および Office Online Server の詳細については以下を参照してください。
 
 - [Office 365 クライアントの更新プログラム チャネル リリースのバージョン番号およびビルド番号](https://technet.microsoft.com/en-us/library/mt592918.aspx)
 - [使用している Office のバージョンを確認する方法](https://support.office.com/en-us/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19?ui=en-US&rs=en-US&ad=US&fromAR=1)
 - [Office 365 クライアント アプリケーションのバージョン番号およびビルド番号を確認することができます。](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
+- [Office Online Server 概要](https://technet.microsoft.com/en-us/library/jj219437(v=office.16).aspx)
 
 ## <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 共通 API の要件セットについて詳しくは、「[Office 共通 API の要件セット](office-add-in-requirement-sets.md)」をご覧ください。

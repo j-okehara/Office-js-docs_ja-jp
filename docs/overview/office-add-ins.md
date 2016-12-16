@@ -12,9 +12,11 @@ Office アドインを使用すると、次の操作を実行できます。
     
 **Office アドインを複数のバージョンの Office で実行する** - Windows デスクトップ版 Office、Office Online、Office for the Mac、および Office for the iPad が含まれます。
 
->**メモ:**現時点での Office アドインのサポート状況について、概要は「[Office アドインを使用できるホストおよびプラットフォーム](http://dev.office.com/add-in-availability)」ページを参照してください。 
+>**注:**アドインをビルドするとき、アドインを Office ストアで[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/en-us/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、マニフェストの Requirements 要素で定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります ([セクション 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) を参照してください)。
 
-## <a name="what-can-an-office-add-in-do?"></a>Office アドインで実行可能な操作
+現時点での Office アドインのサポート状況について、概要は「[Office アドインを使用できるホストおよびプラットフォーム](http://dev.office.com/add-in-availability)」ページを参照してください。 
+
+## <a name="what-can-an-office-add-in-do"></a>Office アドインで実行可能な操作
 
 Office アドインでは、ブラウザー内で Web ページが実行できる操作のほとんどすべてを実行できます。たとえば、次のような操作を実行できます。
 
@@ -42,7 +44,7 @@ Office アドインでは、ブラウザー内で Web ページが実行でき�
 - 新しいオブジェクトを作成する Excel および PowerPoint アドイン
 - 機能を拡張する Outlook アドイン
 
-### <a name="word,-excel,-and-powerpoint-add-ins-that-extend-functionality"></a>機能を拡張する Word、Excel、および PowerPoint アドイン 
+### <a name="word-excel-and-powerpoint-add-ins-that-extend-functionality"></a>機能を拡張する Word、Excel、および PowerPoint アドイン 
 **作業ウィンドウのアドイン マニフェスト**を使用してアドインを登録することにより、Word、Excel、または PowerPoint に[新しい機能を追加](../design/add-in-commands.md)できます。このマニフェストは **2 つの統合モード**をサポートしています。
 
 - アドイン コマンド
@@ -110,7 +112,9 @@ Office アドインの基本的なコンポーネントは、XML マニフェス
     
 - アドインの表示名、説明、ID、バージョン、および既定のロケール。
     
-- Office とアドインを統合する方法: - Word、Excel、PowerPoint、Outlook を拡張するアドインの場合:リボン上のボタンなどの機能を公開するためにアドインによって使用されるネイティブの拡張点。     - 新しい埋め込みオブジェクトを作成するアドインの場合:オブジェクト用に読み込まれる既定のページの URL。
+- Office とアドインを統合する方法: 
+     - Word、Excel、PowerPoint、Outlook を拡張するアドインの場合:リボン上のボタンなどの機能を公開するためにアドインによって使用されるネイティブの拡張点。     
+     - 新しい埋め込みオブジェクトを作成するアドインの場合:オブジェクト用に読み込まれる既定のページの URL。
        
     
 - アドインのアクセス許可レベルとデータ アクセスの要件。
