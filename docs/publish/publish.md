@@ -9,9 +9,10 @@
 - [SharePoint カタログ](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) - 開発プロセスの一環として利用し、アドインをテストしたり、オンプレミス環境から、アドインを組織内のユーザーに配布したりします。
 
 利用できるオプションは、対象とする Office ホストや作成するアドインの種類によって異なります。
->**注:**アドインをビルドするとき、アドインを Office ストアで[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/en-us/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、マニフェストの Requirements 要素で定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります ([セクション 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) を参照してください)。
 
-## <a name="deployment-options-for-word-excel-and-powerpoint-add-ins"></a>Word、Excel、PowerPoint アドインの開発オプション
+>**注:**アドインをビルドするとき、アドインを Office ストアに[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/en-us/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります (詳細については、[セクション 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) と「[Office アドインを使用できるホストおよびプラットフォーム](https://dev.office.com/add-in-availability)」のページを参照してください)。
+
+## <a name="deployment-options-for-word-excel-and-powerpoint-add-ins"></a>Word、Excel、PowerPoint アドインの展開オプション
 
 | 拡張点            | サイドロード | Office 365 管理センター プレビュー |Office ストア  | SharePoint カタログ  |
 |:----------------|:-----------:|:------------------:|:-------------------------------:|:------------:|

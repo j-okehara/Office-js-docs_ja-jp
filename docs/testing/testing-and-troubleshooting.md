@@ -47,7 +47,7 @@ Office の最新の更新プログラムがインストールされているこ�
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>アドインが作業ウィンドウで読み込まれない、または他のアドイン マニフェストの問題
 
-[ランタイム ログ](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest)を使用して、アドイン マニフェストの問題をデバッグします。
+「[マニフェストの問題を検証し、トラブルシューティングする](troubleshoot-manifest.md)」を参照して、アドインのマニフェストの問題をデバッグしてください。
 
 ## <a name="additional-resources"></a>追加リソース
 
@@ -63,5 +63,5 @@ Office の最新の更新プログラムがインストールされているこ�
     
 - [テスト用に Outlook アドインを展開してインストールする](../outlook/testing-and-tips.md)
     
-- [ランタイム ログを使用して、マニフェストをデバッグする](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest)
+- [マニフェストの問題を検証し、トラブルシューティングする](troubleshoot-manifest.md)
     

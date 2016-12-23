@@ -1,5 +1,5 @@
 
-# <a name="sideload-office-addins-for-testing"></a>テストのために Office アドインをサイドロードする
+# <a name="sideload-office-add-ins-for-testing"></a>テストのために Office アドインをサイドロードする
 
 共有フォルダー カタログを使用して、マニフェストをネットワークのファイル共有に発行することで、Windows を実行する Office クライアントのテストのために Office アドインをインストールすることができます。 
 
@@ -43,7 +43,7 @@
 
 9. Office アプリケーションを閉じると変更内容が有効になります。
     
-## <a name="sideload-your-addin"></a>アドインのサイドロード
+## <a name="sideload-your-add-in"></a>アドインのサイドロード
 
 
 1. テストするアドインのマニフェスト ファイルを共有フォルダー カタログに置きます。
@@ -55,8 +55,8 @@
 4. アドインの名前を選んで **[OK]** を選び、アドインを挿入します。
 
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="additional-resources"></a>追加リソース
 
-- [ランタイムのログを使用して、マニフェストをデバッグする](../develop/use-runtime-logging-to-debug-manifest.md)
+- [マニフェストの問題を検証し、トラブルシューティングする](troubleshoot-manifest.md)
 - [Office アドインを発行する](../publish/publish.md)
     

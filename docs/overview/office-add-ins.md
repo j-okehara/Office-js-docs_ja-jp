@@ -12,7 +12,8 @@ Office アドインを使用すると、次の操作を実行できます。
     
 **Office アドインを複数のバージョンの Office で実行する** - Windows デスクトップ版 Office、Office Online、Office for the Mac、および Office for the iPad が含まれます。
 
->**注:**アドインをビルドするとき、アドインを Office ストアで[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/en-us/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、マニフェストの Requirements 要素で定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります ([セクション 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) を参照してください)。
+>**注:**アドインをビルドするとき、アドインを Office ストアに[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/en-us/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります (詳細については、[セクション 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) と「[Office アドインを使用できるホストおよびプラットフォーム](https://dev.office.com/add-in-availability)」のページを参照してください)。
+
 
 現時点での Office アドインのサポート状況について、概要は「[Office アドインを使用できるホストおよびプラットフォーム](http://dev.office.com/add-in-availability)」ページを参照してください。 
 
@@ -113,7 +114,7 @@ Office アドインの基本的なコンポーネントは、XML マニフェス
 - アドインの表示名、説明、ID、バージョン、および既定のロケール。
     
 - Office とアドインを統合する方法: 
-     - Word、Excel、PowerPoint、Outlook を拡張するアドインの場合:リボン上のボタンなどの機能を公開するためにアドインによって使用されるネイティブの拡張点。     
+     - Word、Excel、PowerPoint、Outlook を拡張するアドインの場合:リボン上のボタンなどの機能を公開するためにアドインによって使用されるネイティブの拡張点。
      - 新しい埋め込みオブジェクトを作成するアドインの場合:オブジェクト用に読み込まれる既定のページの URL。
        
     

@@ -16,7 +16,8 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
     
 - Outlook アドインでは、アプリがアクティブ化されてメッセージ、予定、または会議出席依頼アイテムを操作するコンテキストを指定するルールを定義する。
 
->**注:**アドインをビルドするとき、アドインを Office ストアで[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/en-us/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、マニフェストの Requirements 要素で定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります ([セクション 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) を参照してください)。
+>**注:**アドインをビルドするとき、アドインを Office ストアに[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/en-us/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります (詳細については、[セクション 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) と「[Office アドインを使用できるホストおよびプラットフォーム](https://dev.office.com/add-in-availability)」のページを参照してください)。
+
 
 ## <a name="required-elements"></a>必要な要素
 
@@ -59,21 +60,6 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
 |[*Hosts](http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx)||X|
 
 *Office アドイン マニフェスト スキーマ バージョン 1.1 で追加されました。
-
-
-## <a name="validate-the-office-add-ins-manifest"></a>Office アドイン マニフェストを検証する
-
-Office アドインを記述するマニフェスト ファイルが正確かつ完全であることを確認するために、[XML スキーマ定義 (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) ファイルと比較してマニフェスト ファイルを検証します。XML スキーマ検証ツールまたは [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) を使用してマニフェストを検証できます。 
-
-Visual Studio を使用するには、[作成] > [発行] の順に移動し、**[検証チェックを実行]** を選択します。
-
-コマンド ライン XML スキーマ検証ツールを使用してマニフェストを検証するには、次のようにします。
-
-1.  [tar](https://www.gnu.org/software/tar/) および [libxml](http://xmlsoft.org/FAQ.html) をまだインストールしていない場合はインストールします。 
-2.  次のコマンドを実行します。XSD_FILE をマニフェスト XSD ファイルへのパスに置き換え、XML_FILE をマニフェスト XML ファイルへのパスに置き換えます。
-
-    xmllint --noout --schema XSD_FILE XML_FILE
-
 
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>アドイン ウィンドウで開くドメインの指定
@@ -435,12 +421,16 @@ Visual Studio を使用するには、[作成] > [発行] の順に移動し、*
 
 ```
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>マニフェストの問題を検証し、トラブルシューティングする
+
+マニフェストの問題をトラブルシューティングするには、「[マニフェストの問題を検証し、トラブルシューティングする](../../docs/testing/troubleshoot-manifest.md)」を参照してください。[XML スキーマ定義 (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) に対してマニフェストを検証する方法、およびランタイムのログを使用してマニフェストをデバッグする方法についての情報を確認できます。
+
+## <a name="additional-resources"></a>追加リソース
 
 
 - [マニフェストでアドイン コマンドを定義する](../../docs/outlook/manifests/define-add-in-commands.md)
 - [Office のホストと API の要件を指定する](../../docs/overview/specify-office-hosts-and-api-requirements.md)
 - [Office アドインのローカライズ](../../docs/develop/localization.md)
-- [Office アドイン マニフェストのスキーマ リファレンス](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
-- [ランタイム ログを使用して、マニフェストをデバッグする](../develop/use-runtime-logging-to-debug-manifest.md)
+- [Office アドイン マニフェストのスキーマ参照](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
+- [マニフェストの問題を検証し、トラブルシューティングする](../../docs/testing/troubleshoot-manifest.md)
 

@@ -2,7 +2,7 @@
 
 この記事では、Excel JavaScript API を使用して Excel 2016 のアドインをビルドする方法について説明します。また、RequestContext、JavaScript プロキシ オブジェクト、sync()、Excel.run()、load() などの API を使用するために知っておくべき主な概念について紹介します。この記事の末尾に掲載したコード例では、この概念を応用する方法を示します。
 
->**注:**アドインをビルドするとき、アドインを Office ストアで[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/en-us/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、マニフェストの Requirements 要素で定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります ([セクション 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) を参照してください)。
+>**注:**アドインをビルドするとき、アドインを Office ストアに[発行](../publish/publish.md)する予定であれば、[Office ストア検証ポリシー](https://msdn.microsoft.com/en-us/library/jj220035.aspx)に準拠していることを確認してください。たとえば、検証に合格するには、アドインは、定義したメソッドをサポートするすべてのプラットフォーム全体で機能する必要があります (詳細については、[セクション 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) と「[Office アドインを使用できるホストおよびプラットフォーム](https://dev.office.com/add-in-availability)」のページを参照してください)。
 
 ## <a name="requestcontext"></a>RequestContext
 
@@ -26,7 +26,7 @@ var selectedRange = ctx.workbook.getSelectedRange();
 
 要求のコンテキストで使用可能な Sync() メソッドは、JavaScript のプロキシ オブジェクトと Excel の実際のオブジェクトの間で状態を同期させます。これは、このコンテキストでキューに入れられた命令を実行し、コードで使用するために読み込まれた Office オブジェクトのプロパティを取得することによって行われます。このメソッドは、同期処理が完了したときに解決される約束を返します。
 
-## <a name="excelrunfunctioncontext-batch-"></a>Excel.run(function(context) { batch })
+## <a name="excelrunfunctioncontext--batch-"></a>Excel.run(function(context) { batch })
 
 Excel.run() は、Excel オブジェクト モデルに対してアクションを実行するバッチ スクリプトを実行します。このバッチ コマンドには、JavaScript のローカル プロキシ オブジェクトの定義と、ローカル オブジェクトと Excel オブジェクトの間で状態を同期し、解決される約束を返す sync() メソッドが含まれます。Excel.run() で要求をバッチ処理する利点は、約束が解決されるときに、実行中に割り当てられたすべての追跡範囲オブジェクトが自動的に解放されることです。
 

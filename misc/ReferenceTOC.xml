@@ -1,174 +1,162 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SupportedProduct="|Word|Excel|Outlook|OneNote|PowerPoint|Project|Access" SupportedVersion="|V1.3|V1.2|V1.1|">
-  <Item text="マニフェスト" url="manifest">
-    
-	<Item text="AllowSnapshot" url="manifest/allowsnapshot" Scope="excel, powerpoint" SEODescription="ホスト ドキュメントと共にコンテンツ アドインのスナップショット イメージを保存するかどうかを指定します。" />
-    <Item text="AlternateId" url="manifest/alternateid" Scope="excel, word, powerpoint, access, project" SEODescription="Office ストアで発行される Office アドインの代替 ID を指定します。" />
-    <Item text="AppDomain" url="manifest/appdomain" SEODescription="アドイン ウィンドウにページを読み込むために使用される追加のドメインを指定します。" />
-    <Item text="AppDomains" url="manifest/appdomains" SEODescription="Office アドインがページを読み込むために使用する追加のドメインを指定します。" />
-    <Item text="CitationText" url="manifest/citationtext" SEODescription="この辞書の引用定型句を指定します。" />
-    <Item text="DefaultLocale" url="manifest/defaultlocale" SEODescription="アドイン内の文字列で使用されるロケールの既定カルチャ名を指定します。" />
-    <Item text="DefaultSettings" url="manifest/defaultsettings" SEODescription="コンテンツまたは作業ウィンドウ アドインの既定のソースの場所と他の既定の設定を指定します。" />
-    <Item text="説明" url="manifest/description" SEODescription="Office アドインの説明を 250 文字以下の文字列で指定します。" />
-    <Item text="DesktopSettings" url="manifest/desktopsettings" Scope="outlook" SEODescription="このメール アドインがデスクトップ コンピューターで使用されるときに適用するソースの場所と制御の設定を指定します。" />
-    <Item text="Dictionary" url="manifest/dictionary" Scope="excel, word, powerpoint, project" SEODescription="追加の辞書サポートを実装する作業ウィンドウ アドインの設定を定義します。" />
-    <Item text="DictionaryHomePage" url="manifest/dictionaryhomepage" Scope="excel, word, powerpoint, project" SEODescription="辞書のホーム ページの URL を指定します。" />
-    <Item text="DictionaryName" url="manifest/dictionaryname" Scope="excel, word, powerpoint, project" SEODescription="この辞書の名前を指定します。" />
-    <Item text="DisableEntityHighlighting" url="manifest/disableentityhighlighting" Scope="outlook" SEODescription="メール アドインでエンティティの強調表示をオフにするかどうかを指定します。" />
-    <Item text="DisplayName" url="manifest/displayname" SEODescription="Office アドインの名前を最大 125 文字の文字列で指定します。" />
-    
-	<Item text="Form" url="manifest/form" Scope="outlook" SEODescription="メール アドインが特定のデバイス (デスクトップ、タブレット、電話) で実行されているときに使用するフォームの UX 設定を定義します。" />
-    
-	<Item text="FormSettings" url="manifest/formsettings" Scope="outlook" SEODescription="メール アドインのソースの場所と制御の設定を指定します。" />
-    
-	
-	<Item text="HighResolutionIconUrl" url="manifest/highresolutioniconurl" SEODescription="高 DPI の画面での挿入 UX と Office ストアの Office アドインを表すために使用されるイメージの URL を指定します。" />
-    <Item text="ホスト" url="manifest/host" SEODescription="Office アドインがサポートしている Office のホスト アプリケーションの種類を指定します。" />
-    <Item text="Hosts" url="manifest/hosts" SEODescription="Office アドインをアクティブにする Office クライアント アプリケーションを指定します。" />
-	<Item text="IconUrl" url="manifest/iconurl" SEODescription="挿入 UX と Office ストアの Office アドインを表すために使用されるイメージの URL を指定します。" />
-    <Item text="Id" url="manifest/id" SEODescription="Office アドインの一意の ID を GUID の形で指定します。" />
-    <Item text="メソッド" url="manifest/method" Scope="excel, word, powerpoint, access, project" SEODescription="Office アドインをアクティブにするために必要な JavaScript API for Office の個別のメソッドを指定します。" />
-    <Item text="メソッド" url="manifest/methods" Scope="excel, word, powerpoint, access, project" SEODescription="Office アドインをアクティブにするために必要な JavaScript API for Office のメソッドの一覧を指定します。" />
-    <Item text="OfficeApp" url="manifest/officeapp" SEODescription="Office アドインのマニフェストのルート要素です。" />
-    
-	<Item text="Override" url="manifest/override" SEODescription="追加ロケールの設定の値を指定する方法を提供します。" />
-    <Item text="アクセス許可" url="manifest/permissions" SEODescription="Office アドインの API アクセスのレベルを指定します。最小特権の原則に基づいてアクセス許可を要求する必要があります。" />
-    <Item text="PhoneSettings" url="manifest/phonesettings" SEODescription="このメール アドインが電話で使用されるときに適用するソースの場所と制御の設定を指定します。" />
-    <Item text="ProviderName" url="manifest/providername" SEODescription="この Office アドインを開発した個人または会社の名前を 125 文字以内の文字列で指定します。" />
-    <Item text="QueryUri" url="manifest/queryuri" Scope="excel, word, powerpoint, access, project" SEODescription="辞書クエリ サービスのエンドポイントの URL を指定します。" />
-    <Item text="RequestedHeight" url="manifest/requestedheight" Scope="excel, powerpoint, access" SEODescription="コンテンツ アドインの初期高さをピクセル単位 (32 から 1000 まで可能) で指定します。" />
-    <Item text="RequestedWidth" url="manifest/requestedwidth" Scope="excel, powerpoint, access" SEODescription="コンテンツ アドインの初期幅をピクセル単位 (32 から 1000 まで可能) で指定します。" />
-    <Item text="要件" url="manifest/requirements" SEODescription="Office アドインをアクティブにするために必要な JavaScript API for Office の最小要件セット (要件セットまたはメソッド、あるいはその両方) を指定します。" />
-    
-	<Item text="Rule" url="manifest/rule" Scope="outlook" SEODescription="このメール アドインに対して評価すべきアクティブ化ルールを指定します。" />
-    <Item text="Set" url="manifest/set" SEODescription="Office アドインをアクティブにするために必要な JavaScript API for Office の要件セットを指定します。" />
-    <Item text="Sets" url="manifest/sets" SEODescription="Office アドインをアクティブにするために必要な JavaScript API for Office の最小限のサブセットを指定します。" />
-    <Item text="SourceLocation" url="manifest/sourcelocation" SEODescription="Office アドインのソース ファイルの場所を、1 から 2018 文字までの長さの URL として指定します。" />
-    
-	<Item text="SupportUrl" url="manifest/supporturl" SEODescription="アドインのサポート情報を提供するページの URL を指定します。" />
-    <Item text="TabletSettings" url="manifest/tabletsettings" Scope="outlook" SEODescription="メール アドインがタブレットで使用されるときに適用される制御の設定を指定します。" />
-    <Item text="TargetDialect" url="manifest/targetdialect" Scope="excel, word, powerpoint, project" SEODescription="この辞書でサポートされる地域言語を定義します。これはカルチャ名文字列として表現されます。" />
-    <Item text="TargetDialects" url="manifest/targetdialects" Scope="excel, word, powerpoint, project" SEODescription="この辞書でサポートされる地域言語を定義します。" />
-    <Item text="バージョン" url="manifest/version" SEODescription="Office アドインのバージョンを指定します。" />
-	<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint" SEODescription="アドインによって実装されたアドイン コマンドに関する情報を格納するルート要素です。"> 
-		<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint" SEODescription="ユーザーがボタンまたはメニューのコントロールを選択したときに実行する操作を指定します。" />
-		<Item text="Control" url="manifest/control" SEODescription="ユーザーがボタンまたはメニューを選択したときに実行するコントロールを指定します。" />
-		<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint" SEODescription="アドイン コマンドのタブとグループを指定します。" />
-		<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint" SEODescription="アドインが機能を公開する場所を定義します。" />
-		<Item text="FormFactor" url="manifest/formfactor" Scope="excel, word, powerpoint" SEODescription="特定のフォーム ファクターについてアドインの設定を指定します。" />
-		<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint" SEODescription="UI を表示する代わりに JavaScript 関数を実行するアドイン コマンドによってアドインが公開する操作の、ソース コード ファイルを指定します。" />
-		<Item text="GetStarted" url="manifest/getstarted" Scope="excel, word, powerpoint" SEODescription="アドインが、Word、Excel、および PowerPoint のホストにインストールされているときに表示される吹き出しで使用される情報を提供します。" />
-		<Item text="Group" url="manifest/group" Scope="excel, word, powerpoint" SEODescription="タブの UI 拡張ポイントのグループを定義します。" />
-		<Item text="Hosts" url="manifest/hosts" Scope="excel, word, powerpoint" SEODescription="Office アドインがサポートしている Office のホスト アプリケーションの種類を指定します。" />
-		<Item text="Icon" url="manifest/icon" Scope="excel, word, powerpoint" SEODescription="ボタンとメニューのコントロールのイメージ要素を定義します。" />
-		<Item text="OfficeMenu" url="manifest/officemenu" Scope="excel, word, powerpoint" SEODescription="Office のコンテキスト メニューに追加するコントロールのコレクションを定義します。" />
-		<Item text="OfficeTab" url="manifest/officetab" Scope="excel, word, powerpoint" SEODescription="アドイン コマンドに使用する既存のタブを指定します。" />
-		<Item text="リソース" url="manifest/resources" Scope="excel, word, powerpoint" SEODescription="VersionOverrides ノードのアイコン、文字列、URL が含まれます。" />
-		<Item text="Supertip" url="manifest/supertip" Scope="excel, word, powerpoint" SEODescription="豊富なヒント (タイトルと説明の両方) を定義します。" />
+<Menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SupportedProduct="|Word|Excel|Outlook|OneNote|PowerPoint|Project|Access|Visio" SupportedVersion="|V1.3|V1.2|V1.1|">
+	<Item text="マニフェスト" url="manifest">
+		<Item text="AllowSnapshot" url="manifest/allowsnapshot" Scope="excel, powerpoint" SEODescription="ホスト ドキュメントと共にコンテンツ アドインのスナップショット イメージを保存するかどうかを指定します。" />
+		<Item text="AlternateId" url="manifest/alternateid" Scope="excel, word, powerpoint, access, project" SEODescription="Office ストアで発行される Office アドインの代替 ID を指定します。" />
+		<Item text="AppDomain" url="manifest/appdomain" SEODescription="アドイン ウィンドウにページを読み込むために使用される追加のドメインを指定します。" />
+		<Item text="AppDomains" url="manifest/appdomains" SEODescription="Office アドインがページを読み込むために使用する追加のドメインを指定します。" />
+		<Item text="CitationText" url="manifest/citationtext" SEODescription="この辞書の引用定型句を指定します。" />
+		<Item text="DefaultLocale" url="manifest/defaultlocale" SEODescription="アドイン内の文字列で使用されるロケールの既定カルチャ名を指定します。" />
+		<Item text="DefaultSettings" url="manifest/defaultsettings" SEODescription="コンテンツまたは作業ウィンドウ アドインの既定のソースの場所と他の既定の設定を指定します。" />
+		<Item text="説明" url="manifest/description" SEODescription="Office アドインの説明を 250 文字以下の文字列で指定します。" />
+		<Item text="DesktopSettings" url="manifest/desktopsettings" Scope="outlook" SEODescription="このメール アドインがデスクトップ コンピューターで使用されるときに適用するソースの場所と制御の設定を指定します。" />
+		<Item text="Dictionary" url="manifest/dictionary" Scope="excel, word, powerpoint, project" SEODescription="追加の辞書サポートを実装する作業ウィンドウ アドインの設定を定義します。" />
+		<Item text="DictionaryHomePage" url="manifest/dictionaryhomepage" Scope="excel, word, powerpoint, project" SEODescription="辞書のホーム ページの URL を指定します。" />
+		<Item text="DictionaryName" url="manifest/dictionaryname" Scope="excel, word, powerpoint, project" SEODescription="この辞書の名前を指定します。" />
+		<Item text="DisableEntityHighlighting" url="manifest/disableentityhighlighting" Scope="outlook" SEODescription="メール アドインでエンティティの強調表示をオフにするかどうかを指定します。" />
+		<Item text="DisplayName" url="manifest/displayname" SEODescription="Office アドインの名前を最大 125 文字の文字列で指定します。" />
+		<Item text="Form" url="manifest/form" Scope="outlook" SEODescription="メール アドインが特定のデバイス (デスクトップ、タブレット、電話) で実行されているときに使用するフォームの UX 設定を定義します。" />
+		<Item text="FormSettings" url="manifest/formsettings" Scope="outlook" SEODescription="メール アドインのソースの場所と制御の設定を指定します。" />
+		<Item text="HighResolutionIconUrl" url="manifest/highresolutioniconurl" SEODescription="高 DPI の画面での挿入 UX と Office ストアの Office アドインを表すために使用されるイメージの URL を指定します。" />
+		<Item text="ホスト" url="manifest/host" SEODescription="Office アドインがサポートしている Office のホスト アプリケーションの種類を指定します。" />
+		<Item text="Hosts" url="manifest/hosts" SEODescription="Office アドインをアクティブにする Office クライアント アプリケーションを指定します。" />
+		<Item text="IconUrl" url="manifest/iconurl" SEODescription="挿入 UX と Office ストアの Office アドインを表すために使用されるイメージの URL を指定します。" />
+		<Item text="Id" url="manifest/id" SEODescription="Office アドインの一意の ID を GUID の形で指定します。" />
+		<Item text="メソッド" url="manifest/method" Scope="excel, word, powerpoint, access, project" SEODescription="Office アドインをアクティブにするために必要な JavaScript API for Office の個別のメソッドを指定します。" />
+		<Item text="メソッド" url="manifest/methods" Scope="excel, word, powerpoint, access, project" SEODescription="Office アドインをアクティブにするために必要な JavaScript API for Office のメソッドの一覧を指定します。" />
+		<Item text="OfficeApp" url="manifest/officeapp" SEODescription="Office アドインのマニフェストのルート要素です。" />
+		<Item text="Override" url="manifest/override" SEODescription="追加ロケールの設定の値を指定する方法を提供します。" />
+		<Item text="アクセス許可" url="manifest/permissions" SEODescription="Office アドインの API アクセスのレベルを指定します。最小特権の原則に基づいてアクセス許可を要求する必要があります。" />
+		<Item text="PhoneSettings" url="manifest/phonesettings" SEODescription="このメール アドインが電話で使用されるときに適用するソースの場所と制御の設定を指定します。" />
+		<Item text="ProviderName" url="manifest/providername" SEODescription="この Office アドインを開発した個人または会社の名前を 125 文字以内の文字列で指定します。" />
+		<Item text="QueryUri" url="manifest/queryuri" Scope="excel, word, powerpoint, access, project" SEODescription="辞書クエリ サービスのエンドポイントの URL を指定します。" />
+		<Item text="RequestedHeight" url="manifest/requestedheight" Scope="excel, powerpoint, access" SEODescription="コンテンツ アドインの初期高さをピクセル単位 (32 から 1000 まで可能) で指定します。" />
+		<Item text="RequestedWidth" url="manifest/requestedwidth" Scope="excel, powerpoint, access" SEODescription="コンテンツ アドインの初期幅をピクセル単位 (32 から 1000 まで可能) で指定します。" />
+		<Item text="要件" url="manifest/requirements" SEODescription="Office アドインをアクティブにするために必要な JavaScript API for Office の最小要件セット (要件セットまたはメソッド、あるいはその両方) を指定します。" />
+		<Item text="Rule" url="manifest/rule" Scope="outlook" SEODescription="このメール アドインに対して評価すべきアクティブ化ルールを指定します。" />
+		<Item text="Set" url="manifest/set" SEODescription="Office アドインをアクティブにするために必要な JavaScript API for Office の要件セットを指定します。" />
+		<Item text="Sets" url="manifest/sets" SEODescription="Office アドインをアクティブにするために必要な JavaScript API for Office の最小限のサブセットを指定します。" />
+		<Item text="SourceLocation" url="manifest/sourcelocation" SEODescription="Office アドインのソース ファイルの場所を、1 から 2018 文字までの長さの URL として指定します。" />
+		<Item text="SupportUrl" url="manifest/supporturl" SEODescription="アドインのサポート情報を提供するページの URL を指定します。" />
+		<Item text="TabletSettings" url="manifest/tabletsettings" Scope="outlook" SEODescription="メール アドインがタブレットで使用されるときに適用される制御の設定を指定します。" />
+		<Item text="TargetDialect" url="manifest/targetdialect" Scope="excel, word, powerpoint, project" SEODescription="この辞書でサポートされる地域言語を定義します。これはカルチャ名文字列として表現されます。" />
+		<Item text="TargetDialects" url="manifest/targetdialects" Scope="excel, word, powerpoint, project" SEODescription="この辞書でサポートされる地域言語を定義します。" />
+		<Item text="バージョン" url="manifest/version" SEODescription="Office アドインのバージョンを指定します。" />
+		<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint" SEODescription="アドインによって実装されたアドイン コマンドに関する情報を格納するルート要素です。">
+			<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint" SEODescription="ユーザーがボタンまたはメニューのコントロールを選択したときに実行する操作を指定します。" />
+			<Item text="Control" url="manifest/control" SEODescription="ユーザーがボタンまたはメニューを選択したときに実行するコントロールを指定します。" />
+			<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint" SEODescription="アドイン コマンドのタブとグループを指定します。" />
+			<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint" SEODescription="アドインが機能を公開する場所を定義します。" />
+			<Item text="FormFactor" url="manifest/formfactor" Scope="excel, word, powerpoint" SEODescription="特定のフォーム ファクターについてアドインの設定を指定します。" />
+			<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint" SEODescription="UI を表示する代わりに JavaScript 関数を実行するアドイン コマンドによってアドインが公開する操作の、ソース コード ファイルを指定します。" />
+			<Item text="GetStarted" url="manifest/getstarted" Scope="excel, word, powerpoint" SEODescription="アドインが、Word、Excel、および PowerPoint のホストにインストールされているときに表示される吹き出しで使用される情報を提供します。" />
+			<Item text="Group" url="manifest/group" Scope="excel, word, powerpoint" SEODescription="タブの UI 拡張ポイントのグループを定義します。" />
+			<Item text="Hosts" url="manifest/hosts" Scope="excel, word, powerpoint" SEODescription="Office アドインがサポートしている Office のホスト アプリケーションの種類を指定します。" />
+			<Item text="Icon" url="manifest/icon" Scope="excel, word, powerpoint" SEODescription="ボタンとメニューのコントロールのイメージ要素を定義します。" />
+			<Item text="OfficeMenu" url="manifest/officemenu" Scope="excel, word, powerpoint" SEODescription="Office のコンテキスト メニューに追加するコントロールのコレクションを定義します。" />
+			<Item text="OfficeTab" url="manifest/officetab" Scope="excel, word, powerpoint" SEODescription="アドイン コマンドに使用する既存のタブを指定します。" />
+			<Item text="リソース" url="manifest/resources" Scope="excel, word, powerpoint" SEODescription="VersionOverrides ノードのアイコン、文字列、URL が含まれます。" />
+			<Item text="Supertip" url="manifest/supertip" Scope="excel, word, powerpoint" SEODescription="豊富なヒント (タイトルと説明の両方) を定義します。" />
+		</Item>
 	</Item>
-  </Item>
-  
-  <Item text="Word" url="word/word-add-ins-reference-overview" Scope="word" SEODescription="Word Javascript API の概要を提供します。">
-    <Item text="Body" url="word/body" SEODescription="文書またはセクションの本文を表します。" />
-    <Item text="BreakType" url="word/breaktype" FriendlyUrl="word/referencebreaktype" Scope="word" SEODescription="区切りの形式を指定します。" />
-    <Item text="ContentControl" url="word/contentcontrol" FriendlyUrl="word/referencecontentcontrol" Scope="word" SEODescription="コンテンツ コントロールを表します。コンテンツ コントロールは、特定の種類のコンテンツのコンテナーとして機能する、境界線で区切られ、場合によってラベルが付いたドキュメント内の領域です。" />
-    <Item text="ContentControlCollection" url="word/contentcontrolcollection" FriendlyUrl="word/referencecontentcontrolcollection" Scope="word" SEODescription="ContentControl オブジェクトのコレクションが含まれます。コンテンツ コントロールは、特定の種類のコンテンツのコンテナーとして機能する、境界線で区切られ、場合によってラベルが付いたドキュメント内の領域です。" />
-    <Item text="Document" url="word/document" FriendlyUrl="word/referencedocument" Scope="word" SEODescription="1 つ以上のセクション、コンテンツ コントロール、ドキュメントの内容を含む本文が含まれています。" />
-    <Item text="Error" url="word/error" FriendlyUrl="word/referenceerror" Scope="word" SEODescription="Word JavaScript API の使用時に発生するエラーを表します。" />
-	<Item text="フォント" url="word/font" FriendlyUrl="word/referencefont" Scope="word" SEODescription="フォントを表します。" />
-    <Item text="InlinePicture" url="word/inlinepicture" FriendlyUrl="word/referenceinlinepicture" Scope="word" SEODescription="インライン画像を表します。" />
-    <Item text="InlinePictureCollection" url="word/inlinepicturecollection" FriendlyUrl="word/referenceinlinepicturecollection" Scope="word" SEODescription="inlinePicture オブジェクトのコレクションが含まれます。" />
-    <Item text="LoadOption" url="word/loadoption" SEODescription="context.sync() が呼び出されたときに読み込まれるページング情報とプロパティを指定します。" />
-    <Item text="Paragraph" url="word/paragraph" FriendlyUrl="word/referenceparagraph" Scope="word" SEODescription="選択部分、範囲、コンテンツ コントロール、または文書本文に含まれる 1 つの段落を表します。" />
-    <Item text="ParagraphCollection" url="word/paragraphcollection" FriendlyUrl="word/referenceparagraphcollection" Scope="word" SEODescription="Paragraphオブジェクトのコレクションを格納します。" />
-    <Item text="範囲" url="word/range" SEODescription="文書内の連続した領域を表します。" />
-    <Item text="RequestContext" url="word/requestcontext" SEODescription="2 つのアプリケーションが別のプロセスで実行されているときの、Word アドインから Word への要求を容易にします。" />
-    <Item text="SearchOptions" url="word/searchoptions" FriendlyUrl="word/referencesearchoptions" Scope="word" SEODescription="検索操作に含めるオプションを指定します。" />
-    <Item text="SearchResultCollection" url="word/searchresultcollection" FriendlyUrl="word/referencesearchresultcollection" Scope="word" SEODescription="検索操作の結果としての範囲オブジェクトのコレクションが含まれます。" />
-    <Item text="セクション" url="word/section" FriendlyUrl="word/referencesection" Scope="word" SEODescription="Word 文書内のセクションを表します。" />
-    <Item text="SectionCollection" url="word/sectioncollection" FriendlyUrl="word/referencesectioncollection" Scope="word" SEODescription="ドキュメントのセクション オブジェクトのコレクションが含まれます。" />
-	<Item text="Word JavaScript API の要件セット" url="requirement-sets/word-api-requirement-sets" Scope="word" SEODescription="Word の要件セット、その要件セットをサポートする Office ホスト アプリケーション、それらのアプリケーションのビルド番号またはバージョン番号に関する情報について説明します。" />
-  </Item>
-  
-  <Item text="Excel" url="excel" Scope="excel">
-    <Item text="アプリケーション" url="excel/application" SEODescription="ブックを管理する Excel アプリケーションを表します。" />
-    <Item text="Binding" url="excel/binding" SEODescription="ブックで定義されている Office.js のバインディングを表します。" />
-    <Item text="BindingCollection" url="excel/bindingcollection" SEODescription="ブックの一部であるすべてのバインド オブジェクトのコレクションを表します。" />
-    <Item text="Chart" url="excel/chart" SEODescription="ブック内のグラフ オブジェクトを表します。" />
-    <Item text="ChartAreaFormat" url="excel/chartareaformat" SEODescription="グラフ領域全体の書式設定プロパティをカプセル化します。" />
-    <Item text="ChartAxes" url="excel/chartaxes" SEODescription="グラフの軸を表します。" />
-    <Item text="ChartAxis" url="excel/chartaxis" SEODescription="グラフの 1 つの軸を表します。" />
-    <Item text="ChartAxisFormat" url="excel/chartaxisformat" SEODescription="グラフ軸の書式設定プロパティをカプセル化します。" />
-    <Item text="ChartAxisTitle" url="excel/chartaxistitle" SEODescription="グラフ軸のタイトルを表します。" />
-    <Item text="ChartAxisTitleFormat" url="excel/chartaxistitleformat" SEODescription="グラフ軸のタイトルの書式設定を表します。" />
-    <Item text="ChartCollection" url="excel/chartcollection" SEODescription="ワークシート上のすべてのグラフ オブジェクトのコレクション。" />
-    <Item text="ChartDataLabelFormat" url="excel/chartdatalabelformat" SEODescription="グラフのデータ ラベルの書式設定プロパティをカプセル化します。" />
-    <Item text="ChartDataLabels" url="excel/chartdatalabels" SEODescription="グラフのポイントにあるすべてのデータ ラベルのコレクションを表します。" />
-    <Item text="ChartFill" url="excel/chartfill" SEODescription="グラフ要素の塗りつぶしの書式設定を表します。" />
-    <Item text="ChartFont" url="excel/chartfont" SEODescription="グラフのオブジェクトのフォント属性 (フォント名、フォント サイズ、色など) を表します。" />
-    <Item text="ChartGridlines" url="excel/chartgridlines" SEODescription="グラフの軸の目盛線または補助目盛線を表します。" />
-    <Item text="ChartGridlinesFormat" url="excel/chartgridlinesformat" SEODescription="グラフの目盛線の書式設定プロパティをカプセル化します。" />
-    <Item text="ChartLegend" url="excel/chartlegend" SEODescription="グラフに凡例を表します。" />
-    <Item text="ChartLegendFormat" url="excel/chartlegendformat" SEODescription="グラフの凡例の書式設定プロパティをカプセル化します。" />
-    <Item text="ChartLineFormat" url="excel/chartlineformat" SEODescription="直線要素の書式設定オプションをカプセル化します。" />
-    <Item text="ChartPoint" url="excel/chartpoint" SEODescription="直線要素の書式設定オプションをカプセル化します。" />
-    <Item text="ChartPointFormat" url="excel/chartpointformat" SEODescription="グラフの系列のポイントを表します。" />
-    <Item text="ChartPointsCollection" url="excel/chartpointscollection" SEODescription="グラフのポイントのオブジェクトの書式設定を表します。" />
-    <Item text="ChartSeries" url="excel/chartseries" SEODescription="グラフ内の系列内のすべてのグラフのポイントのコレクションです。" />
-    <Item text="ChartSeriesCollection" url="excel/chartseriescollection" SEODescription="グラフ系列の書式設定プロパティをカプセル化します。" />
-    <Item text="ChartSeriesFormat" url="excel/chartseriesformat" SEODescription="グラフ系列の書式設定プロパティをカプセル化します。" />
-    <Item text="ChartTitle" url="excel/charttitle" SEODescription="グラフのグラフ タイトルのオブジェクトを表します。" />
-    <Item text="ChartTitleFormat" url="excel/charttitleformat" SEODescription="グラフ タイトルの Office Art の書式設定にアクセスできるようにします。" />
-    <Item text="エラー" url="excel/error" SEODescription="Excel JavaScript API の使用時に発生するエラーを表します。" />
-	<Item text="フィルター" url="excel/filter" SEODescription="テーブルの列のフィルター処理を管理します。" />
-    <Item text="LoadOption" url="excel/loadoption" SEODescription="Excel オブジェクトとそれに対応するアドインの JavaScript のプロキシ オブジェクトの間で状態を同期する sync() メソッドの実行時に読み込まれるプロパティおよび関係のセットを指定する load メソッドに渡すことができるオブジェクトを表します。" />
-    <Item text="NamedItem" url="excel/nameditem" SEODescription="セルまたは値の範囲の定義済みの名前を表します。" />
-    <Item text="NamedItemCollection" url="excel/nameditemcollection" SEODescription="ブックの一部であるすべての nameditem オブジェクトのコレクション。" />
-    <Item text="Range" url="excel/range" SEODescription="1 つ以上の隣接するセル (セル、行、列、セルのブロックなど) のセットを表します。" />
-    <Item text="RangeBorder" url="excel/rangeborder" SEODescription="オブジェクトの輪郭を表します。" />
-    <Item text="RangeBorderCollection" url="excel/rangebordercollection" SEODescription="範囲の境界線を構成する複数の境界線オブジェクトを表します。" />
-    <Item text="RangeFill" url="excel/rangefill" SEODescription="Range オブジェクトの背景を表します。" />
-    <Item text="RangeFont" url="excel/rangefont" SEODescription="オブジェクトのフォント属性 (フォント名、フォント サイズ、色など) を表します。" />
-    <Item text="RangeFormat" url="excel/rangeformat" SEODescription="範囲のフォント、塗りつぶし、境界線、配置などのプロパティをカプセル化する、書式設定オブジェクトです。" />
-    <Item text="RangeSort" url="excel/rangesort" SEODescription="Range オブジェクトの並べ替え操作を管理します。" />
-    <Item text="Requestcontext" url="excel/requestcontext" SEODescription="Excel アプリケーションへの要求を容易にします。" />
-    <Item text="Table" url="excel/table" SEODescription="Excel の表を表します。" />
-    <Item text="TableCollection" url="excel/tablecollection" SEODescription="ブックの一部として含まれている、すべての表のコレクションを表します。" />
-    <Item text="TableColumn" url="excel/tablecolumn" SEODescription="テーブル内にある 1 つの列を表します。" />
-    <Item text="TableColumnCollection" url="excel/tablecolumncollection" SEODescription="表の一部であるすべての列のコレクションを表します。" />
-    <Item text="TableRow" url="excel/tablerow" SEODescription="表の行を表します。" />
-    <Item text="TableRowCollection" url="excel/tablerowcollection" SEODescription="表の一部であるすべての行のコレクションを表します。" />
-    <Item text="TableSort" url="excel/tablesort" SEODescription="Table オブジェクトの並べ替え操作を管理します。" />
-    <Item text="TrackedObjectsCollection" url="excel/trackedobjectscollection" SEODescription="アドインが sync() バッチ間で範囲オブジェクトの参照を管理できるようにします。" />
-    <Item text="ブック" url="excel/workbook" SEODescription="ワークシート、テーブル、範囲などの関連するブック オブジェクトを含みます。" />
-    <Item text="ワークシート" url="excel/worksheet" SEODescription="データ、テーブル、グラフを含むセルのグリッドを表します。" />
-    <Item text="WorksheetCollection" url="excel/worksheetcollection" SEODescription="ブックの一部であるワークシート オブジェクトのコレクションを表します。" />
-    <Item text="WorksheetFunctions" url="excel/functions" SEODescription="JavaScript や REST から呼び出すことができる Excel ワークシート関数のコンテナーとして使用されます。" />
-    <Item text="WorksheetProtection" url="excel/worksheetprotection" SEODescription="シート オブジェクトの保護を表します。" />
-	<Item text="Excel JavaScript API の要件セット" url="requirement-sets/excel-api-requirement-sets" Scope="excel" SEODescription="Excel の要件セット、その要件セットをサポートする Office ホスト アプリケーション、それらのアプリケーションのビルド番号またはバージョン番号に関する情報について説明します。" />
-  </Item>
-  
-  <Item text="Outlook" url="outlook" Scope="Outlook">
+	<Item text="Word" url="word/word-add-ins-reference-overview" Scope="word" SEODescription="Word Javascript API の概要を提供します。">
+		<Item text="Body" url="word/body" SEODescription="文書またはセクションの本文を表します。" />
+		<Item text="BreakType" url="word/breaktype" FriendlyUrl="word/referencebreaktype" Scope="word" SEODescription="区切りの形式を指定します。" />
+		<Item text="ContentControl" url="word/contentcontrol" FriendlyUrl="word/referencecontentcontrol" Scope="word" SEODescription="コンテンツ コントロールを表します。コンテンツ コントロールは、特定の種類のコンテンツのコンテナーとして機能する、境界線で区切られ、場合によってラベルが付いたドキュメント内の領域です。" />
+		<Item text="ContentControlCollection" url="word/contentcontrolcollection" FriendlyUrl="word/referencecontentcontrolcollection" Scope="word" SEODescription="ContentControl オブジェクトのコレクションが含まれます。コンテンツ コントロールは、特定の種類のコンテンツのコンテナーとして機能する、境界線で区切られ、場合によってラベルが付いたドキュメント内の領域です。" />
+		<Item text="Document" url="word/document" FriendlyUrl="word/referencedocument" Scope="word" SEODescription="1 つ以上のセクション、コンテンツ コントロール、ドキュメントの内容を含む本文が含まれています。" />
+		<Item text="Error" url="word/error" FriendlyUrl="word/referenceerror" Scope="word" SEODescription="Word JavaScript API の使用時に発生するエラーを表します。" />
+		<Item text="フォント" url="word/font" FriendlyUrl="word/referencefont" Scope="word" SEODescription="フォントを表します。" />
+		<Item text="InlinePicture" url="word/inlinepicture" FriendlyUrl="word/referenceinlinepicture" Scope="word" SEODescription="インライン画像を表します。" />
+		<Item text="InlinePictureCollection" url="word/inlinepicturecollection" FriendlyUrl="word/referenceinlinepicturecollection" Scope="word" SEODescription="inlinePicture オブジェクトのコレクションが含まれます。" />
+		<Item text="LoadOption" url="word/loadoption" SEODescription="context.sync() が呼び出されたときに読み込まれるページング情報とプロパティを指定します。" />
+		<Item text="Paragraph" url="word/paragraph" FriendlyUrl="word/referenceparagraph" Scope="word" SEODescription="選択部分、範囲、コンテンツ コントロール、または文書本文に含まれる 1 つの段落を表します。" />
+		<Item text="ParagraphCollection" url="word/paragraphcollection" FriendlyUrl="word/referenceparagraphcollection" Scope="word" SEODescription="Paragraphオブジェクトのコレクションを格納します。" />
+		<Item text="範囲" url="word/range" SEODescription="文書内の連続した領域を表します。" />
+		<Item text="RequestContext" url="word/requestcontext" SEODescription="2 つのアプリケーションが別のプロセスで実行されているときの、Word アドインから Word への要求を容易にします。" />
+		<Item text="SearchOptions" url="word/searchoptions" FriendlyUrl="word/referencesearchoptions" Scope="word" SEODescription="検索操作に含めるオプションを指定します。" />
+		<Item text="SearchResultCollection" url="word/searchresultcollection" FriendlyUrl="word/referencesearchresultcollection" Scope="word" SEODescription="検索操作の結果としての範囲オブジェクトのコレクションが含まれます。" />
+		<Item text="セクション" url="word/section" FriendlyUrl="word/referencesection" Scope="word" SEODescription="Word 文書内のセクションを表します。" />
+		<Item text="SectionCollection" url="word/sectioncollection" FriendlyUrl="word/referencesectioncollection" Scope="word" SEODescription="ドキュメントのセクション オブジェクトのコレクションが含まれます。" />
+		<Item text="Word JavaScript API の要件セット" url="requirement-sets/word-api-requirement-sets" Scope="word" SEODescription="Word の要件セット、その要件セットをサポートする Office ホスト アプリケーション、それらのアプリケーションのビルド番号またはバージョン番号に関する情報について説明します。" />
+	</Item>
+	<Item text="Excel" url="excel" Scope="excel">
+		<Item text="アプリケーション" url="excel/application" SEODescription="ブックを管理する Excel アプリケーションを表します。" />
+		<Item text="Binding" url="excel/binding" SEODescription="ブックで定義されている Office.js のバインディングを表します。" />
+		<Item text="BindingCollection" url="excel/bindingcollection" SEODescription="ブックの一部であるすべてのバインド オブジェクトのコレクションを表します。" />
+		<Item text="Chart" url="excel/chart" SEODescription="ブック内のグラフ オブジェクトを表します。" />
+		<Item text="ChartAreaFormat" url="excel/chartareaformat" SEODescription="グラフ領域全体の書式設定プロパティをカプセル化します。" />
+		<Item text="ChartAxes" url="excel/chartaxes" SEODescription="グラフの軸を表します。" />
+		<Item text="ChartAxis" url="excel/chartaxis" SEODescription="グラフの 1 つの軸を表します。" />
+		<Item text="ChartAxisFormat" url="excel/chartaxisformat" SEODescription="グラフ軸の書式設定プロパティをカプセル化します。" />
+		<Item text="ChartAxisTitle" url="excel/chartaxistitle" SEODescription="グラフ軸のタイトルを表します。" />
+		<Item text="ChartAxisTitleFormat" url="excel/chartaxistitleformat" SEODescription="グラフ軸のタイトルの書式設定を表します。" />
+		<Item text="ChartCollection" url="excel/chartcollection" SEODescription="ワークシート上のすべてのグラフ オブジェクトのコレクション。" />
+		<Item text="ChartDataLabelFormat" url="excel/chartdatalabelformat" SEODescription="グラフのデータ ラベルの書式設定プロパティをカプセル化します。" />
+		<Item text="ChartDataLabels" url="excel/chartdatalabels" SEODescription="グラフのポイントにあるすべてのデータ ラベルのコレクションを表します。" />
+		<Item text="ChartFill" url="excel/chartfill" SEODescription="グラフ要素の塗りつぶしの書式設定を表します。" />
+		<Item text="ChartFont" url="excel/chartfont" SEODescription="グラフのオブジェクトのフォント属性 (フォント名、フォント サイズ、色など) を表します。" />
+		<Item text="ChartGridlines" url="excel/chartgridlines" SEODescription="グラフの軸の目盛線または補助目盛線を表します。" />
+		<Item text="ChartGridlinesFormat" url="excel/chartgridlinesformat" SEODescription="グラフの目盛線の書式設定プロパティをカプセル化します。" />
+		<Item text="ChartLegend" url="excel/chartlegend" SEODescription="グラフに凡例を表します。" />
+		<Item text="ChartLegendFormat" url="excel/chartlegendformat" SEODescription="グラフの凡例の書式設定プロパティをカプセル化します。" />
+		<Item text="ChartLineFormat" url="excel/chartlineformat" SEODescription="直線要素の書式設定オプションをカプセル化します。" />
+		<Item text="ChartPoint" url="excel/chartpoint" SEODescription="直線要素の書式設定オプションをカプセル化します。" />
+		<Item text="ChartPointFormat" url="excel/chartpointformat" SEODescription="グラフの系列のポイントを表します。" />
+		<Item text="ChartPointsCollection" url="excel/chartpointscollection" SEODescription="グラフのポイントのオブジェクトの書式設定を表します。" />
+		<Item text="ChartSeries" url="excel/chartseries" SEODescription="グラフ内の系列内のすべてのグラフのポイントのコレクションです。" />
+		<Item text="ChartSeriesCollection" url="excel/chartseriescollection" SEODescription="グラフ系列の書式設定プロパティをカプセル化します。" />
+		<Item text="ChartSeriesFormat" url="excel/chartseriesformat" SEODescription="グラフ系列の書式設定プロパティをカプセル化します。" />
+		<Item text="ChartTitle" url="excel/charttitle" SEODescription="グラフのグラフ タイトルのオブジェクトを表します。" />
+		<Item text="ChartTitleFormat" url="excel/charttitleformat" SEODescription="グラフ タイトルの Office Art の書式設定にアクセスできるようにします。" />
+		<Item text="エラー" url="excel/error" SEODescription="Excel JavaScript API の使用時に発生するエラーを表します。" />
+		<Item text="フィルター" url="excel/filter" SEODescription="テーブルの列のフィルター処理を管理します。" />
+		<Item text="LoadOption" url="excel/loadoption" SEODescription="Excel オブジェクトとそれに対応するアドインの JavaScript のプロキシ オブジェクトの間で状態を同期する sync() メソッドの実行時に読み込まれるプロパティおよび関係のセットを指定する load メソッドに渡すことができるオブジェクトを表します。" />
+		<Item text="NamedItem" url="excel/nameditem" SEODescription="セルまたは値の範囲の定義済みの名前を表します。" />
+		<Item text="NamedItemCollection" url="excel/nameditemcollection" SEODescription="ブックの一部であるすべての nameditem オブジェクトのコレクション。" />
+		<Item text="Range" url="excel/range" SEODescription="1 つ以上の隣接するセル (セル、行、列、セルのブロックなど) のセットを表します。" />
+		<Item text="RangeBorder" url="excel/rangeborder" SEODescription="オブジェクトの輪郭を表します。" />
+		<Item text="RangeBorderCollection" url="excel/rangebordercollection" SEODescription="範囲の境界線を構成する複数の境界線オブジェクトを表します。" />
+		<Item text="RangeFill" url="excel/rangefill" SEODescription="Range オブジェクトの背景を表します。" />
+		<Item text="RangeFont" url="excel/rangefont" SEODescription="オブジェクトのフォント属性 (フォント名、フォント サイズ、色など) を表します。" />
+		<Item text="RangeFormat" url="excel/rangeformat" SEODescription="範囲のフォント、塗りつぶし、境界線、配置などのプロパティをカプセル化する、書式設定オブジェクトです。" />
+		<Item text="RangeSort" url="excel/rangesort" SEODescription="Range オブジェクトの並べ替え操作を管理します。" />
+		<Item text="Requestcontext" url="excel/requestcontext" SEODescription="Excel アプリケーションへの要求を容易にします。" />
+		<Item text="Table" url="excel/table" SEODescription="Excel の表を表します。" />
+		<Item text="TableCollection" url="excel/tablecollection" SEODescription="ブックの一部として含まれている、すべての表のコレクションを表します。" />
+		<Item text="TableColumn" url="excel/tablecolumn" SEODescription="テーブル内にある 1 つの列を表します。" />
+		<Item text="TableColumnCollection" url="excel/tablecolumncollection" SEODescription="表の一部であるすべての列のコレクションを表します。" />
+		<Item text="TableRow" url="excel/tablerow" SEODescription="表の行を表します。" />
+		<Item text="TableRowCollection" url="excel/tablerowcollection" SEODescription="表の一部であるすべての行のコレクションを表します。" />
+		<Item text="TableSort" url="excel/tablesort" SEODescription="Table オブジェクトの並べ替え操作を管理します。" />
+		<Item text="TrackedObjectsCollection" url="excel/trackedobjectscollection" SEODescription="アドインが sync() バッチ間で範囲オブジェクトの参照を管理できるようにします。" />
+		<Item text="ブック" url="excel/workbook" SEODescription="ワークシート、テーブル、範囲などの関連するブック オブジェクトを含みます。" />
+		<Item text="ワークシート" url="excel/worksheet" SEODescription="データ、テーブル、グラフを含むセルのグリッドを表します。" />
+		<Item text="WorksheetCollection" url="excel/worksheetcollection" SEODescription="ブックの一部であるワークシート オブジェクトのコレクションを表します。" />
+		<Item text="WorksheetFunctions" url="excel/functions" SEODescription="JavaScript や REST から呼び出すことができる Excel ワークシート関数のコンテナーとして使用されます。" />
+		<Item text="WorksheetProtection" url="excel/worksheetprotection" SEODescription="シート オブジェクトの保護を表します。" />
+		<Item text="Excel JavaScript API の要件セット" url="requirement-sets/excel-api-requirement-sets" Scope="excel" SEODescription="Excel の要件セット、その要件セットをサポートする Office ホスト アプリケーション、それらのアプリケーションのビルド番号またはバージョン番号に関する情報について説明します。" />
+	</Item>
+	<Item text="Outlook" url="outlook" Scope="Outlook">
 		<Item text="1.1" url="outlook/1.1/index" Version="V1.1">
-		  <Item text="オブジェクト モデル" url="outlook/1.1" Version="V1.1">
-		    <Item text="Office.context" url="outlook/1.1/Office.context" Version="V1.1" />
-		    <Item text="Office.context.mailbox" url="outlook/1.1/Office.context.mailbox" Version="V1.1" />
-		    <Item text="Office.context.mailbox.diagnostics" url="outlook/1.1/Office.context.mailbox.diagnostics" Version="V1.1" />
-		    <Item text="Office.context.mailbox.item" url="outlook/1.1/Office.context.mailbox.item" Version="V1.1" />
-		    <Item text="Office.context.mailbox.userProfile" url="outlook/1.1/Office.context.mailbox.userProfile" Version="V1.1" />
-		   
-		  </Item>
-		  <Item text="複合型" url="outlook/1.1" Version="V1.1">
-		    <Item text="本文" url="outlook/1.1/Body" Version="V1.1" />
-		    <Item text="CustomProperties" url="outlook/1.1/CustomProperties" Version="V1.1" />
-		    <Item text="場所" url="outlook/1.1/Location" Version="V1.1" />
-		    <Item text="受信者" url="outlook/1.1/Recipients" Version="V1.1" />
-		    <Item text="RoamingSettings" url="outlook/1.1/RoamingSettings" Version="V1.1" />
-		    <Item text="Subject" url="outlook/1.1/Subject" Version="V1.1" />
-		    <Item text="時刻" url="outlook/1.1/Time" Version="V1.1" />
-		  </Item>
-		  <Item text="単純型" url="outlook/1.1/simple-types" Version="V1.1" />
-       <!-- <Item text="AsyncResult" url="outlook/simple-types#asyncresult" Version="V1.1"  />
+			<Item text="オブジェクト モデル" url="outlook/1.1" Version="V1.1">
+				<Item text="Office.context" url="outlook/1.1/Office.context" Version="V1.1" />
+				<Item text="Office.context.mailbox" url="outlook/1.1/Office.context.mailbox" Version="V1.1" />
+				<Item text="Office.context.mailbox.diagnostics" url="outlook/1.1/Office.context.mailbox.diagnostics" Version="V1.1" />
+				<Item text="Office.context.mailbox.item" url="outlook/1.1/Office.context.mailbox.item" Version="V1.1" />
+				<Item text="Office.context.mailbox.userProfile" url="outlook/1.1/Office.context.mailbox.userProfile" Version="V1.1" />
+			</Item>
+			<Item text="複合型" url="outlook/1.1" Version="V1.1">
+				<Item text="本文" url="outlook/1.1/Body" Version="V1.1" />
+				<Item text="CustomProperties" url="outlook/1.1/CustomProperties" Version="V1.1" />
+				<Item text="場所" url="outlook/1.1/Location" Version="V1.1" />
+				<Item text="受信者" url="outlook/1.1/Recipients" Version="V1.1" />
+				<Item text="RoamingSettings" url="outlook/1.1/RoamingSettings" Version="V1.1" />
+				<Item text="Subject" url="outlook/1.1/Subject" Version="V1.1" />
+				<Item text="時刻" url="outlook/1.1/Time" Version="V1.1" />
+			</Item>
+			<Item text="単純型" url="outlook/1.1/simple-types" Version="V1.1" />
+			<!-- <Item text="AsyncResult" url="outlook/simple-types#asyncresult" Version="V1.1"  />
         <Item text="AttachmentDetails" url="outlook/simple-types#attachmentdetails" Version="V1.1"  />
         <Item text="Contact" url="outlook/simple-types#contact" Version="V1.1"  />
         <Item text="EmailAddressDetails" url="outlook/simple-types#emailaddressdetails" Version="V1.1"  />
@@ -179,8 +167,8 @@
         <Item text="PhoneNumber" url="outlook/simple-types#phonenumber" Version="V1.1"  />
         <Item text="TaskSuggestion" url="outlook/simple-types#tasksuggestion" Version="V1.1"  />
     </Item>-->
-		  <Item text="列挙型" url="outlook/1.1/Office.MailboxEnums" Version="V1.1" />  
-      <!--<Item text="Office.AsyncResultStatus" url="outlook/Office#asyncresultstatus-string" Version="V1.1"  />
+			<Item text="列挙型" url="outlook/1.1/Office.MailboxEnums" Version="V1.1" />
+			<!--<Item text="Office.AsyncResultStatus" url="outlook/Office#asyncresultstatus-string" Version="V1.1"  />
       <Item text="Office.CoercionType" url="outlook/Office#coerciontype-string" Version="V1.1"  />
       <Item text="Office.MailboxEnums.AttachmentType" url="outlook/Office.MailboxEnums#attachmenttype-string" Version="V1.1"  />
       <Item text="Office.MailboxEnums.EntityType" url="outlook/Office.MailboxEnums#entitytype-string" Version="V1.1"  />
@@ -188,69 +176,67 @@
       <Item text="Office.MailboxEnums.RecipientType" url="outlook/Office.MailboxEnums#recipienttype-string" Version="V1.1"  />
       <Item text="Office.MailboxEnums.ResponseType" url="outlook/Office.MailboxEnums#responsetype-string" Version="V1.1"  />
       <Item text="Office.MailboxEnums.SourceProperty" url="outlook/Office#sourceproperty-string" Version="V1.1"  />-->
-    </Item>   
-    <Item text="1.2" url="outlook/1.2/index" Version="V1.2">
-	    <Item text="オブジェクト モデル" url="outlook/1.2" Version="V1.2">
-		    <Item text="Office.context" url="outlook/1.2/Office.context" Version="V1.2" />
-		    <Item text="Office.context.mailbox" url="outlook/1.2/Office.context.mailbox" Version="V1.2" />
-        <Item text="Office.context.mailbox.diagnostics" url="outlook/1.2/Office.context.mailbox.diagnostics" Version="V1.2" />
-		    <Item text="Office.context.mailbox.item" url="outlook/1.2/Office.context.mailbox.item" Version="V1.2" />
-		    <Item text="Office.context.mailbox.userProfile" url="outlook/1.2/Office.context.mailbox.userProfile" Version="V1.2" />
-		  </Item>
-		  <Item text="複合型" url="outlook/1.2" Version="V1.2">
-		    <Item text="本文" url="outlook/1.2/Body" Version="V1.2" />
-		    <Item text="CustomProperties" url="outlook/1.2/CustomProperties" Version="V1.2" />
-		  <Item text="場所" url="outlook/1.2/Location" Version="V1.2" />
-		    <Item text="受信者" url="outlook/1.2/Recipients" Version="V1.2" />
-		    <Item text="RoamingSettings" url="outlook/1.2/RoamingSettings" Version="V1.2" />
-		    <Item text="Subject" url="outlook/1.2/Subject" Version="V1.2" />
-		    <Item text="時刻" url="outlook/1.2/Time" Version="V1.2" />
-		  </Item>
-		  <Item text="単純型" url="outlook/1.2/simple-types" Version="V1.2" SEODescription="Mailbox API の単純型を表します。" />
-        <Item text="AsyncResult" url="outlook/simple-types#asyncresult" Version="V1.2" />
-        <Item text="AttachmentDetails" url="outlook/simple-types#attachmentdetails" Version="V1.2" />
-        <Item text="Contact" url="outlook/simple-types#contact" Version="V1.2" />
-        <Item text="EmailAddressDetails" url="outlook/simple-types#emailaddressdetails" Version="V1.2" />
-        <Item text="EmailUser" url="outlook/simple-types#emailuser" Version="V1.2" />
-        <Item text="エンティティ" url="outlook/simple-types#entities" Version="V1.2" />
-        <Item text="LocalClientTime" url="outlook/simple-types#localclienttime" Version="V1.2" />
-        <Item text="MeetingSuggestion" url="outlook/simple-types#contact" Version="V1.2" />
-        <Item text="PhoneNumber" url="outlook/simple-types#phonenumber" Version="V1.2" />
-        <Item text="TaskSuggestion" url="outlook/simple-types#tasksuggestion" Version="V1.2" />
-      <Item text="列挙型" url="outlook/1.2/Office.MailboxEnums" Version="V1.2" SEODescription="Mailbox API の列挙体を表します。" />  
-        <Item text="Office.AsyncResultStatus" url="outlook/Office#asyncresultstatus-string" Version="V1.2" />
-        <Item text="Office.CoercionType" url="outlook/Office#coerciontype-string" Version="V1.2" />
-        <Item text="Office.MailboxEnums.AttachmentType" url="outlook/Office.MailboxEnums#attachmenttype-string" Version="V1.2" />
-        <Item text="Office.MailboxEnums.EntityType" url="outlook/Office.MailboxEnums#entitytype-string" Version="V1.2" />
-        <Item text="Office.MailboxEnums.ItemType" url="outlook/Office.MailboxEnums#itemtype-string" Version="V1.2" />
-        <Item text="Office.MailboxEnums.RecipientType" url="outlook/Office.MailboxEnums#recipienttype-string" Version="V1.2" />
-        <Item text="Office.MailboxEnums.ResponseType" url="outlook/Office.MailboxEnums#responsetype-string" Version="V1.2" />
-        <Item text="Office.MailboxEnums.SourceProperty" url="outlook/Office#sourceproperty-string" Version="V1.2" /> 
-     </Item>
-    
-    <!-- V1.3 or latest. This doesn't have a url with the version number-->
-		<Item text="オブジェクト モデル" url="outlook" Version="V1.3">
-		<Item text="Office" url="outlook/Office" Version="V1.3" SEODescription="Office 名前空間は、すべての Office アプリケーションのアドインで使用される共有インターフェイスを提供します。" />
-		<Item text="Office.context" url="outlook/Office.context" Version="V1.3" SEODescription="Office.context 名前空間は、すべての Office アプリのアドインで使う共有インターフェイスを提供します。" />
-		  <Item text="Office.context.mailbox.diagnostics" url="outlook/Office.context.mailbox.diagnostics" Version="V1.3" SEODescription="Outlook アドインに診断情報を提供します。" />
-		  <Item text="Office.context.mailbox" url="outlook/Office.context.mailbox" Version="V1.3" SEODescription="Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オブジェクト モデルへのアクセスを提供します。" />
-		  <Item text="Office.context.mailbox.item" url="outlook/Office.context.mailbox.item" Version="V1.3" SEODescription="アイテムの名前空間を使用して、現在選択されているメッセージ、会議出席依頼、または予定にアクセスします。itemType プロパティを使用して、アイテムの種類を決定できます。" />
-		  <Item text="Office.context.mailbox.userProfile" url="outlook/Office.context.mailbox.userProfile" Version="V1.3" SEODescription="ユーザーのメールボックスのプロファイルへのアクセスを提供します。" />
+		</Item>
+		<Item text="1.2" url="outlook/1.2/index" Version="V1.2">
+			<Item text="オブジェクト モデル" url="outlook/1.2" Version="V1.2">
+				<Item text="Office.context" url="outlook/1.2/Office.context" Version="V1.2" />
+				<Item text="Office.context.mailbox" url="outlook/1.2/Office.context.mailbox" Version="V1.2" />
+				<Item text="Office.context.mailbox.diagnostics" url="outlook/1.2/Office.context.mailbox.diagnostics" Version="V1.2" />
+				<Item text="Office.context.mailbox.item" url="outlook/1.2/Office.context.mailbox.item" Version="V1.2" />
+				<Item text="Office.context.mailbox.userProfile" url="outlook/1.2/Office.context.mailbox.userProfile" Version="V1.2" />
 			</Item>
+			<Item text="複合型" url="outlook/1.2" Version="V1.2">
+				<Item text="本文" url="outlook/1.2/Body" Version="V1.2" />
+				<Item text="CustomProperties" url="outlook/1.2/CustomProperties" Version="V1.2" />
+				<Item text="場所" url="outlook/1.2/Location" Version="V1.2" />
+				<Item text="受信者" url="outlook/1.2/Recipients" Version="V1.2" />
+				<Item text="RoamingSettings" url="outlook/1.2/RoamingSettings" Version="V1.2" />
+				<Item text="Subject" url="outlook/1.2/Subject" Version="V1.2" />
+				<Item text="時刻" url="outlook/1.2/Time" Version="V1.2" />
+			</Item>
+			<Item text="単純型" url="outlook/1.2/simple-types" Version="V1.2" SEODescription="Mailbox API の単純型を表します。" />
+			<Item text="AsyncResult" url="outlook/simple-types#asyncresult" Version="V1.2" />
+			<Item text="AttachmentDetails" url="outlook/simple-types#attachmentdetails" Version="V1.2" />
+			<Item text="Contact" url="outlook/simple-types#contact" Version="V1.2" />
+			<Item text="EmailAddressDetails" url="outlook/simple-types#emailaddressdetails" Version="V1.2" />
+			<Item text="EmailUser" url="outlook/simple-types#emailuser" Version="V1.2" />
+			<Item text="エンティティ" url="outlook/simple-types#entities" Version="V1.2" />
+			<Item text="LocalClientTime" url="outlook/simple-types#localclienttime" Version="V1.2" />
+			<Item text="MeetingSuggestion" url="outlook/simple-types#contact" Version="V1.2" />
+			<Item text="PhoneNumber" url="outlook/simple-types#phonenumber" Version="V1.2" />
+			<Item text="TaskSuggestion" url="outlook/simple-types#tasksuggestion" Version="V1.2" />
+			<Item text="列挙型" url="outlook/1.2/Office.MailboxEnums" Version="V1.2" SEODescription="Mailbox API の列挙体を表します。" />
+			<Item text="Office.AsyncResultStatus" url="outlook/Office#asyncresultstatus-string" Version="V1.2" />
+			<Item text="Office.CoercionType" url="outlook/Office#coerciontype-string" Version="V1.2" />
+			<Item text="Office.MailboxEnums.AttachmentType" url="outlook/Office.MailboxEnums#attachmenttype-string" Version="V1.2" />
+			<Item text="Office.MailboxEnums.EntityType" url="outlook/Office.MailboxEnums#entitytype-string" Version="V1.2" />
+			<Item text="Office.MailboxEnums.ItemType" url="outlook/Office.MailboxEnums#itemtype-string" Version="V1.2" />
+			<Item text="Office.MailboxEnums.RecipientType" url="outlook/Office.MailboxEnums#recipienttype-string" Version="V1.2" />
+			<Item text="Office.MailboxEnums.ResponseType" url="outlook/Office.MailboxEnums#responsetype-string" Version="V1.2" />
+			<Item text="Office.MailboxEnums.SourceProperty" url="outlook/Office#sourceproperty-string" Version="V1.2" />
+		</Item>
+		<!-- V1.3 or latest. This doesn't have a url with the version number-->
+		<Item text="オブジェクト モデル" url="outlook" Version="V1.3">
+			<Item text="Office" url="outlook/Office" Version="V1.3" SEODescription="Office 名前空間は、すべての Office アプリケーションのアドインで使用される共有インターフェイスを提供します。" />
+			<Item text="Office.context" url="outlook/Office.context" Version="V1.3" SEODescription="Office.context 名前空間は、すべての Office アプリのアドインで使う共有インターフェイスを提供します。" />
+			<Item text="Office.context.mailbox.diagnostics" url="outlook/Office.context.mailbox.diagnostics" Version="V1.3" SEODescription="Outlook アドインに診断情報を提供します。" />
+			<Item text="Office.context.mailbox" url="outlook/Office.context.mailbox" Version="V1.3" SEODescription="Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オブジェクト モデルへのアクセスを提供します。" />
+			<Item text="Office.context.mailbox.item" url="outlook/Office.context.mailbox.item" Version="V1.3" SEODescription="アイテムの名前空間を使用して、現在選択されているメッセージ、会議出席依頼、または予定にアクセスします。itemType プロパティを使用して、アイテムの種類を決定できます。" />
+			<Item text="Office.context.mailbox.userProfile" url="outlook/Office.context.mailbox.userProfile" Version="V1.3" SEODescription="ユーザーのメールボックスのプロファイルへのアクセスを提供します。" />
+		</Item>
 		<Item text="複合型" url="outlook" Version="V1.3">
-		  <Item text="本文" url="outlook/Body" Version="V1.3" SEODescription="本文オブジェクトは、メッセージまたは予定の内容を追加および更新するためのメソッドを提供します。" />
-		  <Item text="CustomProperties" url="outlook/CustomProperties" Version="V1.3" SEODescription="CustomProperties オブジェクトが表すカスタム プロパティは、特定のアイテムに固有であり、Outlook 用のメール アドインに固有です。" />
-			<Item text="イベント" url="outlook/Event" Version="V1.3" SEODescription="イベント オブジェクトは、UI を使用しないコマンド ボタンによって呼び出されるアドイン関数のパラメーターとして渡されます。" />	
+			<Item text="本文" url="outlook/Body" Version="V1.3" SEODescription="本文オブジェクトは、メッセージまたは予定の内容を追加および更新するためのメソッドを提供します。" />
+			<Item text="CustomProperties" url="outlook/CustomProperties" Version="V1.3" SEODescription="CustomProperties オブジェクトが表すカスタム プロパティは、特定のアイテムに固有であり、Outlook 用のメール アドインに固有です。" />
+			<Item text="イベント" url="outlook/Event" Version="V1.3" SEODescription="イベント オブジェクトは、UI を使用しないコマンド ボタンによって呼び出されるアドイン関数のパラメーターとして渡されます。" />
 			<Item text="場所" url="outlook/Location" Version="V1.3" SEODescription="Outlook アドインで会議の場所を取得し設定する方法を提供します。" />
-			<Item text="NotificationMessages" url="outlook/NotificationMessages" Version="V1.3" SEODescription="NotificationMessages オブジェクトは、アイテムの NotificationMessages プロパティとして返されます。" />	
+			<Item text="NotificationMessages" url="outlook/NotificationMessages" Version="V1.3" SEODescription="NotificationMessages オブジェクトは、アイテムの NotificationMessages プロパティとして返されます。" />
 			<Item text="受信者" url="outlook/Recipients" Version="V1.3" SEODescription="メールの受信者に関する情報。" />
-		  <Item text="RoamingSettings" url="outlook/RoamingSettings" Version="V1.3" SEODescription="RoamingSettings オブジェクトのメソッドを使用して作成された設定は、アドインごと、およびユーザーごとに保存されます。" />
-		  <Item text="Subject" url="outlook/Subject" Version="V1.3" SEODescription="Outlook のアドインで、予定またはメッセージの件名を取得および設定するメソッドを提供します。" />
-		  <Item text="時刻" url="outlook/Time" Version="V1.3" SEODescription="Time オブジェクトは、作成モードで予定の開始プロパティまたは終了プロパティとして返されます。" />
+			<Item text="RoamingSettings" url="outlook/RoamingSettings" Version="V1.3" SEODescription="RoamingSettings オブジェクトのメソッドを使用して作成された設定は、アドインごと、およびユーザーごとに保存されます。" />
+			<Item text="Subject" url="outlook/Subject" Version="V1.3" SEODescription="Outlook のアドインで、予定またはメッセージの件名を取得および設定するメソッドを提供します。" />
+			<Item text="時刻" url="outlook/Time" Version="V1.3" SEODescription="Time オブジェクトは、作成モードで予定の開始プロパティまたは終了プロパティとして返されます。" />
 		</Item>
 		<Item text="単純型" url="outlook/simple-types" Version="V1.3">
-      
-      <!--
+			<!--
         <Item text="AsyncResult" url="outlook/simple-types#asyncresult" Version="V1.3"  />
         <Item text="AttachmentDetails" url="outlook/simple-types#attachmentdetails" Version="V1.3"  />
         <Item text="Contact" url="outlook/simple-types#contact" Version="V1.3"  />
@@ -263,9 +249,9 @@
         <Item text="PhoneNumber" url="outlook/simple-types#phonenumber" Version="V1.3"  />
         <Item text="TaskSuggestion" url="outlook/simple-types#tasksuggestion" Version="V1.3"  />
         -->
-    </Item>
-		<Item text="列挙型" url="outlook/Office.MailboxEnums" Version="V1.3">  
-      <!--
+		</Item>
+		<Item text="列挙型" url="outlook/Office.MailboxEnums" Version="V1.3">
+			<!--
       <Item text="Office.AsyncResultStatus" url="outlook/Office#asyncresultstatus-string" Version="V1.3"  />
       <Item text="Office.CoercionType" url="outlook/Office#coerciontype-string" Version="V1.3"  />
       <Item text="Office.MailboxEnums.AttachmentType" url="outlook/Office.MailboxEnums#attachmenttype-string" Version="V1.3"  />
@@ -276,263 +262,274 @@
       <Item text="Office.MailboxEnums.ResponseType" url="outlook/Office.MailboxEnums#responsetype-string" Version="V1.3"  />
       <Item text="Office.MailboxEnums.SourceProperty" url="outlook/Office#sourceproperty-string" Version="V1.3"  />
         -->
-    </Item>
-    <Item text="API 要件セットについて" url="outlook/tutorial-api-requirement-sets" Version="V1.3" SEODescription="Outlook 用の API の要件セット" />
-  </Item>
-   
-  <Item text="OneNote" url="onenote/onenote-add-ins-javascript-reference" Scope="onenote">
-    <Item text="アプリケーション" url="onenote/application" SEODescription="OneNote アドインの参照。" />
-    <Item text="エラー" url="onenote/error" SEODescription="OneNote アドインの参照。" />
-	<Item text="Notebook" url="onenote/notebook" SEODescription="OneNote アドインの参照。" />
-    <Item text="Notebookcollection" url="onenote/notebookcollection" SEODescription="OneNote アドインの参照。" />
-    <Item text="Page" url="onenote/page" SEODescription="OneNote アドインの参照。" />
-    <Item text="Pagecollection" url="onenote/pagecollection" SEODescription="OneNote アドインの参照。" />
-    <Item text="Pagecontent" url="onenote/pagecontent" SEODescription="OneNote アドインの参照。" />
-    <Item text="Pagecontentcollection" url="onenote/pagecontentcollection" SEODescription="OneNote アドインの参照。" />
-    <Item text="Paragraph" url="onenote/paragraph" SEODescription="OneNote アドインの参照。" />
-    <Item text="Paragraphcollection" url="onenote/paragraphcollection" SEODescription="OneNote アドインの参照。" />
-    <Item text="Richtext" url="onenote/richtext" SEODescription="OneNote アドインの参照。" />
-    <Item text="Section" url="onenote/section" SEODescription="OneNote アドインの参照。" />
-    <Item text="Sectioncollection" url="onenote/sectioncollection" SEODescription="OneNote アドインの参照。" />
-    <Item text="Sectiongroup" url="onenote/sectiongroup" SEODescription="OneNote アドインの参照。" />
-    <Item text="Sectiongroupcollection" url="onenote/sectiongroupcollection" SEODescription="OneNote アドインの参照。" />
-    <Item text="Outline" url="onenote/outline" SEODescription="OneNote アドインの参照。" />
-    <Item text="Image" url="onenote/image" SEODescription="OneNote アドインの参照。" />
-	<Item text="OneNote JavaScript API の要件セット" url="requirement-sets/onenote-api-requirement-sets" SEODescription="OneNote の要件セット、それらの要件セットをサポートする Office ホスト アプリケーション、ビルド バージョンまたは一般提供開始日に関する情報について説明します。" />
-  </Item>  
-  <Item text="共有 API" url="shared/shared-api">
-    <Item text="JavaScript API for Office" url="javascript-api-for-office" SEODescription="JavaScript API for Office には、Office アドイン コードで使用できるオブジェクト、メソッド、プロパティ、イベント、および列挙体があります。" />
-	<Item text="JavaScript API for Office の変更点" url="what's-changed-in-the-javascript-api-for-office" SEODescription="JavaScript API for Office は、Office アドインの機能を拡張するため、オブジェクト、メソッド、プロパティ、イベント、列挙体の新規追加や更新によって、定期的に更新が加えられています。" />
-	<Item text="Office の共通要件セット" url="requirement-sets/office-add-in-requirement-sets" SEODescription="要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、実行時チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。" />
-	<Item text="JavaScript API for Office のエラー コード" url="javascript-api-for-office-error-codes" SEODescription="JavaScript API for Office (Office.js) の使用時に発生する可能性のあるエラー メッセージ。" />
-	<Item text="列挙型" url="shared/enumerations" FriendlyUrl="reference/enumerationsenumerations">
-      <Item text="ActiveView 列挙" url="shared/activeview-enumeration" FriendlyUrl="reference/enumerationsactiveview-enumeration" Scope="powerpoint" SEODescription="ユーザーがドキュメントを編集できるかどうかなど、ドキュメントのアクティブなビューの状態を指定します。" />
-      <Item text="AsyncResultStatus 列挙型" url="shared/asyncresultstatus-enumeration" FriendlyUrl="reference/enumerationsasyncresultstatus-enumeration" Scope="Access, Excel, Word" SEODescription="非同期呼び出しの結果を指定します。" />
-      <Item text="BindingType 列挙型" url="shared/bindingtype-enumeration" FriendlyUrl="reference/enumerationsbindingtype-enumeration" Scope="Access, Excel, Word" SEODescription="返されるバインディング オブジェクトの種類を指定します。" />
-      <Item text="CoercionType 列挙型" url="shared/coerciontype-enumeration" FriendlyUrl="reference/enumerationscoerciontype-enumeration" SEODescription="呼び出されたメソッドによって返される、または設定されるデータを強制的に変換する方法を指定します。" />
-      <Item text="CustomXMLNodeType 列挙型" url="shared/customxmlnodetype-enumeration" FriendlyUrl="reference/enumerationscustomxmlnodetype-enumeration" Scope="Word" SEODescription="ノードの種類を指定します。" />
-      <Item text="DocumentMode 列挙型" url="shared/documentmode-enumeration" FriendlyUrl="reference/enumerationsdocumentmode-enumeration" Scope="Excel, PowerPoint, Project, Word" SEODescription="関連付けられているアプリケーションのドキュメントを読み取り専用または読み取り/書き込みのどちらかに指定します。" />
-      <Item text="EventType 列挙型" url="shared/eventtype-enumeration" FriendlyUrl="reference/enumerationseventtype-enumeration" Scope="Excel, PowerPoint, Project, Word" SEODescription="発生したイベントの種類を指定します。EventNameEventArgs オブジェクトの type プロパティによって返されます。" />
-      <Item text="FileType 列挙型" url="shared/filetype-enumeration" FriendlyUrl="reference/enumerationsfiletype-enumeration" Scope="PowerPoint, Word" SEODescription="ドキュメントを返す形式を指定します。" />
-      <Item text="FilterType 列挙" url="shared/filtertype-enumeration" FriendlyUrl="reference/enumerationsfiltertype-enumeration" Scope="Excel, Project, Word" SEODescription="データを取得するときにホスト アプリケーションからのフィルタリングを適用するかどうかを指定します。" />
-      <Item text="GoToType 列挙型" url="shared/gototype-enumeration" FriendlyUrl="reference/enumerationsgototype-enumeration" Scope="Excel, PowerPoint, Word" SEODescription="ナビゲートする場所またはオブジェクトの種類を指定します。" />
-      <Item text="InitializationReason 列挙型" url="shared/initializationreason-enumeration" FriendlyUrl="reference/enumerationsinitializationreason-enumeration" Scope="Excel, Project, Word" SEODescription="ドキュメントにアドインが挿入されたばかりであるか、既に含まれていたかを指定します。" />
-      <Item text="ProjectProjectFields 列挙型" url="shared/projectprojectfields-enumeration" FriendlyUrl="reference/enumerationsprojectprojectfields-enumeration" Scope="project" SEODescription="getProjectFieldAsync メソッドのパラメーターとして使用できるプロジェクト フィールドを指定します。" />
-      <Item text="ProjectResourceFields 列挙型" url="shared/projectresourcefields-enumeration" FriendlyUrl="reference/enumerationsprojectresourcefields-enumeration" Scope="project" SEODescription="getResourceFieldAsync メソッドのパラメーターとして使用できるリソース フィールドを指定します。" />
-      <Item text="ProjectTaskFields 列挙型" url="shared/projecttaskfields-enumeration" FriendlyUrl="reference/enumerationsprojecttaskfields-enumeration" Scope="project" SEODescription="getTaskFieldAsync メソッドのパラメーターとして使用できるタスク フィールドを指定します。" />
-      <Item text="ProjectViewTypes 列挙型" url="shared/projectviewtypes-enumeration" FriendlyUrl="reference/enumerationsprojectviewtypes-enumeration" Scope="project" SEODescription="getSelectedViewAsync メソッドで認識できるビューの種類を指定します。" />
-      <Item text="SelectionMode 列挙体" url="shared/selectionmode-enumeration" FriendlyUrl="reference/enumerationsselectionmode-enumeration" Scope="project" SEODescription="画像を選択し、その本文に Word の UI を移動します。selectionMode 値は、'Select'、'Start'、'End' のいずれかになります。" />
-      <Item text="Table 列挙型" url="shared/table-enumeration" Scope="excel" SEODescription="テーブルの書式設定メソッドの cellFormat パラメーターの cells: プロパティに列挙値を指定します。" />
-      <Item text="ValueFormat 列挙型" url="shared/valueformat-enumeration" Scope="Excel, Project, Word" SEODescription="呼び出されたメソッドによって取得する値 (数字、日付など) に書式を設定するかどうかを指定します。書式を設定すると、その書式が適用された状態で値が返されます。" />
-      </Item>
-    <Item text="AsyncResult" url="shared/asyncresult">
-      <Item text="AsyncResult.asyncContext" url="shared/asyncresult.asynccontext" SEODescription="カスタム XML パーツ内の XML ノードのテキストを非同期的に取得します。" />
-      <Item text="AsyncResult.error" url="shared/asyncresult.error" SEODescription="エラーの説明を提供する Error オブジェクトを取得します (エラーが発生した場合)。" />
-      <Item text="AsyncResult.status" url="shared/asyncresult.status" SEODescription="非同期操作の状態を取得します。" />
-      <Item text="AsyncResult.value" url="shared/asyncresult.value" SEODescription="この非同期操作のペイロードまたはコンテンツを取得します (ある場合)。" />
-    </Item>
-    <Item text="Context " url="shared/context">
-      <Item text="office.context" url="shared/office.context" SEODescription="アドインの実行時環境を表す Context オブジェクトを取得します。 " />
-      <Item text="office.context.commerceAllowed " url="shared/office.context.commerceallowed" FriendlyUrl="reference/common/contextoffice.context.commerceallowed" SEODescription="外部の支払システムにリンクできるプラットフォーム上で アドイン が実行されているかどうかを取得します。" />
-      <Item text="office.context.contentLanguage" url="shared/office.context.contentlanguage" SEODescription="ドキュメントまたはアイテムを編集するためにユーザーによって指定されるロケール (言語) を取得します。" />
-      <Item text="office.context.displaylanguage" url="shared/office.context.displaylanguage" SEODescription="Office ホスト アプリケーションの UI 用にユーザーが指定したロケール (言語) を取得します。" />
-      <Item text="office.context.touchEnabled" url="shared/office.context.touchenabled" FriendlyUrl="reference/common/contextoffice.context.touchenabled" SEODescription="タッチ対応 Office ホスト アプリケーションで アドイン が実行されているかどうかを取得します。" />
-      <Item text="office.context.officetheme" url="shared/office.context.officetheme" SEODescription="Office テーマの色のプロパティにアクセスできるようにします。" />
-      <Item text="office.context.bodyBackgroundColor" url="shared/office.context.bodybackgroundcolor" FriendlyUrl="reference/common/contextoffice.context.bodybackgroundcolor" SEOKeyword="OL" SEODescription="Office テーマの本文の背景色を取得します。" />
-      <Item text="office.context.bodyForegroundColor" url="shared/office.context.bodyforegroundcolor" FriendlyUrl="reference/common/contextoffice.context.bodyforegroundcolor" SEOKeyword="OL" SEODescription="Office テーマの本文の前景色を取得します。" />
-      <Item text="office.context.controlbackgroundcolor" url="shared/office.context.controlbackgroundcolor" SEODescription="Office テーマのコントロールの背景色を取得します。" />
-      <Item text="office.context.controlforegroundcolor" url="shared/office.context.controlforegroundcolor" SEODescription="Office テーマのコントロールの前景色を取得します。" />
-      <Item text="office.context.document" url="shared/office.context.document" SEODescription="アドインから対話操作するドキュメントを表すオブジェクトを取得します。" />
-      <Item text="office.context.mailbox" url="shared/office.context.mailbox" SEODescription="特に Outlook アドイン向けに API メンバーへのアクセスを提供する mailbox オブジェクトを取得します。" />
-      <Item text="office.context.roamingsettings" url="shared/office.context.roamingsettings" SEODescription="ユーザーのメールボックスに保存されている、Outlook アドインのカスタム設定または状態を表すオブジェクトを取得します。" />
-    </Item>
-    <Item text="Binding" url="shared/binding" Scope="access, excel, word">
-	    <Item text="Binding.addHandlerAsync" url="shared/binding.addhandlerasync" SEODescription="指定されたイベントの種類のバインドにハンドラーを追加します。" />
-      <Item text="Binding.bindingDataChanged イベント" url="shared/binding.bindingdatachangedevent" SEODescription="バインド内でデータが変更されるときに発生します。" />
-      
-      <!--<Item text="bindingDataChangedEventArgs object" url="shared/binding.bindingdatachangedeventargs" FriendlyUrl="reference/common/binding-object/data-changed-event/argsbinding.bindingdatachangedeventargs"    />
+		</Item>
+		<Item text="API 要件セットについて" url="outlook/tutorial-api-requirement-sets" Version="V1.3" SEODescription="Outlook 用の API の要件セット" />
+	</Item>
+	<Item text="OneNote" url="onenote/onenote-add-ins-javascript-reference" Scope="onenote">
+		<Item text="アプリケーション" url="onenote/application" SEODescription="OneNote アドインの参照。" />
+		<Item text="エラー" url="onenote/error" SEODescription="OneNote アドインの参照。" />
+		<Item text="Notebook" url="onenote/notebook" SEODescription="OneNote アドインの参照。" />
+		<Item text="Notebookcollection" url="onenote/notebookcollection" SEODescription="OneNote アドインの参照。" />
+		<Item text="Page" url="onenote/page" SEODescription="OneNote アドインの参照。" />
+		<Item text="Pagecollection" url="onenote/pagecollection" SEODescription="OneNote アドインの参照。" />
+		<Item text="Pagecontent" url="onenote/pagecontent" SEODescription="OneNote アドインの参照。" />
+		<Item text="Pagecontentcollection" url="onenote/pagecontentcollection" SEODescription="OneNote アドインの参照。" />
+		<Item text="Paragraph" url="onenote/paragraph" SEODescription="OneNote アドインの参照。" />
+		<Item text="Paragraphcollection" url="onenote/paragraphcollection" SEODescription="OneNote アドインの参照。" />
+		<Item text="Richtext" url="onenote/richtext" SEODescription="OneNote アドインの参照。" />
+		<Item text="Section" url="onenote/section" SEODescription="OneNote アドインの参照。" />
+		<Item text="Sectioncollection" url="onenote/sectioncollection" SEODescription="OneNote アドインの参照。" />
+		<Item text="Sectiongroup" url="onenote/sectiongroup" SEODescription="OneNote アドインの参照。" />
+		<Item text="Sectiongroupcollection" url="onenote/sectiongroupcollection" SEODescription="OneNote アドインの参照。" />
+		<Item text="Outline" url="onenote/outline" SEODescription="OneNote アドインの参照。" />
+		<Item text="Image" url="onenote/image" SEODescription="OneNote アドインの参照。" />
+		<Item text="OneNote JavaScript API の要件セット" url="requirement-sets/onenote-api-requirement-sets" SEODescription="OneNote の要件セット、それらの要件セットをサポートする Office ホスト アプリケーション、ビルド バージョンまたは提供開始日に関する情報について説明します。" />
+	</Item>
+	<Item text="Visio" url="visio/visio-javascript-reference-overview" Scope="visio">
+		<Item text="アプリケーション" url="visio/application" SEODescription="Visio JavaScript API リファレンス。" />
+		<Item text="ドキュメント" url="visio/document" SEODescription="Visio JavaScript API リファレンス。" />
+		<Item text="ハイパーリンク" url="visio/hyperlink" SEODescription="Visio JavaScript API リファレンス。" />
+		<Item text="HyperlinkCollection" url="visio/hyperlinkcollection" SEODescription="Visio JavaScript API リファレンス。" />
+		<Item text="LoadOption" url="visio/loadoption" SEODescription="Visio JavaScript API リファレンス。" />
+		<Item text="Page" url="visio/page" SEODescription="Visio JavaScript API リファレンス。" />
+		<Item text="PageCollection" url="visio/pagecollection" SEODescription="Visio JavaScript API リファレンス。" />
+		<Item text="PageView" url="visio/pageview" SEODescription="Visio JavaScript API リファレンス。" />
+		<Item text="Shape" url="visio/shape" SEODescription="Visio JavaScript API リファレンス。" />
+		<Item text="ShapeCollection" url="visio/shapecollection" SEODescription="Visio JavaScript API リファレンス。" />
+		<Item text="ShapeDataItem" url="visio/shapedataitem" SEODescription="Visio JavaScript API リファレンス。" />
+		<Item text="ShapeDataItemCollection" url="visio/shapedataitemcollection" SEODescription="Visio JavaScript API リファレンス。" />
+		<Item text="ShapeView" url="visio/shapeview" SEODescription="Visio JavaScript API リファレンス。" />
+	</Item>
+	<Item text="共有 API" url="shared/shared-api">
+		<Item text="JavaScript API for Office" url="javascript-api-for-office" SEODescription="JavaScript API for Office には、Office アドイン コードで使用できるオブジェクト、メソッド、プロパティ、イベント、および列挙体があります。" />
+		<Item text="JavaScript API for Office の変更点" url="what's-changed-in-the-javascript-api-for-office" SEODescription="JavaScript API for Office は、Office アドインの機能を拡張するため、オブジェクト、メソッド、プロパティ、イベント、列挙体の新規追加や更新によって、定期的に更新が加えられています。" />
+		<Item text="Office の共通要件セット" url="requirement-sets/office-add-in-requirement-sets" SEODescription="要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、実行時チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。" />
+		<Item text="JavaScript API for Office のエラー コード" url="javascript-api-for-office-error-codes" SEODescription="JavaScript API for Office (Office.js) の使用時に発生する可能性のあるエラー メッセージ。" />
+		<Item text="列挙型" url="shared/enumerations" FriendlyUrl="reference/enumerationsenumerations">
+			<Item text="ActiveView 列挙" url="shared/activeview-enumeration" FriendlyUrl="reference/enumerationsactiveview-enumeration" Scope="powerpoint" SEODescription="ユーザーがドキュメントを編集できるかどうかなど、ドキュメントのアクティブなビューの状態を指定します。" />
+			<Item text="AsyncResultStatus 列挙型" url="shared/asyncresultstatus-enumeration" FriendlyUrl="reference/enumerationsasyncresultstatus-enumeration" Scope="Access, Excel, Word" SEODescription="非同期呼び出しの結果を指定します。" />
+			<Item text="BindingType 列挙型" url="shared/bindingtype-enumeration" FriendlyUrl="reference/enumerationsbindingtype-enumeration" Scope="Access, Excel, Word" SEODescription="返されるバインディング オブジェクトの種類を指定します。" />
+			<Item text="CoercionType 列挙型" url="shared/coerciontype-enumeration" FriendlyUrl="reference/enumerationscoerciontype-enumeration" SEODescription="呼び出されたメソッドによって返される、または設定されるデータを強制的に変換する方法を指定します。" />
+			<Item text="CustomXMLNodeType 列挙型" url="shared/customxmlnodetype-enumeration" FriendlyUrl="reference/enumerationscustomxmlnodetype-enumeration" Scope="Word" SEODescription="ノードの種類を指定します。" />
+			<Item text="DocumentMode 列挙型" url="shared/documentmode-enumeration" FriendlyUrl="reference/enumerationsdocumentmode-enumeration" Scope="Excel, PowerPoint, Project, Word" SEODescription="関連付けられているアプリケーションのドキュメントを読み取り専用または読み取り/書き込みのどちらかに指定します。" />
+			<Item text="EventType 列挙型" url="shared/eventtype-enumeration" FriendlyUrl="reference/enumerationseventtype-enumeration" Scope="Excel, PowerPoint, Project, Word" SEODescription="発生したイベントの種類を指定します。EventNameEventArgs オブジェクトの type プロパティによって返されます。" />
+			<Item text="FileType 列挙型" url="shared/filetype-enumeration" FriendlyUrl="reference/enumerationsfiletype-enumeration" Scope="PowerPoint, Word" SEODescription="ドキュメントを返す形式を指定します。" />
+			<Item text="FilterType 列挙" url="shared/filtertype-enumeration" FriendlyUrl="reference/enumerationsfiltertype-enumeration" Scope="Excel, Project, Word" SEODescription="データを取得するときにホスト アプリケーションからのフィルタリングを適用するかどうかを指定します。" />
+			<Item text="GoToType 列挙型" url="shared/gototype-enumeration" FriendlyUrl="reference/enumerationsgototype-enumeration" Scope="Excel, PowerPoint, Word" SEODescription="ナビゲートする場所またはオブジェクトの種類を指定します。" />
+			<Item text="InitializationReason 列挙型" url="shared/initializationreason-enumeration" FriendlyUrl="reference/enumerationsinitializationreason-enumeration" Scope="Excel, Project, Word" SEODescription="ドキュメントにアドインが挿入されたばかりであるか、既に含まれていたかを指定します。" />
+			<Item text="ProjectProjectFields 列挙型" url="shared/projectprojectfields-enumeration" FriendlyUrl="reference/enumerationsprojectprojectfields-enumeration" Scope="project" SEODescription="getProjectFieldAsync メソッドのパラメーターとして使用できるプロジェクト フィールドを指定します。" />
+			<Item text="ProjectResourceFields 列挙型" url="shared/projectresourcefields-enumeration" FriendlyUrl="reference/enumerationsprojectresourcefields-enumeration" Scope="project" SEODescription="getResourceFieldAsync メソッドのパラメーターとして使用できるリソース フィールドを指定します。" />
+			<Item text="ProjectTaskFields 列挙型" url="shared/projecttaskfields-enumeration" FriendlyUrl="reference/enumerationsprojecttaskfields-enumeration" Scope="project" SEODescription="getTaskFieldAsync メソッドのパラメーターとして使用できるタスク フィールドを指定します。" />
+			<Item text="ProjectViewTypes 列挙型" url="shared/projectviewtypes-enumeration" FriendlyUrl="reference/enumerationsprojectviewtypes-enumeration" Scope="project" SEODescription="getSelectedViewAsync メソッドで認識できるビューの種類を指定します。" />
+			<Item text="SelectionMode 列挙体" url="shared/selectionmode-enumeration" FriendlyUrl="reference/enumerationsselectionmode-enumeration" Scope="project" SEODescription="画像を選択し、その本文に Word の UI を移動します。selectionMode 値は、'Select'、'Start'、'End' のいずれかになります。" />
+			<Item text="Table 列挙型" url="shared/table-enumeration" Scope="excel" SEODescription="テーブルの書式設定メソッドの cellFormat パラメーターの cells: プロパティに列挙値を指定します。" />
+			<Item text="ValueFormat 列挙型" url="shared/valueformat-enumeration" Scope="Excel, Project, Word" SEODescription="呼び出されたメソッドによって取得する値 (数字、日付など) に書式を設定するかどうかを指定します。書式を設定すると、その書式が適用された状態で値が返されます。" />
+		</Item>
+		<Item text="AsyncResult" url="shared/asyncresult">
+			<Item text="AsyncResult.asyncContext" url="shared/asyncresult.asynccontext" SEODescription="カスタム XML パーツ内の XML ノードのテキストを非同期的に取得します。" />
+			<Item text="AsyncResult.error" url="shared/asyncresult.error" SEODescription="エラーの説明を提供する Error オブジェクトを取得します (エラーが発生した場合)。" />
+			<Item text="AsyncResult.status" url="shared/asyncresult.status" SEODescription="非同期操作の状態を取得します。" />
+			<Item text="AsyncResult.value" url="shared/asyncresult.value" SEODescription="この非同期操作のペイロードまたはコンテンツを取得します (ある場合)。" />
+		</Item>
+		<Item text="Context " url="shared/context">
+			<Item text="office.context" url="shared/office.context" SEODescription="アドインの実行時環境を表す Context オブジェクトを取得します。 " />
+			<Item text="office.context.commerceAllowed " url="shared/office.context.commerceallowed" FriendlyUrl="reference/common/contextoffice.context.commerceallowed" SEODescription="外部の支払システムにリンクできるプラットフォーム上で アドイン が実行されているかどうかを取得します。" />
+			<Item text="office.context.contentLanguage" url="shared/office.context.contentlanguage" SEODescription="ドキュメントまたはアイテムを編集するためにユーザーによって指定されるロケール (言語) を取得します。" />
+			<Item text="office.context.displaylanguage" url="shared/office.context.displaylanguage" SEODescription="Office ホスト アプリケーションの UI 用にユーザーが指定したロケール (言語) を取得します。" />
+			<Item text="office.context.touchEnabled" url="shared/office.context.touchenabled" FriendlyUrl="reference/common/contextoffice.context.touchenabled" SEODescription="タッチ対応 Office ホスト アプリケーションで アドイン が実行されているかどうかを取得します。" />
+			<Item text="office.context.officetheme" url="shared/office.context.officetheme" SEODescription="Office テーマの色のプロパティにアクセスできるようにします。" />
+			<Item text="office.context.bodyBackgroundColor" url="shared/office.context.bodybackgroundcolor" FriendlyUrl="reference/common/contextoffice.context.bodybackgroundcolor" SEOKeyword="OL" SEODescription="Office テーマの本文の背景色を取得します。" />
+			<Item text="office.context.bodyForegroundColor" url="shared/office.context.bodyforegroundcolor" FriendlyUrl="reference/common/contextoffice.context.bodyforegroundcolor" SEOKeyword="OL" SEODescription="Office テーマの本文の前景色を取得します。" />
+			<Item text="office.context.controlbackgroundcolor" url="shared/office.context.controlbackgroundcolor" SEODescription="Office テーマのコントロールの背景色を取得します。" />
+			<Item text="office.context.controlforegroundcolor" url="shared/office.context.controlforegroundcolor" SEODescription="Office テーマのコントロールの前景色を取得します。" />
+			<Item text="office.context.document" url="shared/office.context.document" SEODescription="アドインから対話操作するドキュメントを表すオブジェクトを取得します。" />
+			<Item text="office.context.mailbox" url="shared/office.context.mailbox" SEODescription="特に Outlook アドイン向けに API メンバーへのアクセスを提供する mailbox オブジェクトを取得します。" />
+			<Item text="office.context.roamingsettings" url="shared/office.context.roamingsettings" SEODescription="ユーザーのメールボックスに保存されている、Outlook アドインのカスタム設定または状態を表すオブジェクトを取得します。" />
+		</Item>
+		<Item text="Binding" url="shared/binding" Scope="access, excel, word">
+			<Item text="Binding.addHandlerAsync" url="shared/binding.addhandlerasync" SEODescription="指定されたイベントの種類のバインドにハンドラーを追加します。" />
+			<Item text="Binding.bindingDataChanged イベント" url="shared/binding.bindingdatachangedevent" SEODescription="バインド内でデータが変更されるときに発生します。" />
+			<!--<Item text="bindingDataChangedEventArgs object" url="shared/binding.bindingdatachangedeventargs" FriendlyUrl="reference/common/binding-object/data-changed-event/argsbinding.bindingdatachangedeventargs"    />
         <Item text="type " url="shared/binding.bindingdatachangedeventargs.type" FriendlyUrl="reference/common/binding-object/data-changed-event/argsbinding.bindingdatachangedeventargs.type"    />
         <Item text="binding " url="shared/binding.bindingdatachangedeventargs.binding" FriendlyUrl="reference/common/binding-object/data-changed-event/argsbinding.bindingdatachangedeventargs.binding"    />
       <Item text="bindingselectionchangedevent.binding " url="shared/binding.bindingselectionchangedevent.binding" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.binding"    />
       -->
-      
-      <Item text="Binding.bindingSelectionChanged イベント" url="shared/binding.bindingselectionchangedevent" FriendlyUrl="reference/common/binding-object/selection-changed-eventbinding.bindingselectionchangedevent">
-        <Item text="columnCount" url="shared/binding.bindingselectionchangedevent.columncount" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.columncount" SEODescription="選択されている列の数を取得します。" />
-        <Item text="rowCount" url="shared/binding.bindingselectionchangedevent.rowcount" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.rowcount" SEODescription="選択されている行の数を取得します。" />
-        <Item text="startColumn" url="shared/binding.bindingselectionchangedevent.startcolumn" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.startcolumn" SEODescription="選択範囲の先頭列のインデックス (0 から始まる) を取得します。" />
-        <Item text="startRow" url="shared/binding.bindingselectionchangedevent.startrow" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.startrow" SEODescription="選択範囲の先頭行のインデックス (0 から始まる) を取得します。" />
-      </Item>
-      <!--<Item text="binding.bindingSelectionChangedeventargs" url="shared/binding.bindingselectionchangedeventargs"  />
+			<Item text="Binding.bindingSelectionChanged イベント" url="shared/binding.bindingselectionchangedevent" FriendlyUrl="reference/common/binding-object/selection-changed-eventbinding.bindingselectionchangedevent">
+				<Item text="columnCount" url="shared/binding.bindingselectionchangedevent.columncount" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.columncount" SEODescription="選択されている列の数を取得します。" />
+				<Item text="rowCount" url="shared/binding.bindingselectionchangedevent.rowcount" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.rowcount" SEODescription="選択されている行の数を取得します。" />
+				<Item text="startColumn" url="shared/binding.bindingselectionchangedevent.startcolumn" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.startcolumn" SEODescription="選択範囲の先頭列のインデックス (0 から始まる) を取得します。" />
+				<Item text="startRow" url="shared/binding.bindingselectionchangedevent.startrow" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.startrow" SEODescription="選択範囲の先頭行のインデックス (0 から始まる) を取得します。" />
+			</Item>
+			<!--<Item text="binding.bindingSelectionChangedeventargs" url="shared/binding.bindingselectionchangedeventargs"  />
         <Item text="type" url="shared/binding.bindingselectionchangedevent.type"  />
       -->
-      <Item text="document" url="shared/binding.document" SEODescription="ドキュメントのセクションへのバインドを表す抽象クラス。" />
-      <Item text="getDataAsync" url="shared/binding.getdataasync" FriendlyUrl="reference/common/binding-objectbinding.getdataasync" SEODescription="バインド内に含まれるデータを返します。" />
-      <Item text="id" url="shared/binding.id" FriendlyUrl="reference/common/binding-objectbinding.id" SEODescription="オブジェクトの識別子を取得します。" />
-      <Item text="型" url="shared/binding.type" FriendlyUrl="reference/common/binding-objectbinding.type" SEODescription="バインドの種類を取得します。" />
-      <Item text="MatrixBinding" url="shared/binding.matrixbinding">
-        <Item text="rowcount" url="shared/binding.matrixbinding.rowcount" SEODescription="マトリックス データ構造内の行数を整数値で取得します。" />
-        <Item text="columnCount" url="shared/binding.matrixbinding.columncount" FriendlyUrl="reference/common/binding-object/matrixbinding-objectbinding.matrixbinding.columncount" SEODescription="マトリックス データ構造内の列数を整数値で取得します。" />
-      </Item>
-      <Item text="removeHandlerAsync" url="shared/binding.removehandlerasync" FriendlyUrl="reference/common/binding-objectbinding.removehandlerasync" SEODescription="指定されたイベントの種類のバインドから、指定されたハンドラーを削除します。" />
-      <Item text="setDataAsync" url="shared/binding.setdataasync" FriendlyUrl="reference/common/binding-objectbinding.setdataasync" SEODescription="指定されたバインド オブジェクトで表されるドキュメントのバインド セクションにデータを書き込みます。" />
-      <Item text="TableBinding" url="shared/binding.tablebinding">
-        <Item text="addColumnsAsync" url="shared/binding.tablebinding.addcolumnsasync" FriendlyUrl="reference/common/binding-object/tablebinding-objectbinding.tablebinding.addcolumnsasync" SEODescription="テーブルに列と値を追加します。" />
-        <Item text="addRowsAsync" url="shared/binding.tablebinding.addrowsasync" FriendlyUrl="reference/common/binding-object/tablebinding-objectbinding.tablebinding.addrowsasync" SEODescription="テーブルに行と値を追加します。" />
-        <Item text="clearFormatsAsync" url="shared/binding.tablebinding.clearformatsasync" SEODescription="バインド テーブルの書式設定をクリアします。" />
-        <Item text="columnCount" url="shared/binding.tablebinding.columncount" SEODescription="マトリックス データ構造内の列数を整数値で取得します。" />
-        <Item text="deleteAllDataValuesAsync" url="shared/binding.tablebinding.deletealldatavaluesasync" SEODescription="テーブル内のヘッダー行以外の行と値をすべて削除し、ホスト アプリケーションに応じて適切にシフトします。" />
-        <Item text="hasHeaders" url="shared/binding.tablebinding.hasheaders" SEODescription="テーブルにヘッダーがあるかどうかを取得します。" />
-        <Item text="rowCount" url="shared/binding.tablebinding.rowcount" SEODescription="テーブルの行数を整数値で取得します。" />
-        <Item text="setFormatsAsync" url="shared/binding.tablebinding.setformatsasync" FriendlyUrl="reference/common/binding-object/tablebinding-objectbinding.tablebinding.setformatsasync" SEODescription="バインド テーブル内の指定のアイテムとデータの書式を設定または更新します。" Scope="excel" />
-        <Item text="setTableOptionsAsync" url="shared/binding.tablebinding.settableoptionsasync" FriendlyUrl="reference/common/binding-object/tablebinding-objectbinding.tablebinding.settableoptionsasync" SEODescription="バインド テーブルにおけるテーブル書式設定オプションを更新します。" Scope="excel" />
-      </Item>
-      <Item text="TextBinding" url="shared/binding.textbinding" />
-    </Item>
-    <Item text="Bindings" url="shared/bindings.bindings" Scope="access, excel, word">
-      <Item text="addFromNamedItemAsync" url="shared/bindings.addfromnameditemasync" SEODescription="ドキュメント内の名前付きの項目にバインドを追加します。" />
-      <Item text="addFromPromptAsync" url="shared/bindings.addfrompromptasync" SEODescription="ユーザーがバインド先の選択範囲を指定するための UI を表示します。" />
-      <Item text="addFromSelectionAsync" url="shared/bindings.addfromselectionasync" SEODescription="種類が指定されたバインドのバインド オブジェクトをドキュメント内の現在の選択範囲に追加します。" />
-      <Item text="document" url="shared/bindings.document" FriendlyUrl="reference/common/bindings-objectbindings.document" SEODescription="ドキュメントのセクションへのバインドを表す抽象クラス。" />
-      <Item text="getAllAsync" url="shared/bindings.getallasync" FriendlyUrl="reference/common/bindings-objectbindings.getallasync" SEODescription="以前に作成されたバインドをすべて取得します。" />
-      <Item text="getByIdAsync" url="shared/bindings.getbyidasync" FriendlyUrl="reference/common/bindings-objectbindings.getbyidasync" SEODescription="指定したバインドを ID によって取得します。" />
-      <Item text="releaseByIdAsync" url="shared/bindings.releasebyidasync" FriendlyUrl="reference/common/bindings-objectbindings.releasebyidasync" SEODescription=" 指定したバインドを削除します。" />
-    </Item>
-    <Item text="CustomXmlNode" url="shared/customxmlnode.customxmlnode" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.customxmlnode" SEOKeyword="JavaScript API for Office" Scope="word">
-      <Item text="baseName " url="shared/customxmlnode.basename" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.basename" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription="名前空間プレフィックスを持たないノードがある場合、そのベース名を取得します。" />
-      <Item text="getNodesAsync " url="shared/customxmlnode.getnodesasync" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.getnodesasync" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription=" 相対 XPath 式と一致する CustomXMLNode オブジェクトの配列として、ノードを非同期に取得します。" />
-      <Item text="getNodeValueAsync " url="shared/customxmlnode.getnodevalueasync" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.getnodevalueasync" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription="ノードの値を非同期的に取得します。" />
-      <Item text="getTextAsync " url="shared/customxmlnode.gettextasync" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.gettextasync" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription="ノードのテキストを非同期に取得します。" />
-      <Item text="getXmlAsync " url="shared/customxmlnode.getxmlasync" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.getxmlasync" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription="ノードの XML を非同期的に取得します。" />
-      <Item text="namespaceUri " url="shared/customxmlnode.namespaceuri" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.namespaceuri" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription="ノードの名前空間を非同期に取得します。" />
-      <Item text="nodeType " url="shared/customxmlnode.nodetype" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.nodetype" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription="ノードの種類を非同期に取得します。" />
-      <Item text="setNodeValueAsync " url="shared/customxmlnode.setnodevalueasync" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.setnodevalueasync" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription="ノードの値を非同期的に取得します。" />
-      <Item text="setTextAsync " url="shared/customxmlnode.settextasync" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.settextasync" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription="ノードのセット テキストを非同期に取得します。" />
-      <Item text="setXmlAsync " url="shared/customxmlnode.setxmlasync" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.setxmlasync" Scope="word" SEODescription="ノードのセット XML を非同期に取得します。" />
-    </Item> 
-    <Item text="CustomXmlPart" url="shared/customxmlpart.customxmlpart" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.customxmlpart" SEODescription="CustomXMLParts コレクション内の単一の CustomXMLPart を表します。" Scope="word">    
-      <Item text="addHandlerAsync" url="shared/customxmlpart.addhandlerasync" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.addhandlerasync" SEODescription="CustomXmlPart オブジェクト イベントのイベント ハンドラーを追加します。" Scope="word" />
-      <Item text="builtIn" url="shared/customxmlpart.builtin" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.builtin" SEODescription="CustomXMLPart が組み込みであるかどうかを示す値を取得します。" Scope="word" />
-      <Item text="deleteAsync" url="shared/customxmlpart.deleteasync" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.deleteasync" SEODescription="このカスタム XML パーツをコレクションから非同期的に削除します。" Scope="word" />
-      <Item text="getNodesAsync" url="shared/customxmlpart.getnodesasync" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.getnodesasync" SEODescription="指定された XPath に一致するこのカスタム XML パーツ内の CustomXmlNodes を非同期に取得します。" Scope="word" />
-      <Item text="getXmlAsync" url="shared/customxmlpart.getxmlasync" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.getxmlasync" SEODescription="このカスタム XML パーツ内の XML を非同期的に取得します。" Scope="word" />
-      <Item text="id" url="shared/customxmlpart.id" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.id" SEODescription="CustomXMLPart の GUID を取得します。" Scope="word" />
-      <Item text="isUndoRedo" url="shared/customxmlpart.isundoredo" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.isundoredo" SEODescription="ノードが、ユーザーによる元に戻す/やり直し操作の一部として削除されたかどうかを取得します。" Scope="word" />
-      <Item text="namespaceManager" url="shared/customxmlpart.namespacemanager" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.namespacemanager" SEODescription="現在の CustomXMLPart に対して使用される名前空間プレフィックス マッピング (CustomXMLPrefixMappings) のセットを取得します。" Scope="word" />
-      <Item text="newNode" url="shared/customxmlpart.newnode" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.newnode" SEODescription="CustomXMLPart オブジェクトに追加されたノードを取得します。" Scope="word" />
-      <Item text="nodeDeleted イベント" url="shared/customxmlpart.nodedeleted.event" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodedeleted.event" SEODescription="ノードが削除されるときに発生します。" Scope="word" />
-      <!--<Item text="NodeDeletedEventArgs object" url="shared/customxmlpart.nodedeletedeventargs" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodedeletedeventargs" SEODescription="Provides information about the deleted node that raised the nodeDeleted event." Scope="word"  />-->
-      <Item text="nodeInserted イベント" url="shared/customxmlpart.nodeinserted.event" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodeinserted.event" SEODescription="ノードが挿入されるときに発生します。" Scope="word" />
-      <!--<Item text="NodeInsertedEventArgs object" url="shared/customxmlpart.nodeinsertedeventargs" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodeinsertedeventargs" SEODescription="Provides information about the inserted node that raised the nodeInserted event." Scope="word"  />-->
-      <Item text="nodeReplaced イベント" url="shared/customxmlpart.nodereplaced.event" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodereplaced.event" SEODescription="ノードが置換されるときに発生します。" Scope="word" />
-      <!--<Item text="NodeReplacedEventArgs object" url="shared/customxmlpart.nodereplacedeventargs" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodereplacedeventargs" SEODescription="Provides information about the replaced node that raised the nodeReplaced event." Scope="word"  />-->
-      <Item text="oldNextSibling" url="shared/customxmlpart.oldnextsibling" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.oldnextsibling" SEODescription="CustomXMLPart オブジェクトから削除されたノードの以前の次の兄弟を取得します。" Scope="word" />
-      <Item text="oldNode" url="shared/customxmlpart.oldnode" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.oldnode" SEODescription="CustomXmlPart オブジェクトから削除されたノードを取得します。" Scope="word" />
-      <Item text="removeHandlerAsync" url="shared/customxmlpart.removehandlerasync" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.removehandlerasync" SEODescription="CustomXmlPart オブジェクト イベントのイベント ハンドラーを削除します。" Scope="word" />
-    </Item>
-    <Item text="CustomXmlParts" url="shared/customxmlparts.customxmlparts" FriendlyUrl="reference/common/customxmlparts-objectcustomxmlparts.customxmlparts" SEODescription="CustomXMLPart オブジェクトのコレクションを表します。" Scope="word">
-    <Item text="addAsync" url="shared/customxmlparts.addasync" FriendlyUrl="reference/common/customxmlparts-objectcustomxmlparts.addasync" SEODescription="新しいカスタム XML パーツをファイルに非同期に追加します。" Scope="word" />
-    <Item text="getByIdAsync" url="shared/customxmlparts.getbyidasync" FriendlyUrl="reference/common/customxmlparts-objectcustomxmlparts.getbyidasync" SEODescription="ID を使用してカスタム XML パーツを非同期に取得します。" Scope="word" />
-    <Item text="getByNamespaceAsync" url="shared/customxmlparts.getbynamespaceasync" FriendlyUrl="reference/common/customxmlparts-objectcustomxmlparts.getbynamespaceasync" SEODescription="指定された名前空間に一致するカスタム XML パーツの配列を非同期的に取得します。" Scope="word" />
-    </Item>
-    <Item text="CustomXmlPrefixMappings" url="shared/customxmlprefixmappings.customxmlprefixmappings" FriendlyUrl="reference/common/customxmlprefixmappings-objectcustomxmlprefixmappings.customxmlprefixmappings" SEODescription="カスタム名前空間プレフィックス マッピングのコレクションを表します。" Scope="word">
-      <Item text="addNamespaceAsync" url="shared/customxmlprefixmappings.addnamespaceasync" FriendlyUrl="reference/common/customxmlprefixmappings-objectcustomxmlprefixmappings.addnamespaceasync" SEODescription="アイテムのクエリを実行するときに使用するプレフィックスを名前空間マッピングに非同期で追加します。" Scope="word" />
-      <Item text="getNamespaceAsync" url="shared/customxmlprefixmappings.getnamespaceasync" FriendlyUrl="reference/common/customxmlprefixmappings-objectcustomxmlprefixmappings.getnamespaceasync" SEODescription="指定したプレフィックスにマップされた名前空間を非同期で取得します。" Scope="word" />
-      <Item text="getPrefixAsync" url="shared/customxmlprefixmappings.getprefixasync" FriendlyUrl="reference/common/customxmlprefixmappings-objectcustomxmlprefixmappings.getprefixasync" SEODescription="指定した名前空間のプレフィックスを非同期で取得します。" Scope="word" />
-    </Item>
-    <Item text="ドキュメント" url="shared/document" SEODescription="JavaScript API for Office の Document API サブセットには、ドキュメントに関連付けられている Office アドインで利用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。" Scope="access, excel, powerpoint, project, word">
-      <Item text="ActiveViewChanged イベント" url="shared/document.activeviewchanged" FriendlyUrl="reference/common/document/activeviewchangeddocument.activeviewchanged" SEODescription="ユーザーがドキュメントの現在のビューを変更したときに発生します。" Scope="powerpoint" />
-      <!--<Item text="DocumentActiveViewChangedEventArgs object" url="shared/document.activeviewchangedeventargs" FriendlyUrl="reference/common/document/activeviewchangedeventargs-object/document.activeviewchangedeventargs" SEODescription="Provides information about the view that raised the ActiveViewChanged event." Scope="powerpoint"  />
+			<Item text="document" url="shared/binding.document" SEODescription="ドキュメントのセクションへのバインドを表す抽象クラス。" />
+			<Item text="getDataAsync" url="shared/binding.getdataasync" FriendlyUrl="reference/common/binding-objectbinding.getdataasync" SEODescription="バインド内に含まれるデータを返します。" />
+			<Item text="id" url="shared/binding.id" FriendlyUrl="reference/common/binding-objectbinding.id" SEODescription="オブジェクトの識別子を取得します。" />
+			<Item text="型" url="shared/binding.type" FriendlyUrl="reference/common/binding-objectbinding.type" SEODescription="バインドの種類を取得します。" />
+			<Item text="MatrixBinding" url="shared/binding.matrixbinding">
+				<Item text="rowcount" url="shared/binding.matrixbinding.rowcount" SEODescription="マトリックス データ構造内の行数を整数値で取得します。" />
+				<Item text="columnCount" url="shared/binding.matrixbinding.columncount" FriendlyUrl="reference/common/binding-object/matrixbinding-objectbinding.matrixbinding.columncount" SEODescription="マトリックス データ構造内の列数を整数値で取得します。" />
+			</Item>
+			<Item text="removeHandlerAsync" url="shared/binding.removehandlerasync" FriendlyUrl="reference/common/binding-objectbinding.removehandlerasync" SEODescription="指定されたイベントの種類のバインドから、指定されたハンドラーを削除します。" />
+			<Item text="setDataAsync" url="shared/binding.setdataasync" FriendlyUrl="reference/common/binding-objectbinding.setdataasync" SEODescription="指定されたバインド オブジェクトで表されるドキュメントのバインド セクションにデータを書き込みます。" />
+			<Item text="TableBinding" url="shared/binding.tablebinding">
+				<Item text="addColumnsAsync" url="shared/binding.tablebinding.addcolumnsasync" FriendlyUrl="reference/common/binding-object/tablebinding-objectbinding.tablebinding.addcolumnsasync" SEODescription="テーブルに列と値を追加します。" />
+				<Item text="addRowsAsync" url="shared/binding.tablebinding.addrowsasync" FriendlyUrl="reference/common/binding-object/tablebinding-objectbinding.tablebinding.addrowsasync" SEODescription="テーブルに行と値を追加します。" />
+				<Item text="clearFormatsAsync" url="shared/binding.tablebinding.clearformatsasync" SEODescription="バインド テーブルの書式設定をクリアします。" />
+				<Item text="columnCount" url="shared/binding.tablebinding.columncount" SEODescription="マトリックス データ構造内の列数を整数値で取得します。" />
+				<Item text="deleteAllDataValuesAsync" url="shared/binding.tablebinding.deletealldatavaluesasync" SEODescription="テーブル内のヘッダー行以外の行と値をすべて削除し、ホスト アプリケーションに応じて適切にシフトします。" />
+				<Item text="hasHeaders" url="shared/binding.tablebinding.hasheaders" SEODescription="テーブルにヘッダーがあるかどうかを取得します。" />
+				<Item text="rowCount" url="shared/binding.tablebinding.rowcount" SEODescription="テーブルの行数を整数値で取得します。" />
+				<Item text="setFormatsAsync" url="shared/binding.tablebinding.setformatsasync" FriendlyUrl="reference/common/binding-object/tablebinding-objectbinding.tablebinding.setformatsasync" SEODescription="バインド テーブル内の指定のアイテムとデータの書式を設定または更新します。" Scope="excel" />
+				<Item text="setTableOptionsAsync" url="shared/binding.tablebinding.settableoptionsasync" FriendlyUrl="reference/common/binding-object/tablebinding-objectbinding.tablebinding.settableoptionsasync" SEODescription="バインド テーブルにおけるテーブル書式設定オプションを更新します。" Scope="excel" />
+			</Item>
+			<Item text="TextBinding" url="shared/binding.textbinding" />
+		</Item>
+		<Item text="Bindings" url="shared/bindings.bindings" Scope="access, excel, word">
+			<Item text="addFromNamedItemAsync" url="shared/bindings.addfromnameditemasync" SEODescription="ドキュメント内の名前付きの項目にバインドを追加します。" />
+			<Item text="addFromPromptAsync" url="shared/bindings.addfrompromptasync" SEODescription="ユーザーがバインド先の選択範囲を指定するための UI を表示します。" />
+			<Item text="addFromSelectionAsync" url="shared/bindings.addfromselectionasync" SEODescription="種類が指定されたバインドのバインド オブジェクトをドキュメント内の現在の選択範囲に追加します。" />
+			<Item text="document" url="shared/bindings.document" FriendlyUrl="reference/common/bindings-objectbindings.document" SEODescription="ドキュメントのセクションへのバインドを表す抽象クラス。" />
+			<Item text="getAllAsync" url="shared/bindings.getallasync" FriendlyUrl="reference/common/bindings-objectbindings.getallasync" SEODescription="以前に作成されたバインドをすべて取得します。" />
+			<Item text="getByIdAsync" url="shared/bindings.getbyidasync" FriendlyUrl="reference/common/bindings-objectbindings.getbyidasync" SEODescription="指定したバインドを ID によって取得します。" />
+			<Item text="releaseByIdAsync" url="shared/bindings.releasebyidasync" FriendlyUrl="reference/common/bindings-objectbindings.releasebyidasync" SEODescription=" 指定したバインドを削除します。" />
+		</Item>
+		<Item text="CustomXmlNode" url="shared/customxmlnode.customxmlnode" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.customxmlnode" SEOKeyword="JavaScript API for Office" Scope="word">
+			<Item text="baseName " url="shared/customxmlnode.basename" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.basename" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription="名前空間プレフィックスを持たないノードがある場合、そのベース名を取得します。" />
+			<Item text="getNodesAsync " url="shared/customxmlnode.getnodesasync" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.getnodesasync" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription=" 相対 XPath 式と一致する CustomXMLNode オブジェクトの配列として、ノードを非同期に取得します。" />
+			<Item text="getNodeValueAsync " url="shared/customxmlnode.getnodevalueasync" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.getnodevalueasync" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription="ノードの値を非同期的に取得します。" />
+			<Item text="getTextAsync " url="shared/customxmlnode.gettextasync" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.gettextasync" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription="ノードのテキストを非同期に取得します。" />
+			<Item text="getXmlAsync " url="shared/customxmlnode.getxmlasync" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.getxmlasync" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription="ノードの XML を非同期的に取得します。" />
+			<Item text="namespaceUri " url="shared/customxmlnode.namespaceuri" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.namespaceuri" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription="ノードの名前空間を非同期に取得します。" />
+			<Item text="nodeType " url="shared/customxmlnode.nodetype" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.nodetype" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription="ノードの種類を非同期に取得します。" />
+			<Item text="setNodeValueAsync " url="shared/customxmlnode.setnodevalueasync" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.setnodevalueasync" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription="ノードの値を非同期的に取得します。" />
+			<Item text="setTextAsync " url="shared/customxmlnode.settextasync" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.settextasync" SEOKeyword="JavaScript API for Office" Scope="word" SEODescription="ノードのセット テキストを非同期に取得します。" />
+			<Item text="setXmlAsync " url="shared/customxmlnode.setxmlasync" FriendlyUrl="reference/common/customxmlnode-objectcustomxmlnode.setxmlasync" Scope="word" SEODescription="ノードのセット XML を非同期に取得します。" />
+		</Item>
+		<Item text="CustomXmlPart" url="shared/customxmlpart.customxmlpart" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.customxmlpart" SEODescription="CustomXMLParts コレクション内の単一の CustomXMLPart を表します。" Scope="word">
+			<Item text="addHandlerAsync" url="shared/customxmlpart.addhandlerasync" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.addhandlerasync" SEODescription="CustomXmlPart オブジェクト イベントのイベント ハンドラーを追加します。" Scope="word" />
+			<Item text="builtIn" url="shared/customxmlpart.builtin" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.builtin" SEODescription="CustomXMLPart が組み込みであるかどうかを示す値を取得します。" Scope="word" />
+			<Item text="deleteAsync" url="shared/customxmlpart.deleteasync" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.deleteasync" SEODescription="このカスタム XML パーツをコレクションから非同期的に削除します。" Scope="word" />
+			<Item text="getNodesAsync" url="shared/customxmlpart.getnodesasync" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.getnodesasync" SEODescription="指定された XPath に一致するこのカスタム XML パーツ内の CustomXmlNodes を非同期に取得します。" Scope="word" />
+			<Item text="getXmlAsync" url="shared/customxmlpart.getxmlasync" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.getxmlasync" SEODescription="このカスタム XML パーツ内の XML を非同期的に取得します。" Scope="word" />
+			<Item text="id" url="shared/customxmlpart.id" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.id" SEODescription="CustomXMLPart の GUID を取得します。" Scope="word" />
+			<Item text="isUndoRedo" url="shared/customxmlpart.isundoredo" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.isundoredo" SEODescription="ノードが、ユーザーによる元に戻す/やり直し操作の一部として削除されたかどうかを取得します。" Scope="word" />
+			<Item text="namespaceManager" url="shared/customxmlpart.namespacemanager" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.namespacemanager" SEODescription="現在の CustomXMLPart に対して使用される名前空間プレフィックス マッピング (CustomXMLPrefixMappings) のセットを取得します。" Scope="word" />
+			<Item text="newNode" url="shared/customxmlpart.newnode" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.newnode" SEODescription="CustomXMLPart オブジェクトに追加されたノードを取得します。" Scope="word" />
+			<Item text="nodeDeleted イベント" url="shared/customxmlpart.nodedeleted.event" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodedeleted.event" SEODescription="ノードが削除されるときに発生します。" Scope="word" />
+			<!--<Item text="NodeDeletedEventArgs object" url="shared/customxmlpart.nodedeletedeventargs" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodedeletedeventargs" SEODescription="Provides information about the deleted node that raised the nodeDeleted event." Scope="word"  />-->
+			<Item text="nodeInserted イベント" url="shared/customxmlpart.nodeinserted.event" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodeinserted.event" SEODescription="ノードが挿入されるときに発生します。" Scope="word" />
+			<!--<Item text="NodeInsertedEventArgs object" url="shared/customxmlpart.nodeinsertedeventargs" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodeinsertedeventargs" SEODescription="Provides information about the inserted node that raised the nodeInserted event." Scope="word"  />-->
+			<Item text="nodeReplaced イベント" url="shared/customxmlpart.nodereplaced.event" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodereplaced.event" SEODescription="ノードが置換されるときに発生します。" Scope="word" />
+			<!--<Item text="NodeReplacedEventArgs object" url="shared/customxmlpart.nodereplacedeventargs" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodereplacedeventargs" SEODescription="Provides information about the replaced node that raised the nodeReplaced event." Scope="word"  />-->
+			<Item text="oldNextSibling" url="shared/customxmlpart.oldnextsibling" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.oldnextsibling" SEODescription="CustomXMLPart オブジェクトから削除されたノードの以前の次の兄弟を取得します。" Scope="word" />
+			<Item text="oldNode" url="shared/customxmlpart.oldnode" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.oldnode" SEODescription="CustomXmlPart オブジェクトから削除されたノードを取得します。" Scope="word" />
+			<Item text="removeHandlerAsync" url="shared/customxmlpart.removehandlerasync" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.removehandlerasync" SEODescription="CustomXmlPart オブジェクト イベントのイベント ハンドラーを削除します。" Scope="word" />
+		</Item>
+		<Item text="CustomXmlParts" url="shared/customxmlparts.customxmlparts" FriendlyUrl="reference/common/customxmlparts-objectcustomxmlparts.customxmlparts" SEODescription="CustomXMLPart オブジェクトのコレクションを表します。" Scope="word">
+			<Item text="addAsync" url="shared/customxmlparts.addasync" FriendlyUrl="reference/common/customxmlparts-objectcustomxmlparts.addasync" SEODescription="新しいカスタム XML パーツをファイルに非同期に追加します。" Scope="word" />
+			<Item text="getByIdAsync" url="shared/customxmlparts.getbyidasync" FriendlyUrl="reference/common/customxmlparts-objectcustomxmlparts.getbyidasync" SEODescription="ID を使用してカスタム XML パーツを非同期に取得します。" Scope="word" />
+			<Item text="getByNamespaceAsync" url="shared/customxmlparts.getbynamespaceasync" FriendlyUrl="reference/common/customxmlparts-objectcustomxmlparts.getbynamespaceasync" SEODescription="指定された名前空間に一致するカスタム XML パーツの配列を非同期的に取得します。" Scope="word" />
+		</Item>
+		<Item text="CustomXmlPrefixMappings" url="shared/customxmlprefixmappings.customxmlprefixmappings" FriendlyUrl="reference/common/customxmlprefixmappings-objectcustomxmlprefixmappings.customxmlprefixmappings" SEODescription="カスタム名前空間プレフィックス マッピングのコレクションを表します。" Scope="word">
+			<Item text="addNamespaceAsync" url="shared/customxmlprefixmappings.addnamespaceasync" FriendlyUrl="reference/common/customxmlprefixmappings-objectcustomxmlprefixmappings.addnamespaceasync" SEODescription="アイテムのクエリを実行するときに使用するプレフィックスを名前空間マッピングに非同期で追加します。" Scope="word" />
+			<Item text="getNamespaceAsync" url="shared/customxmlprefixmappings.getnamespaceasync" FriendlyUrl="reference/common/customxmlprefixmappings-objectcustomxmlprefixmappings.getnamespaceasync" SEODescription="指定したプレフィックスにマップされた名前空間を非同期で取得します。" Scope="word" />
+			<Item text="getPrefixAsync" url="shared/customxmlprefixmappings.getprefixasync" FriendlyUrl="reference/common/customxmlprefixmappings-objectcustomxmlprefixmappings.getprefixasync" SEODescription="指定した名前空間のプレフィックスを非同期で取得します。" Scope="word" />
+		</Item>
+		<Item text="ドキュメント" url="shared/document" SEODescription="JavaScript API for Office の Document API サブセットには、ドキュメントに関連付けられている Office アドインで利用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。" Scope="access, excel, powerpoint, project, word">
+			<Item text="ActiveViewChanged イベント" url="shared/document.activeviewchanged" FriendlyUrl="reference/common/document/activeviewchangeddocument.activeviewchanged" SEODescription="ユーザーがドキュメントの現在のビューを変更したときに発生します。" Scope="powerpoint" />
+			<!--<Item text="DocumentActiveViewChangedEventArgs object" url="shared/document.activeviewchangedeventargs" FriendlyUrl="reference/common/document/activeviewchangedeventargs-object/document.activeviewchangedeventargs" SEODescription="Provides information about the view that raised the ActiveViewChanged event." Scope="powerpoint"  />
       <Item text="activeView " url="shared/document.activeviewchangedeventargs.activeview" FriendlyUrl="reference/common/document/activeviewchangedeventargs-object/document.activeviewchangedeventargs.activeview" SEODescription="&quot;Gets an  **ActiveView** enumeration value that identifies the state of the active view of the document" Scope="powerpoint"  />
       <Item text="type " url="shared/document.activeviewchangedeventargs.type" FriendlyUrl="reference/common/document/activeviewchangedeventargs-object/document.activeviewchangedeventargs.type" SEODescription="Gets an EventType enumeration value that identifies the kind of event that was raised." Scope="powerpoint"  />
       -->
-      <Item text="addHandlerAsync" url="shared/document.addhandlerasync" FriendlyUrl="reference/common/documentdocument.addhandlerasync" SEODescription="Document オブジェクト イベントのイベント ハンドラーを追加します。" />
-      <Item text="bindings" url="shared/document.bindings" FriendlyUrl="reference/common/documentdocument.bindings" SEODescription="アドイン がドキュメント内に持つバインドを表します。" />
-      <Item text="customXmlParts" url="shared/document.customxmlparts" FriendlyUrl="reference/common/documentdocument.customxmlparts" SEODescription="ドキュメント内のカスタム XML パーツを表すオブジェクトを取得します。" Scope="word" />
-      <Item text="getActiveViewAsync" url="shared/document.getactiveviewasync" FriendlyUrl="reference/common/documentdocument.getactiveviewasync" SEODescription="プレゼンテーションの現在のビューの状態を返します (編集または読み取り)。" />
-      <Item text="getFileAsync" url="shared/document.getfileasync" FriendlyUrl="reference/common/documentdocument.getfileasync" SEODescription="Office アドインに関連付けられているドキュメント ファイルを返します。" />
-      <Item text="getFilePropertiesAsync" url="shared/document.getfilepropertiesasync" FriendlyUrl="reference/common/documentdocument.getfilepropertiesasync" SEODescription="現在のドキュメントのファイル プロパティを取得します。" />
-      <Item text="getselecteddataasync" url="shared/document.getselecteddataasync" SEODescription="ビュー内で現在選択されている 1 つ以上のセルに含まれるデータのテキスト値を非同期に取得します。" />
-      <Item text="goToByIdAsync" url="shared/document.gotobyidasync" SEODescription="ドキュメント内の指定されたオブジェクトまたは場所に移動します。" />
-      <Item text="mode" url="shared/document.mode" SEODescription="The current mode of the lab, either edit mode or view mode." />
-      <Item text="removeHandlerAsync" url="shared/document.removehandlerasync" SEODescription="指定されたイベントの種類のバインドから、指定されたハンドラーを削除します。" />
-      <Item text="selectionChanged イベント" url="shared/document.selectionchanged.event" SEODescription="SelectionChanged イベントが発生したドキュメントに関する情報を提供します。" />
-      <!--<Item text="document " url="shared/document.selectionchangedeventargs.document"  />
+			<Item text="addHandlerAsync" url="shared/document.addhandlerasync" FriendlyUrl="reference/common/documentdocument.addhandlerasync" SEODescription="Document オブジェクト イベントのイベント ハンドラーを追加します。" />
+			<Item text="bindings" url="shared/document.bindings" FriendlyUrl="reference/common/documentdocument.bindings" SEODescription="アドイン がドキュメント内に持つバインドを表します。" />
+			<Item text="customXmlParts" url="shared/document.customxmlparts" FriendlyUrl="reference/common/documentdocument.customxmlparts" SEODescription="ドキュメント内のカスタム XML パーツを表すオブジェクトを取得します。" Scope="word" />
+			<Item text="getActiveViewAsync" url="shared/document.getactiveviewasync" FriendlyUrl="reference/common/documentdocument.getactiveviewasync" SEODescription="プレゼンテーションの現在のビューの状態を返します (編集または読み取り)。" />
+			<Item text="getFileAsync" url="shared/document.getfileasync" FriendlyUrl="reference/common/documentdocument.getfileasync" SEODescription="Office アドインに関連付けられているドキュメント ファイルを返します。" />
+			<Item text="getFilePropertiesAsync" url="shared/document.getfilepropertiesasync" FriendlyUrl="reference/common/documentdocument.getfilepropertiesasync" SEODescription="現在のドキュメントのファイル プロパティを取得します。" />
+			<Item text="getselecteddataasync" url="shared/document.getselecteddataasync" SEODescription="ビュー内で現在選択されている 1 つ以上のセルに含まれるデータのテキスト値を非同期に取得します。" />
+			<Item text="goToByIdAsync" url="shared/document.gotobyidasync" SEODescription="ドキュメント内の指定されたオブジェクトまたは場所に移動します。" />
+			<Item text="mode" url="shared/document.mode" SEODescription="The current mode of the lab, either edit mode or view mode." />
+			<Item text="removeHandlerAsync" url="shared/document.removehandlerasync" SEODescription="指定されたイベントの種類のバインドから、指定されたハンドラーを削除します。" />
+			<Item text="selectionChanged イベント" url="shared/document.selectionchanged.event" SEODescription="SelectionChanged イベントが発生したドキュメントに関する情報を提供します。" />
+			<!--<Item text="document " url="shared/document.selectionchangedeventargs.document"  />
       <Item text="documentSelectionChangedEventArgs object"   />
       <Item text="type " url="shared/document.selectionchangedeventargs.type"  />-->
-      <Item text="setSelectedDataAsync" url="shared/document.setselecteddataasync" SEODescription="ドキュメント内の現在の選択範囲にデータを書き込みます。" />
-      <Item text="設定" url="shared/document.settings" SEODescription="ホスト ドキュメントに名前/値のペアとして格納される、作業ウィンドウ アドインまたはコンテンツ アドインのカスタム設定を表します。" />
-      <Item text="url" url="shared/document.url" SEODescription="ホスト アプリケーションが現在開いているドキュメントの URL を取得します。" />
-    </Item>
-    <Item text="エラー" url="shared/error">
-      <Item text="error.code" url="shared/error.code" SEODescription="エラーの数値コードを取得します。" />
-      <Item text="error.message" url="shared/error.message" SEODescription="エラーの詳細な説明を取得します。" />
-      <Item text="error.name" url="shared/error.name" SEODescription="エラーの名前を取得します。" />
-    </Item>
-    <Item text="File" url="shared/file">
-      <Item text="closeAsync" url="shared/file.closeasync" FriendlyUrl="reference/common/filefile.closeasync" SEODescription="ドキュメント ファイルを閉じます。" />
-      <Item text="getSliceAsync" url="shared/file.getsliceasync" FriendlyUrl="reference/common/filefile.getsliceasync" SEODescription=" 指定したスライスを返します。" />
-      <Item text="size" url="shared/file.size" FriendlyUrl="reference/common/filefile.size" SEODescription="指定したサイズを返します。" />
-      <Item text="sliceCount" url="shared/file.slicecount" FriendlyUrl="reference/common/filefile.slicecount" SEODescription="指定した数を返します。" />
-    </Item>
-    <Item text="Office" url="shared/office">
-      <Item text="cast.item" url="shared/office.cast.item" Scope="outlook" SEODescription="新規作成モードまたは閲覧モードのメッセージおよび予定に固有の IntelliSense を提供します。" />
-      <Item text="イベントの初期化" url="shared/office.initialize" SEODescription="ランタイム環境が読み込まれ、アプリケーションやホストされたドキュメントを対話操作するアドインの準備ができたときに発生します。" />
-      <Item text="select" url="shared/office.select" FriendlyUrl="reference/common/officeoffice.select" SEODescription="ホストされたドキュメントを選択します。" />
-      <Item text="useShortNamespace" url="shared/office.useshortnamespace" FriendlyUrl="reference/common/officeoffice.useshortnamespace" SEODescription="Microsoft.Office.WebExtension という完全な名前空間に対して Office というエイリアスを使用するかどうかを切り替えます。" />
-    </Item>
-    <Item text="ProjectDocument" url="shared/projectdocument.projectdocument" FriendlyUrl="reference/common/projectdocumentprojectdocument.projectdocument" Scope="project">
-      <Item text="addHandlerAsync" url="shared/projectdocument.addhandlerasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.addhandlerasync" Scope="project" SEODescription="ProjectDocument オブジェクトのイベントに対するイベント ハンドラーを非同期に追加します。" />
-      <Item text="getMaxResourceIndexAsync" url="shared/projectdocument.getmaxresourceindexasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getmaxresourceindexasync" Scope="project" SEODescription="現在のプロジェクトでリソースのコレクションの最大インデックスを非同期に取得します。" />
-      <Item text="getMaxTaskIndexAsync" url="shared/projectdocument.getmaxtaskindexasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getmaxtaskindexasync" Scope="project" SEODescription="現在のプロジェクトでタスクのコレクションの最大インデックスを非同期に取得します。" />
-      <Item text="getProjectFieldAsync" url="shared/projectdocument.getprojectfieldasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getprojectfieldasync" Scope="project" SEODescription="アクティブなプロジェクトの指定したフィールドの値を非同期に取得します。" />
-      <Item text="getResourceByIndexAsync" url="shared/projectdocument.getresourcebyindexasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getresourcebyindexasync" Scope="project" SEODescription="リソースのコレクション内に指定のインデックスがあるリソースの GUID を非同期に取得します。" />
-      <Item text="getResourceFieldAsync" url="shared/projectdocument.getresourcefieldasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getresourcefieldasync" Scope="project" SEODescription="指定したリソースの指定したフィールドの値を非同期に取得します。" />
-      <Item text="getSelectedDataAsync" url="shared/projectdocument.getselecteddataasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getselecteddataasync" Scope="project" SEODescription="ガント チャート内で現在選択されている 1 つ以上のセルに格納されているデータを非同期に取得します。" />
-      <Item text="getSelectedResourceAsync" url="shared/projectdocument.getselectedresourceasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getselectedresourceasync" Scope="project" SEODescription="選択されているリソースの GUID を非同期に取得します。" />
-      <Item text="getSelectedTaskAsync" url="shared/projectdocument.getselectedtaskasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getselectedtaskasync" Scope="project" SEODescription="選択されているタスクの GUID を非同期に取得します。" />
-      <Item text="getSelectedViewAsync" url="shared/projectdocument.getselectedviewasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getselectedviewasync" Scope="project" SEODescription="アクティブ ビューのビューの種類と名前を非同期に取得します。" />
-      <Item text="getTaskAsync" url="shared/projectdocument.gettaskasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.gettaskasync" Scope="project" SEODescription="タスク名、タスクに割り当てられているリソース、およびタスクの ID を同期済みの SharePoint タスク リストから非同期的に取得します。" />
-      <Item text="getTaskByIndexAsync" url="shared/projectdocument.gettaskbyindexasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.gettaskbyindexasync" Scope="project" SEODescription="タスクのコレクション内に指定のインデックスがあるタスクの GUID を非同期に取得します。" />
-      <Item text="getTaskFieldAsync" url="shared/projectdocument.gettaskfieldasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.gettaskfieldasync" Scope="project" SEODescription="指定したタスクの指定したフィールドの値を非同期に取得します。" />
-      <Item text="getWSSUrlAsync" url="shared/projectdocument.getwssurlasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getwssurlasync" Scope="project" SEODescription="同期済みの SharePoint タスク リストの URL を非同期に取得します。" />
-      <Item text="removeHandlerAsync" url="shared/projectdocument.removehandlerasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.removehandlerasync" Scope="project" SEODescription=" ProjectDocument オブジェクトのイベントに対するイベント ハンドラーを非同期に削除します。" />
-      <Item text="ResourceSelectionChanged イベント" url="shared/projectdocument.resourceselectionchanged.event" FriendlyUrl="reference/common/projectdocumentprojectdocument.resourceselectionchanged.event" Scope="project" SEODescription="指定したリソースの指定したフィールドの値を非同期に設定します。" />
-      <Item text="setResourceFieldAsync" url="shared/projectdocument.setresourcefieldasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.setresourcefieldasync" Scope="project" SEODescription="指定したタスクの指定したリソース フィールドの値を非同期に設定します。" />
-      <Item text="setTaskFieldAsync" url="shared/projectdocument.settaskfieldasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.settaskfieldasync" Scope="project" SEODescription="指定したタスクの指定したフィールドの値を非同期に設定します。" />
-      <Item text="TaskSelectionChanged イベント" url="shared/projectdocument.taskselectionchanged.event" FriendlyUrl="reference/common/projectdocumentprojectdocument.taskselectionchanged.event" Scope="project" SEODescription="アクティブ プロジェクト内でタスクの選択が変更されるときに発生します。" />
-      <Item text="ViewSelectionChanged イベント" url="shared/projectdocument.viewselectionchanged.event" FriendlyUrl="reference/common/projectdocumentprojectdocument.viewselectionchanged.event" Scope="project" SEODescription="アクティブなプロジェクトでアクティブ ビューが変更されたときに発生します。" />
-    </Item>
-    <Item text="設定 " url="shared/settings" Scope="Access, Excel, PowerPoint, Word">
-      <Item text="addHandlerAsync" url="shared/settings.addhandlerasync" FriendlyUrl="reference/common/settingssettings.addhandlerasync" Scope="excel" SEODescription="settingsChanged イベントのイベント ハンドラーを追加します。" />
-      <Item text="get" url="shared/settings.get" FriendlyUrl="reference/common/settingssettings.get" SEODescription="指定された設定を取得します。" />
-      <Item text="refreshAsync" url="shared/settings.refreshasync" FriendlyUrl="reference/common/settingssettings.refreshasync" SEODescription="ドキュメントに保存されている設定をすべて読み取り、メモリ上にあるアドインのコピーに対してこれらの設定を更新します。" />
-      <Item text="removeHandlerAsync" url="shared/settings.remove" FriendlyUrl="reference/common/settingssettings.remove" SEODescription="settingsChanged イベントのイベント ハンドラーを削除します。" />
-      <Item text="remove" url="shared/settings.removehandlerasync" FriendlyUrl="reference/common/settingssettings.removehandlerasync" SEODescription="指定された設定を削除します。" />
-      <Item text="saveAsync" url="shared/settings.saveasync" FriendlyUrl="reference/common/settingssettings.saveasync" />
-      <Item text="set" url="shared/settings.set" FriendlyUrl="reference/common/settingssettings.set" SEODescription="設定を設定または作成します。" />
-      <Item text="settingsChanged イベント" url="shared/settings.settingschangedevent" FriendlyUrl="reference/common/settings/settingschanged-eventsettings.settingschangedevent" SEODescription="設定が変更されるときに発生します。" />
-      <Item text="settings.settingschangedeventargs" url="shared/settings.settingschangedeventargs" SEODescription="設定が変更されるときに発生する" />
-      <Item text="設定" url="shared/settings.settingschangedeventargs.setting" FriendlyUrl="reference/common/settings/settingschanged-event/args/settings.settingschangedeventargs.setting" SEODescription="この設定の既定値を指定する " />
-      <Item text="型" url="shared/settings.settingschangedeventargs.type" FriendlyUrl="reference/office.js/settings/settingschanged-event/args/settings.settingschangedeventargs.type" SEODescription="この設定の既定の種類を指定する " />
-  </Item>
-    <Item text="Slice" url="shared/slice" Scope="powerpoint, word">
-    <Item text="data" url="shared/slice.data" SEODescription="ファイル スライスの生データを取得します。" />
-    <Item text="index" url="shared/slice.index" SEODescription="ファイル スライスのインデックスを取得します。" /> 
-    <Item text="size" url="shared/slice.size" SEODescription="スライスのサイズをバイト単位で取得します。" />
-    </Item>
-    <Item text="TableData" url="shared/tabledata" Scope="excel, word">
-      <Item text="headers" url="shared/tabledata.headers" SEODescription="テーブル内のヘッダーを取得または設定する" /> 
-      <Item text="rows" url="shared/tabledata.rows" SEODescription="テーブル内の行を取得または設定します。" />
-    </Item>
-    <Item text="event.completed" url="shared/event.completed" FriendlyUrl="reference/common/officeevent.completed" Scope="outlook" SEODescription="アドインが、操作が完了したことを Outlook に通知するために呼び出すコールバック。" />
-    <Item text="event.source.id" url="shared/event.source.id" FriendlyUrl="reference/common/officeevent.source.id" Scope="outlook" SEODescription="この関数の呼び出しをトリガーしたコントロールの ID を取得します。" />
-    <Item text="Office UI" url="shared/officeui" Scope="outlook, excel, word, powerpoint" SEODescription="アドインの UI コンポーネントを作成するために使用するオブジェクトとメソッドを提供します。">
-    	<Item text="Dialog オブジェクト" url="shared/officeui.dialog" Scope="outlook, excel, word, powerpoint" SEODescription="displayDialogAsync メソッドが呼び出されたときに返されるオブジェクト。" />
-    	<Item text="DisplayDialog メソッド" url="shared/officeui.displaydialogasync" Scope="outlook, excel, word, powerpoint" SEODescription="Office ホスト内に Web ダイアログを表示します。" />
-    	<Item text="MessageParent メソッド" url="shared/officeui.messageparent" Scope="outlook, excel, word, powerpoint" SEODescription="メッセージをダイアログ ボックスからその親/オープナー ページに配信します。" />
-		<Item text="ダイアログ API の要件セット" url="requirement-sets/dialog-api-requirement-sets" Scope="outlook, excel, word, powerpoint" SEODescription="ダイアログ API の要件セット、その要件セットをサポートする Office ホスト アプリケーション、Office アプリケーションのビルド番号またはバージョン番号に関する情報について説明します。" />
-    </Item>
-  </Item>
-  <Item text="仕様を開く" url="openspec" Scope="Excel, PowerPoint, Word, Outlook, OneNote" SEODescription="継続的なデザイン API の作業について学習し、フィードバックを送る" />
-  
+			<Item text="setSelectedDataAsync" url="shared/document.setselecteddataasync" SEODescription="ドキュメント内の現在の選択範囲にデータを書き込みます。" />
+			<Item text="設定" url="shared/document.settings" SEODescription="ホスト ドキュメントに名前/値のペアとして格納される、作業ウィンドウ アドインまたはコンテンツ アドインのカスタム設定を表します。" />
+			<Item text="url" url="shared/document.url" SEODescription="ホスト アプリケーションが現在開いているドキュメントの URL を取得します。" />
+		</Item>
+		<Item text="エラー" url="shared/error">
+			<Item text="error.code" url="shared/error.code" SEODescription="エラーの数値コードを取得します。" />
+			<Item text="error.message" url="shared/error.message" SEODescription="エラーの詳細な説明を取得します。" />
+			<Item text="error.name" url="shared/error.name" SEODescription="エラーの名前を取得します。" />
+		</Item>
+		<Item text="File" url="shared/file">
+			<Item text="closeAsync" url="shared/file.closeasync" FriendlyUrl="reference/common/filefile.closeasync" SEODescription="ドキュメント ファイルを閉じます。" />
+			<Item text="getSliceAsync" url="shared/file.getsliceasync" FriendlyUrl="reference/common/filefile.getsliceasync" SEODescription=" 指定したスライスを返します。" />
+			<Item text="size" url="shared/file.size" FriendlyUrl="reference/common/filefile.size" SEODescription="指定したサイズを返します。" />
+			<Item text="sliceCount" url="shared/file.slicecount" FriendlyUrl="reference/common/filefile.slicecount" SEODescription="指定した数を返します。" />
+		</Item>
+		<Item text="Office" url="shared/office">
+			<Item text="cast.item" url="shared/office.cast.item" Scope="outlook" SEODescription="新規作成モードまたは閲覧モードのメッセージおよび予定に固有の IntelliSense を提供します。" />
+			<Item text="イベントの初期化" url="shared/office.initialize" SEODescription="ランタイム環境が読み込まれ、アプリケーションやホストされたドキュメントを対話操作するアドインの準備ができたときに発生します。" />
+			<Item text="select" url="shared/office.select" FriendlyUrl="reference/common/officeoffice.select" SEODescription="ホストされたドキュメントを選択します。" />
+			<Item text="useShortNamespace" url="shared/office.useshortnamespace" FriendlyUrl="reference/common/officeoffice.useshortnamespace" SEODescription="Microsoft.Office.WebExtension という完全な名前空間に対して Office というエイリアスを使用するかどうかを切り替えます。" />
+		</Item>
+		<Item text="ProjectDocument" url="shared/projectdocument.projectdocument" FriendlyUrl="reference/common/projectdocumentprojectdocument.projectdocument" Scope="project">
+			<Item text="addHandlerAsync" url="shared/projectdocument.addhandlerasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.addhandlerasync" Scope="project" SEODescription="ProjectDocument オブジェクトのイベントに対するイベント ハンドラーを非同期に追加します。" />
+			<Item text="getMaxResourceIndexAsync" url="shared/projectdocument.getmaxresourceindexasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getmaxresourceindexasync" Scope="project" SEODescription="現在のプロジェクトでリソースのコレクションの最大インデックスを非同期に取得します。" />
+			<Item text="getMaxTaskIndexAsync" url="shared/projectdocument.getmaxtaskindexasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getmaxtaskindexasync" Scope="project" SEODescription="現在のプロジェクトでタスクのコレクションの最大インデックスを非同期に取得します。" />
+			<Item text="getProjectFieldAsync" url="shared/projectdocument.getprojectfieldasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getprojectfieldasync" Scope="project" SEODescription="アクティブなプロジェクトの指定したフィールドの値を非同期に取得します。" />
+			<Item text="getResourceByIndexAsync" url="shared/projectdocument.getresourcebyindexasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getresourcebyindexasync" Scope="project" SEODescription="リソースのコレクション内に指定のインデックスがあるリソースの GUID を非同期に取得します。" />
+			<Item text="getResourceFieldAsync" url="shared/projectdocument.getresourcefieldasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getresourcefieldasync" Scope="project" SEODescription="指定したリソースの指定したフィールドの値を非同期に取得します。" />
+			<Item text="getSelectedDataAsync" url="shared/projectdocument.getselecteddataasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getselecteddataasync" Scope="project" SEODescription="ガント チャート内で現在選択されている 1 つ以上のセルに格納されているデータを非同期に取得します。" />
+			<Item text="getSelectedResourceAsync" url="shared/projectdocument.getselectedresourceasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getselectedresourceasync" Scope="project" SEODescription="選択されているリソースの GUID を非同期に取得します。" />
+			<Item text="getSelectedTaskAsync" url="shared/projectdocument.getselectedtaskasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getselectedtaskasync" Scope="project" SEODescription="選択されているタスクの GUID を非同期に取得します。" />
+			<Item text="getSelectedViewAsync" url="shared/projectdocument.getselectedviewasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getselectedviewasync" Scope="project" SEODescription="アクティブ ビューのビューの種類と名前を非同期に取得します。" />
+			<Item text="getTaskAsync" url="shared/projectdocument.gettaskasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.gettaskasync" Scope="project" SEODescription="タスク名、タスクに割り当てられているリソース、およびタスクの ID を同期済みの SharePoint タスク リストから非同期的に取得します。" />
+			<Item text="getTaskByIndexAsync" url="shared/projectdocument.gettaskbyindexasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.gettaskbyindexasync" Scope="project" SEODescription="タスクのコレクション内に指定のインデックスがあるタスクの GUID を非同期に取得します。" />
+			<Item text="getTaskFieldAsync" url="shared/projectdocument.gettaskfieldasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.gettaskfieldasync" Scope="project" SEODescription="指定したタスクの指定したフィールドの値を非同期に取得します。" />
+			<Item text="getWSSUrlAsync" url="shared/projectdocument.getwssurlasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.getwssurlasync" Scope="project" SEODescription="同期済みの SharePoint タスク リストの URL を非同期に取得します。" />
+			<Item text="removeHandlerAsync" url="shared/projectdocument.removehandlerasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.removehandlerasync" Scope="project" SEODescription=" ProjectDocument オブジェクトのイベントに対するイベント ハンドラーを非同期に削除します。" />
+			<Item text="ResourceSelectionChanged イベント" url="shared/projectdocument.resourceselectionchanged.event" FriendlyUrl="reference/common/projectdocumentprojectdocument.resourceselectionchanged.event" Scope="project" SEODescription="指定したリソースの指定したフィールドの値を非同期に設定します。" />
+			<Item text="setResourceFieldAsync" url="shared/projectdocument.setresourcefieldasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.setresourcefieldasync" Scope="project" SEODescription="指定したタスクの指定したリソース フィールドの値を非同期に設定します。" />
+			<Item text="setTaskFieldAsync" url="shared/projectdocument.settaskfieldasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.settaskfieldasync" Scope="project" SEODescription="指定したタスクの指定したフィールドの値を非同期に設定します。" />
+			<Item text="TaskSelectionChanged イベント" url="shared/projectdocument.taskselectionchanged.event" FriendlyUrl="reference/common/projectdocumentprojectdocument.taskselectionchanged.event" Scope="project" SEODescription="アクティブ プロジェクト内でタスクの選択が変更されるときに発生します。" />
+			<Item text="ViewSelectionChanged イベント" url="shared/projectdocument.viewselectionchanged.event" FriendlyUrl="reference/common/projectdocumentprojectdocument.viewselectionchanged.event" Scope="project" SEODescription="アクティブなプロジェクトでアクティブ ビューが変更されたときに発生します。" />
+		</Item>
+		<Item text="設定 " url="shared/settings" Scope="Access, Excel, PowerPoint, Word">
+			<Item text="addHandlerAsync" url="shared/settings.addhandlerasync" FriendlyUrl="reference/common/settingssettings.addhandlerasync" Scope="excel" SEODescription="settingsChanged イベントのイベント ハンドラーを追加します。" />
+			<Item text="get" url="shared/settings.get" FriendlyUrl="reference/common/settingssettings.get" SEODescription="指定された設定を取得します。" />
+			<Item text="refreshAsync" url="shared/settings.refreshasync" FriendlyUrl="reference/common/settingssettings.refreshasync" SEODescription="ドキュメントに保存されている設定をすべて読み取り、メモリ上にあるアドインのコピーに対してこれらの設定を更新します。" />
+			<Item text="removeHandlerAsync" url="shared/settings.remove" FriendlyUrl="reference/common/settingssettings.remove" SEODescription="settingsChanged イベントのイベント ハンドラーを削除します。" />
+			<Item text="remove" url="shared/settings.removehandlerasync" FriendlyUrl="reference/common/settingssettings.removehandlerasync" SEODescription="指定された設定を削除します。" />
+			<Item text="saveAsync" url="shared/settings.saveasync" FriendlyUrl="reference/common/settingssettings.saveasync" />
+			<Item text="set" url="shared/settings.set" FriendlyUrl="reference/common/settingssettings.set" SEODescription="設定を設定または作成します。" />
+			<Item text="settingsChanged イベント" url="shared/settings.settingschangedevent" FriendlyUrl="reference/common/settings/settingschanged-eventsettings.settingschangedevent" SEODescription="設定が変更されるときに発生します。" />
+			<Item text="settings.settingschangedeventargs" url="shared/settings.settingschangedeventargs" SEODescription="設定が変更されるときに発生する" />
+			<Item text="設定" url="shared/settings.settingschangedeventargs.setting" FriendlyUrl="reference/common/settings/settingschanged-event/args/settings.settingschangedeventargs.setting" SEODescription="この設定の既定値を指定する " />
+			<Item text="型" url="shared/settings.settingschangedeventargs.type" FriendlyUrl="reference/office.js/settings/settingschanged-event/args/settings.settingschangedeventargs.type" SEODescription="この設定の既定の種類を指定する " />
+		</Item>
+		<Item text="Slice" url="shared/slice" Scope="powerpoint, word">
+			<Item text="data" url="shared/slice.data" SEODescription="ファイル スライスの生データを取得します。" />
+			<Item text="index" url="shared/slice.index" SEODescription="ファイル スライスのインデックスを取得します。" />
+			<Item text="size" url="shared/slice.size" SEODescription="スライスのサイズをバイト単位で取得します。" />
+		</Item>
+		<Item text="TableData" url="shared/tabledata" Scope="excel, word">
+			<Item text="headers" url="shared/tabledata.headers" SEODescription="テーブル内のヘッダーを取得または設定する" />
+			<Item text="rows" url="shared/tabledata.rows" SEODescription="テーブル内の行を取得または設定します。" />
+		</Item>
+		<Item text="event.completed" url="shared/event.completed" FriendlyUrl="reference/common/officeevent.completed" Scope="outlook" SEODescription="アドインが、操作が完了したことを Outlook に通知するために呼び出すコールバック。" />
+		<Item text="event.source.id" url="shared/event.source.id" FriendlyUrl="reference/common/officeevent.source.id" Scope="outlook" SEODescription="この関数の呼び出しをトリガーしたコントロールの ID を取得します。" />
+		<Item text="Office UI" url="shared/officeui" Scope="outlook, excel, word, powerpoint" SEODescription="アドインの UI コンポーネントを作成するために使用するオブジェクトとメソッドを提供します。">
+			<Item text="Dialog オブジェクト" url="shared/officeui.dialog" Scope="outlook, excel, word, powerpoint" SEODescription="displayDialogAsync メソッドが呼び出されたときに返されるオブジェクト。" />
+			<Item text="DisplayDialog メソッド" url="shared/officeui.displaydialogasync" Scope="outlook, excel, word, powerpoint" SEODescription="Office ホスト内に Web ダイアログを表示します。" />
+			<Item text="MessageParent メソッド" url="shared/officeui.messageparent" Scope="outlook, excel, word, powerpoint" SEODescription="メッセージをダイアログ ボックスからその親/オープナー ページに配信します。" />
+			<Item text="ダイアログ API の要件セット" url="requirement-sets/dialog-api-requirement-sets" Scope="outlook, excel, word, powerpoint" SEODescription="ダイアログ API の要件セット、その要件セットをサポートする Office ホスト アプリケーション、Office アプリケーションのビルド番号またはバージョン番号に関する情報について説明します。" />
+		</Item>
+	</Item>
+	<Item text="仕様を開く" url="openspec" Scope="Excel, PowerPoint, Word, Outlook, OneNote" SEODescription="継続的なデザイン API の作業について学習し、フィードバックを送る" />
 </Menu>

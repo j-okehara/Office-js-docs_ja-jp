@@ -35,8 +35,7 @@
 		<Item text="アドイン コマンドを定義する" url="outlook/manifests/define-add-in-commands" SEODescription="アドイン マニフェストの VersionOverrides 要素を使用して、アドイン コマンドを定義します。" />
 		<Item text="Office ホストを指定する" url="overview/specify-office-hosts-and-api-requirements" SEODescription="Office ホストと API の要件をマニフェストで指定する方法を確認します。" /> 	
 		<Item text="コンテンツ アドインと作業ウィンドウ アドインでの API 使用についてアクセス許可を要求する" url="develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins" SEODescription="マニフェストでアドインに必要な API アクセスのレベルを指定します。" />
-		<Item text="API とマニフェストのバージョンを更新する" url="develop/update-your-javascript-api-for-office-and-manifest-schema-version" SEODescription="Office アドイン プロジェクトで使用する JavaScript ファイル (Office.js ファイルとアプリに固有の .js ファイル) とアドイン マニフェスト検証ファイルをバージョン 1.1 に更新します。" />
-		<Item text="ランタイムのログを使用して、マニフェストをデバッグする" url="develop/use-runtime-logging-to-debug-manifest" SEODescription="ランタイムのログを使用して Office アドインのマニフェストをデバッグします。" />
+		<Item text="API とマニフェストのバージョンを更新する" url="develop/update-your-javascript-api-for-office-and-manifest-schema-version" SEODescription="Office アドイン プロジェクトで使用する JavaScript ファイル (Office.js ファイルとアプリに固有の .js ファイル) とアドイン マニフェスト検証ファイルをバージョン 1.1 に更新します。" />		
 	</Item>	
 	<Item text="Office の JavaScript API" url="develop/understanding-the-javascript-api-for-office" SEODescription="Office.js ファイルに実装されている JavaScript API for Office の機能領域について説明します。">
 		<Item text="コンテンツ アドインおよび作業ウィンドウ アドインのサポート" url="develop/support-for-task-pane-and-content-add-ins" SEODescription="アドインの機能のために必要となる JavaScript API アクセスのレベルを指定するために、コンテンツ アドインまたは作業ウィンドウ アドインのマニフェストで宣言できるさまざまなアクセス許可レベルについて説明します。" />
@@ -51,7 +50,7 @@
 	<Item text="ローカリゼーション" url="develop/localization" SEODescription="UI 文字列、アドイン名、説明、アイコン、ソース ファイル、日付/時刻の形式など、Office アドイン にロケール固有のコンテンツを提供します。" />
     <Item text="パフォーマンス" url="develop/resource-limits-and-performance-optimization" SEODescription="Office アドインにリソース使用量の制限を適用し、アドインのパフォーマンスを最適化します。" />
   </Item>
-  <Item text="テスト" url="testing">
+  <Item text="テストとデバッグ" url="testing">
     	<Item text="テスト用に Office アドインをサイドロードする" url="testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins" SEODescription="テスト用に Windows で実行する Office アドインをインストールします。" Scope="Excel, Word, PowerPoint, Project, Access" />
 		<Item text="テスト用に Office Online で Office アドインをサイドロードする" url="testing/sideload-office-add-ins-for-testing" SEODescription="テスト用に Office アプリケーションにアドインを読み込む方法をご覧ください。" />
 	    <Item text="テスト用に Outlook アドインをサイドロードする" url="testing/sideload-outlook-add-ins-for-testing" SEODescription="テスト用に Outlook アドインをインストールする" />
@@ -60,11 +59,13 @@
     	<Item text="Office Online をデバッグする" url="testing/debug-add-ins-in-office-online" SEODescription="たとえば Mac 上で開発している場合に、Office Online を使用して、Windows プラットフォーム上で Office を実行せずにアドインをデバッグします。" />
     	<Item text="iPad や Mac でのデバッグ" url="testing/debug-office-add-ins-on-ipad-and-mac" SEODescription="Weinre リモート Web 検査を使用して、iPad または Mac 上で動作する Office アドインをデバッグします。" />
         <Item text="ユーザーのエラーをトラブルシューティングする" url="testing/testing-and-troubleshooting" SEODescription="ユーザーが Office アドインの使用時に抱える問題のトラブルシューティングを行います。" />
+		<Item text="マニフェストの問題を検証し、トラブルシューティングする" url="testing/troubleshoot-manifest" SEODescription="Office アドインのマニフェストの問題をトラブルシューティングします。" />
 	</Item>
   <Item text="発行する" url="publish/publish">
     <Item text="Microsoft Azure で Office アドインをホストする" url="publish/host-an-office-add-in-on-microsoft-azure" SEODescription="Visual Studio 2015 および Microsoft Office Developer Tools を使用して、Office アドインを発行した後に Microsoft Azure でホストします。" />
     <Item text="Napa または Visual Studio を使用してアドインをパッケージ化する" url="publish/package-your-add-in-using-napa-or-visual-studio" SEODescription="発行できるように Office アドインをパッケージ化します。" />
     <Item text="作業ウィンドウ アドインとコンテンツ アドインをアドイン カタログに発行する" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Office の [アドイン] ダイアログ ボックスからアドインを使用できるように Office クライアントを構成する" />
+	<Item text="Office ストアへのアドインの提出" url="https://msdn.microsoft.com/en-us/library/office/jj220037.aspx" IsExternal="true" />
   </Item>
   
   <Item text="Word" url="word/word-add-ins-programming-overview" SEODescription="JavaScript API を使用して、Word アドインをビルドします。" Scope="word">
@@ -146,4 +147,5 @@
   <Item text="Access" url="access" Scope="access">
     <Item text="Access Web アプリとアドイン" url="access/access-web-app-add-ins" SEOKeyword="Access 用アドイン" SEODescription="カスタム HTML および JavaScript を使用して Access Web アプリを拡張する Office アドインを作成します。" Scope="access" />
   </Item>
+  <Item text="JavaScript API 参照" url="https://dev.office.com/reference/add-ins/javascript-api-for-office" IsExternal="true" />
 </Menu>

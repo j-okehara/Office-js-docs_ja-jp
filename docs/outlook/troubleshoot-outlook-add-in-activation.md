@@ -159,7 +159,7 @@ Outlook アドインが閲覧アドインであり、ユーザーがメッセー
 
 ## <a name="is-the-add-in-manifest-valid"></a>アドイン マニフェストは有効か?
 
-[ランタイム ログ](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest)を使用して、アドイン マニフェストの問題をデバッグします。
+「[マニフェストの問題を検証し、トラブルシューティングする](../testing/troubleshoot-manifest.md)」を参照して、アドインのマニフェストの問題をデバッグしてください。
 
 ## <a name="are-you-using-the-appropriate-activation-rules"></a>適切なアクティブ化ルールを使用しているか?
 
@@ -295,6 +295,6 @@ Outlook リッチ クライアントで使用される正規表現エンジン�
     
 - [MailApp complexType](http://msdn.microsoft.com/en-us/library/696b9fcf-cd10-3f20-4d49-86d3690c887a%28Office.15%29.aspx)
     
-- - [ランタイム ログを使用して、マニフェストをデバッグする](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest)
+- [マニフェストの問題を検証し、トラブルシューティングする](../testing/troubleshoot-manifest.md)
     
 
