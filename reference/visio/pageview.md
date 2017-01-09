@@ -7,12 +7,13 @@ PageView クラスを表します。
 
 ## <a name="properties"></a>プロパティ
 
-なし
+| プロパティ | 型 |説明| フィードバック|
+|:---------------|:--------|:----------|:---|
+|ズーム|整数|GetSet ページのズーム レベル。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-zoom)|
 
 ## <a name="relationships"></a>関係
-| リレーションシップ | 型   |説明| フィードバック|
-|:---------------|:--------|:----------|:---|
-|zoom|[Double](double.md)|GetSet ページのズーム レベル。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-zoom)|
+
+なし
 
 ## <a name="methods"></a>メソッド
 

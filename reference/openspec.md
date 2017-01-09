@@ -38,7 +38,7 @@ Word JavaScript API 1.4 の更新プログラムに含まれている、重要�
 * テーブルの結合セル
 * テーブルの行の結合と列の分割
 
-**詳細については、[Word JS API 1.4 のページ](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_Openspec/word)を参照し、フィードバックを提供してください。**
+**詳細については、[Word JS API 1.4 のページ](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_OpenSpec)を参照し、フィードバックを提供してください。**
 
 ## <a name="host-platform-information-and-diagnostic-information"></a>ホスト、プラットフォームの情報および診断情報 
 アドインの実行時環境の情報および診断情報を開発者に提供するために、Office.Context オブジェクトへの計画済みの追加機能を確認してください。 
