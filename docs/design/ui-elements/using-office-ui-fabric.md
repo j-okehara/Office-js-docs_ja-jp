@@ -1,5 +1,5 @@
 
-#<a name="use-office-ui-fabric-in-office-addins"></a>Office アドインでの Office UI Fabric の使用
+#<a name="use-office-ui-fabric-261-in-office-add-ins"></a>Office アドインでの Office UI Fabric 2.6.1 の使用
 
 Office アドインを作成する場合は、[Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) を使用して、ユーザー エクスペリエンスを作成することをお勧めします。次の手順では、Fabric の基本的な使用方法について説明しています。  
 

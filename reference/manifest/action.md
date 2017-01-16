@@ -15,12 +15,14 @@
 |  [FunctionName](#functionname) |    実行する関数の名前を指定します。 |
 |  [SourceLocation](#sourcelocation) |    この操作のソース ファイルの場所を指定します。 |
 |  [TaskpaneId](#taskpaneid) | 作業ウィンドウ コンテナーの ID を指定します。|
+|  [SupportsPinning](#supportspinning) | 作業ウィンドウがピン留めをサポートすることを指定します。これにより、ユーザーが選択を変更したときも作業ウィンドウが開いたままになります。|
   
 
-## <a name="xsi:type"></a>xsi:type
+## <a name="xsitype"></a>xsi:type
 この属性は、ユーザーがボタンをクリックしたときに実行される操作の種類を指定します。次のいずれかを指定できます。
-- ExecuteFunction
-- ShowTaskpane
+
+- `ExecuteFunction`
+- `ShowTaskpane`
 
 ## <a name="functionname"></a>FunctionName
 
@@ -28,7 +30,7 @@
 
 ```xml
 <Action xsi:type="ExecuteFunction">
-    <FunctionName>getSubject</FunctionName>
+  <FunctionName>getSubject</FunctionName>
 </Action>
 ```
 
@@ -36,9 +38,9 @@
 **xsi:type** が "ShowTaskpane" のときに必ず指定する要素です。このアクションのソース ファイルの場所を指定します。 **resid** 属性は、 **Resources** 要素の **Urls** 要素にある [Url](./resources.md#urls) 要素の [id](./resources.md) 属性の値を指定します。
 
 ```xml
- <Action xsi:type="ShowTaskpane">
-    <SourceLocation resid="readTaskPaneUrl" />
-  </Action>
+<Action xsi:type="ShowTaskpane">
+  <SourceLocation resid="readTaskPaneUrl" />
+</Action>
 ```  
 
 ## <a name="taskpaneid"></a>TaskpaneId
@@ -50,13 +52,25 @@
 
 
 ```xml
- <Action xsi:type="ShowTaskpane">
-    <TaskpaneId>MyPane</TaskpaneId>
-    <SourceLocation resid="aTaskPaneUrl" />
-  </Action>
+<Action xsi:type="ShowTaskpane">
+  <TaskpaneId>MyPane</TaskpaneId>
+  <SourceLocation resid="aTaskPaneUrl" />
+</Action>
 
-  <Action xsi:type="ShowTaskpane">
-    <TaskpaneId>MyPane</TaskpaneId>
-    <SourceLocation resid="anotherTaskPaneUrl" />
-  </Action>
+<Action xsi:type="ShowTaskpane">
+  <TaskpaneId>MyPane</TaskpaneId>
+  <SourceLocation resid="anotherTaskPaneUrl" />
+</Action>
 ```  
+
+## <a name="supportspinning"></a>SupportsPinning
+**xsi:type** が "ShowTaskpane" の場合に省略可能な要素。これを収容している [VersionOverrides](./versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。ピン留めをサポートする場合は、この要素に `true` の値を含めます。ユーザーは、作業ウィンドウをピン留めできるようになります。ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。
+
+>**メモ:** 現時点では、この要素は Outlook 2016 でのみサポートされています。
+
+```xml
+<Action xsi:type="ShowTaskpane">
+  <SourceLocation resid="readTaskPaneUrl" />
+  <SupportsPinning>true</SupportsPinning>
+</Action>
+```

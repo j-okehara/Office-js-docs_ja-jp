@@ -9,31 +9,53 @@ Office ホストでダイアログ ボックスを表示します。
 |Word、Excel、PowerPoint|1.1|1.1|
 |Outlook|メールボックス 1.4|メールボックス 1.4|
 
-このメソッドは、DialogAPI [要件セット](../../docs/overview/specify-office-hosts-and-api-requirements.md)で使用できます。DialogAPI 要件セットを指定するには、マニフェストで次のようにします。
+このメソッドは、Word アドイン、Excel アドイン、または PowerPoint アドインの DialogAPI [要件セット](../../docs/overview/specify-office-hosts-and-api-requirements.md)、および Outlook の要件セット 1.4 で使用できます。DialogAPI 要件セットを指定するには、マニフェストで次のようにします。
 
 ```xml
- <Requirements> 
-   <Sets DefaultMinVersion="1.1"> 
-     <Set Name="DialogAPI"/> 
-   </Sets> 
- </Requirements> 
-
+<Requirements> 
+  <Sets DefaultMinVersion="1.1"> 
+    <Set Name="DialogAPI"/> 
+  </Sets> 
+</Requirements> 
 ```
 
-実行時にこの API を検出するには、次のコードを使用します。
+メールボックス 1.4 要件セットを指定するには、マニフェストで次のようにします。
+
+```xml
+<Requirements> 
+  <Sets DefaultMinVersion="1.4"> 
+    <Set Name="Mailbox"/> 
+  </Sets> 
+</Requirements> 
+```
+
+実行時に、この API を Word アドイン、Excel アドイン、または PowerPoint アドインで検出するには、次のコードを使用します。
 
 ```js
- if (Office.context.requirements.isSetSupported('DialogAPI', 1.1)) 
-    {  
-         // Use Office UI methods; 
-    } 
- else 
-     { 
-         // Alternate path 
-     } 
+if (Office.context.requirements.isSetSupported('DialogAPI', 1.1)) {  
+  // Use Office UI methods; 
+} else { 
+  // Alternate path 
+} 
 ```
 
+実行時に、この API を Outlook アドインで検出するには、次のコードを使用します。
 
+```js
+if (Office.context.requirements.isSetSupported('Mailbox', 1.4)) {  
+  // Use Office UI methods; 
+} else { 
+  // Alternate path 
+} 
+```
+
+または、`displayDialogAsync` メソッドの使用前に、そのメソッドが未定義かどうかを確認することもできます。
+
+```js
+if (Office.context.ui.displayDialogAsync !== undefined) {
+  // Use Office UI methods
+}
+```
 
 ### <a name="supported-platforms"></a>サポートされるプラットフォーム
 サポートされるプラットフォームについて詳しくは、「[ダイアログ API の要件セット](../requirement-sets/dialog-api-requirement-sets.md)」をご覧ください。

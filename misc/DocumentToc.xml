@@ -16,7 +16,7 @@
       	<Item text="コンテンツ アドインのレイアウト" url="design/ui-elements/layout-for-content-add-ins" SEODescription="推奨されるデザインのレイアウトを使用して、見た目に統一感のあるコンテンツ アドインを作成します。" />
       	<Item text="作業ウィンドウ アドイン用のレイアウト" url="design/ui-elements/layout-for-task-pane-add-ins" SEODescription="推奨されるデザインのレイアウトを使用して、見た目に統一感のある作業ウィンドウ アドインを作成します。" />
       	<Item text="Outlook アドイン用のレイアウト" url="design/ui-elements/layouts-for-outlook-add-ins" SEODescription="メール アドイン用のレイアウトを使用する" Scope="outlook" />
-      	<Item text="Office の UI ファブリックを使用する" url="design/ui-elements/using-office-ui-fabric" SEODescription="Fabric の基本的な使用方法について説明します。" />
+      	<Item text="Office UI Fabric JS を使用する" url="design/ui-elements/using-office-ui-fabric-js" SEODescription="Fabric JS の基本的な使用方法について説明します。" />
       </Item>	
     	<Item text="UX 設計パターン" url="design/ux-design-patterns" SEODescription="Office アドインの UX 設計パターン テンプレートを使用して、UI の拡張機能を作成します。" />
 	<Item text="Excel、Word、PowerPoint のアドイン コマンド" url="design/add-in-commands" SEODescription="アドインでアドイン コマンドを使用して、Excel、Word、PowerPoint の既定の Office UI を拡張します。" />
@@ -90,10 +90,11 @@
     <Item text="コンテキスト Outlook アドイン" url="outlook/contextual-outlook-add-ins" SEODescription="メッセージまたは予定で指定されたテキストに基づいて、Outlook アドインをアクティブにします。" Scope="outlook" />
     <Item text="Outlook アドインのモジュール拡張機能" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="モジュール拡張機能をナビゲーション バーに追加することによって、Outlook UI を拡張します。" /> 
 	<Item text="API" url="outlook/apis" SEODescription="Outlook アドインに必要な API を指定する方法について説明します。" Scope="outlook" />
-	<Item text="マニフェスト" url="overview/add-in-manifests" Scope="outlook" SEODescription="XML マニフェストを使用して、アドインをアクティブにする方法を指定します。">
-      <Item text="マニフェスト" url="outlook/manifests/manifests" SEODescription="閲覧フォームまたは新規作成フォーム用の Outlook アドインのマニフェストを作成します。" Scope="outlook" /><Item text="アクティブ化ルール" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Outlook アドイン マニフェストでアクティブ化ルールを定義して、Outlook がいつアドインを表示するかを指定します。" Scope="outlook" />
+	<Item text="マニフェスト" url="outlook/manifests/manifests" Scope="outlook" SEODescription="閲覧フォームまたは新規作成フォーム用の Outlook アドインのマニフェストを作成します。">
+      <Item text="アクティブ化ルール" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Outlook アドイン マニフェストでアクティブ化ルールを定義して、Outlook がいつアドインを表示するかを指定します。" Scope="outlook" />
       <Item text="アドイン コマンドを定義する" url="outlook/manifests/define-add-in-commands" SEODescription="Outlook アドイン マニフェストの VersionOverrides 要素を使用して、アドインのコマンドを定義します。" Scope="outlook" />
-  	</Item>
+      <Item text="ピン留め可能な作業ウィンドウ" url="outlook/manifests/pinnable-taskpane" SEODescription="Outlook アドインにピン留め可能な作業ウィンドウを実装します。" Scope="outlook" />
+  </Item>
   <Item text="読み取りまたは新規作成フォーム内のアイテム データを取得および設定する" url="outlook/item-data" SEODescription="Office アドインから予定またはメッセージのデータを取得または設定する方法について説明します。" Scope="outlook" />
 	<Item text="アドインのメタデータを取得および設定する" url="outlook/metadata-for-an-outlook-add-in" SEODescription="Outlook アドインのみがアクセスできるカスタム データを、ローミング設定とカスタム プロパティを使用して読み込んで格納する方法について説明します。" Scope="outlook" />
 	<Item text="プライバシーとセキュリティ" url="outlook/privacy-and-security" SEODescription="エンド ユーザー" Scope="outlook">
