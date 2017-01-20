@@ -1,6 +1,6 @@
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
- アドインが Office UI に機能を表示するかどうかを定義します。**ExtensionPoint** 要素は、[FormFactor](./formfactor.md) の子要素です。 
+ アドインが Office UI に機能を表示する場所を定義します。**ExtensionPoint** 要素は、[DesktopFormFactor](./desktopformfactor.md) の子要素です。 
 
 ## <a name="attributes"></a>属性
 
@@ -9,7 +9,7 @@
 |  **xsi:type**  |  はい  | 定義される拡張点の種類。|
 
 
-## <a name="extension-points-for-word-excel-powerpoint-and-onenote-addin-commands"></a>Word、Excel、PowerPoint、OneNote アドイン コマンドの拡張点
+## <a name="extension-points-for-word-excel-powerpoint-and-onenote-add-in-commands"></a>Word、Excel、PowerPoint、OneNote アドイン コマンドの拡張点
 
 - **PrimaryCommandSurface** - Office のリボン。
 - **ContextMenu**Office UI で右クリックしたときに表示されるショートカット メニュー。
@@ -66,13 +66,13 @@
 |**Tooltip**|省略可能。グループのツールヒント。 **resid** 属性は、 **String** 要素の **id** 属性の値に設定する必要があります。 **String** 要素は、 **Resources** 要素の子要素である **LongStrings** 要素の子要素です。|
 |**Control**|各グループには、1 つ以上のコントロールが必要です。 **Control** 要素は、 **Button** または **Menu** のいずれかにすることができます。ボタンのコントロールのドロップダウンリストを指定するには、 **Menu** を使用します。現在、ボタンとメニューのみがサポートされています。詳しくは、「 [ボタン コントロール](#button-controls)」および「 [メニュー コントロール](#menu-controls)」のセクションをご覧ください。<br/>**注** トラブルシューティングを簡単にするために、**Control** 要素と関連する **Resources** 子要素を一度に 1 つずつ追加することをお勧めします。
 
-## <a name="extension-points-for-outlook-addin-commands"></a>Outlook アドイン コマンドの拡張点
+## <a name="extension-points-for-outlook-add-in-commands"></a>Outlook アドイン コマンドの拡張点
 
 - [MessageReadCommandSurface](#messagereadcommandsurface) 
 - [MessageComposeCommandSurface](#messagecomposecommandsurface) 
 - [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
-- [Module](#module) ([DesktopFormFactor](./formfactor.md) でのみ使用できます。)
+- [Module](#module) ([DesktopFormFactor](./desktopformfactor.md) でのみ使用できます。)
 
 ### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
 この拡張点により、メールの閲覧ビューのコマンド サーフェスにボタンが配置されます。Outlook デスクトップでは、これはリボンに表示されます。

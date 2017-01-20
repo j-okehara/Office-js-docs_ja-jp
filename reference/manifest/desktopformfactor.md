@@ -1,12 +1,8 @@
-# <a name="formfactor-element"></a>FormFactor 要素
+# <a name="desktopformfactor-element"></a>DesktopFormFactor 要素
 
-特定のフォーム ファクターのアドインの設定を指定します。たとえば、型 `MailHost` と `DesktopFormFactor` の `Host` を定義すると、デスクトップ用 Outlook には適用されますが、Web App または Outlook.com には適用されません。_ _**Resources** ノードを除くそのフォーム ファクターのアドイン情報をすべて含みます。
+デスクトップ フォーム ファクターについてアドインの設定を指定します。デスクトップ フォーム ファクターには、Office for Windows、Office for Mac、Office Online が含まれています。**Resources** ノードを除くデスクトップ フォーム ファクターのアドイン情報をすべて含みます。
 
-各 FormFactor の定義には、**FunctionFile** 要素と、1 つ以上の **ExtensionPoint** 要素が含まれます。詳細については、「[FunctionFile 要素](./functionfile.md)」と「[ExtensionPoint 要素](./extensionpoint.md)」を参照してください。 
-
-次の FormFactors がサポートされます。
-
-- `DesktopFormFactor` (Windows または Mac クライアント用 Office)
+各 DesktopFormFactor の定義には、**FunctionFile** 要素と、1 つ以上の **ExtensionPoint** 要素が含まれます。詳細については、「[FunctionFile 要素](./functionfile.md)」と「[ExtensionPoint 要素](./extensionpoint.md)」を参照してください。 
 
 ## <a name="child-elements"></a>子要素
 
@@ -16,7 +12,7 @@
 | [FunctionFile](./functionfile.md)     | はい      | JavaScript 関数を含むファイルの URL。|
 | [GetStarted](./getstarted.md)         | いいえ       | Word、Excel、または PowerPoint のホストにアドインをインストールするときに表示される吹き出しを定義します。 |
 
-## <a name="formfactor-example"></a>FormFactor の例
+## <a name="desktopformfactor-example"></a>DesktopFormFactor の例
 
 ```xml
 ...

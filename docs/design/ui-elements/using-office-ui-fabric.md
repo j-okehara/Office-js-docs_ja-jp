@@ -3,6 +3,8 @@
 
 Office アドインを作成する場合は、[Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) を使用して、ユーザー エクスペリエンスを作成することをお勧めします。次の手順では、Fabric の基本的な使用方法について説明しています。  
 
+> **注:**Office UI Fabric JS についての詳細は、「[Office アドインでの Office UI Fabric の使用](https://dev.office.com/docs/add-ins/design/using-office-ui-fabric-js)」を参照してください。
+
 ##<a name="1-set-up-fabric"></a>1.Fabric の設定
 HTML の head セクション内に次の行を追加して、CDN の Fabric を参照します。
 

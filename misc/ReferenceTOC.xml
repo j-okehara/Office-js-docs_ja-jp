@@ -47,7 +47,7 @@
 			<Item text="Control" url="manifest/control" SEODescription="ユーザーがボタンまたはメニューを選択したときに実行するコントロールを指定します。" />
 			<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint" SEODescription="アドイン コマンドのタブとグループを指定します。" />
 			<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint" SEODescription="アドインが機能を公開する場所を定義します。" />
-			<Item text="FormFactor" url="manifest/formfactor" Scope="excel, word, powerpoint" SEODescription="特定のフォーム ファクターについてアドインの設定を指定します。" />
+			<Item text="DesktopFormFactor" url="manifest/desktopformfactor" Scope="excel, word, powerpoint" SEODescription="特定のフォーム ファクターについてアドインの設定を指定します。" />
 			<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint" SEODescription="UI を表示する代わりに JavaScript 関数を実行するアドイン コマンドによってアドインが公開する操作の、ソース コード ファイルを指定します。" />
 			<Item text="GetStarted" url="manifest/getstarted" Scope="excel, word, powerpoint" SEODescription="アドインが、Word、Excel、および PowerPoint のホストにインストールされているときに表示される吹き出しで使用される情報を提供します。" />
 			<Item text="Group" url="manifest/group" Scope="excel, word, powerpoint" SEODescription="タブの UI 拡張ポイントのグループを定義します。" />

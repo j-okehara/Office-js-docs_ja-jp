@@ -1,5 +1,5 @@
 # <a name="action-element"></a>Action 要素
- ユーザーが[ボタン](./control.md#button-control)または[メニュー](./control.md#menu-dropdown-button-controls) コントロールを選択したときに実行する操作を指定します。
+ユーザーが[ボタン](./control.md#button-control)または[メニュー](./control.md#menu-dropdown-button-controls) コントロールを選択したときに実行する操作を指定します。
  
 ## <a name="attributes"></a>属性
 
@@ -64,9 +64,9 @@
 ```  
 
 ## <a name="supportspinning"></a>SupportsPinning
-**xsi:type** が "ShowTaskpane" の場合に省略可能な要素。これを収容している [VersionOverrides](./versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。ピン留めをサポートする場合は、この要素に `true` の値を含めます。ユーザーは、作業ウィンドウをピン留めできるようになります。ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。
+**xsi:type** が "ShowTaskpane" の場合に省略可能な要素。これを収容している [VersionOverrides](./versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。ピン留めをサポートする場合は、この要素に `true` の値を含めます。ユーザーは、作業ウィンドウをピン留めできるようになります。ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。詳細については、「[Outlook にピン留め可能な作業ウィンドウを実装する](../../docs/outlook/manifests/pinnable-taskpane)」を参照してください。
 
->**メモ:** 現時点では、この要素は Outlook 2016 でのみサポートされています。
+> **注**:現時点で、SupportsPinning は Outlook 2016 for Windows (ビルド 7628.1000 以降) でのみサポートされます。
 
 ```xml
 <Action xsi:type="ShowTaskpane">

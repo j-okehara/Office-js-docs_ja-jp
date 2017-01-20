@@ -22,7 +22,7 @@ CDN から Fabric を参照するには、次に示す HTML コードをペー�
 
 これで完了です。この時点で、Fabric をアドインで使用する準備が整っています。 
 
-##<a name="2-use-fabric-icons-and-fonts"></a>2. Fabric のアイコンとフォントの使用
+##<a name="2-use-fabric-icons-and-fonts"></a>2.Fabric のアイコンとフォントの使用
 アイコンは簡単に使用できます。"i" 要素を使用して、適切なクラスを参照するだけです。アイコンのサイズは、フォント サイズを変更することで制御できます。たとえば、次のコードは、themePrimary (#0078d7) 色を使用する特大の表アイコンを作成する方法を示しています。 
    
     <i class="ms-Icon ms-font-xl ms-Icon--Table ms-fontColor-themePrimary"></i>
@@ -66,7 +66,7 @@ Fabric は、アドインで使用できるボタンやチェックボックス�
 - 一部のアイコン クラスの名前とスタイルが更新されています。
 - 最重要の変更点は、多数のコンポーネントで `<label>` 要素を使用していることです。`<label>` 要素では、コンポーネントのスタイルを制御します。`<label>` 要素を使用するように UX コードを更新することが必要になる場合があります。たとえば、Fabric JS のチェックボックスに対する `<input>` 要素のオン属性の値を変更しても、そのチェックボックスに効果は現れません。その代わりに、`check`、`unCheck`、または `toggle` 関数を使用してください。   
 
-##<a name="next-steps"></a>次のステップ
+##<a name="next-steps"></a>次の手順
 Fabric JS の使用方法を示す完全なサンプルを探しているユーザーに向けて、そのようなサンプルを提供しています。次に示すリソースを参照してください。
 
 - [Excel Sales Tracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 

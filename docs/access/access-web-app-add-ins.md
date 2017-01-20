@@ -1,12 +1,10 @@
-
 # <a name="create-add-ins-for-access-web-apps"></a>Access Web アプリ用のアドインを作成する
 
 
 
 この記事では、Visual Studio 2015 を使用して Access Web アプリ対象の Office アドインを開発する方法について説明します。
 
->
-  **注:**VBA を使用した Access 向けソリューション開発の詳細は、MSDN の「[Access](https://msdn.microsoft.com/en-us/library/fp179695.aspx)」を参照してください。
+>**注:**VBA を使用した Access 向けソリューション開発の詳細は、MSDN の「[Access](https://msdn.microsoft.com/en-us/library/fp179695.aspx)」を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -18,7 +16,7 @@ Access Web アプリ を対象とした Office アドイン の作成に必要�
 - SharePoint Online サイト (多数の Office 365 サブスクリプションに付属)。このサイトにはアドイン カタログが必要です。詳細については「 [SharePoint アドイン カタログの設定 ](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)」を参照してください。
 
 
- >**メモ**  Office アドイン は SharePoint Online でホストされる Access Web アプリ、または Office 365 に対応しています。Access 2013 デスクトップ アプリケーションは、Office アドイン をサポートしていません。Access Web アプリ を対象とする Office アドイン は、Office.js バージョン 1.1 以降でサポートされています。
+ >**注:**Office アドインは、SharePoint Online または Office 365 でホストされている Access Web App で処理されます。Access 2013 のデスクトップ アプリケーションは、Office アドインをサポートしていません。Access Web App を対象とする Office アドインは Office.js のバージョン 1.1 以降でサポートされています。
 
 
 ## <a name="create-a-project-in-visual-studio"></a>Visual Studio でプロジェクトを作成する
@@ -26,9 +24,11 @@ Access Web アプリ を対象とした Office アドイン の作成に必要�
 
 1.  Visual Studio を開き、メニューで **[ファイル]**、**[新規]**、**[プロジェクト]** の順に選択します。**[新規プロジェクト]** ダイアログ ボックスが開きます。
 
-2. [ **新規プロジェクト**] ダイアログ ボックスの左側のウィンドウで、[ **インストール済み**]、[ **テンプレート**]、[ **Visual C#**]、[ **Office/SharePoint**]、[ **Office アドイン**] の順に移動します。
+2. **[新規プロジェクト]** ダイアログ ボックスの左側のウィンドウで、**[インストール済み]**、**[テンプレート]**、**[Visual C#]**、**[Office/SharePoint]**、**[Office アドイン]** の順に移動します。
 
-3. [ **新規プロジェクト**] ダイアログ ボックスの中央のウィンドウで、[ **Office アドイン**] を選択します。
+ >**注:**このテンプレートをインストールしていない場合は、最新の Microsoft Office Developer Tools for Visual Studio 2015 (https://blogs.msdn.microsoft.com/visualstudio/2015/11/23/latest-microsoft-office-developer-tools-for-visual-studio-2015/) のブログ投稿の情報を参照してください。
+
+3. **[新規プロジェクト]** ダイアログ ボックスの中央のウィンドウで、**[Office アドイン]** を選択します。
 
 4. ダイアログ ボックスの下部にプロジェクト名を入力して、[ **OK**] を押します。[ **Office アドインの作成**] ダイアログ ボックスが開きます。
 
@@ -56,7 +56,7 @@ Access Web アプリ を対象とした Office アドイン の作成に必要�
  >**メモ**  アドインを Access web アプリ で展開せずにデバッグすることはできません。
 
 
-## <a name="review-the-manifest-and-the-home.html-file"></a>マニフェストおよび Home.Html ファイルを確認する
+## <a name="review-the-manifest-and-the-homehtml-file"></a>マニフェストおよび Home.Html ファイルを確認する
 
 
 1. Visual Studio プロジェクトで  **Home.html** ファイルを開き、office.js スクリプト ライブラリを参照する行を探します。
@@ -112,10 +112,10 @@ Office アドインと SharePoint アドイン は Web ベースです。アド�
 
 3. [ **サイト コンテンツ ? 自分のアドイン**] ページで、ページ上部の検索バーを使って  **Access アプリ** を検索します。
 
-4. **Access アプリ**のタイルが表示されます。
+4. **Access アプリ** のタイルが表示されます。
 
      >**注**  これは Office アドインではなく、新しい Access Web アプリであることに注意してください。この Access Web アプリが、Office アドインをホストします。
-5. このタイルを選ぶと、 **[Access アプリ の追加]** ダイアログ ボックスが表示されます。Accessアプリ に一意の名前を付けて入力し、 **[作成]** を押します。SharePoint がアプリ を作成するまでしばらくかかることがあります。終了すると、Accessアプリ が、 **サイト コンテンツ** ページに表示され、横に **[新規]** ラベルが付きます。
+5. このタイルを選ぶと、 **[Access アプリ の追加]** ダイアログ ボックスが表示されます。Accessアプリ に一意の名前を付けて入力し、 **[作成]** を押します。SharePoint が アプリ を作成するまでしばらくかかることがあります。終了すると、Accessアプリ が、 **サイト コンテンツ** ページに表示され、横に **[新規]** ラベルが付きます。
 
 6. Accessアプリ は、SharePoint で開いて表示する前に、デスクトップ版の Microsoft Access 2013 で開いてデータを追加することが必要になります。
 

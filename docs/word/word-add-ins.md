@@ -4,6 +4,8 @@ _適用対象:Word 2016、Word for iPad、Word for Mac_
 
 Word JavaScript API は、Office アプリケーションを拡張するための Office アドイン プログラミング モデルの一部です。このアドイン プログラミング モデルでは、Word の拡張機能をホストするために Web アプリケーションを使用します。どの Web プラットフォームや言語でも Word を拡張できるようになりました。
 
+> **注**:Word 2013 のアドインの開発をしようとしている場合は、共有の [Office の Javascript API]( https://dev.office.com/docs/add-ins/word/word-add-ins-programming-overview#javascript-apis-for-word) を使用する必要があります。入手可能なプラットフォームおよびさまざまな API の詳細については、[こちら](https://dev.office.com/add-in-availability)を参照してください。このトピックは Word 2016 に適用されると吹き出しに言及されているのでない限り、さまざまなホストに適用されます。
+
 Word アドインは Word 内で実行され、Word 2016 で使用可能なWord JavaScript API を使用してドキュメントのコンテンツを操作することができます。実際のアドインの作成には、次の 2 つのパーツがあります。1) 任意の場所をホストできる Web アプリケーションと、2) Web アプリケーションがホストされている場所を検出するために Word で使用される[アドイン マニフェスト](../../docs/overview/add-in-manifests.md) (マニフェストが提供する事柄はこれだけではありません。詳細については、「[プログラミングの概要](word-add-ins-programming-overview.md)」をご参照ください) です。
 
 >**Word アドイン = manifest.xml + Web アプリ**
@@ -173,7 +175,7 @@ Word アドインは Word 内で実行され、Word 2016 で使用可能なWord 
 
 8 - BoilerplateManifest.xml の[SourceLocation](../../reference/manifest/sourcelocation.md) を編集して、home.html の場所を指すようにします。
 
-この時点で、初めてのアドインが配置されたことになります。次に、Word がアドインを検索する場所を認識できるようにする必要があります。
+この時点で、初めてのアドインが配置されたことになります。次に、Word がアドインを検索する場所を把握できるようにする必要があります。
 
 #### <a name="try-this-out-in-word-2016-for-windows"></a>Word 2016 for Windows で試してみる
 

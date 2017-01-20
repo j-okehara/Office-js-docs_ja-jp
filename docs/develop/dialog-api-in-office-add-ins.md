@@ -30,7 +30,7 @@ Office JavaScript API は、[Dialog](../../reference/shared/officeui.dialog.md) 
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html'); 
 ```
 
-> **注:**
+> **メモ:**
 
 > - URL には HTTP**S** プロトコルを使用します。これは、読み込まれる最初のページだけでなく、ダイアログ ボックスに読み込まれるすべてのページに対して必須です。
 > - ドメインはホスト ページのドメインと同じです。ホスト ページは、作業ウィンドウ内のページまたはアドイン コマンドの[関数ファイル](https://dev.office.com/reference/add-ins/manifest/functionfile)にすることができます。これはダイアログ ボックスに読み込まれる最初のページでは必須ではありません。ただし、最初のページがアドインの同じドメイン上にない場合は、アドイン マニフェストの [`<AppDomains>`](../../reference/manifest/appdomains.md) 要素でそのドメインを一覧表示する必要があります。
@@ -64,7 +64,7 @@ if (loginSuccess) {
 }
 ```
 
->**注:** 
+>**メモ:** 
 
 > - `messageParent` 関数は、ダイアログ ボックスで呼び出すことができる*たった* 2 つの Office API のうちの 1 つです。(もう 1 つは `Office.context.requirements.isSetSupported` です。詳しくは、「[Office のホストと API の要件を指定する](https://github.com/OfficeDev/office-js-docs/blob/master/docs/overview/specify-office-hosts-and-api-requirements.md)」を参照してださい。
 > - `messageParent` 関数を呼び出せるのは、ホスト ページと同じドメイン (プロトコルとポートを含む) を持つページ上のみです。
@@ -155,7 +155,10 @@ if (loginSuccess) {
 }
 ```
 
-条件付きメッセージングを使用するサンプルについては、「[Auth0 サービスを使用してソーシャル ログインを簡略化する Office アドイン](https://github.com/OfficeDev/Office-Add-in-Auth0)」のサンプルを参照してください。
+条件付きメッセージを使用するサンプルについては、次を参照してください。 
+
+- [Auth0 サービスを使用してソーシャル ログインを簡略化する Office アドイン](https://github.com/OfficeDev/Office-Add-in-Auth0)
+- [OAuth.io サービスを使用して大手のオンライン サービスへのアクセスを簡素化する Office アドイン](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 次の例に示すように、ホスト ページのハンドラー コードは分岐に `messageType` プロパティの値を使用します。`showUserName` 関数は上記の例と同じであり、`showNotification` 関数はホスト ページの UI にエラーを表示することに注意してください。 
 
@@ -294,7 +297,7 @@ function processDialogEvent(arg) {
 localStorage.setItem("clientID", "15963ac5-314f-4d9b-b5a1-ccb2f1aea248");
 ```
 
-次の例のように、ダイアログ ウィンドウ内のコードは必要に応じて、項目を読み取ります。
+ダイアログ ウィンドウ内のコードは、次の例に示すように、必要に応じて項目を読み取ります。
 
 ```js
 var clientID = localStorage.getItem("clientID");
@@ -302,7 +305,10 @@ var clientID = localStorage.getItem("clientID");
 // var clientID = localStorage.clientID;
 ```
 
-この方法でローカル ストレージを使用するサンプル アドインについては、「[Auth0 サービスを使用してソーシャル ログインを簡略化する Office アドイン](https://github.com/OfficeDev/Office-Add-in-Auth0)」のサンプルを参照してください。
+この方法でローカル ストレージを使用するサンプル アドインについては、次を参照してください。 
+
+- [Auth0 サービスを使用してソーシャル ログインを簡略化する Office アドイン](https://github.com/OfficeDev/Office-Add-in-Auth0)
+- [OAuth.io サービスを使用して大手のオンライン サービスへのアクセスを簡素化する Office アドイン](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 ### <a name="using-query-parameters"></a>クエリ パラメーターの使用
 
@@ -329,7 +335,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
             frameborder="0" allowfullscreen>
         </iframe>
 
-2.  The video.dialogbox.html page must either be in the same domain
+2.  　　
 3.   Video.dialogbox.html ページは、ホスト ページと同じドメイン、またはアドイン マニフェストの  セクションで登録したドメインのいずれかにある必要があります。
 3.  ホスト ページで `displayDialogAsync` の呼び出しを使用して、video.dialogbox.html を開きます。
 4.  ユーザーがダイアログ ボックスを閉じたときに、アドインに通知する必要がある場合は、`DialogEventReceived` イベントのハンドラーを登録して、12006 イベントを処理します。詳しくは、「[ダイアログ ウィンドウでのエラーとイベント](#errors-and-events-in-the-dialog-window)」セクションを参照してください。
@@ -353,9 +359,9 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 #### <a name="addressing-slow-network"></a>低速ネットワークへの対処
 
-ネットワークまたは ID プロバイダーが低速の場合は、ユーザーが UI を選択して開くときに、ダイアログ ボックスがすぐに開かない可能性があります。この場合、何も起こっていないという印象を与えることになります。エクスペリエンスを確実に向上させる方法の 1 つは、ダイアログ ボックスで開く最初のページをアドインのドメインでホストされているローカル ページ (つまり、ホスト ウィンドウのドメイン) にすることです。このページには、"*NAME-OF-PROVIDER* にサインインが可能なページにリダイレクトしていますので、お待ちください。" という簡単な UI を含めることができます。 
+ネットワークまたは ID プロバイダーが低速の場合は、ユーザーが UI 要素を選択して開くときに、ダイアログ ボックスがすぐに開かない可能性があります。この場合、何も起こっていないという印象を与えることになります。エクスペリエンスを確実に向上させる方法の 1 つは、ダイアログ ボックスで開く最初のページをアドインのドメインでホストされているローカル ページ (つまり、ホスト ウィンドウのドメイン) にすることです。このページには、"*NAME-OF-PROVIDER* にサインインが可能なページにリダイレクトしていますので、お待ちください。" という簡単な UI を含めることができます。 
 
-「[情報をダイアログ ボックスに渡す](#passing-information-to-the-dialog-box)」に記載されているように、このページのコードは、使用しているダイアログ ボックスに渡される情報を使用して、ID プロバイダーのサインイン ページの URL を構築します。次に、サインイン ページにリダイレクトします。この設計では、プロバイダーのページはダイアログ ボックスで開かれる最初のページではないため、アドイン マニフェストの `<AppDomains>` セクションにプロバイダーのドメインを一覧表示する必要はありません。
+「[情報をダイアログ ボックスに渡す](#passing-information-to-the-dialog-box)」に記載されているように、このページのコードは、ダイアログ ボックスに渡される情報を使用して、ID プロバイダーのサインイン ページの URL を構築します。次に、サインイン ページにリダイレクトします。この設計では、プロバイダーのページはダイアログ ボックスで開かれる最初のページではないため、アドイン マニフェストの `<AppDomains>` セクションにプロバイダーのドメインを一覧表示する必要はありません。
 
 このパターンを使用するサンプル アドインについては、以下を参照してください。
 
@@ -386,6 +392,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 - [PowerPoint アドインで Microsoft Graph を使用した Excel グラフの挿入](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) - データベースにアクセス トークンを格納します。
 - [ASP.NET と QuickBooks を使用する Excel アドイン](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks) - `messageParent` のアクセス トークンを渡します。
+- [OAuth.io サービスを使用して大手のオンライン サービスへのアクセスを簡素化する Office アドイン](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 #### <a name="more-information-about-authentication-and-authorization-in-add-ins"></a>アドインにおける認証と承認の詳細について
 

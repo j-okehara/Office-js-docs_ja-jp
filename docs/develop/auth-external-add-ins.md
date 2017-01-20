@@ -35,10 +35,9 @@ OAuth の基本的な考え方は、ユーザーやグループと同様に、�
 
 各種の言語とフレームワークで認証コード フローを実装するために、利用できるライブラリが多数あります。詳細については、後述の「**ライブラリ**」セクションを参照してください。
 
-### <a name="relay/proxy-functions"></a>Relay 関数と Proxy 関数
+### <a name="relayproxy-functions"></a>Relay 関数と Proxy 関数
 
-サーバーなしの Web アプリケーションでも、サービスでホストされる簡単な関数 ([Azure Functions](https://azure.microsoft.com/en-us/services/functions) や [Amazon Lambda](https://aws.amazon.com/lambda) など) で*クライアント ID* と*クライアント シークレット*の値を使用すると、認証コード フローを使用できます。
-この関数は、特定のコードを適切な*アクセス トークン*に交換して、それを中継してクライアントに戻します。このアプローチのセキュリティは、関数へのアクセスが、どの程度適切に保護されているかによって異なります。
+サーバーなしの Web アプリケーションでも、サービスでホストされる簡単な関数 ([Azure Functions](https://azure.microsoft.com/en-us/services/functions) や [Amazon Lambda](https://aws.amazon.com/lambda) など) で*クライアント ID* と*クライアント シークレット*の値を使用すると、認証コード フローを使用できます。この関数は、特定のコードを適切な*アクセス トークン*に交換して、それを中継してクライアントに戻します。このアプローチのセキュリティは、関数へのアクセスが、どの程度適切に保護されているかによって異なります。
 
 この技法を使用する場合は、アドインでオンライン サービス (Google や Facebook など) のログイン画面を示す UI やポップアップを表示します。ユーザーがオンライン サービスにログオンして、自分のリソースへのアクセス権をアドインに付与すると、開発者はオンライン関数に送信できるコードを受信します。後述の**仲介者サービス**は、これと同様のフローを使用します。 
 
@@ -56,12 +55,16 @@ OAuth の基本的な考え方は、ユーザーやグループと同様に、�
 
 ## <a name="middleman-services"></a>仲介者サービス
 
-アドインでは Auth0 のような仲介者サービスを使用できます。このサービスは、多数の大手オンライン サービスに対応したアクセス トークンを提供するものであるか、アドインでソーシャル ログインできるようにするプロセスを簡単にするものです (またはその両方です)。わずかなコードによって、仲介者に接続するクライアント側スクリプトまたはサーバー側コードをアドインで使用できるようになります。オンライン サービスに必要なトークンは、この仲介者が送り戻します。すべての承認の実装コードは、仲介者サービスに含まれています。 
+アドインでは OAuth.io や Auth0 などの仲介者サービスを使用できます。このサービスは、多数の大手オンライン サービスに対応したアクセス トークンを提供するか、アドインのソーシャル ログインのプロセスを簡略化します (またはその両方です)。わずかなコードによって、仲介者に接続するクライアント側スクリプトまたはサーバー側コードをアドインで使用できるようになり、その後オンライン サービスに必要なトークンが仲介者から送り返されます。すべての承認の実装コードは、仲介者サービスに含まれています。 
 
 次のサンプルでは、Auth0 を使用して Facebook、Google、および Microsoft のアカウントへのソーシャル ログインを可能にしています。
 
 [Office-Add-in-Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
 
-## <a name="what-is-cors?"></a>CORS とは
+次のサンプルでは、OAuth.io を使用して、Facebook と Google からのアクセス トークンを取得します。
+
+[Office-Add-in-OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
+
+## <a name="what-is-cors"></a>CORS とは
 
 CORS とは、[Cross Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) (クロス オリジン リソース共有) の略語です。アドイン内で CORS を使用する方法の詳細については、「[Office アドインにおける同一生成元ポリシーの制限への対処](http://dev.office.com/docs/add-ins/develop/addressing-same-origin-policy-limitations)」を参照してください。

@@ -16,9 +16,9 @@
       	<Item text="コンテンツ アドインのレイアウト" url="design/ui-elements/layout-for-content-add-ins" SEODescription="推奨されるデザインのレイアウトを使用して、見た目に統一感のあるコンテンツ アドインを作成します。" />
       	<Item text="作業ウィンドウ アドイン用のレイアウト" url="design/ui-elements/layout-for-task-pane-add-ins" SEODescription="推奨されるデザインのレイアウトを使用して、見た目に統一感のある作業ウィンドウ アドインを作成します。" />
       	<Item text="Outlook アドイン用のレイアウト" url="design/ui-elements/layouts-for-outlook-add-ins" SEODescription="メール アドイン用のレイアウトを使用する" Scope="outlook" />
-      	<Item text="Office UI Fabric JS を使用する" url="design/ui-elements/using-office-ui-fabric-js" SEODescription="Fabric JS の基本的な使用方法について説明します。" />
       </Item>	
-    	<Item text="UX 設計パターン" url="design/ux-design-patterns" SEODescription="Office アドインの UX 設計パターン テンプレートを使用して、UI の拡張機能を作成します。" />
+    	<Item text="Office UI Fabric JS を使用する" url="design/using-office-ui-fabric-js" SEODescription="Fabric JS の基本的な使用方法について説明します。" />
+		<Item text="UX 設計パターン" url="design/ux-design-patterns" SEODescription="Office アドインの UX 設計パターン テンプレートを使用して、UI の拡張機能を作成します。" />
 	<Item text="Excel、Word、PowerPoint のアドイン コマンド" url="design/add-in-commands" SEODescription="アドインでアドイン コマンドを使用して、Excel、Word、PowerPoint の既定の Office UI を拡張します。" />
   	<Item text="アドイン コマンドのアイコンをデザインする" url="design/design-icons" SEODescription="Office UI とシームレスに統合するアドイン コマンドのアイコンをデザインします。" />
 	<Item text="データのビジュアル化のスタイル ガイドライン" url="design/data-visualization-guidelines" SEODescription="Office アドインでのデータのビジュアル化のガイドラインを提供します。" />
@@ -148,5 +148,5 @@
   <Item text="Access" url="access" Scope="access">
     <Item text="Access Web アプリとアドイン" url="access/access-web-app-add-ins" SEOKeyword="Access 用アドイン" SEODescription="カスタム HTML および JavaScript を使用して Access Web アプリを拡張する Office アドインを作成します。" Scope="access" />
   </Item>
-  <Item text="JavaScript API 参照" url="https://dev.office.com/reference/add-ins/javascript-api-for-office" IsExternal="true" />
+
 </Menu>

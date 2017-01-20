@@ -49,10 +49,10 @@
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  [FormFactor](./formfactor.md)    |  はい   |  影響を受けるフォーム ファクターを定義します。 |
+|  [DesktopFormFactor](./desktopformfactor.md)    |  はい   |  デスクトップ フォーム ファクターの設定を定義します。 |
 
 
-### <a name="xsi:type"></a>xsi:type
+### <a name="xsitype"></a>xsi:type
 含まれている設定を適用する Office ホスト (Word、Excel、PowerPoint、Outlook、OneNote) を制御します。この値は、次のいずれかである必要があります。
 
 - `Document` (Word)
