@@ -1,7 +1,7 @@
 # <a name="page-object-javascript-api-for-visio"></a>Page オブジェクト (JavaScript API for Visio)
 
 適用対象:_Visio Online_
->**注:**Visio JavaScript API は、現在プレビューの段階であり、変更される可能性があります。Visio JavaScript API は、運用環境での使用は現在サポートされていません。
+>**注:**Visio JavaScript API は、現在プレビューまたは運用環境では使用できません。
 
 ページ クラスを表します。
 

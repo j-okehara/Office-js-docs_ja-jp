@@ -1,4 +1,4 @@
-# <a name="richtext-object-(javascript-api-for-onenote)"></a>RichText オブジェクト (JavaScript API for OneNote)
+# <a name="richtext-object-javascript-api-for-onenote"></a>RichText オブジェクト (JavaScript API for OneNote)
 
 _適用対象:OneNote Online_  
 
@@ -10,6 +10,7 @@ Paragraph 内の RichText オブジェクトを表します。
 | プロパティ     | 型   |説明|フィードバック|
 |:---------------|:--------|:----------|:-------|
 |id|string|RichText オブジェクトの ID を取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-id)|
+|languageId|string|テキストの言語 ID です。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-languageId)|
 |text|string|RichText オブジェクトのテキスト コンテンツを取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-text)|
 
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
@@ -23,12 +24,27 @@ _プロパティのアクセスの[例を参照してください。](#property-
 
 | メソッド           | 戻り値の型    |説明| フィードバック|
 |:---------------|:--------|:----------|:-------|
+|[getHtml()](#gethtml)|string|リッチ テキストの HTML を取得します|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-getHtml)|
 |[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-load)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="gethtml"></a>getHtml()
+リッチ テキストの HTML を取得します
+
+#### <a name="syntax"></a>構文
+```js
+richTextObject.getHtml();
+```
+
+#### <a name="parameters"></a>パラメーター
+なし
+
+#### <a name="returns"></a>戻り値
+string
+
+### <a name="loadparam-object"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
 #### <a name="syntax"></a>構文

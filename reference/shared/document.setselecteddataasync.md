@@ -1,5 +1,5 @@
 
-# <a name="document.setselecteddataasync-method"></a>Document.setSelectedDataAsync メソッド
+# <a name="documentsetselecteddataasync-method"></a>Document.setSelectedDataAsync メソッド
 ドキュメント内の現在の選択範囲にデータを書き込みます。
 
 |||
@@ -17,7 +17,7 @@ Office.context.document.setSelectedDataAsync(data [, options], callback(asyncRes
 
 |**名前**|**型**|**説明**|**サポートのメモ**|
 |:-----|:-----|:-----|:-----|
-| _data_|data には次のいずれかのデータ型を使用できます。<ul><li><b>文字列</b> (Office.CoercionType.Text) - Excel、Excel Online、PowerPoint、PowerPoint Online、Word、Word Online のみに適用されます。</li><li><b>配列</b> の配列 (Office.CoercionType.Matrix) - Excel、Word、Word Online のみに適用されます。</li><li>[TableData](../../reference/shared/tabledata.md) (Office.CoercionType.Table) - Access、Excel、Word、Word Online のみ</li><li><b>HTML</b> (Office.CoercionType.Html) - Word と Word Online のみに適用されます。</li><li><b>Office Open XML</b> (Office.CoercionType.Ooxml) - Word と Word Online のみに適用されます。</li><li><b>base64 エンコードのイメージ ストリーム</b> (Office.CoercionType.Image) - Excel、PowerPoint、Word、Word Online のみに適用されます。</li></ul>|現在の選択範囲に設定するデータ。必須です。|**変更対象:** 1.1。Access 用コンテンツ アドインのサポートには、 **Selection** 要件セット 1.1 以上が必要です。イメージ データの設定のサポートには、 **ImageCoercion** 要件セット 1.1 以降が必要です。アプリのアクティブ化のためにこれを設定するには、以下を使用します。<br/><br/>`<Requirements>`<br/>&nbsp;&nbsp;`<Sets DefaultMinVersion="1.1">`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<Set Name="ImageCoercion"/>`<br/>&nbsp;&nbsp;`</Sets>`<br/>`</Requirements>`<br/><br/>ImageCoercion 機能の実行時の検出は、次のコードで実行できます。<br/><br/>`if (Office.context.requirements.isSetSupported('ImageCoercion', '1.1')) {)) {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`// insertViaImageCoercion();`<br/>`} else {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`// insertViaOoxml();`<br/>`}`|
+| _data_|data には次のいずれかのデータ型を使用できます。<ul><li><b>文字列</b> (Office.CoercionType.Text) - Excel、Excel Online、PowerPoint、PowerPoint Online、Word、Word Online のみに適用されます。</li><li><b>配列</b> の配列 (Office.CoercionType.Matrix) - Excel、Word、Word Online のみに適用されます。</li><li>[TableData](../../reference/shared/tabledata.md) (Office.CoercionType.Table) - Access、Excel、Word、Word Online のみ</li><li><b>HTML</b> (Office.CoercionType.Html) - Word と Word Online のみに適用されます。</li><li><b>Office Open XML</b> (Office.CoercionType.Ooxml) - Word と Word Online のみに適用されます。</li><li><b>Base64 エンコードのイメージ ストリーム</b> (Office.CoercionType.Image) - PowerPoint および Word にのみ適用されます。</li></ul>|現在の選択範囲に設定するデータ。必須です。|**変更対象:** 1.1。Access 用コンテンツ アドインのサポートには、 **Selection** 要件セット 1.1 以上が必要です。イメージ データの設定のサポートには、 **ImageCoercion** 要件セット 1.1 以降が必要です。アプリのアクティブ化のためにこれを設定するには、以下を使用します。<br/><br/>`<Requirements>`<br/>&nbsp;&nbsp;`<Sets DefaultMinVersion="1.1">`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<Set Name="ImageCoercion"/>`<br/>&nbsp;&nbsp;`</Sets>`<br/>`</Requirements>`<br/><br/>ImageCoercion 機能の実行時の検出は、次のコードで実行できます。<br/><br/>`if (Office.context.requirements.isSetSupported('ImageCoercion', '1.1')) {)) {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`// insertViaImageCoercion();`<br/>`} else {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`// insertViaOoxml();`<br/>`}`|
 | _options_|**object**|[オプション パラメーター](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)のセットを指定します。options オブジェクトには、オプションを設定するために次のプロパティを含めることができます。<br/><ul><li>coercionType (<b><a href="735eaab6-5e31-4bc2-add5-9d378900a31b.htm">CoercionType</a></b>) - 設定されるデータを強制的に変換する方法を指定します。このオプションを指定しないと、既定の coercionType 値である Office.CoercionType.Text が使用されます。</li><li>tableOptions (<b>object</b> ) - 挿入された表の場合に、<a href="http://msdn.microsoft.com/library/46b05707-b350-41be-b6b8-311799c71a33(Office.15).aspx" target="_blank">表の書式設定オプション</a> (ヘッダー行、集計行、縞模様行など) を指定するキー/値ペアのリスト。 </li><li>cellFormat (<b>object</b> ) - 挿入された表の場合に、特定の範囲の列、行、またはセルを指定し、その範囲に適用する<a href="http://msdn.microsoft.com/library/46b05707-b350-41be-b6b8-311799c71a33(Office.15).aspx" target="_blank">セルの書式設定</a>を指定するキー/値ペアのリスト。 </li><li>imageLeft (<b>数値</b> ) - このオプションは画像を挿入する場合に適用されます。PowerPoint のスライドの左端に関連した挿入位置と、Excel で現在選択されているセルとその位置の関係を示します。Word ではこの値は無視されます。この値はポイント単位で指定されます。</li><li>imageTop (<b>数値</b> ) - このオプションは画像を挿入する場合に適用されます。PowerPoint のスライドの上端に関連した挿入位置と、Excel で現在選択されているセルとその位置の関係を示します。Word ではこの値は無視されます。この値はポイント単位で指定されます。</li><li>imageWidth (<b>数値</b> ) - このオプションは画像を挿入する場合に適用されます。画像の幅を示します。このオプションだけを指定して、imageHeight を指定しない場合、画像は指定した幅の値に一致するように拡大/縮小されます。画像の幅と画像の高さの両方を指定すると、画像はそのサイズに変更されます。画像の幅と画像の高さのどちらも指定しない場合は、画像の既定のサイズと縦横比が使用されます。この値はポイント単位で指定されます。</li><li>imageHeight  (<b>数値</b> ) - このオプションは画像を挿入する場合に適用されます。画像の高さを示します。このオプションだけを指定して、imageWidth を指定しない場合、画像は指定した高さの値に一致するように拡大/縮小されます。画像の幅と画像の高さの両方を指定すると、画像はそのサイズに変更されます。画像の幅と画像の高さのどちらも指定しない場合は、画像の既定のサイズと縦横比が使用されます。この値はポイント単位で指定されます。</li><li>asyncContext (<b>object \| value</b>) - <a href="540c114f-0398-425c-baf3-7363f2f6bc47.htm">AsyncResult</a> オブジェクトの asyncContext プロパティで取得できるユーザー定義のオブジェクト。これは、コールバックが名前付き関数の場合に、<b>AsyncResult</b> にオブジェクトまたは値を提供するために使用します。</li></ul>|_tableOptions_ オプションおよび _cellFormat_ オプションは、v1.1 に追加され、Excel 2013 と Excel Online でサポートされています。<br/><br/>_ImageLeft_ オプションと _ImageTop_ オプションは、Excel と PowerPoint でサポートされています。|
 | _callback_|**object**|コールバックが戻るときに呼び出される関数で、唯一のパラメーターは **AsyncResult** 型です。||
 
@@ -30,7 +30,7 @@ _callback_ パラメーターに渡した関数が実行されると、[AsyncRes
 
 ## <a name="remarks"></a>注釈
 
-_data_ に渡される値には、現在の選択範囲に書き込まれるデータが含まれます。値に応じて次のような処理が行われます。
+The value passed for  _data_ contains the data to write to the current selection. If the value is:
 
 
 -  **文字列:**プレーン テキスト、または **string** に強制的に変換できるその他の値が挿入されます。
@@ -43,7 +43,7 @@ _data_ に渡される値には、現在の選択範囲に書き込まれるデ�
     
     
     
-    Excel では、_data_ を有効な数式を含む、配列の配列として指定して、選択したセルに追加することができます。たとえば、他に上書きされるデータがない場合、_data_ を `[["=SUM(A1:A5)","=AVERAGE(A1:A5)"]]` に設定すると、この 2 つの数式が選択範囲に追加されます。数式を単一のセルで "テキスト" として設定する場合と同様に、設定後、追加した数式 (または既存の任意の数式) を読み取ることはできません。数式の結果を読み取ることができるだけです。
+    In Excel, you can also specify  _data_ as an array of arrays that contains valid formulas to add them to the selected cells. For example if no other data will be overwritten, setting _data_ to `[["=SUM(A1:A5)","=AVERAGE(A1:A5)"]]` will add those two formulas to the selection. Just as when setting a formula on a single cell as "text", you can't read the added formulas (or any pre-existing formulas) after they have been set - you can only read the formulas' results.
     
 -  **[TableData](../../reference/shared/tabledata.md) オブジェクト:** ヘッダー付きのテーブルが挿入されます。
     
@@ -241,7 +241,7 @@ function insertPictureAtSelection(base64EncodedImageStr) {
 ## <a name="support-details"></a>サポートの詳細
 
 
-次の表でチェック マーク (![チェック記号](../../images/mod_off15_checkmark.png)) は、このメソッドが対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。
+次の表でチェック マーク (![チェック マーク](../../images/mod_off15_checkmark.png)) は、このメソッドが対応する Office ホスト アプリケーションでサポートされていることを示します。空のセルは、Office ホスト アプリケーションでこのメソッドをサポートしないことを示します。
 
 Office ホスト アプリケーションとサーバーの要件の詳細については、「[Office アドインを実行するための要件](../../docs/overview/requirements-for-running-office-add-ins.md)」をご覧ください。
 

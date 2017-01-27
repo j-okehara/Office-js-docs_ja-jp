@@ -1,3 +1,4 @@
+
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word および PowerPoint のアドイン コマンド
 
 アドイン コマンドは Office UI を拡張する UI 要素であり、アドインのアクションを開始します。リボンにボタンを追加したり、コンテキスト メニューに項目を追加したりできます。ユーザーがアドイン コマンドを選択すると、JavaScript コードの実行や、作業ウィンドウでのアドインのページの表示といったアクションを開始します。アドイン コマンドにより、アドインを検索して利用できるようになり、アドインの導入と再利用性が向上し、顧客維持が向上します。
@@ -6,14 +7,16 @@
 
 >**注:**SharePoint カタログは、アドイン コマンドをサポートしません。[集中展開](https://support.office.com/en-ie/article/Deploy-Office-Add-ins-in-the-Office-365-new-Admin-Center-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE) または [Office ストア](https://msdn.microsoft.com/en-us/library/jj220033.aspx) でアドイン コマンドを展開するか、または [サイドロード](https://dev.office.com/docs/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins) を使ってテストのためのアドイン コマンドを展開できます。 
 
-**Excel デスクトップで実行するコマンドを含むアドイン**
+**Excel デスクトップで実行するコマンドを含むアドイン**
 ![アドイン コマンド](../../images/addincommands1.png)
 
-**Excel Online で実行するコマンドを含むアドイン**
+**Excel Online で実行するコマンドを含むアドイン**
 ![アドイン コマンド](../../images/addincommands2.png)
 
 ## <a name="command-capabilities"></a>コマンドの機能
 現在は、次のコマンド機能がサポートされています。
+
+> **注:**現在、コンテンツ アドインは、アドイン コマンドをサポートしていません。
 
 **拡張点**
 
@@ -36,8 +39,9 @@
 - Windows デスクトップ版 Office 2016 (ビルド 16.0.6769.0000 以降)
 - 個人のアカウントを使用した Office Online
 - 職場/学校のアカウントを使用した Office Online (プレビュー)
+- Office for Mac ([プレビュー](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Tools/MacDevPreview.md))
 
-その他のプラットフォームは近日公開します。
+その他のプラットフォームが近日中に公開されます。
 
 ## <a name="get-started-with-add-in-commands"></a>アドイン コマンドの使用を開始する
 

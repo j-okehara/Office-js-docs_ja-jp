@@ -3,7 +3,8 @@
   <Item text="概要" url="overview">
     <Item text="プラットフォームの概要" url="overview/office-add-ins" SEODescription="ソリューションを Windows、Office Online、Mac、iPad にわたって Office のネイティブ部分にすることができる Office アドインについて説明します。" />
 	<Item text="アドインを実行するための要件" url="overview/requirements-for-running-office-add-ins" SEODescription="Office アドインを実行するためのソフトウェアとデバイスの要件について説明します。" />	
-	<Item text="アドイン開発のベスト プラクティス" url="overview/add-in-development-best-practices" SEODescription="ユーザー エクスペリエンスを最適化する Office アドインをビルドするためのベスト プラクティスを適用します。" />
+	<Item text="アドイン開発のベスト プラクティス" url="overview/add-in-development-best-practices" SEODescription="ユーザーの操作性を最適化する Office アドインを構築するためのベスト プラクティスを適用します。" />
+	<Item text="ホストとプラットフォームの使用可能性" url="https://dev.office.com/add-in-availability" IsExternal="true" />
 	</Item>
   <Item text="作業の開始" url="get-started">
     <Item text="Visual Studio の使用" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="Visual Studio で Office アドインの構築を開始する" />
@@ -148,5 +149,5 @@
   <Item text="Access" url="access" Scope="access">
     <Item text="Access Web アプリとアドイン" url="access/access-web-app-add-ins" SEOKeyword="Access 用アドイン" SEODescription="カスタム HTML および JavaScript を使用して Access Web アプリを拡張する Office アドインを作成します。" Scope="access" />
   </Item>
-
+<Item text="JavaScript API 参照" url="https://dev.office.com/reference/add-ins/javascript-api-for-office" IsExternal="true" />
 </Menu>

@@ -10,7 +10,7 @@
 - アドインの作業用に画面領域 (全画面表示であっても) を広げる。
 - ビデオが作業ウィンドウに限定されている場合に、小さすぎるビデオをホストする。
 
->**注:**UI が重なっていると使い勝手が悪いため、シナリオで必要な場合を除き、ダイアログ ボックスが作業ウィンドウから開かないようにします。作業ウィンドウのセキュリティを使用する方法を検討するときは、作業ウィンドウをタブ表示できるようにすることを考慮してください。例については、[Excel アドイン JavaScriptSalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) のサンプルを参照してください。
+>**注:**UI が重なっていると使い勝手が悪いため、シナリオで必要な場合を除き、ダイアログが作業ウィンドウから開かないようにします。作業ウィンドウの表示領域の使用方法を検討するときには、作業ウィンドウはタブ表示できることにご注意ください。例については、[Excel アドイン JavaScriptSalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) のサンプルを参照してください。
 
 次の画像は、ダイアログ ボックスの例を示します。 
 
@@ -24,18 +24,18 @@ Office JavaScript API は、[Dialog](../../reference/shared/officeui.dialog.md) 
 
 ### <a name="opening-a-dialog-box"></a>ダイアログ ボックスを開く
 
-ダイアログ ボックスを開くには、作業ウィンドウのコードで [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) メソッドを呼び出して、開かれるページの URL に渡します。次に簡単な例を示します。
+ダイアログ ボックスを開くには、作業ウィンドウのコードで [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) メソッドを呼び出して、開かれるリソースの URL を渡します。これは、通常はページですが、MVC アプリケーションのコントローラー メソッド、ルート、Web サービス メソッド、またはその他のリソースの場合もあります。この記事では、'ページ' または 'Web サイト' とは、ダイアログ内のリソースを意味します。次に簡単な例を示します。
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html'); 
 ```
 
-> **メモ:**
+> **注:**
 
 > - URL には HTTP**S** プロトコルを使用します。これは、読み込まれる最初のページだけでなく、ダイアログ ボックスに読み込まれるすべてのページに対して必須です。
-> - ドメインはホスト ページのドメインと同じです。ホスト ページは、作業ウィンドウ内のページまたはアドイン コマンドの[関数ファイル](https://dev.office.com/reference/add-ins/manifest/functionfile)にすることができます。これはダイアログ ボックスに読み込まれる最初のページでは必須ではありません。ただし、最初のページがアドインの同じドメイン上にない場合は、アドイン マニフェストの [`<AppDomains>`](../../reference/manifest/appdomains.md) 要素でそのドメインを一覧表示する必要があります。
+> - ドメインはホスト ページのドメインと同じです。ホスト ページは、作業ウィンドウ内のページまたはアドイン コマンドの[関数ファイル](https://dev.office.com/reference/add-ins/manifest/functionfile)にすることができます。ページ、コントローラーのメソッド、または `displayDialogAsync` メソッドに渡されるその他のリソースは、ホスト ページと同じドメインにある必要があります。 
 
-最初のページが読み込まれると、ユーザーは HTTPS を使用する任意の Web サイトに移動できます。また、すぐに別のサイトにリダイレクトするように最初のページを設計することもできます。 
+最初のページ (または他のリソース) が読み込まれると、ユーザーは HTTPS を使用する任意の Web サイト (または他のリソース) に移動できます。また、すぐに別のサイトにリダイレクトするように最初のページを設計することもできます。 
 
 既定では、ダイアログ ボックスのサイズはデバイス画面の高さと幅の 80% ですが、次の例に示すように、メソッドに構成オブジェクトを渡すことによってさまざまな割合を設定できます。
 
@@ -49,7 +49,21 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 >**注:**ホスト ウィンドウから開くことができるのは、1 つのダイアログ ボックスのみです。別のダイアログ ボックスを開こうとすると、エラーが発生します。(詳細については、「[displayDialogAsync のエラー](#errors-from-displaydialogAsync)」を参照してください。)このため、たとえばユーザーが作業ウィンドウからダイアログ ボックスを開いた場合には、作業ウィンドウの別のページから 2 番目のダイアログ ボックスを開くことができません。ただし、[アドイン コマンド](https://dev.office.com/docs/add-ins/design/add-in-commands)からダイアログ ボックスを開く場合は、選択するたびにコマンドによって新しい (ただし非表示) HTML ファイルが開かれます。これにより、新しい (非表示) ホスト ウィンドウが作成されるため、これらの各ウィンドウは独自のダイアログ ボックスを起動できます。 
 
-### <a name="sending-information-from-the-dialog-box-to-the-host-page"></a>情報をダイアログ ボックスからホスト ページに送信する
+### <a name="take-advantage-of-a-performance-option-in-office-online"></a>Office Online のパフォーマンス オプションを利用する
+
+`displayInIframe` プロパティは、`displayDialogAsync` に渡すことのできる構成オブジェクトの追加のプロパティです。このプロパティを `true` に設定し、かつ Office Online で開いたドキュメントでアドインを実行している場合、ダイアログは浮動の iframe で開き、独立したウィンドウでは開きません (この方が速く開きます)。次に例を示します。
+
+```js
+Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe; true}); 
+```
+
+既定値は `false` で、プロパティを完全に省略したのと同じ状態です。
+
+アドインが Office Online で実行されていない場合、`displayInIframe` は無視されますが、指定しても害はありません。
+
+> **注:**どの時点であれ、iframe で開けないページにダイアログがリダイレクトされることになる場合は、`displayInIframe: true` を使用すべきでは***ありません***。たとえば、Google や Microsoft アカウントなどの多くの一般的な Web サービスのサインイン ページは iframe で開くことができません。 
+
+### <a name="sending-information-from-the-dialog-box-to-the-host-page"></a>ダイアログ ボックスからホスト ページに情報を送信する
 
 ダイアログ ボックスは、以下の場合を除いて、作業ウィンドウのホスト ページと通信できません。
 
@@ -217,7 +231,7 @@ function processMessage(arg) {
 
 |コード番号|意味|
 |:-----|:-----|
-|12004|`displayDialogAsync` に渡される URL のドメインは信頼されていません。ドメインは、ホスト ページと同じドメイン (プロトコルとポート番号を含む) にするか、**または**アドイン マニフェストの `<AppDomains>` セクションで登録する必要があります。|
+|12004|`displayDialogAsync` に渡される URL のドメインは信頼されていません。ドメインは、ホスト ページと同じドメインにある必要があります (プロトコルとポート番号を含む)。|
 |12005|`displayDialogAsync` に渡される URL には HTTP プロトコルを使用します。HTTPS が必要です。(Office の一部のバージョンでは、12004 で返されるのと同じエラー メッセージが 12005 でも返されます。)|
 |12007|ダイアログ ボックスは、このホスト ウィンドウで既に開いています。作業ウィンドウなどのホスト ウィンドウで一度に開けるダイアログ ボックスは 1 つだけです。|
 
@@ -267,8 +281,7 @@ function processDialogEvent(arg) {
             showNotification("The dialog box has been directed to a page that it cannot find or load, or the URL syntax is invalid.");
             break;
         case 12003:
-            showNotification("The dialog box has been directed to a URL with the HTTP protocol. HTTPS is required.");
-            break;
+            showNotification("The dialog box has been directed to a URL with the HTTP protocol. HTTPS is required.");            break;
         case 12006:
             showNotification("Dialog closed.");
             break;
@@ -281,7 +294,7 @@ function processDialogEvent(arg) {
 
 この方法でエラーを処理するサンプル アドインについては、「[Office アドイン ダイアログ API の例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)」を参照してください。
 
-  
+ 
 ## <a name="passing-information-to-the-dialog-box"></a>情報をダイアログ ボックスに渡す
 
 ホスト ページがダイアログ ボックスに情報を渡す必要がある場合もあります。これは主に 2 つの方法で実行することができます。
@@ -322,7 +335,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 ダイアログ ウィンドウ内のコードは、URL を解析し、パラメーター値を読み取ります。
 
->**注:**Office は、`_host_info` というクエリ パラメーターを `displayDialogAsync` に渡される URL に自動的に追加します。(カスタム クエリ パラメーターが存在する場合は、その後に追加されます。ダイアログ ボックスが移動する先の後続の URL には追加されません。)Microsoft は、将来、この値の内容を変更したり、完全に削除する可能性があるため、コードでこの値の内容を読み取らないでください。ダイアログ ボックスのセッション ストレージには、同じ値が追加されます。この場合も、*コードではこの値に対する読み取りも書き込みも行わないでください*。
+ `displayDialogAsync` に渡される URL に、`_host_info` というクエリ パラメーターを自動的に追加します。(カスタム クエリ パラメーターが存在する場合は、その後に追加されます。ダイアログ ボックスが移動する先の後続の URL には追加されません。)Microsoft は、将来、この値の内容を変更したり、完全に削除する可能性があるため、コードでこの値の内容を読み取らないでください。ダイアログ ボックスのセッション ストレージには、同じ値が追加されます。この場合も、*コードではこの値に対する読み取りも書き込みも行わないでください*。
 
 ## <a name="using-the-dialog-apis-to-show-a-video"></a>ダイアログ API を使用してビデオを表示する
 
@@ -335,8 +348,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
             frameborder="0" allowfullscreen>
         </iframe>
 
-2.  　　
-3.   Video.dialogbox.html ページは、ホスト ページと同じドメイン、またはアドイン マニフェストの  セクションで登録したドメインのいずれかにある必要があります。
+2.  video.dialogbox.html ページは、ホスト ページと同じドメインにある必要があります。
 3.  ホスト ページで `displayDialogAsync` の呼び出しを使用して、video.dialogbox.html を開きます。
 4.  ユーザーがダイアログ ボックスを閉じたときに、アドインに通知する必要がある場合は、`DialogEventReceived` イベントのハンドラーを登録して、12006 イベントを処理します。詳しくは、「[ダイアログ ウィンドウでのエラーとイベント](#errors-and-events-in-the-dialog-window)」セクションを参照してください。
 
@@ -346,27 +358,22 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 ## <a name="using-the-dialog-apis-in-an-authentication-flow"></a>認証フローでダイアログ API を使用する
 
-ダイアログ API の主要なシナリオは、Microsoft アカウント、Office 365、Google、Facebook など、iframe でサインイン ページが開かないようにするリソースまたは ID プロバイダーを使用して認証を有効にすることです。シンプルで標準的な認証フローを、次に示します。
+ダイアログ API の主要なシナリオは、Microsoft アカウント、Office 365、Google、Facebook など、iframe でサインイン ページが開かないようにするリソースまたは ID プロバイダーを使用して認証を有効にすることです。 
 
-1. ユーザーはホスト ページ上の UI 要素を選択して、サインインします。要素のハンドラーは `displayDialogAsync` を呼び出して、ID プロバイダーのサインイン ページの URL を渡します。*これはダイアログ ボックスで開かれる最初のページであり、またドメインがホスト ウィンドウと同じドメインでないため、そのドメインをアドイン マニフェストの `<AppDomains>` セクションに一覧表示する必要があります。*URL には、ユーザーがサインインすると、ダイアログ ウィンドウを特定のページにリダイレクトするように ID プロバイダーに指示するクエリ パラメーターが含まれています。この記事では、このページを "redirectPage.html" と呼びます。(*このページはホスト ウィンドウと同じドメイン内のページにする必要があります*。これは、ダイアログ ウィンドウがサインイン試行の結果を渡すための唯一の方法が、ホスト ウィンドウと同じドメインのページのみを呼び出すことができる `messageParent` の呼び出しを使用するためです。) 
+>**注:**このシナリオでダイアログ API を使用するときには、`displayDialogAsync` への呼び出しで `displayInIframe: true` のオプションを*使用しない*でください。このオプションの詳細については、この記事の前半をご覧ください。 
+
+シンプルで標準的な認証フローを、次に示します。 
+
+1. ダイアログ ボックスで開く最初のページは、アドインのドメイン (つまりホスト ウィンドウのドメイン) でホストされるローカル ページ (または他のリソース) です。このページには、"*プロバイダー名* にサインインが可能なページにリダイレクトしていますので、お待ちください。" という簡単な UI を含めることができます。「[情報をダイアログ ボックスに渡す](#passing-information-to-the-dialog-box)」に記載されているように、このページのコードは、ダイアログ ボックスに渡される情報を使用して、ID プロバイダーのサインイン ページの URL を構築します。 
+2. 次に、ダイアログ ウィンドウをサインイン ページにリダイレクトします。URL には、ユーザーがサインインしたらダイアログ ウィンドウを特定のページにリダイレクトするように ID プロバイダーに指示するクエリ パラメーターが含まれています。この記事では、このページを "redirectPage.html" と呼びます。(*このページはホスト ウィンドウと同じドメイン内のページにする必要があります*。これは、ダイアログ ウィンドウがサインイン試行の結果を渡す唯一の方法が `messageParent` の呼び出しを使用することであるためです。この呼び出しは、ホスト ウィンドウと同じドメインのページでしか行うことができません。) 
 2. ID プロバイダーのサービスは、ダイアログ ウィンドウからの着信 GET 要求を処理します。ユーザーが既にログオンしている場合は、直ちにウィンドウを redirectPage.html にリダイレクトして、ユーザー データをクエリ パラメーターとして含めます。ユーザーがまだサインインしていない場合は、プロバイダーのサインイン ページがウィンドウに表示され、ユーザーがサインインします。ほとんどのプロバイダーでは、ユーザーが正常にサインインできない場合、プロバイダーはダイアログ ウィンドウにエラー ページを表示して、redirectPage.html にはリダイレクトしません。ユーザーは隅にある **X** を選択して、ウィンドウを閉じる必要があります。ユーザーが正常にサインインした場合は、ダイアログ ウィンドウが redirectPage.html にリダイレクトされ、ユーザー データがクエリ パラメーターとして含まれます。
 3. edirectPage.html ページが開くと、`messageParent` を呼び出して、成功または失敗をホスト ページに報告し、また必要に応じて、ユーザー データまたはエラー データも報告します。 
 4. `DialogMessageReceived` イベントがホスト ページで発生し、そのハンドラーはダイアログ ウィンドウを閉じ、メッセージの他の処理を必要に応じて実行します。 
 
-このパターンを使用するサンプル アドインについては、「[ASP.NET と QuickBooks を使用する Excel アドイン](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)」を参照してください。
-
-### <a name="alternate-authentication-and-authorization-scenarios"></a>認証および承認システムの代替シナリオ
-
-#### <a name="addressing-slow-network"></a>低速ネットワークへの対処
-
-ネットワークまたは ID プロバイダーが低速の場合は、ユーザーが UI 要素を選択して開くときに、ダイアログ ボックスがすぐに開かない可能性があります。この場合、何も起こっていないという印象を与えることになります。エクスペリエンスを確実に向上させる方法の 1 つは、ダイアログ ボックスで開く最初のページをアドインのドメインでホストされているローカル ページ (つまり、ホスト ウィンドウのドメイン) にすることです。このページには、"*NAME-OF-PROVIDER* にサインインが可能なページにリダイレクトしていますので、お待ちください。" という簡単な UI を含めることができます。 
-
-「[情報をダイアログ ボックスに渡す](#passing-information-to-the-dialog-box)」に記載されているように、このページのコードは、ダイアログ ボックスに渡される情報を使用して、ID プロバイダーのサインイン ページの URL を構築します。次に、サインイン ページにリダイレクトします。この設計では、プロバイダーのページはダイアログ ボックスで開かれる最初のページではないため、アドイン マニフェストの `<AppDomains>` セクションにプロバイダーのドメインを一覧表示する必要はありません。
-
 このパターンを使用するサンプル アドインについては、以下を参照してください。
 
-- [PowerPoint アドインで Microsoft Graph を使用した Excel グラフの挿入](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
-- [Office アドイン Office 365 のクライアント認証 AngularJS 用](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)。
+- [PowerPoint アドインで Microsoft Graph を使用した Excel グラフの挿入](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart):ダイアログ ウィンドウで最初に開かれるリソースは、独自のビューがないコントローラーのメソッドです。これは次に、Office 365 のサインイン ページにリダイレクトします。
+- [Office アドイン Office 365 のクライアント認証 AngularJS 用](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth):ダイアログ ウィンドウで最初に開かれるリソースは、ページです。 
 
 #### <a name="supporting-multiple-identity-providers"></a>複数の ID プロバイダーのサポート
 
@@ -391,7 +398,6 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 これを実現するため、次のサンプルはダイアログ API を使用します。
 
 - [PowerPoint アドインで Microsoft Graph を使用した Excel グラフの挿入](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) - データベースにアクセス トークンを格納します。
-- [ASP.NET と QuickBooks を使用する Excel アドイン](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks) - `messageParent` のアクセス トークンを渡します。
 - [OAuth.io サービスを使用して大手のオンライン サービスへのアクセスを簡素化する Office アドイン](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 #### <a name="more-information-about-authentication-and-authorization-in-add-ins"></a>アドインにおける認証と承認の詳細について
