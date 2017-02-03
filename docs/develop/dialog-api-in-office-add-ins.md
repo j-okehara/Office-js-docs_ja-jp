@@ -30,7 +30,7 @@ Office JavaScript API は、[Dialog](../../reference/shared/officeui.dialog.md) 
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html'); 
 ```
 
-> **注:**
+> **メモ:**
 
 > - URL には HTTP**S** プロトコルを使用します。これは、読み込まれる最初のページだけでなく、ダイアログ ボックスに読み込まれるすべてのページに対して必須です。
 > - ドメインはホスト ページのドメインと同じです。ホスト ページは、作業ウィンドウ内のページまたはアドイン コマンドの[関数ファイル](https://dev.office.com/reference/add-ins/manifest/functionfile)にすることができます。ページ、コントローラーのメソッド、または `displayDialogAsync` メソッドに渡されるその他のリソースは、ホスト ページと同じドメインにある必要があります。 
@@ -54,7 +54,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 `displayInIframe` プロパティは、`displayDialogAsync` に渡すことのできる構成オブジェクトの追加のプロパティです。このプロパティを `true` に設定し、かつ Office Online で開いたドキュメントでアドインを実行している場合、ダイアログは浮動の iframe で開き、独立したウィンドウでは開きません (この方が速く開きます)。次に例を示します。
 
 ```js
-Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe; true}); 
+Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true}); 
 ```
 
 既定値は `false` で、プロパティを完全に省略したのと同じ状態です。
@@ -335,7 +335,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 ダイアログ ウィンドウ内のコードは、URL を解析し、パラメーター値を読み取ります。
 
- `displayDialogAsync` に渡される URL に、`_host_info` というクエリ パラメーターを自動的に追加します。(カスタム クエリ パラメーターが存在する場合は、その後に追加されます。ダイアログ ボックスが移動する先の後続の URL には追加されません。)Microsoft は、将来、この値の内容を変更したり、完全に削除する可能性があるため、コードでこの値の内容を読み取らないでください。ダイアログ ボックスのセッション ストレージには、同じ値が追加されます。この場合も、*コードではこの値に対する読み取りも書き込みも行わないでください*。
+> **注**:Office は、`_host_info` というクエリ パラメーターを `displayDialogAsync` に渡される URL に自動的に追加します。(カスタム クエリ パラメーターが存在する場合は、その後に追加されます。ダイアログ ボックスが移動する先の後続の URL には追加されません。)Microsoft は、将来、この値の内容を変更したり、完全に削除する可能性があるため、コードでこの値の内容を読み取らないでください。ダイアログ ボックスのセッション ストレージには、同じ値が追加されます。この場合も、*コードではこの値に対する読み取りも書き込みも行わないでください*。
 
 ## <a name="using-the-dialog-apis-to-show-a-video"></a>ダイアログ API を使用してビデオを表示する
 

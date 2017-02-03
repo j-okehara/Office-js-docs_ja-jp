@@ -9,12 +9,12 @@ Office ホストでダイアログ ボックスを表示します。
 |Word、Excel、PowerPoint|1.1|1.1|
 |Outlook|メールボックス 1.4|メールボックス 1.4|
 
-このメソッドは、Word アドイン、Excel アドイン、または PowerPoint アドインの DialogAPI [要件セット](../../docs/overview/specify-office-hosts-and-api-requirements.md)、および Outlook の要件セット 1.4 で使用できます。DialogAPI 要件セットを指定するには、マニフェストで次のようにします。
+このメソッドは、Word アドイン、Excel アドイン、または PowerPoint アドインの DialogAPI [要件セット](../../docs/overview/specify-office-hosts-and-api-requirements.md)、および Outlook のメールボックス要件セット 1.4 で使用できます。DialogAPI 要件セットを指定するには、マニフェストで次のようにします。
 
 ```xml
 <Requirements> 
   <Sets DefaultMinVersion="1.1"> 
-    <Set Name="DialogAPI"/> 
+    <Set Name="DialogApi"/> 
   </Sets> 
 </Requirements> 
 ```
@@ -32,7 +32,7 @@ Office ホストでダイアログ ボックスを表示します。
 実行時に、この API を Word アドイン、Excel アドイン、または PowerPoint アドインで検出するには、次のコードを使用します。
 
 ```js
-if (Office.context.requirements.isSetSupported('DialogAPI', 1.1)) {  
+if (Office.context.requirements.isSetSupported('DialogApi', 1.1)) {  
   // Use Office UI methods; 
 } else { 
   // Alternate path 

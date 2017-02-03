@@ -12,6 +12,8 @@
 
 `SupportsPinning` 要素は、VersionOverrides v1.1 スキーマで定義されているため、v1.0 と v1.1 のどちらの場合も [VersionOverrides](../../../reference/manifest/versionoverrides.md) 要素を含める必要があります。
 
+> **注:**Outlook アドインを Office ストアに[発行](../../publish/publish.md)する予定であれば、**SupportsPinning**要素を使う場合、[Office ストア検証ポリシー](https://msdn.microsoft.com/en-us/library/jj220035.aspx)に合格するためには、アドインのコンテンツを静的にすることはできません。また、メールボックスで開かれているか選択されているメッセージに関連するデータを、そのコンテンツで明確に表示する必要があります。
+
 ```xml
 <!-- Task pane button -->
 <Control xsi:type="Button" id="msgReadOpenPaneButton">

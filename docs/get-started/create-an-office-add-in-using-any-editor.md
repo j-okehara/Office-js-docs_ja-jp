@@ -18,7 +18,7 @@ Yeoman Office ジェネレーターを実行するには、以下が必要です
 - [Gulp](http://gulpjs.com/)
 - [TSD](http://definitelytyped.org/tsd/)
     
-Git と npm だけ別のインストールが必要です。他のものは npm を使用してインストールできます。
+Git と npm のみ、別途インストールが必要です。その他は npm を使用してインストールできます。
 
 Git をインストールする場合は、次のオプションを選択する以外、既定の設定を使用します。 
 
@@ -214,15 +214,45 @@ tsd install
 - [テスト用に Outlook アドインをサイドロードする](../outlook/testing-and-tips.md)
     
 
-## <a name="debugging-your-office-add-in"></a>Office アドインのデバッグ
+## <a name="debug-your-add-in"></a>アドインのデバッグ
 
-アドインをデバッグする方法はいくつかあります。
+アドインをデバッグするには、いくつかの方法があります。
 
+- 作業ウィンドウからデバッガーをアタッチする (Office 2016 for Windows)。
+- ブラウザーの開発者ツールを使用する。
+- Windows 10 で F12 開発者ツールを使用する。
 
-- Office Web クライアントを使用して、ブラウザーの開発者ツールを開き、ほかのクライアント側 JavaScript アプリケーションと同様にアドインをデバッグします。 
-- Windows 10 でデスクトップの Office を使用している場合、 [Windows 10 で F12 開発者ツールを使用してアドインをデバッグする](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)が可能です。
+### <a name="attach-debugger-from-the-task-pane"></a>作業ウィンドウからデバッガーをアタッチする
+
+Office 2016 for Windows のビルド 77xx.xxxx 以降では、作業ウィンドウからデバッガーをアタッチすることができます。 
+
+**デバッガーのアタッチ** ツールを起動するのには、作業ウィンドウの右上隅を選択して**パーソナリティ** メニューを有効にします (以下の図の赤い円で示す通り)。   
+
+![デバッガーのアタッチ メニューのスクリーンショット](../../images/attach-debugger.png)
+
+**デバッガーのアタッチ** を選択するこれにより、次の図のように、**Visual Studio Just-in-Time デバッガー** ダイアログ ボックスが起動します。 
+
+![Visual Studio Just-in-Time デバッガー ダイアログのスクリーンショット](../../images/visual-studio-debugger.png)
+
+これで Visual Studio でアタッチとデバッグを行えるようになりました。   
+
+  >  **注**:現在サポートされているデバッガー ツールは、[Visual Studio 2015](https://www.visualstudio.com/downloads/) with [Update 3](https://msdn.microsoft.com/en-us/library/mt752379.aspx) だけです。Visual Studio をインストールしていない場合、**デバッガーのアタッチ** オプションを選択しても何も起こりません。  
+  
+詳細については、以下のトピックを参照してください。
+
+-   DOM Explorer を Visual Studio で起動して使用するには、ブログ記事「[新しいプロジェクト テンプレートを使って見栄えの良い Office 用アプリをビルドする](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates)」の[ヒントとコツ](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) セクションのヒント 4 を参照してください。
+-   ブレークポイントの設定については、「[ブレークポイントの使用](https://msdn.microsoft.com/en-US/library/5557y8b4.aspx)」を参照してください。
+-   F12 を使用するには、「[F12 開発者ツールの使用](https://msdn.microsoft.com/en-us/library/bg182326(v=vs.85).aspx)」を参照してください。
+
+### <a name="browser-developer-tools"></a>ブラウザーの開発者ツール 
+
+Office Web クライアントを使用して、ブラウザーの開発者ツールを開き、ほかのクライアント側 JavaScript アプリケーションをデバッグした方法で、アドインをデバッグします。 
+
+### <a name="f12-developer-tools-on-windows-10"></a>Windows 10 の F12 開発者ツール
+
+Windows 10 で Office のデスクトップ クライアントを使用している場合、[Windows 10 で F12 開発者ツールを使用してアドインをデバッグする](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)ことが可能です。
     
-## <a name="additional-resources"></a>その他のリソース
+## <a name="additional-resources"></a>追加リソース
 
 
 - [Visual Studio での Office アドインの作成とデバッグ](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)
