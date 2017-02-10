@@ -1,4 +1,4 @@
-# <a name="paragraph-object-(javascript-api-for-onenote)"></a>Paragraph オブジェクト (JavaScript API for OneNote)
+# <a name="paragraph-object-javascript-api-for-onenote"></a>Paragraph オブジェクト (JavaScript API for OneNote)
 
 _適用対象:OneNote Online_  
 
@@ -42,7 +42,7 @@ _プロパティのアクセスの[例を参照してください。](#property-
 ## <a name="method-details"></a>メソッドの詳細
 
 
-### <a name="delete()"></a>delete()
+### <a name="delete"></a>delete()
 段落を削除します。
 
 #### <a name="syntax"></a>構文
@@ -94,7 +94,7 @@ OneNote.run(function (context) {
 ```
 
 
-### <a name="inserthtmlassibling(insertlocation:-string,-html:-string)"></a>insertHtmlAsSibling(insertLocation: string, html: string)
+### <a name="inserthtmlassiblinginsertlocation-string-html-string"></a>insertHtmlAsSibling(insertLocation: string, html: string)
 指定された HTML コンテンツを挿入します。
 
 #### <a name="syntax"></a>構文
@@ -106,7 +106,7 @@ paragraphObject.insertHtmlAsSibling(insertLocation, html);
 | パラメーター    | 型   |説明|
 |:---------------|:--------|:----------|
 |insertLocation|string|現在の Paragraph を基準にした新しいコンテンツの場所です。使用可能な値は次のとおりです。Before、After。|
-|html|string|コンテンツの視覚表示を記述する HTML 文字列です。OneNote アドインの JavaScript API については、「[サポートされる HTML](../../docs/onenote/onenote-add-ins-page-content.md#supported-html)」を参照してください。|
+|Html|string|コンテンツの視覚表示を記述する HTML 文字列です。OneNote アドインの JavaScript API については、「[サポートされる HTML](../../docs/onenote/onenote-add-ins-page-content.md#supported-html)」を参照してください。|
 
 #### <a name="returns"></a>戻り値
 void
@@ -148,7 +148,7 @@ OneNote.run(function (context) {
 ```
 
 
-### <a name="insertimageassibling(insertlocation:-string,-base64encodedimage:-string,-width:-double,-height:-double)"></a>insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)
+### <a name="insertimageassiblinginsertlocation-string-base64encodedimage-string-width-double-height-double"></a>insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)
 指定された挿入位置にイメージを挿入します。
 
 #### <a name="syntax"></a>構文
@@ -204,7 +204,7 @@ OneNote.run(function (context) {
 ```
 
 
-### <a name="insertrichtextassibling(insertlocation:-string,-paragraphtext:-string)"></a>insertRichTextAsSibling(insertLocation: string, paragraphText: string)
+### <a name="insertrichtextassiblinginsertlocation-string-paragraphtext-string"></a>insertRichTextAsSibling(insertLocation: string, paragraphText: string)
 指定された挿入位置に段落テキストを挿入します。
 
 #### <a name="syntax"></a>構文
@@ -258,7 +258,7 @@ OneNote.run(function (context) {
 ```
 
 
-### <a name="inserttableassibling(insertlocation:-string,-rowcount:-number,-columncount:-number,-values:-string[][])"></a>insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])
+### <a name="inserttableassiblinginsertlocation-string-rowcount-number-columncount-number-values-string"></a>insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])
 指定された数の行と列を含む表を現在の段落の前または後に追加します。
 
 #### <a name="syntax"></a>構文
@@ -277,7 +277,7 @@ paragraphObject.insertTableAsSibling(insertLocation, rowCount, columnCount, valu
 #### <a name="returns"></a>戻り値
 [Table](table.md)
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
 
 #### <a name="syntax"></a>構文

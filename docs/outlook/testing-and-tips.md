@@ -39,7 +39,7 @@ HTML と JavaScript を使用して、アドインの UI を作成できます�
 Outlook for Mac の場合は、アドイン バーの右端にある **[アドインの管理]** を選択して、Exchange 管理センターにサインインします。次のセクションの手順 4 に進みます。
 
 
-### <a name="installing-an-add-in-by-using-outlook-web-app-or-outlook.com"></a>Outlook Web App または Outlook.com を使用したアドインのインストール
+### <a name="installing-an-add-in-by-using-outlook-web-app-or-outlookcom"></a>Outlook Web App または Outlook.com を使用したアドインのインストール
 
 Outlook Web App (OWA) を使用して Outlook アドインをインストールするには、以下の手順を実行します。
 
@@ -58,8 +58,7 @@ Outlook Web App (OWA) を使用して Outlook アドインをインストール�
     
 
 >**メモ**  アドインの開発に次のどちらも使用しない場合: 
-- Office 365 開発者向けサイトのテナント
-- Napa Office 365 開発ツール
+- Office 365 Developer のテナント
 - Visual Studio
 
 また、少なくとも Exchange Server の "My Custom Apps" の役割を持っていない場合は、アドインのインストールを Office ストアからのみ行えます。アドイン マニフェストの URL またはファイル名を指定してアドインをテストしたり、一般のアドインをインストールしたりする場合は、Exchange 管理者に連絡して、必要なアクセス許可を得る必要があります。
@@ -72,9 +71,9 @@ Exchange 管理者は、次のような PowerShell コマンドレットを実�
 
 ```$users = Get-Mailbox *$users | ForEach-Object { New-ManagementRoleAssignment -Role "My Custom Apps" -User $_.Alias}```
 
-自分のカスタム アドインの役割の詳細については、「[自分のカスタム アプリの役割](http://technet.microsoft.com/en-us/library/aa0321b3-2ec0-4694-875b-7a93d3d99089%28EXCHG.150%29.aspx)」を参照してください。 
+自分のカスタム アドインの役割の詳細については、「["My Custom Apps/自分のカスタム アプリ" 役割](http://technet.microsoft.com/en-us/library/aa0321b3-2ec0-4694-875b-7a93d3d99089%28EXCHG.150%29.aspx)」をご覧ください。 
 
-Office 365、Napa、または Visual Studio を使用してアドインを開発すると、組織の管理者の役割が割り当てられ、EAC でファイルや URL を使用して、あるいは Powershell コマンドレットを使用してアドインをインストールできるようになります。
+Office 365 や Visual Studio を使用してアドインを開発すると、組織の管理者の役割が割り当てられ、EAC のファイルや URL を使用するか、Powershell コマンドレットを使用してアドインをインストールできるようになります。
 
 
 ### <a name="installing-an-add-in-by-using-remote-powershell"></a>リモート PowerShell を使用したアドインのインストール

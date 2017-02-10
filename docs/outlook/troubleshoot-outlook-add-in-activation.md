@@ -25,8 +25,8 @@ Exchange 2013 のバージョンは、次の方法のいずれかを使用して
     
       2. リボンの **[開発]** タブで **[Visual Basic]** を選択します。
     
-     >**Note**  Not seeing the  **Developer** tab? See [How to: Show the Developer Tab on the Ribbon](http://msdn.microsoft.com/en-us/library/ce7cb641-44f2-4a40-867e-a7d88f8e98a9%28Office.15%29.aspx) to turn it on. 
-	  3. Visual Basic エディターで、**[表示]**、**[イミディエイト ウィンドウ]** を選択します。
+     >**注**  [**開発**] タブが表示されない場合には、「[方法:タブをリボンに表示する](http://msdn.microsoft.com/en-us/library/ce7cb641-44f2-4a40-867e-a7d88f8e98a9%28Office.15%29.aspx)」を参照して、有効にしてください。
+      3. Visual Basic エディターで、**[表示]**、**[イミディエイト ウィンドウ]** を選択します。
     
       4. イミディエイト ウィンドウに次のように入力し、Exchange Server のバージョンを表示します。戻される値のメジャー バージョンは、15 以上である必要があります。
     
@@ -112,9 +112,9 @@ Outlook アドインが閲覧アドインであり、ユーザーがメッセー
 
 
 
-1. Outlook を開いている間にマニフェストを変更した場合で、アドインの開発に Napa、Visual Studio 2012、または Visual Studio の新しいバージョンを使用していない場合は、Exchange 管理センターを使用して、そのアドインをアンインストールし、再インストールする必要があります。 
+1. Outlook を開いている間にマニフェストを変更し、アドインの開発に Visual Studio 2012 や Visual Studio の新しいバージョンを使用していない場合は、Exchange 管理センターを使用して、そのアドインをアンインストールし、再インストールする必要があります。 
     
-2. Outlook を再起動し、Outlook がアドインをアクティブ化するようになったかどうかをテストします。
+2. Outlook を再起動し、Outlook でアドインがアクティブになっているかどうかをテストします。
     
 3. アドインがアクティブ化されない場合は、アドインのマニフェストの適切なキャッシュ コピーが Outlook にあるかどうかを確認します。次のパスの下を探してください。
     

@@ -33,7 +33,7 @@ labs.js ライブラリは、office.js ライブラリ (Office アドイン の 
 
 最初のステップは、Office 365 開発者向けサイト にサインアップすることです。これにより、Office ストアに提出する前にラボをホストおよびテストできます。このサイトを使用すると、アドインを Office Mix に発行し、ライブ環境でテストできます。
 
-詳細については、「 [Office 365 で SharePoint アドインの開発環境をセットアップする](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx)」を参照してください。最初の 2 つの手順のみが必須です。"Napa" 開発者ツールのインストールはオプションです。
+詳しくは、「[Office 365 で SharePoint アドインの開発環境をセットアップする](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx)」を参照してください。 
 
 
 ### <a name="set-up-an-app-catalog-on-sharepoint-online"></a>SharePoint Online 上でアプリ カタログをセットアップする
@@ -71,7 +71,7 @@ SharePoint サイトにマニフェストをアップロードするには、通
 最後に、開発者アカウントを使用して再度ログオンします。PowerPoint 2013 の右上隅にあるログオン名を選択し、開発者アカウントを使用してログオンします。これで、アドインを挿入できるようになります。
 
 
-### <a name="insert,-publish,-and-view-your-app"></a>アプリを挿入、発行、表示する
+### <a name="insert-publish-and-view-your-app"></a>アプリを挿入、発行、表示する
 
 カタログにアドインを挿入するには、 **[挿入]** リボンを選択し、 **[アプリ]** セクションで **[ストア]** を選択します。 **[自分の所属組織]** を選択すると、アドイン カタログにアドインが表示されます。アドインを選択し、 **[挿入]** をクリックすると、アドイン (ラボ) が PowerPoint 2013 ドキュメントに挿入されます。
 

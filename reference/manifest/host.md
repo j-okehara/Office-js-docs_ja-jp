@@ -50,6 +50,7 @@
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](./desktopformfactor.md)    |  はい   |  デスクトップ フォーム ファクターの設定を定義します。 |
+|  [MobileFormFactor](./mobileformfactor.md)    |  いいえ   |  モバイル フォーム ファクターの設定を定義します。**注:** この要素は、Outlook for iOS でのみサポートされています。 |
 
 
 ### <a name="xsitype"></a>xsi:type

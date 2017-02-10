@@ -1,6 +1,6 @@
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
- アドインが Office UI に機能を表示する場所を定義します。**ExtensionPoint** 要素は、[DesktopFormFactor](./desktopformfactor.md) の子要素です。 
+ アドインが Office UI に機能を表示する場所を定義します。**ExtensionPoint** 要素は、[DesktopFormFactor](./desktopformfactor.md) または [MobileFormFactor](./mobileformfactor.md) の子要素です。 
 
 ## <a name="attributes"></a>属性
 
@@ -73,6 +73,7 @@
 - [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) ([DesktopFormFactor](./desktopformfactor.md) でのみ使用できます。)
+- [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
 
 ### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
 この拡張点により、メールの閲覧ビューのコマンド サーフェスにボタンが配置されます。Outlook デスクトップでは、これはリボンに表示されます。
@@ -198,3 +199,37 @@
 |  [OfficeTab](./officetab.md) |  コマンドを既定のリボン タブに追加します。  |
 |  [CustomTab](./customtab.md) |  コマンドをカスタム リボン タブに追加します。  |
 
+### <a name="mobilemessagereadcommandsurface"></a>MobileMessageReadCommandSurface
+この拡張点により、モバイル フォーム ファクターのメールの閲覧ビューのコマンド領域にボタンが配置されます。
+
+> **注:**この要素の種類は、Outlook for iOS でのみサポートされています。
+
+**子要素**
+
+|  要素 |  説明  |
+|:-----|:-----|
+|  [Group](./group.md) |  コマンド領域にボタンのグループを追加します。  |
+|  [Control](./control.md) |  コマンド領域に 1 つのボタンを追加します。  |
+
+この種類の **ExtensionPoint** 要素には子要素を 1 つだけ含めることができます。**Group** 要素か **Control** 要素のいずれか 1 つです。
+
+この拡張点に含まれる **Control** 要素の **xsi:type** 属性を `MobileButton` に設定する必要があります。
+
+#### <a name="group-example"></a>Group の例
+```xml
+<ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
+  <Group id="mobileGroupID">
+    <Label resid="residAppName"/>
+    <!-- one or more Control elements -->
+  </Group>
+</ExtensionPoint>
+```
+
+#### <a name="control-example"></a>Control の例
+```xml
+<ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
+  <Control id="mobileButton1" xsi:type="MobileButton">
+    <!-- Control definition -->
+  </Control>
+</ExtensionPoint>
+```

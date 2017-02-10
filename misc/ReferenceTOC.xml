@@ -11,8 +11,7 @@
 		<Item text="説明" url="manifest/description" SEODescription="Office アドインの説明を 250 文字以下の文字列で指定します。" />
 		<Item text="DesktopSettings" url="manifest/desktopsettings" Scope="outlook" SEODescription="このメール アドインがデスクトップ コンピューターで使用されるときに適用するソースの場所と制御の設定を指定します。" />
 		<Item text="Dictionary" url="manifest/dictionary" Scope="excel, word, powerpoint, project" SEODescription="追加の辞書サポートを実装する作業ウィンドウ アドインの設定を定義します。" />
-		<Item text="DictionaryHomePage" url="manifest/dictionaryhomepage" Scope="excel, word, powerpoint, project" SEODescription="辞書のホーム ページの URL を指定します。" />
-		<Item text="DictionaryName" url="manifest/dictionaryname" Scope="excel, word, powerpoint, project" SEODescription="この辞書の名前を指定します。" />
+		<Item text="DictionaryHomePage" url="manifest/dictionaryhomepage" Scope="excel, word, powerpoint, project" SEODescription="辞書のホーム ページの URL を指定します。" />		<Item text="DictionaryName" url="manifest/dictionaryname" Scope="excel, word, powerpoint, project" SEODescription="この辞書の名前を指定します。" />
 		<Item text="DisableEntityHighlighting" url="manifest/disableentityhighlighting" Scope="outlook" SEODescription="メール アドインでエンティティの強調表示をオフにするかどうかを指定します。" />
 		<Item text="DisplayName" url="manifest/displayname" SEODescription="Office アドインの名前を最大 125 文字の文字列で指定します。" />
 		<Item text="Form" url="manifest/form" Scope="outlook" SEODescription="メール アドインが特定のデバイス (デスクトップ、タブレット、電話) で実行されているときに使用するフォームの UX 設定を定義します。" />
@@ -42,21 +41,23 @@
 		<Item text="TargetDialect" url="manifest/targetdialect" Scope="excel, word, powerpoint, project" SEODescription="この辞書でサポートされる地域言語を定義します。これはカルチャ名文字列として表現されます。" />
 		<Item text="TargetDialects" url="manifest/targetdialects" Scope="excel, word, powerpoint, project" SEODescription="この辞書でサポートされる地域言語を定義します。" />
 		<Item text="バージョン" url="manifest/version" SEODescription="Office アドインのバージョンを指定します。" />
-		<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint" SEODescription="アドインによって実装されたアドイン コマンドに関する情報を格納するルート要素です。">
-			<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint" SEODescription="ユーザーがボタンまたはメニューのコントロールを選択したときに実行する操作を指定します。" />
+		<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint, outlook" SEODescription="アドインによって実装されたアドイン コマンドに関する情報を格納するルート要素です。">
+			<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint, outlook" SEODescription="ユーザーがボタンまたはメニューのコントロールを選択したときに実行する操作を指定します。" />
 			<Item text="Control" url="manifest/control" SEODescription="ユーザーがボタンまたはメニューを選択したときに実行するコントロールを指定します。" />
-			<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint" SEODescription="アドイン コマンドのタブとグループを指定します。" />
-			<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint" SEODescription="アドインが機能を公開する場所を定義します。" />
-			<Item text="DesktopFormFactor" url="manifest/desktopformfactor" Scope="excel, word, powerpoint" SEODescription="特定のフォーム ファクターについてアドインの設定を指定します。" />
-			<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint" SEODescription="UI を表示する代わりに JavaScript 関数を実行するアドイン コマンドによってアドインが公開する操作の、ソース コード ファイルを指定します。" />
+
+			<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint, outlook" SEODescription="アドイン コマンドのタブとグループを指定します。" />
+			<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint, outlook" SEODescription="アドインが機能を公開する場所を定義します。" />
+			<Item text="FormFactor" url="manifest/formfactor" Scope="excel, word, powerpoint" SEODescription="特定のフォーム ファクターについてアドインの設定を指定します。" />
+			<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint, outlook" SEODescription="UI を表示する代わりに JavaScript 関数を実行するアドイン コマンドによってアドインが公開する操作の、ソース コード ファイルを指定します。" />
 			<Item text="GetStarted" url="manifest/getstarted" Scope="excel, word, powerpoint" SEODescription="アドインが、Word、Excel、および PowerPoint のホストにインストールされているときに表示される吹き出しで使用される情報を提供します。" />
-			<Item text="Group" url="manifest/group" Scope="excel, word, powerpoint" SEODescription="タブの UI 拡張ポイントのグループを定義します。" />
-			<Item text="Hosts" url="manifest/hosts" Scope="excel, word, powerpoint" SEODescription="Office アドインがサポートしている Office のホスト アプリケーションの種類を指定します。" />
-			<Item text="Icon" url="manifest/icon" Scope="excel, word, powerpoint" SEODescription="ボタンとメニューのコントロールのイメージ要素を定義します。" />
+			<Item text="Group" url="manifest/group" Scope="excel, word, powerpoint, outlook" SEODescription="タブの UI 拡張ポイントのグループを定義します。" />
+			<Item text="Hosts" url="manifest/hosts" Scope="excel, word, powerpoint, outlook" SEODescription="Office アドインがサポートしている Office のホスト アプリケーションの種類を指定します。" />
+			<Item text="Icon" url="manifest/icon" Scope="excel, word, powerpoint, outlook" SEODescription="ボタンとメニューのコントロールのイメージ要素を定義します。" />
+      <Item text="MobileFormFactor" url="manifest/mobileformfactor" Scope="outlook" SEODescription="モバイル フォーム ファクターについてアドインの設定を指定します。" />
 			<Item text="OfficeMenu" url="manifest/officemenu" Scope="excel, word, powerpoint" SEODescription="Office のコンテキスト メニューに追加するコントロールのコレクションを定義します。" />
-			<Item text="OfficeTab" url="manifest/officetab" Scope="excel, word, powerpoint" SEODescription="アドイン コマンドに使用する既存のタブを指定します。" />
-			<Item text="リソース" url="manifest/resources" Scope="excel, word, powerpoint" SEODescription="VersionOverrides ノードのアイコン、文字列、URL が含まれます。" />
-			<Item text="Supertip" url="manifest/supertip" Scope="excel, word, powerpoint" SEODescription="豊富なヒント (タイトルと説明の両方) を定義します。" />
+			<Item text="OfficeTab" url="manifest/officetab" Scope="excel, word, powerpoint, outlook" SEODescription="アドイン コマンドに使用する既存のタブを指定します。" />
+			<Item text="リソース" url="manifest/resources" Scope="excel, word, powerpoint, outlook" SEODescription="VersionOverrides ノードのアイコン、文字列、URL が含まれます。" />
+			<Item text="Supertip" url="manifest/supertip" Scope="excel, word, powerpoint, outlook" SEODescription="豊富なヒント (タイトルと説明の両方) を定義します。" />
 		</Item>
 	</Item>
 	<Item text="Word" url="word/word-add-ins-reference-overview" Scope="word" SEODescription="Word Javascript API の概要を提供します。">

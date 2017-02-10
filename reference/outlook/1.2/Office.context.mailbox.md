@@ -24,14 +24,16 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 
 ### <a name="members"></a>メンバー
 
-#### <a name="ewsurl-:string"></a>ewsUrl :String
+#### <a name="ewsurl-string"></a>ewsUrl :String
 
 この電子メール アカウントの Exchange Web サービス (EWS) エンドポイントの URL を取得します。閲覧モードのみ。
+
+> **注:**このメンバーは、Outlook for iOS または Outlook for Android ではサポートされていません。
 
 
   `ewsUrl` 値は、リモート サービスで、ユーザーのメールボックスに EWS 呼び出しを行うために使うことができます。たとえば、[選択したアイテムから添付ファイルを取得する](https://msdn.microsoft.com/EN-US/library/office/dn148008.aspx)ためにリモート サービスを作成できます。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>種類:
 
 *   String
 
@@ -45,7 +47,7 @@ Microsoft Outlook と Microsoft Outlook on the web の Outlook アドイン オ�
 
 ### <a name="methods"></a>メソッド
 
-####  <a name="converttolocalclienttime(timevalue)-→-{[localclienttime](simple-types.md#localclienttime)}"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](simple-types.md#localclienttime)}
+####  <a name="converttolocalclienttimetimevalue--localclienttimesimple-typesmdlocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](simple-types.md#localclienttime)}
 
 クライアントのローカル時間で時間情報が含まれている辞書を取得します。
 
@@ -53,7 +55,7 @@ Outlook 用メール アプリや Outlook Web App で使う日付と時刻では
 
 Outlook でメール アプリが実行されている場合、`convertToLocalClientTime` メソッドは、クライアント コンピューターのタイム ゾーンに設定された値のディクショナリ オブジェクトを返します。Outlook Web Apps でメール アプリが実行されている場合、`convertToLocalClientTime` メソッドは、EAC に指定されたタイム ゾーンに設定された値のディクショナリ オブジェクトを返します。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -67,17 +69,17 @@ Outlook でメール アプリが実行されている場合、`convertToLocalCl
 |[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 作成または読み取り|
 
-##### <a name="returns:"></a>戻り値:
+##### <a name="returns"></a>戻り値:
 
 型:[LocalClientTime](simple-types.md#localclienttime)
 
-####  <a name="converttoutcclienttime(input)-→-{date}"></a>convertToUtcClientTime(input) → {Date}
+####  <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
 時間情報が含まれているディクショナリから日付オブジェクトを取得します。
 
 `convertToUtcClientTime` メソッドは、ローカルの日付と時刻を含むディクショナリを、ローカルの日付と時刻の正しい値を持つ日付オブジェクトに変換します。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -91,7 +93,7 @@ Outlook でメール アプリが実行されている場合、`convertToLocalCl
 |[最小限のアクセス許可レベル](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 作成または読み取り|
 
-##### <a name="returns:"></a>戻り値:
+##### <a name="returns"></a>戻り値:
 
 時間が UTC で表現された日付オブジェクト。
 
@@ -103,9 +105,11 @@ Outlook でメール アプリが実行されている場合、`convertToLocalCl
 
 </dl>
 
-####  <a name="displayappointmentform(itemid)"></a>displayAppointmentForm(itemId)
+####  <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
 既存の予定を表示します。
+
+> **注:**このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
 
 `displayAppointmentForm` メソッドは、デスクトップ上の新しいウィンドウやモバイル デバイス上のダイアログ ボックスに既存の予定を開きます。
 
@@ -115,7 +119,7 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 
 指定のアイテム識別子が既存の予定を表していない場合は、クライアント コンピューターまたはデバイスで空のウィンドウが開き、エラー メッセージは返されません。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -135,9 +139,11 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
-####  <a name="displaymessageform(itemid)"></a>displayMessageForm(itemId)
+####  <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
 
 既存のメッセージを表示します。
+
+> **注:**このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
 
 `displayMessageForm` メソッドは、デスクトップ上の新しいウィンドウやモバイル デバイス上のダイアログ ボックスに既存のメッセージを開きます。
 
@@ -147,7 +153,7 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 
 予定を表す `itemId` を含む `displayMessageForm` を使用しないでください。既存の予定を表示するには、`displayAppointmentForm` メソッドを使用します。新しい予定を作成するフォームを表示するには、`displayNewAppointmentForm` メソッドを使用します。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -167,9 +173,11 @@ Outlook Web App では、このメソッドは指定されたフォームの本�
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
-#### <a name="displaynewappointmentform(parameters)"></a>displayNewAppointmentForm(parameters)
+#### <a name="displaynewappointmentformparameters"></a>displayNewAppointmentForm(parameters)
 
 新しい予定を作成するためのフォームを表示します。
+
+> **注:**このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
 
 `displayNewAppointmentForm` メソッドを使用すると、ユーザーが新しい予定または会議を作成できるフォームが開きます。パラメーターを指定すると、予定のフォーム フィールドにパラメーターの内容が自動的に設定されます。
 
@@ -179,7 +187,7 @@ Outlook リッチ クライアントと Outlook RT で、`requiredAttendees`、`
 
 パラメーターのいずれかが指定のサイズ制限を超える場合、または不明なパラメーター名が指定されている場合は、例外がスローされます。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 説明|
 |---|---|---|
@@ -213,7 +221,7 @@ Office.context.mailbox.displayNewAppointmentForm(
   });
 ```
 
-#### <a name="getcallbacktokenasync(callback,-[usercontext])"></a>getCallbackTokenAsync(callback, [userContext])
+#### <a name="getcallbacktokenasynccallback-usercontext"></a>getCallbackTokenAsync(callback, [userContext])
 
 Exchange Server から添付ファイルやアイテムを取得するために使うトークンを含む文字列を取得します。
 
@@ -223,7 +231,7 @@ Exchange Server から添付ファイルやアイテムを取得するために�
 
 アプリが `getCallbackTokenAsync` メソッドを呼び出すには、アプリのマニフェスト内に **ReadItem** アクセス許可が指定されている必要があります。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
@@ -251,14 +259,14 @@ function cb(asyncResult) {
 }
 ```
 
-####  <a name="getuseridentitytokenasync(callback,-[usercontext])"></a>getUserIdentityTokenAsync(callback, [userContext])
+####  <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
 ユーザーと Office アドインを識別するトークンを取得します。
 
 
   `getUserIdentityTokenAsync` メソッドは、[アドインとユーザーをサード パーティのシステムで識別して認証](https://msdn.microsoft.com/EN-US/library/office/fp179828.aspx)することのできるトークンを返します。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|
@@ -286,9 +294,11 @@ function cb(asyncResult) {
 }
 ```
 
-####  <a name="makeewsrequestasync(data,-callback,-[usercontext])"></a>makeEwsRequestAsync(data, callback, [userContext])
+####  <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
-ユーザーのメールボックスをホストしている Exchange サーバー上の Exchange Web サービス (EWS) のサービスに対して非同期の要求を行ないます。
+ユーザーのメールボックスをホストしている Exchange サーバー上の Exchange Web サービス (EWS) のサービスに対して非同期の要求を行います。
+
+> **注:**このメソッドは、Outlook for iOS または Outlook for Android ではサポートされていません。
 
 `makeEwsRequestAsync` メソッドは、アドインの代わりに Exchange に EWS 要求を送信します。
 
@@ -314,7 +324,7 @@ XML 要求では UTF-8 エンコードを指定する必要があります。
 
 Outlook on the web でメール アプリを実行している場合は、エンコード値を設定する必要はありません。mailbox.diagnostics.hostName プロパティを使って、メール アプリを Outlook で実行しているのか、Outlook on the web で実行しているのかを確認できます。mailbox.diagnostics.hostVersion プロパティを使って、どのバージョンの Outlook を使って実行しているかを確認できます。
 
-##### <a name="parameters:"></a>パラメーター:
+##### <a name="parameters"></a>パラメーター:
 
 |名前| 型| 属性| 説明|
 |---|---|---|---|

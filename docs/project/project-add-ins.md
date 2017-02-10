@@ -47,10 +47,7 @@ Project アドイン の JavaScript ライブラリには、 **Office** 名前�
 
 複雑なカスタム アプリケーションを作成する場合、デバッグを容易にするためには、Visual Studio 2015 を使用してアドイン用の Web サイトを開発することをお勧めします。Visual Studio 2015 にはアドイン プロジェクト用のテンプレートが含まれており、アドインの種類 (作業ウィンドウ、コンテンツ、またはメール) とホスト アプリケーション (Project、Word、Excel、または Outlook) を選択できます。Project Online からのデータと統合する例については、MSDN の Project プログラミングのブログの「[Project 作業ウィンドウ アドインを PWA に接続する](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)」を参照してください。
 
-
- >**メモ**  Project 2013 リリースは、Napaをサポートしていません。
-
-Project 2013 SDK のダウンロード ファイルをインストールすると、 `\Samples\Apps\` サブディレクトリに以下のサンプル アドインが置かれます。
+Project 2013 SDK のダウンロード ファイルをインストールすると、`\Samples\Apps\` サブディレクトリに以下のサンプル アドインが置かれます。
 
 
 -  **Bing Search:**??BingSearch.xml マニフェスト ファイルでは、モバイル デバイス用の Bing の検索ページが指定されています。Bing の Web アドインは既にインターネット上に存在するため、Bing Search アドインでは他のソース コード ファイルや Project 用のアドイン オブジェクト モデルは使用しません。
@@ -66,7 +63,7 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
 マニフェスト ファイルでは、アドインの Web ページまたは Web アプリケーションの URL、アドインの種類 (Project 用の作業ウィンドウ アドイン)、他の言語とロケール用のコンテンツを表すオプションの URL、およびその他のプロパティを指定します。
 
 
-### <a name="procedure-1.-to-create-the-add-in-manifest-file-for-bing-search"></a>手順 1. Bing Search 用のアドインのマニフェスト ファイルを作成するには
+### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>手順 1. Bing Search 用のアドインのマニフェスト ファイルを作成するには
 
 
 - ローカル ディレクトリに XML ファイルを作成します。この XML ファイルには  **OfficeApp** 要素と子要素を記述します。詳細については「 [Office アドインの XML マニフェスト](../../docs/overview/add-in-manifests.md)」を参照してください。たとえば、以下の XML を記述したファイルを BingSearch.xml という名前で作成します。
@@ -153,7 +150,7 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 手順 2. では、Project 2013 がインストールされているローカル コンピューター上に Bing Search アドインをインストールします。しかし、アドインのインフラストラクチャでは  `C:\Project\AppManifests` などのローカル ファイル パスを直接使用しないので、ローカル コンピューター上にネットワーク共有を作成できます。希望に応じて、リモート コンピューター上にファイル共有を作成することもできます。
 
 
-### <a name="procedure-2.-to-install-the-bing-search-add-in"></a>手順 2. Bing Search アドインをインストールするには
+### <a name="procedure-2-to-install-the-bing-search-add-in"></a>手順 2. Bing Search アドインをインストールするには
 
 
 1. アドイン マニフェスト用のローカル ディレクトリを作成します。たとえば、 `C:\Project\AppManifests` ディレクトリを作成します。
@@ -172,7 +169,7 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 
     **図 1.セキュリティ センターを使用したアドインのマニフェストのカタログの追加**
 
-    ![セキュリティ センターを使用したアプリ マニフェストの追加](../../images/pj15_AgaveOverview_TrustCenter.PNG)
+    ![セキュリティ センターを使用してアプリ マニフェストを追加](../../images/pj15_AgaveOverview_TrustCenter.PNG)
 
 7. [ **プロジェクト**] リボンで、[ **Office アドイン**] ドロップダウン メニューの [ **すべて表示**] を選択します。[ **アドインの挿入**] ダイアログ ボックスで、[ **共有フォルダー**] を選択します (図 2 を参照)。
     

@@ -19,7 +19,7 @@ Word 2013 または PowerPoint 2013 のドキュメントをワンクリック�
     
 - アドインの XML マニフェスト ファイル (GetDoc_App.xml)。共有ネットワーク フォルダーまたはアドイン カタログで使用できます。このマニフェスト ファイルでは、上述の HTML ファイルの場所を指していることが必要です。
     
-PowerPoint または Word 用アドインの作成には、Visual Studio 2015 または Napa Office 365 開発ツール を使用することもできます。Office アドインの作成方法の詳細については、表 1 を参照してください。
+また、[Visual Studio 2015](get-started/create-and-debug-office-add-ins-in-visual-studio) や[任意のエディター](get-started/create-an-office-add-in-using-any-editor)を使用して、PowerPoint や Word 用アドインを作成できます。 
 
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>作業ウィンドウ アドインを作成するために知っておくべき主要な概念

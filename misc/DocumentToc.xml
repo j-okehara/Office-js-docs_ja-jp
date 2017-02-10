@@ -8,8 +8,7 @@
 	</Item>
   <Item text="作業の開始" url="get-started">
     <Item text="Visual Studio の使用" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="Visual Studio で Office アドインの構築を開始する" />
-	  <Item text="任意のエディターを使用する" url="get-started/create-an-office-add-in-using-any-editor" SEODescription="Mac や Windows PC 上で任意のエディターを使って Office アドインの構築を開始する" />
-    <Item text="Napa を使用する" url="get-started/create-an-office-add-in-with-napa" SEODescription="ブラウザーから Napa Office 365 開発ツールを使用して、Excel、Outlook、PowerPoint、Project、Word 用の基本的なコンテンツ アドイン 、作業ウィンドウ アドイン、Outlook アドインを作成することから、Office アドインを始めます。" />
+	  <Item text="任意のエディターを使用する" url="get-started/create-an-office-add-in-using-any-editor" SEODescription="Mac や Windows PC 上で任意のエディターを使って Office アドインの構築を開始します。" />
   </Item>
   <Item text="デザイン" url="design/add-in-design">
       <Item text="UI 要素" url="design/ui-elements/ui-elements" SEODescription="アドイン コマンド、Fabric UI、およびカスタム HTML インターフェイスを使用して、魅力的なアドイン ユーザー インターフェイスにします。">
@@ -23,6 +22,7 @@
 	<Item text="Excel、Word、PowerPoint のアドイン コマンド" url="design/add-in-commands" SEODescription="アドインでアドイン コマンドを使用して、Excel、Word、PowerPoint の既定の Office UI を拡張します。" />
   	<Item text="アドイン コマンドのアイコンをデザインする" url="design/design-icons" SEODescription="Office UI とシームレスに統合するアドイン コマンドのアイコンをデザインします。" />
 	<Item text="データのビジュアル化のスタイル ガイドライン" url="design/data-visualization-guidelines" SEODescription="Office アドインでのデータのビジュアル化のガイドラインを提供します。" />
+	<Item text="ユーザビリティ テスト" url="design/usability-testing" />
     	<Item text="音声のガイドライン" url="design/voice-guidelines" SEODescription="Office アドインの UI テキストに使用する音声のためのガイドラインについて説明します。" />
     	<Item text="アクセシビリティ ガイドライン" url="design/accessibility-guidelines" SEODescription="すべてのユーザーが Office アドインにアクセスできるようにする方法を確認します。" />
     </Item>
@@ -64,7 +64,7 @@
 	</Item>
   <Item text="発行する" url="publish/publish">
     <Item text="Microsoft Azure で Office アドインをホストする" url="publish/host-an-office-add-in-on-microsoft-azure" SEODescription="Visual Studio 2015 および Microsoft Office Developer Tools を使用して、Office アドインを発行した後に Microsoft Azure でホストします。" />
-    <Item text="Napa または Visual Studio を使用してアドインをパッケージ化する" url="publish/package-your-add-in-using-napa-or-visual-studio" SEODescription="発行できるように Office アドインをパッケージ化します。" />
+    <Item text="Visual Studio を使用してアドインをパッケージ化する" url="publish/package-your-add-in-using-visual-studio" SEODescription="発行できるように Office アドインをパッケージ化します。" />
     <Item text="作業ウィンドウ アドインとコンテンツ アドインをアドイン カタログに発行する" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Office の [アドイン] ダイアログ ボックスからアドインを使用できるように Office クライアントを構成する" />
 	<Item text="Office ストアへのアドインの提出" url="https://msdn.microsoft.com/en-us/library/office/jj220037.aspx" IsExternal="true" />
   </Item>
@@ -87,48 +87,53 @@
   
   <Item text="Outlook" url="outlook/outlook-add-ins" SEODescription="閲覧モードまたは新規作成モードの Outlook アドインを作成します。" Scope="outlook">
     <Item text="概要" url="outlook/overview" SEODescription="Outlook アドインのアーキテクチャと機能について説明します。" Scope="outlook" />
+    <Item text="Outlook アドインの設計ガイドライン" url="outlook/outlook-addin-design" SEODescription="Outlook アドインの設計について説明します。" Scope="outlook" />
     <Item text="Outlook のアドイン コマンド" url="outlook/add-in-commands-for-outlook" SEODescription="アドイン コマンドを使用して、Outlook アドインを Outlook UI と統合します。" Scope="outlook" />
+    <Item text="Outlook Mobile のアドイン" url="outlook/outlook-mobile-addins" SEODescription="Outlook Mobile のアドインの開発について説明します。" Scope="outlook" />
     <Item text="コンテキスト Outlook アドイン" url="outlook/contextual-outlook-add-ins" SEODescription="メッセージまたは予定で指定されたテキストに基づいて、Outlook アドインをアクティブにします。" Scope="outlook" />
     <Item text="Outlook アドインのモジュール拡張機能" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="モジュール拡張機能をナビゲーション バーに追加することによって、Outlook UI を拡張します。" /> 
-	<Item text="API" url="outlook/apis" SEODescription="Outlook アドインに必要な API を指定する方法について説明します。" Scope="outlook" />
-	<Item text="マニフェスト" url="outlook/manifests/manifests" Scope="outlook" SEODescription="閲覧フォームまたは新規作成フォーム用の Outlook アドインのマニフェストを作成します。">
-      <Item text="アクティブ化ルール" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Outlook アドイン マニフェストでアクティブ化ルールを定義して、Outlook がいつアドインを表示するかを指定します。" Scope="outlook" />
-      <Item text="アドイン コマンドを定義する" url="outlook/manifests/define-add-in-commands" SEODescription="Outlook アドイン マニフェストの VersionOverrides 要素を使用して、アドインのコマンドを定義します。" Scope="outlook" />
-      <Item text="ピン留め可能な作業ウィンドウ" url="outlook/manifests/pinnable-taskpane" SEODescription="Outlook アドインにピン留め可能な作業ウィンドウを実装します。" Scope="outlook" />
-  </Item>
-  <Item text="読み取りまたは新規作成フォーム内のアイテム データを取得および設定する" url="outlook/item-data" SEODescription="Office アドインから予定またはメッセージのデータを取得または設定する方法について説明します。" Scope="outlook" />
-	<Item text="アドインのメタデータを取得および設定する" url="outlook/metadata-for-an-outlook-add-in" SEODescription="Outlook アドインのみがアクセスできるカスタム データを、ローミング設定とカスタム プロパティを使用して読み込んで格納する方法について説明します。" Scope="outlook" />
-	<Item text="プライバシーとセキュリティ" url="outlook/privacy-and-security" SEODescription="エンド ユーザー" Scope="outlook">
-		<Item text="Outlook アドインのアクセス許可を理解する" url="outlook/understanding-outlook-add-in-permissions" SEODescription="Outlook アドイン マニフェストにアクセス許可レベルを指定します。" />
+    <Item text="ピン留め可能な作業ウィンドウ" url="outlook/manifests/pinnable-taskpane" SEODescription="Outlook アドインにピン留め可能な作業ウィンドウを実装します。" Scope="outlook" />
+	  <Item text="API" url="outlook/apis" SEODescription="Outlook アドインに必要な API を指定する方法について説明します。" Scope="outlook" />
+    <Item text="マニフェスト" url="outlook/manifests/manifests" Scope="outlook" SEODescription="閲覧フォームまたは新規作成フォーム用の Outlook アドインのマニフェストを作成します。">
+        <Item text="アクティブ化ルール" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Outlook アドイン マニフェストでアクティブ化ルールを定義して、Outlook がいつアドインを表示するかを指定します。" Scope="outlook" />
+        <Item text="アドイン コマンドを定義する" url="outlook/manifests/define-add-in-commands" SEODescription="Outlook アドイン マニフェストの VersionOverrides 要素を使用して、アドインのコマンドを定義します。" Scope="outlook" />
+        <Item text="Outlook Mobile のサポートの追加" url="outlook/manifests/add-mobile-support" SEODescription="Outlook Mobile のサポートをアドインに追加する方法について説明します。" Scope="outlook" />
     </Item>
-	<Item text="閲覧シナリオ" url="outlook/read-scenario" SEODescription="閲覧シナリオ用の Outlook アドインの作成方法と、使用可能な API 機能について説明します。" Scope="outlook">
-		<Item text="正規表現を使用して Outlook アドインを表示する" url="outlook/use-regular-expressions-to-show-an-outlook-add-in" SEODescription="閲覧シナリオでの Outlook アドインの該当条件を正規表現を使用して指定する方法、および Outlook が UI にアドインを表示することについて説明します。" Scope="outlook" />
-		<Item text="アイテム内の文字列を既知のエンティティとして照合する" url="outlook/match-strings-in-an-item-as-well-known-entities" SEODescription="特定の文字列パターンを認識して、Outlook アドインをアクティブ化したり、これらの文字列照合をさらに処理できるようにしたりします。" Scope="outlook" />
-		<Item text="アイテムからエンティティ文字列を抽出する" url="outlook/extract-entity-strings-from-an-item" SEODescription="特定の文字列パターンを認識して、Outlook アドインをアクティブ化したり、これらの文字列照合をさらに処理できるようにしたりします。" Scope="outlook" />
-		<Item text="Outlook アイテムの添付ファイルを取得する" url="outlook/get-attachments-of-an-outlook-item" SEODescription="Outlook アドインを使用して、サービスが Exchange サーバーから添付ファイルを取得できるようにします。" Scope="outlook" />
-	</Item>
-	<Item text="新規作成シナリオ" url="outlook/compose-scenario" SEODescription="閲覧シナリオ用の Outlook アドインの作成方法と、使用可能な API 機能について説明します。" Scope="outlook">
-		<Item text="新規作成フォームのアイテムで添付ファイルを追加および削除する" url="outlook/add-and-remove-attachments-to-an-item-in-a-compose-form" SEODescription="Outlook アドインから非同期メソッドと Exchange Web サービス (EWS) ID を使用して、ユーザーが Outlook で作成しているアイテムに添付ファイルを追加する、JavaScript の例をご覧ください。" Scope="outlook" /><Item text="新規作成フォームのアイテム データを取得および設定する" url="outlook/get-and-set-item-data-in-a-compose-form" FriendlyUrl="outlook/composeget-and-set-item-data-in-a-compose-form" SEODescription="新規作成シナリオで Office アドインのアイテムのさまざまなプロパティを取得または設定する方法について説明します。" Scope="outlook" />
-		<Item text="受信者を取得、設定、または追加する" url="outlook/get-set-or-add-recipients" />
-		<Item text="件名を取得または設定する" url="outlook/get-or-set-the-subject" SEODescription="ユーザーが Outlook で予定またはメッセージを作成しているときに Outlook アドインから件名を取得または設定する方法について説明します。" Scope="outlook" />
-		<Item text="本体にデータを挿入する" url="outlook/insert-data-in-the-body" SEODescription="ユーザーが Outlook アドインから作成している予定またはメッセージの本文にデータを挿入する方法について説明します。" Scope="outlook" />	
-		<Item text="予定の場所を取得または設定する" url="outlook/get-or-set-the-location-of-an-appointment" SEODescription="ユーザーが Outlook で予定を作成しているときに Outlook アドインから場所を取得または設定する方法について説明します。" Scope="outlook" />
-		<Item text="予定の時刻を取得または設定する" url="outlook/get-or-set-the-time-of-an-appointment" SEODescription="Outlook アドインから予定の時刻を取得または設定する方法について説明します。" Scope="outlook" />
-	</Item>
-	<Item text="Web サービスを呼び出す" url="outlook/web-services" SEODescription="Outlook 用 Outlook アドインから EWS または他の Web サービスを呼び出す方法について説明します。" Scope="outlook" />
-	<Item text="認証" url="outlook/authentication" SEODescription="Exchange 2013 の ID トークンを使用して Outlook アドインを認証する方法について説明します。" Scope="outlook">
-		<Item text="ID トークンの内部" url="outlook/inside-the-identity-token" SEODescription="Exchange 2013 の ID トークンの中身について説明します。" Scope="outlook" />
-		<Item text="ID トークンを使用してサービスを呼び出す" url="outlook/call-a-service-by-using-an-identity-token" SEODescription="ID トークンを使用して、Outlook アドインのユーザーのメール アカウントを Web サービスが提供する情報に結び付ける方法について説明します。" Scope="outlook" />
-		<Item text="トークン検証ライブラリを使用する" url="outlook/use-the-token-validation-library" SEODescription="EWS マネージ API 検証ライブラリを使用して、Exchange の ID トークンを検証する方法について説明します。" Scope="outlook" />
-		<Item text="ID トークンを検証する" url="outlook/validate-an-identity-token" SEODescription="ID トークンを使用して、Outlook アドインのユーザーのメール アカウントを Web サービスが提供する情報に結び付ける方法について説明します。" Scope="outlook" />
-		<Item text="PHP を使用して ID トークンを検証する" url="outlook/use-php-to-validate-an-identity-token" SEODescription="PHP を使用して、Outlook アドインのユーザーのメール アカウントをサービスが提供する情報に結び付ける、Exchange 2013 の ID トークンを検証する方法について説明します。" Scope="outlook" />
-		<Item text="ID トークンを使用してユーザーを認証する" url="outlook/authenticate-a-user-with-an-identity-token" SEODescription="ID トークンによって表される一意の ID とサービスの資格情報のセットを認証オブジェクトがどのように対応付けるかを示すコード例をご覧ください。" Scope="outlook" /></Item>
-	<Item text="テストとヒント" url="outlook/testing-and-tips" FriendlyUrl="outlook/testingtesting-and-tips" Scope="outlook">
-		<Item text="Outlook for Mac の Outlook アドイン サポートの比較" url="outlook/compare-outlook-add-in-support-in-outlook-for-mac" SEOKeyword="不正なリンクを dev.office.com に送信します。 表の箇条書きのリストを修正しました。" Scope="outlook" />
-		<Item text="Outlook アドインで日付値を処理するためのヒント" url="outlook/tips-for-handling-date-values-in-outlook-add-ins" Scope="outlook" SEODescription="Date オブジェクトを使用して、Outlook アドインで日付値を処理します。" />
-		<Item text="Outlook アドインのアクティブ化と JavaScript API の制限" url="outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins" Scope="outlook" SEODescription="Outlook アドインがアクティブ化と API の使用法のガイドラインを超えないことを確認します。" />
-		<Item text="Outlook アドインのアクティブ化のトラブルシューティングを行う" url="outlook/troubleshoot-outlook-add-in-activation" SEODescription="Outlook アドインのアクティブ化はコンテキストに応じて行われ、アドイン マニフェストの規則に基づきます。インストールされているアドインが Outlook でアクティブにならないことがある理由を解説します。" Scope="outlook" />
-	 </Item>  
+    <Item text="Outlook REST API を呼び出す" url="outlook/use-rest-api" SEODescription="Outlook アドインから REST API を認証して呼び出す方法について説明します。" Scope="outlook" />
+    <Item text="読み取りまたは新規作成フォーム内のアイテム データを取得および設定する" url="outlook/item-data" SEODescription="Office アドインから予定またはメッセージのデータを取得または設定する方法について説明します。" Scope="outlook" />
+    <Item text="アドインのメタデータを取得および設定する" url="outlook/metadata-for-an-outlook-add-in" SEODescription="Outlook アドインのみがアクセスできるカスタム データを、ローミング設定とカスタム プロパティを使用して読み込んで格納する方法について説明します。" Scope="outlook" />
+    <Item text="プライバシーとセキュリティ" url="outlook/privacy-and-security" SEODescription="エンド ユーザー" Scope="outlook">
+      <Item text="Outlook アドインのアクセス許可を理解する" url="outlook/understanding-outlook-add-in-permissions" SEODescription="Outlook アドイン マニフェストにアクセス許可レベルを指定します。" />
+    </Item>
+    <Item text="閲覧シナリオ" url="outlook/read-scenario" SEODescription="閲覧シナリオ用の Outlook アドインの作成方法と、使用可能な API 機能について説明します。" Scope="outlook">
+      <Item text="正規表現を使用して Outlook アドインを表示する" url="outlook/use-regular-expressions-to-show-an-outlook-add-in" SEODescription="閲覧シナリオでの Outlook アドインの該当条件を正規表現を使用して指定する方法、および Outlook が UI にアドインを表示することについて説明します。" Scope="outlook" />
+      <Item text="アイテム内の文字列を既知のエンティティとして照合する" url="outlook/match-strings-in-an-item-as-well-known-entities" SEODescription="特定の文字列パターンを認識して、Outlook アドインをアクティブ化したり、これらの文字列照合をさらに処理できるようにしたりします。" Scope="outlook" />
+      <Item text="アイテムからエンティティ文字列を抽出する" url="outlook/extract-entity-strings-from-an-item" SEODescription="特定の文字列パターンを認識して、Outlook アドインをアクティブ化したり、これらの文字列照合をさらに処理できるようにしたりします。" Scope="outlook" />
+      <Item text="Outlook アイテムの添付ファイルを取得する" url="outlook/get-attachments-of-an-outlook-item" SEODescription="Outlook アドインを使用して、サービスが Exchange サーバーから添付ファイルを取得できるようにします。" Scope="outlook" />
+    </Item>
+    <Item text="新規作成シナリオ" url="outlook/compose-scenario" SEODescription="閲覧シナリオ用の Outlook アドインの作成方法と、使用可能な API 機能について説明します。" Scope="outlook">
+      <Item text="新規作成フォームのアイテムで添付ファイルを追加および削除する" url="outlook/add-and-remove-attachments-to-an-item-in-a-compose-form" SEODescription="Outlook アドインから非同期メソッドと Exchange Web サービス (EWS) ID を使用して、ユーザーが Outlook で作成しているアイテムに添付ファイルを追加する、JavaScript の例をご覧ください。" Scope="outlook" /><Item text="新規作成フォームのアイテム データを取得および設定する" url="outlook/get-and-set-item-data-in-a-compose-form" FriendlyUrl="outlook/composeget-and-set-item-data-in-a-compose-form" SEODescription="新規作成シナリオで Office アドインのアイテムのさまざまなプロパティを取得または設定する方法について説明します。" Scope="outlook" />
+      <Item text="受信者を取得、設定、または追加する" url="outlook/get-set-or-add-recipients" />
+      <Item text="件名を取得または設定する" url="outlook/get-or-set-the-subject" SEODescription="ユーザーが Outlook で予定またはメッセージを作成しているときに Outlook アドインから件名を取得または設定する方法について説明します。" Scope="outlook" />
+      <Item text="本体にデータを挿入する" url="outlook/insert-data-in-the-body" SEODescription="ユーザーが Outlook アドインから作成している予定またはメッセージの本文にデータを挿入する方法について説明します。" Scope="outlook" />	
+      <Item text="予定の場所を取得または設定する" url="outlook/get-or-set-the-location-of-an-appointment" SEODescription="ユーザーが Outlook で予定を作成しているときに Outlook アドインから場所を取得または設定する方法について説明します。" Scope="outlook" />
+      <Item text="予定の時刻を取得または設定する" url="outlook/get-or-set-the-time-of-an-appointment" SEODescription="Outlook アドインから予定の時刻を取得または設定する方法について説明します。" Scope="outlook" />
+    </Item>
+	  <Item text="Web サービスを呼び出す" url="outlook/web-services" SEODescription="Outlook 用 Outlook アドインから EWS または他の Web サービスを呼び出す方法について説明します。" Scope="outlook" />
+    <Item text="認証" url="outlook/authentication" SEODescription="Exchange 2013 の ID トークンを使用して Outlook アドインを認証する方法について説明します。" Scope="outlook">
+      <Item text="ID トークンの内部" url="outlook/inside-the-identity-token" SEODescription="Exchange 2013 の ID トークンの中身について説明します。" Scope="outlook" />
+      <Item text="ID トークンを使用してサービスを呼び出す" url="outlook/call-a-service-by-using-an-identity-token" SEODescription="ID トークンを使用して、Outlook アドインのユーザーのメール アカウントを Web サービスが提供する情報に結び付ける方法について説明します。" Scope="outlook" />
+      <Item text="トークン検証ライブラリを使用する" url="outlook/use-the-token-validation-library" SEODescription="EWS マネージ API 検証ライブラリを使用して、Exchange の ID トークンを検証する方法について説明します。" Scope="outlook" />
+      <Item text="ID トークンを検証する" url="outlook/validate-an-identity-token" SEODescription="ID トークンを使用して、Outlook アドインのユーザーのメール アカウントを Web サービスが提供する情報に結び付ける方法について説明します。" Scope="outlook" />
+      <Item text="PHP を使用して ID トークンを検証する" url="outlook/use-php-to-validate-an-identity-token" SEODescription="PHP を使用して、Outlook アドインのユーザーのメール アカウントをサービスが提供する情報に結び付ける、Exchange 2013 の ID トークンを検証する方法について説明します。" Scope="outlook" />
+      <Item text="ID トークンを使用してユーザーを認証する" url="outlook/authenticate-a-user-with-an-identity-token" SEODescription="ID トークンによって表される一意の ID とサービスの資格情報のセットを認証オブジェクトがどのように対応付けるかを示すコード例をご覧ください。" Scope="outlook" />    
+    </Item>
+    <Item text="テストとヒント" url="outlook/testing-and-tips" FriendlyUrl="outlook/testingtesting-and-tips" Scope="outlook">
+      <Item text="Outlook for Mac の Outlook アドイン サポートの比較" url="outlook/compare-outlook-add-in-support-in-outlook-for-mac" SEOKeyword="不正なリンクを dev.office.com に送信します。 表の箇条書きのリストを修正しました。" Scope="outlook" />
+      <Item text="Outlook アドインで日付値を処理するためのヒント" url="outlook/tips-for-handling-date-values-in-outlook-add-ins" Scope="outlook" SEODescription="Date オブジェクトを使用して、Outlook アドインで日付値を処理します。" />
+      <Item text="Outlook アドインのアクティブ化と JavaScript API の制限" url="outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins" Scope="outlook" SEODescription="Outlook アドインがアクティブ化と API の使用法のガイドラインを超えないことを確認します。" />
+      <Item text="Outlook アドインのアクティブ化のトラブルシューティングを行う" url="outlook/troubleshoot-outlook-add-in-activation" SEODescription="Outlook アドインのアクティブ化はコンテキストに応じて行われ、アドイン マニフェストの規則に基づきます。インストールされているアドインが Outlook でアクティブにならないことがある理由を解説します。" Scope="outlook" />
+    </Item>  
 	</Item>
   <Item text="PowerPoint" url="powerpoint/powerpoint-add-ins" Scope="powerpoint">
 	<Item text="PowerPoint アドインでドキュメントのテーマを使用する" url="powerpoint/use-document-themes-in-your-powerpoint-add-ins" Scope="powerpoint" SEODescription="PowerPoint アドインにテーマを適用する" />

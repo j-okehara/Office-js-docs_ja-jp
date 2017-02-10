@@ -15,7 +15,7 @@ Office アドインをインストールおよび実行できるようにする�
 すべての種類のアドイン (コンテンツ、Outlook、作業ウィンドウの、アドインとアドイン コマンド) で、アドインの Web ページ ファイルを Web サーバーや [Microsoft Azure](../publish/host-an-office-add-in-on-microsoft-azure.md) などの Web ホスティング サービスに展開する必要があります。
 
 
- >**注：** Visual Studio でアドインの開発とデバッグを行う場合、Visual Studio は IIS Express を使ってローカルにアドインの Web ページ ファイルを展開して実行するため、追加の Web サーバーは不要になります。同様に、ブラウザーで Napa を使って開発とデバッグを行う場合は、Napa へのサインインに使うアカウントに関連付けられたストレージからアドインの Web ページのファイルを展開して実行します。
+ >**注:** Visual Studio でアドインを開発およびデバッグする際、Visual Studio は IIS Express を使用してアドインの Web ページ ファイルをローカルで展開および実行するので、追加の Web サーバーは必要ありません。 
 
 サポートされている Office ホスト アプリケーション (Access Web アプリ、Word、Excel、PowerPoint、または Project) のコンテンツ アドインと作業ウィンドウ アドインでは、アドインの XML マニフェスト ファイルをアップロードするために、SharePoint の [アドイン カタログ](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)も必要になります。
 

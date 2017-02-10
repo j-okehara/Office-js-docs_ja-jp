@@ -1,22 +1,19 @@
 
-# <a name="create-a-dictionary-task-pane-addin"></a>辞書の作業ウィンドウ アドインを作成する
+# <a name="create-a-dictionary-task-pane-add-in"></a>辞書の作業ウィンドウ アドインを作成する
 
 
 この記事では、Word 2013 のドキュメントでユーザーの現在の選択範囲に対応する辞書の定義や類義語辞典の類義語を表示する作業ウィンドウ アドインの例と、それに付随する Web サービスについて取り上げます。 
 
 辞書の Office アドインは、標準的な作業ウィンドウ アドインを基盤として、辞書の XML Web サービスに対するクエリの機能と、取得した定義を Office アプリケーションの UI 上の別の場所に表示する機能が追加されたものです。 
 
-一般的な辞書作業ウィンドウ アドインの場合、ユーザーが自分のドキュメントで単語または語句を選択すると、アドインの背景にある JavaScript ロジックにより、この選択はディクショナリ プロバイダーの XML Web サービスに渡されます。
-ディクショナリ プロバイダーの Web ページは更新され、ユーザーに選択範囲の定義が表示されます。XML Web サービス コンポーネントは、OfficeDefinitions XML スキーマが定める形式で、最大 3 つの定義を返します。アプリはこれを、ホストの Office アプリケーションの UI 上の別の場所に表示します。
-図 1 は、Word 2013 で実行されている Bing ブランドの辞書アドインの選択および表示エクスペリエンスを示しています。
+一般的な辞書作業ウィンドウ アドインの場合、ユーザーが自分のドキュメントで単語または語句を選択すると、アドインの背景にある JavaScript ロジックにより、この選択はディクショナリ プロバイダーの XML Web サービスに渡されます。ディクショナリ プロバイダーの Web ページは更新され、ユーザーに選択範囲の定義が表示されます。XML Web サービス コンポーネントは、OfficeDefinitions XML スキーマが定める形式で、最大 3 つの定義を返します。アプリはこれを、ホストの Office アプリケーションの UI 上の別の場所に表示します。図 1 は、Word 2013 で実行されている Bing ブランドの辞書アドインの選択および表示エクスペリエンスを示しています。
 
 **図 1.選択した語句の定義を表示する辞書アドイン**
 
 
 ![定義が表示されている辞書アプリ](../../images/DictionaryAgave01.jpg)
 
-辞書アドインの HTML UI で 「**さらに表示**」リンクをクリックして、作業ウィンドウ内に詳細情報を表示するか、別のブラウザー ウィンドウを開いて、選択した単語または語句の完全な Web ページを表示するかはユーザー次第です。図 2 は、ユーザーがインストール済みの辞書を簡単に起動するための、**[定義]** コンテキスト メニュー コマンドを示しています。
-図 3 から 5 は、辞書 XML サービスを使用して Word 2013 で定義を提供する、Office UI の場所を示しています。
+辞書アドインの HTML UI で 「**さらに表示**」リンクをクリックして、作業ウィンドウ内に詳細情報を表示するか、別のブラウザー ウィンドウを開いて、選択した単語または語句の完全な Web ページを表示するかはユーザー次第です。図 2 は、ユーザーがインストール済みの辞書を簡単に起動するための、**[定義]** コンテキスト メニュー コマンドを示しています。図 3 から 5 は、辞書 XML サービスを使用して Word 2013 で定義を提供する、Office UI の場所を示しています。
 
 **図 2.コンテキスト メニューの定義コマンド**
 
@@ -181,7 +178,7 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-## <a name="creating-the-components-of-a-dictionary-addin"></a>辞書アドインのコンポーネントの作成
+## <a name="creating-the-components-of-a-dictionary-add-in"></a>辞書アドインのコンポーネントの作成
 
 
 辞書アドインは 3 つの主要なコンポーネント ファイルで構成されます。
@@ -194,7 +191,7 @@ public class WebService : System.Web.Services.WebService {
 - ユーザーの選択範囲をドキュメントから取得し、選択範囲をクエリとして Web サービスに送信し、返された結果をアドインの UI に表示するロジックを記述した JavaScript ファイル。
     
 
-### <a name="creating-a-dictionary-addins-manifest-file"></a>辞書アドインのマニフェスト ファイルの作成
+### <a name="creating-a-dictionary-add-ins-manifest-file"></a>辞書アドインのマニフェスト ファイルの作成
 
 辞書アドインのマニフェスト ファイルの例を次に示します。
 
@@ -202,7 +199,7 @@ public class WebService : System.Web.Services.WebService {
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
-  <Id>DemoDict</Id>
+  <Id>7164e750-dc86-49c0-b548-1bac57abdc7c</Id>
   <Version>15.0</Version>
   <ProviderName>Microsoft Office Demo Dictionary</ProviderName>
   <DefaultLocale>en-us</DefaultLocale>
@@ -444,7 +441,7 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
 ```
 
 
-### <a name="creating-a-dictionary-addins-html-user-interface"></a>辞書アドインの HTML ユーザー インターフェイスの作成
+### <a name="creating-a-dictionary-add-ins-html-user-interface"></a>辞書アドインの HTML ユーザー インターフェイスの作成
 
 
 次の 2 つの例は、デモの辞書アドインの UI の HTML ファイルと CSS ファイルを示します。アドインの作業ウィンドウでの UI の表示については、コードの下の図 6 を参照してください。Dictionary.js ファイル内の JavaScript の実装でこの HTML の UI のプログラミング ロジックを実現する方法については、次の「JavaScript の実装の記述」を参照してください。

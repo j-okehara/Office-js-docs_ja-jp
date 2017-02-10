@@ -1,15 +1,15 @@
 
-# <a name="publish-task-pane-and-content-addins-to-a-sharepoint-catalog"></a>作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する
+# <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a>作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する
 
 >**注:**クラウド環境またはハイブリッド環境をターゲットにしている場合は、[管理センターのプレビュー](https://support.office.com/en-ie/article/Deploy-Office-Add-ins-in-the-Office-365-new-Admin-Center-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE)経由で集中管理された展開によって、アドインを発行することをお勧めします。
 
 アドイン カタログは、Office アドインと SharePoint アドインのドキュメント ライブラリをホストする SharePoint Web アプリケーションまたは SharePoint Online テナンシーの専用サイト コレクションです。管理者は、組織の Office アドイン マニフェスト ファイルをアドイン カタログにアップロードできます。管理者がアドイン カタログを信頼できるカタログとして登録すると、ユーザーは Office クライアント アプリケーションで挿入 UI からアドインを挿入できます。
 
->**注:**SharePoint のアドイン カタログでは、[アドイン マニフェスト](../overview/add-in-manifests.md)の VersionOverride ノードに実装されているアドイン機能はサポートされていません。
+>**注:**SharePoint のアドイン カタログでは、アドイン コマンドなど、[アドイン マニフェスト](../overview/add-in-manifests.md)の VersionOverride ノードに実装されているアドイン機能はサポートされていません。 
 
 SharePoint カタログは Office 2016 for Mac ではサポートされていません。Office アドインを Mac クライアントに展開するには、それを [Office ストア](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)に提出する必要があります。   
 
-## <a name="to-set-up-an-addin-catalog-on-sharepoint"></a>SharePoint 上でアドイン カタログをセットアップするには
+## <a name="to-set-up-an-add-in-catalog-on-sharepoint"></a>SharePoint 上でアドイン カタログをセットアップするには
 
 1. **中央管理サイト**を参照 (**[スタート]** > **[すべてのプログラム]** > **[Microsoft SharePoint 2013 製品]** > **[SharePoint 2013 サーバーの全体管理]**の順にクリック) します。
     
@@ -29,7 +29,7 @@ SharePoint カタログは Office 2016 for Mac ではサポートされていま
     
 9. アドインを Office アドイン アドイン カタログに追加するには、[ **Office アドイン**] を選択します。
 
-## <a name="to-set-up-an-addin-catalog-on-office-365"></a>Office 365 でアドイン カタログをセットアップするには
+## <a name="to-set-up-an-add-in-catalog-on-office-365"></a>Office 365 でアドイン カタログをセットアップするには
 
 1. [Office 365 管理センター] ページで、 **[管理]**、 **[SharePoint]** の順にクリックします。
     
@@ -51,7 +51,7 @@ SharePoint カタログは Office 2016 for Mac ではサポートされていま
     
 アドインをアドイン カタログ サイトに追加するために、作成したばかりのサイトを参照します。左側のナビゲーション ウィンドウで、 [ **Office アドイン**] を選択してから、Office アドイン マニフェスト ファイルをアップロードするために、[ **新しいアドイン**] を選択します。    
 
-## <a name="publish-to-an-addin-catalog"></a>アドイン カタログへの発行
+## <a name="publish-to-an-add-in-catalog"></a>アドイン カタログへの発行
 
 
 1. アドイン カタログを参照します。

@@ -16,13 +16,13 @@ Outlook アドインに診断情報を提供します。
 
 ### <a name="members"></a>メンバー
 
-####  <a name="hostname-:string"></a>hostName :String
+####  <a name="hostname-string"></a>hostName :String
 
 ホスト アプリケーションの名前を表す文字列を取得します。
 
-文字列は、値 `Outlook`、`Mac Outlook`、または `OutlookWebApp` のいずれかになります。
+文字列は、値 `Outlook`、`Mac Outlook`、`OutlookIOS`、または `OutlookWebApp` のいずれかになります。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   String
 
@@ -33,13 +33,13 @@ Outlook アドインに診断情報を提供します。
 |[メールボックスの最小要件セットのバージョン](./tutorial-api-requirement-sets.md)| 1.0|
 |[最小限のアクセス許可レベル](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 作成または読み取り|
-####  <a name="hostversion-:string"></a>hostVersion :String
+####  <a name="hostversion-string"></a>hostVersion :String
 
 ホスト アプリケーションまたは Exchange Server のバージョンを表す文字列を取得します。
 
-メール アドインを Outlook デスクトップ クライアントで実行している場合、`hostVersion` プロパティはホスト アプリケーションである Outlook のバージョンを返します。Outlook Web App では、このプロパティは Exchange Server のバージョンを返します。たとえば、文字列 `15.0.468.0` などです。
+メール アドインを Outlook デスクトップ クライアントまたは Outlook for iOS で実行している場合、`hostVersion` プロパティは、ホスト アプリケーションである Outlook のバージョンを返します。Outlook Web App では、プロパティは、Exchange Server のバージョンを返します。たとえば、文字列 `15.0.468.0` です。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   String
 
@@ -50,7 +50,7 @@ Outlook アドインに診断情報を提供します。
 |[メールボックスの最小要件セットのバージョン](./tutorial-api-requirement-sets.md)| 1.0|
 |[最小限のアクセス許可レベル](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |適用可能な Outlook のモード| 作成または読み取り|
-####  <a name="owaview-:string"></a>OWAView :String
+####  <a name="owaview-string"></a>OWAView :String
 
 Outlook Web App の現在のビューを表す文字列を取得します。
 
@@ -64,7 +64,7 @@ Outlook Web App には、画面とウィンドウの幅、および表示可能�
 *   画面幅がやや広い場合に表示される `TwoColumns`。Outlook Web App は、ほとんどのタブレットでこのビューを使用します。
 *   画面幅が広い場合に表示される `ThreeColumns`。Outlook Web App は、デスクトップ コンピューターのフル スクリーン ウィンドウなどでこのビューを使用します。
 
-##### <a name="type:"></a>型:
+##### <a name="type"></a>型:
 
 *   String
 
