@@ -14,11 +14,11 @@
 
 > **注:**複数のプラットフォームにまたがってアドインのユーザビリティをテストすることをお勧めします。[Office ストアにアドインを公開する](https://msdn.microsoft.com/en-us/library/office/jj220037.aspx)には、[定義したメソッドをサポートするプラットフォーム](https://dev.office.com/add-in-availability)すべてでそのアドインが作動する必要があります。
 
-## <a name="1---sign-up-for-a-testing-service"></a>1. テスト サービスにサインアップします。
+## <a name="1----sign-up-for-a-testing-service"></a>1.  テスト サービスにサインアップする
 
-詳細については、[モデレートされていないリモート ユーザー テスト用のオンライン ツールの選択](https://www.nngroup.com/articles/unmoderated-user-testing-tools/)を参照してください。
+詳細については、「[Selecting an Online Tool for Unmoderated Remote User Testing (モデレートされていないリモート ユーザー テスト用のオンライン ツールの選択)](https://www.nngroup.com/articles/unmoderated-user-testing-tools/)」をご覧ください。
 
-## <a name="2-develop-your-research-questions"></a>2. 調査での質問項目を設定します。
+## <a name="2-develop-your-research-questions"></a>2.調査での質問項目を設定する
  
 調査での質問項目を設定することにより、調査の目的を定義し、テストの計画を導いていることになります。質問項目は、募集する参加者や実行するタスクを特定するのに役立ちます。調査での質問項目は、可能な限り具体的に設定してください。広範な質問に回答するように努めることもできます。
  
@@ -47,38 +47,38 @@
 
 詳細については、[効果的な質問の作成](http://help.usertesting.com/customer/en/portal/articles/2077663-writing-effective-questions)を参照してください。
  
-## <a name="3-identify-participants-to-target"></a>3. ターゲットとする参加者を特定します。
+## <a name="3-identify-participants-to-target"></a>3.ターゲットとする参加者を特定する
  
 リモートのテスト サービスで、テストの参加者の多くの特性を制御できます。ターゲットとするユーザーの種類を慎重に検討してください。データ収集の初期段階では、幅広く参加者を募集して、ユーザビリティの問題をより明確に識別する方が良い場合があります。後の段階では、上級の Office ユーザー、特定の職業、特定の年齢範囲などのグループをターゲットとするよう選択することもできます。
  
-## <a name="4-create-the-participant-screener"></a>4.参加者のスクリーナーを作成します。
+## <a name="4-create-the-participant-screener"></a>4.参加者のスクリーナーを作成する
  
 スクリーナーとは、テスト用に選別するために、テストの参加予定者に提示する一連の質問と要件のことです。UserTesting.com などのサービスの参加者は、お金目的でテストの条件を満たそうとしていることに留意してください。特定のユーザーをテストから除外しようとしている場合は、スクリーナーに落とし穴のある質問を組み込むことをお勧めします。 
  
 たとえば、GitHub に精通している参加者を見つけようとしている場合に、身元を偽っている可能性があるユーザーを除外するには、考えられる回答の一覧に偽の回答を組み込みます。
 
 **次のソース コード リポジトリのうちどれに精通していますか。**  
- a. SourceShelf  [*拒否*]  
- b. CodeContainer  [*拒否*]  
- c. GitHub  [*必ず選択*]  
- d. BitBucket  [*選択する可能性あり*]  
- e. CloudForge  [*選択する可能性あり*]  
+ a.   SourceShelf  [*拒否*]  
+ b.   CodeContainer  [*拒否*]  
+ c.   GitHub  [*必ず選択*]  
+ d.   BitBucket  [*選択する可能性あり*]  
+ e.   CloudForge  [*選択する可能性あり*]  
 
 
 アドインの Live ビルドのテストを計画している場合は、次の質問により、このテストを行えるユーザーを選別できます。 
 
    **このテストには、Microsoft PowerPoint 2016 が必要です。PowerPoint 2016 がありますか。**  
-   a.  はい  [*必ず選択*]  
-   b.  いいえ [*拒否*]  
-   c.  わからない [*拒否*]  
+   a.   はい  [*必ず選択*]  
+   b.   いいえ [*拒否*]  
+   c.   わからない [*拒否*]  
 
    **このテストでは、PowerPoint 2016 の無料のアドインをインストールし、これを使用するために無料のアカウントを作成する必要があります。アドインをインストールし、無料のアカウントを作成する予定がありますか。**  
-    a. はい  [*必ず選択*]  
-    b. いいえ [*拒否*]  
+    a.  はい  [*必ず選択*]  
+    b.   いいえ [*拒否*]  
 
 詳細については、[スクリーナーの質問のベスト プラクティス](http://help.usertesting.com/customer/en/portal/articles/2077835-screener-question-best-practices)を参照してください。
  
-## <a name="5-create-tasks-and-questions-for-participants"></a>5.参加者のタスクと質問を作成します。
+## <a name="5-create-tasks-and-questions-for-participants"></a>5.参加者のタスクと質問を作成する
  
 参加者のタスクと質問の数を制限できるように、テストしようとしている項目の優先度の設定を試みてください。一定の時間だけ参加者に利益になるサービスもあるので、超過しないように確認することもできます。
 
@@ -88,9 +88,9 @@
 
 テスト中の特定の時点で、ユーザーは想定している画面上にいるとは限らないことに注意してください。次のタスクを開始するにはどの画面上にいる必要があるかユーザーに伝えることを検討してください。 
 
-詳細については、[優れたタスクの作成](http://help.usertesting.com/customer/en/portal/articles/2077824-writing-great-tasks)を参照してください。
+詳細については、「[Writing Great Tasks (優れたタスクの作成)](http://help.usertesting.com/customer/en/portal/articles/2077824-writing-great-tasks)」をご覧ください。
 
-## <a name="6-create-a-prototype-to-match-the-tasks-and-questions"></a>6.タスクや質問に対応するプロトタイプを作成します。
+## <a name="6-create-a-prototype-to-match-the-tasks-and-questions"></a>6.タスクや質問に対応するプロトタイプを作成する
  
 Live アドインをテストするか、プロトタイプをテストすることができます。Live アドインをテストしようとしている場合は、Office 2016 があり、アドインのインストールを予定しており、アカウントのサインアップを予定している (ログオン資格情報を提供しない場合) 参加者を選別する必要があることに留意してください。後で、アドインを正常にインストールしたか確認する必要があります。 
 
@@ -109,15 +109,15 @@ Live アドインをテストするか、プロトタイプをテストするこ
 
 いずれの相互作用や表示の忠実性のレベルでもプロトタイプをテストできます。リンクや相互作用がさらに複雑な場合は、[InVision](https://www.invisionapp.com) のようなプロトタイプ作成ツールを検討してください。静的な画面だけテストする場合は、オンラインで画像をホスティングして対応する URL を参加者に送信したり、オンラインの PowerPoint プレゼンテーションへのリンクを提供したりできます。 
 
-## <a name="7-run-a-pilot-test"></a>7.パイロット テストを実行します。
+## <a name="7-run-a-pilot-test"></a>7.パイロット テストを実行する
 
 プロトタイプや、タスクと質問の一覧を正しく作成するには、テクニックを要する場合があります。ユーザーがタスクのために混乱したり、プロトタイプで途方にくれる可能性があります。1 人から 3 人のユーザーを用いてパイロット テストを実行し、テストの形式に関する避けられない問題を解決する必要があります。こうすると確実に、質問を明確にし、プロトタイプを正しく設定し、探している種類のデータをキャプチャすることができます。
 
-## <a name="8-run-the-test"></a>8.テストを実行します。
+## <a name="8-run-the-test"></a>8.テストを実行する
 
 テストを指示した後に、参加者がそのテストを完了すると、電子メール通知を受け取ります。特定の参加者のグループがターゲットになっている場合を除き、通常テストは数時間以内に完了します。
 
-## <a name="9-analyze-results"></a>9.結果を分析します。
+## <a name="9-analyze-results"></a>9.結果を分析する
 
 この時点で、収集したデータが意味のあるものになります。テストのビデオを見ている間に、ユーザーが直面した問題や成功についてメモを記録します。すべての結果を見終えるまで、データの意味を解釈しようとしないでください。 
 
@@ -126,7 +126,7 @@ Live アドインをテストするか、プロトタイプをテストするこ
 一般に、データを使用して結論を出す方法については注意が必要です。特定のストーリーにデータを合わせようとする誤ちに注意してください。実際にデータが証明していること、反証していること、単に洞察を提供できないことについて公正に吟味してください。先入観を持たないでください。ユーザーの動作はデザイナーの期待に反することがよくあります。
  
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="additional-resources"></a>追加リソース
  
  - [ユーザビリティ テストを実施する方法](http://whatpixel.com/howto-conduct-usability-testing/)  
  - [ベスト プラクティス](http://help.usertesting.com/customer/en/portal/articles/1680726-best-practices)  

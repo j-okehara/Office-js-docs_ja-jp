@@ -2,13 +2,13 @@
 
 適用対象:_Visio Online_
 
->**注:**Visio JavaScript API は、現在プレビューまたは運用環境では使用できません。
+>**注:**Visio JavaScript API は、現在プレビューの段階であり、変更される可能性があります。Visio JavaScript API は、運用環境での使用は現在サポートされていません。
 
 図形コレクションを表します。
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明| フィードバック|
+| プロパティ       | 型    |説明| フィードバック|
 |:---------------|:--------|:----------|:---|
 |items|[Shape[]](shape.md)|図形オブジェクトのコレクション。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeCollection-items)|
 
@@ -67,7 +67,7 @@ shapeCollectionObject.getItem(key);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |Key|number または string|キーは、取得する図形の名前またはインデックスです。|
 
@@ -83,7 +83,7 @@ object.load(param);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 

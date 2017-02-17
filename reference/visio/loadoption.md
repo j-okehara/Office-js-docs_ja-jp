@@ -1,6 +1,6 @@
 # <a name="object-load-options-javascript-api-for-visio"></a>オブジェクト読み込みオプション (JavaScript API for Visio)
 
->**注:**Visio JavaScript API は、現在プレビューまたは運用環境では使用できません。
+>**注:**Visio JavaScript API は、現在プレビューの段階であり、変更される可能性があります。Visio JavaScript API は、運用環境での使用は現在サポートされていません。
 
 Visio オブジェクトとそれに対応する JavaScript のプロキシ オブジェクトの間で状態を同期する **sync()** メソッドの実行時に読み込まれるプロパティおよび関係のセットを指定する load メソッドに渡すことができるオブジェクトを表します。これは、オブジェクトに読み込まれるプロパティのセットを指定する select パラメーターおよび expand パラメーターなどのオプションを取り、コレクションでの改ページ位置の自動修正を可能にします。
 

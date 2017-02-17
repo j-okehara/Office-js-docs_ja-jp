@@ -1,20 +1,20 @@
 # <a name="page-object-javascript-api-for-visio"></a>Page オブジェクト (JavaScript API for Visio)
 
 適用対象:_Visio Online_
->**注:**Visio JavaScript API は、現在プレビューまたは運用環境では使用できません。
+>**注:**Visio JavaScript API は、現在プレビューの段階であり、変更される可能性があります。Visio JavaScript API は、運用環境での使用は現在サポートされていません。
 
 ページ クラスを表します。
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明| フィードバック|
+| プロパティ       | 型    |説明| フィードバック|
 |:---------------|:--------|:----------|:---|
 |index|int|ページのインデックス。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-index)|
 |isBackground|bool|ページが背景ページかどうか。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-isBackground)|
 |name|string|ページの名前。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-name)|
 
 ## <a name="relationships"></a>関係
-| リレーションシップ | 型   |説明| フィードバック|
+| リレーションシップ | 型    |説明| フィードバック|
 |:---------------|:--------|:----------|:---|
 |図形|[ShapeCollection](shapecollection.md)|ページ内の図形。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-shapes)|
 |ビュー|[PageView](pageview.md)|ページのビューを返します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-view)|
@@ -52,7 +52,7 @@ object.load(param);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 

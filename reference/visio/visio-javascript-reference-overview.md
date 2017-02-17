@@ -1,6 +1,6 @@
 # <a name="visio-javascript-apis-reference"></a>Visio JavaScript API リファレンス
 
->**注:**Visio JavaScript API は、現在プレビューまたは運用環境では使用できません。 
+>**注:**Visio JavaScript API は、現在プレビューの段階であり、変更される可能性があります。Visio JavaScript API は、運用環境での使用は現在サポートされていません。
 
 Visio JavaScript API を使うと、SharePoint Online で Visio の図を埋め込むことができます。埋め込んだ Visio の図は、SharePoint ドキュメント ライブラリに保存され、SharePoint ページに表示されます。Visio 図を埋め込むには、その図を HTML の &lt;iframe&gt; 要素に表示します。そうすると、Visio JavaScript API を使用して、プログラムで埋め込み済みの図を使った作業ができるようになります。
 

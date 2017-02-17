@@ -1,4 +1,4 @@
-# <a name="build-your-first-onenote-addin"></a>最初の OneNote 用アドインをビルドする
+# <a name="build-your-first-onenote-add-in"></a>最初の OneNote 用アドインをビルドする
 
 この記事では、いくつかのテキストを OneNote ページに追加する簡単な作業ウィンドウ アドインのビルドについて説明します。
 
@@ -7,80 +7,42 @@
    ![このチュートリアルでビルドした OneNote アドイン](../../images/onenote-first-add-in.png)
 
 <a name="setup"></a>
-## <a name="step-1-set-up-your-dev-environment-and-create-an-addin-project"></a>手順 1:開発環境をセットアップし、アドイン プロジェクトを作成する
+## <a name="step-1-set-up-your-dev-environment-and-create-an-add-in-project"></a>手順 1:開発環境をセットアップし、アドイン プロジェクトを作成する
 指示に従って、[任意のエディターを使用して Office アドインを作成](../get-started/create-an-office-add-in-using-any-editor.md)して必要な前提条件をインストールし、Office Yeoman ジェネレーターを実行して新しいアドイン プロジェクトを作成します。次の表に、Yeoman ジェネレーターで選択するプロジェクト属性を示します。
 
 | オプション | 値 |
 |:------|:------|
-| プロジェクト名 | OneNote アドイン |
-| プロジェクトのルート フォルダー | (既定値の適用) |
-| Office Project の種類 | 作業ウィンドウ アドイン |
-| サポートされている Office アプリケーション | (OneNote が選択されていることを確認してください) |
-| 使うテクノロジ | HTML、CSS、JavaScript |
+| 新しいサブフォルダ― | (既定値の適用) |
+| アドイン名 | OneNote アドイン |
+| サポートされている Office アプリケーション | (OneNote の選択) |
+| 新しいアドインの作成 | はい、新しいアドインを作成します |
+| [TypeScript](https://www.typescriptlang.org/) の追加 | いいえ |
+| フレームワークの選択 | Jquery |
 
 <a name="develop"></a>
-## <a name="step-2-modify-the-addin"></a>手順 2:アドインを変更する
+## <a name="step-2-modify-the-add-in"></a>手順 2:アドインを変更する
 任意のテキスト エディターや IDE を使ってアドイン ファイルを編集できます。まだ Visual Studio Code をお試しいただいていない場合は、Linux、Mac OSX、Windows で[無料でダウンロード](https://code.visualstudio.com/)できます。
 
-1 - **[アプリ] または [ホーム]** フォルダーにある *home.html* を開きます。 
+1 - プロジェクト ディレクトリの **index.html** を開きます。 
 
-2 - Office JavaScript API と [Office UI Fabric](http://dev.office.com/fabric) のスタイルとコンポーネントへの参照を編集します。
-
-  a.fabric.components.min.css へのリンクのコメントを解除します。
-  
-  b.Office.js へのスクリプト参照を、*ベータ*版への次の参照に置き換えます。
-
-```
-<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
-```
-
-  Office 参照は次のようになります。
-
-```
-<link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" rel="stylesheet">
-<link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet">
-<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
-```
-
-3 - `<body>` 要素を次のコードに置き換えます。これは、[Office UI Fabric コンポーネント](http://dev.office.com/fabric/components)を使用してテキスト領域とボタンを追加します。**応答性の高いグリッド** レイアウトは、[Office UI Fabric スタイル](http://dev.office.com/fabric/styles)のセットから作成されます。 
+2 - `<main>` 要素を次のコードに置き換えます。これは、[Office UI Fabric コンポーネント](http://dev.office.com/fabric/components)を使用してテキスト領域とボタンを追加します。
 
 ```html
-<body class="ms-font-m">
-   <div class="home flex-container">
-       <div class="ms-Grid">
-           <div class="ms-Grid-row ms-bgColor-themeDarker">
-               <div class="ms-Grid-col">
-                   <span class="ms-font-xl ms-fontColor-themeLighter ms-fontWeight-semibold">OneNote Add-in</span>
-               </div>
-           </div>
-       </div>
-       <br />
-       <div class="ms-Grid">
-           <div class="ms-Grid-row">
-               <div class="ms-Grid-col">
-                   <label class="ms-Label">Enter content here</label>
-                   <div class="ms-TextField ms-TextField--placeholder">
-                       <textarea id="textBox" rows="5"></textarea>
-                   </div>
-               </div>
-           </div>
-           <div class="ms-Grid-row">
-               <div class="ms-Grid-col">
-                   <div class="ms-font-m ms-fontColor-themeLight header--text">
-                       <button class="ms-Button ms-Button--primary" id="addOutline">
-                           <span class="ms-Button-icon"><i class="ms-Icon"></i></span>
-                           <span class="ms-Button-label">Add outline</span>
-                           <span class="ms-Button-description">Adds the content above to the current page.</span>
-                       </button>
-                   </div>
-               </div>
-           </div>
-       </div>
+<main class="ms-welcome__main">
+   <br />
+   <p class="ms-font-l">Enter content below</p>
+   <div class="ms-TextField ms-TextField--placeholder">
+       <textarea id="textBox" rows="5"></textarea>
    </div>
-</body>
+   <button id="addOutline" class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20">
+        <span class="ms-Button-label">Add Outline</span>
+        <span class="ms-Button-icon"><i class="ms-Icon"></i></span>
+        <span class="ms-Button-description">Adds the content above to the current page.</span>
+    </button>
+</main>
 ```
 
-4 - *[アプリ] または [ホーム]* フォルダーにある **home.js** を開きます。次に示すように、**Office.initialize** 関数を編集し、**[アウトラインの追加]** ボタンにクリック イベントを追加します。
+3 - プロジェクト ディレクトリの **app.js** (TypeScript を使用している場合は app.ts) を開きます。次に示すように、**Office.initialize** 関数を編集し、**[アウトラインの追加]** ボタンにクリック イベントを追加します。
 
 ```js
 // The initialize function is run each time the page is loaded.
@@ -94,7 +56,7 @@ Office.initialize = function (reason) {
 };
 ```
  
-5 - **getDataFromSelection** メソッドを次の **addOutlineToPage** メソッドに置き換えます。これにより、テキスト領域からコンテンツを取得し、そのコンテンツがページに追加されます。
+4 - **run** メソッドを次の **addOutlineToPage** メソッドに置き換えます。これにより、テキスト領域からコンテンツを取得し、そのコンテンツがページに追加されます。
 
 ```js
 // Add the contents of the text area to the page.
@@ -128,26 +90,18 @@ function addOutlineToPage() {
 ```
 
 <a name="test"></a>
-## <a name="step-3-test-the-addin-on-onenote-online"></a>手順 3:OneNote Online でのアドインのテスト
-1 - Gulp Web サーバーを実行します。  
+## <a name="step-3-test-the-add-in-on-onenote-online"></a>手順 3:OneNote Online でのアドインのテスト
+1 - HTTPS サーバーを起動します。  
 
-  a.**cmd** プロンプトを開き、アドイン プロジェクトのフォルダーに移動します。 
+  a.**cmd** プロンプト / Terminal を開き、アドイン プロジェクトのフォルダーに移動します。 
   
-  b.以下に示す `gulp serve-static` コマンドを実行します。
+  b.以下に示すコマンドを実行します。
 
   ```
-  C:\your-local-path\onenote add-in\> gulp serve-static
+  C:\your-local-path\onenote add-in\> npm start
   ```
 
-2 - Gulp Web サーバーの自己署名証明書を信頼された証明書としてインストールします。Office Yeoman ジェネレーターを使って作成されたすべてのアドイン プロジェクトに対しては、コンピューターに一度だけインストールする必要があります。
-
-   a.ホストされたアドイン ページに移動します。これは、既定ではマニフェストにあるのと同じ URL です。
-
-  ```
-  https://localhost:8443/app/home/home.html
-  ```
-
-   b.証明書を信頼された証明書としてインストールします。詳しくは、「[自己署名証明書を信頼されたルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/docs/trust-self-signed-cert.md)」をご覧ください。
+2 - 自己署名証明書を信頼された証明書としてインストールします。Office Yeoman ジェネレーターを使って作成されたすべてのアドイン プロジェクトに対しては、コンピューターに一度だけインストールする必要があります。詳しくは、「[自己署名証明書を信頼されたルート証明書として追加する](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)」をご覧ください。
 
 3 - [OneNote Online](https://www.onenote.com/notebooks) でノートブックを開きます。
 
@@ -161,7 +115,7 @@ function addOutlineToPage() {
 
   ![[マイ アドイン] タブを示す [Office アドイン] ダイアログ](../../images/onenote-office-add-ins-dialog.png)
 
-5 - [アドインのアップロード] ダイアログで、プロジェクト フォルダー内の **manifest-onenote-add-in.xml** を参照し、**[アップロード]** を選択します。テスト中に、マニフェスト ファイルはブラウザーのローカル ストレージに保存されます。
+5 - [アドインのアップロード] ダイアログで、プロジェクト フォルダー内の **onenote-add-in-manifest.xml** を参照し、**[アップロード]** を選択します。テスト中に、マニフェスト ファイルはブラウザーのローカル ストレージに保存されます。
 
 6 - アドインは、OneNote ページの横にある iFrame で開きます。テキスト領域にテキストを入力し、**[アウトラインの追加]** をクリックします。入力したテキストは、ページに追加されます。 
 

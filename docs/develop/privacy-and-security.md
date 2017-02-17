@@ -72,12 +72,12 @@ Office アドインは、Office ストアで公開することで利用可能に
 - 使用可能なアドインに対するユーザーレビュー システムをサポートしてコミュニティの自己管理を促します。
     
 
-## <a name="addressing-end-users'-privacy-concerns"></a>エンド ユーザーのプライバシー問題への対応
+## <a name="addressing-end-users-privacy-concerns"></a>エンド ユーザーのプライバシー問題への対応
 
 ここでは、Office アドインを使用する場合のエンド ユーザーのプライバシーに関する懸念に対処します。まず、Office アドイン プラットフォームから提供される保護を顧客 (エンド ユーザー) の視点から説明します。次に、ユーザーの期待に応える方法とユーザーの個人情報 (PII) を安全に取り扱う方法に関するガイドラインを開発者に提供します。 
 
 
-### <a name="end-users'-perspective"></a>エンド ユーザーの認知
+### <a name="end-users-perspective"></a>エンド ユーザーの認知
 
 Office アドインは、ブラウザー コントロールまたは **iframe** 内で実行する Web テクノロジを使用して構築されています。そのため、アドインの使用は、インターネットまたはイントラネット上で Web サイトを閲覧することと似ています。アドインは、組織の外部に存在することも (Office ストアからアドインを入手する場合)、内部に存在することも (Exchange Server アドイン カタログ、SharePoint アドイン カタログ、または組織のネットワーク上のファイル共有からアドインを入手する場合) あります。アドインはネットワークへのアクセスが制限されますが、ほとんどのアドインはアクティブなドキュメントやメール アイテムの読み書きができます。ユーザーや管理者がアドインをインストールまたは起動する前に、アドイン プラットフォームによって特定の制約が課されます。ただし、拡張性モデルと同様に、未知のアドインの起動は慎重に行う必要があります。
 
@@ -115,7 +115,7 @@ IT 管理者と開発者が PII を保護するための一般的なガイドラ
 - ユーザーの PII を保存する場合は、その事実を明らかにし、ユーザーがそれを検査して削除できる方法を提供します。アドインを Office ストアに送信する場合は、収集するデータとその用途をプライバシーに関する声明の中で説明してください。
     
 
-## <a name="developers'-permission-choices-and-security-practices"></a>開発者によるアクセス許可の選択とセキュリティ手法
+## <a name="developers-permission-choices-and-security-practices"></a>開発者によるアクセス許可の選択とセキュリティ手法
 
 Office アドインのセキュリティ モデルをサポートするための以下の一般的なガイドラインを踏まえたうえで、アドインの種類ごとの詳細について調べます。
 
@@ -212,7 +212,7 @@ Exchange と SharePoint は、クロス ドメイン アクセスを可能にす
 - より安全に使用できる Web ソリューションを作成するためのその他のベスト プラクティスについては、「[セキュリティで保護されたアドインを開発する](http://msdn.microsoft.com/en-us/library/windows/apps/hh849625.aspx)」を参照してください。
     
 
-### <a name="tips-to-prevent-"clickjacking""></a>「クリックジャック」を防止するためのヒント
+### <a name="tips-to-prevent-clickjacking"></a>「クリックジャック」を防止するためのヒント
 
 Office アドインは Office Online ホスト アプリケーションと通信するブラウザーの iframe 内でレンダリングされるため、次のヒントを参照して、[クリックジャック](http://en.wikipedia.org/wiki/Clickjacking)と呼ばれる、ユーザーをだまして機密情報を公開させようとするハッカーが利用するテクニックのリスクを最小限に抑えてください。
 
@@ -229,7 +229,7 @@ Office アドインは Office Online ホスト アプリケーションと通信
     
 - ユーザーがアドインで入力できる確認コードが含まれているテキスト メッセージをユーザーに送信します。
     
-- 確認を求めるメッセージが含まれている新しいブラウザー ウィンドウを開きます。
+- iframe に対応していないページについて、新しいブラウザー ウィンドウで確認ダイアログを開きます。これは通常、ログイン ページで使用するパターンです。新しいダイアログを作成するには、[ダイアログ API](https://dev.office.com/docs/add-ins/develop/dialog-api-in-office-add-ins) を使用します。 
     
 また、ユーザーへの連絡に使用されているアドレスが、潜在的な攻撃者によって提供されている可能性がないことを確認してください。たとえば、支払いの確認には、承認されたユーザーのアカウントに関するファイル内のアドレスを使用します。
 
@@ -266,7 +266,7 @@ Office アドインは Office Online ホスト アプリケーションと通信
 Outlook アドインの開発者は、リソース使用量のルール以外に、アクティブ化ルールの指定と JavaScript API の使用に関する制限についてもアドインが遵守していることを確認する必要があります。詳細については、「[Outlook アドインのアクティブ化と JavaScript API に関する制限事項](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)」を参照してください。
 
 
-## <a name="it-administrators'-control"></a>IT 管理者による制御
+## <a name="it-administrators-control"></a>IT 管理者による制御
 
 企業の設定では、IT 管理者は、Office ストアとプライベート カタログへのアクセスの有効化または無効化に対して最終的な権限を持ちます。 
 
@@ -274,20 +274,15 @@ Outlook アドインの開発者は、リソース使用量のルール以外に
 ## <a name="additional-resources"></a>その他のリソース
 
 
-- 
-  [コンテンツ アドインと作業ウィンドウ アドインでの API 使用についてアクセス許可を要求する](http://msdn.microsoft.com/library/da2efadc-4ebf-45fe-be39-397ac1eb1dbd.aspx)
+- [コンテンツ アドインと作業ウィンドウ アドインでの API 使用についてアクセス許可を要求する](http://msdn.microsoft.com/library/da2efadc-4ebf-45fe-be39-397ac1eb1dbd.aspx)
     
-- 
-  [Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](http://msdn.microsoft.com/library/44208fc4-05d4-42d8-ab20-faa89624de1c.aspx)
+- [Outlook アドインに関するプライバシー、アクセス許可、セキュリティ](http://msdn.microsoft.com/library/44208fc4-05d4-42d8-ab20-faa89624de1c.aspx)
     
-- 
-  [Outlook アドインのアクセス許可を理解する](http://msdn.microsoft.com/library/5bca69f2-b287-4e19-8f0f-78d896b2a3d3.aspx)
+- [Outlook アドインのアクセス許可を理解する](http://msdn.microsoft.com/library/5bca69f2-b287-4e19-8f0f-78d896b2a3d3.aspx)
     
-- 
-  [Outlook アドインのアクティブ化と JavaScript API の制限](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)
+- [Outlook アドインのアクティブ化と JavaScript API の制限](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)
     
-- 
-  [Office アドインにおける同一生成元ポリシーの制限への対処](http://msdn.microsoft.com/library/36c800ae-1dda-4ea8-a558-37c89ffb161b.aspx)
+- [Office アドインにおける同一生成元ポリシーの制限への対処](http://msdn.microsoft.com/library/36c800ae-1dda-4ea8-a558-37c89ffb161b.aspx)
     
 - [同一生成元ポリシー](http://www.w3.org/Security/wiki/Same_Origin_Policy)
     
