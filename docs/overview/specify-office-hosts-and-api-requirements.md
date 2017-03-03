@@ -51,7 +51,7 @@
 ```
 
 
-## <a name="options-to-specify-office-hosts-or-api-requirements"></a>Office ホストや API 要件を指定するオプション
+## <a name="options-to-specify-office-hosts-or-api-requirements"></a>Office のホストや API の要件を指定するオプション
 
 Office ホストまたは API の要件を指定するときに、検討すべき事項がいくつかあります。次の図に、アドインで使用すべき手法の判別方法を示します。
 
@@ -100,7 +100,7 @@ Office ホストまたは API の要件を指定するときに、検討すべ�
 ## <a name="set-the-requirements-element-in-the-manifest"></a>マニフェストで Requirements 要素を設定する
 
 
-**Requirements** 要素は、アドインを実行するために Office ホストによってサポートされている必要のある最小要件セットまたは API メンバーを指定します。**Requirements** 要素は、アドインで使用される要件セットと個々のメソッドの両方を指定できます。アドイン マニフェスト スキーマのバージョン 1.1 では、**Requirements** 要素は Outlook アドイン以外のすべてのアドインで省略可能です。
+**Requirements** 要素は、アドインを実行するために Office ホストによってサポートされている必要がある最小要件セットまたは API メンバーを指定します。**Requirements** 要素は、アドインで使用される要件セットと個々のメソッドの両方を指定できます。アドイン マニフェスト スキーマのバージョン 1.1 では、**Requirements** 要素は Outlook アドイン以外のすべてのアドインで省略可能です。
 
 
  >**注意:**アドインで必須の重要な要件セットまたは API メンバーを指定するには、**Requirements** 要素のみを使用します。Office ホストまたはプラットフォームが、**Requirements** 要素で指定した要件セットまたは API メンバーをサポートしない場合、アドインはそのホストまたはプラットフォームでは実行されず、**[個人用アドイン]** にも表示されません。代わりに、Excel for Windows、Excel Online、Excel for iPad などの Office ホストのすべてのプラットフォームでアドインを使用できるようにすることをお勧めします。_すべて_の Office ホストとプラットフォームでアドインを使用できるようにするには、**Requirements** 要素ではなく、ランタイム チェックを使用します。
@@ -172,7 +172,7 @@ Excel 2016 または Word 2016 では、**isSetSupported** と共に **ExcelAPI*
 ```js
 if (Office.context.requirements.isSetSupported('WordApi', 1.1)
 {
-    // Run code that provides additional functionality using the JavaScript API for Word when the add-in runs in Word 2016.
+       // Run code that provides additional functionality using the JavaScript API for Word when the add-in runs in Word 2016.
 }
 else if (Office.context.requirements.isSetSupported('CustomXmlParts')
 {
@@ -213,7 +213,7 @@ if (Office.context.document.setSelectedDataAsync)
 
 - [Office アドインの XML マニフェスト](../../docs/overview/add-in-manifests.md)
     
-- [Office アドインの要件セット](../../reference/office-add-in-requirement-sets.md)
+- [Office アドインの要件セット](../../reference/requirement-sets/office-add-in-requirement-sets.md)
     
 - [Word-Add-in-Get-Set-EditOpen-XML ](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)
     

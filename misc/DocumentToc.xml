@@ -66,7 +66,7 @@
     <Item text="Microsoft Azure で Office アドインをホストする" url="publish/host-an-office-add-in-on-microsoft-azure" SEODescription="Visual Studio 2015 および Microsoft Office Developer Tools を使用して、Office アドインを発行した後に Microsoft Azure でホストします。" />
     <Item text="Visual Studio を使用してアドインをパッケージ化する" url="publish/package-your-add-in-using-visual-studio" SEODescription="発行できるように Office アドインをパッケージ化します。" />
     <Item text="作業ウィンドウ アドインとコンテンツ アドインをアドイン カタログに発行する" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Office の [アドイン] ダイアログ ボックスからアドインを使用できるように Office クライアントを構成する" />
-	<Item text="Office ストアへのアドインの提出" url="https://msdn.microsoft.com/en-us/library/office/jj220037.aspx" IsExternal="true" />
+	<Item text="Office ストアへのアドインの提出" url="https://dev.office.com/officestore/docs/submit-add-ins-and-web-apps-to-the-office-store" IsExternal="true" />
   </Item>
   
   <Item text="Word" url="word/word-add-ins-programming-overview" SEODescription="JavaScript API を使用して、Word アドインをビルドします。" Scope="word">
