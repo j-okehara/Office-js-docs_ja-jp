@@ -287,21 +287,33 @@
 		<Item text="OneNote JavaScript API の要件セット" url="requirement-sets/onenote-api-requirement-sets" SEODescription="OneNote の要件セット、それらの要件セットをサポートする Office ホスト アプリケーション、ビルド バージョンまたは提供開始日に関する情報について説明します。" />
 	</Item>
 	<Item text="Visio" url="visio/visio-javascript-reference-overview" Scope="visio"> 
-		<Item text="アプリケーション" url="visio/application" SEODescription="Visio JavaScript API リファレンス。" /> 
-		<Item text="ドキュメント" url="visio/document" SEODescription="Visio JavaScript API リファレンス。" /> 
-		<Item text="ハイパーリンク" url="visio/hyperlink" SEODescription="Visio JavaScript API リファレンス。" /> 
-		<Item text="HyperlinkCollection" url="visio/hyperlinkcollection" SEODescription="Visio JavaScript API リファレンス。" /> 
-		<Item text="LoadOption" url="visio/loadoption" SEODescription="Visio JavaScript API リファレンス。" /> 
-		<Item text="Page" url="visio/page" SEODescription="Visio JavaScript API リファレンス。" /> 
-		<Item text="PageCollection" url="visio/pagecollection" SEODescription="Visio JavaScript API リファレンス。" /> 
-		<Item text="PageView" url="visio/pageview" SEODescription="Visio JavaScript API リファレンス。" /> 
-		<Item text="Shape" url="visio/shape" SEODescription="Visio JavaScript API リファレンス。" /> 
-		<Item text="ShapeCollection" url="visio/shapecollection" SEODescription="Visio JavaScript API リファレンス。" /> 
-		<Item text="ShapeDataItem" url="visio/shapedataitem" SEODescription="Visio JavaScript API リファレンス。" /> 
-		<Item text="ShapeDataItemCollection" url="visio/shapedataitemcollection" SEODescription="Visio JavaScript API リファレンス。" /> 
-		<Item text="ShapeView" url="visio/shapeview" SEODescription="Visio JavaScript API リファレンス。" /> 
+		<Item text="Application" url="visio/application" /> 
+		<Item text="BoundingBox" url="visio/boundingbox" />
+		<Item text="Comment" url="visio/comment" />
+		<Item text="CommentCollection" url="visio/commentcollection" />
+		<Item text="DataRefreshCompleteEventArgs" url="visio/datarefreshcompleteeventargs" />
+		<Item text="Document" url="visio/document" />
+		<Item text="DocumentView" url="visio/documentview" />
+		<Item text="Highlight" url="visio/highlight" />
+		<Item text="Hyperlink" url="visio/hyperlink" /> 
+		<Item text="HyperlinkCollection" url="visio/hyperlinkcollection" /> 
+		<Item text="LoadOption" url="visio/loadoption" /> 
+		<Item text="Page" url="visio/page" /> 
+		<Item text="PageCollection" url="visio/pagecollection" /> 
+		<Item text="PageLoadCompleteEventArgs" url="visio/pageloadcompleteeventargs" />
+		<Item text="PageView" url="visio/pageview" /> 
+		<Item text="Position" url="visio/position" />
+		<Item text="Selection" url="visio/selection" />
+		<Item text="SelectionChangedEventArgs" url="visio/selectionchangedeventargs" />
+		<Item text="Shape" url="visio/shape" /> 
+		<Item text="ShapeCollection" url="visio/shapecollection" /> 
+		<Item text="ShapeDataItem" url="visio/shapedataitem" /> 
+		<Item text="ShapeDataItemCollection" url="visio/shapedataitemcollection" /> 
+		<Item text="ShapeMouseEnterEventArgs" url="visio/shapemouseentereventargs" />
+		<Item text="ShapeMouseLeaveEventArgs" url="visio/shapemouseleaveeventargs" />
+		<Item text="ShapeView" url="visio/shapeview" /> 
 	</Item> 
-	<Item text="共有 API" url="shared/shared-api" Scope="excel, word, powerpoint, project, outlook, onenote, access">
+	<Item text="Shared API" url="shared/shared-api" Scope="excel, word, powerpoint, project, outlook, onenote, access">
 		<Item text="JavaScript API for Office" url="javascript-api-for-office" SEODescription="JavaScript API for Office には、Office アドイン コードで使用できるオブジェクト、メソッド、プロパティ、イベント、および列挙体があります。" />
 		<Item text="JavaScript API for Office の変更点" url="what's-changed-in-the-javascript-api-for-office" SEODescription="JavaScript API for Office は、Office アドインの機能を拡張するため、オブジェクト、メソッド、プロパティ、イベント、列挙体の新規追加や更新によって、定期的に更新が加えられています。" />
 		<Item text="Office の共通要件セット" url="requirement-sets/office-add-in-requirement-sets" SEODescription="要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、実行時チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。" />

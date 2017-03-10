@@ -37,7 +37,6 @@ run メソッドは、RequestContext を取り込み、約束  (通常は、単�
 load() メソッドは、アドインの JavaScript レイヤーで作成されたプロキシ オブジェクトに設定を取り込むために使用されます。オブジェクト、たとえばワークシート、を取得しようとすると、まず JavaScript レイヤーでローカル プロキシ オブジェクトが作成されます。このようなオブジェクトは、そのプロパティと呼び出しメソッドの設定をキューに登録するために使用できます。しかし、オブジェクトのプロパティや関係を読み取るためには、最初に load() メソッドと sync() メソッドを呼び出す必要があります。load() メソッドは、sync() メソッドが呼び出されたときに読み込まれる必要があるプロパティと関係を取り込みます。
 
 _構文:_
-
 ```js
 object.load(string: properties);
 //or
@@ -45,9 +44,9 @@ object.load(array: properties);
 //or
 object.load({loadOption});
 ```
-ここで
+ここで、
 
-* `properties` は、読み込まれるプロパティ名やリレーションシップ名の一覧で、名前のコンマ区切りの文字列または配列として指定されます。詳細は、各オブジェクトの下の .load() メソッドを参照してください。
+o* `properties` は、読み込まれるプロパティ名やリレーションシップ名の一覧で、名前のコンマ区切りの文字列または配列として指定されます。詳細は、各オブジェクトの下の .load() メソッドを参照してください。
 * `loadOption` は、selection、expansion、top、skip の各オプションについて説明するオブジェクトを指定します。詳細については、オブジェクトの読み込みの[オプション](../../reference/excel/loadoption.md)を参照してください。
 
 ## <a name="example-write-values-from-an-array-to-a-range-object"></a>例:配列の値を範囲オブジェクトに書き込む
@@ -57,7 +56,7 @@ object.load({loadOption});
 Excel.run() には、命令のバッチが含まれています。このバッチの一部として、作業中のワークシートの範囲 (アドレス A1:B2) を参照するプロキシ オブジェクトが作成されます。この範囲のプロキシ オブジェクトの値は、ローカルに設定されています。値を読み取って返すようにするため、この範囲の `text` プロパティが、プロキシ オブジェクトに読み込まれるように指示されています。これらのすべてのコマンドがキューに入れられ、ctx.sync() が呼び出されたときに実行されます。sync() メソッドが返す約束は、このメソッドを他の操作とチェーンにするために使用できます。
 
 ```js
-// Run a batch operation against the Excel object model. Use the context argument to get access to the Excel document.
+l// Run a batch operation against the Excel object model. Use the context argument to get access to the Excel document.
 Excel.run(function (ctx) {
 
     // Create a proxy object for the sheet
@@ -67,7 +66,7 @@ Excel.run(function (ctx) {
                  ["Type", "Estimate"],
                  ["Transportation", 1670]
                  ];
-    // Create a proxy object for the range
+.    // Create a proxy object for the range
     var range = sheet.getRange("A1:B2");
 
     // Assign array value to the proxy object's values property.
@@ -93,8 +92,8 @@ Excel.run(function (ctx) {
 // Run a batch operation against the Excel object model. Use the context argument to get access to the Excel document.
 Excel.run(function (ctx) {
 
-    // Create a proxy object for the range
-    var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
+    // Create a proxy object for the range and load the values property
+    var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2").load("values");
 
     // Synchronizes the state between JavaScript proxy objects and real objects in Excel by executing instructions queued on the context
     return ctx.sync().then(function() {
@@ -335,13 +334,13 @@ Excel.run(function (ctx) {
 |InvalidBinding  |このオブジェクトのバインドは、以前の更新プログラムが原因で無効になっています。|
 |InvalidSelection|現在の選択内容は、この操作では無効です。|
 |Unauthenticated |必要な認証情報が見つからないか、無効です。|
-|AccessDenied   |要求された操作を実行できません。|
-|ItemNotFound   |要求されたリソースは存在しません。|
+|AccessDenied    |要求された操作を実行できません。|
+|ItemNotFound    |要求されたリソースは存在しません。|
 |ActivityLimitReached|アクティビティの制限に達しました。|
 |GeneralException|要求の処理中に内部エラーが発生しました。|
 |NotImplemented  |要求された機能は実装されていません。|
 |ServiceNotAvailable|サービスを利用できません。|
-|Conflict   |競合のため、要求を処理できませんでした。|
+|Conflict    |競合のため、要求を処理できませんでした。|
 |ItemAlreadyExists|作成中のリソースはすでに存在しています。|
 |UnsupportedOperation|試行中の操作はサポートされていません。|
 |RequestAborted|実行時に要求が中止されました。|

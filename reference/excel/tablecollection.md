@@ -1,10 +1,10 @@
 # <a name="tablecollection-object-javascript-api-for-excel"></a>TableCollection オブジェクト (JavaScript API for Excel)
 
-ブックの一部として含まれている、すべての表のコレクションを表します。
+ブックまたはワークシートの一部として含まれる、すべてのテーブルのコレクションを、到達方法に応じて表します。
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明| 要件セット|
+| プロパティ       | 型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
 |count|int|ブックに含まれるテーブルの数を返します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |items|[Table[]](table.md)|Table オブジェクトのコレクション。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -19,16 +19,16 @@ _プロパティのアクセスの[例を参照してください。](#property-
 
 | メソッド           | 戻り値の型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
-|[add(address:Range or string, hasHeaders: bool)](#addaddress-range-or-string-hasheaders-bool)|[Table](table.md)|新しいテーブルを作成します。範囲オブジェクトまたはソース アドレスにより、テーブルが追加されるワークシートが判断されます。テーブルが追加できない場合 (たとえば、アドレスが無効な場合や、テーブルが別のテーブルと重複している場合) は、エラーがスローされます。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(key: number or string)](#getitemkey-number-or-string)|[Table](table.md)|名前または ID を使用してテーブルを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(address: [object, hasHeaders: bool)](#addaddress-object-hasheaders-bool)|[Table](table.md)|新しいテーブルを作成します。範囲オブジェクトまたはソース アドレスにより、テーブルが追加されるワークシートが判断されます。テーブルが追加できない場合 (たとえば、アドレスが無効な場合や、テーブルが別のテーブルと重複している場合) は、エラーがスローされます。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|コレクション内のテーブルの数を取得します。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(key: number または string)](#getitemkey-number-or-string)|[Table](table.md)|名前または ID を使用してテーブルを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|コレクション内の位置に基づいてテーブルを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(key: number or string)](#getitemornullkey-number-or-string)|[Table](table.md)|名前または ID を使用してテーブルを取得します。テーブルが存在しない場合、戻りオブジェクトの isNull プロパティは true になります。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(key: number または string)](#getitemornullobjectkey-number-or-string)|[Table](table.md)|名前または ID でテーブルを取得します。テーブルが存在しない場合は null オブジェクトを返します。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
 
-### <a name="addaddress-range-or-string-hasheaders-bool"></a>add(address:Range or string, hasHeaders: bool)
+### <a name="addaddress-object-hasheaders-bool"></a>add(address: [object, hasHeaders: bool)
 新しいテーブルを作成します。範囲オブジェクトまたはソース アドレスにより、テーブルが追加されるワークシートが判断されます。テーブルが追加できない場合 (たとえば、アドレスが無効な場合や、テーブルが別のテーブルと重複している場合) は、エラーがスローされます。
 
 #### <a name="syntax"></a>構文
@@ -37,9 +37,9 @@ tableCollectionObject.add(address, hasHeaders);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
-|address|Range または string|Range オブジェクト、あるいはデータ ソースを表す範囲の文字列アドレスまたは名前。アドレスにシート名が含まれていない場合は、現在作業中のシートが使用されます。文字列パラメーターには要件セット 1.1、Range オブジェクトの受け入れには 1.3 が必要です。|
+|address|[object|Range オブジェクト、あるいはデータ ソースを表す範囲の文字列アドレスまたは名前。アドレスにシート名が含まれていない場合は、現在作業中のシートが使用されます。1.1 では、文字列パラメーターを使用します。1.3 では Range オブジェクトも受け入れることができます。|
 |hasHeaders|bool|インポートされたデータに列ラベルがあるかどうかを示すブール値。ソースにヘッダーが含まれていない場合 (このプロパティが false に設定されている場合)、Excel はデータを下方向に 1 行シフトして、自動的にヘッダーを生成します。|
 
 #### <a name="returns"></a>戻り値
@@ -62,7 +62,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="getitemkey-number-or-string"></a>getItem(key: number またはstring)
+### <a name="getcount"></a>getCount()
+コレクション内のテーブルの数を取得します。
+
+#### <a name="syntax"></a>構文
+```js
+tableCollectionObject.getCount();
+```
+
+#### <a name="parameters"></a>パラメーター
+なし
+
+#### <a name="returns"></a>戻り値
+int
+
+### <a name="getitemkey-number-or-string"></a>getItem(key: number または string)
 名前または ID でテーブルを取得します。
 
 #### <a name="syntax"></a>構文
@@ -71,7 +85,7 @@ tableCollectionObject.getItem(key);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |Key|number または string|取得するテーブルの名前または ID。|
 
@@ -124,7 +138,7 @@ tableCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |index|number|取得するオブジェクトのインデックス値。0 を起点とする番号になります。|
 
@@ -149,37 +163,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitemornullkey-number-or-string"></a>getItemOrNull(key: number or string)
-名前または ID を使用してテーブルを取得します。テーブルが存在しない場合、戻りオブジェクトの isNull プロパティは true になります。
+### <a name="getitemornullobjectkey-number-or-string"></a>getItemOrNullObject(key: number または string)
+名前または ID でテーブルを取得します。テーブルが存在しない場合は null オブジェクトを返します。
 
 #### <a name="syntax"></a>構文
 ```js
-tableCollectionObject.getItemOrNull(key);
+tableCollectionObject.getItemOrNullObject(key);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |Key|number または string|取得するテーブルの名前または ID。|
 
 #### <a name="returns"></a>戻り値
 [Table](table.md)
-
-### <a name="loadparam-object"></a>load(param: object)
-JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
-
-#### <a name="syntax"></a>構文
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|:---|
-|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
-
-#### <a name="returns"></a>戻り値
-void
 ### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 ```js

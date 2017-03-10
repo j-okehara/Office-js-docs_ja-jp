@@ -28,7 +28,7 @@ rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |fields|SortField[]|並べ替えに使用する条件の一覧。|
 |matchCase|bool|省略可能。大文字小文字の区別が文字列の順序に影響を与えるかどうか。|

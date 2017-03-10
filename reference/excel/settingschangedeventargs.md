@@ -7,8 +7,9 @@ SettingsChanged イベントが発生した設定についての情報を提供�
 なし
 
 ## <a name="relationships"></a>関係
-なし
-
+| リレーションシップ | 型    |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|settings|[SettingCollection](settingcollection.md)|SettingsChanged イベントが発生したバインドを表す Setting オブジェクトを取得します。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>メソッド
 なし

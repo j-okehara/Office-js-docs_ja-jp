@@ -16,9 +16,9 @@ Fabric は、次に示す複数のコンポーネントから構成されてい�
 ##<a name="1-add-the-fabric-cdn-references"></a>1. Fabric CDN 参照の追加
 CDN から Fabric を参照するには、次に示す HTML コードをページに追加します。
 
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.min.css">
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css">
-    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css">
+    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
 
 これで完了です。この時点で、Fabric をアドインで使用する準備が整っています。 
 
@@ -37,26 +37,26 @@ Fabric は、アドインで使用できるボタンやチェックボックス�
 
 > **メモ:** 追加のコンポーネントを徐々に増やしていく予定です。 
 
-- [Breadcrumb](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Breadcrumb.md)
-- [Button](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Button.md)
-- [Checkbox](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/CheckBox.md)
-- [ChoiceFieldGroup](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/ChoiceFieldGroup.md)
-- [Date Picker](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/DatePicker.md) (アドインに日付ピッカーを実装する方法の例は、[Excel Sales Tracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) コード サンプルを参照してください)
-- [Dropdown](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Dropdown.md)
-- [Label](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Label.md)
-- [Link](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Link.md)
-- [List](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/List.md) (コンポーネントの既定のスタイルを CSS で変更することを検討してください)
-- [MessageBanner](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/MessageBanner.md)
-- [MessageBar](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/MessageBar.md)
-- [Overlay](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Overlay.md)
-- [Panel](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Panel.md)
-- [Pivot](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Pivot.md)
-- [ProgressIndicator](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/ProgressIndicator.md)
-- [Searchbox](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/SearchBox.md)
-- [Spinner](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Spinner.md)
-- [Table](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Table.md)
-- [TextField](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/TextField.md)
-- [Toggle](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Toggle.md)
+- [Breadcrumb](https://dev.office.com/fabric-js/Components/Breadcrumb/Breadcrumb.html)
+- [Button](https://dev.office.com/fabric-js/Components/Button/Button.html) (アドインで小さなボタンのバリエーションの使用を検討してください。)
+- [Checkbox](https://dev.office.com/fabric-js/Components/CheckBox/CheckBox.html)
+- [ChoiceFieldGroup](https://dev.office.com/fabric-js/Components/ChoiceFieldGroup/ChoiceFieldGroup.html)
+- [Date Picker](https://dev.office.com/fabric-js/Components/DatePicker/DatePicker.html) (アドインに日付ピッカーを実装する方法の例は、[Excel Sales Tracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) コード サンプルを参照してください)
+- [Dropdown](https://dev.office.com/fabric-js/Components/Dropdown/Dropdown.html)
+- [Label](https://dev.office.com/fabric-js/Components/Label/Label.html)
+- [Link](https://dev.office.com/fabric-js/Components/Link/Link.html)
+- [List](https://dev.office.com/fabric-js/Components/List/List.html) (コンポーネントの既定のスタイルを CSS で変更することを検討してください)
+- [MessageBanner](https://dev.office.com/fabric-js/Components/MessageBanner/MessageBanner.html)
+- [MessageBar](https://dev.office.com/fabric-js/Components/MessageBar/MessageBar.html)
+- [Overlay](https://dev.office.com/fabric-js/Components/Overlay/Overlay.html)
+- [Panel](https://dev.office.com/fabric-js/Components/Panel/Panel.html)
+- [Pivot](https://dev.office.com/fabric-js/Components/Pivot/Pivot.html)
+- [ProgressIndicator](https://dev.office.com/fabric-js/Components/ProgressIndicator/ProgressIndicator.html)
+- [Searchbox](https://dev.office.com/fabric-js/Components/SearchBox/SearchBox.html)
+- [Spinner](https://dev.office.com/fabric-js/Components/Spinner/Spinner.html)
+- [Table](https://dev.office.com/fabric-js/Components/Table/Table.html)
+- [TextField](https://dev.office.com/fabric-js/Components/TextField/TextField.html)
+- [Toggle](https://dev.office.com/fabric-js/Components/Toggle/Toggle.html)
    
 ## <a name="updating-your-add-in-to-use-fabric-js"></a>Fabric JS を使用するためのアドインの更新
 以前のバージョンの Office UI Fabric を使用しているときに、Fabric JS への移行を考えている場合は、新しいコンポーネントをアドインに組み込んでテストする方法について理解していることを確認します。次に示す点に注意して、更新の計画に役立ててください。

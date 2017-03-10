@@ -4,7 +4,7 @@
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明| 要件セット|
+| プロパティ       | 型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
 |count|int|ワークシート上のグラフの数を返します。値の取得のみ可能です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |items|[Chart[]](chart.md)|グラフ オブジェクトのコレクション。値の取得のみ可能です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -20,10 +20,10 @@ _プロパティのアクセスの[例を参照してください。](#property-
 | メソッド           | 戻り値の型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
 |[add(type: string, sourceData:Range, seriesBy: string)](#addtype-string-sourcedata-range-seriesby-string)|[Chart](chart.md)|新しいグラフを作成します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|ワークシート上のグラフの数を返します。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|グラフ名を使用してグラフを取得します。同じ名前の複数のグラフがある場合は、最初の 1 つが返されます。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|コレクション内の位置に基づいて、グラフを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(name: string)](#getitemornullname-string)|[Chart](chart.md)|グラフ名を使用してグラフを取得します。同じ名前の複数のグラフがある場合は、最初の 1 つが返されます。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[Chart](chart.md)|グラフを、名前を使用して取得します。同じ名前の複数のグラフがある場合は、最初の 1 つが返されます。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
@@ -37,16 +37,11 @@ chartCollectionObject.add(type, sourceData, seriesBy);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
-|type|string|グラフの種類を表します。可能なグラフの種類を以下に示します。|
+|type|string|グラフの種類を表します。使用可能な値は次のとおりです。ColumnClustered、ColumnStacked、ColumnStacked100、BarClustered、BarStacked、BarStacked100、LineStacked、LineStacked100、LineMarkers、LineMarkersStacked、LineMarkersStacked100、PieOfPie など。|
 |sourceData|Range|データ ソースに対応する Range オブジェクトです。|
-|seriesBy|string|省略可能。列や行がグラフのデータ系列として使用される方法を指定します。使用可能な値は次のとおりです。自動、列、行|
-
-**有効なグラフの種類を次に示します:**
-
-`ColumnClustered`, `ColumnStacked`, `ColumnStacked100`, `_3DColumnClustered`, `_3DColumnStacked`, `_3DColumnStacked100`, `BarClustered`, `BarStacked`, `BarStacked100`, `_3DBarClustered`, `_3DBarStacked`, `_3DBarStacked100`, `LineStacked`, `LineStacked100`, `LineMarkers`, `LineMarkersStacked`, `LineMarkersStacked100`, `PieOfPie`, `PieExploded`, `_3DPieExploded`, `BarOfPie`, `XYScatterSmooth`, `XYScatterSmoothNoMarkers`, `XYScatterLines`, `XYScatterLinesNoMarkers`, `AreaStacked`, `AreaStacked100`, `_3DAreaStacked`, `_3DAreaStacked100`, `DoughnutExploded`, `RadarMarkers`, `RadarFilled`, `Surface`, `SurfaceWireframe`, `SurfaceTopView`, `SurfaceTopViewWireframe`, `Bubble`, `Bubble3DEffect`, `StockHLC`, `StockOHLC`, `StockVHLC`, `StockVOHLC`, `CylinderColClustered`, `CylinderColStacked`, `CylinderColStacked100`, `CylinderBarClustered`, `CylinderBarStacked`, `CylinderBarStacked100`, `CylinderCol`, `ConeColClustered`, `ConeColStacked`, `ConeColStacked100`, `ConeBarClustered`, `ConeBarStacked`, `ConeBarStacked100`, `ConeCol`, `PyramidColClustered`, `PyramidColStacked`, `PyramidColStacked100`, `PyramidBarClustered`, `PyramidBarStacked`, `PyramidBarStacked100`, `PyramidCol`, `_3DColumn`, `Line`, `_3DLine`, `_3DPie`, `Pie`, `XYScatter`, `_3DArea`, `Area`, `Doughnut`, `Radar`
-
+|seriesBy|文字列|省略可能。列や行がグラフのデータ系列として使用される方法を指定します。使用可能な値は次のとおりです。自動、列、行|
 
 #### <a name="returns"></a>戻り値
 [Chart](chart.md)
@@ -61,7 +56,7 @@ Excel.run(function (ctx) {
     var range = ctx.workbook.worksheets.getItem(sheetName)
         .getRange(rangeSelection);
     var chart = ctx.workbook.worksheets.getItem(sheetName)
-        .charts.add("ColumnClustered", range, "auto");  return ctx.sync().then(function() {
+        .charts.add("ColumnClustered", range, "auto");    return ctx.sync().then(function() {
             console.log("New Chart Added");
     });
 }).catch(function(error) {
@@ -73,6 +68,20 @@ Excel.run(function (ctx) {
 ```
 
 
+### <a name="getcount"></a>getCount()
+ワークシート上のグラフの数を返します。
+
+#### <a name="syntax"></a>構文
+```js
+chartCollectionObject.getCount();
+```
+
+#### <a name="parameters"></a>パラメーター
+なし
+
+#### <a name="returns"></a>戻り値
+int
+
 ### <a name="getitemname-string"></a>getItem(name: string)
 グラフ名を使用してグラフを取得します。同じ名前の複数のグラフがある場合は、最初の 1 つが返されます。
 
@@ -82,7 +91,7 @@ chartCollectionObject.getItem(name);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |name|string|取得するグラフの名前。|
 
@@ -153,7 +162,7 @@ chartCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |index|number|取得するオブジェクトのインデックス値。0 を起点とする番号になります。|
 
@@ -178,37 +187,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitemornullname-string"></a>getItemOrNull(name: string)
-グラフ名を使用してグラフを取得します。同じ名前の複数のグラフがある場合は、最初の 1 つが返されます。
+### <a name="getitemornullobjectname-string"></a>getItemOrNullObject(name: string)
+名前を使用してグラフを取得します。同じ名前の複数のグラフがある場合は、最初の 1 つが返されます。
 
 #### <a name="syntax"></a>構文
 ```js
-chartCollectionObject.getItemOrNull(name);
+chartCollectionObject.getItemOrNullObject(name);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |name|string|取得するグラフの名前。|
 
 #### <a name="returns"></a>戻り値
 [Chart](chart.md)
-
-### <a name="loadparam-object"></a>load(param: object)
-JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
-
-#### <a name="syntax"></a>構文
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|:---|
-|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
-
-#### <a name="returns"></a>戻り値
-void
 ### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 ```js

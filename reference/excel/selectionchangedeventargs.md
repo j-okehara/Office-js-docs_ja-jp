@@ -7,8 +7,9 @@ SelectionChanged イベントが発生したドキュメントに関する情報
 なし
 
 ## <a name="relationships"></a>関係
-なし
-
+| リレーションシップ | 型    |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|ブック|[ブック](workbook.md)|SelectionChanged イベントを発生させたブック オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>メソッド
 なし

@@ -4,10 +4,10 @@
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明| 要件セット|
+| プロパティ       | 型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
 |height|double|グラフ オブジェクトの高さをポイント単位で表します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|id|文字列|コレクション内の位置に基づいて、グラフを取得します。読み取り専用です。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|id|string|コレクション内での位置を基にグラフを取得します。読み取り専用です。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |left|double|グラフの左側からワークシートの原点までの距離 (ポイント単位)。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|グラフ オブジェクトの名前を表します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |top|double|オブジェクトの上端から (ワークシートの) 1 行目の上部または (グラフの) グラフ領域の上部までの距離をポイント単位で表します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -16,15 +16,15 @@
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
 ## <a name="relationships"></a>関係
-| リレーションシップ | 型   |説明| 要件セット|
+| リレーションシップ | 型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
-|axes|[ChartAxes](chartaxes.md)|グラフの軸を表します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|dataLabels|[ChartDataLabels](chartdatalabels.md)|グラフのデータラベルを表します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|format|[ChartAreaFormat](chartareaformat.md)|グラフ領域の書式設定プロパティをカプセル化します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|legend|[ChartLegend](chartlegend.md)|グラフの凡例を表します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|series|[ChartSeriesCollection](chartseriescollection.md)|グラフの 1 つのデータ系列またはデータ系列のコレクションを表します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|title|[ChartTitle](charttitle.md)|指定したグラフのタイトル (タイトルのテキスト、表示/非表示、位置、書式設定など) を表します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|worksheet|[Worksheet](worksheet.md)|現在のグラフを含んでいるワークシート。読み取り専用です。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|axes|[ChartAxes](chartaxes.md)|グラフの軸を表します。値の取得のみ可能です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|dataLabels|[ChartDataLabels](chartdatalabels.md)|グラフのデータラベルを表します。値の取得のみ可能です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|format|[ChartAreaFormat](chartareaformat.md)|グラフ領域の書式設定プロパティをカプセル化します。値の取得のみ可能です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|legend|[ChartLegend](chartlegend.md)|グラフの凡例を表します。値の取得のみ可能です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|series|[ChartSeriesCollection](chartseriescollection.md)|グラフの 1 つのデータ系列またはデータ系列のコレクションを表します。値の取得のみ可能です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|title|[ChartTitle](charttitle.md)|指定したグラフのタイトル (タイトルのテキスト、表示/非表示、位置、書式設定など) を表します。値の取得のみ可能です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|worksheet|[Worksheet](worksheet.md)|現在のグラフを含んでいるワークシート。読み取り専用。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>メソッド
 
@@ -32,7 +32,6 @@ _プロパティのアクセスの[例を参照してください。](#property-
 |:---------------|:--------|:----------|:----|
 |[delete()](#delete)|void|グラフ オブジェクトを削除します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getImage(height: number, width: number, fittingMode: string)](#getimageheight-number-width-number-fittingmode-string)|[System.IO.Stream](system.io.stream.md)|指定したサイズに合わせてグラフを拡大、縮小することで、グラフを Base64 でエンコードされた画像としてレンダリングします。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[setData(sourceData:Range, seriesBy: string)](#setdatasourcedata-range-seriesby-string)|void|グラフの元データをリセットします。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[setPosition(startCell:Range or string, endCell:Range or string)](#setpositionstartcell-range-or-string-endcell-range-or-string)|void|ワークシート上のセルを基準にしてグラフを配置します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -56,7 +55,7 @@ void
 #### <a name="examples"></a>例
 ```js
 Excel.run(function (ctx) { 
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");    
     chart.delete();
     return ctx.sync(); 
 }).catch(function(error) {
@@ -76,7 +75,7 @@ chartObject.getImage(height, width, fittingMode);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |height|number|省略可能。(省略可能) 結果の画像の希望する高さ。|
 |width|number|省略可能。(省略可能) 結果の画像の希望する幅。|
@@ -88,7 +87,7 @@ chartObject.getImage(height, width, fittingMode);
 #### <a name="examples"></a>例
 ```js
 Excel.run(function (ctx) { 
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");    
     var image = chart.getImage();
     return ctx.sync(); 
 }).catch(function(error) {
@@ -103,23 +102,7 @@ Excel.run(function (ctx) {
 
 
 
-### <a name="loadparam-object"></a>load(param: object)
-JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
-
-#### <a name="syntax"></a>構文
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|:---|
-|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
-
-#### <a name="returns"></a>戻り値
-void
-
-### <a name="setdatasourcedata-range-seriesby-string"></a>setData(sourceData: Range, seriesBy: string)
+### <a name="setdatasourcedata-range-seriesby-string"></a>setData(sourceData:Range, seriesBy: string)
 グラフの元データをリセットします。
 
 #### <a name="syntax"></a>構文
@@ -128,7 +111,7 @@ chartObject.setData(sourceData, seriesBy);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |sourceData|Range|データ ソースに対応する Range オブジェクトです。|
 |seriesBy|文字列|省略可能。列や行がグラフのデータ系列として使用される方法を指定します。次のいずれかを指定できます。自動 (既定)、行、列。使用可能な値は次のとおりです。自動、列、行|
@@ -142,7 +125,7 @@ void
 
 ```js
 Excel.run(function (ctx) { 
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");    
     var sourceData = "A1:B4";
     chart.setData(sourceData, "Columns");
     return ctx.sync(); 
@@ -155,7 +138,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="setpositionstartcell-range-or-string-endcell-range-or-string"></a>setPosition(startCell:範囲または文字列、endCell:Range or string)
+### <a name="setpositionstartcell-range-or-string-endcell-range-or-string"></a>setPosition(startCell: Range または string, endCell: Range または string)
 ワークシート上のセルを基準にしてグラフを配置します。
 
 #### <a name="syntax"></a>構文
@@ -164,7 +147,7 @@ chartObject.setPosition(startCell, endCell);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |startCell|Range または string|開始セル。これは、グラフの移動先です。開始セルは、ユーザーの右から左への表示の設定に応じて、左上のセルか、右上のセルとなります。|
 |endCell|Range または string|省略可能。(省略可能) 最後のセル。指定されている場合、グラフの幅と高さは、このセルまたは範囲を完全にカバーするように設定されます。|
@@ -200,7 +183,7 @@ Excel.run(function (ctx) {
 
 ```js
 Excel.run(function (ctx) { 
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");    
     chart.load('name');
     return ctx.sync().then(function() {
             console.log(chart.name);
@@ -217,7 +200,7 @@ Excel.run(function (ctx) {
 
 ```js
 Excel.run(function (ctx) { 
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");    
     chart.name="New Name";
     chart.top = 100;
     chart.left = 100;
@@ -237,7 +220,7 @@ Excel.run(function (ctx) {
 ```js
 Excel.run(function (ctx) { 
     var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
-    chart.name="New Name";  
+    chart.name="New Name";    
     chart.top = 100;
     chart.left = 100;
     chart.height =200;

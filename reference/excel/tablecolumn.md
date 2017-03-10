@@ -4,19 +4,19 @@
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明| 要件セット|
+| プロパティ       | 型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
 |id|int|テーブル内の列を識別する一意のキーを返します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |index|int|テーブルの列コレクション内の列のインデックス番号を返します。0 を起点とする番号になります。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|name|string|テーブル列の名前を返します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|name|string|テーブル列の名前を表します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |values|object[][]|指定した範囲の Raw 値を表します。返されるデータの型は、文字列、数値、またはブール値のいずれかになります。エラーが含まれているセルは、エラー文字列を返します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
 ## <a name="relationships"></a>関係
-| リレーションシップ | 型   |説明| 要件セット|
+| リレーションシップ | 型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
-|filter|[Filter](filter.md)|列に適用されるフィルターを取得します。読み取り専用です。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|フィルター|[Filter](filter.md)|列に適用されるフィルターを取得します。読み取り専用です。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>メソッド
 
@@ -27,7 +27,6 @@ _プロパティのアクセスの[例を参照してください。](#property-
 |[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|列のヘッダー行に関連付けられた範囲オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange()](#getrange)|[Range](range.md)|列全体に関連付けられた範囲オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|列の集計行に関連付けられた範囲オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
@@ -196,22 +195,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### <a name="loadparam-object"></a>load(param: object)
-JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
-
-#### <a name="syntax"></a>構文
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|:---|
-|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
-
-#### <a name="returns"></a>戻り値
-void
 ### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 ```js

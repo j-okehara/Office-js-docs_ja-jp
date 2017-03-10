@@ -4,7 +4,7 @@
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明| 要件セット|
+| プロパティ       | 型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
 |color|string|グラフの線の色を表す HTML カラー コード。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -19,7 +19,6 @@ _プロパティのアクセスの[例を参照してください。](#property-
 | メソッド           | 戻り値の型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
 |[clear()](#clear)|void|グラフ要素の線の書式をクリアします。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
@@ -44,7 +43,7 @@ void
 
 ```js
 Excel.run(function (ctx) { 
-    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;   
+    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;    
     gridlines.format.line.clear();
     return ctx.sync().then(function() {
             console.log("Chart Major Gridlines Format Cleared");
@@ -56,22 +55,6 @@ Excel.run(function (ctx) {
         }
 });
 ```
-
-### <a name="loadparam-object"></a>load(param: object)
-JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
-
-#### <a name="syntax"></a>構文
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|:---|
-|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
-
-#### <a name="returns"></a>戻り値
-void
 ### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 グラフの数値軸の目盛線を赤色に設定します。

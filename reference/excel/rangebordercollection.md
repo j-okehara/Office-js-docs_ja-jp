@@ -4,7 +4,7 @@
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明| 要件セット|
+| プロパティ       | 型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
 |count|int|コレクションに含まれる境界線オブジェクトの数。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |items|[RangeBorder[]](rangeborder.md)|rangeBorder オブジェクトのコレクション。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -21,7 +21,6 @@ _プロパティのアクセスの[例を参照してください。](#property-
 |:---------------|:--------|:----------|:----|
 |[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|オブジェクトの名前を使用して、境界線オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|オブジェクトのインデックスを使用して、境界線オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
@@ -35,7 +34,7 @@ rangeBorderCollectionObject.getItem(index);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |index|文字列|取得する境界線オブジェクトのインデックス値。使用可能な値は次のとおりです。EdgeTop、EdgeBottom、EdgeLeft、EdgeRight、InsideVertical、InsideHorizontal、DiagonalDown、DiagonalUp|
 
@@ -95,7 +94,7 @@ rangeBorderCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |index|number|取得するオブジェクトのインデックス値。0 を起点とする番号になります。|
 
@@ -123,22 +122,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### <a name="loadparam-object"></a>load(param: object)
-JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
-
-#### <a name="syntax"></a>構文
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|:---|
-|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
-
-#### <a name="returns"></a>戻り値
-void
 ### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 ```js

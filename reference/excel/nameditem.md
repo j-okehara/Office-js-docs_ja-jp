@@ -4,31 +4,50 @@
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明| 要件セット|
+| プロパティ       | 型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
-|name|string|オブジェクトの名前。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|型|string|名前に関連付けられている参照の型を示します。読み取り専用です。使用可能な値は次のとおりです。String、Integer、Double、Boolean、Range。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|value|object|定義されている名前が参照する数式を表します。例: =Sheet14!$B$2:$H$12、=4.75, など。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|comment|string|この名前に関連付けられているコメントを表します。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|name|string|オブジェクトの名前。値の取得のみ可能です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|scope|string|名前がブックを対象にしているのか、特定のワークシートを対象にしているのかを示します。読み取り専用です。使用可能な値は次のとおりです。Equal、Greater、GreaterEqual、Less、LessEqual、NotEqual。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|名前の数式によって返される値の型を示します。読み取り専用です。使用可能な値は次のとおりです。String、Integer、Double、Boolean、Range。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|value|object|名前の数式で計算された値を表します。名前付き範囲の場合は範囲のアドレスを返します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |visible|bool|オブジェクトを表示するかどうかを指定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
 ## <a name="relationships"></a>関係
-なし
-
+| リレーションシップ | 型    |説明| 要件セット|
+|:---------------|:--------|:----------|:----|
+|ワークシート|[Worksheet](worksheet.md)|名前付きのアイテムの対象になるワークシートを返します。アイテムがブックを対象にしている場合は、エラーをスローします。読み取り専用です。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|worksheetOrNullObject|[Worksheet](worksheet.md)|名前付きのアイテムの対象になるワークシートを返します。アイテムがブックを対象にしている場合は、null オブジェクトを返します。読み取り専用です。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>メソッド
 
 | メソッド           | 戻り値の型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
-|[getRange()](#getrange)|[Range](range.md)|名前に関連付けられている範囲オブジェクトを返します。名前付き項目の型が範囲でない場合、例外をスローします。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[delete()](#delete)|void|指定された名前を削除します。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange()](#getrange)|[Range](range.md)|名前に関連付けられている範囲オブジェクトを返します。名前付きアイテムの型が範囲でない場合、エラーをスローします。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRangeOrNullObject()](#getrangeornullobject)|[Range](range.md)|名前に関連付けられている範囲オブジェクトを返します。名前付きアイテムの型が範囲でない場合は、null オブジェクトを返します。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
 
+### <a name="delete"></a>delete()
+指定された名前を削除します。
+
+#### <a name="syntax"></a>構文
+```js
+namedItemObject.delete();
+```
+
+#### <a name="parameters"></a>パラメーター
+なし
+
+#### <a name="returns"></a>戻り値
+void
+
 ### <a name="getrange"></a>getRange()
-名前に関連付けられている範囲オブジェクトを返します。名前付き項目の型が範囲でない場合、例外をスローします。
+名前に関連付けられている範囲オブジェクトを返します。名前付きアイテムの型が範囲でない場合、エラーをスローします。
 
 #### <a name="syntax"></a>構文
 ```js
@@ -62,21 +81,19 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="loadparam-object"></a>load(param: object)
-JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
+### <a name="getrangeornullobject"></a>getRangeOrNullObject()
+名前に関連付けられている範囲オブジェクトを返します。名前付きアイテムの型が範囲でない場合は、null オブジェクトを返します。
 
 #### <a name="syntax"></a>構文
 ```js
-object.load(param);
+namedItemObject.getRangeOrNullObject();
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|:---|
-|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
+なし
 
 #### <a name="returns"></a>戻り値
-void
+[Range](range.md)
 ### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 ```js

@@ -1,7 +1,6 @@
 # <a name="document-object-javascript-api-for-visio"></a>Document オブジェクト (JavaScript API for Visio)
 
 適用対象:_Visio Online_
->**注:**Visio JavaScript API は、現在プレビューの段階であり、変更される可能性があります。Visio JavaScript API は、運用環境での使用は現在サポートされていません。
 
 ドキュメント クラスを表します。
 
@@ -10,18 +9,20 @@
 なし
 
 ## <a name="relationships"></a>関係
-| リレーションシップ | 型    |説明| フィードバック|
-|:---------------|:--------|:----------|:---|
-|アプリケーション|[Application](application.md)|このドキュメントを含む Visio アプリケーションのインスタンスを表します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-application)|
-|pages|[PageCollection](pagecollection.md)|ドキュメントに関連付けられているページのコレクションを表します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-pages)|
+| リレーションシップ | 型    |説明|
+|:---------------|:--------|:----------|
+|application|[アプリケーション](application.md)|このドキュメントを含む Visio アプリケーションのインスタンスを表します。読み取り専用です。|
+|pages|[PageCollection](pagecollection.md)|ドキュメントに関連付けられているページのコレクションを表します。読み取り専用です。|
+|ビュー|[DocumentView](documentview.md)|DocumentView オブジェクトを返します。読み取り専用です。|
 
 ## <a name="methods"></a>メソッド
 
-| メソッド           | 戻り値の型    |説明| フィードバック|
-|:---------------|:--------|:----------|:---|
-|[getActivePage()](#getactivepage)|[Page](page.md)|ドキュメントのアクティブ ページを返します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-getActivePage)|
-|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-load)|
-|[setActivePage(PageName: string)](#setactivepagepagename-string)|void|ドキュメントのアクティブ ページを設定します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-setActivePage)|
+| メソッド           | 戻り値の型    |説明|
+|:---------------|:--------|:----------|
+|[getActivePage()](#getactivepage)|[Page](page.md)|ドキュメントのアクティブ ページを返します。|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
+|[setActivePage(PageName: string)](#setactivepagepagename-string)|void|ドキュメントのアクティブ ページを設定します。|
+|[startDataRefresh()](#startdatarefresh)|void|すべてのページについて、図内のデータの更新をトリガーします。|
 
 ## <a name="method-details"></a>メソッドの詳細
 
@@ -106,7 +107,33 @@ Visio.run(function (ctx) {
 ```
 
 
-### <a name="property-access-examples"></a>プロパティのアクセスの例
+### <a name="startdatarefresh"></a>startDataRefresh()
+すべてのページについて、図内のデータの更新をトリガーします。
+
+#### <a name="syntax"></a>構文
+```js
+documentObject.startDataRefresh();
+```
+
+#### <a name="parameters"></a>パラメーター
+なし
+
+#### <a name="returns"></a>戻り値
+void
+
+#### <a name="examples"></a>例
+```js
+Visio.run(function (ctx) { 
+    var document = ctx.document;
+    document.startDataRefresh();
+    return ctx.sync();
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```### Property access examples
 ```js
 Visio.run(function (ctx) { 
     var pages = ctx.document.pages;
@@ -114,6 +141,20 @@ Visio.run(function (ctx) {
     return ctx.sync().then(function () {
         console.log("Pages Count: " +pageCount.value);
         });
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+
+### <a name="property-access-examples"></a>プロパティのアクセスの例
+```js
+Visio.run(function (ctx) { 
+    var documentView = ctx.document.view;
+    documentView.disableHyperlinks();
+    return ctx.sync();
 }).catch(function(error) {
         console.log("Error: " + error);
         if (error instanceof OfficeExtension.Error) {

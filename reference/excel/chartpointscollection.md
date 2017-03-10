@@ -4,10 +4,10 @@
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明| 要件セット|
+| プロパティ       | 型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
-|count|int|コレクション内にあるグラフのポイントの数を取得します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|items|[ChartPoint[]](chartpoint.md)|chartPoints オブジェクトのコレクション。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|count|int|系列内にあるグラフのポイントの数を取得します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[ChartPoint[]](chartpoint.md)|chartPoints オブジェクトのコレクション。値の取得のみ可能です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
@@ -19,11 +19,25 @@ _プロパティのアクセスの[例を参照してください。](#property-
 
 | メソッド           | 戻り値の型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
+|[getCount()](#getcount)|int|系列内にあるグラフのポイントの数を取得します。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[ChartPoint](chartpoint.md)|データ系列内の位置に基づくポイントを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
+
+### <a name="getcount"></a>getCount()
+系列内にあるグラフのポイントの数を取得します。
+
+#### <a name="syntax"></a>構文
+```js
+chartPointsCollectionObject.getCount();
+```
+
+#### <a name="parameters"></a>パラメーター
+なし
+
+#### <a name="returns"></a>戻り値
+int
 
 ### <a name="getitematindex-number"></a>getItemAt(index: number)
 データ系列内の位置に基づくポイントを取得します。
@@ -34,7 +48,7 @@ chartPointsCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |index|number|取得するオブジェクトのインデックス値。0 を起点とする番号になります。|
 
@@ -57,25 +71,9 @@ Excel.run(function (ctx) {
             console.log("Debug info: " + JSON.stringify(error.debugInfo));
         }
 });
-```
-### <a name="loadparam-object"></a>load(param: object)
-JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
+```### Property access examples
 
-#### <a name="syntax"></a>構文
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|:---|
-|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
-
-#### <a name="returns"></a>戻り値
-void
-### <a name="property-access-examples"></a>プロパティのアクセスの例
-
-points コレクション内のポイントの名前を取得します。
+Get the names of points in the points collection
 
 ```js
 Excel.run(function (ctx) { 

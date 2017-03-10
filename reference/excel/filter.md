@@ -7,7 +7,7 @@
 なし
 
 ## <a name="relationships"></a>関係
-| リレーションシップ | 型   |説明| 要件セット|
+| リレーションシップ | 型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
 |criteria|[FilterCriteria](filtercriteria.md)|指定した列に現在適用されているフィルターです。読み取り専用です。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -27,13 +27,12 @@
 |[applyTopPercentFilter(percent: number)](#applytoppercentfilterpercent-number)|void|指定した割合の要素の列に "上位パーセント" フィルターを適用します。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyValuesFilter(values: ()[])](#applyvaluesfiltervalues-)|void|指定した値の列に "値" フィルターを適用します。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[clear()](#clear)|void|指定した列のフィルターをクリアします。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
 
 ### <a name="applycriteria-filtercriteria"></a>適用(条件:フィルター条件)
-指定した列に、指定されたフィルター条件を適用します。
+指定した列に指定されたフィルター条件を適用します。
 
 #### <a name="syntax"></a>構文
 ```js
@@ -41,9 +40,9 @@ filterObject.apply(criteria);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
-|条件|FilterCriteria|適用する基準。|
+|criteria|FilterCriteria|適用する基準。|
 
 #### <a name="returns"></a>戻り値
 void
@@ -57,7 +56,7 @@ filterObject.applyBottomItemsFilter(count);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |count|number|表示する下位からの要素の数。|
 
@@ -73,7 +72,7 @@ filterObject.applyBottomPercentFilter(percent);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |percent|number|表示する下位からの要素のパーセンテージ。|
 
@@ -89,7 +88,7 @@ filterObject.applyCellColorFilter(color);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |color|string|表示するセルの背景色です。|
 
@@ -105,7 +104,7 @@ filterObject.applyCustomFilter(criteria1, criteria2, oper);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |criteria1|string|最初の条件の文字列です。|
 |criteria2|string|省略可能。2 つ目の条件の文字列です。|
@@ -123,7 +122,7 @@ filterObject.applyDynamicFilter(criteria);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |criteria|string|適用する動的な条件です。使用可能な値は次のとおりです。Unknown、AboveAverage、AllDatesInPeriodApril、AllDatesInPeriodAugust、AllDatesInPeriodDecember、AllDatesInPeriodFebruray、AllDatesInPeriodJanuary、AllDatesInPeriodJuly、AllDatesInPeriodJune、AllDatesInPeriodMarch、AllDatesInPeriodMay、AllDatesInPeriodNovember、AllDatesInPeriodOctober、AllDatesInPeriodQuarter1、AllDatesInPeriodQuarter2、AllDatesInPeriodQuarter3、AllDatesInPeriodQuarter4、AllDatesInPeriodSeptember、BelowAverage、LastMonth、LastQuarter、LastWeek、LastYear、NextMonth、NextQuarter、NextWeek、NextYear、ThisMonth、ThisQuarter、ThisWeek、ThisYear、Today、Tomorrow、YearToDate、Yesterday|
 
@@ -139,7 +138,7 @@ filterObject.applyFontColorFilter(color);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |color|string|表示するセルのフォントの色です。|
 
@@ -155,7 +154,7 @@ filterObject.applyIconFilter(icon);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |アイコン|Icon|表示するセルのアイコンです。|
 
@@ -171,7 +170,7 @@ filterObject.applyTopItemsFilter(count);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |count|number|表示する上位からの要素の数。|
 
@@ -187,7 +186,7 @@ filterObject.applyTopPercentFilter(percent);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |percent|number|表示する上位からの要素のパーセンテージ。|
 
@@ -203,7 +202,7 @@ filterObject.applyValuesFilter(values);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |values|()[]|表示する値のリスト。|
 
@@ -220,22 +219,6 @@ filterObject.clear();
 
 #### <a name="parameters"></a>パラメーター
 なし
-
-#### <a name="returns"></a>戻り値
-void
-
-### <a name="loadparam-object"></a>load(param: object)
-JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
-
-#### <a name="syntax"></a>構文
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|:---|
-|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
 
 #### <a name="returns"></a>戻り値
 void

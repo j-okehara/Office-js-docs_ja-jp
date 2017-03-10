@@ -1,11 +1,11 @@
 
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a>作業ウィンドウ アドインとコンテンツ アドインを SharePoint カタログに発行する
 
->**注:**クラウド環境またはハイブリッド環境をターゲットにしている場合は、[管理センターのプレビュー](https://support.office.com/en-ie/article/Deploy-Office-Add-ins-in-the-Office-365-new-Admin-Center-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE)経由で集中管理された展開によって、アドインを発行することをお勧めします。
+>**重要!**SharePoint のアドイン カタログでは、アドイン コマンドなど、[アドイン マニフェスト](../overview/add-in-manifests.md)の VersionOverride ノードに実装されているアドイン機能はサポートされていません。 
+
+>クラウド環境またはハイブリッド環境をターゲットにしている場合は、[管理センターのプレビュー](https://support.office.com/en-ie/article/Deploy-Office-Add-ins-in-the-Office-365-new-Admin-Center-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE)経由で**集中管理された展開**によって、アドインを発行することをお勧めします。
 
 アドイン カタログは、Office アドインと SharePoint アドインのドキュメント ライブラリをホストする SharePoint Web アプリケーションまたは SharePoint Online テナンシーの専用サイト コレクションです。管理者は、組織の Office アドイン マニフェスト ファイルをアドイン カタログにアップロードできます。管理者がアドイン カタログを信頼できるカタログとして登録すると、ユーザーは Office クライアント アプリケーションで挿入 UI からアドインを挿入できます。
-
->**注:**SharePoint のアドイン カタログでは、アドイン コマンドなど、[アドイン マニフェスト](../overview/add-in-manifests.md)の VersionOverride ノードに実装されているアドイン機能はサポートされていません。 
 
 SharePoint カタログは Office 2016 for Mac ではサポートされていません。Office アドインを Mac クライアントに展開するには、それを [Office ストア](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)に提出する必要があります。   
 

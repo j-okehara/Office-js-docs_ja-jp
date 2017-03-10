@@ -4,10 +4,10 @@
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明| 要件セット|
+| プロパティ       | 型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
-|count|int|コレクション内にあるデータ系列の数を取得します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|items|[ChartSeries[]](chartseries.md)|chartSeries オブジェクトのコレクション。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|count|int|コレクション内にあるデータ系列の数を取得します。値の取得のみ可能です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[ChartSeries[]](chartseries.md)|chartSeries オブジェクトのコレクション。値の取得のみ可能です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
@@ -19,11 +19,25 @@ _プロパティのアクセスの[例を参照してください。](#property-
 
 | メソッド           | 戻り値の型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
+|[getCount()](#getcount)|int|コレクション内にあるデータ系列の数を取得します。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|コレクション内の位置に基づいてデータ系列を取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
+
+### <a name="getcount"></a>getCount()
+コレクション内にあるデータ系列の数を取得します。
+
+#### <a name="syntax"></a>構文
+```js
+chartSeriesCollectionObject.getCount();
+```
+
+#### <a name="parameters"></a>パラメーター
+なし
+
+#### <a name="returns"></a>戻り値
+int
 
 ### <a name="getitematindex-number"></a>getItemAt(index: number)
 コレクション内の位置に基づいてデータ系列を取得します。
@@ -34,7 +48,7 @@ chartSeriesCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |index|number|取得するオブジェクトのインデックス値。0 を起点とする番号になります。|
 
@@ -60,22 +74,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### <a name="loadparam-object"></a>load(param: object)
-JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
-
-#### <a name="syntax"></a>構文
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|:---|
-|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
-
-#### <a name="returns"></a>戻り値
-void
 ### <a name="property-access-examples"></a>プロパティのアクセスの例
 データ系列コレクション内のデータ系列の名前を取得する。
 

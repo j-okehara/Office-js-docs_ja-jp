@@ -1,15 +1,14 @@
 # <a name="shapedataitemcollection-object-javascript-api-for-visio"></a>ShapeDataItemCollection オブジェクト (JavaScript API for Visio)
 
 適用対象:_Visio Online_
->**注:**Visio JavaScript API は、現在プレビューの段階であり、変更される可能性があります。Visio JavaScript API は、運用環境での使用は現在サポートされていません。
 
 特定の図形の ShapeDataItemCollection を表します。
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ       | 型    |説明| フィードバック|
-|:---------------|:--------|:----------|:---|
-|items|[ShapeDataItem[]](shapedataitem.md)|shapeDataItem オブジェクトのコレクション。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-items)|
+| プロパティ       | 型    |説明|
+|:---------------|:--------|:----------|
+|items|[ShapeDataItem[]](shapedataitem.md)|shapeDataItem オブジェクトのコレクション。読み取り専用です。|
 
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
@@ -19,11 +18,11 @@ _プロパティのアクセスの[例を参照してください。](#property-
 
 ## <a name="methods"></a>メソッド
 
-| メソッド           | 戻り値の型    |説明| フィードバック|
-|:---------------|:--------|:----------|:---|
-|[getCount()](#getcount)|int|図形データ項目の数を取得します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-getCount)|
-|[getItem(key: string)](#getitemkey-string)|[ShapeDataItem](shapedataitem.md)|名前を使用して ShapeDataItem を取得します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-getItem)|
-|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-load)|
+| メソッド           | 戻り値の型    |説明|
+|:---------------|:--------|:----------|
+|[getCount()](#getcount)|int|図形データ項目の数を取得します。|
+|[getItem(key: string)](#getitemkey-string)|[ShapeDataItem](shapedataitem.md)|名前を使用して ShapeDataItem を取得します。|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
 ## <a name="method-details"></a>メソッドの詳細
 

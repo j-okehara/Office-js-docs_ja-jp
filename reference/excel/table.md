@@ -4,7 +4,7 @@ Excel の表を表します。
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明| 要件セット|
+| プロパティ       | 型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
 |highlightFirstColumn|bool|最初の列に特別な書式設定が含まれているかどうかを示します。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |highlightLastColumn|bool|最後の列に特別な書式設定が含まれているかどうかを示します。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
@@ -20,12 +20,12 @@ Excel の表を表します。
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
 ## <a name="relationships"></a>関係
-| リレーションシップ | 型   |説明| 要件セット|
+| リレーションシップ | 型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
 |columns|[TableColumnCollection](tablecolumncollection.md)|テーブルに含まれるすべての列のコレクションを表します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |rows|[TableRowCollection](tablerowcollection.md)|テーブルに含まれるすべての行のコレクションを表します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|sort|[TableSort](tablesort.md)|テーブル内のソート順を表します。読み取り専用です。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|worksheet|[Worksheet](worksheet.md)|現在の表を含んでいるワークシート。読み取り専用です。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|sort|[TableSort](tablesort.md)|テーブル内の並べ替えを表します。読み取り専用。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|worksheet|[Worksheet](worksheet.md)|現在のテーブルを含んでいるワークシート。読み取り専用です。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>メソッド
 
@@ -38,7 +38,6 @@ _プロパティのアクセスの[例を参照してください。](#property-
 |[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|テーブルのヘッダー行に関連付けられた範囲オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange()](#getrange)|[Range](range.md)|テーブル全体に関連付けられた範囲オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|テーブルの集計行に関連付けられた範囲オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[reapplyFilters()](#reapplyfilters)|void|現在テーブルに適用されているすべてのフィルターを再適用します。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
@@ -202,7 +201,7 @@ Excel.run(function (ctx) {
     var tableName = 'Table1';
     var table = ctx.workbook.tables.getItem(tableName);
     var tableRange = table.getRange();
-    tableRange.load('address'); 
+    tableRange.load('address');    
     return ctx.sync().then(function() {
             console.log(tableRange.address);
     });
@@ -235,7 +234,7 @@ Excel.run(function (ctx) {
     var tableName = 'Table1';
     var table = ctx.workbook.tables.getItem(tableName);
     var tableTotalsRange = table.getTotalRowRange();
-    tableTotalsRange.load('address');   
+    tableTotalsRange.load('address');    
     return ctx.sync().then(function() {
             console.log(tableTotalsRange.address);
     });
@@ -247,22 +246,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### <a name="loadparam-object"></a>load(param: object)
-JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
-
-#### <a name="syntax"></a>構文
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|:---|
-|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
-
-#### <a name="returns"></a>戻り値
-void
 
 ### <a name="reapplyfilters"></a>reapplyFilters()
 現在テーブルに適用されているすべてのフィルターを再適用します。

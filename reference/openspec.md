@@ -12,9 +12,9 @@ Visio Online は、Visio 図面を Web 上で表示し共有する新しい方�
 **詳細については、[Visio JavaScript API 1.1](https://github.com/OfficeDev/office-js-docs/tree/VisioJs_1.1_Openspec) のページを参照し、フィードバックを提供してください。**
 
 ## <a name="new-excel-javascript-apis"></a>新しい Excel JavaScript API
-新しい Excel JavaScript API の設計のレビューにご参加ください。新規および更新された API には customXML パーツ、名前付きアイテムの追加メソッド、条件付き書式などが含まれます。 
+新しい Excel JavaScript API の設計のレビューにご参加ください。新規および更新された API には customXML パーツ、条件付き書式などが含まれます。 
 
-**詳細については [Excel JavaScript 1.4 API のページ](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.4_OpenSpec)を参照し、フィードバックを提供してください。**
+**詳細については [Excel JavaScript のオープン設計ページ](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)を参照し、フィードバックを提供してください。**
 
 ## <a name="new-word-javascript-apis-13"></a>新しい Word JavaScript API (1.3)
 Word JavaScript API 1.3 更新プログラムには、この API の導入以降実装された最大の変更セットが含まれています。新しい API を使用すると、以下を行えます。 
@@ -26,7 +26,7 @@ Word JavaScript API 1.3 更新プログラムには、この API の導入以降
 
 Word JavaScript API のほぼすべてのオブジェクト間で、これらの変更が実装されました。この機能は、現在、またはまもなく Windows と Mac 両方のデスクトップと iPad 上の Word 2016 のプレビュー版で利用できます。クライアントを最新のビルドに毎月更新して、これら魅力的な機能の実装を開始してください。
 
-**詳細については、[Word JS API 1.3 のページ](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.3_Openspec/word)を参照し、フィードバックを提供してください。**
+**詳細については [Word JS API 1.3 のオープン設計ページ](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.3_Openspec/word)を参照し、フィードバックを提供してください。**
 
 ## <a name="new-word-javascript-apis-14"></a>新しい Word JavaScript API (1.4)
 Word JavaScript API 1.4 の更新プログラムに含まれている、重要な追加機能:
@@ -38,10 +38,13 @@ Word JavaScript API 1.4 の更新プログラムに含まれている、重要�
 * テーブルの結合セル
 * テーブルの行の結合と列の分割
 
-**詳細については、[Word JS API 1.4 のページ](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_OpenSpec)を参照し、フィードバックを提供してください。**
+**詳細については [Word JS API 1.4 のオープン設計ページ](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_OpenSpec)を参照し、フィードバックを提供してください。**
 
 ## <a name="host-platform-information-and-diagnostic-information"></a>ホスト、プラットフォームの情報および診断情報 
-アドインの実行時環境の情報および診断情報を開発者に提供するために、Office.Context オブジェクトへの計画済みの追加機能を確認してください。 
+アドインの実行時環境の情報および診断情報を開発者に提供するために、Office.Context オブジェクトへの計画済みの[追加機能](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec)を確認してください。 
 
-**詳細については、「[Office コンテキストの追加機能の仕様](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec)」を参照し、フィードバックを提供してください。**
+## <a name="single-sign-on-capability"></a>シングル サインオン機能 
+Office アドインのシングル サインオンを有効にするための初期設計は、[ここから](https://github.com/OfficeDev/office-js-docs/tree/Addin_SSO_OpenSpec)検索してください。
+
+**詳細については、[Office コンテキストの追加機能の仕様](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec)を参照し、フィードバックを提供してください。**
 

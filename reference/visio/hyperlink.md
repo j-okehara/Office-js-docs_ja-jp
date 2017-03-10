@@ -1,17 +1,16 @@
 # <a name="hyperlink-object-javascript-api-for-visio"></a>Hyperlink オブジェクト (JavaScript API for Visio)
 
 適用対象:_Visio Online_
->**注:**Visio JavaScript API は、現在プレビューの段階であり、変更される可能性があります。Visio JavaScript API は、運用環境での使用は現在サポートされていません。
 
 ハイパーリンクを表します。
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ       | 型    |説明| フィードバック|
-|:---------------|:--------|:----------|:---|
-|address|string|ハイパーリンク オブジェクトのアドレスを取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-address)|
-|description|string|ハイパーリンクの説明を取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-description)|
-|subAddress|string|ハイパーリンク オブジェクトのサブアドレスを取得します。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-subAddress)|
+| プロパティ       | 型    |説明|
+|:---------------|:--------|:----------|
+|address|string|ハイパーリンク オブジェクトのアドレスを取得します。読み取り専用です。|
+|description|string|ハイパーリンクの説明を取得します。読み取り専用です。|
+|subAddress|string|ハイパーリンク オブジェクトのサブアドレスを取得します。読み取り専用です。|
 
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
@@ -21,9 +20,9 @@ _プロパティのアクセスの[例を参照してください。](#property-
 
 ## <a name="methods"></a>メソッド
 
-| メソッド           | 戻り値の型    |説明| フィードバック|
-|:---------------|:--------|:----------|:---|
-|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-load)|
+| メソッド           | 戻り値の型    |説明|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
 ## <a name="method-details"></a>メソッドの詳細
 

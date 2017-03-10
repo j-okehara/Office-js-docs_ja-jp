@@ -4,10 +4,10 @@
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明| 要件セット|
+| プロパティ       | 型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
-|id|string|バインド識別子を表します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|型|string|バインドの型を返します。読み取り専用。使用可能な値は次のとおりです。Range、Table、Text。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|id|string|バインド識別子を表します。読み取り専用。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|型|string|バインドの型を返します。読み取り専用。使用可能な値は次のとおりです。Range, Table, Text。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
@@ -23,7 +23,6 @@ _プロパティのアクセスの[例を参照してください。](#property-
 |[getRange()](#getrange)|[Range](range.md)|バインディングによって表される範囲を返します。バインドが正しい型ではない場合、エラーがスローされます。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getTable()](#gettable)|[Table](table.md)|バインドによって表されるテーブルを返します。バインドが正しい型ではない場合、エラーがスローされます。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getText()](#gettext)|string|バインドによって表されるテキストを返します。バインドが正しい型ではない場合、エラーがスローされます。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>メソッドの詳細
 
@@ -140,22 +139,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### <a name="loadparam-object"></a>load(param: object)
-JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
-
-#### <a name="syntax"></a>構文
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|:---|
-|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
-
-#### <a name="returns"></a>戻り値
-void
 ### <a name="property-access-examples"></a>プロパティのアクセスの例
 
 ```js

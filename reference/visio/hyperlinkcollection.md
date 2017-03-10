@@ -1,15 +1,14 @@
 # <a name="hyperlinkcollection-object-javascript-api-for-visio"></a>HyperlinkCollection オブジェクト (JavaScript API for Visio)
 
 適用対象:_Visio Online_
->**注:**Visio JavaScript API は、現在プレビューの段階であり、変更される可能性があります。Visio JavaScript API は、運用環境での使用は現在サポートされていません。
 
 ハイパーリンク コレクションを表します。
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ       | 型    |説明| フィードバック|
-|:---------------|:--------|:----------|:---|
-|items|[Hyperlink[]](hyperlink.md)|ハイパーリンク オブジェクトのコレクションです。読み取り専用です。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlinkCollection-items)|
+| プロパティ       | 型    |説明|
+|:---------------|:--------|:----------|
+|items|[Hyperlink[]](hyperlink.md)|ハイパーリンク オブジェクトのコレクションです。読み取り専用です。|
 
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
@@ -19,11 +18,11 @@ _プロパティのアクセスの[例を参照してください。](#property-
 
 ## <a name="methods"></a>メソッド
 
-| メソッド           | 戻り値の型    |説明| フィードバック|
-|:---------------|:--------|:----------|:---|
-|[getCount()](#getcount)|int|ハイパーリンクの数を取得します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlinkCollection-getCount)|
-|[getItem(Key: number または string)](#getitemkey-number-or-string)|[ハイパーリンク](hyperlink.md)|そのキー (名前または ID) を使用してハイパーリンクを取得します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlinkCollection-getItem)|
-|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[移動](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlinkCollection-load)|
+| メソッド           | 戻り値の型    |説明|
+|:---------------|:--------|:----------|
+|[getCount()](#getcount)|int|ハイパーリンクの数を取得します。|
+|[getItem(Key: number または string)](#getitemkey-number-or-string)|[ハイパーリンク](hyperlink.md)|そのキー (名前または ID) を使用してハイパーリンクを取得します。|
+|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|
 
 ## <a name="method-details"></a>メソッドの詳細
 

@@ -4,9 +4,9 @@
 
 ## <a name="properties"></a>プロパティ
 
-| プロパティ     | 型   |説明| 要件セット|
+| プロパティ       | 型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
-|address|string|A1 スタイルの範囲参照を表します。アドレス値には、シート参照が格納されます (例: Sheet1!A1:B4)。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|アドレス|string|A1 スタイルの範囲参照を表します。アドレス値には、シート参照が格納されます (例: Sheet1!A1:B4)。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |addressLocal|string|ユーザーの言語で指定された範囲の範囲参照を表します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |cellCount|int|範囲に含まれるセルの数。セルの数が 2^31-1 (2,147,483,647) を超えると、この API は -1 を返します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |columnCount|int|範囲に含まれる列の合計数を表します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -27,10 +27,10 @@
 _プロパティのアクセスの[例を参照してください。](#property-access-examples)_
 
 ## <a name="relationships"></a>関係
-| リレーションシップ | 型   |説明| 要件セット|
+| リレーションシップ | 型    |説明| 要件セット|
 |:---------------|:--------|:----------|:----|
 |format|[RangeFormat](rangeformat.md)|Format オブジェクト (範囲のフォント、塗りつぶし、罫線、配置などのプロパティをカプセル化するオブジェクト) を返します。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|sort|[RangeSort](rangesort.md)|現在の範囲について、範囲の並べ替えを表します。読み取り専用です。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|sort|[RangeSort](rangesort.md)|現在の範囲について、範囲の並べ替えを表します。読み取り専用。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |worksheet|[Worksheet](worksheet.md)|現在の範囲を含んでいるワークシート。読み取り専用です。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>メソッド
@@ -39,27 +39,27 @@ _プロパティのアクセスの[例を参照してください。](#property-
 |:---------------|:--------|:----------|:----|
 |[clear(applyTo: string)](#clearapplyto-string)|(非推奨)|範囲の値、書式、塗りつぶし、罫線などをクリアします。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[delete(shift: string)](#deleteshift-string)|(非推奨)|範囲に関連付けられているセルを削除します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getBoundingRect(anotherRange:Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|指定した範囲を包含する、最小の範囲オブジェクトを取得します。たとえば、"B2:C5" と "D10:E15" の GetBoundingRect は、"B2:E16" になります。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getBoundingRect(anotherRange:Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|指定した範囲を包含する、最小の Range オブジェクトを取得します。たとえば、"B2:C5" と "D10:E15" の GetBoundingRect は、"B2:E16" になります。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|行と列の番号に基づいて、1 つのセルを含んだ範囲オブジェクトを取得します。以外このセルは、ワークシートのグリッド内であれば、親の範囲の境界の外のセルであってもかまいません。返されるセルは、範囲の左上のセルを基準に配置されます。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getColumn(column: number)](#getcolumncolumn-number)|[Range](range.md)|範囲に含まれる列を 1 つ取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getColumnsAfter(count: number)](#getcolumnsaftercount-number)|[Range](range.md)|現在の Range オブジェクトの右にある特定の列数を取得します。|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[getColumnsBefore(count: number)](#getcolumnsbeforecount-number)|[Range](range.md)|現在の Range オブジェクトの左にある特定の列数を取得します。|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[getEntireColumn()](#getentirecolumn)|[Range](range.md)|範囲に含まれるすべての列を表すオブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getEntireRow()](#getentirerow)|[Range](range.md)|範囲に含まれるすべての行を表すオブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getColumnsAfter(count: number)](#getcolumnsaftercount-number)|[Range](range.md)|現在の Range オブジェクトの右にある特定の列数を取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getColumnsBefore(count: number)](#getcolumnsbeforecount-number)|[Range](range.md)|現在の Range オブジェクトの左にある特定の列数を取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getEntireColumn()](#getentirecolumn)|[Range](range.md)|範囲の列全体を表すオブジェクトを取得します (たとえば、現在の範囲がセル "B4:E11" を表す場合、その `getEntireColumn` は列 "B:E" を表す範囲になります)。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getEntireRow()](#getentirerow)|[Range](range.md)|範囲の行全体を表すオブジェクトを取得します (たとえば、現在の範囲がセル "B4:E11" を表す場合、その `GetEntireRow` は行 "4:11" を表す範囲になります)。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getIntersection(anotherRange:Range or string)](#getintersectionanotherrange-range-or-string)|[Range](range.md)|指定した範囲の長方形の交差部分を表す範囲オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getIntersectionOrNull(anotherRange:Range or string)](#getintersectionornullanotherrange-range-or-string)|[Range](range.md)|指定した範囲の長方形の交差部分を表す範囲オブジェクトを取得します。交差部分が見つからない場合は、null オブジェクトを返します。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getIntersectionOrNullObject(anotherRange:Range または string)](#getintersectionornullobjectanotherrange-range-or-string)|[Range](range.md)|指定した範囲の長方形の交差部分を表す範囲オブジェクトを取得します。交差部分が見つからない場合は、null オブジェクトを返します。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getLastCell()](#getlastcell)|[Range](range.md)|範囲内の最後のセルを取得します。たとえば、"B2:D5" の最後のセルは "D5" になります。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getLastColumn()](#getlastcolumn)|[Range](range.md)|範囲内の最後の列を取得します。たとえば、"B2:D5" の最後の列は "D2:D5" になります。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getLastRow()](#getlastrow)|[Range](range.md)|範囲内の最後の行を取得します。たとえば、"B2:D5" の最後の行は "B5:D5" になります。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|指定した範囲からのオフセットで範囲を表すオブジェクトを取得します。返される範囲のディメンションは、この範囲と一致します。結果の範囲が、ワークシートのグリッドの境界線の外にはみ出る場合は、例外がスローされます。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getResizedRange(deltaRows: number, deltaColumns: number)](#getresizedrangedeltarows-number-deltacolumns-number)|[Range](range.md)|現在の Range オブジェクトに似た (ただし、右下隅がいくつかの行と列で拡張 (または縮小) されている) Range オブジェクトを取得します。|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|指定した範囲からのオフセットで範囲を表すオブジェクトを取得します。返される範囲のディメンションは、この範囲と一致します。結果の範囲がワークシートのグリッドの境界線の外にはみ出る場合は、エラーがスローされます。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getResizedRange(deltaRows: number, deltaColumns: number)](#getresizedrangedeltarows-number-deltacolumns-number)|[Range](range.md)|現在の Range オブジェクトに似た (ただし、右下隅がいくつかの行と列で拡張 (または縮小) されている) Range オブジェクトを取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRow(row: number)](#getrowrow-number)|[Range](range.md)|範囲に含まれている行を 1 つ取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getRowsAbove(count: number)](#getrowsabovecount-number)|[Range](range.md)|現在の Range オブジェクトの上にある特定の行数を取得します。|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[getRowsBelow(count: number)](#getrowsbelowcount-number)|[Range](range.md)|現在の Range オブジェクトの下にある特定の行数を取得します。|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[getUsedRange(valuesOnly)](#getusedrangevaluesonly)|[Range](range.md)|指定した範囲オブジェクトのうち使用されている範囲を返します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRowsAbove(count: number)](#getrowsabovecount-number)|[Range](range.md)|現在の Range オブジェクトの上にある特定の行数を取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRowsBelow(count: number)](#getrowsbelowcount-number)|[Range](range.md)|現在の Range オブジェクトの下にある特定の行数を取得します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|指定した範囲オブジェクトのうち使用されている範囲を返します。範囲内に使用済みのセルがない場合、この関数は ItemNotFound エラーをスローします。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRangeOrNullObject(valuesOnly: bool)](#getusedrangeornullobjectvaluesonly-bool)|[Range](range.md)|指定した範囲オブジェクトのうち使用されている範囲を返します。範囲内に使用済みのセルがない場合、この関数は null オブジェクトを返します。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getVisibleView()](#getvisibleview)|[RangeView](rangeview.md)|現在の範囲の表示されている行を表します。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[insert(shift: string)](#insertshift-string)|[Range](range.md)|この範囲を占めるセルまたはセルの範囲をワークシートに挿入し、領域を空けるために他のセルをシフトします。この時点で空き領域に位置する、新しい Range オブジェクトが返されます。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|(非推奨)|JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[merge(across: bool)](#mergeacross-bool)|void|範囲内のセルをワークシートの 1 つの領域に結合します。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[select()](#select)|void|Excel UI で指定した範囲を選択します。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[unmerge()](#unmerge)|void|範囲内のセルを結合解除して別々のセルにします。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
@@ -76,9 +76,9 @@ rangeObject.clear(applyTo);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
-|applyTo|string|省略可能。クリア操作の種類を決定します。使用可能な値は次のとおりです。`All`、Default-option、`Formats`、`Contents` |
+|applyTo|文字列|省略可能。クリア操作の種類を決定します。使用可能な値は次のとおりです。`All`、Default-option、`Formats`、`Contents` |
 
 #### <a name="returns"></a>戻り値
 void
@@ -112,7 +112,7 @@ rangeObject.delete(shift);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |<legacyBold>Shift</legacyBold>|文字列|セルをシフトする方向を指定します。使用可能な値は次のとおりです。Up、Left|
 
@@ -146,7 +146,7 @@ rangeObject.getBoundingRect(anotherRange);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |anotherRange|Range または string|Range オブジェクト、アドレスまたは範囲名。|
 
@@ -184,10 +184,10 @@ rangeObject.getCell(row, column);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |row|number|取得するセルの行番号。0 を起点とする番号になります。|
-|列|number|取得セルの列番号。0 を起点とする番号になります。|
+|column|number|取得セルの列番号。0 を起点とする番号になります。|
 
 #### <a name="returns"></a>戻り値
 [Range](range.md)
@@ -223,7 +223,7 @@ rangeObject.getColumn(column);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |column|number|取得する範囲の列番号。0 を起点とする番号になります。|
 
@@ -260,7 +260,7 @@ rangeObject.getColumnsAfter(count);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |count|number|省略可能。結果の範囲に含める列の数です。通常、正の数値を使用して現在の範囲外に範囲を作成します。負の数値を使用して、現在の範囲内に範囲を作成することもできます。既定値は 1 です。|
 
@@ -276,7 +276,7 @@ rangeObject.getColumnsBefore(count);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |count|number|省略可能。結果の範囲に含める列の数です。通常、正の数値を使用して現在の範囲外に範囲を作成します。負の数値を使用して、現在の範囲内に範囲を作成することもできます。既定値は 1 です。|
 
@@ -284,7 +284,7 @@ rangeObject.getColumnsBefore(count);
 [Range](range.md)
 
 ### <a name="getentirecolumn"></a>getEntireColumn()
-範囲に含まれるすべての列を表すオブジェクトを取得します。
+範囲の列全体を表すオブジェクトを取得します (たとえば、現在の範囲がセル "B4:E11" を表す場合、その `getEntireColumn` は列 "B:E" を表す範囲になります)。
 
 #### <a name="syntax"></a>構文
 ```js
@@ -321,7 +321,7 @@ Excel.run(function (ctx) {
 ```
 
 ### <a name="getentirerow"></a>getEntireRow()
-範囲に含まれるすべての行を表すオブジェクトを取得します。
+範囲の行全体を表すオブジェクトを取得します (たとえば、現在の範囲がセル "B4:E11" を表す場合、その `GetEntireRow` は行 "4:11" を表す範囲になります)。
 
 #### <a name="syntax"></a>構文
 ```js
@@ -356,7 +356,7 @@ Excel.run(function (ctx) {
 Range のグリッド プロパティ (values、numberFormat、formulas) には、当該の範囲に制限がないため、`null` が格納されます。
 
 
-### <a name="getintersectionanotherrange-range-or-string"></a>getIntersection(anotherRange:Range または string)
+### <a name="getintersectionanotherrange-range-or-string"></a>getIntersection(anotherRange:Range or string)
 指定した範囲の長方形の交差を表す Range オブジェクトを取得します。
 
 #### <a name="syntax"></a>構文
@@ -365,7 +365,7 @@ rangeObject.getIntersection(anotherRange);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |anotherRange|Range または string|範囲の交差を判断するために使用される、Range オブジェクトまたは Range アドレス。|
 
@@ -393,16 +393,16 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getintersectionornullanotherrange-range-or-string"></a>getIntersectionOrNull(anotherRange:Range or string)
+### <a name="getintersectionornullobjectanotherrange-range-or-string"></a>getIntersectionOrNullObject(anotherRange:Range または string)
 指定した範囲の長方形の交差部分を表す範囲オブジェクトを取得します。交差部分が見つからない場合は、null オブジェクトを返します。
 
 #### <a name="syntax"></a>構文
 ```js
-rangeObject.getIntersectionOrNull(anotherRange);
+rangeObject.getIntersectionOrNullObject(anotherRange);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |anotherRange|Range または string|範囲の交差を判断するために使用される、Range オブジェクトまたは Range アドレス。|
 
@@ -516,7 +516,7 @@ Excel.run(function (ctx) {
 
 
 ### <a name="getoffsetrangerowoffset-number-columnoffset-number"></a>getOffsetRange(rowOffset: number, columnOffset: number)
-指定した範囲からのオフセットで範囲を表すオブジェクトを取得します。返される範囲のディメンションは、この範囲と一致します。結果の範囲が、ワークシートのグリッドの境界線の外にはみ出る場合は、例外がスローされます。
+指定した範囲からのオフセットで範囲を表すオブジェクトを取得します。返される範囲のディメンションは、この範囲と一致します。結果の範囲がワークシートのグリッドの境界線の外にはみ出る場合は、エラーがスローされます。
 
 #### <a name="syntax"></a>構文
 ```js
@@ -524,7 +524,7 @@ rangeObject.getOffsetRange(rowOffset, columnOffset);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |rowOffset|number|範囲をオフセットする行数 (正、負、または 0)。正の値は下方向へのオフセットです。また、負の値は上方向へのオフセットです。|
 |columnOffset|number|範囲をオフセットする列数 (正、負、または 0)。正の値は右方向へのオフセットです。また、負の値は左方向へのオフセットです。|
@@ -561,7 +561,7 @@ rangeObject.getResizedRange(deltaRows, deltaColumns);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |deltaRows|number|現在の範囲を基準にして、右下隅を拡張する行の数です。範囲を拡張するには正の数値、または範囲を縮小するには負の数値を使用します。|
 |deltaColumns|number|現在の範囲を基準にして、右下隅を拡張する列の数です。範囲を拡張するには正の数値、または範囲を縮小するには負の数値を使用します。|
@@ -578,7 +578,7 @@ rangeObject.getRow(row);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |row|number|取得する範囲の行番号。0 を起点とする番号になります。|
 
@@ -615,7 +615,7 @@ rangeObject.getRowsAbove(count);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |count|number|省略可能。結果の範囲に含める行の数です。通常、正の数値を使用して現在の範囲外に範囲を作成します。負の数値を使用して、現在の範囲内に範囲を作成することもできます。既定値は 1 です。|
 
@@ -631,15 +631,15 @@ rangeObject.getRowsBelow(count);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |count|number|省略可能。結果の範囲に含める行の数です。通常、正の数値を使用して現在の範囲外に範囲を作成します。負の数値を使用して、現在の範囲内に範囲を作成することもできます。既定値は 1 です。|
 
 #### <a name="returns"></a>戻り値
 [Range](range.md)
 
-### <a name="getusedrangevaluesonly"></a>getUsedRange(valuesOnly)
-指定した範囲オブジェクトのうち使用されている範囲を返します。
+### <a name="getusedrangevaluesonly-apisetversion"></a>getUsedRange(valuesOnly: [ApiSet(Version)
+指定した範囲オブジェクトのうち使用されている範囲を返します。範囲内に使用済みのセルがない場合、この関数は ItemNotFound エラーをスローします。
 
 #### <a name="syntax"></a>構文
 ```js
@@ -647,7 +647,7 @@ rangeObject.getUsedRange(valuesOnly);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |valuesOnly|[ApiSet(Version|値の入っているセルのみを使用セルと見なします。|
 
@@ -676,6 +676,22 @@ Excel.run(function (ctx) {
 ```
 
 
+### <a name="getusedrangeornullobjectvaluesonly-bool"></a>getUsedRangeOrNullObject(valuesOnly: bool)
+指定した範囲オブジェクトのうち使用されている範囲を返します。範囲内に使用済みのセルがない場合、この関数は null オブジェクトを返します。
+
+#### <a name="syntax"></a>構文
+```js
+rangeObject.getUsedRangeOrNullObject(valuesOnly);
+```
+
+#### <a name="parameters"></a>パラメーター
+| パラメーター       | 型    |説明|
+|:---------------|:--------|:----------|:---|
+|valuesOnly|bool|省略可能。値の入っているセルのみを使用セルと見なします。|
+
+#### <a name="returns"></a>戻り値
+[Range](range.md)
+
 ### <a name="getvisibleview"></a>getVisibleView()
 現在の範囲の表示されている行を表します。
 
@@ -699,7 +715,7 @@ rangeObject.insert(shift);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |<legacyBold>Shift</legacyBold>|文字列|セルをシフトする方向を指定します。使用可能な値は次のとおりです。Down、Right|
 
@@ -726,22 +742,6 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="loadparam-object"></a>load(param: object)
-JavaScript レイヤーで作成されたプロキシ オブジェクトに、パラメーターで指定されているプロパティとオブジェクトの値を設定します。
-
-#### <a name="syntax"></a>構文
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
-|:---------------|:--------|:----------|:---|
-|param|object|省略可能。パラメーターとリレーションシップ名を、区切られた文字列または 1 つの配列として受け入れます。あるいは、[loadOption](loadoption.md) オブジェクトを提供します。|
-
-#### <a name="returns"></a>戻り値
-void
-
 ### <a name="mergeacross-bool"></a>merge(across: bool)
 範囲内のセルをワークシートの 1 つの領域にマージします。
 
@@ -751,7 +751,7 @@ rangeObject.merge(across);
 ```
 
 #### <a name="parameters"></a>パラメーター
-| パラメーター    | 型   |説明|
+| パラメーター       | 型    |説明|
 |:---------------|:--------|:----------|:---|
 |across|bool|省略可能。指定した範囲のセルを行ごとに結合して、行ごとに別のセルを作成する場合は True に設定します。既定値は False です。|
 
