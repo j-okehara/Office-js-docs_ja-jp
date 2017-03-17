@@ -3,13 +3,13 @@
 
 共有フォルダー カタログを使用して、マニフェストをネットワークのファイル共有に発行することで、Windows を実行する Office クライアントのテストのために Office アドインをインストールすることができます。 
 
->**注:**Office Online の Office アドインをテストするには、「[テスト用に Office Online で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)」をご覧ください。iPad または Mac でアドインをテストするには、「[テストのために iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md )」をご覧ください。Outlook アドインをテストするには、「[テスト用に Outlook アドインをサイドロードする](sideload-outlook-add-ins-for-testing.md )」をご覧ください。
+Word、Excel、PowerPoint のアドインを Windows でテストしない場合は、以下のいずれかのトピックを参照してアドインをサイドロードします。
 
-マニフェストのファイルのみを共有フォルダーのカタログに展開します。Web アプリケーション自体は Web サーバーに展開し、マニフェスト ファイルの **SourceLocation** 要素に URL を指定します。
+- [テスト用に Office Online で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
+- [テスト用に iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md )
+- [テスト用に Outlook アドインをサイドロードする](sideload-outlook-add-ins-for-testing.md )
 
- >**重要**  外部データとサービスにアクセスするアドインのセキュリティを高めるため、アドインでは、ハイパーテキスト転送プロトコル セキュア (HTTPS) などのセキュリティで保護されたプロトコルを使用して外部データとサービスに接続する必要があります。アドインがアドイン コマンドを使用する場合、HTTPS を使用する必要があります。
-
-次のビデオでは、Office デスクトップまたは Office Online のアドインをサイドローディングする手順について説明します。
+次のビデオでは、Office デスクトップまたは Office Online のアドインをサイドロードする手順について説明します。
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XXsAw2UUiQo" frameborder="0" allowfullscreen></iframe>
 
@@ -46,7 +46,9 @@
 ## <a name="sideload-your-add-in"></a>アドインのサイドロード
 
 
-1. テストするアドインのマニフェスト ファイルを共有フォルダー カタログに置きます。
+1. テストするアドインのマニフェスト ファイルを共有フォルダー カタログに置きます。なお、Web サーバーに Web アプリケーション自体を展開します。必ずマニフェスト ファイルの **SourceLocation** 要素で URL を指定してください。
+
+    >**重要:**外部データとサービスにアクセスするアドインのセキュリティを強化するため、アドインでは、HTTPS などのセキュリティで保護されたプロトコルを使用して外部データとサービスに接続する必要があります。アドインでアドイン コマンドを使用する場合は、HTTPS を使用する必要があります。
 
 2. Excel、Word または PowerPoint で、リボンの **[挿入]** タブにある **[個人用アドイン]** を選びます。
 

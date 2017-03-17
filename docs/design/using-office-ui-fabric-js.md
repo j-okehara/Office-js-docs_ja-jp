@@ -38,7 +38,7 @@ Fabric は、アドインで使用できるボタンやチェックボックス�
 > **メモ:** 追加のコンポーネントを徐々に増やしていく予定です。 
 
 - [Breadcrumb](https://dev.office.com/fabric-js/Components/Breadcrumb/Breadcrumb.html)
-- [Button](https://dev.office.com/fabric-js/Components/Button/Button.html) (アドインで小さなボタンのバリエーションの使用を検討してください。)
+- [Button](https://dev.office.com/fabric-js/Components/Button/Button.html) (アドインで小さなボタンのバリエーションの使用を検討してください。タッチ デバイスで最小 40px のタッチ ターゲットを確保するために、小さいボタンに 16px のパディングを追加します。)
 - [Checkbox](https://dev.office.com/fabric-js/Components/CheckBox/CheckBox.html)
 - [ChoiceFieldGroup](https://dev.office.com/fabric-js/Components/ChoiceFieldGroup/ChoiceFieldGroup.html)
 - [Date Picker](https://dev.office.com/fabric-js/Components/DatePicker/DatePicker.html) (アドインに日付ピッカーを実装する方法の例は、[Excel Sales Tracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) コード サンプルを参照してください)

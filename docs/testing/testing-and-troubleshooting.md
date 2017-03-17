@@ -1,4 +1,3 @@
-
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
 時折、ユーザーは開発した Office アドインの問題に遭遇することがあります。たとえば、アドインが読み込みに失敗したり、アクセスできないなどです。この記事の情報は、ユーザーが Office アドインを使用する際に遭遇する一般的な問題を解決するために用いることができます。 
@@ -49,19 +48,40 @@ Office の最新の更新プログラムがインストールされているこ�
 
 「[マニフェストの問題を検証し、トラブルシューティングする](troubleshoot-manifest.md)」を参照して、アドインのマニフェストの問題をデバッグしてください。
 
+## <a name="add-in-dialog-box-cannot-be-displayed"></a>アドイン ダイアログ ボックスを表示できない
+
+Office アドインを使用するとき、ユーザーは、ダイアログ ボックスの表示を許可するよう求められます。ユーザーが **[許可]** を選択すると、次のエラー メッセージが発生します。
+
+"ブラウザーのセキュリティ設定により、ダイアログ ボックスを作成できませんでした。別のブラウザーを試すか、アドレス バーに表示される [URL] とドメインが同じセキュリティ ゾーンに存在するようにブラウザーを構成してください。"
+
+![ダイアログ ボックスのエラー メッセージのスクリーン ショット](http://i.imgur.com/3mqmlgE.png)
+
+|**影響を受けるブラウザー**|**影響を受けるプラットフォーム**|
+|:--------------------|:---------------------|
+|Internet Explorer、Microsoft Edge|Office Online|
+
+この問題を解決するために、エンド ユーザーまたは管理者はアドインのドメインを、Internet Explore の信頼済みサイトのリストに追加することができます。Internet Explorer または Microsoft Edge ブラウザーのどちらを使用していても、同じ手順を使用します。
+
+>**重要:**アドインを信頼しない場合は、信頼済みサイトのリストにアドインの URL を追加しないでください。
+
+URL を信頼済みサイトのリストに追加する方法:
+
+1. Internet Explorer で [ツール] ボタンを選択し、**[インター ネット オプション]** > **[セキュリティ]** へ移動します。
+2. **[信頼済みサイト]** ゾーンを選択して、**[サイト]** を選択します。
+3. エラー メッセージに表示される URL を入力して、**[追加]** を選択します。
+4. アドインの使用をもう一度お試しください。問題が続く場合は、他のセキュリティ ゾーンの設定を変えて、アドインのドメインが Office アプリケーションのアドレス バーに表示される URL と同じゾーンに存在するようにします。
+
+この問題は、ポップアップ モードでダイアログ ボックス API が使用される場合に発生します。この問題を防ぐためには、[displayInFrame](../../reference/shared/officeui.displaydialogasync) フラグを使います。そのために、ページが iframe 内の表示をサポートしている必要があります。次の例は、フラグの使用方法を示しています。
+
+```js
+
+Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
+```
+
 ## <a name="additional-resources"></a>追加リソース
 
-
-
-- [Office Online でアドインをデバッグする](../testing/debug-add-ins-in-office-online.md)
-    
-- [iPad または Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-    
-- [iPad と Mac で Office アドインをデバッグする](../testing/debug-office-add-ins-on-ipad-and-mac.md)
-    
-- [Visual Studio での Office アドインの作成とデバッグ](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)
-    
-- [テスト用に Outlook アドインを展開してインストールする](../outlook/testing-and-tips.md)
-    
+- [Office Online でアドインをデバッグする](../testing/debug-add-ins-in-office-online.md) 
+- [iPad または Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)  
+- [iPad と Mac で Office アドインをデバッグする](../testing/debug-office-add-ins-on-ipad-and-mac.md)  
 - [マニフェストの問題を検証し、トラブルシューティングする](troubleshoot-manifest.md)
     

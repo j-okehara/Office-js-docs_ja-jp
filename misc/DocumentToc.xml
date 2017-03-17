@@ -67,6 +67,7 @@
     <Item text="Visual Studio を使用してアドインをパッケージ化する" url="publish/package-your-add-in-using-visual-studio" SEODescription="発行できるように Office アドインをパッケージ化します。" />
     <Item text="作業ウィンドウ アドインとコンテンツ アドインをアドイン カタログに発行する" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Office の [アドイン] ダイアログ ボックスからアドインを使用できるように Office クライアントを構成する" />
 	<Item text="Office ストアへのアドインの提出" url="https://dev.office.com/officestore/docs/submit-add-ins-and-web-apps-to-the-office-store" IsExternal="true" />
+	<Item text="Office ストアの検証ポリシー" url="https://dev.office.com/officestore/docs/validation-policies" IsExternal="true" />
   </Item>
   
   <Item text="Word" url="word/word-add-ins-programming-overview" SEODescription="JavaScript API を使用して、Word アドインをビルドします。" Scope="word">
